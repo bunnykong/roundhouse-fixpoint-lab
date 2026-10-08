@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "condition": "public-lab-v1",
+  "reference_condition": "public-corpus-v1",
+  "invocation": [
+    "check",
+    "--continue",
+    "."
+  ],
+  "inputs": [
+    {
+      "id": "cycle-2-width-2",
+      "set": "micro",
+      "path": "reproductions/cycle-2-width-2",
+      "tree_sha256": "34122af1fa231027d0bf1ea2f1af3c0de734bfbd5465dcf3cd506e1242eae0cb",
+      "file_count": 7
+    },
+    {
+      "id": "cycle-3-width-2",
+      "set": "micro",
+      "path": "reproductions/cycle-3-width-2",
+      "tree_sha256": "20e0d82c729e26df6f99c6771de16402a561d860747cbb1cfd0278285c591586",
+      "file_count": 7
+    },
+    {
+      "id": "f2_merge",
+      "set": "micro",
+      "path": "reproductions/f2_merge",
+      "tree_sha256": "97623277747cadd321ce12ddf49da8ac0409937d1df3942ed8fb58c61ec4f40a",
+      "file_count": 8
+    },
+    {
+      "id": "param",
+      "set": "micro",
+      "path": "reproductions/param",
+      "tree_sha256": "dcdd63dfb2f89f033ed61c316fbb6aed8af75971a3afa8e246523b68bdba51a8",
+      "file_count": 8
+    },
+    {
+      "id": "ivar",
+      "set": "micro",
+      "path": "reproductions/ivar",
+      "tree_sha256": "ea7fd138b91e2267669b6714731e8429b064a7c4fbfb49fbbd24207d825b78af",
+      "file_count": 8
+    },
+    {
+      "id": "merge2",
+      "set": "micro",
+      "path": "reproductions/merge2",
+      "tree_sha256": "6ac802aeb8c901d85865266fa98de83dc71739ecabe00f74d83820742206a2f2",
+      "file_count": 8
+    },
+    {
+      "id": "exact",
+      "set": "micro",
+      "path": "reproductions/exact",
+      "tree_sha256": "533e62f1536587e7cec8b0d738b7f3b19cd9e8ae70935e499c66924d0624ae2e",
+      "file_count": 8
+    },
+    {
+      "id": "merge",
+      "set": "micro",
+      "path": "reproductions/merge",
+      "tree_sha256": "434b82d549c2b6a9c4d5861ca827395c47a33f7106f68c3bf17b79964b2702fb",
+      "file_count": 8
+    },
+    {
+      "id": "argument-tree",
+      "set": "micro",
+      "path": "reproductions/argument-tree",
+      "tree_sha256": "5f42c50e3853ed0413efc346add58528486c5c6ec5932254bbd26f769e56163b",
+      "file_count": 8
+    },
+    {
+      "id": "tuple-1",
+      "set": "micro",
+      "path": "reproductions/tuple-1",
+      "tree_sha256": "6f2e7033392de35a769bbfc141b82b678ba792b7440e123b4795a8e891d39940",
+      "file_count": 8
+    },
+    {
+      "id": "tuple-2",
+      "set": "micro",
+      "path": "reproductions/tuple-2",
+      "tree_sha256": "918501697d0afaf17e06649ca6221e8126db425fac66a2c34644f927f53b6242",
+      "file_count": 8
+    },
+    {
+      "id": "tuple-3",
+      "set": "micro",
+      "path": "reproductions/tuple-3",
+      "tree_sha256": "90e5079fdfa838187c970f84ac509c9631ac62b1c0a3416ba7a0de967705a717",
+      "file_count": 8
+    },
+    {
+      "id": "chain-64",
+      "set": "micro",
+      "path": "reproductions/chain-64",
+      "tree_sha256": "2f9e106f0470e493cf971351f0913c24413c4d991fd26a0c4129f715866cd285",
+      "file_count": 7
+    },
+    {
+      "id": "arm_flip",
+      "set": "micro",
+      "path": "reproductions/arm_flip",
+      "tree_sha256": "f438b71a207da7b2816a92f7f0eee023bc5aef0844d9036e0c92fbeccff33f59",
+      "file_count": 7
+    },
+    {
+      "id": "ir_stamp",
+      "set": "micro",
+      "path": "reproductions/ir_stamp",
+      "tree_sha256": "af639ba75b97f71c71c038e3c2c59d9e343f997968aa0b9c25fdef1d06ff63d6",
+      "file_count": 7
+    },
+    {
+      "id": "nc_ivar",
+      "set": "micro",
+      "path": "reproductions/nc_ivar",
+      "tree_sha256": "3fc5b7524b13aa4ac1184cfc440a0836e4004654108056903fe1461e8cde817f",
+      "file_count": 7
+    },
+    {
+      "id": "dyn_send",
+      "set": "micro",
+      "path": "reproductions/dyn_send",
+      "tree_sha256": "8720f957306923742ad63fda1e2e5a031ed8fb9f9ea571209681b0c495d62afb",
+      "file_count": 7
+    },
+    {
+      "id": "name_collision",
+      "set": "micro",
+      "path": "reproductions/name_collision",
+      "tree_sha256": "10d8876770379e6c9a8ab6148e80979cf9bc925fd1d73227e04e54c4215a15cc",
+      "file_count": 8
+    },
+    {
+      "id": "reembed_str",
+      "set": "micro",
+      "path": "reproductions/reembed_str",
+      "tree_sha256": "7f2334e77a9d700189a187edacbc5501b078f7cbf74f9fc7d21123f301eeaaa2",
+      "file_count": 7
+    },
+    {
+      "id": "reembed",
+      "set": "micro",
+      "path": "reproductions/reembed",
+      "tree_sha256": "f248c5890e7edfabe6482873c4951c4faf2fdfef2ab00e955cb1e28e1f40881d",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_8",
+      "set": "micro",
+      "path": "reproductions/ring_fib_8",
+      "tree_sha256": "dc3a756d1a09f089c2d252aba7e912eea758e57c9f2cec0cafabc4c7d2003394",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_16",
+      "set": "micro",
+      "path": "reproductions/ring_fib_16",
+      "tree_sha256": "f434fc1754be47483d1eb3836da06ef49a37947deaf0817948bc6b038005e2bd",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_24",
+      "set": "micro",
+      "path": "reproductions/ring_fib_24",
+      "tree_sha256": "856e7a06eb457879945c966863671bef46641396db4b12a6b52b71983522970c",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_30",
+      "set": "micro",
+      "path": "reproductions/ring_fib_30",
+      "tree_sha256": "51e482d231f7d2eec9cbbacb3c354e0a04368081078e899ce37cef2bbe4cf399",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_36",
+      "set": "micro",
+      "path": "reproductions/ring_fib_36",
+      "tree_sha256": "a43cc5ae2058dac1d17d449c5b53ed008fcc88864595d3a3681e63624608bf48",
+      "file_count": 7
+    },
+    {
+      "id": "ring_fib_40",
+      "set": "micro",
+      "path": "reproductions/ring_fib_40",
+      "tree_sha256": "21608d04db72a282a4343eae3110b5b80493f7611dc7f04ef34fb87fdbb13467",
+      "file_count": 7
+    },
+    {
+      "id": "reembed_safe",
+      "set": "micro",
+      "path": "reproductions/reembed_safe",
+      "tree_sha256": "63e91c19ca827acac024bdd7f9682e5c28ef8af83f7407ed1facab1b06b6ff82",
+      "file_count": 7
+    },
+    {
+      "id": "campfire",
+      "set": "apps",
+      "path": "corpus/apps/campfire",
+      "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "repository_url": "https://github.com/basecamp/once-campfire.git",
+      "tag": null,
+      "git_tree": null
+    },
+    {
+      "id": "mastodon",
+      "set": "apps",
+      "path": "corpus/apps/mastodon",
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "repository_url": "https://github.com/mastodon/mastodon.git",
+      "tag": null,
+      "git_tree": null
+    },
+    {
+      "id": "chatwoot",
+      "set": "apps",
+      "path": "corpus/apps/chatwoot",
+      "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "repository_url": "https://github.com/chatwoot/chatwoot.git",
+      "tag": "v4.18.0",
+      "git_tree": null
+    },
+    {
+      "id": "forem",
+      "set": "apps",
+      "path": "corpus/apps/forem",
+      "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "repository_url": "https://github.com/forem/forem.git",
+      "tag": "stable.20211129.1",
+      "git_tree": null
+    },
+    {
+      "id": "discourse",
+      "set": "apps",
+      "path": "corpus/apps/discourse",
+      "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "repository_url": "https://github.com/discourse/discourse.git",
+      "tag": "v2026.9.0",
+      "git_tree": null
+    }
+  ]
+}

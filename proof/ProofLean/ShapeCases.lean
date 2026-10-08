@@ -1,0 +1,817 @@
+import ProofLean.Lower
+
+/-! Frozen public synthetic equations and expected node paths, up to five nodes. -/
+
+namespace ProofLean.ShapeCases
+
+open ProofLean
+
+/-- regular shape `self`: site constraints. -/
+def f_self : REDB where
+  sites := [⟨"array#2", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#5", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#3", "array#2"), ("sym#4", "atom:sym"), ("new#6", "hash#5")]
+  flow := [("R", "array#2.elem"), ("sym#4", "hash#5.key"), ("R", "hash#5.value"), ("str#1", "union#7"),
+    ("new#3", "union#7"), ("new#6", "union#7"), ("union#7", "R")]
+
+/-- `self`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_self_ref2 : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>str", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- `self`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_self_kleene : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>str", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- regular shape `cycle2`: site constraints. -/
+def f_cycle2 : REDB where
+  sites := [⟨"array#2", "array", ["elem"]⟩,
+    ⟨"array#9", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#12", "hash", ["key", "value"]⟩,
+    ⟨"hash#5", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#3", "array#2"), ("sym#4", "atom:sym"), ("new#6", "hash#5"),
+    ("int#8", "atom:int"), ("new#10", "array#9"), ("str#11", "atom:str"), ("new#13", "hash#12")]
+  flow := [("R1", "array#2.elem"), ("sym#4", "hash#5.key"), ("R1", "hash#5.value"), ("str#1", "union#7"),
+    ("new#3", "union#7"), ("new#6", "union#7"), ("union#7", "R0"), ("R0", "array#9.elem"),
+    ("str#11", "hash#12.key"), ("R0", "hash#12.value"), ("int#8", "union#14"), ("new#10", "union#14"),
+    ("new#13", "union#14"), ("union#14", "R1")]
+
+/-- `cycle2`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_cycle2_ref2 : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>int", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>int", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>int", "hash>value>str", "int"])]
+
+/-- `cycle2`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_cycle2_kleene : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>int", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>int", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>int", "hash>value>str", "int"])]
+
+/-- regular shape `cycle3`: site constraints. -/
+def f_cycle3 : REDB where
+  sites := [⟨"array#16", "array", ["elem"]⟩,
+    ⟨"array#2", "array", ["elem"]⟩,
+    ⟨"array#9", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#12", "hash", ["key", "value"]⟩,
+    ⟨"hash#19", "hash", ["key", "value"]⟩,
+    ⟨"hash#5", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#3", "array#2"), ("sym#4", "atom:sym"), ("new#6", "hash#5"),
+    ("int#8", "atom:int"), ("new#10", "array#9"), ("str#11", "atom:str"), ("new#13", "hash#12"),
+    ("sym#15", "atom:sym"), ("new#17", "array#16"), ("int#18", "atom:int"), ("new#20", "hash#19")]
+  flow := [("R1", "array#2.elem"), ("sym#4", "hash#5.key"), ("R1", "hash#5.value"), ("str#1", "union#7"),
+    ("new#3", "union#7"), ("new#6", "union#7"), ("union#7", "R0"), ("R2", "array#9.elem"),
+    ("str#11", "hash#12.key"), ("R2", "hash#12.value"), ("int#8", "union#14"), ("new#10", "union#14"),
+    ("new#13", "union#14"), ("union#14", "R1"), ("R0", "array#16.elem"), ("int#18", "hash#19.key"),
+    ("R0", "hash#19.value"), ("sym#15", "union#21"), ("new#17", "union#21"), ("new#20", "union#21"),
+    ("union#21", "R2")]
+
+/-- `cycle3`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_cycle3_ref2 : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>int", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>int", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>sym", "array>elem>int", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>int", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>sym", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>sym", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>sym",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>sym",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>int", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>sym", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>sym", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>sym",
+    "hash>value>array>elem>array>elem>int", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>sym", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>sym",
+    "hash>value>array>elem>hash>value>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>int", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>sym", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>sym", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>sym", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>sym", "int"]),
+    ("R2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>int", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>int", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>sym", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>int", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>int", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>sym", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>int", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>int", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>int", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>sym", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>int", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>sym", "hash>value>hash>value>int", "hash>value>str", "sym"])]
+
+/-- `cycle3`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_cycle3_kleene : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>int", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>int", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>sym", "array>elem>int", "hash",
+    "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>int", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>sym", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>sym", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>sym",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>sym",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>int", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>sym", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>sym", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>sym",
+    "hash>value>array>elem>array>elem>int", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>sym", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>sym",
+    "hash>value>array>elem>hash>value>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>int", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>sym", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>sym", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>sym", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>sym", "int"]),
+    ("R2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>int", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>int", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>sym", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>int", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>int", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>sym", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>int", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>int", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>int", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>sym", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>int", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>sym", "hash>value>hash>value>int", "hash>value>str", "sym"])]
+
+/-- regular shape `merge2`: site constraints. -/
+def f_merge2 : REDB where
+  sites := [⟨"array#2", "array", ["elem"]⟩,
+    ⟨"array#5", "array", ["elem"]⟩,
+    ⟨"array#7", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#10", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#3", "array#2"), ("str#4", "atom:str"), ("new#6", "array#5"),
+    ("new#8", "array#7"), ("untyped#9", "atom:untyped"), ("new#11", "hash#10")]
+  flow := [("R", "array#2.elem"), ("str#4", "array#5.elem"), ("new#6", "array#7.elem"), ("untyped#9", "hash#10.key"),
+    ("R", "hash#10.value"), ("str#1", "union#12"), ("new#3", "union#12"), ("new#8", "union#12"),
+    ("new#11", "union#12"), ("union#12", "R")]
+
+/-- `merge2`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_merge2_ref2 : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>untyped", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>untyped", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>untyped", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>untyped", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>untyped", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>untyped", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>untyped", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>str", "hash",
+    "hash>key>untyped", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>untyped", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>untyped", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>untyped", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>untyped", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>untyped", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>untyped", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>untyped", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- `merge2`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_merge2_kleene : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>untyped", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>untyped", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>untyped", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>untyped", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>untyped", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>untyped", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>untyped", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>str", "hash",
+    "hash>key>untyped", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>untyped", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>untyped", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>untyped", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>untyped", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>untyped", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>untyped", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>untyped", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str", "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- regular shape `param`: site constraints. -/
+def f_param : REDB where
+  sites := [⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#3", "hash", ["key", "value"]⟩,
+    ⟨"hash#8", "hash", ["key", "value"]⟩]
+  alloc := [("var#1", "atom:var"), ("var#2", "atom:var"), ("new#4", "hash#3"), ("sym#5", "atom:sym"),
+    ("int#6", "atom:int"), ("new#9", "hash#8")]
+  flow := [("var#1", "hash#3.key"), ("var#2", "hash#3.value"), ("P", "union#7"), ("int#6", "union#7"),
+    ("sym#5", "hash#8.key"), ("union#7", "hash#8.value"), ("new#4", "union#10"), ("new#9", "union#10"),
+    ("union#10", "P")]
+
+/-- `param`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_param_ref2 : List (String × List String) := [("P", ["hash", "hash>key>sym", "hash>key>var", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>key>var",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>key>var", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>key>var",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>var", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>var", "hash>value>hash>value>int",
+    "hash>value>hash>value>var", "hash>value>int", "hash>value>var"])]
+
+/-- `param`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_param_kleene : List (String × List String) := [("P", ["hash", "hash>key>sym", "hash>key>var", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>key>var",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>key>var", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>key>var",
+    "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>var", "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>var", "hash>value>hash>value>int",
+    "hash>value>hash>value>var", "hash>value>int", "hash>value>var"])]
+
+/-- regular shape `dhole`: site constraints. -/
+def f_dhole : REDB where
+  sites := [⟨"array#4", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#7", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("int#2", "atom:int"), ("new#5", "array#4"), ("sym#6", "atom:sym"),
+    ("new#8", "hash#7")]
+  flow := [("R", "union#3"), ("int#2", "union#3"), ("union#3", "array#4.elem"), ("sym#6", "hash#7.key"),
+    ("R", "hash#7.value"), ("str#1", "union#9"), ("new#5", "union#9"), ("new#8", "union#9"),
+    ("union#9", "R")]
+
+/-- `dhole`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_dhole_ref2 : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash",
+    "array>elem>array>elem>array>elem>hash>value>str", "array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array",
+    "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash", "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym",
+    "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str", "array>elem>array>elem>hash>value>str", "array>elem>array>elem>int", "array>elem>array>elem>str",
+    "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash",
+    "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash",
+    "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym",
+    "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>int",
+    "array>elem>str", "hash", "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym",
+    "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str", "hash>value>array>elem>array>elem>int", "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str",
+    "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str", "hash>value>array>elem>hash>value>str",
+    "hash>value>array>elem>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash",
+    "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str",
+    "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- `dhole`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_dhole_kleene : List (String × List String) := [("R", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash",
+    "array>elem>array>elem>array>elem>hash>value>str", "array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array",
+    "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash", "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym",
+    "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>str", "array>elem>array>elem>hash>value>str", "array>elem>array>elem>int", "array>elem>array>elem>str",
+    "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash",
+    "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>sym", "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash",
+    "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>sym",
+    "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>str", "array>elem>int",
+    "array>elem>str", "hash", "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>int", "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym",
+    "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str", "hash>value>array>elem>array>elem>int", "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>key>sym", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str",
+    "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>str", "hash>value>array>elem>hash>value>str",
+    "hash>value>array>elem>int", "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>sym",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash",
+    "hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>str",
+    "hash>value>hash>value>str", "hash>value>str", "str"])]
+
+/-- regular shape `cycle5`: site constraints. -/
+def f_cycle5 : REDB where
+  sites := [⟨"array#16", "array", ["elem"]⟩,
+    ⟨"array#2", "array", ["elem"]⟩,
+    ⟨"array#24", "array", ["elem"]⟩,
+    ⟨"array#31", "array", ["elem"]⟩,
+    ⟨"array#9", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#12", "hash", ["key", "value"]⟩,
+    ⟨"hash#19", "hash", ["key", "value"]⟩,
+    ⟨"hash#29", "hash", ["key", "value"]⟩,
+    ⟨"hash#5", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#3", "array#2"), ("sym#4", "atom:sym"), ("new#6", "hash#5"),
+    ("int#8", "atom:int"), ("new#10", "array#9"), ("str#11", "atom:str"), ("new#13", "hash#12"),
+    ("sym#15", "atom:sym"), ("new#17", "array#16"), ("int#18", "atom:int"), ("new#20", "hash#19"),
+    ("str#22", "atom:str"), ("int#23", "atom:int"), ("new#25", "array#24"), ("sym#27", "atom:sym"),
+    ("str#28", "atom:str"), ("new#30", "hash#29"), ("new#32", "array#31")]
+  flow := [("R1", "array#2.elem"), ("sym#4", "hash#5.key"), ("R1", "hash#5.value"), ("str#1", "union#7"),
+    ("new#3", "union#7"), ("new#6", "union#7"), ("union#7", "R0"), ("R2", "array#9.elem"),
+    ("str#11", "hash#12.key"), ("R2", "hash#12.value"), ("int#8", "union#14"), ("new#10", "union#14"),
+    ("new#13", "union#14"), ("union#14", "R1"), ("R3", "array#16.elem"), ("int#18", "hash#19.key"),
+    ("R3", "hash#19.value"), ("sym#15", "union#21"), ("new#17", "union#21"), ("new#20", "union#21"),
+    ("union#21", "R2"), ("R4", "array#24.elem"), ("str#22", "union#26"), ("int#23", "union#26"),
+    ("new#25", "union#26"), ("union#26", "R3"), ("str#28", "hash#29.key"), ("R0", "hash#29.value"),
+    ("R0", "array#31.elem"), ("sym#27", "union#33"), ("new#30", "union#33"), ("new#32", "union#33"),
+    ("union#33", "R4")]
+
+/-- `cycle5`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_cycle5_ref2 : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>int", "array>elem>array>elem>hash>value>array",
+    "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash", "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>int", "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym",
+    "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash",
+    "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>int", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>sym",
+    "array>elem>int", "hash", "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>sym", "hash>value>array>elem>array>elem>int", "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>key>int", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>sym", "hash>value>array>elem>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>sym", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>sym", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash",
+    "hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash>value>int",
+    "hash>value>hash>value>hash>value>str", "hash>value>hash>value>sym", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>int", "array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>int", "array>elem>hash>value>str",
+    "array>elem>sym", "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array",
+    "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str", "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>int", "hash>value>array>elem>str", "hash>value>hash",
+    "hash>value>hash>key>int", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array", "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str",
+    "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym",
+    "hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>sym", "int"]),
+    ("R2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym", "array>elem>int", "array>elem>str", "hash", "hash>key>int",
+    "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>int",
+    "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int", "hash>value>array>elem>array>elem>str",
+    "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int",
+    "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>str",
+    "hash>value>array>elem>sym", "hash>value>int", "hash>value>str", "sym"]),
+    ("R3", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>sym",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>sym",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>sym", "int",
+    "str"]),
+    ("R4", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>int",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>int", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>int", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>int",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>int", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>int", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>sym", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>int", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>int", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>sym", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>int",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>int", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>int", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>int",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>int", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>sym", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>int", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>sym", "hash>value>hash>value>int", "hash>value>str", "sym"])]
+
+/-- `cycle5`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_cycle5_kleene : List (String × List String) := [("R0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>int", "array>elem>array>elem>hash>value>array",
+    "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash", "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>int", "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym",
+    "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash",
+    "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>int", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>str", "array>elem>hash>value>sym",
+    "array>elem>int", "hash", "hash>key>sym", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>sym", "hash>value>array>elem>array>elem>int", "hash>value>array>elem>array>elem>str", "hash>value>array>elem>hash",
+    "hash>value>array>elem>hash>key>int", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>sym", "hash>value>array>elem>hash>value>int",
+    "hash>value>array>elem>hash>value>str", "hash>value>array>elem>sym", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>sym", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash",
+    "hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash>value>int",
+    "hash>value>hash>value>hash>value>str", "hash>value>hash>value>sym", "hash>value>int", "str"]),
+    ("R1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>int", "array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>array", "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>int", "array>elem>hash>value>str",
+    "array>elem>sym", "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array",
+    "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>str", "hash>value>array>elem>array>elem>hash>value>array",
+    "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>str", "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>int", "hash>value>array>elem>str", "hash>value>hash",
+    "hash>value>hash>key>int", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array", "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>hash", "hash>value>hash>value>array>elem>array>elem>str",
+    "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str", "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym",
+    "hash>value>hash>value>int", "hash>value>hash>value>str", "hash>value>sym", "int"]),
+    ("R2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>int", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>sym", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>int",
+    "array>elem>array>elem>array>elem>str", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>int", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>sym", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>int",
+    "array>elem>array>elem>hash>value>str", "array>elem>array>elem>sym", "array>elem>int", "array>elem>str", "hash", "hash>key>int",
+    "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>array>elem>int",
+    "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>sym", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>hash", "hash>value>array>elem>array>elem>hash>value>int", "hash>value>array>elem>array>elem>str",
+    "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int",
+    "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>sym", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>str",
+    "hash>value>array>elem>sym", "hash>value>int", "hash>value>str", "sym"]),
+    ("R3", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>hash",
+    "array>elem>array>elem>array>elem>array>elem>sym", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>str", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>hash", "array>elem>array>elem>array>elem>hash>value>sym",
+    "array>elem>array>elem>array>elem>int", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>sym", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>hash",
+    "array>elem>array>elem>hash>value>array>elem>sym", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>str", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>hash", "array>elem>array>elem>hash>value>hash>value>sym",
+    "array>elem>array>elem>hash>value>int", "array>elem>array>elem>str", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>hash", "array>elem>hash>value>array>elem>array>elem>sym", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>sym", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>sym", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>sym", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>sym", "array>elem>hash>value>hash>value>int", "array>elem>hash>value>str", "array>elem>sym", "int",
+    "str"]),
+    ("R4", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>int",
+    "array>elem>array>elem>array>elem>array>elem>str", "array>elem>array>elem>array>elem>hash", "array>elem>array>elem>array>elem>hash>key>int", "array>elem>array>elem>array>elem>hash>value>array", "array>elem>array>elem>array>elem>hash>value>int", "array>elem>array>elem>array>elem>hash>value>str",
+    "array>elem>array>elem>array>elem>sym", "array>elem>array>elem>hash", "array>elem>array>elem>hash>key>str", "array>elem>array>elem>hash>value>array", "array>elem>array>elem>hash>value>array>elem>array", "array>elem>array>elem>hash>value>array>elem>int",
+    "array>elem>array>elem>hash>value>array>elem>str", "array>elem>array>elem>hash>value>hash", "array>elem>array>elem>hash>value>hash>key>int", "array>elem>array>elem>hash>value>hash>value>array", "array>elem>array>elem>hash>value>hash>value>int", "array>elem>array>elem>hash>value>hash>value>str",
+    "array>elem>array>elem>hash>value>sym", "array>elem>array>elem>int", "array>elem>hash", "array>elem>hash>key>sym", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>array",
+    "array>elem>hash>value>array>elem>array>elem>array", "array>elem>hash>value>array>elem>array>elem>int", "array>elem>hash>value>array>elem>array>elem>str", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>int", "array>elem>hash>value>array>elem>hash>value>array",
+    "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>str", "array>elem>hash>value>array>elem>sym", "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>array>elem>array", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str", "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>int", "array>elem>hash>value>hash>value>hash>value>array",
+    "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>str", "array>elem>hash>value>hash>value>sym", "array>elem>hash>value>int", "array>elem>str", "hash",
+    "hash>key>str", "hash>value>array", "hash>value>array>elem>array", "hash>value>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>array", "hash>value>array>elem>array>elem>array>elem>int",
+    "hash>value>array>elem>array>elem>array>elem>str", "hash>value>array>elem>array>elem>hash", "hash>value>array>elem>array>elem>hash>key>int", "hash>value>array>elem>array>elem>hash>value>array", "hash>value>array>elem>array>elem>hash>value>int", "hash>value>array>elem>array>elem>hash>value>str",
+    "hash>value>array>elem>array>elem>sym", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array", "hash>value>array>elem>hash>value>array>elem>array", "hash>value>array>elem>hash>value>array>elem>int",
+    "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>int", "hash>value>array>elem>hash>value>hash>value>array", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>str",
+    "hash>value>array>elem>hash>value>sym", "hash>value>array>elem>int", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>array",
+    "hash>value>hash>value>array>elem>array>elem>array", "hash>value>hash>value>array>elem>array>elem>int", "hash>value>hash>value>array>elem>array>elem>str", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>int", "hash>value>hash>value>array>elem>hash>value>array",
+    "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>str", "hash>value>hash>value>array>elem>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>array>elem>array", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str", "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>int", "hash>value>hash>value>hash>value>hash>value>array",
+    "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>str", "hash>value>hash>value>hash>value>sym", "hash>value>hash>value>int", "hash>value>str", "sym"])]
+
+/-- regular shape `chain`: site constraints. -/
+def f_chain : REDB where
+  sites := [⟨"array#1", "array", ["elem"]⟩,
+    ⟨"array#3", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩]
+  alloc := [("new#2", "array#1"), ("new#4", "array#3"), ("int#5", "atom:int")]
+  flow := [("H", "array#1.elem"), ("new#2", "F"), ("K", "array#3.elem"), ("new#4", "H"),
+    ("int#5", "K")]
+
+/-- `chain`: node paths of fold_model's `ref2` result (converged, 3 rounds). -/
+def f_chain_ref2 : List (String × List String) := [("F", ["array", "array>elem>array", "array>elem>array>elem>int"]),
+    ("H", ["array", "array>elem>int"]),
+    ("K", ["int"])]
+
+/-- `chain`: node paths of fold_model's Kleene ground truth (stable at round 6). -/
+def f_chain_kleene : List (String × List String) := [("F", ["array", "array>elem>array", "array>elem>array>elem>int"]),
+    ("H", ["array", "array>elem>int"]),
+    ("K", ["int"])]
+
+/-- regular shape `nested`: site constraints. -/
+def f_nested : REDB where
+  sites := [⟨"array#2", "array", ["elem"]⟩,
+    ⟨"array#4", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩]
+  alloc := [("untyped#1", "atom:untyped"), ("new#3", "array#2"), ("new#5", "array#4")]
+  flow := [("untyped#1", "array#2.elem"), ("new#3", "array#4.elem"), ("new#5", "F")]
+
+/-- `nested`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_nested_ref2 : List (String × List String) := [("F", ["array", "array>elem>array", "array>elem>array>elem>untyped"])]
+
+/-- `nested`: node paths of fold_model's Kleene ground truth (stable at round 4). -/
+def f_nested_kleene : List (String × List String) := [("F", ["array", "array>elem>array", "array>elem>array>elem>untyped"])]
+
+/-- regular shape `chain5`: site constraints. -/
+def f_chain5 : REDB where
+  sites := [⟨"array#1", "array", ["elem"]⟩,
+    ⟨"array#3", "array", ["elem"]⟩,
+    ⟨"array#5", "array", ["elem"]⟩,
+    ⟨"array#7", "array", ["elem"]⟩,
+    ⟨"array#9", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩]
+  alloc := [("new#2", "array#1"), ("new#4", "array#3"), ("new#6", "array#5"), ("new#8", "array#7"),
+    ("new#10", "array#9"), ("int#11", "atom:int")]
+  flow := [("F1", "array#1.elem"), ("new#2", "F0"), ("F2", "array#3.elem"), ("new#4", "F1"),
+    ("F3", "array#5.elem"), ("new#6", "F2"), ("F4", "array#7.elem"), ("new#8", "F3"),
+    ("F5", "array#9.elem"), ("new#10", "F4"), ("int#11", "F5")]
+
+/-- `chain5`: node paths of fold_model's `ref2` result (converged, 6 rounds). -/
+def f_chain5_ref2 : List (String × List String) := [("F0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array"]),
+    ("F1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>int"]),
+    ("F2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>int"]),
+    ("F3", ["array", "array>elem>array", "array>elem>array>elem>int"]),
+    ("F4", ["array", "array>elem>int"]),
+    ("F5", ["int"])]
+
+/-- `chain5`: node paths of fold_model's Kleene ground truth (stable at round 9). -/
+def f_chain5_kleene : List (String × List String) := [("F0", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>array"]),
+    ("F1", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>array", "array>elem>array>elem>array>elem>array>elem>int"]),
+    ("F2", ["array", "array>elem>array", "array>elem>array>elem>array", "array>elem>array>elem>array>elem>int"]),
+    ("F3", ["array", "array>elem>array", "array>elem>array>elem>int"]),
+    ("F4", ["array", "array>elem>int"]),
+    ("F5", ["int"])]
+
+/-- regular shape `reembed`: site constraints. -/
+def f_reembed : REDB where
+  sites := [⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#5", "hash", ["key", "value"]⟩,
+    ⟨"hash#7", "hash", ["key", "value"]⟩]
+  alloc := [("nil#1", "atom:nil"), ("sym#2", "atom:sym"), ("sym#3", "atom:sym"), ("new#6", "hash#5"),
+    ("new#8", "hash#7")]
+  flow := [("sym#3", "hash#5.key"), ("load_value#4", "hash#5.value"), ("sym#2", "hash#7.key"), ("new#6", "hash#7.value"),
+    ("nil#1", "union#9"), ("new#8", "union#9"), ("union#9", "F")]
+  load := [("F", "value", "load_value#4")]
+
+/-- `reembed`: node paths of fold_model's `ref2` result (converged, 1 rounds). -/
+def f_reembed_ref2 : List (String × List String) := [("F", ["hash", "hash>key>sym", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>hash", "nil"])]
+
+/-- `reembed`: node paths of fold_model's Kleene ground truth (stable at round 8). -/
+def f_reembed_kleene : List (String × List String) := [("F", ["hash", "hash>key>sym", "hash>value>hash", "hash>value>hash>key>sym", "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>sym",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>sym", "hash>value>hash>value>hash>value>hash>value>hash", "nil"])]
+
+/-- regular shape `f2`: site constraints. -/
+def f_f2 : REDB where
+  sites := [⟨"array#14", "array", ["elem"]⟩,
+    ⟨"array#31", "array", ["elem"]⟩,
+    ⟨"array#6", "array", ["elem"]⟩,
+    ⟨"atom:int", "int", []⟩,
+    ⟨"atom:nil", "nil", []⟩,
+    ⟨"atom:str", "str", []⟩,
+    ⟨"atom:sym", "sym", []⟩,
+    ⟨"atom:untyped", "untyped", []⟩,
+    ⟨"atom:var", "var", []⟩,
+    ⟨"hash#16", "hash", ["key", "value"]⟩,
+    ⟨"hash#21", "hash", ["key", "value"]⟩,
+    ⟨"hash#23", "hash", ["key", "value"]⟩,
+    ⟨"hash#27", "hash", ["key", "value"]⟩,
+    ⟨"hash#29", "hash", ["key", "value"]⟩,
+    ⟨"hash#3", "hash", ["key", "value"]⟩,
+    ⟨"hash#34", "hash", ["key", "value"]⟩]
+  alloc := [("str#1", "atom:str"), ("new#4", "hash#3"), ("new#7", "array#6"), ("str#10", "atom:str"),
+    ("int#11", "atom:int"), ("str#12", "atom:str"), ("new#15", "array#14"), ("new#17", "hash#16"),
+    ("str#18", "atom:str"), ("str#19", "atom:str"), ("int#20", "atom:int"), ("new#22", "hash#21"),
+    ("str#25", "atom:str"), ("nil#26", "atom:nil"), ("new#28", "hash#27"), ("new#32", "array#31"),
+    ("new#35", "hash#34")]
+  flow := [("str#1", "hash#3.key"), ("load_value#2", "hash#3.value"), ("load_elem#5", "array#6.elem"), ("new#4", "union#9"),
+    ("new#7", "union#9"), ("leaves#8", "union#9"), ("union#9", "R"), ("int#11", "union#13"),
+    ("str#12", "union#13"), ("union#13", "array#14.elem"), ("str#10", "hash#16.key"), ("new#15", "hash#16.value"),
+    ("str#19", "hash#21.key"), ("int#20", "hash#21.value"), ("str#25", "hash#27.key"), ("nil#26", "hash#27.value"),
+    ("merge#30", "array#31.elem"), ("merge#24", "union#33"), ("new#32", "union#33"), ("str#18", "hash#34.key"),
+    ("union#33", "hash#34.value"), ("new#17", "union#38"), ("new#35", "union#38"), ("load_value#36", "union#38"),
+    ("load_elem#37", "union#38"), ("union#38", "P")]
+  load := [("P", "value", "load_value#2"), ("P", "elem", "load_elem#5"), ("R", "key", "hash#23.key"), ("R", "value", "hash#23.value"),
+    ("new#22", "key", "hash#23.key"), ("new#22", "value", "hash#23.value"), ("R", "key", "hash#29.key"), ("R", "value", "hash#29.value"),
+    ("new#28", "key", "hash#29.key"), ("new#28", "value", "hash#29.value"), ("P", "value", "load_value#36"), ("P", "elem", "load_elem#37")]
+  filter := [("P", "str", "leaves#8"), ("P", "int", "leaves#8"), ("P", "sym", "leaves#8"), ("P", "nil", "leaves#8"),
+    ("P", "untyped", "leaves#8"), ("P", "var", "leaves#8")]
+  produce := [("R", "hash", "merge#24", "hash#23"), ("R", "hash", "merge#30", "hash#29")]
+
+/-- `f2`: node paths of fold_model's `ref2` result (converged, 3 rounds). -/
+def f_f2_ref2 : List (String × List String) := [("R", ["array", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>nil", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str",
+    "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str",
+    "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>nil",
+    "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>nil", "array>elem>hash>value>int", "array>elem>hash>value>nil", "array>elem>int", "array>elem>str",
+    "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array",
+    "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array",
+    "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>nil", "hash>value>array>elem>hash>value>int", "hash>value>array>elem>hash>value>nil", "hash>value>array>elem>int",
+    "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>nil", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>nil",
+    "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>nil", "hash>value>hash>value>int", "hash>value>hash>value>nil", "hash>value>int", "hash>value>nil",
+    "int", "nil", "str"]),
+    ("P", ["array", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>nil", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str",
+    "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str",
+    "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>nil",
+    "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>nil", "array>elem>hash>value>int", "array>elem>hash>value>nil", "array>elem>int", "array>elem>str",
+    "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array",
+    "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array",
+    "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>nil", "hash>value>array>elem>hash>value>int", "hash>value>array>elem>hash>value>nil", "hash>value>array>elem>int",
+    "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>nil", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>nil",
+    "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>nil", "hash>value>hash>value>int", "hash>value>hash>value>nil", "hash>value>int", "hash>value>nil",
+    "int", "nil", "str"])]
+
+/-- `f2`: node paths of fold_model's Kleene ground truth (stable at round 17). -/
+def f_f2_kleene : List (String × List String) := [("R", ["array", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>nil", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str",
+    "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str",
+    "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>nil",
+    "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>nil", "array>elem>hash>value>int", "array>elem>hash>value>nil", "array>elem>int", "array>elem>str",
+    "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array",
+    "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array",
+    "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>nil", "hash>value>array>elem>hash>value>int", "hash>value>array>elem>hash>value>nil", "hash>value>array>elem>int",
+    "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>nil", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>nil",
+    "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>nil", "hash>value>hash>value>int", "hash>value>hash>value>nil", "hash>value>int", "hash>value>nil",
+    "int", "nil", "str"]),
+    ("P", ["array", "array>elem>hash", "array>elem>hash>key>str", "array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash", "array>elem>hash>value>array>elem>hash>key>str",
+    "array>elem>hash>value>array>elem>hash>value>array", "array>elem>hash>value>array>elem>hash>value>hash", "array>elem>hash>value>array>elem>hash>value>int", "array>elem>hash>value>array>elem>hash>value>nil", "array>elem>hash>value>array>elem>int", "array>elem>hash>value>array>elem>str",
+    "array>elem>hash>value>hash", "array>elem>hash>value>hash>key>str", "array>elem>hash>value>hash>value>array", "array>elem>hash>value>hash>value>array>elem>hash", "array>elem>hash>value>hash>value>array>elem>int", "array>elem>hash>value>hash>value>array>elem>str",
+    "array>elem>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>key>str", "array>elem>hash>value>hash>value>hash>value>array", "array>elem>hash>value>hash>value>hash>value>hash", "array>elem>hash>value>hash>value>hash>value>int", "array>elem>hash>value>hash>value>hash>value>nil",
+    "array>elem>hash>value>hash>value>int", "array>elem>hash>value>hash>value>nil", "array>elem>hash>value>int", "array>elem>hash>value>nil", "array>elem>int", "array>elem>str",
+    "hash", "hash>key>str", "hash>value>array", "hash>value>array>elem>hash", "hash>value>array>elem>hash>key>str", "hash>value>array>elem>hash>value>array",
+    "hash>value>array>elem>hash>value>array>elem>hash", "hash>value>array>elem>hash>value>array>elem>int", "hash>value>array>elem>hash>value>array>elem>str", "hash>value>array>elem>hash>value>hash", "hash>value>array>elem>hash>value>hash>key>str", "hash>value>array>elem>hash>value>hash>value>array",
+    "hash>value>array>elem>hash>value>hash>value>hash", "hash>value>array>elem>hash>value>hash>value>int", "hash>value>array>elem>hash>value>hash>value>nil", "hash>value>array>elem>hash>value>int", "hash>value>array>elem>hash>value>nil", "hash>value>array>elem>int",
+    "hash>value>array>elem>str", "hash>value>hash", "hash>value>hash>key>str", "hash>value>hash>value>array", "hash>value>hash>value>array>elem>hash", "hash>value>hash>value>array>elem>hash>key>str",
+    "hash>value>hash>value>array>elem>hash>value>array", "hash>value>hash>value>array>elem>hash>value>hash", "hash>value>hash>value>array>elem>hash>value>int", "hash>value>hash>value>array>elem>hash>value>nil", "hash>value>hash>value>array>elem>int", "hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash", "hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>array>elem>hash", "hash>value>hash>value>hash>value>array>elem>int", "hash>value>hash>value>hash>value>array>elem>str",
+    "hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>key>str", "hash>value>hash>value>hash>value>hash>value>array", "hash>value>hash>value>hash>value>hash>value>hash", "hash>value>hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>hash>value>nil",
+    "hash>value>hash>value>hash>value>int", "hash>value>hash>value>hash>value>nil", "hash>value>hash>value>int", "hash>value>hash>value>nil", "hash>value>int", "hash>value>nil",
+    "int", "nil", "str"])]
+
+/-- Every shape: name, inputs, equation slots' `ref2` paths, Kleene paths. -/
+def all : List (String × REDB × List (String × List String) × List (String × List String)) := [
+  ("self", f_self, f_self_ref2, f_self_kleene),
+  ("cycle2", f_cycle2, f_cycle2_ref2, f_cycle2_kleene),
+  ("cycle3", f_cycle3, f_cycle3_ref2, f_cycle3_kleene),
+  ("merge2", f_merge2, f_merge2_ref2, f_merge2_kleene),
+  ("param", f_param, f_param_ref2, f_param_kleene),
+  ("dhole", f_dhole, f_dhole_ref2, f_dhole_kleene),
+  ("cycle5", f_cycle5, f_cycle5_ref2, f_cycle5_kleene),
+  ("chain", f_chain, f_chain_ref2, f_chain_kleene),
+  ("nested", f_nested, f_nested_ref2, f_nested_kleene),
+  ("chain5", f_chain5, f_chain5_ref2, f_chain5_kleene),
+  ("reembed", f_reembed, f_reembed_ref2, f_reembed_kleene),
+  ("f2", f_f2, f_f2_ref2, f_f2_kleene)
+]
+
+end ProofLean.ShapeCases

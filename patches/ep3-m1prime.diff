@@ -1,0 +1,2834 @@
+diff --git a/src/analyze/ep3.rs b/src/analyze/ep3.rs
+new file mode 100644
+index 0000000..5545651
+--- /dev/null
++++ b/src/analyze/ep3.rs
+@@ -0,0 +1,2427 @@
++//! EP3 (pending Q8, prototype): fold self-containing unfoldings at the round-to-round
++//! handoffs into exact recursive types, held in an analysis-local side table of interned,
++//! canonical regular types. The typer keeps reading plain `Ty`: it sees `view_1` of the
++//! stored μ-type, with a marker at each cut.
++//!
++//! Gate: `RH_EP3` unset (or `0`) leaves the analyzer exactly as main. `RH_EP3=1` is M1′
++//! (the cut is a plain `Untyped`, the anonymous cut). Knobs, all inert without the gate:
++//! `RH_EP3_CAP=N` (fixpoint round cap), `RH_EP3_PRINT=FILE` (RBS aliases for folded slots;
++//! public inputs only, names appear), `RH_EP3_TRACE=1` (per-store trace on stderr; public
++//! inputs only), `RH_EP3_UNTYPED=rigid` (only ⊥ and `Var` are pending; `Untyped` is an
++//! authored leaf), `RH_EP3_BACKSTOP=acyclic` (the model's guard: never widen a cyclic value).
++//!
++//! Port of `models/fold_model.py` (Reg, canonicalize, covers, join, fold,
++//! widen_k, view, resolve_cuts); departures are listed in prototype the experiment notes.
++//!
++//! Representation (NOTE §6.1, encoding 2): a regular type is a node table, root 0,
++//! DFS-numbered after subset construction (union = choice; one Array and one Hash spine per
++//! union, as `union_of`; Tuple, Record and Class-with-args arms are kept apart, as
++//! `union_of` keeps them) and canonical Moore minimization. Tables are interned, so a
++//! `TyId` comparison is type equality.
++
++use std::cell::RefCell;
++use std::collections::{BTreeMap, HashMap, HashSet};
++use std::sync::LazyLock;
++use std::time::Instant;
++
++use crate::ident::{ClassId, Symbol, TyVar};
++use crate::ty::{Row, Ty};
++
++pub(crate) type TyId = u32;
++const NONE: u32 = u32::MAX;
++
++// ---------------------------------------------------------------------------- gate
++
++#[derive(Clone, Copy, PartialEq, Eq, Debug)]
++pub(crate) enum Mode {
++    Off,
++    /// M1′: the typer sees `Untyped` at the cut.
++    Anon,
++    /// M2: the typer sees a marker carrying the regular type at the cut.
++    Marker,
++}
++
++pub(crate) static MODE: LazyLock<Mode> = LazyLock::new(|| match std::env::var("RH_EP3").ok().as_deref() {
++    None | Some("") | Some("0") => Mode::Off,
++    Some("2") | Some("m2") | Some("marker") => {
++        if marker_supported() {
++            Mode::Marker
++        } else {
++            eprintln!("rh-ep3: RH_EP3=2 needs the M2 build; running M1′ (anonymous cut)");
++            Mode::Anon
++        }
++    }
++    _ => Mode::Anon,
++});
++
++pub(crate) fn on() -> bool {
++    *MODE != Mode::Off
++}
++
++static CAP: LazyLock<Option<usize>> =
++    LazyLock::new(|| std::env::var("RH_EP3_CAP").ok().and_then(|s| s.parse().ok()));
++static TRACE: LazyLock<bool> = LazyLock::new(|| std::env::var("RH_EP3_TRACE").is_ok_and(|v| v == "1"));
++
++/// The fixpoint round cap: main's, unless the gate is on and `RH_EP3_CAP` overrides it.
++pub(crate) fn cap(default: usize) -> usize {
++    if on() { CAP.unwrap_or(default) } else { default }
++}
++
++
++// ---------------------------------------------------------------------------- nodes
++
++#[derive(Clone, PartialEq, Eq, Hash, Debug)]
++pub(crate) enum Node {
++    Leaf(u32),
++    Array([u32; 1]),
++    Hash([u32; 2]),
++    Tuple(Box<[u32]>),
++    Record(u32, Box<[u32]>),
++    Class(u32, Box<[u32]>),
++    Union(Box<[u32]>),
++}
++
++impl Node {
++    fn kids(&self) -> &[u32] {
++        match self {
++            Node::Leaf(_) => &[],
++            Node::Array(c) => c,
++            Node::Hash(c) => c,
++            Node::Tuple(c) | Node::Record(_, c) | Node::Class(_, c) | Node::Union(c) => c,
++        }
++    }
++
++    fn map(&self, f: &mut dyn FnMut(u32) -> u32) -> Node {
++        match self {
++            Node::Leaf(l) => Node::Leaf(*l),
++            Node::Array([c]) => Node::Array([f(*c)]),
++            Node::Hash([k, v]) => Node::Hash([f(*k), f(*v)]),
++            Node::Tuple(c) => Node::Tuple(c.iter().map(|x| f(*x)).collect()),
++            Node::Record(s, c) => Node::Record(*s, c.iter().map(|x| f(*x)).collect()),
++            Node::Class(i, c) => Node::Class(*i, c.iter().map(|x| f(*x)).collect()),
++            Node::Union(c) => Node::Union(c.iter().map(|x| f(*x)).collect()),
++        }
++    }
++
++    fn is_union(&self) -> bool {
++        matches!(self, Node::Union(_))
++    }
++
++    fn is_leaf(&self) -> bool {
++        matches!(self, Node::Leaf(_))
++    }
++
++    /// A constructor: under one, a sub-state is "guarded" (NOTE D6).
++    fn is_ctor(&self) -> bool {
++        !matches!(self, Node::Leaf(_) | Node::Union(_))
++    }
++}
++
++#[derive(Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Debug)]
++pub(crate) enum LeafKey {
++    Simple(u8),
++    Relation(ClassId),
++    Var(u32),
++    Class(ClassId),
++    Opaque(String),
++}
++
++/// A head: the shape of a state without its children. Ordered structurally, so canonical
++/// numbering does not depend on interning order.
++#[derive(Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Debug)]
++enum HeadKey {
++    Leaf(LeafKey),
++    Array,
++    Hash,
++    Tuple(u32),
++    Record(Vec<Symbol>, Option<u32>),
++    Class(ClassId, u32),
++    Union(u32),
++}
++
++/// What an arm of a union is, for "same arm set" (NOTE D6) and simulation matching.
++#[derive(Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Debug)]
++enum ArmHead {
++    Leaf(u32),
++    Array,
++    Hash,
++    Tuple(u32),
++    Record(u32),
++    Class(u32, u32),
++}
++
++pub(crate) struct Reg {
++    pub nodes: Box<[Node]>,
++    pub parent: Box<[u32]>,
++    pub cyclic: bool,
++}
++
++impl Reg {
++    pub fn states(&self) -> usize {
++        self.nodes.len()
++    }
++
++}
++
++fn arms_of(nodes: &[Node], i: u32) -> Vec<u32> {
++    match &nodes[i as usize] {
++        Node::Union(a) => a.to_vec(),
++        _ => vec![i],
++    }
++}
++
++// ---------------------------------------------------------------------------- interner
++
++#[derive(Default, Clone, Debug)]
++pub(crate) struct Stats {
++    pub canon_calls: u64,
++    pub canon_nanos: u128,
++    pub canon_fail: u64,
++    pub sim_calls: u64,
++    pub max_det_states: u64,
++}
++
++pub(crate) struct Interner {
++    regs: Vec<Reg>,
++    index: HashMap<Box<[Node]>, TyId>,
++    leaves: Vec<(LeafKey, Ty)>,
++    /// per leaf: 1 = ⊥, 2 = `Var` (pending), 4 = `Untyped`; the bottom set of a cover check
++    leaf_class: Vec<u8>,
++    leaf_index: HashMap<LeafKey, u32>,
++    shapes: Vec<(Vec<Symbol>, Option<TyVar>)>,
++    shape_index: HashMap<(Vec<Symbol>, Option<TyVar>), u32>,
++    classes: Vec<ClassId>,
++    class_index: HashMap<ClassId, u32>,
++    pub bot: u32,
++    pub untyped: u32,
++    pub stats: Stats,
++    depth_memo: HashMap<TyId, u32>,
++    sub_memo: HashMap<(TyId, u32), TyId>,
++}
++
++const DET_BUDGET: usize = 250_000;
++static VIEW_NODES: LazyLock<i64> =
++    LazyLock::new(|| std::env::var("RH_EP3_VIEW").ok().and_then(|s| s.parse().ok()).unwrap_or(512));
++
++impl Interner {
++    pub fn new() -> Self {
++        let mut i = Interner {
++            regs: Vec::new(),
++            index: HashMap::new(),
++            leaves: Vec::new(),
++            leaf_class: Vec::new(),
++            leaf_index: HashMap::new(),
++            shapes: Vec::new(),
++            shape_index: HashMap::new(),
++            classes: Vec::new(),
++            class_index: HashMap::new(),
++            bot: 0,
++            untyped: 0,
++            stats: Stats::default(),
++            depth_memo: HashMap::new(),
++            sub_memo: HashMap::new(),
++        };
++        i.bot = i.leaf_of(&Ty::Bottom);
++        i.untyped = i.leaf_of(&Ty::Untyped);
++        i
++    }
++
++    pub fn reg(&self, id: TyId) -> &Reg {
++        &self.regs[id as usize]
++    }
++
++    fn leaf_key(t: &Ty) -> Option<LeafKey> {
++        Some(match t {
++            Ty::Int => LeafKey::Simple(0),
++            Ty::Float => LeafKey::Simple(1),
++            Ty::Bool => LeafKey::Simple(2),
++            Ty::Str => LeafKey::Simple(3),
++            Ty::Sym => LeafKey::Simple(4),
++            Ty::Date => LeafKey::Simple(5),
++            Ty::Time => LeafKey::Simple(6),
++            Ty::SelfInstance => LeafKey::Simple(13),
++            Ty::Untyped => LeafKey::Simple(17),
++            Ty::Bottom => LeafKey::Simple(18),
++            Ty::Nil => LeafKey::Simple(19),
++            Ty::Relation { of } => LeafKey::Relation(of.clone()),
++            Ty::Var { var } => LeafKey::Var(var.0),
++            Ty::Class { id, args } if args.is_empty() => LeafKey::Class(id.clone()),
++            Ty::Fn { .. } => LeafKey::Opaque(format!("{t:?}")),
++            _ => return None,
++        })
++    }
++
++    pub fn leaf_of(&mut self, t: &Ty) -> u32 {
++        let key = Self::leaf_key(t).expect("leaf");
++        if let Some(&i) = self.leaf_index.get(&key) {
++            return i;
++        }
++        let i = self.leaves.len() as u32;
++        self.leaves.push((key.clone(), t.clone()));
++        self.leaf_class.push(match t {
++            Ty::Bottom => 1,
++            Ty::Var { .. } => 2,
++            Ty::Untyped => 4,
++            _ => 0,
++        });
++        self.leaf_index.insert(key, i);
++        i
++    }
++
++    pub fn leaf_ty(&self, l: u32) -> &Ty {
++        &self.leaves[l as usize].1
++    }
++
++    fn shape_of(&mut self, row: &Row) -> u32 {
++        let key = (row.fields.keys().cloned().collect::<Vec<_>>(), row.rest);
++        if let Some(&i) = self.shape_index.get(&key) {
++            return i;
++        }
++        let i = self.shapes.len() as u32;
++        self.shapes.push(key.clone());
++        self.shape_index.insert(key, i);
++        i
++    }
++
++    fn class_of(&mut self, id: &ClassId) -> u32 {
++        if let Some(&i) = self.class_index.get(id) {
++            return i;
++        }
++        let i = self.classes.len() as u32;
++        self.classes.push(id.clone());
++        self.class_index.insert(id.clone(), i);
++        i
++    }
++
++    fn head_key(&self, n: &Node) -> HeadKey {
++        match n {
++            Node::Leaf(l) => HeadKey::Leaf(self.leaves[*l as usize].0.clone()),
++            Node::Array(_) => HeadKey::Array,
++            Node::Hash(_) => HeadKey::Hash,
++            Node::Tuple(c) => HeadKey::Tuple(c.len() as u32),
++            Node::Record(s, _) => {
++                let (f, r) = &self.shapes[*s as usize];
++                HeadKey::Record(f.clone(), r.map(|v| v.0))
++            }
++            Node::Class(i, c) => HeadKey::Class(self.classes[*i as usize].clone(), c.len() as u32),
++            Node::Union(c) => HeadKey::Union(c.len() as u32),
++        }
++    }
++
++    fn arm_head(n: &Node) -> ArmHead {
++        match n {
++            Node::Leaf(l) => ArmHead::Leaf(*l),
++            Node::Array(_) => ArmHead::Array,
++            Node::Hash(_) => ArmHead::Hash,
++            Node::Tuple(c) => ArmHead::Tuple(c.len() as u32),
++            Node::Record(s, _) => ArmHead::Record(*s),
++            Node::Class(i, c) => ArmHead::Class(*i, c.len() as u32),
++            Node::Union(_) => unreachable!("a union arm is never a union"),
++        }
++    }
++
++    // ------------------------------------------------------------------ canonicalize
++
++    /// Canonical interned form of the regular type rooted at `root` of graph `g` (any node
++    /// table: unions may nest, arms may repeat heads, ⊥ may appear as an arm).
++    pub fn canon(&mut self, g: Vec<Node>, root: u32) -> Option<TyId> {
++        let t0 = Instant::now();
++        self.stats.canon_calls += 1;
++        let r = self.canon_inner(g, root);
++        self.stats.canon_nanos += t0.elapsed().as_nanos();
++        if r.is_none() {
++            self.stats.canon_fail += 1;
++        }
++        r
++    }
++
++    fn canon_inner(&mut self, mut g: Vec<Node>, mut root: u32) -> Option<TyId> {
++        for _ in 0..8 {
++            let (h, r) = self.determinize(&g, root)?;
++            self.stats.max_det_states = self.stats.max_det_states.max(h.len() as u64);
++            let (q, qr, degenerate) = self.minimize(&h, r);
++            if !degenerate {
++                return Some(self.number(&q, qr));
++            }
++            g = q;
++            root = qr;
++        }
++        None
++    }
++
++    fn flatten(&self, g: &[Node], states: &[u32]) -> Vec<u32> {
++        let mut out = Vec::new();
++        let mut seen = HashSet::new();
++        let mut todo: Vec<u32> = states.to_vec();
++        while let Some(s) = todo.pop() {
++            if !seen.insert(s) {
++                continue;
++            }
++            match &g[s as usize] {
++                Node::Union(a) => todo.extend(a.iter().copied()),
++                Node::Leaf(l) if *l == self.bot => {}
++                _ => out.push(s),
++            }
++        }
++        out.sort_unstable();
++        out
++    }
++
++    /// Subset construction over the union-as-choice automaton: `union_of`'s spine merge
++    /// (one Array, one Hash per union, merged pointwise), leaves deduplicated, ⊥ dropped,
++    /// Tuple / Record / Class-with-args arms kept apart.
++    fn determinize(&self, g: &[Node], root: u32) -> Option<(Vec<Node>, u32)> {
++        let mut h: Vec<Node> = Vec::new();
++        let mut memo: HashMap<Vec<u32>, u32> = HashMap::new();
++        let mut work: Vec<(u32, Vec<u32>)> = Vec::new();
++        fn id_for(
++            this: &Interner,
++            g: &[Node],
++            raw: &[u32],
++            h: &mut Vec<Node>,
++            memo: &mut HashMap<Vec<u32>, u32>,
++            work: &mut Vec<(u32, Vec<u32>)>,
++        ) -> u32 {
++            let set = this.flatten(g, raw);
++            if let Some(&id) = memo.get(&set) {
++                return id;
++            }
++            let id = h.len() as u32;
++            h.push(Node::Leaf(NONE));
++            memo.insert(set.clone(), id);
++            work.push((id, set));
++            id
++        }
++        let r = id_for(self, g, &[root], &mut h, &mut memo, &mut work);
++        while let Some((id, set)) = work.pop() {
++            if h.len() > DET_BUDGET {
++                return None;
++            }
++            if set.is_empty() {
++                h[id as usize] = Node::Leaf(self.bot);
++                continue;
++            }
++            let mut leaves: Vec<u32> = Vec::new();
++            let mut arr: Vec<u32> = Vec::new();
++            let mut hk: Vec<u32> = Vec::new();
++            let mut hv: Vec<u32> = Vec::new();
++            let mut others: Vec<u32> = Vec::new();
++            let (mut has_arr, mut has_hash) = (false, false);
++            for &s in &set {
++                match &g[s as usize] {
++                    Node::Leaf(l) => {
++                        if !leaves.contains(l) {
++                            leaves.push(*l)
++                        }
++                    }
++                    Node::Array([c]) => {
++                        has_arr = true;
++                        arr.push(*c)
++                    }
++                    Node::Hash([k, v]) => {
++                        has_hash = true;
++                        hk.push(*k);
++                        hv.push(*v)
++                    }
++                    Node::Union(_) => unreachable!(),
++                    _ => others.push(s),
++                }
++            }
++            let mut built: Vec<Node> = Vec::new();
++            leaves.sort_unstable();
++            for l in leaves {
++                built.push(Node::Leaf(l));
++            }
++            if has_arr {
++                let c = id_for(self, g, &arr, &mut h, &mut memo, &mut work);
++                built.push(Node::Array([c]));
++            }
++            if has_hash {
++                let k = id_for(self, g, &hk, &mut h, &mut memo, &mut work);
++                let v = id_for(self, g, &hv, &mut h, &mut memo, &mut work);
++                built.push(Node::Hash([k, v]));
++            }
++            for s in others {
++                let node = g[s as usize].clone();
++                let mut f = |c: u32| id_for(self, g, &[c], &mut h, &mut memo, &mut work);
++                built.push(node.map(&mut f));
++            }
++            if built.len() == 1 {
++                h[id as usize] = built.pop().unwrap();
++            } else {
++                let mut ids = Vec::with_capacity(built.len());
++                for b in built {
++                    ids.push(h.len() as u32);
++                    h.push(b);
++                }
++                h[id as usize] = Node::Union(ids.into_boxed_slice());
++            }
++        }
++        Some((h, r))
++    }
++
++    /// Moore partition refinement with canonical class names (ranks of sorted signatures),
++    /// then the quotient. Returns (quotient table indexed by class, root class, degenerate):
++    /// degenerate when some union lost all but one arm to merging (re-run determinize).
++    fn minimize(&self, h: &[Node], r: u32) -> (Vec<Node>, u32, bool) {
++        // reachable states, dense
++        let mut order: Vec<u32> = Vec::new();
++        let mut dense: HashMap<u32, u32> = HashMap::new();
++        let mut todo = vec![r];
++        while let Some(s) = todo.pop() {
++            if dense.contains_key(&s) {
++                continue;
++            }
++            dense.insert(s, order.len() as u32);
++            order.push(s);
++            for &c in h[s as usize].kids() {
++                if !dense.contains_key(&c) {
++                    todo.push(c);
++                }
++            }
++        }
++        let n = order.len();
++        let kids: Vec<Vec<u32>> = order.iter().map(|&s| h[s as usize].kids().iter().map(|c| dense[c]).collect()).collect();
++        let is_union: Vec<bool> = order.iter().map(|&s| h[s as usize].is_union()).collect();
++        // initial classes: ranks of head keys
++        let heads: Vec<HeadKey> = order.iter().map(|&s| self.head_key(&h[s as usize])).collect();
++        let mut sorted: Vec<&HeadKey> = heads.iter().collect();
++        sorted.sort();
++        sorted.dedup();
++        let rank: HashMap<&HeadKey, u32> = sorted.iter().enumerate().map(|(i, k)| (*k, i as u32)).collect();
++        let mut cls: Vec<u32> = heads.iter().map(|k| rank[k]).collect();
++        let mut ncls = sorted.len();
++        loop {
++            let sigs: Vec<(u32, Vec<u32>)> = (0..n)
++                .map(|s| {
++                    let mut ch: Vec<u32> = kids[s].iter().map(|&c| cls[c as usize]).collect();
++                    if is_union[s] {
++                        ch.sort_unstable();
++                        ch.dedup();
++                    }
++                    (cls[s], ch)
++                })
++                .collect();
++            let mut uniq: Vec<&(u32, Vec<u32>)> = sigs.iter().collect();
++            uniq.sort();
++            uniq.dedup();
++            if uniq.len() == ncls {
++                break;
++            }
++            let rk: HashMap<&(u32, Vec<u32>), u32> = uniq.iter().enumerate().map(|(i, k)| (*k, i as u32)).collect();
++            cls = sigs.iter().map(|k| rk[k]).collect();
++            ncls = uniq.len();
++        }
++        let mut q: Vec<Option<Node>> = vec![None; ncls];
++        let mut degenerate = false;
++        for s in 0..n {
++            let c = cls[s] as usize;
++            if q[c].is_some() {
++                continue;
++            }
++            let node = &h[order[s] as usize];
++            let mapped = match node {
++                Node::Union(_) => {
++                    let mut a: Vec<u32> = kids[s].iter().map(|&k| cls[k as usize]).collect();
++                    a.sort_unstable();
++                    a.dedup();
++                    if a.len() < 2 {
++                        degenerate = true;
++                    }
++                    Node::Union(a.into_boxed_slice())
++                }
++                other => {
++                    let mut i = 0usize;
++                    let ks = &kids[s];
++                    other.map(&mut |_| {
++                        let v = cls[ks[i] as usize];
++                        i += 1;
++                        v
++                    })
++                }
++            };
++            q[c] = Some(mapped);
++        }
++        (q.into_iter().map(|x| x.unwrap()).collect(), cls[0], degenerate)
++    }
++
++    /// DFS numbering from the root (union arms in canonical class order), then intern.
++    fn number(&mut self, q: &[Node], root: u32) -> TyId {
++        let mut num: HashMap<u32, u32> = HashMap::new();
++        let mut seq: Vec<u32> = Vec::new();
++        let mut parent: Vec<u32> = Vec::new();
++        // iterative preorder: stack of (state, parent number, next child index)
++        let mut stack: Vec<(u32, usize)> = Vec::new();
++        num.insert(root, 0);
++        seq.push(root);
++        parent.push(NONE);
++        stack.push((root, 0));
++        while let Some(&mut (s, ref mut next)) = stack.last_mut() {
++            let ks = q[s as usize].kids();
++            if *next >= ks.len() {
++                stack.pop();
++                continue;
++            }
++            let c = ks[*next];
++            *next += 1;
++            if !num.contains_key(&c) {
++                let me = num[&s];
++                num.insert(c, seq.len() as u32);
++                seq.push(c);
++                parent.push(me);
++                stack.push((c, 0));
++            }
++        }
++        let nodes: Box<[Node]> = seq.iter().map(|&s| q[s as usize].map(&mut |c| num[&c])).collect();
++        if let Some(&id) = self.index.get(&nodes) {
++            return id;
++        }
++        let cyclic = is_cyclic(&nodes);
++        let id = self.regs.len() as TyId;
++        self.index.insert(nodes.clone(), id);
++        self.regs.push(Reg { nodes, parent: parent.into_boxed_slice(), cyclic });
++        id
++    }
++
++    // ------------------------------------------------------------------ constructors
++
++    pub fn leaf(&mut self, t: &Ty) -> TyId {
++        let l = self.leaf_of(t);
++        self.canon(vec![Node::Leaf(l)], 0).expect("leaf")
++    }
++
++    fn embed(&self, g: &mut Vec<Node>, id: TyId) -> u32 {
++        let base = g.len() as u32;
++        for n in self.regs[id as usize].nodes.iter() {
++            g.push(n.map(&mut |c| c + base));
++        }
++        base
++    }
++
++    pub fn arr(&mut self, t: TyId) -> TyId {
++        let mut g = Vec::new();
++        let r = self.embed(&mut g, t);
++        g.push(Node::Array([r]));
++        let root = g.len() as u32 - 1;
++        self.canon(g, root).expect("arr")
++    }
++
++    pub fn hsh(&mut self, k: TyId, v: TyId) -> TyId {
++        let mut g = Vec::new();
++        let rk = self.embed(&mut g, k);
++        let rv = self.embed(&mut g, v);
++        g.push(Node::Hash([rk, rv]));
++        let root = g.len() as u32 - 1;
++        self.canon(g, root).expect("hsh")
++    }
++
++    pub fn tup(&mut self, ts: &[TyId]) -> TyId {
++        let mut g = Vec::new();
++        let rs: Vec<u32> = ts.iter().map(|&t| self.embed(&mut g, t)).collect();
++        g.push(Node::Tuple(rs.into_boxed_slice()));
++        let root = g.len() as u32 - 1;
++        self.canon(g, root).expect("tup")
++    }
++
++    pub fn try_union(&mut self, ts: &[TyId]) -> Option<TyId> {
++        if ts.is_empty() {
++            return Some(self.leaf(&Ty::Bottom));
++        }
++        if ts.len() == 1 {
++            return Some(ts[0]);
++        }
++        let mut g = Vec::new();
++        let rs: Vec<u32> = ts.iter().map(|&t| self.embed(&mut g, t)).collect();
++        g.push(Node::Union(rs.into_boxed_slice()));
++        let root = g.len() as u32 - 1;
++        self.canon(g, root)
++    }
++
++    pub fn union_many(&mut self, ts: &[TyId]) -> TyId {
++        self.try_union(ts).expect("union")
++    }
++
++    /// `None` when canonicalization exceeds its budget (counted as `canon_fail`).
++    pub fn join(&mut self, a: TyId, b: TyId) -> Option<TyId> {
++        if a == b {
++            return Some(a);
++        }
++        self.try_union(&[a, b])
++    }
++
++    /// The regular type rooted at `state` of `id`.
++    pub fn sub(&mut self, id: TyId, state: u32) -> TyId {
++        if state == 0 {
++            return id;
++        }
++        let g: Vec<Node> = self.regs[id as usize].nodes.to_vec();
++        self.canon(g, state).expect("sub")
++    }
++
++    pub fn sub_cached(&mut self, id: TyId, state: u32) -> TyId {
++        if let Some(&r) = self.sub_memo.get(&(id, state)) {
++            return r;
++        }
++        let r = self.sub(id, state);
++        self.sub_memo.insert((id, state), r);
++        r
++    }
++
++    // ------------------------------------------------------------------ Ty conversion
++
++    /// `Ty` → canonical regular type. `resolve` maps an M2 marker to the regular type it
++    /// carries (the store step's `resolve_cuts`). Hash-conses while converting, so a tree
++    /// with heavy duplication becomes a small graph. `None` past the node budget.
++    pub fn from_ty(&mut self, t: &Ty, resolve: bool) -> Option<TyId> {
++        let mut g: Vec<Node> = Vec::new();
++        let mut memo: HashMap<Node, u32> = HashMap::new();
++        let mut budget: usize = 2_000_000;
++        let mut embedded: HashMap<TyId, u32> = HashMap::new();
++        let root = self.conv(t, resolve, &mut g, &mut memo, &mut budget, &mut embedded)?;
++        self.canon(g, root)
++    }
++
++    fn push_node(g: &mut Vec<Node>, memo: &mut HashMap<Node, u32>, n: Node) -> u32 {
++        if let Some(&i) = memo.get(&n) {
++            return i;
++        }
++        let i = g.len() as u32;
++        g.push(n.clone());
++        memo.insert(n, i);
++        i
++    }
++
++    fn conv(
++        &mut self,
++        t: &Ty,
++        resolve: bool,
++        g: &mut Vec<Node>,
++        memo: &mut HashMap<Node, u32>,
++        budget: &mut usize,
++        embedded: &mut HashMap<TyId, u32>,
++    ) -> Option<u32> {
++        if *budget == 0 {
++            return None;
++        }
++        *budget -= 1;
++        if let Some(id) = marker_of(t) {
++            if resolve {
++                // embed the carried regular type once per conversion (it is canonical)
++                if let Some(&r) = embedded.get(&id) {
++                    return Some(r);
++                }
++                let r = self.embed(g, id);
++                embedded.insert(id, r);
++                return Some(r);
++            }
++            let l = self.leaf_of(&Ty::Untyped);
++            return Some(Self::push_node(g, memo, Node::Leaf(l)));
++        }
++        let node = match t {
++            Ty::Array { elem } => Node::Array([self.conv(elem, resolve, g, memo, budget, embedded)?]),
++            Ty::Hash { key, value } => {
++                let k = self.conv(key, resolve, g, memo, budget, embedded)?;
++                let v = self.conv(value, resolve, g, memo, budget, embedded)?;
++                Node::Hash([k, v])
++            }
++            Ty::Tuple { elems } => {
++                let mut ks = Vec::with_capacity(elems.len());
++                for e in elems {
++                    ks.push(self.conv(e, resolve, g, memo, budget, embedded)?);
++                }
++                Node::Tuple(ks.into_boxed_slice())
++            }
++            Ty::Record { row } => {
++                let s = self.shape_of(row);
++                let mut ks = Vec::with_capacity(row.fields.len());
++                for v in row.fields.values() {
++                    ks.push(self.conv(v, resolve, g, memo, budget, embedded)?);
++                }
++                Node::Record(s, ks.into_boxed_slice())
++            }
++            Ty::Class { id, args } if !args.is_empty() => {
++                let c = self.class_of(id);
++                let mut ks = Vec::with_capacity(args.len());
++                for a in args {
++                    ks.push(self.conv(a, resolve, g, memo, budget, embedded)?);
++                }
++                Node::Class(c, ks.into_boxed_slice())
++            }
++            Ty::Union { variants } => {
++                let mut ks = Vec::with_capacity(variants.len());
++                for v in variants {
++                    ks.push(self.conv(v, resolve, g, memo, budget, embedded)?);
++                }
++                Node::Union(ks.into_boxed_slice())
++            }
++            leaf => Node::Leaf(self.leaf_of(leaf)),
++        };
++        Some(Self::push_node(g, memo, node))
++    }
++
++    /// `view_k`: unfold, taking each back edge at most k − 1 times along a path; the k-th
++    /// occurrence of a state on the path becomes the cut (`cut(id, state)`). Unions are
++    /// rebuilt with `union_of`, so the result is in Roundhouse's normal form. A view larger
++    /// than `budget` nodes cuts every state's second occurrence anywhere (DAG cut) instead.
++    pub fn view(&mut self, id: TyId, k: u32, cut: &mut dyn FnMut(&mut Interner, TyId, u32) -> Ty) -> Ty {
++        // `view_1` can be exponential in the states (every simple path is unfolded), and
++        // everything the typer reads it must also carry. The view is therefore kept under
++        // `RH_EP3_VIEW` nodes (default 512) by cutting at the deepest constructor depth that
++        // fits. With the identity cut (M2) the cut is lossless at the store; with the
++        // anonymous cut it is a precision loss, as any `Untyped` cut is.
++        // Choose the depth with a counting pass (no cut is materialized: an M2 cut interns
++        // the sub-automaton at the cut, which is not free), then build the view once.
++        let len = self.regs[id as usize].nodes.len();
++        let mut chosen = 1;
++        for depth in [u32::MAX, 8, 6, 4, 3, 2, 1] {
++            let mut on_path: Vec<u32> = vec![0; len];
++            let mut budget: i64 = *VIEW_NODES;
++            self.view_count(id, 0, k, &mut on_path, &mut budget, depth);
++            if budget >= 0 {
++                chosen = depth;
++                break;
++            }
++        }
++        if chosen != u32::MAX {
++            VIEW_BUDGET.with(|v| *v.borrow_mut() += 1);
++        }
++        let mut on_path: Vec<u32> = vec![0; len];
++        let mut budget: i64 = i64::MAX;
++        self.view_go(id, 0, k, &mut on_path, &mut budget, chosen, cut)
++    }
++
++    /// `view_go`'s node count, stopping once the budget is spent.
++    fn view_count(&self, id: TyId, i: u32, k: u32, on_path: &mut Vec<u32>, budget: &mut i64, depth: u32) {
++        *budget -= 1;
++        if *budget < 0 {
++            return;
++        }
++        let node = &self.regs[id as usize].nodes[i as usize];
++        if on_path[i as usize] >= k || (depth == 0 && node.is_ctor()) || node.is_leaf() {
++            return;
++        }
++        let depth = if node.is_ctor() { depth.saturating_sub(1) } else { depth };
++        on_path[i as usize] += 1;
++        let kids: Vec<u32> = node.kids().to_vec();
++        for c in kids {
++            self.view_count(id, c, k, on_path, budget, depth);
++            if *budget < 0 {
++                break;
++            }
++        }
++        on_path[i as usize] -= 1;
++    }
++
++    #[allow(clippy::too_many_arguments)]
++    fn view_go(
++        &mut self,
++        id: TyId,
++        i: u32,
++        k: u32,
++        on_path: &mut Vec<u32>,
++        budget: &mut i64,
++        depth: u32,
++        cut: &mut dyn FnMut(&mut Interner, TyId, u32) -> Ty,
++    ) -> Ty {
++        *budget -= 1;
++        let node = self.regs[id as usize].nodes[i as usize].clone();
++        if on_path[i as usize] >= k || *budget < 0 || (depth == 0 && node.is_ctor()) {
++            return cut(self, id, i);
++        }
++        let depth = if node.is_ctor() { depth.saturating_sub(1) } else { depth };
++        on_path[i as usize] += 1;
++        let out = match &node {
++            Node::Leaf(l) => self.leaves[*l as usize].1.clone(),
++            Node::Array([c]) => Ty::Array { elem: Box::new(self.view_go(id, *c, k, on_path, budget, depth, cut)) },
++            Node::Hash([a, b]) => {
++                let key = self.view_go(id, *a, k, on_path, budget, depth, cut);
++                let value = self.view_go(id, *b, k, on_path, budget, depth, cut);
++                Ty::Hash { key: Box::new(key), value: Box::new(value) }
++            }
++            Node::Tuple(cs) => Ty::Tuple { elems: cs.iter().map(|c| self.view_go(id, *c, k, on_path, budget, depth, cut)).collect() },
++            Node::Record(s, cs) => {
++                let (names, rest) = self.shapes[*s as usize].clone();
++                let mut fields = indexmap::IndexMap::new();
++                for (name, c) in names.into_iter().zip(cs.iter()) {
++                    let v = self.view_go(id, *c, k, on_path, budget, depth, cut);
++                    fields.insert(name, v);
++                }
++                Ty::Record { row: Row { fields, rest } }
++            }
++            Node::Class(ci, cs) => {
++                let cid = self.classes[*ci as usize].clone();
++                Ty::Class { id: cid, args: cs.iter().map(|c| self.view_go(id, *c, k, on_path, budget, depth, cut)).collect() }
++            }
++            Node::Union(cs) => {
++                let mut acc = Ty::Bottom;
++                for c in cs.iter() {
++                    let t = self.view_go(id, *c, k, on_path, budget, depth, cut);
++                    acc = super::body::union_of(acc, t);
++                }
++                acc
++            }
++        };
++        on_path[i as usize] -= 1;
++        out
++    }
++
++    // ------------------------------------------------------------------ simulation
++
++    /// `a[i] ⊒ b[j]` (every tree of b[j] is a tree of a[i]). Leaves are rigid except, when
++    /// `bottom` is set, ⊥ (and with `untyped_bottom`, `Untyped`) in b, which sit below
++    /// everything. Coinductive; one visit per pair, with the existential choice over
++    /// unmerged same-head arms (Tuple, Record, Class) snapshotting the hypothesis set.
++    pub fn sim(&mut self, a: TyId, i: u32, b: TyId, j: u32, bottom: Bot) -> bool {
++        self.stats.sim_calls += 1;
++        let mut visited: HashSet<(u32, u32)> = HashSet::new();
++        let mask = bottom.mask();
++        let ra = &self.regs[a as usize];
++        let rb = &self.regs[b as usize];
++        sim_go(&ra.nodes, &rb.nodes, i, j, mask, &self.leaf_class, &mut visited)
++    }
++
++    pub fn covers(&mut self, a: TyId, b: TyId, bottom: Bot) -> bool {
++        a == b || self.sim(a, 0, b, 0, bottom)
++    }
++
++    /// The arm heads of a state, leaving out leaves in the bottom set (`mask`): a pending
++    /// `Var`, ⊥, or (anonymous cut) `Untyped` is not part of a state's pattern.
++    fn arm_heads(&self, id: TyId, i: u32, mask: u8) -> Vec<ArmHead> {
++        let nodes = &self.regs[id as usize].nodes;
++        let mut v: Vec<ArmHead> = arms_of(nodes, i)
++            .into_iter()
++            .filter(|&a| !matches!(&nodes[a as usize], Node::Leaf(l) if self.leaf_class[*l as usize] & mask != 0))
++            .map(|a| Self::arm_head(&nodes[a as usize]))
++            .collect();
++        v.sort();
++        v.dedup();
++        v
++    }
++
++    fn compound(&self, id: TyId) -> bool {
++        !self.regs[id as usize].nodes[0].is_leaf()
++    }
++
++    // ------------------------------------------------------------------ the fold
++
++    /// NOTE D6: redirect every guarded sub-state that rigidly covers a compound value of the
++    /// history to its nearest ancestor that covers it (seed as bottom) with the same arm set.
++    /// Returns (folded, witnesses redirected, witnesses without a target).
++    pub fn fold(&mut self, n: TyId, hist: &[TyId], bottom: Bot) -> (TyId, u32, u32) {
++        let hist: Vec<TyId> = hist.iter().copied().filter(|&h| self.compound(h)).collect();
++        if hist.is_empty() {
++            return (n, 0, 0);
++        }
++        let len = self.regs[n as usize].nodes.len();
++        let mut guarded = vec![false; len];
++        for d in 1..len {
++            let p = self.regs[n as usize].parent[d] as usize;
++            guarded[d] = guarded[p] || self.regs[n as usize].nodes[p].is_ctor();
++        }
++        let hist_heads: Vec<Vec<ArmHead>> = hist.iter().map(|&h| self.arm_heads(h, 0, 0)).collect();
++        let mask = bottom.mask();
++        let mut redirect: HashMap<u32, u32> = HashMap::new();
++        let mut orphans = 0u32;
++        for d in 1..len as u32 {
++            let node = &self.regs[n as usize].nodes[d as usize];
++            if node.is_leaf() || !guarded[d as usize] {
++                continue;
++            }
++            let dh = self.arm_heads(n, d, 0);
++            let mut witness = false;
++            for (hi, &h) in hist.iter().enumerate() {
++                // rigid cover needs every arm head of h among d's arms
++                if !hist_heads[hi].iter().all(|x| dh.contains(x)) {
++                    continue;
++                }
++                if self.sim(n, d, h, 0, Bot::Rigid) {
++                    witness = true;
++                    break;
++                }
++            }
++            if !witness {
++                continue;
++            }
++            let mut target = None;
++            let dpat = self.arm_heads(n, d, mask);
++            let mut a = self.regs[n as usize].parent[d as usize];
++            // the new back edge a → … → d must pass through a constructor, or the redirect
++            // makes an unguarded union cycle (X = X | …), which collapses to its other arms
++            let mut guarded_path = false;
++            while a != NONE {
++                guarded_path |= self.regs[n as usize].nodes[a as usize].is_ctor();
++                if guarded_path
++                    && !redirect.contains_key(&a)
++                    && self.arm_heads(n, a, mask) == dpat
++                    && self.sim(n, a, n, d, bottom)
++                {
++                    target = Some(a);
++                    break;
++                }
++                a = self.regs[n as usize].parent[a as usize];
++            }
++            match target {
++                Some(t) => {
++                    redirect.insert(d, t);
++                }
++                None => orphans += 1,
++            }
++        }
++        if redirect.is_empty() {
++            return (n, 0, orphans);
++        }
++        let g: Vec<Node> = self.regs[n as usize]
++            .nodes
++            .iter()
++            .map(|node| {
++                node.map(&mut |c| {
++                    let mut s = c;
++                    while let Some(&t) = redirect.get(&s) {
++                        s = t;
++                    }
++                    s
++                })
++            })
++            .collect();
++        let Some(out) = self.canon(g, 0) else { return (n, 0, orphans) };
++        FOLD_CHECKS.with(|c| {
++            let mut c = c.borrow_mut();
++            c.0 += 1;
++        });
++        if !self.sim(out, 0, n, 0, bottom) {
++            FOLD_CHECKS.with(|c| c.borrow_mut().1 += 1);
++            if std::env::var("RH_EP3_T1DUMP").is_ok_and(|v| v == "1") {
++                /* Input-bearing debug probe omitted. */
++            }
++        }
++        (out, redirect.len() as u32, orphans)
++    }
++
++    // ------------------------------------------------------------------ backstop
++
++    fn truncation(&self, id: TyId, i: u32, k: u32, out: &mut String) {
++        let nodes = &self.regs[id as usize].nodes;
++        match &nodes[i as usize] {
++            Node::Leaf(l) => {
++                out.push('L');
++                out.push_str(&l.to_string());
++            }
++            Node::Union(cs) => {
++                let mut parts: Vec<String> = cs
++                    .iter()
++                    .map(|c| {
++                        let mut s = String::new();
++                        self.truncation(id, *c, k, &mut s);
++                        s
++                    })
++                    .collect();
++                parts.sort();
++                parts.dedup();
++                out.push_str("U(");
++                out.push_str(&parts.join(","));
++                out.push(')');
++            }
++            other => {
++                if k == 0 {
++                    out.push('*');
++                    return;
++                }
++                out.push_str(&format!("{:?}(", Self::arm_head(other)));
++                for c in other.kids() {
++                    self.truncation(id, *c, k - 1, out);
++                    out.push(',');
++                }
++                out.push(')');
++            }
++        }
++    }
++
++    /// ARTMC-style backstop: merge all compound states sharing a k-truncation, determinize.
++    /// Sound (adds arms only); bounds the state count. Returns (widened, groups merged).
++    pub fn widen_k(&mut self, n: TyId, k: u32) -> (TyId, u32) {
++        let len = self.regs[n as usize].nodes.len();
++        let mut groups: BTreeMap<String, Vec<u32>> = BTreeMap::new();
++        for i in 0..len as u32 {
++            let node = &self.regs[n as usize].nodes[i as usize];
++            if node.is_leaf() {
++                continue;
++            }
++            let mut s = String::new();
++            self.truncation(n, i, k, &mut s);
++            groups.entry(s).or_default().push(i);
++        }
++        let merged: Vec<Vec<u32>> = groups.into_values().filter(|g| g.len() > 1).collect();
++        if merged.is_empty() {
++            return (n, 0);
++        }
++        let mut g: Vec<Node> = self.regs[n as usize].nodes.to_vec();
++        let mut rep: HashMap<u32, u32> = HashMap::new();
++        for grp in &merged {
++            let u = g.len() as u32;
++            g.push(Node::Union(grp.clone().into_boxed_slice()));
++            for &i in grp {
++                rep.insert(i, u);
++            }
++        }
++        for i in 0..len {
++            let node = g[i].map(&mut |c| *rep.get(&c).unwrap_or(&c));
++            g[i] = node;
++        }
++        let root = *rep.get(&0).unwrap_or(&0);
++        match self.canon(g, root) {
++            Some(out) => (out, merged.len() as u32),
++            None => (n, 0),
++        }
++    }
++
++    /// Constructor depth of an acyclic type (unions don't count); for a cyclic one the depth
++    /// of its DFS spanning tree, which is what the backstop guard needs (it skips cycles).
++    pub fn depth(&mut self, id: TyId) -> u32 {
++        if let Some(&d) = self.depth_memo.get(&id) {
++            return d;
++        }
++        let nodes = &self.regs[id as usize].nodes;
++        let len = nodes.len();
++        let mut memo: Vec<u32> = vec![NONE; len];
++        // reverse DFS order: children have larger numbers in an acyclic DFS numbering? Not
++        // necessarily (shared states), so compute with an explicit post-order.
++        fn go(nodes: &[Node], i: usize, memo: &mut Vec<u32>, onstack: &mut Vec<bool>) -> u32 {
++            if memo[i] != NONE {
++                return memo[i];
++            }
++            if onstack[i] {
++                return 0;
++            }
++            onstack[i] = true;
++            let step = if nodes[i].is_ctor() { 1 } else { 0 };
++            let mut best = 0;
++            for &c in nodes[i].kids() {
++                best = best.max(go(nodes, c as usize, memo, onstack));
++            }
++            onstack[i] = false;
++            memo[i] = step + best;
++            memo[i]
++        }
++        let mut onstack = vec![false; len];
++        let d = go(nodes, 0, &mut memo, &mut onstack);
++        self.depth_memo.insert(id, d);
++        d
++    }
++
++    // ------------------------------------------------------------------ printing
++
++    /// A μ-term: back-edge targets are bound with μ.
++    pub fn show(&self, id: TyId) -> String {
++        let nodes = &self.regs[id as usize].nodes;
++        let mut targets: Vec<u32> = Vec::new();
++        fn scan(nodes: &[Node], i: u32, path: &mut Vec<u32>, targets: &mut Vec<u32>) {
++            if path.contains(&i) {
++                if !targets.contains(&i) {
++                    targets.push(i);
++                }
++                return;
++            }
++            path.push(i);
++            for &c in nodes[i as usize].kids() {
++                scan(nodes, c, path, targets);
++            }
++            path.pop();
++        }
++        scan(nodes, 0, &mut Vec::new(), &mut targets);
++        targets.sort_unstable();
++        let names: HashMap<u32, char> =
++            targets.iter().enumerate().map(|(k, t)| (*t, ['X', 'Y', 'Z', 'V', 'W', 'T'][k % 6])).collect();
++        fn go(this: &Interner, nodes: &[Node], i: u32, path: &mut Vec<u32>, names: &HashMap<u32, char>) -> String {
++            if path.contains(&i) {
++                return names[&i].to_string();
++            }
++            if path.len() > 40 {
++                return "…".into();
++            }
++            path.push(i);
++            let body = match &nodes[i as usize] {
++                Node::Leaf(l) => short_leaf(this.leaf_ty(*l)),
++                Node::Array([c]) => format!("Array[{}]", go(this, nodes, *c, path, names)),
++                Node::Hash([k, v]) => format!("Hash[{}, {}]", go(this, nodes, *k, path, names), go(this, nodes, *v, path, names)),
++                Node::Tuple(cs) => format!("[{}]", cs.iter().map(|c| go(this, nodes, *c, path, names)).collect::<Vec<_>>().join(", ")),
++                Node::Record(s, cs) => {
++                    let (f, _) = &this.shapes[*s as usize];
++                    format!(
++                        "{{{}}}",
++                        f.iter().zip(cs.iter()).map(|(n, c)| format!("{}: {}", n.as_str(), go(this, nodes, *c, path, names))).collect::<Vec<_>>().join(", ")
++                    )
++                }
++                Node::Class(ci, cs) => format!(
++                    "{}[{}]",
++                    this.classes[*ci as usize].0.as_str(),
++                    cs.iter().map(|c| go(this, nodes, *c, path, names)).collect::<Vec<_>>().join(", ")
++                ),
++                Node::Union(cs) => {
++                    let mut parts: Vec<String> = cs.iter().map(|c| go(this, nodes, *c, path, names)).collect();
++                    parts.sort();
++                    let s = parts.join(" | ");
++                    if path.len() > 1 { format!("({s})") } else { s }
++                }
++            };
++            path.pop();
++            match names.get(&i) {
++                Some(n) => format!("μ{n}.({body})"),
++                None => body,
++            }
++        }
++        go(self, nodes, 0, &mut Vec::new(), &names)
++    }
++
++    /// RBS: one alias per back-edge target (the root included), bodies inline otherwise.
++    pub fn show_rbs(&self, id: TyId, name: &str) -> String {
++        let nodes = &self.regs[id as usize].nodes;
++        let mut targets: Vec<u32> = vec![0];
++        fn scan(nodes: &[Node], i: u32, path: &mut Vec<u32>, targets: &mut Vec<u32>) {
++            if path.contains(&i) {
++                if !targets.contains(&i) {
++                    targets.push(i);
++                }
++                return;
++            }
++            path.push(i);
++            for &c in nodes[i as usize].kids() {
++                scan(nodes, c, path, targets);
++            }
++            path.pop();
++        }
++        scan(nodes, 0, &mut Vec::new(), &mut targets);
++        // shared compound states get an alias too, so printing stays linear in the states
++        let mut indeg = vec![0u32; nodes.len()];
++        for n in nodes.iter() {
++            for &c in n.kids() {
++                indeg[c as usize] += 1;
++            }
++        }
++        for (i, n) in nodes.iter().enumerate() {
++            if indeg[i] > 1 && !n.is_leaf() {
++                targets.push(i as u32);
++            }
++        }
++        targets.sort_unstable();
++        targets.dedup();
++        let alias: HashMap<u32, String> = targets
++            .iter()
++            .enumerate()
++            .map(|(k, t)| (*t, if k == 0 { name.to_string() } else { format!("{name}{k}") }))
++            .collect();
++        fn go(this: &Interner, nodes: &[Node], i: u32, top: bool, alias: &HashMap<u32, String>, path: &mut Vec<u32>) -> String {
++            if !top {
++                if let Some(a) = alias.get(&i) {
++                    return a.clone();
++                }
++            }
++            if path.contains(&i) {
++                return "untyped".into();
++            }
++            path.push(i);
++            let s = match &nodes[i as usize] {
++                Node::Leaf(l) => rbs_leaf(this.leaf_ty(*l)),
++                Node::Array([c]) => format!("Array[{}]", go(this, nodes, *c, false, alias, path)),
++                Node::Hash([k, v]) => format!("Hash[{}, {}]", go(this, nodes, *k, false, alias, path), go(this, nodes, *v, false, alias, path)),
++                Node::Tuple(cs) => format!("[{}]", cs.iter().map(|c| go(this, nodes, *c, false, alias, path)).collect::<Vec<_>>().join(", ")),
++                Node::Record(s, cs) => {
++                    let (f, _) = &this.shapes[*s as usize];
++                    format!(
++                        "{{ {} }}",
++                        f.iter().zip(cs.iter()).map(|(n, c)| format!("{}: {}", n.as_str(), go(this, nodes, *c, false, alias, path))).collect::<Vec<_>>().join(", ")
++                    )
++                }
++                Node::Class(ci, cs) => format!(
++                    "{}[{}]",
++                    rbs_class(this.classes[*ci as usize].0.as_str()),
++                    cs.iter().map(|c| go(this, nodes, *c, false, alias, path)).collect::<Vec<_>>().join(", ")
++                ),
++                Node::Union(cs) => {
++                    let mut parts: Vec<String> = cs.iter().map(|c| go(this, nodes, *c, false, alias, path)).collect();
++                    // nil last, as RBS writers do
++                    parts.sort_by_key(|p| (p == "nil", p.clone()));
++                    parts.dedup();
++                    parts.join(" | ")
++                }
++            };
++            path.pop();
++            s
++        }
++        targets
++            .iter()
++            .map(|t| format!("type {} = {}", alias[t], go(self, nodes, *t, true, &alias, &mut Vec::new())))
++            .collect::<Vec<_>>()
++            .join("\n")
++    }
++}
++
++fn rbs_class(name: &str) -> String {
++    if name.contains("::") || name.chars().next().is_some_and(|c| c.is_ascii_uppercase()) {
++        format!("::{name}")
++    } else {
++        name.to_string()
++    }
++}
++
++fn short_leaf(t: &Ty) -> String {
++    match t {
++        Ty::Int => "Integer".into(),
++        Ty::Float => "Float".into(),
++        Ty::Bool => "bool".into(),
++        Ty::Str => "String".into(),
++        Ty::Sym => "Symbol".into(),
++        Ty::Nil => "nil".into(),
++        Ty::Untyped => "untyped".into(),
++        Ty::Bottom => "⊥".into(),
++        Ty::Var { var } => format!("Var{}", var.0),
++        Ty::Class { id, .. } => id.0.as_str().to_string(),
++        Ty::Relation { of } => format!("Relation[{}]", of.0.as_str()),
++        other => format!("{other:?}").chars().take(24).collect(),
++    }
++}
++
++fn rbs_leaf(t: &Ty) -> String {
++    match t {
++        Ty::Int => "Integer".into(),
++        Ty::Float => "Float".into(),
++        Ty::Bool => "bool".into(),
++        Ty::Str => "String".into(),
++        Ty::Sym => "Symbol".into(),
++        Ty::Date => "::Date".into(),
++        Ty::Time => "::Time".into(),
++        Ty::Nil => "nil".into(),
++        Ty::Bottom => "bot".into(),
++        Ty::Class { id, .. } => rbs_class(id.0.as_str()),
++        Ty::Relation { of } => format!("::ActiveRecord::Relation[{}]", rbs_class(of.0.as_str())),
++        _ => "untyped".into(),
++    }
++}
++
++fn is_cyclic(nodes: &[Node]) -> bool {
++    // iterative three-colour DFS
++    let n = nodes.len();
++    let mut color = vec![0u8; n];
++    for start in 0..n {
++        if color[start] != 0 {
++            continue;
++        }
++        let mut stack: Vec<(usize, usize)> = vec![(start, 0)];
++        color[start] = 1;
++        while let Some(&mut (s, ref mut next)) = stack.last_mut() {
++            let ks = nodes[s].kids();
++            if *next >= ks.len() {
++                color[s] = 2;
++                stack.pop();
++                continue;
++            }
++            let c = ks[*next] as usize;
++            *next += 1;
++            match color[c] {
++                1 => return true,
++                0 => {
++                    color[c] = 1;
++                    stack.push((c, 0));
++                }
++                _ => {}
++            }
++        }
++    }
++    false
++}
++
++#[derive(Clone, Copy, PartialEq, Eq, Debug)]
++pub(crate) enum Bot {
++    /// leaves (⊥ included) match only themselves
++    Rigid,
++    /// ⊥ and `Var` (Roundhouse's "not computed yet") in the covered side sit below
++    /// everything; with `untyped`, so does `Untyped`
++    Bottom { untyped: bool },
++    /// an explicit leaf-class mask (1 = ⊥, 2 = `Var`, 4 = `Untyped`); the model's tests use ⊥ only
++    #[allow(dead_code)]
++    Mask(u8),
++}
++
++impl Bot {
++    fn mask(self) -> u8 {
++        match self {
++            Bot::Rigid => 0,
++            Bot::Bottom { untyped } => 1 | 2 | if untyped { 4 } else { 0 },
++            Bot::Mask(m) => m,
++        }
++    }
++}
++
++#[allow(clippy::too_many_arguments)]
++fn sim_go(a: &[Node], b: &[Node], p: u32, q: u32, mask: u8, lc: &[u8], visited: &mut HashSet<(u32, u32)>) -> bool {
++    if !visited.insert((p, q)) {
++        return true;
++    }
++    let nq = &b[q as usize];
++    if let Node::Leaf(l) = nq {
++        if lc[*l as usize] & mask != 0 {
++            return true;
++        }
++    }
++    if let Node::Union(arms) = nq {
++        for &c in arms.iter() {
++            if !sim_go(a, b, p, c, mask, lc, visited) {
++                return false;
++            }
++        }
++        return true;
++    }
++    let np = &a[p as usize];
++    let parms: Vec<u32> = match np {
++        Node::Union(x) => x.to_vec(),
++        _ => vec![p],
++    };
++    match nq {
++        Node::Leaf(l) => parms.iter().any(|&r| matches!(&a[r as usize], Node::Leaf(x) if x == l)),
++        Node::Array([c]) => match parms.iter().find(|&&r| matches!(a[r as usize], Node::Array(_))) {
++            Some(&r) => {
++                let Node::Array([ac]) = a[r as usize] else { unreachable!() };
++                sim_go(a, b, ac, *c, mask, lc, visited)
++            }
++            None => false,
++        },
++        Node::Hash([k, v]) => match parms.iter().find(|&&r| matches!(a[r as usize], Node::Hash(_))) {
++            Some(&r) => {
++                let Node::Hash([ak, av]) = a[r as usize] else { unreachable!() };
++                sim_go(a, b, ak, *k, mask, lc, visited) && sim_go(a, b, av, *v, mask, lc, visited)
++            }
++            None => false,
++        },
++        other => {
++            let want = Interner::arm_head(other);
++            let qk = other.kids();
++            for &r in &parms {
++                let ar = &a[r as usize];
++                if ar.is_union() || ar.is_leaf() || Interner::arm_head(ar) != want {
++                    continue;
++                }
++                let snap = visited.clone();
++                let ak = ar.kids().to_vec();
++                if ak.iter().zip(qk.iter()).all(|(x, y)| sim_go(a, b, *x, *y, mask, lc, visited)) {
++                    return true;
++                }
++                *visited = snap;
++            }
++            false
++        }
++    }
++}
++
++thread_local! {
++    static FOLD_CHECKS: RefCell<(u64, u64)> = const { RefCell::new((0, 0)) };
++    static VIEW_BUDGET: RefCell<u64> = const { RefCell::new(0) };
++}
++
++// ---------------------------------------------------------------------------- M2 hook
++
++/// The M2 marker's carried regular type, if `t` is one. The M1′ build has no marker.
++pub(crate) fn marker_of(_t: &Ty) -> Option<TyId> {
++    None
++}
++
++fn marker_supported() -> bool {
++    false
++}
++
++/// What the typer sees at a cut: M1′ has only the anonymous cut, `Untyped`.
++fn cut_ty(_int: &mut Interner, _id: TyId, _state: u32) -> Ty {
++    Ty::Untyped
++}
++
++// ---------------------------------------------------------------------------- side table
++
++#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, PartialOrd, Ord)]
++pub(crate) enum SlotKind {
++    Ret,
++    CRet,
++    Param,
++    Ivar,
++}
++
++impl SlotKind {
++    fn idx(self) -> usize {
++        self as usize
++    }
++    fn name(self) -> &'static str {
++        ["ret", "cret", "param", "ivar"][self as usize]
++    }
++}
++
++#[derive(Clone, PartialEq, Eq, Hash, Debug, PartialOrd, Ord)]
++pub(crate) struct SlotKey {
++    pub kind: SlotKind,
++    pub owner: ClassId,
++    pub name: Symbol,
++    pub index: u32,
++    pub ivar: Option<Symbol>,
++}
++
++#[derive(Default)]
++struct Slot {
++    stored: Option<TyId>,
++    hist: Vec<TyId>,
++    seen: HashSet<TyId>,
++    /// accumulating: folded, joined or widened once; its typer-visible value is `view_1`
++    acc: bool,
++    pending: bool,
++    folds: u32,
++    visible: Option<Ty>,
++    /// the last raw input and what the store step answered for it: an identical input
++    /// (the common case once a loop settles) skips conversion and canonicalization
++    last_in: Option<(Ty, Ty)>,
++}
++
++#[derive(Default, Clone, Debug)]
++pub(crate) struct Counters {
++    pub stores: u64,
++    pub first: u64,
++    pub same: u64,
++    pub explained: u64,
++    pub changed: u64,
++    pub folds: [u64; 4],
++    pub fold_events: [u64; 4],
++    pub pending_witness: u64,
++    pub orphans: u64,
++    pub joins: u64,
++    pub revisits: u64,
++    pub nonmonotone: u64,
++    pub backstop_firings: u64,
++    pub backstop_events: u64,
++    pub post_fold_changes: u64,
++    pub conv_fail: u64,
++    pub max_states: u64,
++    pub max_input_states: u64,
++    pub unfolds: u64,
++    pub raw_hits: u64,
++    pub escalations: u64,
++}
++
++pub(crate) struct State {
++    pub int: Interner,
++    slots: HashMap<SlotKey, Slot>,
++    pub c: Counters,
++    edges: HashSet<((ClassId, Symbol), (ClassId, Symbol))>,
++    loops: Vec<(&'static str, usize, bool)>,
++    view_cache: HashMap<TyId, TyId>,
++    nanos: u128,
++    seq: u32,
++    round: u32,
++}
++
++thread_local! {
++    static STATE: RefCell<Option<State>> = const { RefCell::new(None) };
++    static SEQ: RefCell<u32> = const { RefCell::new(0) };
++}
++
++const BACKSTOP_DEPTH: u32 = 8;
++const BACKSTOP_K: u32 = 3;
++static STATE_CAP: LazyLock<usize> =
++    LazyLock::new(|| std::env::var("RH_EP3_STATES").ok().and_then(|s| s.parse().ok()).unwrap_or(256));
++static BACKSTOP_CYCLIC: LazyLock<bool> = LazyLock::new(|| std::env::var("RH_EP3_BACKSTOP").map_or(true, |v| v != "acyclic"));
++
++static UNTYPED_RIGID: LazyLock<bool> =
++    LazyLock::new(|| std::env::var("RH_EP3_UNTYPED").is_ok_and(|v| v == "rigid"));
++
++fn bottom_mode() -> Bot {
++    // ⊥ and `Var` (Roundhouse's "not computed yet": a not-yet-harvested callee types as
++    // `Var(0)`) are below everything. `Untyped` is too by default, as NOTE M1′ specifies
++    // ("the stored type covers the output with Untyped as bottom"): it is the anonymous
++    // cut, and register_method_return seeds untypeable bodies with it. With
++    // `RH_EP3_UNTYPED=rigid` (meaningful with the M2 marker only) `Untyped` is an authored
++    // gradual leaf and only ⊥/`Var` are pending: the two roles split.
++    Bot::Bottom { untyped: !*UNTYPED_RIGID }
++}
++
++/// Start of `Analyzer::analyze`: a fresh side table.
++pub(crate) fn begin() {
++    if !on() {
++        return;
++    }
++    let seq = SEQ.with(|s| {
++        *s.borrow_mut() += 1;
++        *s.borrow()
++    });
++    FOLD_CHECKS.with(|c| *c.borrow_mut() = (0, 0));
++    VIEW_BUDGET.with(|v| *v.borrow_mut() = 0);
++    STATE.with(|st| {
++        *st.borrow_mut() = Some(State {
++            int: Interner::new(),
++            slots: HashMap::new(),
++            c: Counters::default(),
++            edges: HashSet::new(),
++            loops: Vec::new(),
++            view_cache: HashMap::new(),
++            nanos: 0,
++            seq,
++            round: 0,
++        })
++    });
++}
++
++pub(crate) fn with<R>(f: impl FnOnce(&mut State) -> R) -> Option<R> {
++    if !on() {
++        return None;
++    }
++    STATE.with(|st| st.borrow_mut().as_mut().map(f))
++}
++
++/// The store step at a handoff: returns the value the typer should see next round.
++pub(crate) fn store(key: SlotKey, new: &Ty) -> Ty {
++    with(|s| s.store(key, new)).unwrap_or_else(|| new.clone())
++}
++
++pub(crate) fn edge(from: (&ClassId, &Symbol), to: (&ClassId, &Symbol)) {
++    with(|s| {
++        s.edges.insert(((from.0.clone(), from.1.clone()), (to.0.clone(), to.1.clone())));
++    });
++}
++
++/// One numeric line per round (after the round's unify step): how the side table moves.
++pub(crate) fn round_mark() {
++    with(|s| {
++        s.round += 1;
++        let total_states: u64 = s.slots.values().filter_map(|x| x.stored).map(|v| s.int.reg(v).states() as u64).sum();
++        eprintln!(
++            "rh-ep3-round: {{\"round\":{},\"stores\":{},\"changed\":{},\"explained\":{},\"folds\":{},\"joins\":{},\"backstop_firings\":{},\"unfolds\":{},\"interned\":{},\"canon_calls\":{},\"max_states\":{},\"slot_states\":{},\"ep3_ms\":{}}}",
++            s.round,
++            s.c.stores,
++            s.c.changed,
++            s.c.explained,
++            s.c.folds.iter().sum::<u64>(),
++            s.c.joins,
++            s.c.backstop_firings,
++            s.c.unfolds,
++            s.int.regs.len(),
++            s.int.stats.canon_calls,
++            s.c.max_states,
++            total_states,
++            s.nanos / 1_000_000
++        );
++    });
++}
++
++pub(crate) fn loop_done(stage: &'static str, rounds: usize, capped: bool) {
++    with(|s| s.loops.push((stage, rounds, capped)));
++}
++
++impl State {
++    fn visible(&mut self, v: TyId) -> Ty {
++        self.int.view(v, 1, &mut |i, id, st| cut_ty(i, id, st))
++    }
++
++    /// The anonymous view of a stored value as a regular type (the typer embeds it).
++    fn view_reg(&mut self, v: TyId) -> Option<TyId> {
++        if let Some(&r) = self.view_cache.get(&v) {
++            return Some(r);
++        }
++        let t = self.int.view(v, 1, &mut |_, _, _| Ty::Untyped);
++        let r = self.int.from_ty(&t, false)?;
++        self.view_cache.insert(v, r);
++        Some(r)
++    }
++
++    fn store(&mut self, key: SlotKey, new: &Ty) -> Ty {
++        let t0 = Instant::now();
++        let mut slot = self.slots.remove(&key).unwrap_or_default();
++        let out = self.store_inner(&key, &mut slot, new);
++        self.slots.insert(key, slot);
++        self.nanos += t0.elapsed().as_nanos();
++        out
++    }
++
++    fn store_inner(&mut self, key: &SlotKey, slot: &mut Slot, new: &Ty) -> Ty {
++        self.c.stores += 1;
++        if let Some((raw, out)) = &slot.last_in {
++            if raw == new {
++                self.c.same += 1;
++                self.c.raw_hits += 1;
++                return out.clone();
++            }
++        }
++        let out = self.store_step(key, slot, new);
++        slot.last_in = Some((new.clone(), out.clone()));
++        out
++    }
++
++    fn store_step(&mut self, key: &SlotKey, slot: &mut Slot, new: &Ty) -> Ty {
++        let marker = *MODE == Mode::Marker;
++        let bot = bottom_mode();
++        let kind = key.kind;
++        if *TRACE {
++            /* Input-bearing debug probe omitted. */
++        }
++        let Some(n) = self.int.from_ty(new, marker) else {
++            self.c.conv_fail += 1;
++            if *TRACE {
++                /* Input-bearing debug probe omitted. */
++            }
++            return slot.visible.clone().unwrap_or_else(|| new.clone());
++        };
++        self.c.max_input_states = self.c.max_input_states.max(self.int.reg(n).states() as u64);
++        let trace = if *TRACE { Some(slot_label(key)) } else { None };
++        let Some(old) = slot.stored else {
++            slot.stored = Some(n);
++            slot.hist.push(n);
++            slot.seen.insert(n);
++            self.c.first += 1;
++            self.c.max_states = self.c.max_states.max(self.int.reg(n).states() as u64);
++            if let Some(k) = &trace {
++                /* Input-bearing debug probe omitted. */
++            }
++            if self.int.reg(n).cyclic {
++                // a resolved marker made it recursive: the typer reads its canonical view
++                let t = self.visible(n);
++                slot.visible = Some(t.clone());
++                return t;
++            }
++            return new.clone();
++        };
++        if n == old {
++            self.c.same += 1;
++            if let Some(k) = &trace {
++                /* Input-bearing debug probe omitted. */
++            }
++            // an unchanged regular type keeps its last view: the raw tree can be a deeper
++            // unrolling of the same type (markers re-embedded through other slots' views)
++            return if slot.acc || self.int.reg(old).cyclic {
++                slot.visible.clone().unwrap_or_else(|| new.clone())
++            } else {
++                new.clone()
++            };
++        }
++        if slot.acc && self.int.covers(old, n, bot) {
++            self.c.explained += 1;
++            if let Some(k) = &trace {
++                /* Input-bearing debug probe omitted. */
++            }
++            return slot.visible.clone().unwrap_or_else(|| new.clone());
++        }
++        self.c.changed += 1;
++        let mut hs = slot.hist.clone();
++        if slot.acc && !marker {
++            if let Some(vr) = self.view_reg(old) {
++                hs.push(vr);
++            }
++        }
++        let mut v = n;
++        let mut acc = slot.acc;
++        let mut note: Vec<String> = Vec::new();
++        let (folded, did, orph) = self.int.fold(v, &hs, bot);
++        self.c.orphans += orph as u64;
++        let mut fold_now = false;
++        if did > 0 && (slot.pending || slot.acc) {
++            v = folded;
++            acc = true;
++            fold_now = true;
++            self.c.folds[kind.idx()] += did as u64;
++            self.c.fold_events[kind.idx()] += 1;
++            note.push(format!("fold×{did}"));
++        } else if did > 0 {
++            self.c.pending_witness += 1;
++            note.push("witness(pending)".into());
++        }
++        let pending = did > 0;
++        // a revisit, or a non-monotone step on an accumulating entry: join
++        let revisit = slot.seen.contains(&v);
++        if v != old && (revisit || (acc && !self.int.covers(v, old, bot))) {
++            let Some(j) = self.int.join(old, v) else {
++                // canonicalization over budget: keep the stored value (counted in canon_fail)
++                return slot.visible.clone().unwrap_or_else(|| new.clone());
++            };
++            if revisit {
++                self.c.revisits += 1;
++            } else {
++                self.c.nonmonotone += 1;
++            }
++            if j != v {
++                self.c.joins += 1;
++            }
++            v = j;
++            acc = true;
++            note.push(if revisit { "join(revisit)".into() } else { "join(nonmonotone)".into() });
++        }
++        // T3's (A2): the backstop fires whenever the value's constructor depth (back edges
++        // excluded) exceeds D, cyclic or not. The model's code guards it with `not cyclic()`,
++        // which lets a folded value keep growing below its cycles (f2 in the real typer).
++        if (*BACKSTOP_CYCLIC || !self.int.reg(v).cyclic) && self.int.depth(v) > BACKSTOP_DEPTH {
++            let (w, b) = self.int.widen_k(v, BACKSTOP_K);
++            if b > 0 {
++                self.c.backstop_firings += b as u64;
++                self.c.backstop_events += 1;
++                v = w;
++                acc = true;
++                note.push(format!("backstop×{b}"));
++            }
++        }
++        // T3 makes the k-truncation range finite, but N_3 is astronomically large: a value
++        // can keep thousands of states. Past `RH_EP3_STATES` states (default 256) the
++        // backstop escalates to coarser truncations, k = 2 then 1, which bounds the states
++        // by the distinct heads. Counted separately; it is the size bound of this design.
++        let mut k = BACKSTOP_K;
++        while self.int.reg(v).states() > *STATE_CAP && k > 1 {
++            k -= 1;
++            let (w, b) = self.int.widen_k(v, k);
++            if b > 0 {
++                self.c.escalations += 1;
++                self.c.backstop_firings += b as u64;
++                v = w;
++                acc = true;
++                note.push(format!("escalate(k={k})×{b}"));
++            }
++        }
++        if slot.folds > 0 && v != old {
++            self.c.post_fold_changes += 1;
++        }
++        self.c.max_states = self.c.max_states.max(self.int.reg(v).states() as u64);
++        if let Some(k) = &trace {
++            /* Input-bearing debug probe omitted. */
++        }
++        slot.stored = Some(v);
++        if slot.hist.last() != Some(&v) {
++            slot.hist.push(v);
++        }
++        slot.seen.insert(v);
++        slot.acc = acc;
++        slot.pending = pending;
++        if fold_now {
++            slot.folds += 1;
++        }
++        if acc || self.int.reg(v).cyclic {
++            let t = self.visible(v);
++            if *TRACE {
++                /* Input-bearing debug probe omitted. */
++            }
++            slot.visible = Some(t.clone());
++            t
++        } else {
++            slot.visible = None;
++            new.clone()
++        }
++    }
++}
++
++fn slot_label(key: &SlotKey) -> String {
++    format!(
++        "{} {}#{}[{}]{}",
++        key.kind.name(),
++        key.owner.0.as_str(),
++        key.name.as_str(),
++        key.index,
++        key.ivar.as_ref().map(|i| format!("@{}", i.as_str())).unwrap_or_default()
++    )
++}
++
++/// Methods on a cycle of the recorded call graph (non-trivial SCC or self-loop): Tarjan.
++fn cyclic_methods(edges: &HashSet<((ClassId, Symbol), (ClassId, Symbol))>) -> HashSet<(ClassId, Symbol)> {
++    let mut ids: HashMap<&(ClassId, Symbol), usize> = HashMap::new();
++    let mut names: Vec<&(ClassId, Symbol)> = Vec::new();
++    let mut adj: Vec<Vec<usize>> = Vec::new();
++    let mut self_loop: HashSet<usize> = HashSet::new();
++    let mut sorted: Vec<&((ClassId, Symbol), (ClassId, Symbol))> = edges.iter().collect();
++    sorted.sort();
++    for (a, b) in sorted.iter().map(|e| (&e.0, &e.1)) {
++        for k in [a, b] {
++            if !ids.contains_key(k) {
++                ids.insert(k, names.len());
++                names.push(k);
++                adj.push(Vec::new());
++            }
++        }
++        let (ia, ib) = (ids[a], ids[b]);
++        if ia == ib {
++            self_loop.insert(ia);
++        }
++        adj[ia].push(ib);
++    }
++    let n = names.len();
++    let (mut index, mut low, mut on) = (vec![usize::MAX; n], vec![0usize; n], vec![false; n]);
++    let mut stack: Vec<usize> = Vec::new();
++    let mut counter = 0usize;
++    let mut out: HashSet<(ClassId, Symbol)> = HashSet::new();
++    for s in 0..n {
++        if index[s] != usize::MAX {
++            continue;
++        }
++        // iterative Tarjan: frames of (node, next edge)
++        let mut frames: Vec<(usize, usize)> = vec![(s, 0)];
++        index[s] = counter;
++        low[s] = counter;
++        counter += 1;
++        stack.push(s);
++        on[s] = true;
++        while let Some(&mut (v, ref mut ei)) = frames.last_mut() {
++            if *ei < adj[v].len() {
++                let w = adj[v][*ei];
++                *ei += 1;
++                if index[w] == usize::MAX {
++                    index[w] = counter;
++                    low[w] = counter;
++                    counter += 1;
++                    stack.push(w);
++                    on[w] = true;
++                    frames.push((w, 0));
++                } else if on[w] {
++                    low[v] = low[v].min(index[w]);
++                }
++            } else {
++                frames.pop();
++                if let Some(&(p, _)) = frames.last() {
++                    low[p] = low[p].min(low[v]);
++                }
++                if low[v] == index[v] {
++                    let mut comp = Vec::new();
++                    loop {
++                        let w = stack.pop().unwrap();
++                        on[w] = false;
++                        comp.push(w);
++                        if w == v {
++                            break;
++                        }
++                    }
++                    if comp.len() > 1 || self_loop.contains(&v) {
++                        for w in comp {
++                            out.insert(names[w].clone());
++                        }
++                    }
++                }
++            }
++        }
++    }
++    out
++}
++
++/// End of `Analyzer::analyze`: one aggregate record on stderr (numbers only, no names), and
++/// with `RH_EP3_PRINT` the RBS aliases of every folded slot (public inputs only).
++pub(crate) fn end() {
++    let Some(Some(st)) = (if on() { Some(STATE.with(|s| s.borrow_mut().take())) } else { None }) else { return };
++    let cyc = cyclic_methods(&st.edges);
++    let (mut folded_slots, mut folded_in_cycle, mut folded_outside, mut folded_ivar) = (0u64, 0u64, 0u64, 0u64);
++    let (mut acc_slots, mut cyclic_slots) = (0u64, 0u64);
++    let mut by_kind_slots = [0u64; 4];
++    for (k, s) in &st.slots {
++        if s.acc {
++            acc_slots += 1;
++        }
++        if s.stored.is_some_and(|v| st.int.reg(v).cyclic) {
++            cyclic_slots += 1;
++        }
++        by_kind_slots[k.kind.idx()] += 1;
++        if s.folds > 0 {
++            folded_slots += 1;
++            match k.kind {
++                SlotKind::Ivar => folded_ivar += 1,
++                _ if cyc.contains(&(k.owner.clone(), k.name.clone())) => folded_in_cycle += 1,
++                _ => folded_outside += 1,
++            }
++        }
++    }
++    let (t1_checked, t1_violations) = FOLD_CHECKS.with(|c| *c.borrow());
++    let view_budget = VIEW_BUDGET.with(|v| *v.borrow());
++    let loops: Vec<serde_json::Value> = st
++        .loops
++        .iter()
++        .map(|(stage, rounds, capped)| serde_json::json!({"stage": stage, "rounds": rounds, "capped": capped}))
++        .collect();
++    let c = &st.c;
++    let mut m = serde_json::Map::new();
++    let mut put = |k: &str, v: serde_json::Value| {
++        m.insert(k.to_string(), v);
++    };
++    use serde_json::json;
++    put("seq", json!(st.seq));
++    put("mode", json!(match *MODE { Mode::Anon => "anon", Mode::Marker => "marker", Mode::Off => "off" }));
++    put("seed", json!("var"));
++    put("untyped_bottom", json!(!*UNTYPED_RIGID));
++    put("cap", json!(CAP.unwrap_or(12)));
++    put("slots", json!(st.slots.len()));
++    put("slots_by_kind", json!(by_kind_slots));
++    put("stores", json!(c.stores));
++    put("first", json!(c.first));
++    put("same", json!(c.same));
++    put("explained", json!(c.explained));
++    put("changed", json!(c.changed));
++    put("folds_by_kind", json!(c.folds));
++    put("fold_events_by_kind", json!(c.fold_events));
++    put("folded_slots", json!(folded_slots));
++    put("folded_in_call_cycle", json!(folded_in_cycle));
++    put("folded_outside_call_cycle", json!(folded_outside));
++    put("folded_ivar", json!(folded_ivar));
++    put("pending_witness", json!(c.pending_witness));
++    put("orphans", json!(c.orphans));
++    put("joins", json!(c.joins));
++    put("revisits", json!(c.revisits));
++    put("nonmonotone", json!(c.nonmonotone));
++    put("backstop_firings", json!(c.backstop_firings));
++    put("backstop_events", json!(c.backstop_events));
++    put("post_fold_changes", json!(c.post_fold_changes));
++    put("conv_fail", json!(c.conv_fail));
++    put("accumulating_slots", json!(acc_slots));
++    put("cyclic_slots", json!(cyclic_slots));
++    put("max_states", json!(c.max_states));
++    put("max_input_states", json!(c.max_input_states));
++    put("unfolds", json!(c.unfolds));
++    put("raw_hits", json!(c.raw_hits));
++    put("escalations", json!(c.escalations));
++    put("loops", serde_json::Value::Array(loops));
++    put("call_graph_edges", json!(st.edges.len()));
++    put("cyclic_methods", json!(cyc.len()));
++    put("interned", json!(st.int.regs.len()));
++    put("canon_calls", json!(st.int.stats.canon_calls));
++    put("canon_ms", json!((st.int.stats.canon_nanos / 1_000_000) as u64));
++    put("canon_fail", json!(st.int.stats.canon_fail));
++    put("max_det_states", json!(st.int.stats.max_det_states));
++    put("sim_calls", json!(st.int.stats.sim_calls));
++    put("ep3_ms", json!((st.nanos / 1_000_000) as u64));
++    put("t1_checked", json!(t1_checked));
++    put("t1_violations", json!(t1_violations));
++    put("view_budget", json!(view_budget));
++    let rec = serde_json::Value::Object(m);
++    eprintln!("rh-ep3: {rec}");
++    if let Ok(path) = std::env::var("RH_EP3_PRINT") {
++        let mut keys: Vec<&SlotKey> = st.slots.keys().collect();
++        keys.sort();
++        let mut out = String::new();
++        out.push_str(&format!("# rh-ep3 analysis {} mode {:?}\n", st.seq, *MODE));
++        for k in keys {
++            let s = &st.slots[k];
++            let Some(v) = s.stored else { continue };
++            let name = alias_name(k);
++            out.push_str(&format!(
++                "# {} folds={} states={} cyclic={} in_call_cycle={}\n",
++                slot_label(k),
++                s.folds,
++                st.int.reg(v).states(),
++                st.int.reg(v).cyclic,
++                cyc.contains(&(k.owner.clone(), k.name.clone()))
++            ));
++            out.push_str(&format!("# mu: {}\n", st.int.show(v)));
++            out.push_str(&st.int.show_rbs(v, &name));
++            out.push('\n');
++        }
++        use std::io::Write;
++        if let Ok(mut f) = std::fs::OpenOptions::new().create(true).append(true).open(&path) {
++            let _ = f.write_all(out.as_bytes());
++        }
++    }
++}
++
++fn alias_name(k: &SlotKey) -> String {
++    let base: String = k
++        .name
++        .as_str()
++        .chars()
++        .map(|c| if c.is_ascii_alphanumeric() { c.to_ascii_lowercase() } else { '_' })
++        .collect();
++    let base = base.trim_matches('_').to_string();
++    match k.kind {
++        SlotKind::Ret | SlotKind::CRet => base,
++        SlotKind::Param => format!("{base}_p{}", k.index),
++        SlotKind::Ivar => format!(
++            "{base}_{}",
++            k.ivar.as_ref().map(|s| s.as_str().trim_start_matches('@').to_string()).unwrap_or_default()
++        ),
++    }
++}
++
++#[cfg(test)]
++mod model_tests {
++    //! The Rust port against regular's model (`fold_model.py`, `fold_model.out`):
++    //! the same shapes, the `fold` policy and the side-table step with an identity cut
++    //! (`fold-side1`), checked for rounds and for the exact regular solution.
++    use super::*;
++
++    const BOT_ONLY: Bot = Bot::Mask(1);
++
++    struct T {
++        i: Interner,
++        str_: TyId,
++        int: TyId,
++        sym: TyId,
++        nil: TyId,
++        bot: TyId,
++    }
++
++    impl T {
++        fn new() -> Self {
++            let mut i = Interner::new();
++            let str_ = i.leaf(&Ty::Str);
++            let int = i.leaf(&Ty::Int);
++            let sym = i.leaf(&Ty::Sym);
++            let nil = i.leaf(&Ty::Nil);
++            let bot = i.leaf(&Ty::Bottom);
++            T { i, str_, int, sym, nil, bot }
++        }
++        fn u(&mut self, ts: &[TyId]) -> TyId {
++            self.i.union_many(ts)
++        }
++        fn select(&self, x: TyId, sel: u8) -> Vec<u32> {
++            let nodes = &self.i.reg(x).nodes;
++            let mut out = Vec::new();
++            for a in arms_of(nodes, 0) {
++                match (&nodes[a as usize], sel) {
++                    (Node::Hash([_, v]), b'v') => out.push(*v),
++                    (Node::Hash([k, _]), b'k') => out.push(*k),
++                    (Node::Array([c]), b'e') => out.push(*c),
++                    _ => {}
++                }
++            }
++            out
++        }
++        fn proj(&mut self, x: TyId, sel: u8) -> TyId {
++            let kids = self.select(x, sel);
++            let parts: Vec<TyId> = kids.into_iter().map(|c| self.i.sub(x, c)).collect();
++            if parts.is_empty() { self.bot } else { self.u(&parts) }
++        }
++        fn leaves(&mut self, x: TyId) -> TyId {
++            let nodes = self.i.reg(x).nodes.clone();
++            let mut parts = Vec::new();
++            for a in arms_of(&nodes, 0) {
++                if let Node::Leaf(l) = &nodes[a as usize] {
++                    if *l != self.i.bot {
++                        let s = self.i.sub(x, a);
++                        parts.push(s);
++                    }
++                }
++            }
++            if parts.is_empty() { self.bot } else { self.u(&parts) }
++        }
++        fn merge(&mut self, x: TyId, y: TyId) -> TyId {
++            if self.select(x, b'k').is_empty() {
++                return self.bot;
++            }
++            let (kx, ky, vx, vy) = (self.proj(x, b'k'), self.proj(y, b'k'), self.proj(x, b'v'), self.proj(y, b'v'));
++            let k = self.u(&[kx, ky]);
++            let v = self.u(&[vx, vy]);
++            self.i.hsh(k, v)
++        }
++    }
++
++    type Eqs = Vec<(&'static str, Box<dyn Fn(&mut T, &HashMap<&'static str, TyId>) -> TyId>)>;
++
++    fn shape(name: &str) -> Eqs {
++        let f = |t: &mut T, r: TyId| {
++            let a = t.i.arr(r);
++            let h = t.i.hsh(t.sym, r);
++            t.u(&[t.str_, a, h])
++        };
++        let g = |t: &mut T, r: TyId| {
++            let a = t.i.arr(r);
++            let h = t.i.hsh(t.str_, r);
++            t.u(&[t.int, a, h])
++        };
++        match name {
++            "self" => vec![("R", Box::new(move |t, s| f(t, s["R"])))],
++            "cycle2" => vec![("R0", Box::new(move |t, s| f(t, s["R1"]))), ("R1", Box::new(move |t, s| g(t, s["R0"])))],
++            "dhole" => vec![(
++                "R",
++                Box::new(|t, s| {
++                    let ri = t.u(&[s["R"], t.int]);
++                    let a = t.i.arr(ri);
++                    let h = t.i.hsh(t.sym, s["R"]);
++                    t.u(&[t.str_, a, h])
++                }),
++            )],
++            "f11" => vec![(
++                "R",
++                Box::new(|t, s| {
++                    let a = t.i.arr(s["R"]);
++                    let k = t.u(&[t.str_, t.sym]);
++                    let h = t.i.hsh(k, s["R"]);
++                    let tp = t.i.tup(&[t.str_, s["R"]]);
++                    t.u(&[t.str_, a, h, tp])
++                }),
++            )],
++            "chain5" => vec![
++                ("F0", Box::new(|t, s| t.i.arr(s["F1"]))),
++                ("F1", Box::new(|t, s| t.i.arr(s["F2"]))),
++                ("F2", Box::new(|t, s| t.i.arr(s["F3"]))),
++                ("F3", Box::new(|t, s| t.i.arr(s["F4"]))),
++                ("F4", Box::new(|t, s| t.i.arr(s["F5"]))),
++                ("F5", Box::new(|t, _| t.int)),
++            ],
++            "f2" => vec![
++                (
++                    "R",
++                    Box::new(|t, s| {
++                        let p = s["P"];
++                        let hv = t.proj(p, b'v');
++                        let h = t.i.hsh(t.str_, hv);
++                        let e = t.proj(p, b'e');
++                        let a = t.i.arr(e);
++                        let l = t.leaves(p);
++                        t.u(&[h, a, l])
++                    }),
++                ),
++                (
++                    "P",
++                    Box::new(|t, s| {
++                        let (r, p) = (s["R"], s["P"]);
++                        let is = t.u(&[t.int, t.str_]);
++                        let ia = t.i.arr(is);
++                        let lit = t.i.hsh(t.str_, ia);
++                        let hi = t.i.hsh(t.str_, t.int);
++                        let m1 = t.merge(r, hi);
++                        let hn = t.i.hsh(t.str_, t.nil);
++                        let m2 = t.merge(r, hn);
++                        let am2 = t.i.arr(m2);
++                        let fv = t.u(&[m1, am2]);
++                        let fed = t.i.hsh(t.str_, fv);
++                        let hv = t.proj(p, b'v');
++                        let e = t.proj(p, b'e');
++                        t.u(&[lit, fed, hv, e])
++                    }),
++                ),
++            ],
++            _ => unreachable!(),
++        }
++    }
++
++    /// The model's `run(name, policy)` for `fold` (side = false) and `fold-side1` (side = true).
++    fn run(t: &mut T, name: &str, side: bool) -> (Option<usize>, HashMap<&'static str, TyId>, u64) {
++        let eqs = shape(name);
++        let mut state: HashMap<&'static str, TyId> = eqs.iter().map(|(e, _)| (*e, t.bot)).collect();
++        let mut hist: HashMap<&str, Vec<TyId>> = state.iter().map(|(e, v)| (*e, vec![*v])).collect();
++        let mut seen: HashMap<&str, HashSet<TyId>> = state.iter().map(|(e, v)| (*e, HashSet::from([*v]))).collect();
++        let mut acc: HashMap<&str, bool> = state.keys().map(|e| (*e, false)).collect();
++        let mut pending = acc.clone();
++        let mut backstops = 0u64;
++        // identity cuts as opaque leaves carrying the regular type (M2's marker)
++        let cut_leaf = |t: &mut T, id: TyId, st: u32| -> TyId {
++            let sub = t.i.sub(id, st);
++            t.i.leaf(&Ty::Class { id: ClassId(Symbol::from(format!("⟨cut {sub}⟩").as_str())), args: vec![] })
++        };
++        for r in 1..=40 {
++            let view: HashMap<&'static str, TyId> = if side {
++                let mut v = HashMap::new();
++                for (e, s) in &state {
++                    let ty = t.i.view(*s, 1, &mut |i, id, st| {
++                        let sub = i.sub(id, st);
++                        Ty::Class { id: ClassId(Symbol::from(format!("⟨cut {sub}⟩").as_str())), args: vec![] }
++                    });
++                    let _ = cut_leaf;
++                    v.insert(*e, t.i.from_ty(&ty, false).unwrap());
++                }
++                v
++            } else {
++                state.clone()
++            };
++            let mut nxt = HashMap::new();
++            for (e, f) in &eqs {
++                let mut n = f(t, &view);
++                let old = state[e];
++                if side {
++                    // resolve_cuts: replace each cut leaf by the regular type it carries
++                    n = resolve(t, n);
++                    if acc[e] && t.i.covers(old, n, BOT_ONLY) {
++                        n = old;
++                    }
++                }
++                if n != old {
++                    let (folded, did, _) = t.i.fold(n, &hist[e], BOT_ONLY);
++                    if did > 0 && (pending[e] || acc[e]) {
++                        n = folded;
++                        acc.insert(e, true);
++                    }
++                    pending.insert(e, did > 0);
++                    if n != old && (seen[e].contains(&n) || (acc[e] && !t.i.covers(n, old, BOT_ONLY))) {
++                        n = t.i.join(old, n).unwrap();
++                        acc.insert(e, true);
++                    }
++                    if !t.i.reg(n).cyclic && t.i.depth(n) > 8 {
++                        let (w, b) = t.i.widen_k(n, 3);
++                        backstops += b as u64;
++                        if b > 0 {
++                            n = w;
++                            acc.insert(e, true);
++                        }
++                    }
++                }
++                nxt.insert(*e, n);
++            }
++            if nxt == state {
++                return (Some(r - 1), state, backstops);
++            }
++            state = nxt;
++            for (e, v) in &state {
++                hist.get_mut(e).unwrap().push(*v);
++                seen.get_mut(e).unwrap().insert(*v);
++            }
++        }
++        (None, state, backstops)
++    }
++
++    fn resolve(t: &mut T, n: TyId) -> TyId {
++        let nodes = t.i.reg(n).nodes.to_vec();
++        let mut g: Vec<Node> = nodes.clone();
++        let mut changed = false;
++        for (idx, node) in nodes.iter().enumerate() {
++            if let Node::Leaf(l) = node {
++                if let Ty::Class { id, .. } = t.i.leaf_ty(*l).clone() {
++                    if let Some(rest) = id.0.as_str().strip_prefix("⟨cut ") {
++                        let sub: TyId = rest.trim_end_matches('⟩').parse().unwrap();
++                        let base = t.i.embed(&mut g, sub);
++                        g[idx] = Node::Union(vec![base].into_boxed_slice());
++                        changed = true;
++                    }
++                }
++            }
++        }
++        if !changed {
++            return n;
++        }
++        t.i.canon(g, 0).unwrap()
++    }
++
++    /// μX. String | Array[X] | Hash[Symbol, X]
++    fn mu_self(t: &mut T) -> TyId {
++        let s = t.i.leaf_of(&Ty::Str);
++        let y = t.i.leaf_of(&Ty::Sym);
++        t.i.canon(
++            vec![
++                Node::Union(vec![1, 2, 3].into_boxed_slice()),
++                Node::Leaf(s),
++                Node::Array([0]),
++                Node::Hash([4, 0]),
++                Node::Leaf(y),
++            ],
++            0,
++        )
++        .unwrap()
++    }
++
++    #[test]
++    fn self_folds_exactly_in_three_rounds() {
++        let mut t = T::new();
++        let want = mu_self(&mut t);
++        let (rounds, st, b) = run(&mut t, "self", false);
++        assert_eq!(rounds, Some(3));
++        assert_eq!(st["R"], want, "{}", t.i.show(st["R"]));
++        assert_eq!(b, 0);
++        let mut t = T::new();
++        let want = mu_self(&mut t);
++        let (rounds, st, _) = run(&mut t, "self", true);
++        assert_eq!(rounds, Some(3));
++        assert_eq!(st["R"], want, "{}", t.i.show(st["R"]));
++    }
++
++    #[test]
++    fn cycle2_folds_exactly_in_four_rounds() {
++        let mut t = T::new();
++        let (rounds, st, _) = run(&mut t, "cycle2", false);
++        assert_eq!(rounds, Some(4));
++        assert_eq!(t.i.reg(st["R0"]).states(), 9, "{}", t.i.show(st["R0"]));
++        assert!(t.i.reg(st["R0"]).cyclic);
++        // R0 = f(R1), R1 = g(R0): the fold is the regular solution, so one more step is a fixpoint
++        let f = shape("cycle2");
++        let m: HashMap<&'static str, TyId> = st.clone();
++        let r0 = f[0].1(&mut t, &m);
++        assert_eq!(r0, st["R0"]);
++    }
++
++    #[test]
++    fn dhole_folds_to_two_state_pattern() {
++        let mut t = T::new();
++        let (rounds, st, _) = run(&mut t, "dhole", false);
++        assert_eq!(rounds, Some(3));
++        let f = shape("dhole");
++        let m: HashMap<&'static str, TyId> = st.clone();
++        assert_eq!(f[0].1(&mut t, &m), st["R"], "{}", t.i.show(st["R"]));
++    }
++
++    #[test]
++    fn f11_tuple_shape_folds() {
++        let mut t = T::new();
++        let (rounds, st, _) = run(&mut t, "f11", false);
++        assert_eq!(rounds, Some(3));
++        let f = shape("f11");
++        let m: HashMap<&'static str, TyId> = st.clone();
++        assert_eq!(f[0].1(&mut t, &m), st["R"], "{}", t.i.show(st["R"]));
++    }
++
++    #[test]
++    fn f2_fold_and_identity_cut_match_the_model() {
++        for side in [false, true] {
++            let mut t = T::new();
++            let (rounds, st, b) = run(&mut t, "f2", side);
++            assert_eq!(rounds, Some(6), "side={side}");
++            assert_eq!(b, 0);
++            assert_eq!(t.i.reg(st["R"]).states(), 8, "side={side}: {}", t.i.show(st["R"]));
++            assert_eq!(st["R"], st["P"], "side={side}");
++        }
++    }
++
++    #[test]
++    fn chain5_is_sound_but_not_exact() {
++        let mut t = T::new();
++        let (rounds, st, _) = run(&mut t, "chain5", false);
++        assert_eq!(rounds, Some(6));
++        assert!(t.i.reg(st["F0"]).cyclic, "{}", t.i.show(st["F0"]));
++    }
++
++    #[test]
++    fn lattice_laws_hold_on_a_sample() {
++        let mut t = T::new();
++        let mu = mu_self(&mut t);
++        let a = t.i.arr(t.str_);
++        let h = t.i.hsh(t.sym, t.int);
++        let u = t.u(&[t.str_, t.int]);
++        let mut st = run(&mut t, "cycle2", false).1;
++        let (r0, r1) = (st.remove("R0").unwrap(), st.remove("R1").unwrap());
++        let sample = [t.str_, t.int, a, h, u, mu, r0, r1];
++        for &x in &sample {
++            for &y in &sample {
++                let j = t.i.join(x, y).unwrap();
++                assert_eq!(j, t.i.join(y, x).unwrap());
++                assert!(t.i.covers(j, x, Bot::Rigid) && t.i.covers(j, y, Bot::Rigid));
++                assert_eq!(t.i.join(x, x).unwrap(), x);
++                if t.i.covers(x, y, Bot::Rigid) && t.i.covers(y, x, Bot::Rigid) {
++                    assert_eq!(x, y);
++                }
++                for &z in &sample {
++                    let l = t.i.join(j, z).unwrap();
++                    let r0 = t.i.join(y, z).unwrap();
++                    let r = t.i.join(x, r0).unwrap();
++                    assert_eq!(l, r);
++                }
++            }
++        }
++    }
++
++    #[test]
++    fn view_of_mu_is_m1_shape_and_round_trips() {
++        let mut t = T::new();
++        let mu = mu_self(&mut t);
++        let v = t.i.view(mu, 1, &mut |_, _, _| Ty::Untyped);
++        let want = Ty::Union {
++            variants: vec![
++                Ty::Str,
++                Ty::Array { elem: Box::new(Ty::Untyped) },
++                Ty::Hash { key: Box::new(Ty::Sym), value: Box::new(Ty::Untyped) },
++            ],
++        };
++        let mut w = Ty::Bottom;
++        for x in [want.clone()] {
++            w = crate::analyze::body::union_of(w, x);
++        }
++        assert_eq!(v, w);
++        let back = t.i.from_ty(&v, false).unwrap();
++        assert!(t.i.covers(mu, back, Bot::Bottom { untyped: true }));
++        assert_eq!(t.i.show_rbs(mu, "json"), "type json = Array[json] | Hash[Symbol, json] | String");
++    }
++}
++
++fn tree_nodes(t: &Ty) -> u64 {
++    1 + match t {
++        Ty::Array { elem } => tree_nodes(elem),
++        Ty::Hash { key, value } => tree_nodes(key) + tree_nodes(value),
++        Ty::Tuple { elems } => elems.iter().map(tree_nodes).sum(),
++        Ty::Record { row } => row.fields.values().map(tree_nodes).sum(),
++        Ty::Class { args, .. } => args.iter().map(tree_nodes).sum(),
++        Ty::Union { variants } => variants.iter().map(tree_nodes).sum(),
++        _ => 0,
++    }
++}
+diff --git a/src/analyze/harvest_return.rs b/src/analyze/harvest_return.rs
+index 382b608..80d70fc 100644
+--- a/src/analyze/harvest_return.rs
++++ b/src/analyze/harvest_return.rs
+@@ -113,13 +113,18 @@ enum HarvestWrite {
+ 
+ /// Single merge decision for an existing harvested return vs a new body type.
+ fn decide_harvested_return(existing: &Ty, new: Ty) -> HarvestWrite {
++    decide_harvested_return_with(existing, new, true)
++}
++
++/// `untie = false` is EP3's decision: the fold at the side table replaces the occurs check.
++fn decide_harvested_return_with(existing: &Ty, new: Ty, untie: bool) -> HarvestWrite {
+     if matches!(existing, Ty::Fn { .. }) {
+         return HarvestWrite::Keep;
+     }
+     if existing == &new {
+         return HarvestWrite::Keep;
+     }
+-    if let Some(untied) = untie_recursive_return(existing, &new) {
++    if untie && let Some(untied) = untie_recursive_return(existing, &new) {
+         if existing == &untied {
+             return HarvestWrite::Keep;
+         }
+@@ -166,6 +171,27 @@ pub(super) fn insert_inferred_return(
+     }
+ }
+ 
++/// EP3 (`RH_EP3`): main's merge decision without `untie`, then the side table's store step,
++/// whose answer (the typed value, or `view_1` of a folded entry) is what the typer reads.
++pub(super) fn insert_inferred_return_ep3(
++    table: &mut std::collections::HashMap<Symbol, Ty>,
++    method: &Symbol,
++    ty: Ty,
++    key: super::ep3::SlotKey,
++) {
++    let set = match table.get(method) {
++        None => Some(ty),
++        Some(existing) => match decide_harvested_return_with(existing, ty, false) {
++            HarvestWrite::Keep => None,
++            HarvestWrite::Set(next) => Some(next),
++        },
++    };
++    if let Some(next) = set {
++        let shown = super::ep3::store(key, &next);
++        table.insert(method.clone(), shown);
++    }
++}
++
+ #[cfg(test)]
+ mod tests {
+     use super::*;
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 36dc6f3..47ac0e6 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -46,6 +46,7 @@ pub(crate) mod forwarding;
+ mod filter_targets;
+ pub mod graphql;
+ mod harvest_return;
++pub(crate) mod ep3;
+ mod dirty_retype;
+ mod typing_mode;
+ mod inferred_types;
+@@ -1074,7 +1075,8 @@ impl Analyzer {
+                 }
+             }
+         }
+-        const FIXPOINT_CAP: usize = 12;
++        ep3::begin();
++        let fixpoint_cap: usize = ep3::cap(12);
+         // View-name and dynamic-render ivar sets are invariant across
+         // fixpoint rounds — they read source views, not the registry.
+         let mut dynamic_render_ivars: std::collections::HashSet<Symbol> =
+@@ -1130,13 +1132,16 @@ impl Analyzer {
+         // `get_from_cache` block → its return → the destructuring, which
+         // settles on round 9.
+         let mut prev_hints = self.capture_dirty_hints();
+-        for round in 0..FIXPOINT_CAP {
++        let mut ep3_rounds = (0usize, true);
++        for round in 0..fixpoint_cap {
++            ep3_rounds.0 = round + 1;
+             crate::timings::phase(format_args!("round {round}: harvest returns"), || {
+                 self.harvest_returns_to_registry(app, false)
+             });
+             crate::timings::phase(format_args!("round {round}: unify params"), || {
+                 self.unify_params_from_call_sites(app, UnifyScope::Production)
+             });
++            self.ep3_store_params();
+             // Returns+params settle independently of block-value
+             // verdicts (`DirtyHints`); both must be quiet before the
+             // loop stops, or a newly block-valued method leaves its
+@@ -1144,6 +1149,7 @@ impl Analyzer {
+             if self.inference_matches(&prev_hints.sig)
+                 && self.block_value_matches(&prev_hints)
+             {
++                ep3_rounds.1 = false;
+                 break;
+             }
+             // Re-type with the refined registry. Idempotent BodyTyper
+@@ -1186,9 +1192,12 @@ impl Analyzer {
+         // params as Var. After helper returns absorb those params,
+         // views are typed once more so template calls see the
+         // harvested helper surface rather than leftover untyped.
++        ep3::loop_done("production", ep3_rounds.0, ep3_rounds.1);
+         let production_sig = prev_hints.sig.clone();
+         let mut production_view_params = None;
+-        for round in 0..FIXPOINT_CAP {
++        let mut ep3_rounds = (0usize, true);
++        for round in 0..fixpoint_cap {
++            ep3_rounds.0 = round + 1;
+             crate::timings::phase(
+                 if round == 0 {
+                     "typing passes (views after fixpoint)".to_string()
+@@ -1233,13 +1242,16 @@ impl Analyzer {
+                     }
+                 },
+             );
++            self.ep3_store_params();
+             if self.inference_matches(&prev_hints.sig)
+                 && self.block_value_matches(&prev_hints)
+             {
++                ep3_rounds.1 = false;
+                 break;
+             }
+             prev_hints = self.capture_dirty_hints();
+         }
++        ep3::loop_done("tests", ep3_rounds.0, ep3_rounds.1);
+         if !self.inference_matches(&production_sig) {
+             let mut absorb_hints = self.capture_dirty_hints();
+             // The view/test rounds above moved signatures that
+@@ -1248,7 +1260,9 @@ impl Analyzer {
+             // a full retype. Only the rounds after it can be narrowed
+             // to what their predecessor moved.
+             let mut absorb_dirty: Option<std::collections::HashSet<ClassId>> = None;
+-            for round in 0..FIXPOINT_CAP {
++            let mut ep3_rounds = (0usize, true);
++            for round in 0..fixpoint_cap {
++                ep3_rounds.0 = round + 1;
+                 crate::timings::phase(
+                     if round == 0 {
+                         "typing passes (after view unify)".to_string()
+@@ -1273,14 +1287,17 @@ impl Analyzer {
+                     snapshot.clone_from(&self.inferred_params);
+                 }
+                 self.overlay_test_params(app);
++                self.ep3_store_params();
+                 if self.inference_matches(&absorb_hints.sig)
+                     && self.block_value_matches(&absorb_hints)
+                 {
++                    ep3_rounds.1 = false;
+                     break;
+                 }
+                 absorb_dirty = self.dirty_classes_for_retype(app, &absorb_hints);
+                 absorb_hints = self.capture_dirty_hints();
+             }
++            ep3::loop_done("absorb", ep3_rounds.0, ep3_rounds.1);
+         } else {
+             // View unify did not move production signatures, but helper
+             // *bodies* still need a pass against view-inferred params
+@@ -1394,6 +1411,39 @@ impl Analyzer {
+         self.type_rails_application_body(app);
+ 
+         self.stamp_inferred_method_signatures(app);
++        ep3::end();
++    }
++
++    /// EP3: the store step on every parameter slot, once per round, after the round's
++    /// whole unify step (the rows are rebuilt from call sites each round; the side table
++    /// keeps each slot's regular type and history across rounds).
++    fn ep3_store_params(&mut self) {
++        if !ep3::on() {
++            return;
++        }
++        let _mark = EpRoundMark;
++        let mut keys: Vec<(ClassId, Symbol)> = self.inferred_params.keys().cloned().collect();
++        keys.sort();
++        for (class, method) in keys {
++            let Some(row) = self.inferred_params.get(&(class.clone(), method.clone())) else { continue };
++            let row = row.clone();
++            let mut out = Vec::with_capacity(row.len());
++            for (i, t) in row.into_iter().enumerate() {
++                if matches!(t, Ty::Var { .. }) {
++                    out.push(t);
++                    continue;
++                }
++                let key = ep3::SlotKey {
++                    kind: ep3::SlotKind::Param,
++                    owner: class.clone(),
++                    name: method.clone(),
++                    index: i as u32,
++                    ivar: None,
++                };
++                out.push(ep3::store(key, &t));
++            }
++            self.inferred_params.insert((class, method), out);
++        }
+     }
+ 
+     /// Type the bodies of `direct :name do |…| … end` helpers, with the
+@@ -3161,8 +3211,22 @@ impl Analyzer {
+         // fixpoint read them back through `layer` above, which is what
+         // carries a parent's refined binding down to a subclass.
+         for (key, ivars) in refinements {
+-            let entry = self.refined_action_bindings.entry(key).or_default();
++            let entry = self.refined_action_bindings.entry(key.clone()).or_default();
+             for (k, v) in ivars {
++                let v = if ep3::on() {
++                    ep3::store(
++                        ep3::SlotKey {
++                            kind: ep3::SlotKind::Ivar,
++                            owner: key.0.clone(),
++                            name: key.1.clone(),
++                            index: 0,
++                            ivar: Some(k.clone()),
++                        },
++                        &v,
++                    )
++                } else {
++                    v
++                };
+                 entry.insert(k, v);
+             }
+         }
+@@ -4375,7 +4439,12 @@ impl Analyzer {
+                     continue;
+                 }
+             }
+-            Self::register_method_return(target, &method.name, ret.as_ref());
++            Self::register_method_return_at(
++                Some((class_id, method_kind(&method.receiver))),
++                target,
++                &method.name,
++                ret.as_ref(),
++            );
+         }
+     }
+ 
+@@ -4401,7 +4470,12 @@ impl Analyzer {
+                 // Untyped (gradual) rather than "no known method". Unlike an
+                 // unregistered class, this doesn't mask a typo — the method
+                 // has to be defined in the file to land here.
+-                Self::register_method_return(target, &method.name, ret.as_ref());
++                Self::register_method_return_at(
++                    Some((class_id, method_kind(&method.receiver))),
++                    target,
++                    &method.name,
++                    ret.as_ref(),
++                );
+             }
+         }
+         if harvest_tests {
+@@ -4413,7 +4487,12 @@ impl Analyzer {
+                         crate::dialect::MethodReceiver::Instance => &mut class.instance_methods,
+                         crate::dialect::MethodReceiver::Class => &mut class.class_methods,
+                     };
+-                    Self::register_method_return(table, &method.name, ret.as_ref());
++                    Self::register_method_return_at(
++                        Some((&module.name, method_kind(&method.receiver))),
++                        table,
++                        &method.name,
++                        ret.as_ref(),
++                    );
+                 }
+             }
+         }
+@@ -4432,7 +4511,12 @@ impl Analyzer {
+             for method in controller.class_methods() {
+                 let ret = self.method_return_ty(class_id, method);
+                 let target = &mut self.classes.entry(class_id.clone()).or_default().class_methods;
+-                Self::register_method_return(target, &method.name, ret.as_ref());
++                Self::register_method_return_at(
++                    Some((class_id, ep3::SlotKind::CRet)),
++                    target,
++                    &method.name,
++                    ret.as_ref(),
++                );
+             }
+             for action in controller.actions() {
+                 let Some(body_ty) =
+@@ -4445,7 +4529,12 @@ impl Analyzer {
+                 }
+                 let target =
+                     &mut self.classes.entry(class_id.clone()).or_default().instance_methods;
+-                Self::insert_inferred_return(target, &action.name, body_ty);
++                Self::insert_inferred_return_at(
++                    Some((class_id, ep3::SlotKind::Ret)),
++                    target,
++                    &action.name,
++                    body_ty,
++                );
+             }
+         }
+ 
+@@ -4951,10 +5040,19 @@ impl Analyzer {
+         table: &mut HashMap<Symbol, Ty>,
+         method: &Symbol,
+         body_ty: Option<&Ty>,
++    ) {
++        Self::register_method_return_at(None, table, method, body_ty)
++    }
++
++    fn register_method_return_at(
++        owner: Option<(&ClassId, ep3::SlotKind)>,
++        table: &mut HashMap<Symbol, Ty>,
++        method: &Symbol,
++        body_ty: Option<&Ty>,
+     ) {
+         match body_ty {
+             Some(t) if !matches!(t, Ty::Var { .. }) => {
+-                Self::insert_inferred_return(table, method, t.clone());
++                Self::insert_inferred_return_at(owner, table, method, t.clone());
+             }
+             _ => {
+                 if !matches!(table.get(method), Some(t) if !matches!(t, Ty::Var { .. })) {
+@@ -4972,6 +5070,21 @@ impl Analyzer {
+         harvest_return::insert_inferred_return(table, method, ty);
+     }
+ 
++    fn insert_inferred_return_at(
++        owner: Option<(&ClassId, ep3::SlotKind)>,
++        table: &mut HashMap<Symbol, Ty>,
++        method: &Symbol,
++        ty: Ty,
++    ) {
++        match owner {
++            Some((class, kind)) if ep3::on() => {
++                let key = ep3::SlotKey { kind, owner: class.clone(), name: method.clone(), index: 0, ivar: None };
++                harvest_return::insert_inferred_return_ep3(table, method, ty, key);
++            }
++            _ => harvest_return::insert_inferred_return(table, method, ty),
++        }
++    }
++
+     /// Walk every Send across the app, look up each call's target
+     /// method, and unify the argument types into
+     /// `self.inferred_params` for that (class, method). Mirrors
+@@ -5009,10 +5122,20 @@ impl Analyzer {
+         // already knows the class it is walking, so the edges are the
+         // slice of sites it appended. See `record_callers`.
+         self.callers_by_target.clear();
++        let ep3_edges = |this: &Self, caller: (&ClassId, &Symbol), slice: &[(ClassId, Symbol, Vec<Ty>, SiteKeywords)]| {
++            if !ep3::on() {
++                return;
++            }
++            for (c, m, _, _) in slice {
++                let owner = this.inherited_param_owner(&defined, c.clone(), m);
++                ep3::edge(caller, (&owner, m));
++            }
++        };
+         for model in &app.models {
+             for method in model.methods() {
+                 let from = sites.len();
+                 self.collect_send_sites(&method.body, Some(&model.name), helpers, &mut sites);
++                ep3_edges(self, (&model.name, &method.name), &sites[from..]);
+                 self.record_callers(&model.name, &sites[from..]);
+             }
+             for scope_item in model.scopes() {
+@@ -5025,6 +5148,7 @@ impl Analyzer {
+             for method in &lc.methods {
+                 let from = sites.len();
+                 self.collect_send_sites(&method.body, Some(&lc.name), helpers, &mut sites);
++                ep3_edges(self, (&lc.name, &method.name), &sites[from..]);
+                 self.record_callers(&lc.name, &sites[from..]);
+             }
+         }
+@@ -5032,11 +5156,13 @@ impl Analyzer {
+             for action in controller.actions() {
+                 let from = sites.len();
+                 self.collect_send_sites(&action.body, Some(&controller.name), helpers, &mut sites);
++                ep3_edges(self, (&controller.name, &action.name), &sites[from..]);
+                 self.record_callers(&controller.name, &sites[from..]);
+             }
+             for method in controller.class_methods() {
+                 let from = sites.len();
+                 self.collect_send_sites(&method.body, Some(&controller.name), helpers, &mut sites);
++                ep3_edges(self, (&controller.name, &method.name), &sites[from..]);
+                 self.record_callers(&controller.name, &sites[from..]);
+             }
+             // A class-body macro call (`preload_site_configs %w[a], only:
+@@ -8578,3 +8704,20 @@ mod keyword_splat_tests {
+         assert_eq!(unsplatted[0], Ty::Sym, "without a splat the literal stands alone");
+     }
+ }
++
++/// EP3: the slot kind of a harvested return by its receiver.
++fn method_kind(r: &crate::dialect::MethodReceiver) -> ep3::SlotKind {
++    match r {
++        crate::dialect::MethodReceiver::Instance => ep3::SlotKind::Ret,
++        crate::dialect::MethodReceiver::Class => ep3::SlotKind::CRet,
++    }
++}
++
++/// Prints the per-round EP3 line when the param store step of a round ends.
++struct EpRoundMark;
++
++impl Drop for EpRoundMark {
++    fn drop(&mut self) {
++        ep3::round_mark();
++    }
++}

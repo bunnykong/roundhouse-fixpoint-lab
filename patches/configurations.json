@@ -1,0 +1,153 @@
+{
+  "baseline": {
+    "patch": "baseline",
+    "env": {}
+  },
+  "sharing-1": {
+    "patch": "sharing-1",
+    "env": {}
+  },
+  "sharing-1b": {
+    "patch": "sharing-1b",
+    "env": {}
+  },
+  "sharing-1c": {
+    "patch": "sharing-1c",
+    "env": {}
+  },
+  "sharing-1d": {
+    "patch": "sharing-1d",
+    "env": {}
+  },
+  "sharing-1e": {
+    "patch": "sharing-1e",
+    "env": {}
+  },
+  "sharing-1f": {
+    "patch": "sharing-1f",
+    "env": {}
+  },
+  "sharing-1g": {
+    "patch": "sharing-1g",
+    "env": {}
+  },
+  "sharing-1b-eq": {
+    "patch": "sharing-1b-eq",
+    "env": {}
+  },
+  "sharing-1b-bound": {
+    "patch": "sharing-1b-bound",
+    "env": {
+      "RH_BOUND": "1"
+    }
+  },
+  "sharing-1d-laws": {
+    "patch": "sharing-1d-laws",
+    "env": {}
+  },
+  "sharing-1f-laws": {
+    "patch": "sharing-1f-laws",
+    "env": {}
+  },
+  "sharing-1g-laws": {
+    "patch": "sharing-1g-laws",
+    "env": {}
+  },
+  "fold2": {
+    "patch": "fold2",
+    "env": {
+      "RH_FOLD": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_BRK_ALLARMS": "1",
+      "RH_BRK_NOABSORB": "1"
+    }
+  },
+  "sccq": {
+    "patch": "sccq",
+    "env": {
+      "RH_SCHED": "sccq",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "sccq-x": {
+    "patch": "sccq-x",
+    "env": {
+      "RH_SCHED": "sccq",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "sccq-tests": {
+    "patch": "sccq-tests",
+    "env": {
+      "RH_SCHED": "sccq",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "phase-c1": {
+    "patch": "phase-c1",
+    "env": {
+      "RH_FOLD": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_BRK_ALLARMS": "1",
+      "RH_BRK_NOABSORB": "1",
+      "RH_SCHED": "sccq",
+      "RH_FOLD_TAIL": "1",
+      "RH_FOLD_VERIFY": "1",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "phase-c1a": {
+    "patch": "phase-c1",
+    "env": {
+      "RH_FOLD": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_BRK_ALLARMS": "1",
+      "RH_SCHED": "sccq",
+      "RH_FOLD_TAIL": "1",
+      "RH_FOLD_VERIFY": "1",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "phase-c2": {
+    "patch": "phase-c2",
+    "env": {
+      "RH_FOLD": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_BRK_ALLARMS": "1",
+      "RH_BRK_NOABSORB": "1",
+      "RH_SCHED": "sccq",
+      "RH_FOLD_TAIL": "1",
+      "RH_FOLD_VERIFY": "1",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "phase-c2a": {
+    "patch": "phase-c2",
+    "env": {
+      "RH_FOLD": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_BRK_ALLARMS": "1",
+      "RH_SCHED": "sccq",
+      "RH_FOLD_TAIL": "1",
+      "RH_FOLD_VERIFY": "1",
+      "RH_SCCQ_STATS": "1"
+    }
+  },
+  "ep3-m1prime": {
+    "patch": "ep3-m1prime",
+    "env": {
+      "RH_EP3": "1"
+    }
+  },
+  "ep3-m2": {
+    "patch": "ep3-m2",
+    "env": {
+      "RH_EP3": "2"
+    }
+  }
+}
