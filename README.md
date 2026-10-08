@@ -1,5 +1,7 @@
 # Roundhouse fixpoint lab
 
+Companion to the RFC [rubys/roundhouse#617](https://github.com/rubys/roundhouse/issues/617), *a fixpoint that settles*. Related work and credits are in [RELATED-WORK.md](RELATED-WORK.md).
+
 A small, reproducible place to explore why structural inference grows, what makes iteration converge,
 and how finite constructor-site identities give a least solution. It contains public Ruby reproductions,
 pinned public-app recipes, executable models, a runtime shape oracle, experimental Roundhouse patches,
