@@ -58,7 +58,8 @@ The script emits each target with flags unset, then with the following flags; on
 also enables `RH_SOUND=1`:
 
 ```sh
-RH_EMIT_REC=1 RH_FOLD=1 RH_FOLD_SLOTS=1 RH_FOLD_JOIN=1 RH_BRK_ALLARMS=1 RH_SCHED=sccq RH_FOLD_TAIL=1
+RH_EMIT_REC=1 RH_FOLD=1 RH_FOLD_SLOTS=1 RH_FOLD_JOIN=1 RH_BRK_ALLARMS=1 \
+  RH_SCHED=sccq RH_FOLD_TAIL=1 RH_FOLD_PRINT=1
 ```
 
 For every generated Rust crate it runs `cargo check --locked --message-format=json`, counting error
@@ -75,6 +76,9 @@ Condition: **emit-rec-phase-c-v1**, Phase C on `b28b17b6`, the patch base `459a5
 apps, identical runtime stubs in both Rust arms, CRuby 4.0.7, and Crystal 1.21.1.
 The packaged runner re-verified these rows on the demo binary at `142375ac`;
 [verified.json](verified.json) retains the binary hash and compiler outcomes.
+The documented three-patch recipe also builds cleanly; its generated files match that demo binary
+in all 12 app × target × off/on comparisons (3 apps, 2 targets, 2 flag states), recorded in
+[clean-patch-verified.json](clean-patch-verified.json).
 The page column describes the successful flagged builds; the baseline builds produce no runnable page.
 
 | Shape | Rust errors, off → on | Crystal, off → on | Page vs CRuby |

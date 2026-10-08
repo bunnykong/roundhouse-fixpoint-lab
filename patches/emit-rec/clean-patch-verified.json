@@ -1,0 +1,111 @@
+{
+  "condition": "emit-rec-clean-patch-v1",
+  "rows": [
+    {
+      "shape": "cycle2",
+      "target": "rust",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 64
+    },
+    {
+      "shape": "cycle2",
+      "target": "rust",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 65
+    },
+    {
+      "shape": "cycle2",
+      "target": "crystal",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    },
+    {
+      "shape": "cycle2",
+      "target": "crystal",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    },
+    {
+      "shape": "f2_merge",
+      "target": "rust",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 64
+    },
+    {
+      "shape": "f2_merge",
+      "target": "rust",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 65
+    },
+    {
+      "shape": "f2_merge",
+      "target": "crystal",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    },
+    {
+      "shape": "f2_merge",
+      "target": "crystal",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    },
+    {
+      "shape": "selfrec",
+      "target": "rust",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 64
+    },
+    {
+      "shape": "selfrec",
+      "target": "rust",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 65
+    },
+    {
+      "shape": "selfrec",
+      "target": "crystal",
+      "recursive_emission": false,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    },
+    {
+      "shape": "selfrec",
+      "target": "crystal",
+      "recursive_emission": true,
+      "identical": true,
+      "changed_files": [],
+      "files": 39
+    }
+  ],
+  "binary_sha256": {
+    "reference": "01b0a4af80d18934ceb4253a3a8a0b1d4ccfa6cba7fd5d8b3af92d21611afd1e",
+    "reconstructed": "91876980e1dd5244acb21c40c790c7d25751e833718283da05c5545ca89a4d2c"
+  },
+  "base_commit": "b28b17b68d1fc879c506765cdc18142518544494",
+  "patch_sha256": {
+    "patches/phase-c2.diff": "2f449016bbbc145b18177dad3860c6eea05a573f22ad2b8e266e1a7ba8d5505c",
+    "patches/emit-rec/sound-base.diff": "ffca5dadf81d7692c842a3caa057d2a0ab02c1d71678892bc4f9eace03c553b8",
+    "patches/emit-rec/emit-rec.diff": "ee3bed9e6f13d8c698223ae1f025ddc0c024844a97eac423c535f36a6c309be7"
+  }
+}

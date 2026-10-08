@@ -9,6 +9,8 @@ and a Lean proof of the finite-site core. Everything in this repository is Apach
 
 The [typed-recursion demo](patches/emit-rec/README.md) compiles three controller walk shapes
 as native recursive types in Rust and Crystal, with their pages checked against CRuby.
+The [soundness/settling 2×2](reproductions/settle_sound/README.md) shows why correcting Ruby
+flow and making inference settle are both needed on the merged-back normalizer.
 
 Start with the [small fixtures](reproductions/README.md), [models](models/README.md), or
 [proof scope](proof/PROOF.md). The patches are research configurations; the docs retain failed designs
