@@ -1,0 +1,135 @@
+{
+  "condition": "emit-rec-phase-c-v1",
+  "verified_utc": "2026-10-08T14:09:49Z",
+  "source_commit": "142375ac",
+  "binary_sha256": "01b0a4af80d18934ceb4253a3a8a0b1d4ccfa6cba7fd5d8b3af92d21611afd1e",
+  "ruby": "4.0.7",
+  "rust_toolchain": "1.98.1",
+  "crystal": "1.21.1",
+  "rows": [
+    {
+      "shape": "cycle2",
+      "target": "rust",
+      "recursive_emission": false,
+      "reference_bytes": 63,
+      "build_ok": false,
+      "errors": 5,
+      "error_codes": {
+        "E0308": 1,
+        "E0599": 4
+      },
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "cycle2",
+      "target": "rust",
+      "recursive_emission": true,
+      "reference_bytes": 63,
+      "build_ok": true,
+      "errors": 0,
+      "error_codes": {},
+      "page_equals_cruby": true,
+      "page_sha256": "edf406b39071700808ba979c57501c955bc7cb5df63caf43c3a735805e66655c"
+    },
+    {
+      "shape": "f2_merge",
+      "target": "rust",
+      "recursive_emission": false,
+      "reference_bytes": 175,
+      "build_ok": false,
+      "errors": 5,
+      "error_codes": {
+        "E0308": 1,
+        "E0599": 4
+      },
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "f2_merge",
+      "target": "rust",
+      "recursive_emission": true,
+      "reference_bytes": 175,
+      "build_ok": true,
+      "errors": 0,
+      "error_codes": {},
+      "page_equals_cruby": true,
+      "page_sha256": "aab1c517b8185ce6ce3ddfc5f57b4b9811acbd537fbe53afda6beffa9a9a1d13"
+    },
+    {
+      "shape": "selfrec",
+      "target": "rust",
+      "recursive_emission": false,
+      "reference_bytes": 63,
+      "build_ok": false,
+      "errors": 3,
+      "error_codes": {
+        "E0308": 1,
+        "E0599": 2
+      },
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "selfrec",
+      "target": "rust",
+      "recursive_emission": true,
+      "reference_bytes": 63,
+      "build_ok": true,
+      "errors": 0,
+      "error_codes": {},
+      "page_equals_cruby": true,
+      "page_sha256": "edf406b39071700808ba979c57501c955bc7cb5df63caf43c3a735805e66655c"
+    },
+    {
+      "shape": "cycle2",
+      "target": "crystal",
+      "recursive_emission": false,
+      "reference_bytes": 63,
+      "build_ok": false,
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "cycle2",
+      "target": "crystal",
+      "recursive_emission": true,
+      "reference_bytes": 63,
+      "build_ok": true,
+      "page_equals_cruby": true,
+      "page_sha256": "edf406b39071700808ba979c57501c955bc7cb5df63caf43c3a735805e66655c"
+    },
+    {
+      "shape": "f2_merge",
+      "target": "crystal",
+      "recursive_emission": false,
+      "reference_bytes": 175,
+      "build_ok": false,
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "f2_merge",
+      "target": "crystal",
+      "recursive_emission": true,
+      "reference_bytes": 175,
+      "build_ok": true,
+      "page_equals_cruby": true,
+      "page_sha256": "aab1c517b8185ce6ce3ddfc5f57b4b9811acbd537fbe53afda6beffa9a9a1d13"
+    },
+    {
+      "shape": "selfrec",
+      "target": "crystal",
+      "recursive_emission": false,
+      "reference_bytes": 63,
+      "build_ok": false,
+      "page_equals_cruby": null
+    },
+    {
+      "shape": "selfrec",
+      "target": "crystal",
+      "recursive_emission": true,
+      "reference_bytes": 63,
+      "build_ok": true,
+      "page_equals_cruby": true,
+      "page_sha256": "edf406b39071700808ba979c57501c955bc7cb5df63caf43c3a735805e66655c"
+    }
+  ],
+  "scope": "Three controller walk shapes. Two unused real-blog runtime methods stubbed in both Rust arms."
+}

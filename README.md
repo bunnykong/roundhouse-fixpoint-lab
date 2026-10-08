@@ -7,6 +7,9 @@ and how finite constructor-site identities give a least solution. It contains pu
 pinned public-app recipes, executable models, a runtime shape oracle, experimental Roundhouse patches,
 and a Lean proof of the finite-site core. Everything in this repository is Apache-2.0 licensed.
 
+The [typed-recursion demo](patches/emit-rec/README.md) compiles three controller walk shapes
+as native recursive types in Rust and Crystal, with their pages checked against CRuby.
+
 Start with the [small fixtures](reproductions/README.md), [models](models/README.md), or
 [proof scope](proof/PROOF.md). The patches are research configurations; the docs retain failed designs
 and the difference between completion, observed convergence, and proved properties.

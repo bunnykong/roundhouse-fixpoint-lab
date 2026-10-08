@@ -1,0 +1,1211 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index ce34d18e..1c0da96d 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -709,3 +709,7 @@ impl<'a> BodyTyper<'a> {
+             let Some(t) = current else { continue };
+-            if let Some(u) = crate::analyze::fold::head(t, crate::analyze::fold::Site::Narrow, at, self.classes().raw()) {
++            // Recursive emission (`RH_EMIT_REC=1`): an alias narrows through its
++            // body, by head, as a reference does.
++            let unfolded = crate::analyze::rec_alias::narrowable(t)
++                .or_else(|| crate::analyze::fold::head(t, crate::analyze::fold::Site::Narrow, at, self.classes().raw()));
++            if let Some(u) = unfolded {
+                 let c = out.get_or_insert_with(|| ctx.clone());
+@@ -733,2 +737,5 @@ impl<'a> BodyTyper<'a> {
+         let bound = if ivar { ctx.ivar_bindings.get(name) } else { ctx.local_bindings.get(name) }?;
++        if let Some(body) = crate::analyze::rec_alias::narrowable(bound) {
++            return Some((name.clone(), ivar, body, None));
++        }
+         let at = crate::analyze::fold::site_of(&scrutinee.span);
+@@ -1444,2 +1451,7 @@ impl<'a> BodyTyper<'a> {
+                     match &*b.node {
++                        // Recursive emission (`RH_EMIT_REC=1`): `to_h { [k, v] }`
++                        // answers a pair, not an Array of both.
++                        ExprNode::Lambda { body, .. } if method.as_str() == "to_h" && crate::analyze::rec_alias::on() => {
++                            pair_literal_ty(body).or_else(|| body.ty.clone())
++                        }
+                         ExprNode::Lambda { body, .. } => body.ty.clone(),
+@@ -2838,2 +2850,14 @@ fn collect_var_assignments_into(expr: &Expr, out: &mut HashMap<Symbol, Ty>) {
+ 
++/// Recursive emission (`RH_EMIT_REC=1`): `Tuple[A, B]` when a block body's
++/// value is a two-element array literal whose elements are typed.
++fn pair_literal_ty(body: &Expr) -> Option<Ty> {
++    let tail = match &*body.node {
++        ExprNode::Seq { exprs } => exprs.last()?,
++        _ => body,
++    };
++    let ExprNode::Array { elements, .. } = &*tail.node else { return None };
++    let [k, v] = elements.as_slice() else { return None };
++    Some(Ty::Tuple { elems: vec![k.ty.clone()?, v.ty.clone()?].into() })
++}
++
+ pub(crate) fn union_of(a: Ty, b: Ty) -> Ty {
+diff --git a/src/analyze/fold.rs b/src/analyze/fold.rs
+index 0f369102..63febf16 100644
+--- a/src/analyze/fold.rs
++++ b/src/analyze/fold.rs
+@@ -1402,2 +1402,5 @@ pub(crate) struct Expander<'a> {
+     pub tail_edges: u64,
++    /// Recursive emission (`RH_EMIT_REC=1`): a reference to a slot of a named
++    /// recursive component expands to the alias, not to its tree.
++    pub aliases: HashMap<u32, Ty>,
+ }
+@@ -1420,2 +1423,3 @@ impl<'a> Expander<'a> {
+             tail_edges: 0,
++            aliases: HashMap::new(),
+         }
+@@ -1444,2 +1448,3 @@ impl<'a> Expander<'a> {
+         match t {
++            Ty::Rec { slot } if self.aliases.contains_key(slot) => self.aliases[slot].clone(),
+             Ty::Rec { slot } => {
+@@ -1788 +1793,193 @@ pub(crate) fn rbs(t: &Ty) -> String {
+ }
++
++/// Recursive emission (`RH_EMIT_REC=1`): each strongly connected component of
++/// cyclic slots that holds a method return, as one named alias for the
++/// emitters (`analyze::rec_alias`). Read before the final expansion, while
++/// the slots still hold references. Returns the aliases and the parameter
++/// positions typed with them.
++pub(crate) fn rec_aliases(
++    classes: &HashMap<ClassId, ClassInfo>,
++) -> (Vec<super::rec_alias::RecAlias>, Vec<((ClassId, Symbol, usize), usize)>, HashMap<u32, Ty>) {
++    let (slots, graph, values) = slot_graph(classes);
++    let ix: HashMap<u32, usize> = slots.iter().enumerate().map(|(i, s)| (*s, i)).collect();
++    let succ: Vec<Vec<usize>> =
++        slots.iter().map(|s| graph[s].iter().filter_map(|t| ix.get(t).copied()).collect()).collect();
++    let mut comps: Vec<Vec<u32>> = scc(&succ)
++        .into_iter()
++        .map(|c| c.into_iter().map(|i| slots[i]).collect::<Vec<u32>>())
++        .filter(|ids| ids.len() > 1 || graph.get(&ids[0]).is_some_and(|o| o.contains(&ids[0])))
++        .collect();
++    comps.iter_mut().for_each(|c| c.sort_by_key(|s| slot_name(*s)));
++    comps.sort_by_key(|c| slot_name(c[0]));
++    let mut aliases = Vec::new();
++    let mut params = Vec::new();
++    let mut members_of: HashMap<u32, Ty> = HashMap::new();
++    for comp in comps {
++        let rets: Vec<(u32, ClassId, Symbol)> = comp
++            .iter()
++            .filter_map(|s| match key_of(*s) {
++                Some(SlotKey::Ret { class, method, class_side: false }) => Some((*s, class, method)),
++                _ => None,
++            })
++            .collect();
++        let Some(first) = rets.first() else { continue };
++        let name = super::rec_alias::camel(&slot_name(first.0));
++        let members: HashSet<u32> = comp.iter().copied().collect();
++        let methods: Vec<(ClassId, Symbol)> = rets.iter().map(|(_, c, m)| (c.clone(), m.clone())).collect();
++        // The component's slots, then its methods' parameter slots.
++        let mut sources: Vec<u32> = comp.clone();
++        let n = ST.with(|s| s.borrow().keys.len() as u32);
++        let mut own_params = Vec::new();
++        for slot in 0..n {
++            if let Some(SlotKey::Param { class, method, index }) = key_of(slot) {
++                if methods.contains(&(class.clone(), method.clone())) {
++                    sources.push(slot);
++                    own_params.push((class, method, index));
++                }
++            }
++        }
++        let mut u = Universe::new(&members, &values);
++        for s in &sources {
++            if let Some(v) = values.get(s) {
++                u.arm(v);
++            }
++        }
++        if u.unsupported {
++            count("rec_alias_unsupported");
++            continue;
++        }
++        let me = super::rec_alias::alias_ty(&name);
++        let mut arms = u.scalars.clone();
++        arms.sort_by_key(scalar_rank);
++        let nil = arms.iter().position(|t| matches!(t, Ty::Nil)).map(|i| arms.remove(i));
++        if u.has_array {
++            arms.push(Ty::Array { elem: std::sync::Arc::new(me.clone()) });
++        }
++        if u.has_hash {
++            let key = if u.key_is_rec || u.keys.is_empty() {
++                me.clone()
++            } else {
++                let mut ks = u.keys.clone();
++                ks.sort_by_key(scalar_rank);
++                if ks.len() == 1 { ks.remove(0) } else { Ty::Union { variants: ks.into() } }
++            };
++            arms.push(Ty::Hash { key: std::sync::Arc::new(key), value: std::sync::Arc::new(me.clone()) });
++        }
++        arms.extend(nil);
++        let body = if arms.len() == 1 { arms.remove(0) } else { Ty::Union { variants: arms.into() } };
++        let i = aliases.len();
++        params.extend(own_params.into_iter().map(|p| (p, i)));
++        members_of.extend(comp.iter().map(|s| (*s, me.clone())));
++        aliases.push(super::rec_alias::RecAlias { name, body, methods, dropped_gradual: u.dropped });
++    }
++    (aliases, params, members_of)
++}
++
++/// Arms collected for a `rec_aliases` body.
++struct Universe<'a> {
++    members: &'a HashSet<u32>,
++    values: &'a HashMap<u32, Ty>,
++    seen: HashSet<u32>,
++    scalars: Vec<Ty>,
++    has_array: bool,
++    has_hash: bool,
++    keys: Vec<Ty>,
++    key_is_rec: bool,
++    dropped: u64,
++    unsupported: bool,
++}
++
++impl<'a> Universe<'a> {
++    fn new(members: &'a HashSet<u32>, values: &'a HashMap<u32, Ty>) -> Self {
++        Universe {
++            members,
++            values,
++            seen: HashSet::new(),
++            scalars: Vec::new(),
++            has_array: false,
++            has_hash: false,
++            keys: Vec::new(),
++            key_is_rec: false,
++            dropped: 0,
++            unsupported: false,
++        }
++    }
++
++    /// A value position: its arms join the alias.
++    fn arm(&mut self, t: &Ty) {
++        match t {
++            Ty::Union { variants } => variants.iter().for_each(|v| self.arm(v)),
++            Ty::Rec { slot } => {
++                if !self.members.contains(slot) && self.seen.insert(*slot) {
++                    if let Some(v) = self.values.get(slot).cloned() {
++                        self.arm(&v);
++                    }
++                }
++            }
++            Ty::Array { elem } => {
++                self.has_array = true;
++                self.arm(elem);
++            }
++            Ty::Tuple { elems } => {
++                self.has_array = true;
++                elems.iter().for_each(|e| self.arm(e));
++            }
++            Ty::Hash { key, value } => {
++                self.has_hash = true;
++                self.key(key);
++                self.arm(value);
++            }
++            Ty::Untyped | Ty::Var { .. } => self.dropped += 1,
++            Ty::Bottom => {}
++            Ty::Record { .. } | Ty::Fn { .. } | Ty::Relation { .. } | Ty::SelfInstance => self.unsupported = true,
++            scalar => {
++                if !self.scalars.contains(scalar) {
++                    self.scalars.push(scalar.clone());
++                }
++            }
++        }
++    }
++
++    /// A Hash key position: scalars join `K`; a container or the
++    /// component itself makes `K` the alias.
++    fn key(&mut self, t: &Ty) {
++        match t {
++            Ty::Union { variants } => variants.iter().for_each(|v| self.key(v)),
++            Ty::Rec { slot } if self.members.contains(slot) => self.key_is_rec = true,
++            Ty::Rec { slot } => {
++                if self.seen.insert(*slot) {
++                    if let Some(v) = self.values.get(slot).cloned() {
++                        self.key(&v);
++                    }
++                }
++            }
++            Ty::Array { .. } | Ty::Tuple { .. } | Ty::Hash { .. } => {
++                self.key_is_rec = true;
++                self.arm(t);
++            }
++            Ty::Untyped | Ty::Var { .. } => self.dropped += 1,
++            Ty::Bottom => {}
++            Ty::Record { .. } | Ty::Fn { .. } | Ty::Relation { .. } | Ty::SelfInstance => self.unsupported = true,
++            scalar => {
++                if !self.keys.contains(scalar) {
++                    self.keys.push(scalar.clone());
++                }
++            }
++        }
++    }
++}
++
++fn scalar_rank(t: &Ty) -> (u8, String) {
++    let r = match t {
++        Ty::Int => 0,
++        Ty::Float => 1,
++        Ty::Bool => 2,
++        Ty::Str => 3,
++        Ty::Sym => 4,
++        Ty::Date => 5,
++        Ty::Time => 6,
++        Ty::Class { .. } => 7,
++        _ => 8,
++    };
++    (r, rbs(t))
++}
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 3fe7b9b4..e19ddfb6 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -51,2 +51,3 @@ mod dyn_probe;
+ pub(crate) mod fold;
++pub mod rec_alias;
+ mod slots;
+@@ -1653,4 +1654,25 @@ impl Analyzer {
+ 
++        // Recursive emission (`RH_EMIT_REC=1`): name each recursive component for
++        // the emitters before the expansion cuts its back edges.
++        let mut rec_members = HashMap::new();
++        if rec_alias::on() {
++            let (aliases, params, members) = fold::rec_aliases(&self.classes);
++            rec_members = members;
++            if !*fold::QUIET {
++                let dropped: u64 = aliases.iter().map(|a| a.dropped_gradual).sum();
++                eprintln!(
++                    "rh-rec: {}",
++                    serde_json::json!({"aliases": aliases.len(), "params": params.len(), "dropped_gradual": dropped})
++                );
++                if *fold::PRINT {
++                    for a in &aliases {
++                        eprintln!("rh-rec-rbs: type {} = {}", a.name, fold::rbs(&a.body));
++                    }
++                }
++            }
++            rec_alias::set(aliases, params);
++        }
+         let snapshot = self.classes.clone();
+         let mut ex = fold::Expander::new(&snapshot);
++        ex.aliases = rec_members;
+         let mut rewritten = 0u64;
+diff --git a/src/analyze/rec_alias.rs b/src/analyze/rec_alias.rs
+new file mode 100644
+index 00000000..8b5606ac
+--- /dev/null
++++ b/src/analyze/rec_alias.rs
+@@ -0,0 +1,172 @@
++//! Recursive emission research prototype (`RH_EMIT_REC=1`, with `RH_FOLD=1`):
++//! keep the fold's recursive grammars for the emitters.
++//!
++//! The fold types a recursive component's returns by reference, and its
++//! final expansion cuts every cyclic back edge to `untyped`, so an emitter
++//! sees a finite tree with `untyped` leaves (the Rust gap recorded in
++//! rubys/roundhouse#589). With this flag on, each strongly connected
++//! component of cyclic slots that holds a method return also becomes one
++//! named alias `J`, the least type closed under its slots' arms:
++//!
++//! ```text
++//! J = scalar arms | Array[J] (if any Array arm) | Hash[K, J] (if any Hash arm)
++//! ```
++//!
++//! `K` is the union of the Hash arms' key types, or `J` when a key can
++//! hold a container. The component's parameter slots contribute their
++//! arms too, so every parameter of its methods fits `J` by construction.
++//! `untyped` arms are left out and counted (`dropped_gradual`): the target
++//! compiler checks every flow into `J`, so a dropped arm that is live
++//! surfaces as a compile error, never as a wrong value.
++//!
++//! The fold's analysis is unchanged except for one typing rule under the
++//! flag: a `to_h` block whose value is a two-element array literal answers
++//! a pair, so `h.sort.to_h { |k, v| [k.to_s, f(v)] }` is `Hash[String, R]`,
++//! not `Hash[String | R, String | R]`. The lowerer types the component's
++//! methods with the alias (`ret_alias`, `param_alias`), and its re-typing
++//! narrows an alias through its body (`narrowable`). An emitter declares
++//! each alias from `all()`: Crystal as `alias J = …`, Rust as an `enum`.
++use std::collections::HashMap;
++use std::sync::{LazyLock, Mutex};
++
++use crate::ident::{ClassId, Symbol};
++use crate::ty::Ty;
++
++static ON: LazyLock<bool> = LazyLock::new(|| {
++    std::env::var("RH_EMIT_REC").is_ok_and(|s| s == "1") && std::env::var("RH_FOLD").is_ok_and(|s| s == "1")
++});
++
++/// `RH_EMIT_REC=1` with `RH_FOLD=1`; off (and every rule here inert)
++/// without the fold.
++pub fn on() -> bool {
++    *ON
++}
++
++#[derive(Clone, Debug)]
++pub struct RecAlias {
++    /// A type-like name (`TreesControllerCanonicalRet`).
++    pub name: String,
++    /// A union whose container arms refer back to `alias_ty(name)`.
++    pub body: Ty,
++    /// The methods whose return is this alias, in slot-name order.
++    pub methods: Vec<(ClassId, Symbol)>,
++    /// `untyped` arms left out of the body.
++    pub dropped_gradual: u64,
++}
++
++#[derive(Default)]
++struct Registry {
++    aliases: Vec<RecAlias>,
++    rets: HashMap<(ClassId, Symbol), usize>,
++    params: HashMap<(ClassId, Symbol, usize), usize>,
++}
++
++static REG: LazyLock<Mutex<Registry>> = LazyLock::new(Default::default);
++
++/// Replace the registry with one analysis' aliases. `params` maps a
++/// parameter position to the index of the alias it is typed with.
++pub(crate) fn set(aliases: Vec<RecAlias>, params: Vec<((ClassId, Symbol, usize), usize)>) {
++    let mut reg = REG.lock().unwrap();
++    reg.rets.clear();
++    for (i, a) in aliases.iter().enumerate() {
++        for m in &a.methods {
++            reg.rets.insert(m.clone(), i);
++        }
++    }
++    reg.params = params.into_iter().collect();
++    reg.aliases = aliases;
++}
++
++/// The nominal type an alias is referred to by.
++pub fn alias_ty(name: &str) -> Ty {
++    Ty::Class { id: ClassId(Symbol::from(name)), args: vec![].into() }
++}
++
++/// The alias `class#method` returns, if it is in a recursive component.
++pub fn ret_alias(class: &ClassId, method: &Symbol) -> Option<Ty> {
++    if !on() {
++        return None;
++    }
++    let reg = REG.lock().unwrap();
++    let i = *reg.rets.get(&(class.clone(), method.clone()))?;
++    Some(alias_ty(&reg.aliases[i].name))
++}
++
++/// The alias parameter `index` of `class#method` is typed with.
++pub fn param_alias(class: &ClassId, method: &Symbol, index: usize) -> Option<Ty> {
++    if !on() {
++        return None;
++    }
++    let reg = REG.lock().unwrap();
++    let i = *reg.params.get(&(class.clone(), method.clone(), index))?;
++    Some(alias_ty(&reg.aliases[i].name))
++}
++
++/// The body of the alias `t` names, when `t` is one.
++pub fn body_of(t: &Ty) -> Option<Ty> {
++    if !on() {
++        return None;
++    }
++    let Ty::Class { id, args } = t else { return None };
++    if !args.is_empty() {
++        return None;
++    }
++    let reg = REG.lock().unwrap();
++    reg.aliases.iter().find(|a| a.name == id.0.as_str()).map(|a| a.body.clone())
++}
++
++/// True when `t` mentions a registered alias anywhere.
++pub fn mentions_alias(t: &Ty) -> bool {
++    if !on() {
++        return false;
++    }
++    let reg = REG.lock().unwrap();
++    if reg.aliases.is_empty() {
++        return false;
++    }
++    fn go(t: &Ty, names: &[String]) -> bool {
++        match t {
++            Ty::Class { id, args } => names.iter().any(|n| n == id.0.as_str()) || args.iter().any(|a| go(a, names)),
++            Ty::Union { variants } => variants.iter().any(|v| go(v, names)),
++            Ty::Array { elem } => go(elem, names),
++            Ty::Hash { key, value } => go(key, names) || go(value, names),
++            Ty::Tuple { elems } => elems.iter().any(|e| go(e, names)),
++            _ => false,
++        }
++    }
++    let names: Vec<String> = reg.aliases.iter().map(|a| a.name.clone()).collect();
++    go(t, &names)
++}
++
++/// What a narrowing should start from when `t` involves an alias: the
++/// body for the alias itself, `t` for a type that mentions one (both are
++/// then narrowed by constructor head, as the fold narrows a reference).
++pub fn narrowable(t: &Ty) -> Option<Ty> {
++    if let Some(body) = body_of(t) {
++        return Some(body);
++    }
++    mentions_alias(t).then(|| t.clone())
++}
++
++/// Every registered alias, in registration order.
++pub fn all() -> Vec<RecAlias> {
++    if !on() {
++        return Vec::new();
++    }
++    REG.lock().unwrap().aliases.clone()
++}
++
++/// `trees_controller_canonical_ret` → `TreesControllerCanonicalRet`.
++pub(crate) fn camel(snake: &str) -> String {
++    snake
++        .split('_')
++        .filter(|p| !p.is_empty())
++        .map(|p| {
++            let mut cs = p.chars();
++            match cs.next() {
++                Some(c) => c.to_ascii_uppercase().to_string() + cs.as_str(),
++                None => String::new(),
++            }
++        })
++        .collect()
++}
+diff --git a/src/emit/crystal.rs b/src/emit/crystal.rs
+index 3eeb3ca0..13bc5d9e 100644
+--- a/src/emit/crystal.rs
++++ b/src/emit/crystal.rs
+@@ -325,3 +325,3 @@ pub fn emit(app: &App) -> Vec<EmittedFile> {
+         };
+-        files.push(library::emit_library_class_decl_with_synthesized(
++        let mut file = library::emit_library_class_decl_with_synthesized(
+             lc,
+@@ -330,3 +330,8 @@ pub fn emit(app: &App) -> Vec<EmittedFile> {
+             &controller_synth,
+-        ));
++        );
++        let decls = rec_alias_decls(&lc.name);
++        if !decls.is_empty() {
++            file.content = decls + &file.content;
++        }
++        files.push(file);
+     }
+@@ -640,2 +645,18 @@ pub fn emit(app: &App) -> Vec<EmittedFile> {
+ /// to `Roundhouse::Server.start`. Mirrors the TS emit_main_ts pipeline.
++/// Recursive emission (`RH_EMIT_REC=1`): the recursive aliases whose methods
++/// live on `class`, as Crystal `alias` declarations. Crystal's recursive
++/// aliases are native: `alias J = Hash(String, J) | Array(J) | Int64`.
++fn rec_alias_decls(class: &crate::ident::ClassId) -> String {
++    let mut s = String::new();
++    for a in crate::analyze::rec_alias::all() {
++        if a.methods.iter().any(|(c, _)| c == class) {
++            s.push_str(&format!("alias {} = {}\n", a.name, ty::crystal_ty(&a.body)));
++        }
++    }
++    if !s.is_empty() {
++        s.push('\n');
++    }
++    s
++}
++
+ fn emit_main_cr(app: &App) -> EmittedFile {
+diff --git a/src/emit/crystal/expr.rs b/src/emit/crystal/expr.rs
+index 77522214..ced67b37 100644
+--- a/src/emit/crystal/expr.rs
++++ b/src/emit/crystal/expr.rs
+@@ -557,2 +557,9 @@ fn emit_node(n: &ExprNode) -> String {
+                                 let r_s = emit_expr(r);
++                                // Recursive emission (`RH_EMIT_REC=1`): a recursive
++                                // alias never holds a NamedTuple, and the
++                                // widened test crashes Crystal 1.21's codegen
++                                // on such a union.
++                                if r.ty.as_ref().and_then(crate::analyze::rec_alias::body_of).is_some() {
++                                    return format!("{r_s}.is_a?(Hash)");
++                                }
+                                 return format!(
+@@ -565,2 +572,5 @@ fn emit_node(n: &ExprNode) -> String {
+             }
++            if let Some(s) = emit_rec_send(recv.as_ref(), method, args, block.as_ref()) {
++                return s;
++            }
+             let base = emit_send_base(recv.as_ref(), method, args, *parenthesized);
+@@ -1179,2 +1189,139 @@ fn is_simple_ident(s: &str) -> bool {
+ 
++thread_local! {
++    /// Recursive emission (`RH_EMIT_REC=1`): the class whose method is being
++    /// emitted, so a self-call can find its callee's alias parameters.
++    static REC_CLASS: std::cell::RefCell<Option<Symbol>> = const { std::cell::RefCell::new(None) };
++}
++
++/// Run `f` with `class` as the enclosing class for alias lookups.
++pub(super) fn with_rec_class<T>(class: Option<&Symbol>, f: impl FnOnce() -> T) -> T {
++    let prev = REC_CLASS.with(|c| c.replace(class.cloned()));
++    let out = f();
++    REC_CLASS.with(|c| *c.borrow_mut() = prev);
++    out
++}
++
++/// Recursive emission (`RH_EMIT_REC=1`): the alias a self-call's argument
++/// `index` is bound to, when the callee is in a recursive component.
++fn rec_param_alias(recv: Option<&Expr>, method: &Symbol, index: usize) -> Option<Ty> {
++    let self_call = recv.is_none_or(|r| matches!(&*r.node, ExprNode::SelfRef));
++    if !self_call || !crate::analyze::rec_alias::on() {
++        return None;
++    }
++    let class = REC_CLASS.with(|c| c.borrow().clone())?;
++    crate::analyze::rec_alias::param_alias(&crate::ident::ClassId(class), method, index)
++}
++
++/// Recursive emission (`RH_EMIT_REC=1`): sends on values of a recursive alias
++/// that Crystal spells differently from Ruby.
++///
++/// - `h.sort.to_h { |k, v| [a, b] }` on a Hash holding the alias: Ruby
++///   sorts `[key, value]` pairs, and a Hash's keys are unique, so this is
++///   `h.keys.sort.to_h { |k| v = h[k]; {a, b} }`. Crystal's own sorts
++///   would need `<=>` on `J`, and any sort over tuples holding `J`
++///   instantiates `Tuple(…, J)#to_s`, which Crystal 1.21 rejects.
++/// - `pairs.to_h { |k, v| [a, b] }`: Crystal's block returns a Tuple.
++/// - `j.merge(h)` on an alias receiver: only the Hash arm has `merge`.
++///   Cast to it (Ruby raises NoMethodError on another arm; Crystal raises
++///   TypeCastError) and build the argument as that arm.
++fn emit_rec_send(recv: Option<&Expr>, method: &Symbol, args: &[Expr], block: Option<&Expr>) -> Option<String> {
++    use crate::analyze::rec_alias;
++    if !rec_alias::on() {
++        return None;
++    }
++    let r = recv?;
++    let r_ty = r.ty.as_ref()?;
++    match (method.as_str(), args, block) {
++        ("to_h", [], Some(b)) => {
++            let ExprNode::Lambda { params, body, .. } = &*b.node else { return None };
++            let ExprNode::Array { elements, .. } = &*body.node else { return None };
++            let [a, b] = elements.as_slice() else { return None };
++            let ps: Vec<String> = params.iter().map(|p| p.to_string()).collect();
++            let pair = format!("{{{}, {}}}", emit_rec_value(a), emit_rec_value(b));
++            if let ExprNode::Send { recv: Some(h), method: sort, args: sort_args, block: None, .. } = &*r.node {
++                let hash_of_alias = h.ty.as_ref().is_some_and(|t| matches!(t, Ty::Hash { .. }) && rec_alias::mentions_alias(t));
++                if sort.as_str() == "sort" && sort_args.is_empty() && hash_of_alias && ps.len() == 2
++                    && matches!(&*h.node, ExprNode::Var { .. })
++                {
++                    let h_s = emit_expr(h);
++                    let (k, v) = (&ps[0], &ps[1]);
++                    return Some(format!("{h_s}.keys.sort.to_h {{ |{k}| {v} = {h_s}[{k}]; {pair} }}"));
++                }
++            }
++            if !rec_alias::mentions_alias(r_ty) {
++                return None;
++            }
++            Some(format!("{}.to_h {{ |{}| {pair} }}", emit_expr(r), ps.join(", ")))
++        }
++        ("merge", [arg], None) => {
++            let body = rec_alias::body_of(r_ty)?;
++            let arms: Vec<Ty> = match body {
++                Ty::Union { variants } => variants.iter().cloned().collect(),
++                t => vec![t],
++            };
++            let hash = arms.into_iter().find(|t| matches!(t, Ty::Hash { .. }))?;
++            let h_s = super::ty::crystal_ty(&hash);
++            Some(format!("{}.as({h_s}).merge({})", emit_expr(r), emit_as_rec(arg, &hash)))
++        }
++        _ => None,
++    }
++}
++
++/// A value headed into a container of the alias: a call into the
++/// component is cast to the alias (see `emit_do_block`).
++fn emit_rec_value(e: &Expr) -> String {
++    let s = emit_expr(e);
++    if let ExprNode::Send { recv, method, block: None, .. } = &*e.node {
++        if let Some(alias) = rec_ret_alias(recv.as_ref(), method) {
++            return format!("{s}.as({})", super::ty::crystal_ty(&alias));
++        }
++    }
++    s
++}
++
++/// Recursive emission (`RH_EMIT_REC=1`): the alias a self-call returns, when
++/// the callee is in a recursive component.
++fn rec_ret_alias(recv: Option<&Expr>, method: &Symbol) -> Option<Ty> {
++    let self_call = recv.is_none_or(|r| matches!(&*r.node, ExprNode::SelfRef));
++    if !self_call || !crate::analyze::rec_alias::on() {
++        return None;
++    }
++    let class = REC_CLASS.with(|c| c.borrow().clone())?;
++    crate::analyze::rec_alias::ret_alias(&crate::ident::ClassId(class), method)
++}
++
++/// Recursive emission (`RH_EMIT_REC=1`): emit `e` where `expected` is wanted.
++/// Crystal's generics are invariant, so a literal container headed for a
++/// recursive alias is built as the alias' own Hash or Array arm (an `of`
++/// clause, element by element); anything else is emitted as is, and
++/// Crystal checks that it fits.
++fn emit_as_rec(e: &Expr, expected: &Ty) -> String {
++    let arms: Vec<Ty> = match crate::analyze::rec_alias::body_of(expected) {
++        Some(Ty::Union { variants }) => variants.iter().cloned().collect(),
++        Some(t) => vec![t],
++        None if crate::analyze::rec_alias::mentions_alias(expected) => vec![expected.clone()],
++        None => return emit_expr(e),
++    };
++    match &*e.node {
++        ExprNode::Hash { entries, .. } => {
++            if let Some(Ty::Hash { key, value }) = arms.iter().find(|t| matches!(t, Ty::Hash { .. })) {
++                let parts: Vec<String> = entries
++                    .iter()
++                    .map(|(k, v)| format!("{} => {}", emit_as_rec(k, key), emit_as_rec(v, value)))
++                    .collect();
++                let (k_s, v_s) = (super::ty::crystal_ty(key), super::ty::crystal_ty(value));
++                return format!("({{{}}} of {k_s} => {v_s})", parts.join(", "));
++            }
++        }
++        ExprNode::Array { elements, .. } => {
++            if let Some(Ty::Array { elem }) = arms.iter().find(|t| matches!(t, Ty::Array { .. })) {
++                let parts: Vec<String> = elements.iter().map(|x| emit_as_rec(x, elem)).collect();
++                return format!("([{}] of {})", parts.join(", "), super::ty::crystal_ty(elem));
++            }
++        }
++        _ => {}
++    }
++    emit_expr(e)
++}
++
+ pub(super) fn emit_send_base(
+@@ -1187,3 +1334,7 @@ pub(super) fn emit_send_base(
+         .iter()
+-        .map(|a| emit_expr_with_form_hint(a, force_hash_form_for_arg(recv, method)))
++        .enumerate()
++        .map(|(i, a)| match rec_param_alias(recv, method, i) {
++            Some(alias) => emit_as_rec(a, &alias),
++            None => emit_expr_with_form_hint(a, force_hash_form_for_arg(recv, method)),
++        })
+         .collect();
+@@ -1677,3 +1828,12 @@ pub(super) fn emit_do_block(base: &str, block: &Expr) -> String {
+     };
+-    let body_str = emit_expr(body);
++    let mut body_str = emit_expr(body);
++    // Recursive emission (`RH_EMIT_REC=1`): a block whose value is a call into
++    // a recursive component is cast to its alias. Crystal types the call
++    // as the alias' one-level expansion, and `Array(expansion)` is not
++    // `Array(J)`: `xs.map { |x| walk(x) }` would not fit `J`.
++    if let ExprNode::Send { recv, method, block: None, .. } = &*body.node {
++        if let Some(alias) = rec_ret_alias(recv.as_ref(), method) {
++            body_str = format!("{body_str}.as({})", super::ty::crystal_ty(&alias));
++        }
++    }
+     let params_str = if params.is_empty() {
+diff --git a/src/emit/crystal/method.rs b/src/emit/crystal/method.rs
+index 8e6732dd..12dd06f8 100644
+--- a/src/emit/crystal/method.rs
++++ b/src/emit/crystal/method.rs
+@@ -82,9 +82,9 @@ pub fn emit_method(m: &MethodDef) -> String {
+     // etc.) keep the bridge — its narrowing is sound there.
+-    let body_text = if m.name.as_str() == "[]"
+-        && matches!(m.receiver, MethodReceiver::Instance)
+-    {
+-        super::expr::with_suppressed_ivar_not_nil(|| emit_expr(&m.body))
+-    } else {
+-        emit_expr(&m.body)
+-    };
++    let body_text = super::expr::with_rec_class(m.enclosing_class.as_ref(), || {
++        if m.name.as_str() == "[]" && matches!(m.receiver, MethodReceiver::Instance) {
++            super::expr::with_suppressed_ivar_not_nil(|| emit_expr(&m.body))
++        } else {
++            emit_expr(&m.body)
++        }
++    });
+     // Crystal disallows `@ivar` references inside `def self.X` (class
+diff --git a/src/emit/rust.rs b/src/emit/rust.rs
+index a6705d7a..69ddd4a1 100644
+--- a/src/emit/rust.rs
++++ b/src/emit/rust.rs
+@@ -22,2 +22,3 @@ mod method;
+ mod shared;
++mod rec_enum;
+ pub(crate) mod ty;
+@@ -1464,2 +1465,4 @@ pub fn emit(app: &App) -> Vec<EmittedFile> {
+     // under `src/`, so adding a new file is enough — no list to update.
++    // Recursive emission (`RH_EMIT_REC=1`): each recursive alias as an enum.
++    rec_enum::add_files(&mut files);
+     files.push(emit_lib_rs(&files));
+diff --git a/src/emit/rust/expr/mod.rs b/src/emit/rust/expr/mod.rs
+index 447213d0..98ffc33f 100644
+--- a/src/emit/rust/expr/mod.rs
++++ b/src/emit/rust/expr/mod.rs
+@@ -925,2 +925,5 @@ fn emit_expr_inner(e: &Expr) -> String {
+         ExprNode::Send { recv, method, args, block, .. } => {
++            if let Some(s) = super::rec_enum::emit_send(e) {
++                return s;
++            }
+             // `recv.each { ... }` on Hash / Vec — Ruby returns the
+diff --git a/src/emit/rust/method.rs b/src/emit/rust/method.rs
+index 04c29e6b..07b1b1db 100644
+--- a/src/emit/rust/method.rs
++++ b/src/emit/rust/method.rs
+@@ -500,3 +500,6 @@ pub(super) fn emit_instance_method(
+     let param_types = collect_param_types(m);
+-    let body = super::expr::with_param_types(param_types, || super::expr::with_current_return_ty(return_ty.clone(), || super::expr::with_method_scope(&m.body, || {
++    // Recursive emission (`RH_EMIT_REC=1`): a method of a recursive component,
++    // from its types (`rec_enum::emit_body`); otherwise as before.
++    let rec_body = if is_init { None } else { super::rec_enum::emit_body(m) };
++    let body = if let Some(b) = rec_body { b } else { super::rec_enum::with_rec_class(m.enclosing_class.as_ref(), || super::expr::with_param_types(param_types, || super::expr::with_current_return_ty(return_ty.clone(), || super::expr::with_method_scope(&m.body, || {
+         if is_init {
+@@ -527,3 +530,3 @@ pub(super) fn emit_instance_method(
+         }
+-    })));
++    }))))};
+     // Function-tail Some(...) wrap: if the method returns Option<T>
+diff --git a/src/emit/rust/rec_enum.rs b/src/emit/rust/rec_enum.rs
+new file mode 100644
+index 00000000..a82d0e90
+--- /dev/null
++++ b/src/emit/rust/rec_enum.rs
+@@ -0,0 +1,433 @@
++//! Recursive emission (`RH_EMIT_REC=1`): recursive aliases as Rust enums.
++//!
++//! Each alias (`analyze::rec_alias`) becomes `enum J { Int(i64), Str(String),
++//! Array(Vec<J>), Hash(Vec<(String, J)>), Nil }` in `src/models/rh_rec.rs`,
++//! reachable from every controller and view through `crate::models::*`. A
++//! Hash is a `Vec` of pairs because Ruby's Hash keeps insertion order. The
++//! enum prints as Ruby does (`to_s`, Ruby 3.4's `inspect`).
++//!
++//! A method of the component is emitted from its types: `is_a?` and
++//! `case … when Hash / when Array` on a `J` binding become `match` arms on
++//! its variants, with the binding narrowed to the payload; each arm's value
++//! is injected back into `J`. A shape this does not cover returns `None`,
++//! and the method is emitted as before.
++use std::cell::RefCell;
++use std::collections::HashMap;
++use std::path::PathBuf;
++
++use crate::analyze::rec_alias::{self, RecAlias};
++use crate::dialect::MethodDef;
++use crate::emit::EmittedFile;
++use crate::expr::{Expr, ExprNode, Literal, Pattern};
++use crate::ident::{ClassId, Symbol};
++use crate::ty::Ty;
++
++thread_local! {
++    static REC_CLASS: RefCell<Option<ClassId>> = const { RefCell::new(None) };
++}
++
++/// Run `f` with `class` as the class whose method is being emitted.
++pub(super) fn with_rec_class<T>(class: Option<&Symbol>, f: impl FnOnce() -> T) -> T {
++    let prev = REC_CLASS.with(|c| c.replace(class.map(|s| ClassId(s.clone()))));
++    let out = f();
++    REC_CLASS.with(|c| *c.borrow_mut() = prev);
++    out
++}
++
++fn rec_class() -> Option<ClassId> {
++    REC_CLASS.with(|c| c.borrow().clone())
++}
++
++/// The variants an alias' body has.
++struct Arms {
++    name: String,
++    int: bool,
++    float: bool,
++    boolean: bool,
++    str: bool,
++    sym: bool,
++    nil: bool,
++    array: bool,
++    /// The Rust key type of the Hash arm, when there is one.
++    hash: Option<String>,
++}
++
++impl Arms {
++    fn of(name: &str, body: &Ty) -> Option<Arms> {
++        let mut a = Arms {
++            name: name.to_string(),
++            int: false, float: false, boolean: false, str: false, sym: false, nil: false, array: false, hash: None,
++        };
++        let arms: Vec<&Ty> = match body {
++            Ty::Union { variants } => variants.iter().collect(),
++            t => vec![t],
++        };
++        for t in arms {
++            match t {
++                Ty::Int => a.int = true,
++                Ty::Float => a.float = true,
++                Ty::Bool => a.boolean = true,
++                Ty::Str => a.str = true,
++                Ty::Sym => a.sym = true,
++                Ty::Nil => a.nil = true,
++                Ty::Array { .. } => a.array = true,
++                Ty::Hash { key, .. } => {
++                    a.hash = Some(match &**key {
++                        Ty::Str | Ty::Sym => "String".to_string(),
++                        Ty::Int => "i64".to_string(),
++                        k if rec_alias::body_of(k).is_some() => name.to_string(),
++                        _ => return None,
++                    })
++                }
++                _ => return None,
++            }
++        }
++        Some(a)
++    }
++
++    fn decl(&self) -> String {
++        let j = &self.name;
++        let mut vs = Vec::new();
++        let mut ins = Vec::new();
++        let mut push = |on: bool, v: String, i: &str| {
++            if on {
++                vs.push(v);
++                ins.push(i.to_string());
++            }
++        };
++        push(self.int, "Int(i64)".into(), "            Self::Int(n) => n.to_string(),");
++        push(self.float, "Float(f64)".into(), "            Self::Float(f) => format!(\"{f:?}\"),");
++        push(self.boolean, "Bool(bool)".into(), "            Self::Bool(b) => b.to_string(),");
++        push(self.str, "Str(String)".into(), "            Self::Str(s) => rh_quote(s),");
++        push(self.sym, "Sym(String)".into(), "            Self::Sym(s) => format!(\":{s}\"),");
++        push(self.array, format!("Array(Vec<{j}>)"),
++            "            Self::Array(xs) => format!(\"[{}]\", xs.iter().map(|x| x.rh_inspect()).collect::<Vec<_>>().join(\", \")),");
++        let key_inspect = match self.hash.as_deref() {
++            Some("String") => "rh_quote(k)",
++            Some("i64") => "k.to_string()",
++            _ => "k.rh_inspect()",
++        };
++        if let Some(k) = &self.hash {
++            vs.push(format!("Hash(Vec<({k}, {j})>)"));
++            ins.push(format!(
++                "            Self::Hash(kvs) if kvs.is_empty() => \"{{}}\".to_string(),\n            Self::Hash(kvs) => format!(\"{{{{{{}}}}}}\", kvs.iter().map(|(k, v)| format!(\"{{}} => {{}}\", {key_inspect}, v.rh_inspect())).collect::<Vec<_>>().join(\", \")),"
++            ));
++        }
++        if self.nil {
++            vs.push("Nil".into());
++            ins.push("            Self::Nil => \"nil\".to_string(),".into());
++        }
++        let default = if self.nil { "Self::Nil" } else if self.hash.is_some() { "Self::Hash(Vec::new())" }
++            else if self.array { "Self::Array(Vec::new())" } else if self.int { "Self::Int(0)" } else { "Self::Str(String::new())" };
++        let merge = match &self.hash {
++            Some(k) => format!(
++                "    /// Ruby's `Hash#merge`; any other arm raises NoMethodError in Ruby.\n    pub fn rh_merge(self, other: Vec<({k}, {j})>) -> {j} {{\n        match self {{\n            Self::Hash(mut h) => {{\n                for (k, v) in other {{\n                    match h.iter_mut().find(|e| e.0 == k) {{\n                        Some(e) => e.1 = v,\n                        None => h.push((k, v)),\n                    }}\n                }}\n                Self::Hash(h)\n            }}\n            other => panic!(\"NoMethodError: undefined method 'merge' for {{}}\", other.rh_inspect()),\n        }}\n    }}\n"
++            ),
++            None => String::new(),
++        };
++        format!(
++            "/// A recursive type from the analyzer (RH_EMIT_REC).\n#[derive(Clone, Debug, PartialEq)]\npub enum {j} {{\n    {}\n}}\n\nimpl Default for {j} {{\n    fn default() -> Self {{\n        {default}\n    }}\n}}\n\nimpl {j} {{\n    /// Ruby's `inspect`.\n    pub fn rh_inspect(&self) -> String {{\n        match self {{\n{}\n        }}\n    }}\n\n{merge}}}\n\nimpl crate::http::RubyToS for {j} {{\n    fn ruby_to_s(&self) -> String {{\n        match self {{\n{}{}            other => other.rh_inspect(),\n        }}\n    }}\n}}\n\n/// Ruby's `to_s`, for views that interpolate the value.\nimpl std::fmt::Display for {j} {{\n    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {{\n        f.write_str(&crate::http::RubyToS::ruby_to_s(self))\n    }}\n}}\n",
++            vs.join(",\n    "),
++            ins.join("\n"),
++            if self.str { "            Self::Str(s) => s.clone(),\n" } else { "" },
++            if self.nil { "            Self::Nil => String::new(),\n" } else { "" },
++        )
++    }
++}
++
++const QUOTE: &str = "/// Ruby's `String#inspect` for the characters an app's strings use.\nfn rh_quote(s: &str) -> String {\n    let mut out = String::from(\"\\\"\");\n    let cs: Vec<char> = s.chars().collect();\n    for (i, c) in cs.iter().enumerate() {\n        match c {\n            '\"' => out.push_str(\"\\\\\\\"\"),\n            '\\\\' => out.push_str(\"\\\\\\\\\"),\n            '\\n' => out.push_str(\"\\\\n\"),\n            '\\t' => out.push_str(\"\\\\t\"),\n            '\\r' => out.push_str(\"\\\\r\"),\n            '#' if matches!(cs.get(i + 1), Some('{' | '$' | '@')) => out.push_str(\"\\\\#\"),\n            c => out.push(*c),\n        }\n    }\n    out.push('\"');\n    out\n}\n";
++
++/// Add `src/models/rh_rec.rs` and re-export it from `src/models/mod.rs`.
++pub(super) fn add_files(files: &mut Vec<EmittedFile>) {
++    let aliases: Vec<RecAlias> = rec_alias::all();
++    let decls: Vec<String> =
++        aliases.iter().filter_map(|a| Arms::of(&a.name, &a.body)).map(|arms| arms.decl()).collect();
++    if decls.is_empty() {
++        return;
++    }
++    let content = format!("// Generated by Roundhouse (RH_EMIT_REC): recursive types.\n\n{QUOTE}\n{}", decls.join("\n"));
++    files.push(EmittedFile { path: PathBuf::from("src/models/rh_rec.rs"), content });
++    let mod_rs = PathBuf::from("src/models/mod.rs");
++    let mut found = false;
++    for f in files.iter_mut().filter(|f| f.path == mod_rs) {
++        f.content.push_str("pub mod rh_rec;\npub use rh_rec::*;\n");
++        found = true;
++    }
++    if !found {
++        files.push(EmittedFile { path: mod_rs, content: "pub mod rh_rec;\npub use rh_rec::*;\n".into() });
++    }
++}
++
++/// What an emitted expression is, in the alias' terms.
++#[derive(Clone, Copy, PartialEq, Debug)]
++enum Rt {
++    Alias,
++    /// The Hash arm's payload, `Vec<(K, J)>`.
++    HashP,
++    /// The Array arm's payload, `Vec<J>`.
++    ArrayP,
++    Str,
++    Int,
++    Nil,
++}
++
++fn alias_name(t: &Ty) -> Option<String> {
++    rec_alias::body_of(t)?;
++    match t {
++        Ty::Class { id, .. } => Some(id.0.as_str().to_string()),
++        _ => None,
++    }
++}
++
++fn self_call(recv: Option<&Expr>) -> bool {
++    recv.is_none_or(|r| matches!(&*r.node, ExprNode::SelfRef))
++}
++
++struct Body<'a> {
++    arms: &'a Arms,
++    class: ClassId,
++}
++
++impl Body<'_> {
++    fn inject(&self, (s, t): (String, Rt)) -> Option<String> {
++        let j = &self.arms.name;
++        Some(match t {
++            Rt::Alias => s,
++            Rt::HashP if self.arms.hash.is_some() => format!("{j}::Hash({s})"),
++            Rt::ArrayP if self.arms.array => format!("{j}::Array({s})"),
++            Rt::Str if self.arms.str => format!("{j}::Str({s})"),
++            Rt::Int if self.arms.int => format!("{j}::Int({s})"),
++            Rt::Nil if self.arms.nil => format!("{j}::Nil"),
++            _ => return None,
++        })
++    }
++
++    /// The variant `when <class>` selects, and the binding's payload type.
++    fn variant(&self, class: &str) -> Option<(&'static str, Rt)> {
++        match class {
++            "Hash" if self.arms.hash.is_some() => Some(("Hash", Rt::HashP)),
++            "Array" if self.arms.array => Some(("Array", Rt::ArrayP)),
++            "String" if self.arms.str => Some(("Str", Rt::Str)),
++            "Integer" if self.arms.int => Some(("Int", Rt::Int)),
++            _ => None,
++        }
++    }
++
++    fn expr(&self, e: &Expr, env: &HashMap<String, Rt>) -> Option<(String, Rt)> {
++        let j = &self.arms.name;
++        match &*e.node {
++            ExprNode::Var { name, .. } => Some((name.as_str().to_string(), *env.get(name.as_str())?)),
++            ExprNode::Seq { exprs } if exprs.len() == 1 => self.expr(&exprs[0], env),
++            ExprNode::Lit { value: Literal::Str { value } } => Some((format!("{value:?}.to_string()"), Rt::Str)),
++            ExprNode::Lit { value: Literal::Int { value } } => Some((format!("{value}_i64"), Rt::Int)),
++            ExprNode::Lit { value: Literal::Nil } => Some((String::new(), Rt::Nil)),
++            ExprNode::If { cond, then_branch, else_branch } => {
++                let ExprNode::Send { recv: Some(r), method, args, .. } = &*cond.node else { return None };
++                let (ExprNode::Var { name: x, .. }, [arg]) = (&*r.node, args.as_slice()) else { return None };
++                let ExprNode::Const { path } = &*arg.node else { return None };
++                if method.as_str() != "is_a?" || env.get(x.as_str()) != Some(&Rt::Alias) {
++                    return None;
++                }
++                let (variant, payload) = self.variant(path.last()?.as_str())?;
++                let mut inner = env.clone();
++                inner.insert(x.as_str().to_string(), payload);
++                let t = self.inject(self.expr(then_branch, &inner)?)?;
++                let f = self.inject(self.expr(else_branch, env)?)?;
++                Some((format!("match {x} {{\n    {j}::{variant}({x}) => {{ {t} }}\n    {x} => {{ {f} }}\n}}"), Rt::Alias))
++            }
++            ExprNode::Case { scrutinee, arms } => {
++                let ExprNode::Var { name: x, .. } = &*scrutinee.node else { return None };
++                if env.get(x.as_str()) != Some(&Rt::Alias) {
++                    return None;
++                }
++                let mut out = Vec::new();
++                let mut has_else = false;
++                for arm in arms {
++                    if arm.guard.is_some() {
++                        return None;
++                    }
++                    match &arm.pattern {
++                        Pattern::Expr { expr } => {
++                            let ExprNode::Const { path } = &*expr.node else { return None };
++                            let (variant, payload) = self.variant(path.last()?.as_str())?;
++                            let mut inner = env.clone();
++                            inner.insert(x.as_str().to_string(), payload);
++                            let v = self.inject(self.expr(&arm.body, &inner)?)?;
++                            out.push(format!("    {j}::{variant}({x}) => {{ {v} }}"));
++                        }
++                        Pattern::Wildcard => {
++                            has_else = true;
++                            out.push(format!("    {x} => {{ {} }}", self.inject(self.expr(&arm.body, env)?)?));
++                        }
++                        _ => return None,
++                    }
++                }
++                if !has_else {
++                    out.push(format!("    _ => {}", self.inject((String::new(), Rt::Nil))?));
++                }
++                Some((format!("match {x} {{\n{}\n}}", out.join("\n")), Rt::Alias))
++            }
++            ExprNode::Send { recv, method, args, block, .. } => {
++                self.send(recv.as_ref(), method.as_str(), args, block.as_ref(), env)
++            }
++            _ => None,
++        }
++    }
++
++    fn send(&self, recv: Option<&Expr>, method: &str, args: &[Expr], block: Option<&Expr>, env: &HashMap<String, Rt>) -> Option<(String, Rt)> {
++        if self_call(recv) && block.is_none() {
++            let m = Symbol::from(method);
++            alias_name(&rec_alias::ret_alias(&self.class, &m)?).filter(|n| *n == self.arms.name)?;
++            let mut vs = Vec::new();
++            for (i, a) in args.iter().enumerate() {
++                alias_name(&rec_alias::param_alias(&self.class, &m, i)?).filter(|n| *n == self.arms.name)?;
++                vs.push(self.inject(self.expr(a, env)?)?);
++            }
++            return Some((format!("self.{method}({})", vs.join(", ")), Rt::Alias));
++        }
++        let r = recv?;
++        let lambda = |b: Option<&Expr>| match b.map(|b| &*b.node) {
++            Some(ExprNode::Lambda { params, body, .. }) => Some((params.clone(), body.clone())),
++            _ => None,
++        };
++        match (method, args) {
++            ("transform_values", []) | ("map", []) => {
++                let (rs, rt) = self.expr(r, env)?;
++                let (params, body) = lambda(block)?;
++                let [p] = params.as_slice() else { return None };
++                let mut inner = env.clone();
++                inner.insert(p.as_str().to_string(), Rt::Alias);
++                let v = self.inject(self.expr(&body, &inner)?)?;
++                match (method, rt) {
++                    ("transform_values", Rt::HashP) => Some((
++                        format!("{rs}.into_iter().map(|(__k, {p})| (__k, {v})).collect::<Vec<_>>()"),
++                        Rt::HashP,
++                    )),
++                    ("map", Rt::ArrayP) => Some((format!("{rs}.into_iter().map(|{p}| {v}).collect::<Vec<_>>()"), Rt::ArrayP)),
++                    _ => None,
++                }
++            }
++            // `h.sort.to_h { |k, v| [a, b] }`: a Hash's keys are unique, so
++            // sorting its pairs sorts by key.
++            ("to_h", []) => {
++                let ExprNode::Send { recv: Some(h), method: sort, args: sargs, block: None, .. } = &*r.node else { return None };
++                if sort.as_str() != "sort" || !sargs.is_empty() || self.arms.hash.as_deref() != Some("String") {
++                    return None;
++                }
++                let (hs, Rt::HashP) = self.expr(h, env)? else { return None };
++                let (params, body) = lambda(block)?;
++                let [k, v] = params.as_slice() else { return None };
++                let ExprNode::Array { elements, .. } = &*body.node else { return None };
++                let [ke, ve] = elements.as_slice() else { return None };
++                let mut inner = env.clone();
++                inner.insert(k.as_str().to_string(), Rt::Str);
++                inner.insert(v.as_str().to_string(), Rt::Alias);
++                let (ks, Rt::Str) = self.expr(ke, &inner)? else { return None };
++                let vs = self.inject(self.expr(ve, &inner)?)?;
++                Some((
++                    format!("{{ let mut __p = {hs}; __p.sort_by(|x, y| x.0.cmp(&y.0)); __p.into_iter().map(|({k}, {v})| ({ks}, {vs})).collect::<Vec<_>>() }}"),
++                    Rt::HashP,
++                ))
++            }
++            ("to_s", []) if block.is_none() => match self.expr(r, env)? {
++                (rs, Rt::Str) => Some((format!("{rs}.to_string()"), Rt::Str)),
++                _ => None,
++            },
++            _ => None,
++        }
++    }
++}
++
++/// The body of a method in a recursive component, from its types; `None`
++/// when a shape is not covered.
++pub(super) fn emit_body(m: &MethodDef) -> Option<String> {
++    let class = ClassId(m.enclosing_class.clone()?);
++    let alias = rec_alias::ret_alias(&class, &m.name)?;
++    let name = alias_name(&alias)?;
++    let arms = Arms::of(&name, &rec_alias::body_of(&alias)?)?;
++    let mut env = HashMap::new();
++    for (i, p) in m.params.iter().enumerate() {
++        alias_name(&rec_alias::param_alias(&class, &m.name, i)?).filter(|n| *n == name)?;
++        env.insert(p.name.as_str().to_string(), Rt::Alias);
++    }
++    let b = Body { arms: &arms, class };
++    b.inject(b.expr(&m.body, &env)?)
++}
++
++/// A send outside the component's bodies that the alias changes: a call
++/// into the component, whose arguments are built as the alias, or `merge`
++/// on an alias value.
++pub(super) fn emit_send(e: &Expr) -> Option<String> {
++    if !rec_alias::on() {
++        return None;
++    }
++    let ExprNode::Send { recv, method, args, block: None, .. } = &*e.node else { return None };
++    if self_call(recv.as_ref()) {
++        let class = rec_class()?;
++        rec_alias::ret_alias(&class, method)?;
++        let mut vs = Vec::new();
++        for (i, a) in args.iter().enumerate() {
++            let p = rec_alias::param_alias(&class, method, i)?;
++            let name = alias_name(&p)?;
++            vs.push(build(a, &Arms::of(&name, &rec_alias::body_of(&p)?)?)?);
++        }
++        return Some(format!("self.{method}({})", vs.join(", ")));
++    }
++    let r = recv.as_ref()?;
++    if method.as_str() == "merge" && args.len() == 1 {
++        let t = r.ty.as_ref()?;
++        let arms = Arms::of(&alias_name(t)?, &rec_alias::body_of(t)?)?;
++        let pairs = hash_pairs(&args[0], &arms)?;
++        let rs = super::expr::emit_expr(r);
++        let owned = if rs.ends_with(".clone()") { rs } else { format!("{rs}.clone()") };
++        return Some(format!("{owned}.rh_merge({pairs})"));
++    }
++    None
++}
++
++/// `e` built as the alias: literals become its constructors; an
++/// expression already typed as the alias (a call into the component, a
++/// `merge` on an alias value) is emitted as it is.
++fn build(e: &Expr, arms: &Arms) -> Option<String> {
++    let j = &arms.name;
++    match &*e.node {
++        ExprNode::Lit { value: Literal::Int { value } } if arms.int => Some(format!("{j}::Int({value}_i64)")),
++        ExprNode::Lit { value: Literal::Str { value } } if arms.str => Some(format!("{j}::Str({value:?}.to_string())")),
++        ExprNode::Lit { value: Literal::Nil } if arms.nil => Some(format!("{j}::Nil")),
++        ExprNode::Array { elements, .. } if arms.array => {
++            let xs = elements.iter().map(|x| build(x, arms)).collect::<Option<Vec<_>>>()?;
++            Some(format!("{j}::Array(vec![{}])", xs.join(", ")))
++        }
++        ExprNode::Hash { .. } if arms.hash.is_some() => Some(format!("{j}::Hash({})", hash_pairs(e, arms)?)),
++        ExprNode::Send { recv: Some(r), method, .. }
++            if method.as_str() == "merge" && r.ty.as_ref().and_then(alias_name).as_deref() == Some(j.as_str()) =>
++        {
++            Some(super::expr::emit_expr(e))
++        }
++        ExprNode::Send { recv, method, .. } if self_call(recv.as_ref()) => {
++            let ret = rec_alias::ret_alias(&rec_class()?, method)?;
++            (alias_name(&ret)?.as_str() == j.as_str()).then(|| super::expr::emit_expr(e))
++        }
++        ExprNode::Var { .. } if e.ty.as_ref().and_then(alias_name).as_deref() == Some(j.as_str()) => {
++            Some(format!("{}.clone()", super::expr::emit_expr(e)))
++        }
++        _ => None,
++    }
++}
++
++/// A Hash literal's entries as the alias' Hash payload, `vec![(k, v), …]`.
++fn hash_pairs(e: &Expr, arms: &Arms) -> Option<String> {
++    let ExprNode::Hash { entries, .. } = &*e.node else { return None };
++    let key = arms.hash.as_deref()?;
++    let mut ps = Vec::new();
++    for (k, v) in entries {
++        let ks = match (&*k.node, key) {
++            (ExprNode::Lit { value: Literal::Str { value } }, "String") => format!("{value:?}.to_string()"),
++            (ExprNode::Lit { value: Literal::Sym { value } }, "String") => format!("{:?}.to_string()", value.as_str()),
++            (ExprNode::Lit { value: Literal::Int { value } }, "i64") => format!("{value}_i64"),
++            _ => return None,
++        };
++        ps.push(format!("({ks}, {})", build(v, arms)?));
++    }
++    Some(format!("vec![{}]", ps.join(", ")))
++}
+diff --git a/src/lower/controller_to_library/mod.rs b/src/lower/controller_to_library/mod.rs
+index ec529b9e..176531dd 100644
+--- a/src/lower/controller_to_library/mod.rs
++++ b/src/lower/controller_to_library/mod.rs
+@@ -2510,3 +2510,8 @@ fn action_to_method(
+     //     forcing fixture surfaces.
+-    let ret_ty = if !is_public && method_name.ends_with("_params") {
++    // Recursive emission (`RH_EMIT_REC=1`): a private helper in a recursive
++    // component returns, and takes, the component's named alias.
++    let rec_ret = if is_public { None } else { crate::analyze::rec_alias::ret_alias(&controller.name, &a.name) };
++    let ret_ty = if let Some(alias) = rec_ret.clone() {
++        alias
++    } else if !is_public && method_name.ends_with("_params") {
+         let spec = self::params::first_permit_in(&a.body)
+@@ -2549,4 +2554,9 @@ fn action_to_method(
+         .map(|(i, p)| {
++            let rec_param = rec_ret
++                .as_ref()
++                .and_then(|_| crate::analyze::rec_alias::param_alias(&controller.name, &a.name, i));
+             let ty = if p.rest {
+                 Ty::Untyped
++            } else if let Some(alias) = rec_param {
++                alias
+             } else {

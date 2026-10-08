@@ -1,0 +1,303 @@
+diff --git a/src/analyze/body/send.rs b/src/analyze/body/send.rs
+index f8de5b18..8bdb0ecb 100644
+--- a/src/analyze/body/send.rs
++++ b/src/analyze/body/send.rs
+@@ -19,2 +19,49 @@ use super::{BodyTyper, ClassInfo, Ctx, union_many, union_of, unknown};
+ 
++/// Block and Hash flow (`RH_SOUND=1`, off by default): base transfers that drop
++/// flows the runtime takes. Block binding splats one yielded Array across
++/// a block of two or more parameters; a Hash yields its Enumerable
++/// iterators one `[key, value]` pair, as CRuby does.
++pub(crate) static SOUND: std::sync::LazyLock<bool> =
++    std::sync::LazyLock::new(|| std::env::var("RH_SOUND").is_ok_and(|s| s == "1"));
++/// `RH_SOUND_ABLATE=pairs,toh,merge,enum,params`: ablation only, turns the named parts
++/// of `RH_SOUND` back off. `pairs` is the splat and the Hash pair model
++/// together: the pair model without the splat binds `|k, v|` to the pair.
++static SOUND_ABLATE: std::sync::LazyLock<String> =
++    std::sync::LazyLock::new(|| std::env::var("RH_SOUND_ABLATE").unwrap_or_default());
++fn sound(part: &str) -> bool {
++    *SOUND && !SOUND_ABLATE.split(',').any(|p| p == part)
++}
++
++/// `RH_SOUND`: what a block of `n` (two or more) parameters binds when ONE
++/// value of type `t` is yielded. An Array destructures: a tuple by
++/// position (`nil` past its end), an Array of unknown length to its
++/// element at every position (the convention `a, b = list` uses). Any
++/// other value binds the first parameter and `nil` the rest. A union binds
++/// per arm and joins by position. `None` while `t` is pending (`Var`): the
++/// caller keeps the unsplat binding.
++fn splat_yield(t: &Ty, n: usize) -> Option<Vec<Ty>> {
++    let arms: Vec<&Ty> = match t {
++        Ty::Union { variants } => variants.iter().collect(),
++        _ => vec![t],
++    };
++    let mut out: Option<Vec<Ty>> = None;
++    for arm in arms {
++        let row: Vec<Ty> = match arm {
++            Ty::Var { .. } => return None,
++            Ty::Untyped => vec![Ty::Untyped; n],
++            // prototype fold: a reference nobody unfolded is `Untyped`.
++            Ty::Rec { .. } => vec![Ty::Untyped; n],
++            Ty::Tuple { elems } => (0..n).map(|i| elems.get(i).cloned().unwrap_or(Ty::Nil)).collect(),
++            Ty::Array { elem } => vec![(**elem).clone(); n],
++            Ty::Relation { of } => vec![Ty::Class { id: of.clone(), args: vec![].into() }; n],
++            other => std::iter::once(other.clone()).chain(std::iter::repeat_n(Ty::Nil, n - 1)).collect(),
++        };
++        out = Some(match out {
++            None => row,
++            Some(acc) => acc.into_iter().zip(row).map(|(a, b)| union_of(a, b)).collect(),
++        });
++    }
++    out
++}
++
+ impl<'a> BodyTyper<'a> {
+@@ -225,3 +272,8 @@ impl<'a> BodyTyper<'a> {
+         }
+-        let Some(param_tys) = self.block_params_for(recv_ty, method) else {
++        let param_tys = if sound("pairs") {
++            self.block_param_tys(recv_ty, method, params.len(), block)
++        } else {
++            self.block_params_for(recv_ty, method)
++        };
++        let Some(param_tys) = param_tys else {
+             return new_ctx;
+@@ -287,3 +339,50 @@ impl<'a> BodyTyper<'a> {
+ 
+-/// Per-param types a block yields, given the receiver type and method.
++    /// `RH_SOUND`: the types a block's `n` declared parameters bind. Ruby
++    /// destructures ("auto-splats") ONE yielded Array across a block of two
++    /// or more parameters, so `pairs.to_h { |k, v| }` over `Array[[K, V]]`
++    /// binds `k: K, v: V` — not `k: [K, V]` with `v` unbound, which loses
++    /// every flow out of `v`. A union receiver under the all-arms rule
++    /// binds per arm, each arm splat on its own, then joins by position.
++    fn block_param_tys(&self, recv_ty: Option<&Ty>, method: &Symbol, n: usize, block: &Expr) -> Option<Vec<Ty>> {
++        if *crate::analyze::fold::BRK_ALLARMS {
++            if let Some(Ty::Union { variants }) = recv_ty {
++                let mut joined: Option<Vec<Ty>> = None;
++                for v in variants.iter() {
++                    if matches!(v, Ty::Nil | Ty::Var { .. }) {
++                        continue;
++                    }
++                    let Some(p) = self.block_param_tys(Some(v), method, n, block) else { continue };
++                    joined = Some(match joined.take() {
++                        None => p,
++                        Some(mut acc) => {
++                            let m = acc.len().max(p.len());
++                            acc.resize(m, Ty::Nil);
++                            for (i, t) in p.into_iter().enumerate() {
++                                acc[i] = union_of(acc[i].clone(), t);
++                            }
++                            acc
++                        }
++                    });
++                }
++                return joined;
++            }
++        }
++        let tys = self.block_params_for(recv_ty, method)?;
++        if n >= 2 && tys.len() == 1 {
++            // A fold reference is unfolded one level here, as `a, b = rhs` is.
++            let yielded = crate::analyze::fold::head(
++                &tys[0],
++                crate::analyze::fold::Site::Destruct,
++                crate::analyze::fold::site_of(&block.span),
++                self.classes().raw(),
++            )
++            .unwrap_or_else(|| tys[0].clone());
++            if let Some(splat) = splat_yield(&yielded, n) {
++                return Some(splat);
++            }
++        }
++        Some(tys)
++    }
++
++    /// Per-param types a block yields, given the receiver type and method.
+     /// `None` means "no binding info available" — params stay unknown.
+@@ -348,2 +447,20 @@ impl<'a> BodyTyper<'a> {
+             }
++            // `RH_SOUND`: CRuby's own pair iterators yield the key and the
++            // value as two values (`|x|` gets the key); `each` and every
++            // Enumerable iterator yield ONE `[key, value]` pair (`|x|` gets
++            // the pair, `|k, v|` destructures it by the splat above).
++            Ty::Hash { key, value } if sound("pairs") => {
++                let pair = || Ty::Tuple { elems: vec![(**key).clone(), (**value).clone()].into() };
++                match method.as_str() {
++                    "select" | "filter" | "reject" | "select!" | "filter!" | "reject!" | "keep_if"
++                    | "delete_if" | "to_h" => Some(vec![(**key).clone(), (**value).clone()]),
++                    "transform_values" | "transform_values!" | "each_value" => Some(vec![(**value).clone()]),
++                    "transform_keys" | "transform_keys!" | "each_key" => Some(vec![(**key).clone()]),
++                    "each" | "each_pair" | "map" | "collect" | "flat_map" | "collect_concat"
++                    | "any?" | "all?" | "none?" | "one?" | "count" | "find" | "detect" | "find_index"
++                    | "find_all" | "sort_by" | "min_by" | "max_by" | "sum" | "group_by" | "partition"
++                    | "filter_map" | "uniq" | "each_entry" | "index_by" | "index_with" => Some(vec![pair()]),
++                    _ => None,
++                }
++            }
+             Ty::Hash { key, value } => match method.as_str() {
+@@ -2612,2 +2729,8 @@ pub(super) fn array_method(method: &Symbol, elem: &Ty, block_ret: Option<&Ty>) -
+         },
++        // `RH_SOUND`: without a block, `each_with_index` is an enumerator of
++        // `[element, index]` pairs, so `arr.each_with_index.map { |x, i| }`
++        // binds `i` to the index (it took the element).
++        "each_with_index" if sound("enum") && block_ret.is_none() => Ty::Array {
++            elem: std::sync::Arc::new(Ty::Tuple { elems: vec![elem.clone(), Ty::Int].into() }),
++        },
+         // In-place / index-yielding transforms return the array itself.
+@@ -2711,2 +2834,40 @@ pub(super) fn record_method(
+ 
++/// `RH_SOUND`: `Hash#merge`'s result type. Each argument that is a Hash (or
++/// a symbol-keyed record, or `untyped`) adds its keys and values; an
++/// argument still pending adds nothing yet. A conflict block's return
++/// joins the values.
++fn hash_merge_sound(key: &Ty, value: &Ty, block_ret: Option<&Ty>, args: &[Expr]) -> Ty {
++    let (mut k, mut v) = (key.clone(), value.clone());
++    for a in args {
++        let arms: Vec<&Ty> = match a.ty.as_ref() {
++            Some(Ty::Union { variants }) => variants.iter().collect(),
++            Some(t) => vec![t],
++            None => vec![],
++        };
++        for arm in arms {
++            match arm {
++                Ty::Hash { key: k2, value: v2 } => {
++                    k = union_of(k, (**k2).clone());
++                    v = union_of(v, (**v2).clone());
++                }
++                Ty::Record { row } => {
++                    k = union_of(k, Ty::Sym);
++                    for (_, t) in row.fields.iter() {
++                        v = union_of(v, t.clone());
++                    }
++                }
++                Ty::Untyped => {
++                    k = union_of(k, Ty::Untyped);
++                    v = union_of(v, Ty::Untyped);
++                }
++                _ => {}
++            }
++        }
++    }
++    if let Some(r) = block_ret {
++        v = union_of(v, r.clone());
++    }
++    Ty::Hash { key: std::sync::Arc::new(k), value: std::sync::Arc::new(v) }
++}
++
+ pub(super) fn hash_method(
+@@ -2777,2 +2938,6 @@ pub(super) fn hash_method(
+         },
++        // `RH_SOUND`: the merged hashes' keys and values join the
++        // receiver's (`h.merge("meta" => { "v" => 1 })` holds that Hash),
++        // and a conflict block's return joins the values.
++        "merge" if sound("merge") => hash_merge_sound(key, value, block_ret, args),
+         "merge" => Ty::Hash {
+@@ -2781,2 +2946,15 @@ pub(super) fn hash_method(
+         },
++        // `RH_SOUND`: with a block, `Hash#to_h` builds its entries from the
++        // block's `[key, value]` returns, as `Array#to_h` does.
++        "to_h" if sound("toh") && block_ret.is_some() => match block_ret {
++            Some(Ty::Tuple { elems }) if elems.len() == 2 => Ty::Hash {
++                key: std::sync::Arc::new(elems[0].clone()),
++                value: std::sync::Arc::new(elems[1].clone()),
++            },
++            Some(Ty::Array { elem: inner }) => Ty::Hash {
++                key: std::sync::Arc::new((**inner).clone()),
++                value: std::sync::Arc::new((**inner).clone()),
++            },
++            _ => Ty::Hash { key: std::sync::Arc::new(unknown()), value: std::sync::Arc::new(unknown()) },
++        },
+         // `Hash#to_h` is identity (returns self when called without a
+diff --git a/src/ingest/expr.rs b/src/ingest/expr.rs
+index 1d0d0e79..98dc8a73 100644
+--- a/src/ingest/expr.rs
++++ b/src/ingest/expr.rs
+@@ -1011,2 +1011,3 @@ fn ingest_expr_node(node: &Node<'_>, file: &str) -> IngestResult<Expr> {
+             let body = desugar_post_params(&mut rest_param, block_post_params(l.parameters()), body);
++            let body = desugar_destructured_params(l.parameters(), body);
+             // `->(x) { body }` literals always use brace form (Prism's
+@@ -2780,2 +2781,3 @@ fn ingest_call_block(
+                 let body = desugar_post_params(&mut rest_param, block_post_params(lam.parameters()), body);
++                let body = desugar_destructured_params(lam.parameters(), body);
+                 let block_style = block_style_from_opening(lam.opening_loc().as_slice());
+@@ -2847,2 +2849,3 @@ fn ingest_block_node_as_lambda(b: &ruby_prism::BlockNode<'_>, file: &str) -> Ing
+     let body = desugar_post_params(&mut rest_param, block_post_params(b.parameters()), body);
++    let body = desugar_destructured_params(b.parameters(), body);
+     let block_style = block_style_from_opening(b.opening_loc().as_slice());
+@@ -2914,2 +2917,13 @@ fn block_param_names(params_node: Option<Node<'_>>) -> Vec<Symbol> {
+     let Some(pn) = bpn.parameters() else { return vec![] };
++    if *SOUND_PARAMS {
++        return pn
++            .requireds()
++            .iter()
++            .enumerate()
++            .filter_map(|(i, req)| match req.as_required_parameter_node() {
++                Some(rp) => Some(Symbol::from(constant_id_str(&rp.name()))),
++                None => destructured_names(&req).map(|_| Symbol::from(format!("__bp{i}"))),
++            })
++            .collect();
++    }
+     pn.requireds()
+@@ -2921,2 +2935,62 @@ fn block_param_names(params_node: Option<Node<'_>>) -> Vec<Symbol> {
+ 
++/// Block and Hash flow (`RH_SOUND=1`, off by default). A destructured block
++/// parameter (`|(k, v), i|`) was dropped, so every later parameter bound
++/// one position early: `i` took the pair. With the flag it keeps its
++/// position under a synthetic name, `__bp<position>`, and the body opens
++/// with `k, v = __bp<position>`, which is Ruby's own semantics for it.
++static SOUND_PARAMS: std::sync::LazyLock<bool> = std::sync::LazyLock::new(|| {
++    std::env::var("RH_SOUND").is_ok_and(|s| s == "1")
++        && !std::env::var("RH_SOUND_ABLATE").unwrap_or_default().split(',').any(|p| p == "params")
++});
++
++/// The plain names of a one-level destructured parameter `(a, b, ...)`;
++/// `None` for any other shape (nested, splat, or not a destructure).
++fn destructured_names(req: &Node<'_>) -> Option<Vec<Symbol>> {
++    let mt = req.as_multi_target_node()?;
++    if mt.rest().is_some() || !mt.rights().is_empty() {
++        return None;
++    }
++    mt.lefts()
++        .iter()
++        .map(|l| l.as_required_parameter_node().map(|rp| Symbol::from(constant_id_str(&rp.name()))))
++        .collect()
++}
++
++/// `RH_SOUND`: open a block body with `a, b = __bp<i>` for each destructured
++/// parameter `block_param_names` named.
++fn desugar_destructured_params(params_node: Option<Node<'_>>, body: Expr) -> Expr {
++    if !*SOUND_PARAMS {
++        return body;
++    }
++    let Some(pn) = params_node.and_then(|n| n.as_block_parameters_node()).and_then(|b| b.parameters()) else {
++        return body;
++    };
++    let mut exprs: Vec<Expr> = pn
++        .requireds()
++        .iter()
++        .enumerate()
++        .filter(|(_, req)| req.as_required_parameter_node().is_none())
++        .filter_map(|(i, req)| {
++            let names = destructured_names(&req)?;
++            let targets = names
++                .into_iter()
++                .map(|name| crate::expr::LValue::Var { id: crate::ident::VarId(0), name })
++                .collect();
++            let value = Expr::new(
++                Span::synthetic(),
++                ExprNode::Var { id: crate::ident::VarId(0), name: Symbol::from(format!("__bp{i}")) },
++            );
++            Some(Expr::new(Span::synthetic(), ExprNode::MultiAssign { targets, value }))
++        })
++        .collect();
++    if exprs.is_empty() {
++        return body;
++    }
++    match *body.node {
++        ExprNode::Seq { exprs: inner } => exprs.extend(inner),
++        other => exprs.push(Expr::new(body.span, other)),
++    }
++    Expr::new(Span::synthetic(), ExprNode::Seq { exprs })
++}
++
+ /// The block's REST parameter (`|*args|`), without its sigil.
