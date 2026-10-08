@@ -34,11 +34,7 @@ git -C _work/rec-source apply ../../patches/emit-rec/emit-rec.diff
   cargo build --release --locked --bin roundhouse)
 ```
 
-`phase-c2.diff` supplies the Phase C prototype (`9b16a0f6`). `sound-base.diff` adds the five historical
-flow fixes, reconstructing the emitter patch's base (`459a5e8b`); this dependency is distinct from the
-corrected soundness experiment in `reproductions/settle_sound/`. `emit-rec.diff` is the clean source
-patch from `459a5e8b` to the six-commit demo (`142375ac`), with team labels removed from comments:
-**1,063 insertions and 15 deletions in 12 source files**. It also applies directly to `459a5e8b`.
+`phase-c2.diff` supplies the Phase C prototype. `sound-base.diff` adds the five earlier flow fixes the demo was built on; they are distinct from the corrected soundness fixes in `reproductions/settle_sound/`. `emit-rec.diff` is the demo itself: **1,063 insertions and 15 deletions in 12 source files**.
 
 ## Compile and compare
 
@@ -74,7 +70,7 @@ Each successful server gets a fresh port and is stopped after its response is co
 
 Condition: **emit-rec-phase-c-v1**, Phase C on `b28b17b6`, the patch base `459a5e8b`, the three bundled
 apps, identical runtime stubs in both Rust arms, CRuby 4.0.7, and Crystal 1.21.1.
-The packaged runner re-verified these rows on the demo binary at `142375ac`;
+The packaged runner re-verified these rows on the demo build;
 [verified.json](verified.json) retains the binary hash and compiler outcomes.
 The documented three-patch recipe also builds cleanly; its generated files match that demo binary
 in all 12 app × target × off/on comparisons (3 apps, 2 targets, 2 flag states), recorded in
