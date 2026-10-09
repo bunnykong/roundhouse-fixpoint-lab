@@ -1,4 +1,4 @@
-# F17: the settling reproduction on current main
+# F17: the settling reproduction on main, October 9
 
 The original October 9 check on main `9b2dd5e9` still gave the historical membership pattern:
 main settles and rejects **6 of 12** saved values; the restored-flow control caps and rejects **0**;
@@ -18,8 +18,8 @@ No corpus app is analyzed by this check. Lab input snapshot:
 
 Roundhouse source identities:
 
-- Original current-main rerun: upstream `main`, `9b2dd5e9720705ca3cf4e9d4f21e5f0e998cdfba`.
-- Fresh current-main rerun: upstream `main`, `1ce9969564303ebe1bf5b8ca3304f982272079c1`.
+- First rerun (October 9, 06:11Z pin): upstream `main`, `9b2dd5e9720705ca3cf4e9d4f21e5f0e998cdfba`.
+- Second rerun (later on October 9): upstream `main`, `1ce9969564303ebe1bf5b8ca3304f982272079c1`.
 - Original flow-control delta: `194f26cfaaada2a654e5f65949012f396706a275` to
   `main-flowfix` `a7e06b1ea9b486c894e803f98158533141d957a6`.
 - Fixed S3 control: `fixpoint-sound`, `96cdea9a1e6e6bb32a267a247d72f99b98a50b70`.
@@ -65,7 +65,7 @@ with the extra-round flag; the Python oracle then checks each generated RBS gram
 
 ## Outputs
 
-- `historical.json`: original current-main, flow-control and fixed-S3 loop/membership/API receipts.
+- `historical.json`: first-rerun (06:11Z pin), flow-control and fixed-S3 loop/membership/API receipts.
 - `historical-*.rbs` and `historical-*.oracle.json`: original inferred grammars and full membership reports.
 - `rerun.json`: fresh source SHAs, loop endings, memberships, binary hashes and fixed-S3 verification.
 - `rerun-*.rbs`, `rerun-*.oracle.json`: fresh inferred grammars and full membership reports.

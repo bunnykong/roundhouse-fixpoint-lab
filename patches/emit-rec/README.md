@@ -68,7 +68,7 @@ Each successful server gets a fresh port and is stopped after its response is co
 
 ## Before and after
 
-Condition: **emit-rec-phase-c-v1**, Phase C on `b28b17b6`, the patch base `459a5e8b`, the three bundled
+Condition: **emit-rec-phase-c-v1**, Phase C on `b28b17b6`, the local patch base `459a5e8b` (not on a public branch), the three bundled
 apps, identical runtime stubs in both Rust arms, CRuby 4.0.7, and Crystal 1.21.1.
 The packaged runner re-verified these rows on the demo build;
 [verified.json](verified.json) retains the binary hash and compiler outcomes.
