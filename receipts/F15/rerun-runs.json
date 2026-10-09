@@ -1,0 +1,1367 @@
+[
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-seed",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "69c4d7f271269999",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "69c4d7f271269999",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "69c4d7f271269999",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 0,
+            "loaded": 0,
+            "recorded": 66173,
+            "replayed": 0,
+            "typed": 66173,
+            "uncovered": 0,
+            "unused": 0
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "69c4d7f271269999",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ]
+    },
+    "wall_seconds": 161.50447058305144
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-boolean-correctness",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 4,
+            "loaded": 66173,
+            "recorded": 66173,
+            "replayed": 64997,
+            "typed": 1176,
+            "uncovered": 1172,
+            "unused": 0
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ]
+    },
+    "wall_seconds": 145.2666552910232
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-boolean-cold",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ]
+    },
+    "wall_seconds": 5.174394749978092
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-boolean-warm",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218414,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_analyze_seconds": 4.133956208,
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 4,
+            "loaded": 66173,
+            "recorded": 66173,
+            "replayed": 64997,
+            "typed": 1176,
+            "uncovered": 1172,
+            "unused": 0
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "shadow_seconds": 4.237914875,
+          "warm_analyze_seconds": 136.449649333,
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "8509a49c1b1c4322",
+            "params": "a64e379af4ea95c3",
+            "returns": "db73fcc7a1891687",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ],
+      "rh-warm-save": [
+        {
+          "seconds": 0.757502792
+        }
+      ],
+      "rh-warm-wall": [
+        {
+          "check_excluding_shadow_seconds": 140.190832,
+          "shadow_seconds": 4.237914875,
+          "total_seconds": 144.428746875
+        }
+      ]
+    },
+    "wall_seconds": 144.65073566598585
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-return-type-correctness",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218415,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218415,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 1,
+            "loaded": 66173,
+            "recorded": 66173,
+            "replayed": 64999,
+            "typed": 1174,
+            "uncovered": 1173,
+            "unused": 0
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ]
+    },
+    "wall_seconds": 144.21943312499207
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-return-type-cold",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218415,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ]
+    },
+    "wall_seconds": 5.20609016699018
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-return-type-warm",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218415,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218415,
+            "params": 12609,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_analyze_seconds": 4.093672833,
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 1,
+            "loaded": 66173,
+            "recorded": 66173,
+            "replayed": 64999,
+            "typed": 1174,
+            "uncovered": 1173,
+            "unused": 0
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "shadow_seconds": 4.195282708,
+          "warm_analyze_seconds": 136.246458042,
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "cb1bcb01ed3cb537",
+            "params": "a64e379af4ea95c3",
+            "returns": "52c594e5e0dd9165",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ],
+      "rh-warm-save": [
+        {
+          "seconds": 0.754006708
+        }
+      ],
+      "rh-warm-wall": [
+        {
+          "check_excluding_shadow_seconds": 139.999320959,
+          "shadow_seconds": 4.195282708,
+          "total_seconds": 144.194603667
+        }
+      ]
+    },
+    "wall_seconds": 144.4334628339857
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-withdraw-read-correctness",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218413,
+            "params": 12608,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218413,
+            "params": 12608,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 6,
+            "loaded": 66173,
+            "recorded": 66176,
+            "replayed": 22553,
+            "typed": 43623,
+            "uncovered": 45,
+            "unused": 43569
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ]
+    },
+    "wall_seconds": 144.3349781249999
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-withdraw-read-cold",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218413,
+            "params": 12608,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ]
+    },
+    "wall_seconds": 5.209756832977291
+  },
+  {
+    "command": [
+      "roundhouse",
+      "check",
+      "--continue",
+      "."
+    ],
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "note": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "warning": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "label": "mastodon-withdraw-read-warm",
+    "reports": {
+      "rh-fixpoint": [
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218413,
+            "params": 12608,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        },
+        {
+          "digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "entries": {
+            "attributes": 939,
+            "block_values": 1648,
+            "constants": 600,
+            "controller_bindings": 525,
+            "controller_cache": 310,
+            "copies": 391,
+            "ir": 218413,
+            "params": 12608,
+            "returns": 50088,
+            "side_table": 631
+          },
+          "loops": {
+            "absorb": {
+              "end": "settled",
+              "round": 2
+            },
+            "production": {
+              "end": "settled",
+              "round": 3
+            },
+            "views_and_tests": {
+              "end": "settled",
+              "round": 1
+            }
+          },
+          "schema": 1
+        }
+      ],
+      "rh-warm": [
+        {
+          "cold_analyze_seconds": 4.2255755,
+          "cold_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          },
+          "evaluations": {
+            "invalidated": 6,
+            "loaded": 66173,
+            "recorded": 66176,
+            "replayed": 22553,
+            "typed": 43623,
+            "uncovered": 45,
+            "unused": 43569
+          },
+          "first_difference": null,
+          "shadow": "pass",
+          "shadow_seconds": 4.3262,
+          "warm_analyze_seconds": 140.311829625,
+          "warm_digest": {
+            "attributes": "a37c9d9b810b8be2",
+            "block_values": "f21b785b407f0d48",
+            "constants": "add5ece3236e2ec4",
+            "controller_bindings": "a92fd2b920aae954",
+            "controller_cache": "065d6b97e530386e",
+            "copies": "f21a132bbf7bfdfc",
+            "ir": "fc0c5657faa93e5a",
+            "params": "18d043ec2d4350bb",
+            "returns": "00d6bc8086a169c9",
+            "side_table": "5dcf107d1f9b9323"
+          }
+        }
+      ],
+      "rh-warm-save": [
+        {
+          "seconds": 0.820285916
+        }
+      ],
+      "rh-warm-wall": [
+        {
+          "check_excluding_shadow_seconds": 144.200145708,
+          "shadow_seconds": 4.3262,
+          "total_seconds": 148.526345708
+        }
+      ]
+    },
+    "wall_seconds": 148.76789508300135
+  }
+]

@@ -1,0 +1,5594 @@
+{
+  "campfire": {
+    "det": {
+      "drops": {},
+      "metadata": {
+        "bodies": 1582,
+        "build": "b64163fe",
+        "input_digest": "322f19f26a90b444",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": []
+    },
+    "s3": {
+      "drops": {},
+      "metadata": {
+        "bodies": 1582,
+        "build": "b64163fe",
+        "input_digest": "322f19f26a90b444",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": []
+    }
+  },
+  "chatwoot": {
+    "det": {
+      "drops": {},
+      "metadata": {
+        "bodies": 9910,
+        "build": "b64163fe",
+        "input_digest": "dfb66702b63e0cd1",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7522:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1019",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1062",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8805:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1019",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1062",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer | String | nil?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer | String | nil?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7523:15",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1284",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1327",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer | String | nil?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer | String | nil?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8806:15",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1284",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1327",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7520:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:309:321",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:309:364",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8803:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:309:321",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:309:364",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[String?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7521:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:652:685",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:652:728",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[String?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String?]",
+              "Array[Integer | String | nil]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8804:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:652:685",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | nil]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:652:728",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8603:2",
+          "op": "reload",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/api/v1/accounts/whatsapp/manual_setup_controller.rb:1931:1944",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/accounts/whatsapp/manual_setup_controller.rb:1931:1951",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:3",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1609:1614",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1609:1617",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:7",
+          "op": "notification_subscriptions",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1644:1649",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1644:1676",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:29",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1903:1908",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1903:1911",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9334:14",
+          "op": "notification_subscriptions",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:197:202",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:197:229",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "7522:21",
+          "op": "find",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:963:970",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:963:1001",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8805:21",
+          "op": "find",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:963:970",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:963:1001",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:102",
+          "op": "name",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1339:1344",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1339:1349",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:112",
+          "op": "email",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1383:1388",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1383:1394",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:122",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1422:1427",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1422:1430",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:130",
+          "op": "accounts",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1457:1462",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1457:1471",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:138",
+          "op": "accounts",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1561:1566",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1561:1575",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:237",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:2361:2366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:2361:2369",
+          "var": 0,
+          "verdict": "failed"
+        }
+      ]
+    },
+    "s3": {
+      "drops": {},
+      "metadata": {
+        "bodies": 9910,
+        "build": "b64163fe",
+        "input_digest": "dfb66702b63e0cd1",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7522:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1019",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1062",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8805:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1019",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1008:1062",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[Integer | String | untyped | nil?]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7523:15",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1284",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1327",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[Integer | String | untyped | nil?]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8806:15",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1284",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:1269:1327",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7520:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:309:321",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:309:364",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8803:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:309:321",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:309:364",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String?]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "7521:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:652:685",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:652:728",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Array[String?]",
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "8804:30",
+          "op": "+",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:652:685",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "[Integer | String | untyped | nil?, String, String, String, Integer | String | untyped | nil?]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:652:728",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8603:2",
+          "op": "reload",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/controllers/api/v1/accounts/whatsapp/manual_setup_controller.rb:1931:1944",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/accounts/whatsapp/manual_setup_controller.rb:1931:1951",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:3",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1609:1614",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1609:1617",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:7",
+          "op": "notification_subscriptions",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1644:1649",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1644:1676",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9337:29",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:1903:1908",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:1903:1911",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9334:14",
+          "op": "notification_subscriptions",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/super_admin/push_diagnostics_controller.rb:197:202",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/super_admin/push_diagnostics_controller.rb:197:229",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "7522:21",
+          "op": "find",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:963:970",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:963:1001",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8805:21",
+          "op": "find",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/api/v2/accounts/reports_helper.rb:963:970",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/api/v2/accounts/reports_helper.rb:963:1001",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:102",
+          "op": "name",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1339:1344",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1339:1349",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:112",
+          "op": "email",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1383:1388",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1383:1394",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:122",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1422:1427",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1422:1430",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:130",
+          "op": "accounts",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1457:1462",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1457:1471",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:138",
+          "op": "accounts",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:1561:1566",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:1561:1575",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9605:237",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/views/super_admin/push_diagnostics/show.html.erb:2361:2366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/super_admin/push_diagnostics/show.html.erb:2361:2369",
+          "var": 1,
+          "verdict": "pending"
+        }
+      ]
+    }
+  },
+  "discourse": {
+    "det": {
+      "drops": {},
+      "metadata": {
+        "bodies": 27461,
+        "build": "b64163fe",
+        "input_digest": "a7e15a54d9e77454",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Time",
+              "String"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Time"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "26887:15",
+          "op": "<=",
+          "recv_site": "app/controllers/theme_javascripts_controller.rb:2467:2480",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/controllers/theme_javascripts_controller.rb:2467:2494",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Symbol]",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "bool",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Symbol]",
+              "Integer",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1303:2",
+          "op": "<=",
+          "recv_site": "app/models/optimized_image.rb:1261:1266",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:1261:1271",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Symbol]",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "bool",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Symbol]",
+              "Integer",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1303:5",
+          "op": "<=",
+          "recv_site": "app/models/optimized_image.rb:1275:1281",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:1275:1286",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer]",
+              "Array[Integer | untyped | untyped]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer]",
+              "Array[Integer | untyped | untyped]"
+            ],
+            [
+              "Array[Integer]",
+              "bool"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2275:85",
+          "op": "-",
+          "recv_site": "app/models/tag_user.rb:2145:2152",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | untyped | untyped]",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/tag_user.rb:2145:2162",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer | untyped | untyped]",
+              "Array[Integer]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer | untyped | untyped]",
+              "Array[Integer]"
+            ],
+            [
+              "bool",
+              "Array[Integer]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | untyped | untyped]",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2275:106",
+          "op": "-",
+          "recv_site": "app/models/tag_user.rb:2330:2337",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/tag_user.rb:2330:2347",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Array[untyped]",
+              "Array[untyped]"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "arms": [
+            [
+              "ActionController::Parameters",
+              "ActionController::Parameters"
+            ],
+            [
+              "ActionController::Parameters",
+              "ActionDispatch::Http::UploadedFile"
+            ],
+            [
+              "ActionController::Parameters",
+              "Array[untyped]"
+            ],
+            [
+              "ActionController::Parameters",
+              "String"
+            ],
+            [
+              "ActionDispatch::Http::UploadedFile",
+              "ActionController::Parameters"
+            ],
+            [
+              "ActionDispatch::Http::UploadedFile",
+              "ActionDispatch::Http::UploadedFile"
+            ],
+            [
+              "ActionDispatch::Http::UploadedFile",
+              "Array[untyped]"
+            ],
+            [
+              "ActionDispatch::Http::UploadedFile",
+              "String"
+            ],
+            [
+              "Array[untyped]",
+              "ActionController::Parameters"
+            ],
+            [
+              "Array[untyped]",
+              "ActionDispatch::Http::UploadedFile"
+            ],
+            [
+              "Array[untyped]",
+              "Array[untyped]"
+            ],
+            [
+              "Array[untyped]",
+              "String"
+            ],
+            [
+              "String",
+              "ActionController::Parameters"
+            ],
+            [
+              "String",
+              "ActionDispatch::Http::UploadedFile"
+            ],
+            [
+              "String",
+              "Array[untyped]"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "ActionController::Parameters",
+              "ActionDispatch::Http::UploadedFile",
+              "Array[untyped]",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2734:84",
+          "op": "+",
+          "recv_site": "app/models/topic_link_click.rb:904:921",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "ActionController::Parameters",
+              "ActionDispatch::Http::UploadedFile",
+              "Array[untyped]",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/topic_link_click.rb:904:939",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Array[String]",
+              "Array[Array[String]]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String]",
+              "Array[Array[String]]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2815:20",
+          "op": "+",
+          "recv_site": "app/models/translation_override.rb:5057:5084",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Array[String]]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/translation_override.rb:5057:5098",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "25605:7",
+          "op": "join",
+          "receiver_ty": "bool | String?",
+          "recv_site": "app/controllers/admin/email_templates_controller.rb:9013:9043",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/admin/email_templates_controller.rb:9013:9056",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:169",
+          "op": "local?",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4192:4201",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4192:4208",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:192",
+          "op": "url",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4441:4450",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4441:4454",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:199",
+          "op": "url",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4520:4529",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4520:4533",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Array[String]"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "254:2",
+          "op": "starts_with?",
+          "receiver_ty": "Array[String]?",
+          "recv_site": "app/models/badge.rb:5540:5555",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/badge.rb:5540:5579",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Array[String]"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "254:11",
+          "op": "split",
+          "receiver_ty": "Array[String]?",
+          "recv_site": "app/models/badge.rb:5603:5618",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/badge.rb:5603:5629",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "392:50",
+          "op": "slice",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/browser_pageview_event.rb:5754:5768",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/browser_pageview_event.rb:5754:5805",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "392:89",
+          "op": "slice",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/browser_pageview_event.rb:6120:6139",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/browser_pageview_event.rb:6120:6181",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "731:57",
+          "op": "each",
+          "receiver_ty": "bool | String?",
+          "recv_site": "app/models/color_scheme.rb:13491:13506",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/color_scheme.rb:13491:13611",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "590:22",
+          "op": "map!",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/category_hashtag.rb:706:715",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:706:739",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4035:22",
+          "op": "map!",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/category_hashtag.rb:706:715",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:706:739",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "590:30",
+          "op": "last",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/category_hashtag.rb:827:836",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:827:844",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4035:30",
+          "op": "last",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/category_hashtag.rb:827:836",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:827:844",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1103:11",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/ignored_user.rb:343:347",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/ignored_user.rb:343:350",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Integer",
+            "String"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1121:110",
+          "op": "id",
+          "receiver_ty": "Integer | String | nil",
+          "recv_site": "app/models/incoming_link.rb:1055:1067",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/incoming_link.rb:1055:1070",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1309:0",
+          "op": "each",
+          "receiver_ty": "String?",
+          "recv_site": "app/models/optimized_image.rb:5981:5986",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:5981:6057",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1567:11",
+          "op": "ignored_user_ids",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/post_action.rb:1351:1355",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/post_action.rb:1351:1372",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Relation[Topic]"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1851:12",
+          "op": "to_sql",
+          "receiver_ty": "Relation[Topic]",
+          "recv_site": "app/models/reviewable.rb:18534:18561",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/reviewable.rb:18534:18568",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Hash[untyped, untyped]"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2152:9",
+          "op": "flatten",
+          "receiver_ty": "Hash[untyped, untyped]",
+          "recv_site": "app/models/site_setting_group.rb:742:776",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/site_setting_group.rb:742:784",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2340:11",
+          "op": "map",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/theme_modifier_set.rb:1672:1677",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/theme_modifier_set.rb:1672:1823",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2697:32",
+          "op": "truncate",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/topic_embed.rb:12493:12497",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/topic_embed.rb:12493:12538",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2683:2",
+          "op": "=~",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/topic_embed.rb:1433:1436",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/topic_embed.rb:1433:1456",
+          "var": 0,
+          "verdict": "failed"
+        }
+      ]
+    },
+    "s3": {
+      "drops": {},
+      "metadata": {
+        "bodies": 27461,
+        "build": "b64163fe",
+        "input_digest": "a7e15a54d9e77454",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [],
+          "arms": [
+            [
+              "Time",
+              "String"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Time"
+            ],
+            "bit": 0,
+            "var": 1
+          },
+          "occurrence": "26887:15",
+          "op": "<=",
+          "recv_site": "app/controllers/theme_javascripts_controller.rb:2467:2480",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/controllers/theme_javascripts_controller.rb:2467:2494",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Symbol]",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "bool",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Symbol]",
+              "Integer",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1303:2",
+          "op": "<=",
+          "recv_site": "app/models/optimized_image.rb:1261:1266",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:1261:1271",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Symbol]",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "bool",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Symbol]",
+              "Integer",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1303:5",
+          "op": "<=",
+          "recv_site": "app/models/optimized_image.rb:1275:1281",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:1275:1286",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer]",
+              "Array[Integer | untyped]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer]",
+              "Array[Integer | untyped]"
+            ],
+            [
+              "Array[Integer]",
+              "bool"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2275:85",
+          "op": "-",
+          "recv_site": "app/models/tag_user.rb:2145:2152",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | untyped]",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 1
+          },
+          "schema": 1,
+          "site": "app/models/tag_user.rb:2145:2162",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [
+            [
+              "Array[Integer | untyped]",
+              "Array[Integer]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[Integer | untyped]",
+              "Array[Integer]"
+            ],
+            [
+              "bool",
+              "Array[Integer]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer | untyped]",
+              "bool"
+            ],
+            "bit": 0,
+            "var": 1
+          },
+          "occurrence": "2275:106",
+          "op": "-",
+          "recv_site": "app/models/tag_user.rb:2330:2337",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[Integer]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/tag_user.rb:2330:2347",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "2734:84",
+          "op": "+",
+          "recv_site": "app/models/topic_link_click.rb:904:921",
+          "rhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/topic_link_click.rb:904:939",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [
+            [
+              "Array[String | untyped]",
+              "Array[untyped]"
+            ]
+          ],
+          "arms": [
+            [
+              "Array[String | untyped]",
+              "Array[untyped]"
+            ],
+            [
+              "Array[String | untyped]",
+              "[Array[String], Array[String]]"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Array[String | untyped]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "2815:20",
+          "op": "+",
+          "recv_site": "app/models/translation_override.rb:5057:5084",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Array[untyped]",
+              "[Array[String], Array[String]]"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/translation_override.rb:5057:5098",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "25605:7",
+          "op": "join",
+          "receiver_ty": "bool | String | untyped?",
+          "recv_site": "app/controllers/admin/email_templates_controller.rb:9013:9043",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/admin/email_templates_controller.rb:9013:9056",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:169",
+          "op": "local?",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4192:4201",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4192:4208",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:192",
+          "op": "url",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4441:4450",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4441:4454",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "27105:199",
+          "op": "url",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/user_avatars_controller.rb:4520:4529",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/user_avatars_controller.rb:4520:4533",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Array[String | untyped]"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "254:2",
+          "op": "starts_with?",
+          "receiver_ty": "Array[String | untyped] | untyped | untyped?",
+          "recv_site": "app/models/badge.rb:5540:5555",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/badge.rb:5540:5579",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Array[String | untyped]"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "254:11",
+          "op": "split",
+          "receiver_ty": "Array[String | untyped] | untyped | untyped?",
+          "recv_site": "app/models/badge.rb:5603:5618",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/badge.rb:5603:5629",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "392:50",
+          "op": "slice",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/browser_pageview_event.rb:5754:5768",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/browser_pageview_event.rb:5754:5805",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "392:89",
+          "op": "slice",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/browser_pageview_event.rb:6120:6139",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/browser_pageview_event.rb:6120:6181",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "731:57",
+          "op": "each",
+          "receiver_ty": "bool | String | untyped?",
+          "recv_site": "app/models/color_scheme.rb:13491:13506",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/color_scheme.rb:13491:13611",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "590:22",
+          "op": "map!",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/concerns/category_hashtag.rb:706:715",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:706:739",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4035:22",
+          "op": "map!",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/concerns/category_hashtag.rb:706:715",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:706:739",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "590:30",
+          "op": "last",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/concerns/category_hashtag.rb:827:836",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:827:844",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4035:30",
+          "op": "last",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/concerns/category_hashtag.rb:827:836",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/category_hashtag.rb:827:844",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1103:11",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/ignored_user.rb:343:347",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/ignored_user.rb:343:350",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Integer",
+            "String"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1121:110",
+          "op": "id",
+          "receiver_ty": "Integer | String | untyped | untyped | nil",
+          "recv_site": "app/models/incoming_link.rb:1055:1067",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/incoming_link.rb:1055:1070",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "String"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1309:0",
+          "op": "each",
+          "receiver_ty": "String | untyped | nil",
+          "recv_site": "app/models/optimized_image.rb:5981:5986",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/optimized_image.rb:5981:6057",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1567:11",
+          "op": "ignored_user_ids",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/post_action.rb:1351:1355",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/post_action.rb:1351:1372",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1851:12",
+          "op": "to_sql",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/reviewable.rb:18534:18561",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/reviewable.rb:18534:18568",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Hash[untyped, untyped]"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2152:9",
+          "op": "flatten",
+          "receiver_ty": "Hash[untyped, untyped] | untyped",
+          "recv_site": "app/models/site_setting_group.rb:742:776",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/site_setting_group.rb:742:784",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2340:11",
+          "op": "map",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/theme_modifier_set.rb:1672:1677",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/theme_modifier_set.rb:1672:1823",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2697:32",
+          "op": "truncate",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/topic_embed.rb:12493:12497",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/topic_embed.rb:12493:12538",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2683:2",
+          "op": "=~",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/topic_embed.rb:1433:1436",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/topic_embed.rb:1433:1456",
+          "var": 1,
+          "verdict": "gradual"
+        }
+      ]
+    }
+  },
+  "forem": {
+    "det": {
+      "drops": {},
+      "metadata": {
+        "bodies": 6001,
+        "build": "b64163fe",
+        "input_digest": "fbcd49e87a10a58c",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:2",
+          "op": "id",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2137:2149",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2137:2152",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:5",
+          "op": "name",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2166:2178",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2166:2183",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:8",
+          "op": "description",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2204:2216",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2204:2228",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:11",
+          "op": "language",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2246:2258",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2246:2267",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:14",
+          "op": "fork",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2281:2293",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2281:2298",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:17",
+          "op": "html_url",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2311:2323",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2311:2332",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:20",
+          "op": "size",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2352:2364",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2352:2369",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:23",
+          "op": "watchers",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2393:2405",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2393:2414",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:26",
+          "op": "stargazers_count",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2440:2452",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2440:2469",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:33",
+          "op": "to_hash",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/github_repos_controller.rb:2528:2540",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2528:2548",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4005:23",
+          "op": "object",
+          "receiver_ty": "Organization | User",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4825:23",
+          "op": "object",
+          "receiver_ty": "Organization | User",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4987:23",
+          "op": "object",
+          "receiver_ty": "Organization | User",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "17:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "996:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1094:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "18:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "997:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1095:6",
+          "op": "purge_by_key",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:9",
+          "op": "enclosure_url",
+          "receiver_ty": "Podcasts::EpisodeRssItem",
+          "recv_site": "app/models/podcast.rb:1484:1488",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1484:1502",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:15",
+          "op": "title",
+          "receiver_ty": "Podcasts::EpisodeRssItem",
+          "recv_site": "app/models/podcast.rb:1542:1546",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1542:1552",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:22",
+          "op": "guid",
+          "receiver_ty": "Podcasts::EpisodeRssItem",
+          "recv_site": "app/models/podcast.rb:1592:1596",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1592:1601",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:36",
+          "op": "link",
+          "receiver_ty": "Podcasts::EpisodeRssItem",
+          "recv_site": "app/models/podcast.rb:1896:1900",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1896:1905",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:27",
+          "op": "link",
+          "receiver_ty": "Podcasts::EpisodeRssItem",
+          "recv_site": "app/models/podcast.rb:1919:1923",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1919:1928",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "978:4",
+          "op": "username",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/users/suspended_username.rb:499:503",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/users/suspended_username.rb:499:512",
+          "var": 0,
+          "verdict": "failed"
+        }
+      ]
+    },
+    "s3": {
+      "drops": {},
+      "metadata": {
+        "bodies": 6001,
+        "build": "b64163fe",
+        "input_digest": "fbcd49e87a10a58c",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:2",
+          "op": "id",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2137:2149",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2137:2152",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:5",
+          "op": "name",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2166:2178",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2166:2183",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:8",
+          "op": "description",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2204:2216",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2204:2228",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:11",
+          "op": "language",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2246:2258",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2246:2267",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:14",
+          "op": "fork",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2281:2293",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2281:2298",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:17",
+          "op": "html_url",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2311:2323",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2311:2332",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:20",
+          "op": "size",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2352:2364",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2352:2369",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:23",
+          "op": "watchers",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2393:2405",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2393:2414",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:26",
+          "op": "stargazers_count",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2440:2452",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2440:2469",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "5030:33",
+          "op": "to_hash",
+          "receiver_ty": "untyped",
+          "recv_site": "app/controllers/github_repos_controller.rb:2528:2540",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/github_repos_controller.rb:2528:2548",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4005:23",
+          "op": "object",
+          "receiver_ty": "Organization | User | untyped",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4825:23",
+          "op": "object",
+          "receiver_ty": "Organization | User | untyped",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Organization",
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "4987:23",
+          "op": "object",
+          "receiver_ty": "Organization | User | untyped",
+          "recv_site": "app/helpers/application_helper.rb:4074:4084",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/application_helper.rb:4074:4091",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "17:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "996:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1094:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:442:449",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:442:473",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "18:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "997:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1095:6",
+          "op": "purge_by_key",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/concerns/purgeable.rb:540:547",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/concerns/purgeable.rb:540:577",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:9",
+          "op": "enclosure_url",
+          "receiver_ty": "Podcasts::EpisodeRssItem | untyped",
+          "recv_site": "app/models/podcast.rb:1484:1488",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1484:1502",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:15",
+          "op": "title",
+          "receiver_ty": "Podcasts::EpisodeRssItem | untyped",
+          "recv_site": "app/models/podcast.rb:1542:1546",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1542:1552",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:22",
+          "op": "guid",
+          "receiver_ty": "Podcasts::EpisodeRssItem | untyped",
+          "recv_site": "app/models/podcast.rb:1592:1596",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1592:1601",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:36",
+          "op": "link",
+          "receiver_ty": "Podcasts::EpisodeRssItem | untyped",
+          "recv_site": "app/models/podcast.rb:1896:1900",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1896:1905",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Podcasts::EpisodeRssItem"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "461:27",
+          "op": "link",
+          "receiver_ty": "Podcasts::EpisodeRssItem | untyped",
+          "recv_site": "app/models/podcast.rb:1919:1923",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/podcast.rb:1919:1928",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "978:4",
+          "op": "username",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/users/suspended_username.rb:499:503",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/users/suspended_username.rb:499:512",
+          "var": 1,
+          "verdict": "gradual"
+        }
+      ]
+    }
+  },
+  "mastodon": {
+    "det": {
+      "drops": {},
+      "metadata": {
+        "bodies": 12465,
+        "build": "b64163fe",
+        "input_digest": "07f63c890ed050d7",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "10823:20",
+          "op": "-",
+          "recv_site": "app/controllers/api/v1/statuses/favourites_controller.rb:550:574",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/controllers/api/v1/statuses/favourites_controller.rb:550:578",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "368:6",
+          "op": ">",
+          "recv_site": "app/models/admin/import.rb:1565:1578",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1565:1602",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "885:18",
+          "op": ">",
+          "recv_site": "app/models/form/import.rb:6368:6381",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/form/import.rb:6368:6405",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "885:50",
+          "op": ">",
+          "recv_site": "app/models/form/import.rb:6688:6701",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/form/import.rb:6688:6709",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1155:41",
+          "op": "*",
+          "recv_site": "app/models/media_attachment.rb:12876:12887",
+          "rhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12876:12902",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:11",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11310:11326",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11310:11330",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:15",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11360:11386",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11360:11390",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:29",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11498:11511",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11498:11515",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:33",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11542:11565",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11542:11569",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:13",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11791:11807",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11791:11811",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:20",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11850:11876",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11850:11880",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:37",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11997:12010",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11997:12014",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:44",
+          "op": "-",
+          "recv_site": "app/models/status.rb:12050:12073",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:12050:12077",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "String"
+            ],
+            [
+              "String",
+              "Integer"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "12220:143",
+          "op": "+",
+          "recv_site": "app/views/admin/trends/statuses/_status.html.haml:861:881",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/views/admin/trends/statuses/_status.html.haml:861:907",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ],
+            [
+              "Integer",
+              "String"
+            ],
+            [
+              "String",
+              "Integer"
+            ],
+            [
+              "String",
+              "String"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "12220:150",
+          "op": "+",
+          "recv_site": "app/views/admin/trends/statuses/_status.html.haml:950:970",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer",
+              "String"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/views/admin/trends/statuses/_status.html.haml:950:996",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10318:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:1042:1054",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:1042:1080",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10314:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:361:373",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:361:399",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10317:4",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:965:977",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:965:1003",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10329:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:1070:1082",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:1070:1108",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10325:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:367:379",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:367:405",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10328:4",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:990:1002",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:990:1028",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10340:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:1025:1037",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:1025:1063",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10336:3",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:359:371",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:359:397",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10339:4",
+          "op": "can?",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:949:961",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:949:987",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10485:13",
+          "op": "resend_confirmation_instructions",
+          "receiver_ty": "User?",
+          "recv_site": "app/controllers/api/v1/emails/confirmations_controller.rb:549:561",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/emails/confirmations_controller.rb:549:594",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "11732:5",
+          "op": "destroy",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/settings/applications_controller.rb:1391:1404",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/settings/applications_controller.rb:1391:1412",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "11730:12",
+          "op": "destroy",
+          "receiver_ty": "nil",
+          "recv_site": "app/controllers/settings/applications_controller.rb:877:890",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/settings/applications_controller.rb:877:898",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:2",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13079:13087",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13079:13092",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:2",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13079:13087",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13079:13092",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:10",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13123:13131",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13123:13136",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:10",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13123:13131",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13123:13136",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:18",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13167:13175",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13167:13180",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:18",
+          "op": "code",
+          "receiver_ty": "nil",
+          "recv_site": "app/helpers/json_ld_helper.rb:13167:13175",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13167:13180",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "367:7",
+          "op": "rewind",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/admin/import.rb:1321:1329",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1321:1336",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "367:11",
+          "op": "take",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/admin/import.rb:1358:1366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1358:1398",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "368:6",
+          "op": ">",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/admin/import.rb:1565:1578",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1565:1602",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "365:1",
+          "op": "rewind",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/admin/import.rb:337:345",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:337:352",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "365:3",
+          "op": "take",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/admin/import.rb:358:366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:358:398",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Addressable::URI"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "656:10",
+          "op": "host=",
+          "receiver_ty": "Addressable::URI",
+          "recv_site": "app/models/domain_allow.rb:748:749",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/domain_allow.rb:748:781",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "879:1",
+          "op": "headers",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:3797:3805",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:3797:3813",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "882:7",
+          "op": "rewind",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:5171:5179",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5171:5186",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "882:11",
+          "op": "take",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:5208:5216",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5208:5248",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "883:1",
+          "op": "rewind",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:5284:5292",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5284:5299",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "883:9",
+          "op": "take",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:5367:5375",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5367:5407",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:6",
+          "op": "headers",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:6223:6231",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6223:6239",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:18",
+          "op": ">",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:6368:6381",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6368:6405",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:50",
+          "op": ">",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/form/import.rb:6688:6701",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6688:6709",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:41",
+          "op": "*",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/media_attachment.rb:12876:12887",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12876:12902",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:64",
+          "op": "floor",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/media_attachment.rb:12978:12994",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12978:13000",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:57",
+          "op": "floor",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/media_attachment.rb:13034:13050",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:13034:13056",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1394:6",
+          "op": "[]",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/preview_card.rb:4338:4358",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/preview_card.rb:4338:4379",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1536:9",
+          "op": "strip",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/remote_follow.rb:743:748",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/remote_follow.rb:743:754",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1931:6",
+          "op": "[]",
+          "receiver_ty": "nil",
+          "recv_site": "app/models/tag.rb:4094:4113",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/tag.rb:4094:4134",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Account",
+            "ActionController::Parameters",
+            "ActionDispatch::Http::UploadedFile",
+            "Array[untyped]",
+            "Collection",
+            "Conversation",
+            "Integer",
+            "Status",
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2167:5",
+          "op": "position",
+          "receiver_ty": "Integer | bool | String | Array[untyped] | Account | ActionController::Parameters | ActionDispatch::Http::UploadedFile | Collection | Conversation | Status",
+          "recv_site": "app/models/user_role.rb:4267:4277",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/user_role.rb:4267:4286",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "12357:160",
+          "op": "token",
+          "receiver_ty": "nil",
+          "recv_site": "app/views/settings/applications/show.html.haml:96:96",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/settings/applications/show.html.haml:96:96",
+          "var": 0,
+          "verdict": "failed"
+        }
+      ]
+    },
+    "s3": {
+      "drops": {},
+      "metadata": {
+        "bodies": 12465,
+        "build": "b64163fe",
+        "input_digest": "07f63c890ed050d7",
+        "schema": 1,
+        "scope": "final-source-IR"
+      },
+      "observations": [
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "10823:20",
+          "op": "-",
+          "recv_site": "app/controllers/api/v1/statuses/favourites_controller.rb:550:574",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/controllers/api/v1/statuses/favourites_controller.rb:550:578",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "368:6",
+          "op": ">",
+          "recv_site": "app/models/admin/import.rb:1565:1578",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1565:1602",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "885:18",
+          "op": ">",
+          "recv_site": "app/models/form/import.rb:6368:6381",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/form/import.rb:6368:6405",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "885:50",
+          "op": ">",
+          "recv_site": "app/models/form/import.rb:6688:6701",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/form/import.rb:6688:6709",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 1
+          },
+          "occurrence": "1155:41",
+          "op": "*",
+          "recv_site": "app/models/media_attachment.rb:12876:12887",
+          "rhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 0,
+            "var": 1
+          },
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12876:12902",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:11",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11310:11326",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11310:11330",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "1814:15",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11360:11386",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11360:11390",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1814:29",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11498:11511",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11498:11515",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "1814:33",
+          "op": "+",
+          "recv_site": "app/models/status.rb:11542:11565",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11542:11569",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:13",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11791:11807",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11791:11811",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "1815:20",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11850:11876",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11850:11880",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "1815:37",
+          "op": "-",
+          "recv_site": "app/models/status.rb:11997:12010",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:11997:12014",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [],
+            "bit": 1,
+            "var": 0
+          },
+          "occurrence": "1815:44",
+          "op": "-",
+          "recv_site": "app/models/status.rb:12050:12073",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/models/status.rb:12050:12077",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "12220:143",
+          "op": "+",
+          "recv_site": "app/views/admin/trends/statuses/_status.html.haml:861:881",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/views/admin/trends/statuses/_status.html.haml:861:907",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "arms": [
+            [
+              "Integer",
+              "Integer"
+            ]
+          ],
+          "bit": 0,
+          "kind": "incompatible_binop",
+          "lhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "occurrence": "12220:150",
+          "op": "+",
+          "recv_site": "app/views/admin/trends/statuses/_status.html.haml:950:970",
+          "rhs": {
+            "answering": [],
+            "arms": [
+              "Integer"
+            ],
+            "bit": 0,
+            "var": 0
+          },
+          "schema": 1,
+          "site": "app/views/admin/trends/statuses/_status.html.haml:950:996",
+          "var": 0,
+          "verdict": "ok"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10318:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:1042:1054",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:1042:1080",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10314:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:361:373",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:361:399",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10317:4",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/links_controller.rb:965:977",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/links_controller.rb:965:1003",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10329:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:1070:1082",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:1070:1108",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10325:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:367:379",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:367:405",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10328:4",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:990:1002",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/statuses_controller.rb:990:1028",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10340:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:1025:1037",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:1025:1063",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10336:3",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:359:371",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:359:397",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10339:4",
+          "op": "can?",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/admin/trends/tags_controller.rb:949:961",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/admin/trends/tags_controller.rb:949:987",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "User"
+          ],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "10485:13",
+          "op": "resend_confirmation_instructions",
+          "receiver_ty": "User | untyped | nil",
+          "recv_site": "app/controllers/api/v1/emails/confirmations_controller.rb:549:561",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/api/v1/emails/confirmations_controller.rb:549:594",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "11732:5",
+          "op": "destroy",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/controllers/settings/applications_controller.rb:1391:1404",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/settings/applications_controller.rb:1391:1412",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "11730:12",
+          "op": "destroy",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/controllers/settings/applications_controller.rb:877:890",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/controllers/settings/applications_controller.rb:877:898",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:2",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13079:13087",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13079:13092",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:2",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13079:13087",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13079:13092",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:10",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13123:13131",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13123:13136",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:10",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13123:13131",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13123:13136",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "8784:18",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13167:13175",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13167:13180",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "9436:18",
+          "op": "code",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/helpers/json_ld_helper.rb:13167:13175",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/helpers/json_ld_helper.rb:13167:13180",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "367:7",
+          "op": "rewind",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/admin/import.rb:1321:1329",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1321:1336",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "367:11",
+          "op": "take",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/admin/import.rb:1358:1366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1358:1398",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "368:6",
+          "op": ">",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/admin/import.rb:1565:1578",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:1565:1602",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "365:1",
+          "op": "rewind",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/admin/import.rb:337:345",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:337:352",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "365:3",
+          "op": "take",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/admin/import.rb:358:366",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/admin/import.rb:358:398",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Addressable::URI"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "656:10",
+          "op": "host=",
+          "receiver_ty": "Addressable::URI",
+          "recv_site": "app/models/domain_allow.rb:748:749",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/domain_allow.rb:748:781",
+          "var": 0,
+          "verdict": "failed"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "879:1",
+          "op": "headers",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:3797:3805",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:3797:3813",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "882:7",
+          "op": "rewind",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:5171:5179",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5171:5186",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "882:11",
+          "op": "take",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:5208:5216",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5208:5248",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "883:1",
+          "op": "rewind",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:5284:5292",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5284:5299",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "883:9",
+          "op": "take",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:5367:5375",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:5367:5407",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:6",
+          "op": "headers",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:6223:6231",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6223:6239",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:18",
+          "op": ">",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:6368:6381",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6368:6405",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 1,
+          "kind": "send_dispatch_failed",
+          "occurrence": "885:50",
+          "op": ">",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/form/import.rb:6688:6701",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/form/import.rb:6688:6709",
+          "var": 0,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:41",
+          "op": "*",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/media_attachment.rb:12876:12887",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12876:12902",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:64",
+          "op": "floor",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/media_attachment.rb:12978:12994",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:12978:13000",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1155:57",
+          "op": "floor",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/media_attachment.rb:13034:13050",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/media_attachment.rb:13034:13056",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1394:6",
+          "op": "[]",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/preview_card.rb:4338:4358",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/preview_card.rb:4338:4379",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1536:9",
+          "op": "strip",
+          "receiver_ty": "untyped",
+          "recv_site": "app/models/remote_follow.rb:743:748",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/remote_follow.rb:743:754",
+          "var": 1,
+          "verdict": "pending"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "1931:6",
+          "op": "[]",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/models/tag.rb:4094:4113",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/tag.rb:4094:4134",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [
+            "Account",
+            "ActionController::Parameters",
+            "ActionDispatch::Http::UploadedFile",
+            "Array[untyped]",
+            "Collection",
+            "Conversation",
+            "Integer",
+            "Status",
+            "String",
+            "bool"
+          ],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "2167:5",
+          "op": "position",
+          "receiver_ty": "Integer | bool | String | Array[untyped] | Account | ActionController::Parameters | ActionDispatch::Http::UploadedFile | Collection | Conversation | Status | untyped",
+          "recv_site": "app/models/user_role.rb:4267:4277",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/models/user_role.rb:4267:4286",
+          "var": 1,
+          "verdict": "gradual"
+        },
+        {
+          "answering": [],
+          "arms": [],
+          "bit": 0,
+          "kind": "send_dispatch_failed",
+          "occurrence": "12357:160",
+          "op": "token",
+          "receiver_ty": "untyped?",
+          "recv_site": "app/views/settings/applications/show.html.haml:96:96",
+          "recv_slot": null,
+          "schema": 1,
+          "site": "app/views/settings/applications/show.html.haml:96:96",
+          "var": 1,
+          "verdict": "gradual"
+        }
+      ]
+    }
+  }
+}

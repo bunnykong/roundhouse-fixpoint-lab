@@ -1,0 +1,5148 @@
+{
+  "annotation_counts": {
+    "dispatch-fallback": 52,
+    "other": 7
+  },
+  "commit": "7e4b0d52baec5d119fdae4b74c631de1cd431bfc",
+  "differing_producer_observations": [
+    {
+      "fresh_count": 6,
+      "historical_count": 2,
+      "id": "mastodon-29",
+      "only_fresh": [
+        {
+          "args": [
+            [
+              {
+                "end": 1531,
+                "file": 418,
+                "start": 1525
+              },
+              "Some(Sym)"
+            ]
+          ],
+          "class_side": false,
+          "end": 1532,
+          "kind": "send",
+          "line": 42,
+          "name": "[]",
+          "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+          "path": "app/lib/video_metadata_extractor.rb",
+          "receiver": "Some(Untyped { why: Unresolved })",
+          "recv_span": {
+            "end": 1524,
+            "file": 418,
+            "start": 1512
+          },
+          "start": 1512,
+          "text": "video_stream[:width]",
+          "ty": "Some(Untyped { why: Unresolved })"
+        },
+        {
+          "args": [
+            [
+              {
+                "end": 1531,
+                "file": 418,
+                "start": 1525
+              },
+              "Some(Sym)"
+            ]
+          ],
+          "class_side": false,
+          "end": 1532,
+          "kind": "send",
+          "line": 42,
+          "name": "[]",
+          "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+          "path": "app/lib/video_metadata_extractor.rb",
+          "receiver": "Some(Untyped { why: Unresolved })",
+          "recv_span": {
+            "end": 1524,
+            "file": 418,
+            "start": 1512
+          },
+          "start": 1512,
+          "text": "video_stream[:width]",
+          "ty": "Some(Untyped { why: Unresolved })"
+        },
+        {
+          "args": [
+            [
+              {
+                "end": 1531,
+                "file": 418,
+                "start": 1525
+              },
+              "Some(Sym)"
+            ]
+          ],
+          "class_side": false,
+          "end": 1532,
+          "kind": "send",
+          "line": 42,
+          "name": "[]",
+          "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+          "path": "app/lib/video_metadata_extractor.rb",
+          "receiver": "Some(Var { var: TyVar(0) })",
+          "recv_span": {
+            "end": 1524,
+            "file": 418,
+            "start": 1512
+          },
+          "start": 1512,
+          "text": "video_stream[:width]",
+          "ty": "Some(Var { var: TyVar(0) })"
+        },
+        {
+          "args": [
+            [
+              {
+                "end": 1531,
+                "file": 418,
+                "start": 1525
+              },
+              "Some(Sym)"
+            ]
+          ],
+          "class_side": false,
+          "end": 1532,
+          "kind": "send",
+          "line": 42,
+          "name": "[]",
+          "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+          "path": "app/lib/video_metadata_extractor.rb",
+          "receiver": "Some(Var { var: TyVar(0) })",
+          "recv_span": {
+            "end": 1524,
+            "file": 418,
+            "start": 1512
+          },
+          "start": 1512,
+          "text": "video_stream[:width]",
+          "ty": "Some(Var { var: TyVar(0) })"
+        }
+      ],
+      "only_historical": [],
+      "query": {
+        "kind": "send",
+        "line": 42,
+        "name": "[]",
+        "path": "app/lib/video_metadata_extractor.rb"
+      }
+    },
+    {
+      "fresh_count": 12,
+      "historical_count": 10,
+      "id": "chatwoot-01",
+      "only_fresh": [
+        {
+          "args": [
+            [
+              {
+                "end": 1116,
+                "file": 602,
+                "start": 824
+              },
+              "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+            ]
+          ],
+          "class_side": false,
+          "end": 1124,
+          "kind": "send",
+          "line": 35,
+          "name": "create!",
+          "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+          "path": "app/services/whatsapp/manual_setup_service.rb",
+          "receiver": "Some(Untyped { why: Gradual })",
+          "recv_span": {
+            "end": 806,
+            "file": 602,
+            "start": 780
+          },
+          "start": 780,
+          "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+          "ty": "Some(Untyped { why: Gradual })"
+        },
+        {
+          "args": [
+            [
+              {
+                "end": 1116,
+                "file": 602,
+                "start": 824
+              },
+              "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+            ]
+          ],
+          "class_side": false,
+          "end": 1124,
+          "kind": "send",
+          "line": 35,
+          "name": "create!",
+          "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+          "path": "app/services/whatsapp/manual_setup_service.rb",
+          "receiver": "Some(Var { var: TyVar(0) })",
+          "recv_span": {
+            "end": 806,
+            "file": 602,
+            "start": 780
+          },
+          "start": 780,
+          "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+          "ty": "Some(Var { var: TyVar(0) })"
+        }
+      ],
+      "only_historical": [],
+      "query": {
+        "kind": "send",
+        "line": 35,
+        "name": "create!",
+        "path": "app/services/whatsapp/manual_setup_service.rb"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ]
+      },
+      "id": "mastodon-11",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 8955,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 286,
+              "method": "find_or_create_by",
+              "path": "app/models/user.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 8660,
+              "text": "Doorkeeper::AccessToken.find_or_create_by(application_id: app.id, resource_owner_id: id) do |t|\n      t.scopes            = app.scopes\n      t.expires_in        = Doorkeeper.configuration.access_token_expires_in\n      t.use_refresh_token = Doorkeeper.configuration.refresh_token_enabled?\n    end"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 286,
+            "method": "find_or_create_by",
+            "path": "app/models/user.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ]
+      },
+      "id": "mastodon-12",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 8955,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 286,
+              "method": "find_or_create_by",
+              "path": "app/models/user.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 8660,
+              "text": "Doorkeeper::AccessToken.find_or_create_by(application_id: app.id, resource_owner_id: id) do |t|\n      t.scopes            = app.scopes\n      t.expires_in        = Doorkeeper.configuration.access_token_expires_in\n      t.use_refresh_token = Doorkeeper.configuration.refresh_token_enabled?\n    end"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 286,
+            "method": "find_or_create_by",
+            "path": "app/models/user.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "mastodon",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [],
+        "s3": []
+      },
+      "id": "mastodon-13",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"ActivityPub::InboxesController\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"JsonLdHelper\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "local",
+            "line": 254,
+            "name": "response",
+            "path": "app/helpers/json_ld_helper.rb"
+          }
+        }
+      ],
+      "subtype": "unseeded-yield-parameter"
+    },
+    {
+      "app": "mastodon",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [],
+        "s3": []
+      },
+      "id": "mastodon-14",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"ActivityPub::InboxesController\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"JsonLdHelper\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "local",
+            "line": 254,
+            "name": "response",
+            "path": "app/helpers/json_ld_helper.rb"
+          }
+        }
+      ],
+      "subtype": "unseeded-yield-parameter"
+    },
+    {
+      "app": "mastodon",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [],
+        "s3": []
+      },
+      "id": "mastodon-15",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"ActivityPub::InboxesController\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "class_side": false,
+              "end": 9214,
+              "kind": "local",
+              "line": 254,
+              "name": "response",
+              "owner": "Some(Class { id: ClassId(Symbol(\"JsonLdHelper\")), args: Shared([]) })",
+              "path": "app/helpers/json_ld_helper.rb",
+              "start": 9206,
+              "text": "response",
+              "ty": "Some(Var { var: TyVar(0) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "local",
+            "line": 254,
+            "name": "response",
+            "path": "app/helpers/json_ld_helper.rb"
+          }
+        }
+      ],
+      "subtype": "unseeded-yield-parameter"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-16",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1000,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 46,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 901,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 46,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 1175,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1069,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: ['#domain'], converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-17",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1000,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 46,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 901,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 46,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 1175,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1069,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: ['#domain'], converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-18",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1000,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 46,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 901,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 46,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 1175,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1069,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: ['#domain'], converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-19",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1000,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 46,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 901,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 46,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 1175,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1069,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: ['#domain'], converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Admin::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-20",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1000,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 46,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 901,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 46,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 1175,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "open",
+              "path": "app/models/admin/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1069,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: ['#domain'], converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "open",
+            "path": "app/models/admin/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-21",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-22",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-23",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-24",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-25",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-26",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-27",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "csv_data",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_data"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          },
+          {
+            "kind": "harvest",
+            "method": "csv_row_count",
+            "normalized": "Some(Union { variants: Shared([Untyped { why: Unresolved }, Nil]) })",
+            "raw": "Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }",
+            "slot": "ret:Form::Import:false:csv_row_count"
+          }
+        ]
+      },
+      "id": "mastodon-28",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 4770,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 149,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4671,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: true, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 149,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 5008,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 153,
+              "method": "open",
+              "path": "app/models/form/import.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 4894,
+              "text": "CSV.open(data.path, encoding: 'UTF-8', skip_blanks: true, headers: default_csv_headers, converters: csv_converter)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 153,
+            "method": "open",
+            "path": "app/models/form/import.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "width",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:width"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "width",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:width"
+          }
+        ]
+      },
+      "id": "mastodon-29",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Untyped { why: Unresolved })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Untyped { why: Unresolved })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Untyped { why: Unresolved })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Untyped { why: Unresolved })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1531,
+                    "file": 418,
+                    "start": 1525
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 1532,
+              "kind": "send",
+              "line": 42,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"VideoMetadataExtractor\")), args: Shared([]) })",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "receiver": "Some(Untyped { why: Unresolved })",
+              "recv_span": {
+                "end": 1524,
+                "file": 418,
+                "start": 1512
+              },
+              "start": 1512,
+              "text": "video_stream[:width]",
+              "ty": "Some(Untyped { why: Unresolved })"
+            }
+          ],
+          "observations_equal_to_historical": false,
+          "query": {
+            "kind": "send",
+            "line": 42,
+            "name": "[]",
+            "path": "app/lib/video_metadata_extractor.rb"
+          }
+        }
+      ],
+      "subtype": "stale-accessor-state"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Nil)",
+            "raw": "Nil",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "parse_framerate",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:parse_framerate"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "parse_framerate",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:parse_framerate"
+          }
+        ]
+      },
+      "id": "mastodon-30",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2466,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 63,
+              "method": "Rational",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2453,
+              "text": "Rational(raw)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 63,
+            "method": "Rational",
+            "path": "app/lib/video_metadata_extractor.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Nil)",
+            "raw": "Nil",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "parse_framerate",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:parse_framerate"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "frame_rate",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:frame_rate"
+          },
+          {
+            "kind": "harvest",
+            "method": "parse_framerate",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:VideoMetadataExtractor:false:parse_framerate"
+          }
+        ]
+      },
+      "id": "mastodon-31",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2466,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 63,
+              "method": "Rational",
+              "path": "app/lib/video_metadata_extractor.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2453,
+              "text": "Rational(raw)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 63,
+            "method": "Rational",
+            "path": "app/lib/video_metadata_extractor.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "options",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Trends::Base:false:options"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "options",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Trends::Base:false:options"
+          }
+        ]
+      },
+      "id": "mastodon-32",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 725,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 17,
+              "method": "default_options",
+              "path": "app/models/trends/base.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 699,
+              "text": "self.class.default_options"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 17,
+            "method": "default_options",
+            "path": "app/models/trends/base.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [],
+        "s3": []
+      },
+      "id": "mastodon-33",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "args": [
+                [
+                  {
+                    "end": 282,
+                    "file": 192,
+                    "start": 277
+                  },
+                  "Some(Sym)"
+                ]
+              ],
+              "class_side": false,
+              "end": 283,
+              "kind": "send",
+              "line": 12,
+              "name": "[]",
+              "owner": "Some(Class { id: ClassId(Symbol(\"RemoteFollow\")), args: Shared([]) })",
+              "path": "app/models/remote_follow.rb",
+              "receiver": "Some(Hash { key: Var { var: TyVar(0) }, value: Var { var: TyVar(0) } })",
+              "recv_span": {
+                "end": 276,
+                "file": 192,
+                "start": 271
+              },
+              "start": 271,
+              "text": "attrs[:acct]",
+              "ty": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "send",
+            "line": 12,
+            "name": "[]",
+            "path": "app/models/remote_follow.rb"
+          }
+        }
+      ],
+      "subtype": "empty-hash-value-variable"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "options",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Trends::Base:false:options"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "options",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Trends::Base:false:options"
+          }
+        ]
+      },
+      "id": "mastodon-34",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 725,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 17,
+              "method": "default_options",
+              "path": "app/models/trends/base.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 699,
+              "text": "self.class.default_options"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 17,
+            "method": "default_options",
+            "path": "app/models/trends/base.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "mastodon",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "token_for_app",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:User:false:token_for_app"
+          }
+        ]
+      },
+      "id": "mastodon-36",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 8955,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 286,
+              "method": "find_or_create_by",
+              "path": "app/models/user.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 8660,
+              "text": "Doorkeeper::AccessToken.find_or_create_by(application_id: app.id, resource_owner_id: id) do |t|\n      t.scopes            = app.scopes\n      t.expires_in        = Doorkeeper.configuration.access_token_expires_in\n      t.use_refresh_token = Doorkeeper.configuration.refresh_token_enabled?\n    end"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 286,
+            "method": "find_or_create_by",
+            "path": "app/models/user.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "channel",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Whatsapp::ManualSetupService:false:channel"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "channel",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Whatsapp::ManualSetupService:false:channel"
+          }
+        ]
+      },
+      "id": "chatwoot-01",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }]) } }, Var { var: TyVar(0) }]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Nil]) } }, Var { var: TyVar(0) }]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Unresolved })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Unresolved })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }]) } }, Untyped { why: Unresolved }]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } }, Untyped { why: Unresolved }]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Gradual })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Gradual })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } }, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } }, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Gradual })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Gradual })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } }, Untyped { why: Unresolved }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Hash { key: Sym, value: Union { variants: Shared([Bool, Str, Var { var: TyVar(0) }, Untyped { why: Unresolved }, Nil]) } }, Untyped { why: Unresolved }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Gradual })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Gradual })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Gradual })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Gradual })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Var { var: TyVar(0) })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Var { var: TyVar(0) })"
+            },
+            {
+              "args": [
+                [
+                  {
+                    "end": 1116,
+                    "file": 602,
+                    "start": 824
+                  },
+                  "Some(Hash { key: Sym, value: Union { variants: Shared([Str, Hash { key: Sym, value: Union { variants: Shared([Str, Var { var: TyVar(0) }, Rec { slot: 290 }, Rec { slot: 291 }, Nil]) } }, Rec { slot: 289 }, Nil]) } })"
+                ]
+              ],
+              "class_side": false,
+              "end": 1124,
+              "kind": "send",
+              "line": 35,
+              "name": "create!",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Whatsapp::ManualSetupService\")), args: Shared([]) })",
+              "path": "app/services/whatsapp/manual_setup_service.rb",
+              "receiver": "Some(Untyped { why: Gradual })",
+              "recv_span": {
+                "end": 806,
+                "file": 602,
+                "start": 780
+              },
+              "start": 780,
+              "text": "@account.whatsapp_channels.create!(\n        phone_number: preview[:display_phone_number],\n        provider: 'whatsapp_cloud',\n        provider_config: {\n          api_key: @access_token,\n          phone_number_id: preview[:phone_number_id],\n          business_account_id: preview[:waba_id],\n          source: 'manual_setup_v2'\n        }\n      )",
+              "ty": "Some(Untyped { why: Gradual })"
+            }
+          ],
+          "observations_equal_to_historical": false,
+          "query": {
+            "kind": "send",
+            "line": 35,
+            "name": "create!",
+            "path": "app/services/whatsapp/manual_setup_service.rb"
+          }
+        }
+      ],
+      "subtype": "stale-accessor-state"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-02",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-03",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-04",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-05",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-06",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-07",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-08",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-09",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-10",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "chatwoot",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "resolve_user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:SuperAdmin::PushDiagnosticsController:false:resolve_user"
+          }
+        ]
+      },
+      "id": "chatwoot-11",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2282,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2259,
+              "text": "User.find_by(id: query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2307,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "from_email",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2285,
+              "text": "User.from_email(query)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "from_email",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 330,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 10,
+              "method": "find_by",
+              "path": "app/controllers/super_admin/push_diagnostics_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 296,
+              "text": "User.find_by(id: params[:user_id])"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 10,
+            "method": "find_by",
+            "path": "app/controllers/super_admin/push_diagnostics_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-01",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-02",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-03",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-04",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-05",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-06",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-07",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-08",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-09",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "fetch_repository_from_github",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:GithubReposController:false:fetch_repository_from_github"
+          }
+        ]
+      },
+      "id": "forem-10",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 2019,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            },
+            {
+              "end": 2019,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 61,
+              "method": "repository",
+              "path": "app/controllers/github_repos_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1987,
+              "text": "client.repository(repository_id)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 61,
+            "method": "repository",
+            "path": "app/controllers/github_repos_controller.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Rec { slot: 54 })",
+            "raw": "Rec { slot: 54 }",
+            "slot": "ret:Purgeable:false:service"
+          },
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Purgeable:true:service"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Rec { slot: 54 })",
+            "raw": "Rec { slot: 54 }",
+            "slot": "ret:Purgeable:false:service"
+          },
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Purgeable:true:service"
+          }
+        ]
+      },
+      "id": "forem-12",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1003,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 36,
+              "method": "new",
+              "path": "app/models/concerns/purgeable.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 928,
+              "text": "Fastly::Service.new({ id: ApplicationConfig[\"FASTLY_SERVICE_ID\"] }, fastly)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 36,
+            "method": "new",
+            "path": "app/models/concerns/purgeable.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "forem",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Rec { slot: 54 })",
+            "raw": "Rec { slot: 54 }",
+            "slot": "ret:Purgeable:false:service"
+          },
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Purgeable:true:service"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Rec { slot: 54 })",
+            "raw": "Rec { slot: 54 }",
+            "slot": "ret:Purgeable:false:service"
+          },
+          {
+            "kind": "harvest",
+            "method": "service",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Purgeable:true:service"
+          }
+        ]
+      },
+      "id": "forem-13",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1003,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 36,
+              "method": "new",
+              "path": "app/models/concerns/purgeable.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 928,
+              "text": "Fastly::Service.new({ id: ApplicationConfig[\"FASTLY_SERVICE_ID\"] }, fastly)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 36,
+            "method": "new",
+            "path": "app/models/concerns/purgeable.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "forem",
+      "classification": "other",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "user",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Users::Delete:false:user"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "user",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Users::Delete:false:user"
+          }
+        ]
+      },
+      "id": "forem-19",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "class_side": false,
+              "end": 71,
+              "kind": "local",
+              "line": 4,
+              "name": "user",
+              "owner": "Some(Class { id: ClassId(Symbol(\"Users::Delete\")), args: Shared([]) })",
+              "path": "app/services/users/delete.rb",
+              "start": 67,
+              "text": "user",
+              "ty": "Some(Var { var: TyVar(0) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "local",
+            "line": 4,
+            "name": "user",
+            "path": "app/services/users/delete.rb"
+          }
+        }
+      ],
+      "subtype": "unobserved-forwarded-constructor-parameter"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ]
+      },
+      "id": "discourse-02",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 7249,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 239,
+              "method": "get_optimized_image",
+              "path": "app/controllers/user_avatars_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 7211,
+              "text": "upload.get_optimized_image(size, size)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 239,
+            "method": "get_optimized_image",
+            "path": "app/controllers/user_avatars_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ]
+      },
+      "id": "discourse-03",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 7249,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 239,
+              "method": "get_optimized_image",
+              "path": "app/controllers/user_avatars_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 7211,
+              "text": "upload.get_optimized_image(size, size)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 239,
+            "method": "get_optimized_image",
+            "path": "app/controllers/user_avatars_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "get_optimized_image",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:UserAvatarsController:false:get_optimized_image"
+          }
+        ]
+      },
+      "id": "discourse-04",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 7249,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 239,
+              "method": "get_optimized_image",
+              "path": "app/controllers/user_avatars_controller.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 7211,
+              "text": "upload.get_optimized_image(size, size)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 239,
+            "method": "get_optimized_image",
+            "path": "app/controllers/user_avatars_controller.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "normalize_referrer",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_referrer"
+          },
+          {
+            "kind": "harvest",
+            "method": "normalize_site_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_site_path"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "normalize_referrer",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_referrer"
+          },
+          {
+            "kind": "harvest",
+            "method": "normalize_site_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_site_path"
+          }
+        ]
+      },
+      "id": "discourse-07",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1710,
+              "fallbacks": [],
+              "kind": "dispatch",
+              "line": 51,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1657,
+              "text": "\"#{host}#{path}#{query_str}\".byteslice(0, MAX_LENGTH)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 51,
+            "method": "byteslice",
+            "path": "lib/browser_pageview_event_url_normalizer.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2059,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2030,
+              "text": "path.byteslice(0, MAX_LENGTH)"
+            },
+            {
+              "end": 2059,
+              "fallbacks": [],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2030,
+              "text": "path.byteslice(0, MAX_LENGTH)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "byteslice",
+            "path": "lib/browser_pageview_event_url_normalizer.rb"
+          }
+        }
+      ],
+      "subtype": "primitive-string"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "normalize_referrer",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_referrer"
+          },
+          {
+            "kind": "harvest",
+            "method": "normalize_site_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_site_path"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "normalize_referrer",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_referrer"
+          },
+          {
+            "kind": "harvest",
+            "method": "normalize_site_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:BrowserPageviewEventUrlNormalizer:true:normalize_site_path"
+          }
+        ]
+      },
+      "id": "discourse-08",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1710,
+              "fallbacks": [],
+              "kind": "dispatch",
+              "line": 51,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1657,
+              "text": "\"#{host}#{path}#{query_str}\".byteslice(0, MAX_LENGTH)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 51,
+            "method": "byteslice",
+            "path": "lib/browser_pageview_event_url_normalizer.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 2059,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2030,
+              "text": "path.byteslice(0, MAX_LENGTH)"
+            },
+            {
+              "end": 2059,
+              "fallbacks": [],
+              "kind": "dispatch",
+              "line": 62,
+              "method": "byteslice",
+              "path": "lib/browser_pageview_event_url_normalizer.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 2030,
+              "text": "path.byteslice(0, MAX_LENGTH)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 62,
+            "method": "byteslice",
+            "path": "lib/browser_pageview_event_url_normalizer.rb"
+          }
+        }
+      ],
+      "subtype": "primitive-string"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Category:true:split_slug_path"
+          },
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:CategoryHashtag:true:split_slug_path"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Category:true:split_slug_path"
+          },
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:CategoryHashtag:true:split_slug_path"
+          }
+        ]
+      },
+      "id": "discourse-10",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1848,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "split",
+              "path": "app/models/concerns/category_hashtag.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1808,
+              "text": "slug.split(Category::SLUG_REF_SEPARATOR)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "split",
+            "path": "app/models/concerns/category_hashtag.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Category:true:split_slug_path"
+          },
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:CategoryHashtag:true:split_slug_path"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:Category:true:split_slug_path"
+          },
+          {
+            "kind": "harvest",
+            "method": "split_slug_path",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:CategoryHashtag:true:split_slug_path"
+          }
+        ]
+      },
+      "id": "discourse-11",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 1848,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 48,
+              "method": "split",
+              "path": "app/models/concerns/category_hashtag.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 1808,
+              "text": "slug.split(Category::SLUG_REF_SEPARATOR)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 48,
+            "method": "split",
+            "path": "app/models/concerns/category_hashtag.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "topic_thumbnail_sizes",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:ThemeModifierSet:false:topic_thumbnail_sizes"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "topic_thumbnail_sizes",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:ThemeModifierSet:false:topic_thumbnail_sizes"
+          }
+        ]
+      },
+      "id": "discourse-16",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "args": [],
+              "class_side": false,
+              "end": 1823,
+              "kind": "send",
+              "line": 62,
+              "name": "map",
+              "owner": "Some(Class { id: ClassId(Symbol(\"ThemeModifierSet\")), args: Shared([]) })",
+              "path": "app/models/theme_modifier_set.rb",
+              "receiver": "Some(Str)",
+              "recv_span": {
+                "end": 1677,
+                "file": 297,
+                "start": 1672
+              },
+              "start": 1672,
+              "text": "array\n      .map do |dimension|\n        parts = dimension.split(\"x\")\n        next if parts.length != 2\n        [parts[0].to_i, parts[1].to_i]\n      end",
+              "ty": "Some(Var { var: TyVar(0) })"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "send",
+            "line": 62,
+            "name": "map",
+            "path": "app/models/theme_modifier_set.rb",
+            "receiver": "Some(Str)"
+          }
+        }
+      ],
+      "subtype": "primitive-string"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [
+          {
+            "kind": "harvest",
+            "method": "body",
+            "normalized": "Some(Nil)",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:TopicEmbed::FetchResponse:false:body"
+          }
+        ],
+        "s3": [
+          {
+            "kind": "harvest",
+            "method": "body",
+            "normalized": "Some(Union { variants: Shared([Var { var: TyVar(0) }, Nil]) })",
+            "raw": "Union { variants: Shared([Var { var: TyVar(0) }, Nil]) }",
+            "slot": "ret:TopicEmbed::FetchResponse:false:body"
+          }
+        ]
+      },
+      "id": "discourse-17",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 7514,
+              "fallbacks": [
+                "class-missing"
+              ],
+              "kind": "dispatch",
+              "line": 264,
+              "method": "HTML5",
+              "path": "app/models/topic_embed.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 7482,
+              "text": "Nokogiri.HTML5(read_doc.content)"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 264,
+            "method": "HTML5",
+            "path": "app/models/topic_embed.rb"
+          }
+        },
+        {
+          "observations": [
+            {
+              "end": 8735,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 302,
+              "method": "to_html",
+              "path": "app/models/topic_embed.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 8704,
+              "text": "doc.at(\"body\").children.to_html"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 302,
+            "method": "to_html",
+            "path": "app/models/topic_embed.rb"
+          }
+        }
+      ],
+      "subtype": "class-missing"
+    },
+    {
+      "app": "discourse",
+      "classification": "dispatch-fallback",
+      "harvest_evidence": {
+        "det": [],
+        "s3": []
+      },
+      "id": "discourse-18",
+      "producer_evidence": [
+        {
+          "observations": [
+            {
+              "end": 376,
+              "fallbacks": [
+                "receiver-unmodeled"
+              ],
+              "kind": "dispatch",
+              "line": 12,
+              "method": "[]",
+              "path": "app/jobs/regular/retrieve_topic.rb",
+              "result": "Var { var: TyVar(0) }",
+              "start": 360,
+              "text": "args[:embed_url]"
+            }
+          ],
+          "observations_equal_to_historical": true,
+          "query": {
+            "kind": "dispatch",
+            "line": 12,
+            "method": "[]",
+            "path": "app/jobs/regular/retrieve_topic.rb"
+          }
+        }
+      ],
+      "subtype": "receiver-unmodeled"
+    }
+  ],
+  "scope": "Verifies recorded producer branches; causal chains and other-gap labels remain source annotations.",
+  "subtype_counts": {
+    "class-missing": 28,
+    "empty-hash-value-variable": 1,
+    "primitive-string": 3,
+    "receiver-unmodeled": 21,
+    "stale-accessor-state": 2,
+    "unobserved-forwarded-constructor-parameter": 1,
+    "unseeded-yield-parameter": 3
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "binaries": {
+    "roundhouse": "5d5cc9be6cdbfe07a95e21310bfea221f1556b0f0af2d24714dfc5d2b1705daf"
+  },
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bin",
+    "roundhouse"
+  ],
+  "commit": "b64163fe53a8ceb9881fc5a2b5252011a4aa74e0",
+  "exporter_sha256": null,
+  "patches": {
+    "precision-observer.patch": "2b626dcd1c4f61ae22e853b2d7e0f3cb9aa0efe40d617b87c0bfe366d9ebb3ca"
+  },
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)"
+}

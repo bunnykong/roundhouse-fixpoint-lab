@@ -1,0 +1,19 @@
+{
+  "binaries": {
+    "roundhouse": "6229f289eccb5693c0fd9d84e79a0eee5d86e34da5011822948eb033440c2f37"
+  },
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bin",
+    "roundhouse"
+  ],
+  "commit": "4485e7db7f3e30e15c09800ff807dff29929d223",
+  "exporter_sha256": null,
+  "patches": {
+    "leaf-observer.patch": "943d4fdfb1ba71e097d895e6ffab944cbc825ab2290a0eacc017f18356768c59"
+  },
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)"
+}

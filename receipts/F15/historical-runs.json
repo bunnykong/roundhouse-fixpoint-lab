@@ -1,0 +1,2752 @@
+[
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:22:58.902045+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-seed",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:19:59.005087+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 0,
+        "recorded": 66173,
+        "replayed": 0,
+        "typed": 66173,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 11792,
+      "file": "app/models/account.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "boolean",
+      "method": "sign?",
+      "old_body": "true",
+      "original_file_sha256": "156dd0c115d5601b97e7b88ea53285387c08247da6c000dd15463635da31e2b2",
+      "replacement": "false",
+      "start": 11788
+    },
+    "edited_file_sha256": "7b46000eae0e8d33c5d3a50fec3e26b885c479f88fcf0dbd820c5f88b64da33e",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:25:52.256776+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-boolean-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:22:59.031330+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 66173,
+        "recorded": 66173,
+        "replayed": 64997,
+        "typed": 1176,
+        "uncovered": 1172,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 11792,
+      "file": "app/models/account.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "boolean",
+      "method": "sign?",
+      "old_body": "true",
+      "original_file_sha256": "156dd0c115d5601b97e7b88ea53285387c08247da6c000dd15463635da31e2b2",
+      "replacement": "false",
+      "start": 11788
+    },
+    "edited_file_sha256": "7b46000eae0e8d33c5d3a50fec3e26b885c479f88fcf0dbd820c5f88b64da33e",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:25:57.885686+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-boolean-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-08T23:25:52.310338+00:00",
+    "timed": true,
+    "wall_seconds": 5.567654792044777,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 11792,
+      "file": "app/models/account.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "boolean",
+      "method": "sign?",
+      "old_body": "true",
+      "original_file_sha256": "156dd0c115d5601b97e7b88ea53285387c08247da6c000dd15463635da31e2b2",
+      "replacement": "false",
+      "start": 11788
+    },
+    "edited_file_sha256": "7b46000eae0e8d33c5d3a50fec3e26b885c479f88fcf0dbd820c5f88b64da33e",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-08T23:28:50.637135+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-boolean-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 0.690039166
+    },
+    "started_at_utc": "2026-10-08T23:25:57.898918+00:00",
+    "timed": true,
+    "wall_seconds": 172.72906091698678,
+    "warm": {
+      "cold_analyze_seconds": 6.010631458,
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 66173,
+        "recorded": 66173,
+        "replayed": 64997,
+        "typed": 1176,
+        "uncovered": 1172,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 6.127634958,
+      "warm_analyze_seconds": 162.352283292,
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 166.349116667,
+      "shadow_seconds": 6.127634958,
+      "total_seconds": 172.476751625
+    }
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1319,
+      "file": "app/models/domain_block.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "return-type",
+      "method": "to_log_human_identifier",
+      "old_body": "domain",
+      "original_file_sha256": "f65107d688c7dfff522fbc48780e62db6369d5a7e57b699393d208087a5ca07b",
+      "replacement": "domain.length",
+      "start": 1313
+    },
+    "edited_file_sha256": "f465a7594a7d1a9e0dfee48837bfed746c2e2a9bbcaefb402319a8e810d86078",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:31:55.075595+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218415,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-return-type-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:28:50.691386+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 1,
+        "loaded": 66173,
+        "recorded": 66173,
+        "replayed": 64999,
+        "typed": 1174,
+        "uncovered": 1173,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1319,
+      "file": "app/models/domain_block.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "return-type",
+      "method": "to_log_human_identifier",
+      "old_body": "domain",
+      "original_file_sha256": "f65107d688c7dfff522fbc48780e62db6369d5a7e57b699393d208087a5ca07b",
+      "replacement": "domain.length",
+      "start": 1313
+    },
+    "edited_file_sha256": "f465a7594a7d1a9e0dfee48837bfed746c2e2a9bbcaefb402319a8e810d86078",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:32:00.401680+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218415,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-return-type-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-08T23:31:55.122595+00:00",
+    "timed": true,
+    "wall_seconds": 5.271794250002131,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1319,
+      "file": "app/models/domain_block.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "return-type",
+      "method": "to_log_human_identifier",
+      "old_body": "domain",
+      "original_file_sha256": "f65107d688c7dfff522fbc48780e62db6369d5a7e57b699393d208087a5ca07b",
+      "replacement": "domain.length",
+      "start": 1313
+    },
+    "edited_file_sha256": "f465a7594a7d1a9e0dfee48837bfed746c2e2a9bbcaefb402319a8e810d86078",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-08T23:34:40.578629+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218415,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-return-type-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 0.615604667
+    },
+    "started_at_utc": "2026-10-08T23:32:00.414436+00:00",
+    "timed": true,
+    "wall_seconds": 160.1556156660081,
+    "warm": {
+      "cold_analyze_seconds": 4.437994208,
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 1,
+        "loaded": 66173,
+        "recorded": 66173,
+        "replayed": 64999,
+        "typed": 1174,
+        "uncovered": 1173,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 4.547827458,
+      "warm_analyze_seconds": 151.403257417,
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 155.345382126,
+      "shadow_seconds": 4.547827458,
+      "total_seconds": 159.893209584
+    }
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 886,
+      "file": "app/services/clear_domain_media_service.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "withdraw-read",
+      "method": "blocked_domain",
+      "old_body": "domain_block.domain",
+      "original_file_sha256": "f8babeca374f50ab85bb508332c091f4c744de6676767893fc3de34ff542054a",
+      "replacement": "nil",
+      "start": 867
+    },
+    "edited_file_sha256": "18c620d6b3309a84b2fcfa331f856b48bb9604d95560744281e1ec902eb8441a",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:37:50.407567+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218413,
+        "params": 12608,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-withdraw-read-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:34:40.631899+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 66173,
+        "recorded": 66176,
+        "replayed": 22553,
+        "typed": 43623,
+        "uncovered": 45,
+        "unused": 43569
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 886,
+      "file": "app/services/clear_domain_media_service.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "withdraw-read",
+      "method": "blocked_domain",
+      "old_body": "domain_block.domain",
+      "original_file_sha256": "f8babeca374f50ab85bb508332c091f4c744de6676767893fc3de34ff542054a",
+      "replacement": "nil",
+      "start": 867
+    },
+    "edited_file_sha256": "18c620d6b3309a84b2fcfa331f856b48bb9604d95560744281e1ec902eb8441a",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:37:55.847625+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218413,
+        "params": 12608,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-withdraw-read-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-08T23:37:50.480728+00:00",
+    "timed": true,
+    "wall_seconds": 5.359499374986626,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "mastodon",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "gradual_untyped": 2675,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 1583,
+        "notes": 263,
+        "parse_errors": 0,
+        "survey_gaps": 138,
+        "warnings": 4103
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      }
+    },
+    "edit": {
+      "app": "mastodon",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 886,
+      "file": "app/services/clear_domain_media_service.rb",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "kind": "withdraw-read",
+      "method": "blocked_domain",
+      "old_body": "domain_block.domain",
+      "original_file_sha256": "f8babeca374f50ab85bb508332c091f4c744de6676767893fc3de34ff542054a",
+      "replacement": "nil",
+      "start": 867
+    },
+    "edited_file_sha256": "18c620d6b3309a84b2fcfa331f856b48bb9604d95560744281e1ec902eb8441a",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-08T23:40:52.352720+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218413,
+        "params": 12608,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "mastodon-withdraw-read-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 0.684607458
+    },
+    "started_at_utc": "2026-10-08T23:37:55.860380+00:00",
+    "timed": true,
+    "wall_seconds": 176.48291312501533,
+    "warm": {
+      "cold_analyze_seconds": 4.539151458,
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 66173,
+        "recorded": 66176,
+        "replayed": 22553,
+        "typed": 43623,
+        "uncovered": 45,
+        "unused": 43569
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 4.647630125,
+      "warm_analyze_seconds": 167.571210875,
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 171.57464525,
+      "shadow_seconds": 4.647630125,
+      "total_seconds": 176.222275375
+    }
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:46:56.982855+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491759,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-seed",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:40:52.366934+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 0,
+        "recorded": 127847,
+        "replayed": 0,
+        "typed": 127847,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 4155,
+      "file": "app/models/bookmark.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "boolean",
+      "method": "auto_delete_when_reminder_sent?",
+      "old_body": "auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent]",
+      "original_file_sha256": "ef41c095312d09a91880a11599ecf756b5b8905f0e1ac6a559d6a33c98cf0f05",
+      "replacement": "!(auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent])",
+      "start": 4076
+    },
+    "edited_file_sha256": "9185c39f40cbb3507d76c298ab9aec85d9098a0a220dbbf6b4796064fa1e9806",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:53:30.975703+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491760,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-boolean-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-08T23:46:57.290464+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127847,
+        "replayed": 126292,
+        "typed": 1555,
+        "uncovered": 1549,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 4155,
+      "file": "app/models/bookmark.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "boolean",
+      "method": "auto_delete_when_reminder_sent?",
+      "old_body": "auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent]",
+      "original_file_sha256": "ef41c095312d09a91880a11599ecf756b5b8905f0e1ac6a559d6a33c98cf0f05",
+      "replacement": "!(auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent])",
+      "start": 4076
+    },
+    "edited_file_sha256": "9185c39f40cbb3507d76c298ab9aec85d9098a0a220dbbf6b4796064fa1e9806",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-08T23:53:47.298421+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491760,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-boolean-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-08T23:53:31.141440+00:00",
+    "timed": true,
+    "wall_seconds": 16.136095708003268,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 4155,
+      "file": "app/models/bookmark.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "boolean",
+      "method": "auto_delete_when_reminder_sent?",
+      "old_body": "auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent]",
+      "original_file_sha256": "ef41c095312d09a91880a11599ecf756b5b8905f0e1ac6a559d6a33c98cf0f05",
+      "replacement": "!(auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent])",
+      "start": 4076
+    },
+    "edited_file_sha256": "9185c39f40cbb3507d76c298ab9aec85d9098a0a220dbbf6b4796064fa1e9806",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-09T00:00:09.691092+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491760,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-boolean-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 2.894529417
+    },
+    "started_at_utc": "2026-10-08T23:53:47.311596+00:00",
+    "timed": true,
+    "wall_seconds": 382.355412416975,
+    "warm": {
+      "cold_analyze_seconds": 13.831045291,
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127847,
+        "replayed": 126292,
+        "typed": 1555,
+        "uncovered": 1549,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 14.098174417,
+      "warm_analyze_seconds": 352.943785959,
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 367.63516450000003,
+      "shadow_seconds": 14.098174417,
+      "total_seconds": 381.733338917
+    }
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1181,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4853,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 35474,
+      "file": "app/models/category.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "return-type",
+      "method": "slug_url_without_id",
+      "old_body": "\"#{Discourse.base_path}/c/#{slug_path.join(\"/\")}\"",
+      "original_file_sha256": "656e0a44302c4b0ecb5840ceaa88d2e7708f3672945ce8935a90dce9b8a84725",
+      "replacement": "0",
+      "start": 35425
+    },
+    "edited_file_sha256": "64a5ef576b9626dd2a12279fd820d510cc998a4d01421710438a9fcf84a57efc",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-09T00:06:57.114522+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491754,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4432
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-return-type-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-09T00:00:09.887443+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127843,
+        "replayed": 126209,
+        "typed": 1634,
+        "uncovered": 1632,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1181,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4853,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 35474,
+      "file": "app/models/category.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "return-type",
+      "method": "slug_url_without_id",
+      "old_body": "\"#{Discourse.base_path}/c/#{slug_path.join(\"/\")}\"",
+      "original_file_sha256": "656e0a44302c4b0ecb5840ceaa88d2e7708f3672945ce8935a90dce9b8a84725",
+      "replacement": "0",
+      "start": 35425
+    },
+    "edited_file_sha256": "64a5ef576b9626dd2a12279fd820d510cc998a4d01421710438a9fcf84a57efc",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-09T00:07:13.662476+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491754,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4432
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-return-type-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-09T00:06:57.274656+00:00",
+    "timed": true,
+    "wall_seconds": 16.36719716701191,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1181,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4853,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 35474,
+      "file": "app/models/category.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "return-type",
+      "method": "slug_url_without_id",
+      "old_body": "\"#{Discourse.base_path}/c/#{slug_path.join(\"/\")}\"",
+      "original_file_sha256": "656e0a44302c4b0ecb5840ceaa88d2e7708f3672945ce8935a90dce9b8a84725",
+      "replacement": "0",
+      "start": 35425
+    },
+    "edited_file_sha256": "64a5ef576b9626dd2a12279fd820d510cc998a4d01421710438a9fcf84a57efc",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-09T00:13:25.932939+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491754,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4432
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-return-type-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 2.732908041
+    },
+    "started_at_utc": "2026-10-09T00:07:13.676088+00:00",
+    "timed": true,
+    "wall_seconds": 372.2332755830139,
+    "warm": {
+      "cold_analyze_seconds": 13.731254666,
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127843,
+        "replayed": 126234,
+        "typed": 1609,
+        "uncovered": 1607,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 13.992294375,
+      "warm_analyze_seconds": 342.98211375,
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 357.60131041600005,
+      "shadow_seconds": 13.992294375,
+      "total_seconds": 371.593604791
+    }
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1017,
+      "file": "app/services/username_checker_service.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "withdraw-read",
+      "method": "is_developer?",
+      "old_body": "Rails.configuration.respond_to?(:developer_emails) &&\n      Rails.configuration.developer_emails.include?(value)",
+      "original_file_sha256": "e28d857f46851bd0d6e521bbd9d5d40b3dc6dc920646a93c9bc3032672928094",
+      "replacement": "nil",
+      "start": 905
+    },
+    "edited_file_sha256": "6f7556dd52dce723d79be23988af3e7155d2fccc3034fb3c8ded70e58a6af6e3",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-09T00:19:42.855620+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491750,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-withdraw-read-correctness",
+    "save": null,
+    "started_at_utc": "2026-10-09T00:13:26.104695+00:00",
+    "timed": false,
+    "wall_seconds": null,
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 8,
+        "loaded": 127847,
+        "recorded": 127847,
+        "replayed": 126141,
+        "typed": 1706,
+        "uncovered": 1698,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1017,
+      "file": "app/services/username_checker_service.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "withdraw-read",
+      "method": "is_developer?",
+      "old_body": "Rails.configuration.respond_to?(:developer_emails) &&\n      Rails.configuration.developer_emails.include?(value)",
+      "original_file_sha256": "e28d857f46851bd0d6e521bbd9d5d40b3dc6dc920646a93c9bc3032672928094",
+      "replacement": "nil",
+      "start": 905
+    },
+    "edited_file_sha256": "6f7556dd52dce723d79be23988af3e7155d2fccc3034fb3c8ded70e58a6af6e3",
+    "exit_code": 1,
+    "finished_at_utc": "2026-10-09T00:20:00.370708+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491750,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-withdraw-read-1-cold",
+    "repetition": 1,
+    "save": null,
+    "started_at_utc": "2026-10-09T00:19:43.013678+00:00",
+    "timed": true,
+    "wall_seconds": 17.334566750039812,
+    "warm": null,
+    "warm_wall": null
+  },
+  {
+    "app": "discourse",
+    "binary_sha256": "93b1f4efc3eb0a43420e4ac4a7cdd6a90f4da60b18801d0049991345ab5dc952",
+    "diagnostic_kinds_equal": true,
+    "diagnostics": {
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "gradual_untyped": 5878,
+      "ignored_probe_records": 0,
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "probe_records": [],
+      "rh_dyn": {
+        "converged": null,
+        "convergence_basis": "no_probe",
+        "present": false,
+        "records": 0,
+        "rounds": {}
+      },
+      "summary_counts": {
+        "errors": 3123,
+        "notes": 4854,
+        "parse_errors": 0,
+        "survey_gaps": 221,
+        "warnings": 8483
+      },
+      "truncated_lines": 0,
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      }
+    },
+    "edit": {
+      "app": "discourse",
+      "base_condition": "public-corpus-v1",
+      "condition": "sol-warm-public-edits-v1",
+      "end": 1017,
+      "file": "app/services/username_checker_service.rb",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "kind": "withdraw-read",
+      "method": "is_developer?",
+      "old_body": "Rails.configuration.respond_to?(:developer_emails) &&\n      Rails.configuration.developer_emails.include?(value)",
+      "original_file_sha256": "e28d857f46851bd0d6e521bbd9d5d40b3dc6dc920646a93c9bc3032672928094",
+      "replacement": "nil",
+      "start": 905
+    },
+    "edited_file_sha256": "6f7556dd52dce723d79be23988af3e7155d2fccc3034fb3c8ded70e58a6af6e3",
+    "exit_code": 1,
+    "external_cold_digest_equal": true,
+    "finished_at_utc": "2026-10-09T00:26:28.540630+00:00",
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491750,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "label": "discourse-withdraw-read-1-warm",
+    "repetition": 1,
+    "save": {
+      "seconds": 2.679830541
+    },
+    "started_at_utc": "2026-10-09T00:20:00.384857+00:00",
+    "timed": true,
+    "wall_seconds": 388.1318984160316,
+    "warm": {
+      "cold_analyze_seconds": 13.58557925,
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 8,
+        "loaded": 127847,
+        "recorded": 127847,
+        "replayed": 126141,
+        "typed": 1706,
+        "uncovered": 1698,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "shadow_seconds": 13.837672,
+      "warm_analyze_seconds": 358.7584505,
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": {
+      "check_excluding_shadow_seconds": 373.6291725,
+      "shadow_seconds": 13.837672,
+      "total_seconds": 387.4668445
+    }
+  }
+]

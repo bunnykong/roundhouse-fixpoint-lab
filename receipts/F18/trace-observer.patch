@@ -1,0 +1,263 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index b124630d..9a35372a 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -459,6 +459,7 @@ impl<'a> BodyTyper<'a> {
+         expr.decisions &= !crate::expr::CLASS_OBJECT_VALUE;
+         if self.is_class_object(expr, ctx) { expr.decisions |= crate::expr::CLASS_OBJECT_VALUE; }
+         diagnostic::detect_diagnostic(expr);
++        super::public_trace::expr(expr, ctx);
+         ty
+     }
+ 
+@@ -1648,7 +1649,9 @@ impl<'a> BodyTyper<'a> {
+                     }
+                     super::errgate::origin(&expr_span, slots);
+                 }
++                super::public_trace::begin(&expr_span);
+                 let dispatched = self.dispatch(recv_ty.as_ref(), method, block_ret.as_ref(), args);
++                super::public_trace::dispatched(&expr_span, method.as_str(), &dispatched);
+                 if let Some(receiver) = recv.as_mut() {
+                     receiver.decisions &= !crate::expr::RESOLVED_OPERATOR_RECEIVER;
+                     if matches!(method.as_str(), "+" | "-" | "*" | "/" | "**" | "%" | "<" | "<=" | ">" | ">=")
+diff --git a/src/analyze/body/send.rs b/src/analyze/body/send.rs
+index 7eef745d..4b3f04a8 100644
+--- a/src/analyze/body/send.rs
++++ b/src/analyze/body/send.rs
+@@ -1596,7 +1596,7 @@ impl<'a> BodyTyper<'a> {
+                         t => t,
+                     };
+                 }
+-                unknown()
++                crate::analyze::public_trace::fallback("class-missing")
+             }
+             Some(Ty::Array { elem }) => {
+                 let elem: &Ty = elem;
+@@ -1887,8 +1887,8 @@ impl<'a> BodyTyper<'a> {
+             // uses. Unmodeled methods fall back to `unknown()` (an
+             // inference gap) rather than the parent-chain walk — `Time`
+             // has no user-defined ancestors in this corpus.
+-            Some(Ty::Time) => time_method(method).unwrap_or_else(unknown),
+-            Some(Ty::Date) => date_method(method, args).unwrap_or_else(unknown),
++            Some(Ty::Time) => time_method(method).unwrap_or_else(|| crate::analyze::public_trace::fallback("time-missing")),
++            Some(Ty::Date) => date_method(method, args).unwrap_or_else(|| crate::analyze::public_trace::fallback("date-missing")),
+             // `Integer#in_time_zone` lowers only for ≤1 arg (invariant 6).
+             Some(Ty::Int)
+                 if method.as_str() == "in_time_zone" && args.len() > 1 =>
+@@ -1932,7 +1932,7 @@ impl<'a> BodyTyper<'a> {
+                 let has_var = variants.iter().any(|v| matches!(v, Ty::Var { .. }));
+                 match resolved.len() {
+                     0 if has_var => Ty::unresolved(),
+-                    0 => unknown(),
++                    0 => crate::analyze::public_trace::fallback("union-all-missing"),
+                     1 => resolved.into_iter().next().unwrap(),
+                     _ => union_many(resolved),
+                 }
+@@ -1943,7 +1943,7 @@ impl<'a> BodyTyper<'a> {
+             // type the receiver, `rows.to_h` is a Hash and `x.to_s` is
+             // a String. Falling back to these (gradual element types)
+             // resolves the read instead of leaving it `Var`.
+-            _ => conversion_fallback(method).unwrap_or_else(unknown),
++            _ => conversion_fallback(method).unwrap_or_else(|| crate::analyze::public_trace::fallback("receiver-unmodeled")),
+         }
+     }
+ 
+diff --git a/src/analyze/errgate.rs b/src/analyze/errgate.rs
+index 2278c448..f8954a94 100644
+--- a/src/analyze/errgate.rs
++++ b/src/analyze/errgate.rs
+@@ -359,3 +359,5 @@ fn input_digest(app: &App) -> String {
+     }
+     format!("{:016x}", h.finish())
+ }
++
++pub(super) fn trace_writer() -> Option<String> { WRITER.with(|w| w.borrow().clone()) }
+diff --git a/src/analyze/harvest_return.rs b/src/analyze/harvest_return.rs
+index 49480687..ad30fe2f 100644
+--- a/src/analyze/harvest_return.rs
++++ b/src/analyze/harvest_return.rs
+@@ -191,6 +191,7 @@ pub(super) fn insert_inferred_return(
+     method: &Symbol,
+     ty: Ty,
+ ) {
++    let raw = ty.clone();
+     let ty = super::fixpoint_bound::bound(ty);
+     match table.get(method) {
+         None => {
+@@ -208,6 +209,7 @@ pub(super) fn insert_inferred_return(
+             }
+         },
+     }
++    super::public_trace::harvest(method.as_str(), &raw, table.get(method));
+ }
+ 
+ #[cfg(test)]
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 9f325957..b183ddc0 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -51,6 +51,7 @@ mod fixpoint_bound;
+ mod fixpoint_check;
+ mod precision;
+ mod det;
++mod public_trace;
+ mod detfp;
+ mod structure;
+ pub(crate) mod errgate;
+@@ -1113,6 +1114,7 @@ impl Analyzer {
+     /// the refined registry. Iterates to a fixed point (capped; see
+     /// `FIXPOINT_CAP`) using a structural registry snapshot to detect convergence.
+     pub fn analyze(&mut self, app: &mut App) {
++        public_trace::start(app);
+         det::reset();
+         errgate::reset();
+         handoff::reset();
+@@ -1590,6 +1592,7 @@ impl Analyzer {
+         }
+         det::report();
+         self.report_errgate(app);
++        public_trace::finish(app, self);
+     }
+ 
+     /// With the add-only rules or the fold, what is still pending when
+diff --git a/src/analyze/public_trace.rs b/src/analyze/public_trace.rs
+new file mode 100644
+index 00000000..e07f2eb3
+--- /dev/null
++++ b/src/analyze/public_trace.rs
+@@ -0,0 +1,135 @@
++use std::cell::RefCell;
++use std::collections::{BTreeMap, HashMap};
++use crate::{App, expr::{Expr, ExprNode}, span::Span, ty::Ty};
++use super::body::Ctx;
++
++#[derive(Default)]
++struct Trace {
++    sources: HashMap<u32, (String, String)>,
++    rows: BTreeMap<String, Vec<serde_json::Value>>,
++    reasons: Vec<&'static str>,
++    active: bool,
++}
++std::thread_local! { static TRACE: RefCell<Trace> = RefCell::new(Trace::default()); }
++
++pub(super) fn start(app: &App) {
++    let mut t = Trace::default();
++    if std::env::var("RH_PUBLIC_INPUT").as_deref() == Ok("1") {
++        if let Ok(path) = std::env::var("RH_PUBLIC_TRACE_FILES") {
++            let files = std::fs::read_to_string(path).unwrap();
++            for (i, source) in app.sources.iter().enumerate() {
++                if files.lines().any(|f| source.path.ends_with(f)) {
++                    t.sources.insert(i as u32 + 1, (source.path.clone(), source.text.clone()));
++                }
++            }
++        }
++    }
++    TRACE.with(|s| *s.borrow_mut() = t);
++}
++
++fn position(t: &Trace, s: &Span) -> Option<serde_json::Value> {
++    let (path, text) = t.sources.get(&s.file.0)?;
++    let start = (s.start as usize).min(text.len());
++    let end = (s.end as usize).min(text.len());
++    Some(serde_json::json!({"path":path,"start":s.start,"end":s.end,
++        "line":text.as_bytes()[..start].iter().filter(|b| **b == b'\n').count()+1,
++        "text":text.get(start..end).unwrap_or("")}))
++}
++
++pub(super) fn begin(s: &Span) {
++    TRACE.with(|t| { let mut t = t.borrow_mut();
++        t.active = t.sources.contains_key(&s.file.0); t.reasons.clear(); });
++}
++pub(super) fn fallback(reason: &'static str) -> Ty {
++    TRACE.with(|t| { let mut t = t.borrow_mut(); if t.active { t.reasons.push(reason); } });
++    super::body::unknown()
++}
++pub(super) fn dispatched(s: &Span, method: &str, result: &Ty) {
++    TRACE.with(|t| { let mut t = t.borrow_mut();
++        if let Some(mut row) = position(&t, s) {
++            row["kind"] = "dispatch".into(); row["method"] = method.into();
++            row["result"] = format!("{result:?}").into();
++            row["fallbacks"] = serde_json::json!(t.reasons);
++            let key = format!("dispatch:{}:{}:{}", s.file.0, s.start, s.end);
++            let rows = t.rows.entry(key).or_default();
++            if rows.last() != Some(&row) { rows.push(row); }
++        }
++        t.active = false;
++    });
++}
++pub(super) fn expr(e: &Expr, ctx: &Ctx) {
++    TRACE.with(|t| { let mut t = t.borrow_mut();
++        let Some(mut row) = position(&t, &e.span) else { return };
++        let (kind, name) = match &*e.node {
++            ExprNode::Send { method, .. } => ("send", method.as_str()),
++            ExprNode::Var { name, .. } => ("local", name.as_str()),
++            ExprNode::Ivar { name } => ("ivar", name.as_str()),
++            ExprNode::Const { .. } => ("const", ""),
++            ExprNode::Assign { .. } => ("assign", ""),
++            ExprNode::If { .. } => ("if", ""),
++            _ => ("other", ""),
++        };
++        row["kind"] = kind.into(); row["name"] = name.into();
++        row["owner"] = format!("{:?}",ctx.self_ty).into();
++        row["class_side"] = ctx.class_side.into();
++        row["ty"] = format!("{:?}",e.ty).chars().take(2000).collect::<String>().into();
++        if let ExprNode::Send { recv, args, .. } = &*e.node {
++            row["receiver"] = serde_json::json!(recv.as_ref().map(|r|format!("{:?}",r.ty)));
++            row["recv_span"] = serde_json::json!(recv.as_ref().map(|r|r.span));
++            row["args"] = serde_json::json!(args.iter().map(|a| (a.span,format!("{:?}",a.ty)))
++                .collect::<Vec<_>>());
++        }
++        let key = format!("expr:{}:{}:{}:{:?}:{}",e.span.file.0,e.span.start,e.span.end,ctx.self_ty,ctx.class_side);
++        let rows = t.rows.entry(key).or_default();
++        if rows.last() != Some(&row) { rows.push(row); }
++    });
++}
++pub(super) fn harvest(method: &str, raw: &Ty, normalized: Option<&Ty>) {
++    TRACE.with(|t| { let mut t = t.borrow_mut();
++        if t.sources.is_empty() { return }
++        let slot = super::errgate::trace_writer();
++        let row = serde_json::json!({"kind":"harvest","slot":slot,"method":method,
++            "raw":format!("{raw:?}"),"normalized":format!("{normalized:?}")});
++        let key = format!("harvest:{slot:?}:{method}");
++        let rows = t.rows.entry(key).or_default();
++        if rows.last() != Some(&row) { rows.push(row); }
++    });
++}
++pub(super) fn finish(app: &App, analyzer: &super::Analyzer) {
++    TRACE.with(|t| { let t = t.borrow();
++        if t.sources.is_empty() { return }
++        for (key, rows) in &t.rows {
++            eprintln!("rh-public-trace: {}",serde_json::json!({"key":key,"history":rows}));
++        }
++        if let Ok(path) = std::env::var("RH_PUBLIC_TRACE_SLOTS") {
++            let slots = std::fs::read_to_string(path).unwrap();
++            let wanted = |owner: &str, method: &str| slots.lines().any(|s| s == format!("{owner}#{method}"));
++            for ((owner, method), params) in &analyzer.inferred_params {
++                if wanted(&owner.to_string(), method.as_str()) {
++                    eprintln!("rh-public-registry: {}", serde_json::json!({"kind":"params",
++                        "owner":owner.to_string(),"method":method.as_str(),"types":format!("{params:?}")}));
++                }
++            }
++            for (owner, info) in &analyzer.classes {
++                for (side, table) in [("instance", &info.instance_methods),("class", &info.class_methods)] {
++                    for (method, ty) in table {
++                        if wanted(&owner.to_string(), method.as_str()) {
++                            eprintln!("rh-public-registry: {}", serde_json::json!({"kind":"return",
++                                "owner":owner.to_string(),"method":method.as_str(),"side":side,"type":format!("{ty:?}"),
++                                "attribute":format!("{:?}",info.attributes.fields.get(method))}));
++                        }
++                    }
++                }
++            }
++        }
++        let mut f = |e: &Expr| final_expr(e, app, &t);
++        crate::lower::for_each_emit_body_ref(app, &mut f);
++    });
++}
++fn final_expr(e: &Expr, app: &App, t: &Trace) {
++    if let Some(mut row) = position(t, &e.span) {
++        row["kind"] = "final".into(); row["ty"] = format!("{:?}",e.ty).into();
++        eprintln!("rh-public-final: {row}");
++    }
++    e.node.for_each_child(&mut |c| final_expr(c, app, t));
++}

@@ -1,0 +1,74 @@
+diff --git a/src/analyze/fixpoint_check.rs b/src/analyze/fixpoint_check.rs
+index 749ce71a..a5213bcc 100644
+--- a/src/analyze/fixpoint_check.rs
++++ b/src/analyze/fixpoint_check.rs
+@@ -380,6 +380,53 @@ impl Census {
+     }
+ }
+ 
++
++// Measurement-only observer: logical untyped leaves, counted per final IR expression.
++#[derive(Default)]
++struct LeafCensus {
++    total: [u64; 3],
++    by_site_kind: BTreeMap<String, [u64; 3]>,
++    memo: HashMap<usize, [u64; 3]>,
++}
++
++impl LeafCensus {
++    fn leaves(&mut self, t: &Ty) -> [u64; 3] {
++        let key = t as *const Ty as usize;
++        if let Some(counts) = self.memo.get(&key) { return *counts; }
++        let mut out = [0u64; 3];
++        let mut each = |child: &Ty| {
++            let counts = self.leaves(child);
++            for i in 0..3 { out[i] += counts[i]; }
++        };
++        match t {
++            Ty::Untyped { why } => out[*why as usize] = 1,
++            Ty::Array { elem } => each(elem),
++            Ty::Hash { key, value } => { each(key); each(value); }
++            Ty::Tuple { elems } => elems.iter().for_each(each),
++            Ty::Union { variants } => variants.iter().for_each(each),
++            Ty::Record { row } => row.fields.values().for_each(each),
++            Ty::Class { args, .. } => args.iter().for_each(each),
++            Ty::Fn { params, block, ret, .. } => {
++                params.iter().for_each(|p| each(&p.ty));
++                if let Some(b) = block { each(b); }
++                each(ret);
++            }
++            _ => {}
++        }
++        self.memo.insert(key, out);
++        out
++    }
++
++    fn expr(&mut self, e: &Expr) {
++        if let Some(t) = &e.ty {
++            let counts = self.leaves(t);
++            let row = self.by_site_kind.entry(e.node.kind_str().to_ascii_lowercase()).or_default();
++            for i in 0..3 { self.total[i] += counts[i]; row[i] += counts[i]; }
++        }
++        e.node.for_each_child(&mut |child| self.expr(child));
++    }
++}
++
+ fn loop_end(end: LoopEnd) -> serde_json::Value {
+     match end {
+         LoopEnd::Settled(round) => serde_json::json!({"end": "settled", "round": round}),
+@@ -597,6 +644,15 @@ impl Analyzer {
+                     "unresolved": census.by_kind[2],
+                 },
+             });
++
++            if flag("RH_PROVENANCE_LEAVES") {
++                let mut leaves = LeafCensus::default();
++                crate::lower::for_each_emit_body_ref(app, &mut |e| leaves.expr(e));
++                line["provenance_leaves"] = serde_json::json!({
++                    "pending": leaves.total[0], "gradual": leaves.total[1], "unresolved": leaves.total[2],
++                    "by_site_kind": leaves.by_site_kind,
++                });
++            }
+             line["bound"] = serde_json::json!({
+                 "calls": BOUND_CALLS.load(Ordering::Relaxed),
+                 "cuts": BOUND_CUTS.load(Ordering::Relaxed),

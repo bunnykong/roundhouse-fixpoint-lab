@@ -1,0 +1,503 @@
+{
+  "adaptation": "ARMS contains historical/current main plus the original sound verification control; main() unchanged",
+  "condition": "settle-sound-published-v1 input/trace; historical main versus fetched current main",
+  "input_sha256": "5e3007513ecbe26a87d46ebfc47f0bacb0817ee0e2066e59054a382d2f9f7d4f",
+  "rows": [
+    {
+      "arm": "current",
+      "binary_sha256": {
+        "roundhouse": "7072bdf43bb7e87e4fa2bce28185d99c6a4bece9c16418b0487bda7d3249960e",
+        "settle-probe": "1799f9545a4a01e45bbfc28a54d8d92dd7d885f67c1235353e3c82b47d7d7bcc"
+      },
+      "check_exit": 0,
+      "commit": "9b2dd5e9720705ca3cf4e9d4f21e5f0e998cdfba",
+      "loops": {
+        "absorb": {
+          "end": "not_run"
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 0
+        }
+      },
+      "records": 12,
+      "rejected": 6
+    },
+    {
+      "arm": "sound",
+      "binary_sha256": {
+        "roundhouse": "fdab115b8afcbe297b720093afc77429227977c5a0cd138e231144df0df6f692",
+        "settle-probe": "651e0d1de61ca14f84675bb9aa03e690afe3e1eebcbad1133119d7f0d811192c"
+      },
+      "check_exit": 0,
+      "commit": "96cdea9a1e6e6bb32a267a247d72f99b98a50b70",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 2
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "records": 12,
+      "rejected": 0,
+      "stats": {
+        "bound": {
+          "calls": 56,
+          "cuts": 0
+        },
+        "census": {
+          "bare_untyped": 0,
+          "missing": 1,
+          "typed": 37,
+          "untyped_anywhere": 16,
+          "untyped_by_provenance": {
+            "gradual": 0,
+            "pending": 0,
+            "unresolved": 16
+          }
+        },
+        "fold": {
+          "accumulations_skipped": 106,
+          "expansion": {
+            "back_edges": 38,
+            "budget_cuts": 0,
+            "tail_edges": 0
+          },
+          "methods_in_reference_mode": 1,
+          "side_table_nodes": 64,
+          "slots": {
+            "narrow": 2,
+            "param": 1,
+            "position": 10,
+            "ret": 1
+          }
+        },
+        "harvest_untie_cut": 0,
+        "loops": {
+          "absorb": {
+            "end": "settled",
+            "round": 1
+          },
+          "production": {
+            "end": "settled",
+            "round": 2
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "schema": 1,
+        "worklist": {
+          "engine": {
+            "absorb_converged": true,
+            "back_to_seen": 0,
+            "budget_exhausted": 0,
+            "cap": 200,
+            "cap_drift": 0,
+            "cap_hits": 0,
+            "cap_osc": 0,
+            "class_entries": 2,
+            "class_pass_secs": 0.0,
+            "const_marks": 0,
+            "ctrl_units": 2,
+            "engine_secs": 0.0,
+            "evals_ctrl": 9,
+            "evals_full": 9,
+            "evals_hist": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "evals_out_changed": 3,
+            "evals_out_same": 6,
+            "evals_reseed": 0,
+            "frozen_units": 0,
+            "graph_first": {
+              "buckets": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "edges": 3,
+              "edges_ivar": 0,
+              "edges_param": 2,
+              "edges_reg": 2,
+              "in_nontrivial": 2,
+              "largest": 2,
+              "nodes": 2,
+              "nontrivial": 1,
+              "sccs": 1,
+              "secs_edges": 0.0,
+              "secs_total": 0.0,
+              "self_loops": 1,
+              "trivial": 0,
+              "wto_depth": 2,
+              "wto_heads": 2
+            },
+            "graph_last": {
+              "buckets": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "edges": 3,
+              "edges_ivar": 0,
+              "edges_param": 2,
+              "edges_reg": 2,
+              "in_nontrivial": 2,
+              "largest": 2,
+              "nodes": 2,
+              "nontrivial": 1,
+              "sccs": 1,
+              "secs_edges": 0.0,
+              "secs_total": 0.0,
+              "self_loops": 1,
+              "trivial": 0,
+              "wto_depth": 2,
+              "wto_heads": 2
+            },
+            "graph_secs": 0.0,
+            "harvest_reapplied": 0,
+            "index_secs": 0.0,
+            "ivar_marks": 0,
+            "lib_units": 0,
+            "marks": 9,
+            "max_evals_unit": 5,
+            "model_method_units": 0,
+            "model_scope_units": 0,
+            "moved_params": [
+              1,
+              0,
+              0
+            ],
+            "moved_slots": [
+              1,
+              0,
+              0
+            ],
+            "param_checked": 5,
+            "param_mismatch": 0,
+            "periods": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "prod_converged": true,
+            "restamps": 0,
+            "rounds_absorb": 2,
+            "rounds_prod": 3,
+            "seeds": [
+              0,
+              0,
+              0
+            ],
+            "units": 2
+          },
+          "fold": {
+            "drain_evals": [
+              4,
+              2,
+              1,
+              2,
+              0,
+              0
+            ],
+            "fold_deferred": 12,
+            "fold_marks": 13,
+            "fold_moved": 22,
+            "lit_restamps": 0,
+            "new_rec": 1,
+            "new_scc_ivars": 0,
+            "side_full_class": 1,
+            "sweeps": 3,
+            "t_harvest": 0.0,
+            "t_ivars": 0.0,
+            "t_rows": 0.0,
+            "t_sites": 0.0,
+            "t_typing": 0.0
+          }
+        }
+      }
+    },
+    {
+      "arm": "current-flowfix",
+      "binary_sha256": {
+        "roundhouse": "cd278089d89b7664327d5ab3a201e1218a423fdd44d4d028364b4c08483fcdbf",
+        "settle-probe": "60e1ae27aeeef87aa006eb685fc9cf16ce1817b13f7b86c0508b79b3f57d518f"
+      },
+      "check_exit": 0,
+      "commit": "9b2dd5e9720705ca3cf4e9d4f21e5f0e998cdfba",
+      "loops": {
+        "absorb": {
+          "end": "ran_to_cap"
+        },
+        "production": {
+          "end": "ran_to_cap"
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 2
+        }
+      },
+      "records": 12,
+      "rejected": 0
+    }
+  ],
+  "runner_source": "lab/reproductions/settle_sound/run.py",
+  "trace_sha256": "177888db48a3d152702e5d169f2b4fac3ec23d2bde2b1284b3d6739e0f07c884",
+  "verification": {
+    "bound": {
+      "calls": 68,
+      "cuts": 0
+    },
+    "census": {
+      "bare_untyped": 0,
+      "missing": 1,
+      "typed": 37,
+      "untyped_anywhere": 16,
+      "untyped_by_provenance": {
+        "gradual": 0,
+        "pending": 0,
+        "unresolved": 16
+      }
+    },
+    "fold": {
+      "accumulations_skipped": 158,
+      "expansion": {
+        "back_edges": 38,
+        "budget_cuts": 0,
+        "tail_edges": 0
+      },
+      "methods_in_reference_mode": 1,
+      "side_table_nodes": 64,
+      "slots": {
+        "narrow": 2,
+        "param": 1,
+        "position": 10,
+        "ret": 1
+      }
+    },
+    "harvest_untie_cut": 0,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 1
+      },
+      "production": {
+        "end": "settled",
+        "round": 2
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 1
+      }
+    },
+    "schema": 1,
+    "verify": [
+      {
+        "loop": "production",
+        "moved": {
+          "block_values": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0,
+          "view_seeds": 0
+        }
+      },
+      {
+        "loop": "views_and_tests",
+        "moved": {
+          "block_values": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      {
+        "loop": "absorb",
+        "moved": {
+          "block_values": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0,
+          "view_seeds": 0
+        }
+      }
+    ],
+    "worklist": {
+      "engine": {
+        "absorb_converged": true,
+        "back_to_seen": 0,
+        "budget_exhausted": 0,
+        "cap": 200,
+        "cap_drift": 0,
+        "cap_hits": 0,
+        "cap_osc": 0,
+        "class_entries": 2,
+        "class_pass_secs": 0.0,
+        "const_marks": 0,
+        "ctrl_units": 2,
+        "engine_secs": 0.0,
+        "evals_ctrl": 9,
+        "evals_full": 9,
+        "evals_hist": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "evals_out_changed": 3,
+        "evals_out_same": 6,
+        "evals_reseed": 0,
+        "frozen_units": 0,
+        "graph_first": {
+          "buckets": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edges": 3,
+          "edges_ivar": 0,
+          "edges_param": 2,
+          "edges_reg": 2,
+          "in_nontrivial": 2,
+          "largest": 2,
+          "nodes": 2,
+          "nontrivial": 1,
+          "sccs": 1,
+          "secs_edges": 0.0,
+          "secs_total": 0.0,
+          "self_loops": 1,
+          "trivial": 0,
+          "wto_depth": 2,
+          "wto_heads": 2
+        },
+        "graph_last": {
+          "buckets": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edges": 3,
+          "edges_ivar": 0,
+          "edges_param": 2,
+          "edges_reg": 2,
+          "in_nontrivial": 2,
+          "largest": 2,
+          "nodes": 2,
+          "nontrivial": 1,
+          "sccs": 1,
+          "secs_edges": 0.0,
+          "secs_total": 0.0,
+          "self_loops": 1,
+          "trivial": 0,
+          "wto_depth": 2,
+          "wto_heads": 2
+        },
+        "graph_secs": 0.0,
+        "harvest_reapplied": 0,
+        "index_secs": 0.0,
+        "ivar_marks": 0,
+        "lib_units": 0,
+        "marks": 9,
+        "max_evals_unit": 5,
+        "model_method_units": 0,
+        "model_scope_units": 0,
+        "moved_params": [
+          1,
+          0,
+          0
+        ],
+        "moved_slots": [
+          1,
+          0,
+          0
+        ],
+        "param_checked": 5,
+        "param_mismatch": 0,
+        "periods": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prod_converged": true,
+        "restamps": 0,
+        "rounds_absorb": 2,
+        "rounds_prod": 3,
+        "seeds": [
+          0,
+          0,
+          0
+        ],
+        "units": 2
+      },
+      "fold": {
+        "drain_evals": [
+          4,
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        "fold_deferred": 12,
+        "fold_marks": 13,
+        "fold_moved": 22,
+        "lit_restamps": 0,
+        "new_rec": 1,
+        "new_scc_ivars": 0,
+        "side_full_class": 1,
+        "sweeps": 3,
+        "t_harvest": 0.0,
+        "t_ivars": 0.0,
+        "t_rows": 0.0,
+        "t_sites": 0.0,
+        "t_typing": 0.0
+      }
+    }
+  }
+}

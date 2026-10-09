@@ -1,0 +1,105 @@
+{
+  "accepted": 12,
+  "records": 12,
+  "slots": {
+    "TreesController#canonical:param:value": 6,
+    "TreesController#canonical:return": 6
+  },
+  "sound": true,
+  "tightness": {
+    "exercised": 20,
+    "meaning": "candidate over-approximations; finite samples cannot prove exactness",
+    "total": 31,
+    "unexercised": [
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "alias_production",
+        "location": "1:50",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:50",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:106",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 2,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:115",
+        "type": "Hash[String | untyped, Integer | String | Hash[untyped, untyped] | untyped]"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 0,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:120",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:129",
+        "type": "untyped"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 0,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:138",
+        "type": "Integer"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:148",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 2,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:157",
+        "type": "Hash[untyped, untyped]"
+      },
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 3,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:182",
+        "type": "untyped"
+      },
+      {
+        "alias": "trees_controller_canonical_ret",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "2:92",
+        "type": "String"
+      }
+    ]
+  },
+  "violations": []
+}

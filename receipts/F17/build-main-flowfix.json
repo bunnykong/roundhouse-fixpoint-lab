@@ -1,0 +1,22 @@
+{
+  "binaries": {
+    "roundhouse": "d6039f82a0526e380260035809672c0e85904b82f7bc2f0db5e6305654981f32",
+    "settle-probe": "c581fd5fd11fe14be3640d46355a0c2a312fcfb00868da2a6a456b7f0198d942"
+  },
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bin",
+    "roundhouse",
+    "--bin",
+    "settle-probe"
+  ],
+  "commit": "1ce9969564303ebe1bf5b8ca3304f982272079c1",
+  "exporter_sha256": "e755a90510bf8d447e98e3e4c3d96953ddca0e56e59d7d58b2c11d03bf2595f3",
+  "patches": {
+    "flow-fix-current.patch": "9768dad91c57d78a8c52ba13e72652fa1ed8838a4324080cc65248f814e651bd"
+  },
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)"
+}

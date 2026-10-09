@@ -1,0 +1,284 @@
+{
+  "comparisons": [
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "campfire",
+      "arm": "det",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.index_secs"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "campfire",
+      "arm": "keep",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.index_secs"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "campfire",
+      "arm": "s3",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.index_secs"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "chatwoot",
+      "arm": "det",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "chatwoot",
+      "arm": "keep",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "chatwoot",
+      "arm": "s3",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "discourse",
+      "arm": "det",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "discourse",
+      "arm": "keep",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "discourse",
+      "arm": "s3",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "forem",
+      "arm": "det",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "forem",
+      "arm": "keep",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "forem",
+      "arm": "s3",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "mastodon",
+      "arm": "det",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "mastodon",
+      "arm": "keep",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    },
+    {
+      "all_nontiming_report_fields_equal": true,
+      "app": "mastodon",
+      "arm": "s3",
+      "changed_site_census_witnesses_equal": true,
+      "diagnostic_multiset_equal": true,
+      "differing_timing_fields": [
+        "worklist.engine.class_pass_secs",
+        "worklist.engine.engine_secs",
+        "worklist.engine.graph_first.secs_edges",
+        "worklist.engine.graph_first.secs_total",
+        "worklist.engine.graph_last.secs_edges",
+        "worklist.engine.graph_last.secs_total",
+        "worklist.engine.graph_secs",
+        "worklist.engine.index_secs",
+        "worklist.fold.t_harvest",
+        "worklist.fold.t_rows",
+        "worklist.fold.t_sites",
+        "worklist.fold.t_typing"
+      ]
+    }
+  ],
+  "condition": "public-corpus-v1; matching pinned inputs, flags and native hash seed"
+}

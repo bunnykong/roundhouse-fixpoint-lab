@@ -1,0 +1,82 @@
+{
+  "accepted": 6,
+  "records": 12,
+  "slots": {
+    "TreesController#canonical:param:value": 6,
+    "TreesController#canonical:return": 6
+  },
+  "sound": false,
+  "tightness": {
+    "exercised": 12,
+    "meaning": "candidate over-approximations; finite samples cannot prove exactness",
+    "total": 14,
+    "unexercised": [
+      {
+        "alias": "trees_controller_canonical_arg0",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "1:96",
+        "type": "String"
+      },
+      {
+        "alias": "trees_controller_canonical_ret",
+        "arm": 1,
+        "exercised": false,
+        "kind": "union_arm",
+        "location": "2:72",
+        "type": "String"
+      }
+    ]
+  },
+  "violations": [
+    {
+      "actual": "Integer",
+      "expected": "Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "record_line": 3,
+      "slot": "TreesController#canonical:param:value"
+    },
+    {
+      "actual": "Integer",
+      "expected": "Hash[String | untyped, Integer | String | untyped]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String | untyped, Integer | String | untyped]",
+      "record_line": 4,
+      "slot": "TreesController#canonical:return"
+    },
+    {
+      "actual": "Integer",
+      "expected": "Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "record_line": 8,
+      "slot": "TreesController#canonical:param:value"
+    },
+    {
+      "actual": "Integer",
+      "expected": "Hash[String | untyped, Integer | String | untyped]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String | untyped, Integer | String | untyped]",
+      "record_line": 9,
+      "slot": "TreesController#canonical:return"
+    },
+    {
+      "actual": "Integer",
+      "expected": "Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String, Integer | Hash[String | untyped, Integer | String | untyped]]",
+      "record_line": 10,
+      "slot": "TreesController#canonical:param:value"
+    },
+    {
+      "actual": "Integer",
+      "expected": "Hash[String | untyped, Integer | String | untyped]",
+      "path": "$",
+      "reason": "tag Integer does not match Hash[String | untyped, Integer | String | untyped]",
+      "record_line": 11,
+      "slot": "TreesController#canonical:return"
+    }
+  ]
+}
