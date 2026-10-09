@@ -2,7 +2,7 @@ import Mathlib.Order.FixedPoints
 import Mathlib.Data.Set.Image
 
 /-!
-# T10 (deep-theory): no history-only backstop is exact on all finite chains
+# T10: no history-only backstop is exact on all finite chains
 
 A *backstop* watches one slot at a time.  At each round it sees that slot's own value history
 (newest first, including the candidate value of this round) and either lets the candidate through
@@ -15,7 +15,7 @@ not on the program's equations or dependency graph: that is what "history-only" 
 
 `T10`: if a backstop makes `R` stop at round `K`, then on the chain `C K` the value of `F₀`
 contains `Array^(K+1)[Int]` from round `K` on, forever, while the least solution of `C K` does not:
-the run is never exact.  The proof is the observation of deep-theory's T10 made precise: up to
+the run is never exact.  The proof makes the T10 observation precise: up to
 round `K`, slot `F₀` of `C K` has exactly the history of `R`'s slot, so the backstop does the same
 thing on both, and what made `R` stop (a value closed under `Array[·]`) is too big for the chain.
 

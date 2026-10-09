@@ -3,7 +3,7 @@ import ProofLean.Denotation
 /-!
 # The productivity side condition of goal D is necessary
 
-The plain site operator (the reframer's engine, `Prog.solve`) fires a condition on a site as soon as
+The plain site operator (the relational engine, `Prog.solve`) fires a condition on a site as soon as
 the site reaches the slot, even when the site can never build a finite value.  The set-constraint
 semantics fires it only when the slot holds a tree rooted at that site.  Here is a three-slot program
 where the two differ at the level of languages, not just facts.

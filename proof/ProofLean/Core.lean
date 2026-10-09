@@ -5,7 +5,7 @@ import Mathlib.Order.Hom.Basic
 /-!
 # The core calculus: guarded inclusion constraints over finite slots and sites
 
-Facts are `Pt(v, h)`: slot `v` may hold an object built at site `h` (the reframer's "types as sets
+Facts are `Pt(v, h)`: slot `v` may hold an object built at site `h` (the relational model's "types as sets
 of site facts").  Slots `V` are method returns, parameters, ivars, expression temporaries and the
 field cells of construction sites; sites `S` are construction sites and scalar atoms.  Both are
 whatever finite collection the program mentions: the fact universe is `dsts × sites`.
@@ -18,7 +18,7 @@ A program has two kinds of positive rules:
   site of `dst` (plain flow, filter by head, load and store through a receiver site, argument and
   return flow of a call selected by the argument's head, dispatch, yield, merge copies).
 
-`ProofLean.Lower` compiles the reframer's relational vocabulary (`Load`, `Store`, `Filter`,
+`ProofLean.Lower` compiles the relational vocabulary (`Load`, `Store`, `Filter`,
 `Produce`, `Invoke`/`Select`, `Send`/`Method`, `Yield`/`Block`, `Merge`, `ToString`) into these two
 forms.  The operator `step` is monotone, so the generic theorems of `ProofLean.Fixpoint` apply.
 -/
@@ -287,7 +287,7 @@ def deltaOp : P.toOp.Delta where
   sound := P.delta_sound
   complete := P.delta_complete
 
-/-! ## Fact-at-a-time trigger (the reframer's engine) -/
+/-! ## Fact-at-a-time trigger (the relational engine) -/
 
 /-- The unconditional allocations: the first queue. -/
 def initFacts : List (V × S) :=

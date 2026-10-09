@@ -21,8 +21,8 @@ def load(name, path):
     return module
 
 
-m1 = load("reframe_witness", ROOT / "models/witness/witness_model.py")
-round1 = load("reframe_equations", ROOT / "models/constraints/solver.py")
+m1 = load("witness_model", ROOT / "models/witness/witness_model.py")
+round1 = load("constraint_solver", ROOT / "models/constraints/solver.py")
 
 
 def translate(solver, term, refs):

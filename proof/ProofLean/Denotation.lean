@@ -20,7 +20,7 @@ Results:
 * `lfp_eq_lang_refined` (exact): the least solution of the set constraints is the language of the
   grammar read from the least fixpoint of the *productivity-refined* site operator `stepR`, where a
   condition fires only on a productive site.
-* `lfp_le_lang_plain` (sound): the grammar of the plain site solution (`Prog.solve`, the reframer's
+* `lfp_le_lang_plain` (sound): the grammar of the plain site solution (`Prog.solve`, the relational
   engine) contains the least solution.
 * `ptPlus_subset_solve` and `ptPlus_eq_solve_of_productive`: the refined solution is below the plain
   one and equal to it when every condition that holds is on a productive site; in particular when no
@@ -326,7 +326,7 @@ variable (P : Prog V S) (σ : Sig V S)
 /-- The language of the refined grammar, as an assignment of tree sets to slots. -/
 def langR : V → Set (STree σ.ar) := fun v => {t | Mem σ (P.ptPlus σ) v t}
 
-/-- The language of the plain grammar (the reframer's engine). -/
+/-- The language of the plain grammar (the relational engine). -/
 def langPlain : V → Set (STree σ.ar) := fun v => {t | Mem σ ↑P.solve v t}
 
 /-- Direction 1: the refined language is a pre-fixpoint of the set constraints, so it contains
@@ -421,7 +421,7 @@ regular tree grammar read from the productivity-refined site solution. -/
 theorem lfp_eq_lang_refined : Xstar P σ = langR P σ :=
   le_antisymm (Xstar_le_langR P σ) (langR_le_Xstar P σ)
 
-/-- **D (sound).** The grammar of the plain site solution (`Prog.solve`, which the reframer's engine
+/-- **D (sound).** The grammar of the plain site solution (`Prog.solve`, which the relational engine
 computes) contains the least solution of the set constraints. -/
 theorem lfp_le_lang_plain : Xstar P σ ≤ langPlain P σ := by
   apply OrderHom.lfp_le

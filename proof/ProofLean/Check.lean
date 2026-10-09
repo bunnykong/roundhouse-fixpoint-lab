@@ -6,7 +6,7 @@ import ProofLean.Stratified
 /-!
 # Executable check (goal E), part 1: the verified core against `model.py`
 
-For every case of the reframer's experiment, the verified core lowers `model.py`'s own input
+For every case of the relational experiment, the verified core lowers `model.py`'s own input
 relations (`ProofLean.Cases`, generated) and solves them three ways: naive, semi-naive and
 worklist (FIFO and LIFO).  `#guard` fails the build unless all four results equal `model.py`'s
 solved `Pt` relation fact for fact, and the post-fixpoint `bad_use` query equals `model.py`'s
@@ -55,9 +55,9 @@ def report : List Row := Cases.all.map runCase
 -- least model by proof, not only by this comparison.
 #guard Cases.all.all (fun c => Equiv.wfb c.2.1)
 
-/-! ## Plain against productivity-refined (goal D on the reframer's cases)
+/-! ## Plain against productivity-refined (goal D on the relational experiment's cases)
 
-The signature of a reframer case: arity and cells from `Field`, and record fields (`record_*`
+The signature of a relational case: arity and cells from `Field`, and record fields (`record_*`
 kinds) required; `Array`/`Hash` fields optional (empty containers), as in `model.py`'s
 `productive_records`. -/
 
@@ -65,7 +65,7 @@ kinds) required; `Array`/`Hash` fields optional (empty containers), as in `model
 def fieldsOf (e : REDB) (h : String) : List String :=
   ((e.sites.find? (fun s => s.name = h)).map (·.fields)).getD []
 
-/-- The signature of a reframer case. -/
+/-- The signature of a relational case. -/
 def sigOf (e : REDB) : Sig String String where
   ar h := (fieldsOf e h).length
   cell h i := REDB.cellName h ((fieldsOf e h).getD i.val "")

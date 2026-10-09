@@ -4,7 +4,7 @@ import ProofLean.Lower
 # The lowering is exact: the core computes model.py's own least model
 
 `RefStep e` states the rules of `models/datalog/model.py`'s `core_rules`, verbatim, as a
-monotone operator on the reframer's derived facts (`Pt`, `Flow`, `Target`, `Dispatch`,
+monotone operator on the relational derived facts (`Pt`, `Flow`, `Target`, `Dispatch`,
 `MergePair`): the 19 rules that derive them (`call_active` and `bad_use` derive relations nothing
 reads), with the input `Flow` facts included.  Its least fixpoint is the least Herbrand model of
 those rules on input `e`.
@@ -19,7 +19,7 @@ namespace ProofLean.Equiv
 
 open ProofLean
 
-/-- The reframer's derived facts. -/
+/-- The relational model's derived facts. -/
 inductive DFact
   | pt (v h : String)
   | flow (x y : String)

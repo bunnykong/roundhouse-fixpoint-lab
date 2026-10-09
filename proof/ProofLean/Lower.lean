@@ -1,7 +1,7 @@
 import ProofLean.Core
 
 /-!
-# Lowering the reframer's relational vocabulary into the core calculus
+# Lowering the relational relational vocabulary into the core calculus
 
 `REDB` holds the input (extensional) relations of `models/datalog/model.py` exactly as its
 `Program` builder records them: sites with their kind and field labels (`Kind`, `Field`), and the
@@ -23,7 +23,7 @@ structure RSite where
   fields : List String
 deriving Repr, DecidableEq
 
-/-- The input relations of the reframer's model. -/
+/-- The input relations of the relational model. -/
 structure REDB where
   sites : List RSite := []
   alloc : List (String × String) := []
@@ -113,7 +113,7 @@ def guards : List (Guard String String) :=
         (fr.filter (· ∈ newFields)).map (fun f =>
             (⟨[(x, l), (y, r)], cellName r f, cellName new f, passAll⟩ : Guard String String)))))
 
-/-- The core program of a reframer input. -/
+/-- The core program of a relational input. -/
 def lower : Prog String String := ⟨e.allocs, e.guards⟩
 
 /-- `bad_use`, evaluated on a solution (a post-fixpoint query, not part of the fixpoint). -/

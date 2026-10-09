@@ -9,7 +9,7 @@ connected component at one rank.  Then solving rank by rank, each rank to its ow
 with the lower ranks frozen, computes exactly the global least solution (`layer_eq_solve`, a finite
 form of Bekić's lemma).  When premises are strictly lower (an acyclic part), each rank's local
 iteration takes at most one round (`strict_one_round`): the 64-link chain needs one evaluation per
-slot, the count reframe-control measured.
+slot, the count the control experiment measured.
 -/
 
 set_option linter.unusedSectionVars false

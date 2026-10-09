@@ -623,7 +623,7 @@ def section_split():
     say(f"   split (ref2, {split.rounds} rounds): merge receiver = Rh with arms {sorted(h[0] if h[0] != 'leaf' else h[1] for h in fm.arm_heads(Rh, 0))}")
     spurious_mono = 2 * (len(fm.arm_heads(R, 0)) - 1)
     spurious_split = 2 * (len(fm.arm_heads(Rh, 0)) - 1)
-    say(f"   spurious receiver arms at the two merge sites: mono {spurious_mono}, split {spurious_split} (the reframer's Datalog model: 8 → 0)")
+    say(f"   spurious receiver arms at the two merge sites: mono {spurious_mono}, split {spurious_split} (the relational model's Datalog model: 8 → 0)")
     say(f"   same parameter type: {P == Ph}; mono R == Rh | Ra | Rl: {R == union_many(Rh, Ra, Rl)}; split exact@5: {is_exact(split.state, th)}")
     say(f"   cost: body rows typed per round: mono 1, head-split 3 (Hash, Array, leaf), one-call-site 4, GRS least 2")
     say("   RBS, the head-split summary as overloads (what the shell's cells print as):")

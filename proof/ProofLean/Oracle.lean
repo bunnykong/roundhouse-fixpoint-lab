@@ -4,7 +4,7 @@ import Lean.Data.Json
 /-!
 # The verified core as a differential oracle
 
-`lake env lean --run ProofLean/Oracle.lean INPUT.json` reads the reframer's input relations as JSON,
+`lake env lean --run ProofLean/Oracle.lean INPUT.json` reads the relational input relations as JSON,
 lowers them (`REDB.lower`), solves them with the verified naive, semi-naive and worklist solvers,
 and prints the least solution as JSON.  It is meant for diffing another implementation (model.py,
 or Roundhouse's Rust core once an extractor emits these relations) against the machine-checked one.

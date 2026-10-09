@@ -12,7 +12,7 @@ Everything here is generic: facts of any type `α` with decidable equality, a mo
 * `BoundedOp.kleeneN` — naive (Kleene) iteration from `∅`, with its round count.
 * `BoundedOp.semiN` — semi-naive (delta) iteration, given a delta operator that is sound and
   complete in the usual Datalog sense.
-* `BoundedOp.work` — fact-at-a-time worklist iteration (the reframer's `Engine.solve`).
+* `BoundedOp.work` — fact-at-a-time worklist iteration (the relational `Engine.solve`).
 
 All three terminate by well-founded recursion on `|U| - |X|` (no fuel), and the theorems show:
 termination within `|U|` rounds, leastness (equal to Mathlib's `OrderHom.lfp` of any set-level
@@ -338,7 +338,7 @@ theorem semiN_spec (d : Delta o) :
 
 /-! ## Fact-at-a-time worklist iteration -/
 
-/-- A fact-at-a-time trigger for `F` (the reframer's `Engine.solve`): `init` lists `F ∅`, and
+/-- A fact-at-a-time trigger for `F` (the relational `Engine.solve`): `init` lists `F ∅`, and
 `fire L f` lists (at least) every consequence of `insert f L` that uses the fact `f`, where the
 processed facts are given as the list `L`. -/
 structure Trigger (o : BoundedOp α) where
@@ -356,7 +356,7 @@ structure Sched (α : Type*) where
   mem : ∀ r n a, a ∈ merge r n ↔ a ∈ r ∨ a ∈ n
   len : ∀ r n, (merge r n).length ≤ r.length + n.length
 
-/-- First in, first out (the reframer's `deque`). -/
+/-- First in, first out (the relational `deque`). -/
 def Sched.fifo (α : Type*) : Sched α :=
   ⟨fun r n => r ++ n, fun _ _ _ => List.mem_append, fun r n => by simp⟩
 
