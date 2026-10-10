@@ -2,13 +2,18 @@
 
 Companion to the RFC [rubys/roundhouse#617](https://github.com/rubys/roundhouse/issues/617), *a fixpoint that settles*. Related work and credits are in [RELATED-WORK.md](RELATED-WORK.md).
 
+The [research index](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/README.md)
+maps the open work; the [facts](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md)
+keep each claim's condition, pins and receipt together.
+
 A small, reproducible place to explore why structural inference grows, what makes iteration converge,
 and how finite constructor-site identities give a least solution. It contains public Ruby reproductions,
 pinned public-app recipes, executable models, a runtime shape oracle, experimental Roundhouse patches,
 and a Lean proof of the finite-site core. Original lab material is Apache-2.0 licensed; derivative-source credits and licenses are in [NOTICE](NOTICE).
 
 The [typed-recursion demo](patches/emit-rec/README.md) compiles three controller walk shapes
-as native recursive types in Rust and Crystal, with their pages checked against CRuby.
+as native recursive types in Rust and Crystal, with their pages checked against CRuby
+([F13](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f13)).
 The [soundness/settling 2×2](reproductions/settle_sound/README.md) shows why correcting Ruby
 flow and making inference settle are both needed on the merged-back normalizer.
 The [research receipts](receipts/README.md) include pending-return counterexamples, a destructuring
@@ -39,7 +44,7 @@ Rust toolchain and native Cargo dependencies. Lean builds need elan, network acc
 | Runtime witnesses against emitted grammars | `python3 -B models/control/run.py` |
 | Compact cyclic comparison and its limits | `python3 -B -m models.cyclic_eq.bench` |
 | Termination, leastness, and soundness theorems | `(cd proof && lake exe cache get && lake build)` |
-| Independent baseline applicability of every patch | `python3 patches/check.py` |
+| Patch applicability on the historical baseline | `python3 patches/check.py` |
 | Python/Ruby regression checks | `python3 -B check.py` |
 
 Use `--binary ./roundhouse` with `corpus/reproduce.py` to supply a prebuilt binary, or `--set micro`

@@ -32,12 +32,15 @@ The unchanged static app is the Discourse entry in [the lab corpus](../../corpus
 - S3: [`38403140379cd69759b0fe6247c6a8c4a48a37a9`](https://github.com/bunnykong/roundhouse/tree/38403140379cd69759b0fe6247c6a8c4a48a37a9).
   Recorded unmodified `s3-sound-types` SHA256:
   `d677f637b0d273db5eadc62a8e8fb943438b030a16e4170024360c76b4147934`.
-- Recorded adapter: `6b55749cf12a9299636b5f53957f0a2bb2ec1544`.
-  Public snapshot: [`48c652873a88d8bc291df1d606ad1464f9168ae3`](https://github.com/bunnykong/roundhouse/tree/48c652873a88d8bc291df1d606ad1464f9168ae3/tools/sound-exporter)
+- Historical local adapter identity: `6b55749cf12a9299636b5f53957f0a2bb2ec1544`;
+  it is not a public commit pin. Public equivalent:
+  [`48c652873a88d8bc291df1d606ad1464f9168ae3`](https://github.com/bunnykong/roundhouse/tree/48c652873a88d8bc291df1d606ad1464f9168ae3/tools/sound-exporter)
   on [`sound-exporter`](https://github.com/bunnykong/roundhouse/tree/sound-exporter/tools/sound-exporter).
-  Only the Docker lock location and container prefixes were made portable. Membership, selection,
-  recorder, exporter and final observation overlays are unchanged; [adapter-files.json](adapter-files.json)
-  pins the public files. Recorded builds used Rust 1.98.1 and four Cargo jobs.
+  The adapter trees differ: `docker_session.py` uses a configurable lock path, permits lock-file creation,
+  and shortens container prefixes; the public tree also adds `README.md` and `provenance.json`.
+  The other 15 recorded files are byte-identical. Membership, selection, recorder, exporter and final
+  observation overlays are unchanged; [adapter-files.json](adapter-files.json) pins all 18 public files.
+  Recorded builds used Rust 1.98.1 and four Cargo jobs.
 
 Selected `app/jobs/base.rb` SHA256:
 `8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6`.

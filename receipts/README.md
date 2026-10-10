@@ -3,23 +3,26 @@
 These receipts make F12, F14, F15 and F17–F31's public measurements inspectable and rerunnable.
 Receipts retain original inputs or omitted-file hashes, a Python reduction, exact Roundhouse revisions and a
 fresh-clone measurement script. Output paths and input names are relative; source acquisition uses only public repositories.
-The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoint-research`.
+The [research index](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/README.md)
+maps the open work; the table links to its
+[fact rows](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md)
+on `fixpoint-research`.
 
 | Fact | Measurement | Receipt |
 | --- | --- | --- |
-| F12 | Join-memo storage equality | [F12](F12/README.md) |
-| F14 | RH_DET error and precision census | [F14](F14/README.md) |
-| F15 | Warm replay, mandatory cold shadow, timed edit pairs | [F15](F15/README.md) |
-| F17 | Settling witness on upstream main | [F17](F17/README.md) |
-| F18 | Keep-unresolved costs and 59 producer witnesses | [F18](F18/README.md) |
-| F19 | Pending-return comparisons on four public programs | [F19](F19/README.md) |
-| F20 | 532-flow destructuring matrix and runtime comparison | [F20](F20/README.md) |
-| F21 | Spinel extraction and manual kernel references | [F21](F21/README.md) |
-| F22–F24, F26–F28 | October 10 current-main baseline, parity and source witness | [baseline-2026-10-10](baseline-2026-10-10/README.md) |
-| F25 | Finite writer-law inventory and counterexamples | [writer-laws](writer-laws/README.md) |
-| F29 | Discourse test reads, runtime membership and coverage limits | [discourse-trace-2026-10-10](discourse-trace-2026-10-10/README.md) |
-| F30 | Warm replay port, six-edit parity and exclusive phase profiles on a shared host | [warm-profile-2026-10-10](warm-profile-2026-10-10/README.md) |
-| F31 | Logical slots, writers, transient routes and repeat/coverage controls | [structure-dump-2026-10-10](structure-dump-2026-10-10/README.md) |
+| [F12](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f12) | Join-memo storage equality | [F12](F12/README.md) |
+| [F14](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f14) | RH_DET error and precision census | [F14](F14/README.md) |
+| [F15](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f15) | Warm replay, mandatory cold shadow, timed edit pairs | [F15](F15/README.md) |
+| [F17](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f17) | Settling witness on upstream main | [F17](F17/README.md) |
+| [F18](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f18) | Keep-unresolved costs and 59 producer witnesses | [F18](F18/README.md) |
+| [F19](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f19) | Pending-return comparisons on four public programs | [F19](F19/README.md) |
+| [F20](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f20) | 532-flow destructuring matrix and runtime comparison | [F20](F20/README.md) |
+| [F21](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f21) | Spinel extraction and manual kernel references | [F21](F21/README.md) |
+| [F22–F24](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f22), [F26–F28](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f26) | October 10 current-main baseline, parity and source witness | [baseline-2026-10-10](baseline-2026-10-10/README.md) |
+| [F25](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f25) | Finite writer-law inventory and counterexamples | [writer-laws](writer-laws/README.md) |
+| [F29](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f29) | Discourse test reads, runtime membership and coverage limits | [discourse-trace-2026-10-10](discourse-trace-2026-10-10/README.md) |
+| [F30](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f30) | Warm replay port, six-edit parity and exclusive phase profiles on a shared host | [warm-profile-2026-10-10](warm-profile-2026-10-10/README.md) |
+| [F31](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f31) | Logical slots, writers, transient routes and repeat/coverage controls | [structure-dump-2026-10-10](structure-dump-2026-10-10/README.md) |
 
 The remaining additions are small source or observation receipts:
 
