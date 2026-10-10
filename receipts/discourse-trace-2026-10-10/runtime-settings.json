@@ -1,0 +1,58 @@
+[
+  {
+    "id": "P",
+    "session": "boot-06",
+    "test": "spec/jobs/jobs_base_spec.rb:169",
+    "description": "writes the job to the Sidekiq log",
+    "environment": {},
+    "observations": 24,
+    "observed_slots": 24,
+    "main": [
+      24,
+      0
+    ],
+    "s3": [
+      17,
+      7
+    ]
+  },
+  {
+    "id": "E",
+    "session": "error-01",
+    "test": "spec/jobs/jobs_base_spec.rb:80",
+    "description": "handles errors in multisite",
+    "environment": {
+      "DISCOURSE_LOG_SIDEKIQ": "1"
+    },
+    "observations": 75,
+    "observed_slots": 25,
+    "main": [
+      75,
+      0
+    ],
+    "s3": [
+      54,
+      21
+    ]
+  },
+  {
+    "id": "I",
+    "session": "contrast-02",
+    "test": "spec/jobs/jobs_base_spec.rb:74",
+    "description": "handles correct jobs",
+    "environment": {
+      "DISCOURSE_LOG_SIDEKIQ": "1",
+      "DISCOURSE_LOG_SIDEKIQ_INTERVAL": "60"
+    },
+    "observations": 28,
+    "observed_slots": 25,
+    "main": [
+      28,
+      0
+    ],
+    "s3": [
+      20,
+      8
+    ]
+  }
+]

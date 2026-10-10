@@ -1,6 +1,6 @@
 # Measurement receipts for the public research corpus
 
-These receipts make F12, F14, F15 and F17–F21's public measurements inspectable and rerunnable.
+These receipts make F12, F14, F15 and F17–F29's public measurements inspectable and rerunnable.
 Every fact has its original raw inputs, a Python reduction, exact Roundhouse revisions and a fresh-clone
 measurement script. Output paths and input names are relative; source acquisition uses only public repositories.
 The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoint-research`.
@@ -17,6 +17,7 @@ The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoi
 | F21 | Spinel extraction and manual kernel references | [F21](F21/README.md) |
 | F22–F24, F26–F28 | October 10 current-main baseline, parity and source witness | [baseline-2026-10-10](baseline-2026-10-10/README.md) |
 | F25 | Finite writer-law inventory and counterexamples | [writer-laws](writer-laws/README.md) |
+| F29 | Discourse test reads, runtime membership and coverage limits | [discourse-trace-2026-10-10](discourse-trace-2026-10-10/README.md) |
 
 The remaining additions are small source or observation receipts:
 

@@ -1,0 +1,286 @@
+{
+  "lock": "$SOUND_DOCKER_LOCK",
+  "containers": [
+    "sound-trace-pg-26968",
+    "sound-trace-redis-26968"
+  ],
+  "created": [
+    "sound-trace-pg-26968",
+    "sound-trace-redis-26968"
+  ],
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "run",
+        "--name",
+        "sound-trace-pg-26968",
+        "-d",
+        "-p",
+        "127.0.0.1::5432",
+        "-e",
+        "POSTGRES_PASSWORD=sound-traces-local",
+        "pgvector/pgvector:pg17-bookworm"
+      ],
+      "seconds": 0.280767667,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--name",
+        "sound-trace-redis-26968",
+        "-d",
+        "-p",
+        "127.0.0.1::6379",
+        "valkey/valkey:8",
+        "valkey-server",
+        "--save",
+        "",
+        "--appendonly",
+        "no"
+      ],
+      "seconds": 0.14548879199999998,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.05537595899999992,
+      "exit": 2
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.05260387500000008,
+      "exit": 2
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.05625279099999991,
+      "exit": 2
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.055396457999999926,
+      "exit": 2
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.048160208999999954,
+      "exit": 2
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "pg_isready",
+        "-h",
+        "127.0.0.1",
+        "-U",
+        "postgres"
+      ],
+      "seconds": 0.04913641699999971,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-redis-26968",
+        "valkey-cli",
+        "ping"
+      ],
+      "seconds": 0.03966104200000009,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "port",
+        "sound-trace-pg-26968",
+        "5432/tcp"
+      ],
+      "seconds": 0.0207700420000001,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "port",
+        "sound-trace-redis-26968",
+        "6379/tcp"
+      ],
+      "seconds": 0.020851749999999836,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "createdb",
+        "-U",
+        "postgres",
+        "sound_traces_discourse"
+      ],
+      "seconds": 0.07256258299999985,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "sound-trace-pg-26968",
+        "psql",
+        "-U",
+        "postgres",
+        "-d",
+        "sound_traces_discourse",
+        "-v",
+        "ON_ERROR_STOP=1"
+      ],
+      "seconds": 3.1268942499999994,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "sound-trace-pg-26968",
+        "psql",
+        "-U",
+        "postgres",
+        "-d",
+        "sound_traces_discourse",
+        "-c",
+        "INSERT INTO schema_migration_details (version, created_at) SELECT version, NOW() FROM schema_migrations ON CONFLICT DO NOTHING"
+      ],
+      "seconds": 0.055466667000000136,
+      "exit": 0
+    },
+    {
+      "command": [
+        "ruby",
+        "./adapter/seed.rb"
+      ],
+      "seconds": 3.8086610829999996,
+      "exit": 0
+    },
+    {
+      "command": [
+        "ruby",
+        "./adapter/app_record.rb",
+        "spec/jobs/jobs_base_spec.rb:169",
+        "--seed",
+        "20261010",
+        "--format",
+        "documentation"
+      ],
+      "seconds": 2.722693625,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "pgvector/pgvector:pg17-bookworm",
+        "valkey/valkey:8",
+        "--format",
+        "{{json .RepoDigests}}"
+      ],
+      "seconds": 0.021151375000000527,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "logs",
+        "sound-trace-redis-26968"
+      ],
+      "seconds": 0.021115792000001576,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "-v",
+        "sound-trace-redis-26968"
+      ],
+      "seconds": 0.12127650000000045,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "logs",
+        "sound-trace-pg-26968"
+      ],
+      "seconds": 0.027348249999999297,
+      "exit": 0
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "-v",
+        "sound-trace-pg-26968"
+      ],
+      "seconds": 0.3124673749999989,
+      "exit": 0
+    }
+  ],
+  "test_exit": 0,
+  "cleanup_errors": [],
+  "seconds": 12.420984833
+}

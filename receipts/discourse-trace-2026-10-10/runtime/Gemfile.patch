@@ -1,0 +1,25 @@
+--- pinned/Gemfile
++++ runtime/Gemfile
+@@ -1,6 +1,6 @@
+ # frozen_string_literal: true
+ 
+-ruby "~> 3.4"
++ruby "~> 4.0"
+ 
+ source "https://rubygems.org"
+ # if there is a super emergency and rubygems is playing up, try
+@@ -281,10 +281,10 @@
+ gem "rrule"
+ 
+ group :migrations, optional: true do
+-  gem "migrations-core", path: "migrations/core"
+-  gem "migrations-tooling", path: "migrations/tooling"
+-  gem "migrations-converters", path: "migrations/converters"
+-  gem "migrations-importer", path: "migrations/importer"
++  gem "migrations-core", path: "./lab/corpus/apps/discourse/migrations/core"
++  gem "migrations-tooling", path: "./lab/corpus/apps/discourse/migrations/tooling"
++  gem "migrations-converters", path: "./lab/corpus/apps/discourse/migrations/converters"
++  gem "migrations-importer", path: "./lab/corpus/apps/discourse/migrations/importer"
+ end
+ 
+ gem "dry-initializer", "~> 3.1"

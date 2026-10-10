@@ -1,0 +1,43 @@
+[
+  {
+    "arm": "main",
+    "source": "1ce9969564303ebe1bf5b8ca3304f982272079c1",
+    "records": 12,
+    "rejected": 6,
+    "loops": {
+      "absorb": {
+        "end": "not_run"
+      },
+      "production": {
+        "end": "settled",
+        "round": 3
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 0
+      }
+    },
+    "match": true
+  },
+  {
+    "arm": "sound",
+    "source": "96cdea9a1e6e6bb32a267a247d72f99b98a50b70",
+    "records": 12,
+    "rejected": 0,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 1
+      },
+      "production": {
+        "end": "settled",
+        "round": 2
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 1
+      }
+    },
+    "match": true
+  }
+]

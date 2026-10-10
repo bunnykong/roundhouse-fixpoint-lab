@@ -1,0 +1,45 @@
+--- pinned/Gemfile.lock
++++ runtime/Gemfile.lock
+@@ -1,5 +1,5 @@
+ PATH
+-  remote: migrations/converters
++  remote: ./lab/corpus/apps/discourse/migrations/converters
+   specs:
+     migrations-converters (0.0.1)
+       activesupport
+@@ -13,7 +13,7 @@
+       zeitwerk
+ 
+ PATH
+-  remote: migrations/core
++  remote: ./lab/corpus/apps/discourse/migrations/core
+   specs:
+     migrations-core (0.0.1)
+       activesupport
+@@ -29,7 +29,7 @@
+       zeitwerk
+ 
+ PATH
+-  remote: migrations/importer
++  remote: ./lab/corpus/apps/discourse/migrations/importer
+   specs:
+     migrations-importer (0.0.1)
+       activerecord
+@@ -41,7 +41,7 @@
+       zeitwerk
+ 
+ PATH
+-  remote: migrations/tooling
++  remote: ./lab/corpus/apps/discourse/migrations/tooling
+   specs:
+     migrations-tooling (0.0.1)
+       activerecord
+@@ -1351,7 +1351,7 @@
+   zendesk_api (3.1.2) sha256=3f726c133af8ed3518a9e7cfa9015a368617bd210754ed9173d984f12ddcec15
+ 
+ RUBY VERSION
+-  ruby 3.4.7p58
++  ruby 4.0.7p0
+ 
+ BUNDLED WITH
+   4.0.11

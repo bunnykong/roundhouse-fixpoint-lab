@@ -1,0 +1,2345 @@
+{
+  "loops": {
+    "absorb": {
+      "end": "ran_to_cap"
+    },
+    "production": {
+      "end": "ran_to_cap"
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 1
+    }
+  },
+  "schema": 2,
+  "slots": {
+    "jobs_base_jobinstrumenter_initialize_data_1032": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1037,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 55,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1032:1037:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1032
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1105": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1110,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 56,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1105:1110:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1105
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1153": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1158,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 57,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1153:1158:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1153
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1232": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1237,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 58,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1232:1237:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1232
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1368": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1373,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 59,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1368:1373:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1368
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1504": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 13,
+        "end": 1509,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 62,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1504:1509:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1504
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1583": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1588,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 66,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1583:1588:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1583
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_1899": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 1904,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 75,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1899:1904:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 1899
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_937": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 942,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 53,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:937:942:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 937
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_initialize_data_989": {
+      "debug": "Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 994,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 54,
+        "method": "initialize",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:989:994:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 989
+      },
+      "status": "typed",
+      "type": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "provenance": "untagged"
+            }
+          ]
+        }
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2164": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2169,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 87,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2164:2169:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2164
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2265": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2270,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 88,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2265:2270:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2265
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2352": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2357,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 89,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2352:2357:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2352
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2457": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2462,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 90,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2457:2462:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2457
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2550": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2555,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 91,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2550:2555:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2550
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2633": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2638,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 92,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2633:2638:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2633
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2722": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2727,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 93,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2722:2727:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2722
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2801": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2806,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 94,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2801:2806:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2801
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2866": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 11,
+        "end": 2871,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 95,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2866:2871:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2866
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2888": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 33,
+        "end": 2893,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 95,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2888:2893:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2888
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2917": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 62,
+        "end": 2922,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 95,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2917:2922:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2917
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_2988": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 13,
+        "end": 2993,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 98,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:2988:2993:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 2988
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_3083": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 13,
+        "end": 3088,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 99,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:3083:3088:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 3083
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_stop_data_3137": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 13,
+        "end": 3142,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 101,
+        "method": "stop",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#stop:app/jobs/base.rb:3137:3142:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 3137
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_write_to_log_data_4148": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 9,
+        "end": 4153,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 144,
+        "method": "write_to_log",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#write_to_log:app/jobs/base.rb:4148:4153:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 4148
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_write_to_log_data_4187": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 9,
+        "end": 4192,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 145,
+        "method": "write_to_log",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#write_to_log:app/jobs/base.rb:4187:4192:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 4187
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_write_to_log_data_4227": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 49,
+        "end": 4232,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 145,
+        "method": "write_to_log",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#write_to_log:app/jobs/base.rb:4227:4232:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 4227
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    },
+    "jobs_base_jobinstrumenter_write_to_log_data_4286": {
+      "debug": "Union { variants: [Hash { key: Str, value: Union { variants: [Int, Float, Str, Hash { key: Var { var: TyVar(0) }, value: Union { variants: [Str, Hash { key: Sym, value: Var { var: TyVar(0) } }, Class { id: ClassId(Symbol(\"StandardError\")), args: [] }] } }, Class { id: ClassId(Symbol(\"Time\")), args: [] }, Untyped] } }, Nil] }",
+      "match_count": 1,
+      "selection": {
+        "column": 31,
+        "end": 4291,
+        "file": "app/jobs/base.rb",
+        "ivar": "data",
+        "kind": "ivar_read",
+        "line": 146,
+        "method": "write_to_log",
+        "owner": "Jobs::Base::JobInstrumenter",
+        "side": "instance",
+        "slot": "Jobs::Base::JobInstrumenter#write_to_log:app/jobs/base.rb:4286:4291:@data",
+        "source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+        "start": 4286
+      },
+      "status": "typed",
+      "type": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped",
+                  "provenance": "untagged"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      }
+    }
+  }
+}

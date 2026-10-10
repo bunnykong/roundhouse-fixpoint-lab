@@ -1,0 +1,106 @@
+{
+  "condition": "sound-traces-20261010-c210f226",
+  "lab": "56255dd54bed3815b4774282ae92380524b13136",
+  "discourse": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+  "discourse_tree": "489a5c0b678235dd773e6274bf97f6e8879fee8d",
+  "discourse_tag": "v2026.9.0",
+  "selected_source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+  "selection_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+  "recorded_adapter": "6b55749cf12a9299636b5f53957f0a2bb2ec1544",
+  "public_adapter": "48c652873a88d8bc291df1d606ad1464f9168ae3",
+  "public_adapter_path": "tools/sound-exporter",
+  "public_adapter_branch": "sound-exporter",
+  "ruby": "4.0.7",
+  "rust": "1.98.1",
+  "f17_condition": "settle-sound-published-v1",
+  "f17_main": "1ce9969564303ebe1bf5b8ca3304f982272079c1",
+  "f17_corrected_s3": "96cdea9a1e6e6bb32a267a247d72f99b98a50b70",
+  "arms": {
+    "main": {
+      "source": "c210f226346b462214866b5756b457ad53f647b1",
+      "binary_sha256": "6c4bc7111c188fe68d31c92d73e0a474394d34e7d8018ccfef5b4d361f547ccb",
+      "flags": {
+        "SOUND_MISSING": "1",
+        "RH_FOLD_PRINT": "1",
+        "RH_FIXPOINT_STATS": "1"
+      },
+      "loops": {
+        "absorb": {
+          "end": "ran_to_cap"
+        },
+        "production": {
+          "end": "ran_to_cap"
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "graph_stage": "final-only",
+      "observation_overlay_sha256": null
+    },
+    "s3": {
+      "source": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+      "binary_sha256": "d677f637b0d273db5eadc62a8e8fb943438b030a16e4170024360c76b4147934",
+      "flags": {
+        "SOUND_MISSING": "1",
+        "RH_FOLD_PRINT": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_BRK_ALLARMS": "1",
+        "RH_SCHED": "sccq"
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 5
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "graph_stage": "final-only",
+      "observation_overlay_sha256": null
+    },
+    "s3-instrumented": {
+      "source": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+      "binary_sha256": "859e1aacded9a830693b3a9d81996e41e5428fc182c686fc91a9ac8a9c9264ac",
+      "flags": {
+        "SOUND_MISSING": "1",
+        "RH_FOLD_PRINT": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "SOUND_SELECTION": "./session/discourse/selection.json",
+        "RH_FOLD": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_BRK_ALLARMS": "1",
+        "RH_SCHED": "sccq"
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 5
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "graph_stage": "before-fold-expansion",
+      "observation_overlay_sha256": "5475af3acb9e4d947fc614dfd8e4b5d75b4535d30cb5bbcf01acc6401f24a202"
+    }
+  }
+}

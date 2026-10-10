@@ -1,0 +1,552 @@
+{
+  "source": "Public Discourse tests and static exports; original local evidence preserved separately.",
+  "redaction": "Host-identifying String payloads become trace-host.example. All value tags, object IDs, slot identities and other runtime payloads are retained. Paths and container labels in operational metadata are normalized separately.",
+  "files": [
+    {
+      "file": "selection.json",
+      "recorded_file": "session/discourse/selection.json",
+      "recorded_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "published_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "bytes": 13124,
+      "changes": []
+    },
+    {
+      "file": "slots.json",
+      "recorded_file": "session/discourse/slots.json",
+      "recorded_sha256": "0d4ecf082ef2ac1fbf439a5c2eb22376c6767a847db78553d894b3bf85a9c9fc",
+      "published_sha256": "0d4ecf082ef2ac1fbf439a5c2eb22376c6767a847db78553d894b3bf85a9c9fc",
+      "bytes": 3401,
+      "changes": []
+    },
+    {
+      "file": "traces/P.jsonl",
+      "recorded_file": "session/boot-06/trace.jsonl",
+      "recorded_sha256": "ae9de803ff04adfa0a153033410f7e20779876f1b40ce82db7dbe3e1f9159215",
+      "published_sha256": "98849b903ef72b9ce1edf109c99194db498f19d254fc75e71480e228e49b15f0",
+      "bytes": 42846,
+      "changes": [
+        "host-identifying String payload replaced; tag and object identity unchanged"
+      ]
+    },
+    {
+      "file": "sessions/P/receipt.json",
+      "recorded_file": "session/boot-06/receipt.json",
+      "recorded_sha256": "f99b93fef83f9a0a038c2904741af8bc3592c3d7e7cb4a1c5e944ee7e8d14020",
+      "published_sha256": "97876b55e005c68cdab3347c155cb82b293ff86e184eea16899b1c9b480f37cc",
+      "bytes": 5297,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "sessions/P/rspec.log",
+      "recorded_file": "session/boot-06/rspec.log",
+      "recorded_sha256": "2f518c5a716b9aa52720b974b5bf9223554608b9ff25a1f1391697868d732641",
+      "published_sha256": "2f518c5a716b9aa52720b974b5bf9223554608b9ff25a1f1391697868d732641",
+      "bytes": 328,
+      "changes": []
+    },
+    {
+      "file": "sessions/P/image-digests.log",
+      "recorded_file": "session/boot-06/image-digests.log",
+      "recorded_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "published_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "bytes": 184,
+      "changes": []
+    },
+    {
+      "file": "traces/E.jsonl",
+      "recorded_file": "session/error-01/trace.jsonl",
+      "recorded_sha256": "50468143dc1cbb2b0f45544fe5276244764d3999866930321b778999c71be152",
+      "published_sha256": "b2d18602f0d64213eb0155284100b41e8815c8eb4d4931f6a6c221003f48f51c",
+      "bytes": 138610,
+      "changes": [
+        "host-identifying String payload replaced; tag and object identity unchanged"
+      ]
+    },
+    {
+      "file": "sessions/E/receipt.json",
+      "recorded_file": "session/error-01/receipt.json",
+      "recorded_sha256": "c6af4874121ff80b44bac210389bc90a3b39752f06be51235d756c04a97832d8",
+      "published_sha256": "15d0c7120e8639622eb3443d0276e0c625f5457aa47df6678a3e68bb1aa5e47a",
+      "bytes": 6077,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "sessions/E/rspec.log",
+      "recorded_file": "session/error-01/rspec.log",
+      "recorded_sha256": "777ac0c96682897686a3b5ba24ffc033ff54c148b4a8101efef528dcf01600e0",
+      "published_sha256": "777ac0c96682897686a3b5ba24ffc033ff54c148b4a8101efef528dcf01600e0",
+      "bytes": 266,
+      "changes": []
+    },
+    {
+      "file": "sessions/E/image-digests.log",
+      "recorded_file": "session/error-01/image-digests.log",
+      "recorded_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "published_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "bytes": 184,
+      "changes": []
+    },
+    {
+      "file": "traces/I.jsonl",
+      "recorded_file": "session/contrast-02/trace.jsonl",
+      "recorded_sha256": "e1e64bacdb5639ae5be1405e841d819e01af421361fc345e19259b147418bad1",
+      "published_sha256": "84768aa7a8f6c3d9dfa469d1c8321ad31e437dfd32e6d89a14e32f1e2e1fced5",
+      "bytes": 48785,
+      "changes": [
+        "host-identifying String payload replaced; tag and object identity unchanged"
+      ]
+    },
+    {
+      "file": "sessions/I/receipt.json",
+      "recorded_file": "session/contrast-02/receipt.json",
+      "recorded_sha256": "43503fe2604236eb31f4241a174951516c04528c45c6d77b306cb2bcbaeff8da",
+      "published_sha256": "2a2674e2316fa92bd018b338ebc2570da86dcb745541ff615e2148ea38a71205",
+      "bytes": 5340,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "sessions/I/rspec.log",
+      "recorded_file": "session/contrast-02/rspec.log",
+      "recorded_sha256": "51b86c203329ec24aff93a2826e6e2bde8fb316459a77e12ac9572efc8756313",
+      "published_sha256": "51b86c203329ec24aff93a2826e6e2bde8fb316459a77e12ac9572efc8756313",
+      "bytes": 259,
+      "changes": []
+    },
+    {
+      "file": "sessions/I/image-digests.log",
+      "recorded_file": "session/contrast-02/image-digests.log",
+      "recorded_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "published_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "bytes": 184,
+      "changes": []
+    },
+    {
+      "file": "traces/P-repeat.jsonl",
+      "recorded_file": "session/repeat-primary-01/trace.jsonl",
+      "recorded_sha256": "55f2c1106a4dd6a7128f5d6f478e7d8600856ffa1f37dac8f219bd723b366003",
+      "published_sha256": "9c9356ee42e564b1f40d51da41a7e17a9b8fb6c08ffee9a630474cc7f4cc821c",
+      "bytes": 42922,
+      "changes": [
+        "host-identifying String payload replaced; tag and object identity unchanged"
+      ]
+    },
+    {
+      "file": "sessions/P-repeat/receipt.json",
+      "recorded_file": "session/repeat-primary-01/receipt.json",
+      "recorded_sha256": "bed8f206212ad60a42184fc303803084859aefb28b9fcb5aeb134c318fed9aad",
+      "published_sha256": "a4f9d566f246bab096b1d07c0ae53b5f3a21c0af81a25914981aebf13bc374b1",
+      "bytes": 5382,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "sessions/P-repeat/rspec.log",
+      "recorded_file": "session/repeat-primary-01/rspec.log",
+      "recorded_sha256": "3f738d13c088c4a587238a1e86221228fc86f4dc037dc90034bfd00fa7115a90",
+      "published_sha256": "3f738d13c088c4a587238a1e86221228fc86f4dc037dc90034bfd00fa7115a90",
+      "bytes": 328,
+      "changes": []
+    },
+    {
+      "file": "sessions/P-repeat/image-digests.log",
+      "recorded_file": "session/repeat-primary-01/image-digests.log",
+      "recorded_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "published_sha256": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+      "bytes": 184,
+      "changes": []
+    },
+    {
+      "file": "exports/main/categories.json",
+      "recorded_file": "session/discourse/main/categories.json",
+      "recorded_sha256": "94c59deef5bba9857fc0323621b32282dbb6a67f2c32297e0c71a2c65e314e5b",
+      "published_sha256": "94c59deef5bba9857fc0323621b32282dbb6a67f2c32297e0c71a2c65e314e5b",
+      "bytes": 14797,
+      "changes": []
+    },
+    {
+      "file": "exports/main/final.rbs",
+      "recorded_file": "session/discourse/main/final.rbs",
+      "recorded_sha256": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+      "published_sha256": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+      "bytes": 4882,
+      "changes": []
+    },
+    {
+      "file": "exports/main/graph.rbs",
+      "recorded_file": "session/discourse/main/graph.rbs",
+      "recorded_sha256": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+      "published_sha256": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+      "bytes": 4882,
+      "changes": []
+    },
+    {
+      "file": "exports/main/raw.json",
+      "recorded_file": "session/discourse/main/raw.json",
+      "recorded_sha256": "e7cb5ad1ce3f763217b9c032c35e2ec3e6f1a4bf1d16c12e40bcbf93ae2bce3d",
+      "published_sha256": "e7cb5ad1ce3f763217b9c032c35e2ec3e6f1a4bf1d16c12e40bcbf93ae2bce3d",
+      "bytes": 38701,
+      "changes": []
+    },
+    {
+      "file": "exports/main/receipt.json",
+      "recorded_file": "session/discourse/main/receipt.json",
+      "recorded_sha256": "68eccc7b7be74f4e830f5e0905bd037054570c82737c1bfa847292acdd9db91a",
+      "published_sha256": "efa163cba63aea7f8dacd24d09d0dcbf6ba074ba7353cd1926f0ea96190a4b23",
+      "bytes": 2527,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "exports/main/selection.json",
+      "recorded_file": "session/discourse/main/selection.json",
+      "recorded_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "published_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "bytes": 13124,
+      "changes": []
+    },
+    {
+      "file": "exports/main/stderr.txt",
+      "recorded_file": "session/discourse/main/stderr.txt",
+      "recorded_sha256": "fb207584486df5141b69e97a124355be095f0554f3e60928858412370eac6ed6",
+      "published_sha256": "fb207584486df5141b69e97a124355be095f0554f3e60928858412370eac6ed6",
+      "bytes": 294,
+      "changes": []
+    },
+    {
+      "file": "exports/main/stdout.json",
+      "recorded_file": "session/discourse/main/stdout.json",
+      "recorded_sha256": "3c589f852f5ef0c2c2fe3d66511464c3d9ad5f12d94ca0c7e7fc9cd52f76d795",
+      "published_sha256": "3c589f852f5ef0c2c2fe3d66511464c3d9ad5f12d94ca0c7e7fc9cd52f76d795",
+      "bytes": 71274,
+      "changes": []
+    },
+    {
+      "file": "exports/main/telemetry.json",
+      "recorded_file": "session/discourse/main/telemetry.json",
+      "recorded_sha256": "10e87de0a37b5a9f2811e1cb94af61d0e6437a1ed85c0f8b0f700465c706f93c",
+      "published_sha256": "10e87de0a37b5a9f2811e1cb94af61d0e6437a1ed85c0f8b0f700465c706f93c",
+      "bytes": 412,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/categories.json",
+      "recorded_file": "session/discourse/s3/categories.json",
+      "recorded_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "published_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "bytes": 12197,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/final.rbs",
+      "recorded_file": "session/discourse/s3/final.rbs",
+      "recorded_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "published_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "bytes": 3987,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/graph.rbs",
+      "recorded_file": "session/discourse/s3/graph.rbs",
+      "recorded_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "published_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "bytes": 3987,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/raw.json",
+      "recorded_file": "session/discourse/s3/raw.json",
+      "recorded_sha256": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+      "published_sha256": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+      "bytes": 29335,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/receipt.json",
+      "recorded_file": "session/discourse/s3/receipt.json",
+      "recorded_sha256": "0810cc25e8ba62756aa423c35f45ef2497cfe308bda0566c69ce8469722e07aa",
+      "published_sha256": "c8806f3719d1aebe874ff3231537294b93ff61e8cfed2a446b82a8f954b43e1e",
+      "bytes": 2699,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "exports/s3/selection.json",
+      "recorded_file": "session/discourse/s3/selection.json",
+      "recorded_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "published_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "bytes": 13124,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/stderr.txt",
+      "recorded_file": "session/discourse/s3/stderr.txt",
+      "recorded_sha256": "bb9d71d514fcc3d6dbf93044bf885e83fdea5081a024bdc527ddfa473ccabb7b",
+      "published_sha256": "bb9d71d514fcc3d6dbf93044bf885e83fdea5081a024bdc527ddfa473ccabb7b",
+      "bytes": 2955,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/stdout.json",
+      "recorded_file": "session/discourse/s3/stdout.json",
+      "recorded_sha256": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+      "published_sha256": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+      "bytes": 58823,
+      "changes": []
+    },
+    {
+      "file": "exports/s3/telemetry.json",
+      "recorded_file": "session/discourse/s3/telemetry.json",
+      "recorded_sha256": "582d373cbb49d55293da9abbb0431dcb112e8fa725101c74f8790443b342bc4a",
+      "published_sha256": "582d373cbb49d55293da9abbb0431dcb112e8fa725101c74f8790443b342bc4a",
+      "bytes": 5026,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/categories.json",
+      "recorded_file": "session/discourse/s3-instrumented/categories.json",
+      "recorded_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "published_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "bytes": 12197,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/final.rbs",
+      "recorded_file": "session/discourse/s3-instrumented/final.rbs",
+      "recorded_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "published_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "bytes": 3987,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/graph.rbs",
+      "recorded_file": "session/discourse/s3-instrumented/graph.rbs",
+      "recorded_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "published_sha256": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+      "bytes": 3987,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/raw.json",
+      "recorded_file": "session/discourse/s3-instrumented/raw.json",
+      "recorded_sha256": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+      "published_sha256": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+      "bytes": 29335,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/receipt.json",
+      "recorded_file": "session/discourse/s3-instrumented/receipt.json",
+      "recorded_sha256": "0257d88670257897cd07bdf9e6cda889874003ef28ed7de4f148012e4adf5d07",
+      "published_sha256": "4731f5166567f96781de6bc7a98b57f6541ce2fdb3636d8b48899fb9df9d6a1e",
+      "bytes": 2916,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "exports/s3-instrumented/selection.json",
+      "recorded_file": "session/discourse/s3-instrumented/selection.json",
+      "recorded_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "published_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+      "bytes": 13124,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/stderr.txt",
+      "recorded_file": "session/discourse/s3-instrumented/stderr.txt",
+      "recorded_sha256": "204bfef0a63d3cead1572e25bf79a4643db48acad779383d6026051ce87ce7ca",
+      "published_sha256": "204bfef0a63d3cead1572e25bf79a4643db48acad779383d6026051ce87ce7ca",
+      "bytes": 22249,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/stdout.json",
+      "recorded_file": "session/discourse/s3-instrumented/stdout.json",
+      "recorded_sha256": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+      "published_sha256": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+      "bytes": 58823,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/telemetry.json",
+      "recorded_file": "session/discourse/s3-instrumented/telemetry.json",
+      "recorded_sha256": "347006f355fbcff30caca379123de7db75a67ddd72e2a0f8b1e559eb00938a6b",
+      "published_sha256": "347006f355fbcff30caca379123de7db75a67ddd72e2a0f8b1e559eb00938a6b",
+      "bytes": 5024,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/graph-categories.json",
+      "recorded_file": "session/discourse/s3-instrumented/graph-categories.json",
+      "recorded_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "published_sha256": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+      "bytes": 12197,
+      "changes": []
+    },
+    {
+      "file": "exports/s3-instrumented/graph-raw.json",
+      "recorded_file": "session/discourse/s3-instrumented/graph-raw.json",
+      "recorded_sha256": "f1d18edeac48f81cb053f97dad7f7182e174858300a2a5456aa95b6a0faea45d",
+      "published_sha256": "f1d18edeac48f81cb053f97dad7f7182e174858300a2a5456aa95b6a0faea45d",
+      "bytes": 44249,
+      "changes": []
+    },
+    {
+      "file": "comparisons/P-main.json",
+      "recorded_file": "evidence/head-recheck/boot-06-main.json",
+      "recorded_sha256": "3928f2592e3b85a5ccb67830ff44207ab6a022fd6676584a0a94d336dbd4025a",
+      "published_sha256": "3928f2592e3b85a5ccb67830ff44207ab6a022fd6676584a0a94d336dbd4025a",
+      "bytes": 45051,
+      "changes": []
+    },
+    {
+      "file": "comparisons/P-s3.json",
+      "recorded_file": "evidence/head-recheck/boot-06-s3.json",
+      "recorded_sha256": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+      "published_sha256": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+      "bytes": 44163,
+      "changes": []
+    },
+    {
+      "file": "comparisons/P-s3-instrumented.json",
+      "recorded_file": "evidence/head-recheck/boot-06-s3-instrumented.json",
+      "recorded_sha256": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+      "published_sha256": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+      "bytes": 44163,
+      "changes": []
+    },
+    {
+      "file": "comparisons/E-main.json",
+      "recorded_file": "evidence/head-recheck/error-01-main.json",
+      "recorded_sha256": "2af7a6552e33df91c7dbec66775191c5262773b26de4c8ac575370a37c794f5a",
+      "published_sha256": "2af7a6552e33df91c7dbec66775191c5262773b26de4c8ac575370a37c794f5a",
+      "bytes": 76865,
+      "changes": []
+    },
+    {
+      "file": "comparisons/E-s3.json",
+      "recorded_file": "evidence/head-recheck/error-01-s3.json",
+      "recorded_sha256": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+      "published_sha256": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+      "bytes": 82117,
+      "changes": []
+    },
+    {
+      "file": "comparisons/E-s3-instrumented.json",
+      "recorded_file": "evidence/head-recheck/error-01-s3-instrumented.json",
+      "recorded_sha256": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+      "published_sha256": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+      "bytes": 82117,
+      "changes": []
+    },
+    {
+      "file": "comparisons/I-main.json",
+      "recorded_file": "evidence/head-recheck/contrast-02-main.json",
+      "recorded_sha256": "c68c46fd927dba8e5b138fbfc03e802746dd9660f20393b9ad2decfdb8c896c3",
+      "published_sha256": "c68c46fd927dba8e5b138fbfc03e802746dd9660f20393b9ad2decfdb8c896c3",
+      "bytes": 47583,
+      "changes": []
+    },
+    {
+      "file": "comparisons/I-s3.json",
+      "recorded_file": "evidence/head-recheck/contrast-02-s3.json",
+      "recorded_sha256": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+      "published_sha256": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+      "bytes": 47157,
+      "changes": []
+    },
+    {
+      "file": "comparisons/I-s3-instrumented.json",
+      "recorded_file": "evidence/head-recheck/contrast-02-s3-instrumented.json",
+      "recorded_sha256": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+      "published_sha256": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+      "bytes": 47157,
+      "changes": []
+    },
+    {
+      "file": "evidence/coverage.json",
+      "recorded_file": "evidence/coverage.json",
+      "recorded_sha256": "da04927e6f6a662176b529766e77a1a9c37c0b18c4d786f2181ddb61bb4cade5",
+      "published_sha256": "da04927e6f6a662176b529766e77a1a9c37c0b18c4d786f2181ddb61bb4cade5",
+      "bytes": 9540,
+      "changes": []
+    },
+    {
+      "file": "evidence/discourse-observer-parity.json",
+      "recorded_file": "evidence/discourse-observer-parity.json",
+      "recorded_sha256": "71c3645e3adef2a17de8cb86550f1ad61254155292eeed74adcabe7a2b1cd99d",
+      "published_sha256": "71c3645e3adef2a17de8cb86550f1ad61254155292eeed74adcabe7a2b1cd99d",
+      "bytes": 257,
+      "changes": []
+    },
+    {
+      "file": "evidence/runtime-dependencies.json",
+      "recorded_file": "evidence/runtime-dependencies.json",
+      "recorded_sha256": "92be69bc63f0cd37afe18a82c032114cef265ad928d21520708792e52c5b6371",
+      "published_sha256": "92be69bc63f0cd37afe18a82c032114cef265ad928d21520708792e52c5b6371",
+      "bytes": 732,
+      "changes": []
+    },
+    {
+      "file": "evidence/f17-live-adapter-match.json",
+      "recorded_file": "evidence/f17-live-adapter-match.json",
+      "recorded_sha256": "60b3157d12ea9469f468d7a33c7fa6eb94669b9d024070dc117f450f50e6df35",
+      "published_sha256": "60b3157d12ea9469f468d7a33c7fa6eb94669b9d024070dc117f450f50e6df35",
+      "bytes": 768,
+      "changes": []
+    },
+    {
+      "file": "evidence/f17-adapter-historical-match.json",
+      "recorded_file": "evidence/f17-adapter-historical-match.json",
+      "recorded_sha256": "a2f2878a23fceff2274f0725d65810c8f6c45ccf00c9b1bb11def4482174df1c",
+      "published_sha256": "a2f2878a23fceff2274f0725d65810c8f6c45ccf00c9b1bb11def4482174df1c",
+      "bytes": 1038,
+      "changes": []
+    },
+    {
+      "file": "evidence/f17-recomputed.json",
+      "recorded_file": "evidence/f17-recomputed.json",
+      "recorded_sha256": "4d1982f8e1dd6a464a66af4ac0e7c6e8eec5fdb9ffaac0052df7421bcf4642b4",
+      "published_sha256": "4d1982f8e1dd6a464a66af4ac0e7c6e8eec5fdb9ffaac0052df7421bcf4642b4",
+      "bytes": 2363,
+      "changes": []
+    },
+    {
+      "file": "runtime/Gemfile.patch",
+      "recorded_file": "runtime/Gemfile.patch",
+      "recorded_sha256": "cd727f74c1325edac4cbe4b7225d503e255a01ea444cdf4ea050134e6cd6f3d7",
+      "published_sha256": "a779d2ac0f6e862930f68664eef728eaa3ca5a35cff5080fd95cdf625b95e6ff",
+      "bytes": 895,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "runtime/Gemfile.lock.patch",
+      "recorded_file": "runtime/Gemfile.lock.patch",
+      "recorded_sha256": "af95219cc6cd3d644b0fbe292b8162df3564d9b582e77717368b91d6367dd40b",
+      "published_sha256": "fc599be9fe0307529cba67f8e86d4a858ba1bb401ef719788f9cbf61aaabb397",
+      "bytes": 994,
+      "changes": [
+        "workstation paths made relative and agent-specific container labels removed"
+      ]
+    },
+    {
+      "file": "evidence/earlier-graph-observer.patch",
+      "recorded_file": "git diff HEAD --binary of the earlier observed S3 source",
+      "recorded_sha256": "5475af3acb9e4d947fc614dfd8e4b5d75b4535d30cb5bbcf01acc6401f24a202",
+      "published_sha256": "5475af3acb9e4d947fc614dfd8e4b5d75b4535d30cb5bbcf01acc6401f24a202",
+      "bytes": 6050,
+      "changes": []
+    }
+  ]
+}

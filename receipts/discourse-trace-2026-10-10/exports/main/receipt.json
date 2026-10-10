@@ -1,0 +1,73 @@
+{
+  "condition": "sound-traces-20261010-c210f226",
+  "role": "main",
+  "source": "c210f226346b462214866b5756b457ad53f647b1",
+  "source_clean": true,
+  "command": [
+    "./bin/main-sound-types",
+    "./lab/corpus/apps/discourse",
+    "./session/discourse/selection.json"
+  ],
+  "flags": {
+    "SOUND_MISSING": "1",
+    "RH_FOLD_PRINT": "1",
+    "RH_FIXPOINT_STATS": "1"
+  },
+  "seconds": 25.836812332999997,
+  "binary_sha256": "6c4bc7111c188fe68d31c92d73e0a474394d34e7d8018ccfef5b4d361f547ccb",
+  "selected": 28,
+  "selection_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+  "loops": {
+    "absorb": {
+      "end": "ran_to_cap"
+    },
+    "production": {
+      "end": "ran_to_cap"
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 1
+    }
+  },
+  "category_slots": {
+    "var": 28,
+    "untagged": 28,
+    "unsupported": 28
+  },
+  "graph_roots": [],
+  "graph_roots_using_final_fallback": [
+    "jobs_base_jobinstrumenter_initialize_data_1032",
+    "jobs_base_jobinstrumenter_initialize_data_1105",
+    "jobs_base_jobinstrumenter_initialize_data_1153",
+    "jobs_base_jobinstrumenter_initialize_data_1232",
+    "jobs_base_jobinstrumenter_initialize_data_1368",
+    "jobs_base_jobinstrumenter_initialize_data_1504",
+    "jobs_base_jobinstrumenter_initialize_data_1583",
+    "jobs_base_jobinstrumenter_initialize_data_1899",
+    "jobs_base_jobinstrumenter_initialize_data_937",
+    "jobs_base_jobinstrumenter_initialize_data_989",
+    "jobs_base_jobinstrumenter_stop_data_2164",
+    "jobs_base_jobinstrumenter_stop_data_2265",
+    "jobs_base_jobinstrumenter_stop_data_2352",
+    "jobs_base_jobinstrumenter_stop_data_2457",
+    "jobs_base_jobinstrumenter_stop_data_2550",
+    "jobs_base_jobinstrumenter_stop_data_2633",
+    "jobs_base_jobinstrumenter_stop_data_2722",
+    "jobs_base_jobinstrumenter_stop_data_2801",
+    "jobs_base_jobinstrumenter_stop_data_2866",
+    "jobs_base_jobinstrumenter_stop_data_2888",
+    "jobs_base_jobinstrumenter_stop_data_2917",
+    "jobs_base_jobinstrumenter_stop_data_2988",
+    "jobs_base_jobinstrumenter_stop_data_3083",
+    "jobs_base_jobinstrumenter_stop_data_3137",
+    "jobs_base_jobinstrumenter_write_to_log_data_4148",
+    "jobs_base_jobinstrumenter_write_to_log_data_4187",
+    "jobs_base_jobinstrumenter_write_to_log_data_4227",
+    "jobs_base_jobinstrumenter_write_to_log_data_4286"
+  ],
+  "input": {
+    "head": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "tree": "489a5c0b678235dd773e6274bf97f6e8879fee8d",
+    "subtree": "."
+  }
+}
