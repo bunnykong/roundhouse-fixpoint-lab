@@ -1,0 +1,465 @@
+src/analyze/class_configuration.rs:16:    pub(super) fn analyze_class_configuration(&mut self, controllers: &mut [Controller]) {
+src/analyze/class_configuration.rs:139:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:147:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:163:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:168:                            ctx.local_bindings.insert(param.name.clone(), ty.clone());
+src/analyze/class_configuration.rs:172:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:181:                method.signature = Some(Ty::Fn {
+src/analyze/class_configuration.rs:226:fn is_uninformative(ty: &Ty) -> bool {
+src/analyze/class_configuration.rs:234:fn empty_hash() -> Ty {
+src/analyze/class_configuration.rs:241:fn seed_empty_hashes(expr: &mut Expr, ty: &Ty) {
+src/analyze/class_configuration.rs:243:        expr.ty = Some(ty.clone());
+src/analyze/class_configuration.rs:250:fn stored_values(expr: &Expr, slot: &Symbol, f: &mut impl FnMut(&Ty)) {
+src/analyze/class_configuration.rs:267:    fn writer_law_class_configuration_gate() {
+src/analyze/class_configuration.rs:275:    fn writer_law_class_configuration_stamp() {
+src/analyze/class_configuration.rs:278:            literal.ty = Some(a);
+src/analyze/body/narrowing.rs:74:pub(super) fn extract_narrowing(cond: &Expr) -> Option<NarrowPred> {
+src/analyze/body/narrowing.rs:80:pub(super) fn extract_narrowing_with(
+src/analyze/body/narrowing.rs:181:    fn sides(self) -> (Vec<NarrowPred>, Vec<NarrowPred>) {
+src/analyze/body/narrowing.rs:189:fn negate_pred(p: NarrowPred) -> NarrowPred {
+src/analyze/body/narrowing.rs:205:fn var_key(e: &Expr, is_reader: &dyn Fn(&Symbol) -> Option<Ty>) -> Option<VarKey> {
+src/analyze/body/narrowing.rs:232:fn is_nil_lit(e: &Expr) -> bool {
+src/analyze/body/narrowing.rs:243:fn const_to_ty(e: &Expr) -> Option<Ty> {
+src/analyze/body/narrowing.rs:286:pub(super) fn apply_narrowing(ctx: &Ctx, pred: &NarrowPred, then_branch: bool) -> Ctx {
+src/analyze/body/narrowing.rs:340:fn narrow_binding<F: FnOnce(&Ty) -> Ty>(ctx: &mut Ctx, key: &VarKey, f: F) {
+src/analyze/body/narrowing.rs:352:                    ctx.local_bindings.insert(n.clone(), narrowed);
+src/analyze/body/narrowing.rs:361:        bindings.insert(name.clone(), narrowed);
+src/analyze/body/narrowing.rs:365:pub(crate) fn remove_nil(ty: &Ty) -> Ty {
+src/analyze/body/narrowing.rs:391:fn intersect_with(current: &Ty, narrower: &Ty) -> Ty {
+src/analyze/body/narrowing.rs:412:fn intersect_variant(current: &Ty, narrower: &Ty) -> Option<Ty> {
+src/analyze/body/narrowing.rs:429:fn remove_variant(current: &Ty, ty: &Ty) -> Ty {
+src/analyze/body/narrowing.rs:452:fn ty_compatible(a: &Ty, b: &Ty) -> bool {
+src/analyze/body/narrowing.rs:465:    fn check(name: &str, pred: NarrowPred, branch: bool) {
+src/analyze/body/narrowing.rs:473:                bindings.insert(key.clone(), t.clone());
+src/analyze/body/narrowing.rs:492:    fn writer_law_narrow_non_nil() {
+src/analyze/body/narrowing.rs:497:    fn writer_law_narrow_nil() {
+src/analyze/body/narrowing.rs:502:    fn writer_law_narrow_is_a() {
+src/analyze/body/narrowing.rs:507:    fn writer_law_narrow_is_not_a() {
+src/analyze/body/narrowing.rs:512:    fn writer_law_narrow_array() {
+src/analyze/body/narrowing.rs:518:    fn writer_law_narrow_hash() {
+src/analyze/body/narrowing.rs:524:    fn writer_law_exclude_array() {
+src/analyze/body/narrowing.rs:530:    fn writer_law_exclude_hash() {
+src/analyze/body/narrowing.rs:536:    fn writer_law_narrow_reader() {
+src/analyze/body/send.rs:25:    pub(super) fn column_attribute_access_ty(
+src/analyze/body/send.rs:77:    fn column_projection(
+src/analyze/body/send.rs:113:    fn dynamic_finder_ty(&self, model: &ClassId, method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:164:    pub(super) fn grouped_count_ty(
+src/analyze/body/send.rs:193:    fn group_args_in_count_chain(expr: &Expr) -> Option<&[Expr]> {
+src/analyze/body/send.rs:199:    fn grouped_key_ty(&self, model: &ClassId, args: &[Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:210:    pub(super) fn relation_extreme_ty(
+src/analyze/body/send.rs:252:    fn schema_grouped_key_ty(&self, model: &ClassId, args: &[Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:260:    fn direct_relation_chain(&self, expr: &Expr, model: &ClassId, instance_self: Option<&Ty>) -> bool {
+src/analyze/body/send.rs:303:    fn has_many_reader(&self, owner_ty: Option<&Ty>, assoc: &Symbol) -> bool {
+src/analyze/body/send.rs:339:    pub(super) fn block_ctx_for(
+src/analyze/body/send.rs:381:                    new_ctx.local_bindings.insert(
+src/analyze/body/send.rs:399:                    new_ctx.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/send.rs:410:                new_ctx.local_bindings.insert(name.clone(), Ty::Untyped);
+src/analyze/body/send.rs:418:            new_ctx.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/send.rs:425:    fn form_option<'e>(args: &'e [Expr], name: &str) -> Option<&'e Expr> {
+src/analyze/body/send.rs:445:    fn form_builder_id(args: &[Expr]) -> Option<ClassId> {
+src/analyze/body/send.rs:461:    fn form_model_ty(method: &Symbol, args: &[Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:480:    pub(super) fn block_params_for(
+src/analyze/body/send.rs:742:    pub(super) fn assoc_extension_ty(
+src/analyze/body/send.rs:794:    pub(super) fn assoc_loaded_ty(
+src/analyze/body/send.rs:876:    pub(super) fn normalize_trailing_kwargs(
+src/analyze/body/send.rs:940:    fn ancestor_defining_class_method(&self, of: &ClassId, method: &Symbol) -> Option<ClassId> {
+src/analyze/body/send.rs:957:    fn defines_instance_method(&self, of: &ClassId, method: &Symbol) -> bool {
+src/analyze/body/send.rs:972:    pub(super) fn dispatch(
+src/analyze/body/send.rs:983:    pub(super) fn dispatch_on(
+src/analyze/body/send.rs:2162:    fn attribute_by_name(&self, class: &ClassId, args: &[Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:2197:    pub(crate) fn block_value_return(
+src/analyze/body/send.rs:2229:    fn lookup_string_instance(&self, method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:2245:    pub(super) fn lookup_in_module(&self, module_id: &ClassId, method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:2273:    fn receiver_method_return_union(&self, recv_ty: &Ty) -> Ty {
+src/analyze/body/send.rs:2318:fn conversion_fallback(method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:2346:pub(super) fn range_method(method: &Symbol, elem: Option<&Ty>) -> Option<Ty> {
+src/analyze/body/send.rs:2374:pub(super) fn time_method(method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:2429:fn locator_only_class(args: &[crate::expr::Expr]) -> Option<ClassId> {
+src/analyze/body/send.rs:2451:fn date_constructor(method: &Symbol, args: &[crate::expr::Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:2481:fn date_method(method: &Symbol, args: &[crate::expr::Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:2603:fn sub_array_slice(method: &Symbol, args: &[crate::expr::Expr], elem: &Ty) -> Option<Ty> {
+src/analyze/body/send.rs:2617:fn counted_first_last(method: &Symbol, args: &[crate::expr::Expr]) -> bool {
+src/analyze/body/send.rs:2629:fn array_find(method: &Symbol, args: &[crate::expr::Expr], block_ret: Option<&Ty>) -> bool {
+src/analyze/body/send.rs:2638:fn is_model_relation_elem(elem: &Ty) -> bool {
+src/analyze/body/send.rs:2659:fn relation_return_on_array_repr(kind: crate::catalog::ReturnKind, elem: &Ty) -> Ty {
+src/analyze/body/send.rs:2695:fn non_nil_elem(elem: &Ty) -> Ty {
+src/analyze/body/send.rs:2710:pub(super) fn array_method(method: &Symbol, elem: &Ty, block_ret: Option<&Ty>) -> Ty {
+src/analyze/body/send.rs:2942:pub(super) fn record_method(
+src/analyze/body/send.rs:2982:pub(super) fn hash_method(
+src/analyze/body/send.rs:3209:fn jbuilder_value(arg: Option<&crate::expr::Expr>) -> Ty {
+src/analyze/body/send.rs:3226:pub(crate) fn string_answers(method: &Symbol) -> bool {
+src/analyze/body/send.rs:3230:pub(super) fn str_method(method: &Symbol) -> Ty {
+src/analyze/body/send.rs:3347:pub(super) fn sym_method(method: &Symbol) -> Ty {
+src/analyze/body/send.rs:3368:pub(super) fn int_method(method: &Symbol) -> Ty {
+src/analyze/body/send.rs:3435:pub(super) fn bigdecimal() -> Ty {
+src/analyze/body/send.rs:3439:pub(super) fn is_bigdecimal(ty: &Ty) -> bool {
+src/analyze/body/send.rs:3446:fn bigdecimal_method(method: &Symbol, args: &[crate::expr::Expr]) -> Option<Ty> {
+src/analyze/body/send.rs:3473:pub(super) fn float_method(method: &Symbol) -> Ty {
+src/analyze/body/send.rs:3500:fn unwrap_fn_ret(ty: &Ty) -> Ty {
+src/analyze/body/send.rs:3510:pub(super) fn universal_method(method: &Symbol) -> Option<Ty> {
+src/analyze/body/send.rs:3577:pub(super) fn bool_method(method: &Symbol) -> Ty {
+src/analyze/body/send.rs:3589:fn flatten_elem(t: &Ty) -> Ty {
+src/analyze/body/send.rs:3615:pub(super) fn is_module_protocol(method: &Symbol) -> bool {
+src/analyze/body/send.rs:3625:pub(super) fn object_protocol_method(
+src/analyze/body/send.rs:3674:pub(super) fn params_as_hash() -> Ty {
+src/analyze/body/send.rs:3684:pub(crate) fn param_value_ty() -> Ty {
+src/analyze/body/send.rs:3689:fn param_value_method(method: &Symbol, block_ret: Option<&Ty>) -> Option<Ty> {
+src/analyze/mod.rs:151:    view_seeds: Option<ViewSeeds>,
+src/analyze/mod.rs:163:    controller_action_meta_cache:
+src/analyze/mod.rs:179:    pub fn new(app: &App) -> Self {
+src/analyze/mod.rs:186:    pub fn with_adapter(app: &App, adapter: Box<dyn DatabaseAdapter>) -> Self {
+src/analyze/mod.rs:1070:            view_seeds: None,
+src/analyze/mod.rs:1072:            controller_action_meta_cache: HashMap::new(),
+src/analyze/mod.rs:1080:    fn body_typer(&self) -> BodyTyper<'_> {
+src/analyze/mod.rs:1094:    pub fn class_registry(&self) -> &HashMap<ClassId, ClassInfo> {
+src/analyze/mod.rs:1104:    pub fn inferred_param_types(&self, class: &ClassId, method: &Symbol) -> Option<&[Ty]> {
+src/analyze/mod.rs:1109:    fn params_row(&self, class: &ClassId, method: &Symbol) -> Option<&Vec<Ty>> {
+src/analyze/mod.rs:1117:    pub fn fixpoint_rounds(&self) -> FixpointRounds {
+src/analyze/mod.rs:1130:    pub fn analyze(&mut self, app: &mut App) {
+src/analyze/mod.rs:1585:    fn type_rails_application_body(&mut self, app: &mut App) {
+src/analyze/mod.rs:1597:    fn type_direct_helper_bodies(&mut self, app: &mut App) {
+src/analyze/mod.rs:1677:                    local_bindings.insert(
+src/analyze/mod.rs:1685:                        local_bindings.insert(p.clone(), t.clone());
+src/analyze/mod.rs:1733:    fn stamp_inferred_method_signatures(&self, app: &mut App) {
+src/analyze/mod.rs:1807:                method.signature = Some(Ty::Fn {
+src/analyze/mod.rs:1823:    fn build_constant_registry(
+src/analyze/mod.rs:1961:    fn run_typing_passes(
+src/analyze/mod.rs:1995:                debug_assert!(self.view_seeds.is_some());
+src/analyze/mod.rs:2003:    /// Handed to the views half through `Analyzer::view_seeds`.
+src/analyze/mod.rs:2012:    fn type_production_bodies(
+src/analyze/mod.rs:2415:                action_bindings.insert(target, ivars);
+src/analyze/mod.rs:2485:                self.controller_action_meta_cache.get(&controller.name)
+src/analyze/mod.rs:2495:                                action_bindings.insert(method.name.clone(), ivars.clone());
+src/analyze/mod.rs:2521:                    action_bindings.insert(name.clone(), ivars);
+src/analyze/mod.rs:2524:                    self.controller_action_meta_cache.insert(
+src/analyze/mod.rs:2772:                        chained_bindings.insert(name.clone(), ivars);
+src/analyze/mod.rs:3761:        self.view_seeds = Some(ViewSeeds {
+src/analyze/mod.rs:3776:    fn type_views_and_tests(&mut self, app: &mut App, global_constants: &body::ConstScope) {
+src/analyze/mod.rs:3784:        } = self.view_seeds.take().expect("view seeds after production");
+src/analyze/mod.rs:3808:                view_ctx.local_bindings.insert(Symbol::from("params"), row.clone());
+src/analyze/mod.rs:4149:    fn declared_param_ty(
+src/analyze/mod.rs:4178:    fn declared_untyped_param(
+src/analyze/mod.rs:4210:    fn seed_method_params(
+src/analyze/mod.rs:4249:                ctx.local_bindings.insert(param.name.clone(), Ty::Untyped);
+src/analyze/mod.rs:4259:                ctx.local_bindings.insert(param.name.clone(), ty);
+src/analyze/mod.rs:4272:            ctx.local_bindings.insert(bp.name.clone(), captured_block_ty());
+src/analyze/mod.rs:4285:    fn seed_action_params(
+src/analyze/mod.rs:4303:                ctx.local_bindings.insert(name.clone(), Ty::Untyped);
+src/analyze/mod.rs:4317:                ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/mod.rs:4332:                ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/mod.rs:4336:            ctx.local_bindings.insert(bp.clone(), captured_block_ty());
+src/analyze/mod.rs:4348:    fn capture_inference_sig(&self) -> InferenceSig {
+src/analyze/mod.rs:4362:    fn capture_dirty_hints(&self) -> DirtyHints {
+src/analyze/mod.rs:4375:    fn inference_matches(&self, prev: &InferenceSig) -> bool {
+src/analyze/mod.rs:4396:    fn block_value_matches(&self, prev: &DirtyHints) -> bool {
+src/analyze/mod.rs:4435:    fn dirty_classes_for_retype(
+src/analyze/mod.rs:4465:    fn record_callers(
+src/analyze/mod.rs:4491:    fn harvest_returns_to_registry(&mut self, app: &App, harvest_tests: bool) {
+src/analyze/mod.rs:4515:    fn harvest_one_model(&mut self, model: &Model) {
+src/analyze/mod.rs:4581:    fn harvest_method_returns(&mut self, app: &App, harvest_tests: bool) {
+src/analyze/mod.rs:4663:    fn harvest_block_value_methods(&mut self, app: &App) {
+src/analyze/mod.rs:4721:    fn fold_current_attribute_forwarders(&mut self, app: &App) {
+src/analyze/mod.rs:4769:    fn fold_extended_modules(&mut self, app: &App) {
+src/analyze/mod.rs:4854:    fn fold_concern_surfaces(&mut self, app: &App) {
+src/analyze/mod.rs:4936:    fn fold_host_surfaces(&mut self, app: &App) {
+src/analyze/mod.rs:5030:    fn method_return_ty(&self, _class_id: &ClassId, method: &crate::dialect::MethodDef) -> Option<Ty> {
+src/analyze/mod.rs:5057:    fn class_object_return_ty(&self, body: &Expr) -> Option<Ty> {
+src/analyze/mod.rs:5124:    fn returns_block_value(
+src/analyze/mod.rs:5197:    fn register_method_return(
+src/analyze/mod.rs:5214:    fn insert_inferred_return(
+src/analyze/mod.rs:5229:    fn unify_params_from_call_sites(&mut self, app: &App, scope: UnifyScope) {
+src/analyze/mod.rs:5319:    fn unify_test_params_onto(
+src/analyze/mod.rs:5328:    fn overlay_test_params(&mut self, app: &App) {
+src/analyze/mod.rs:5336:    fn collect_test_param_sites(
+src/analyze/mod.rs:5360:    fn apply_param_sites(
+src/analyze/mod.rs:5385:    fn defined_methods(app: &App) -> BTreeSet<ParamKey> {
+src/analyze/mod.rs:5411:    fn param_side(defined: &BTreeSet<ParamKey>, owner: &ClassId, method: &Symbol, recv: SiteRecv) -> Option<MethodReceiver> {
+src/analyze/mod.rs:5433:    fn inherited_param_owner(
+src/analyze/mod.rs:5476:    fn lexical_parent(&self, child: &ClassId, parent: &ClassId) -> ClassId {
+src/analyze/mod.rs:5511:    fn fold_concern_param_sites(&mut self, app: &App) {
+src/analyze/mod.rs:5619:    fn param_shapes(app: &App) -> HashMap<ParamKey, ParamShape> {
+src/analyze/mod.rs:5710:    fn place_keyword_args(
+src/analyze/mod.rs:5799:    fn bind_keyword_group(
+src/analyze/mod.rs:5862:    fn collect_send_sites(
+src/analyze/mod.rs:6174:    fn is_builder_chain(&self, method: &str) -> bool {
+src/analyze/mod.rs:6218:fn body_tail_yields_relation(
+src/analyze/mod.rs:6298:pub(crate) fn scope_return_seed(
+src/analyze/mod.rs:6318:pub(crate) fn body_is_relation_query(
+src/analyze/mod.rs:6337:fn body_tail_terminal_kind(
+src/analyze/mod.rs:6379:fn record_render_edges(
+src/analyze/mod.rs:6396:fn scope_tail_materializing_sibling(
+src/analyze/mod.rs:6432:fn descends_from_active_record(
+src/analyze/mod.rs:6460:pub(crate) fn instantiate_return_kind(
+src/analyze/mod.rs:6494:pub(crate) fn before_filter_applies(filter: &Filter, action_name: &Symbol) -> bool {
+src/analyze/mod.rs:6571:fn collect_transitive_filter_ivars(
+src/analyze/mod.rs:6783:fn union_ivar_maps(out: &mut HashMap<Symbol, Ty>, incoming: HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:6800:fn merge_alternative_branches(branches: Vec<HashMap<Symbol, Ty>>) -> HashMap<Symbol, Ty> {
+src/analyze/mod.rs:6822:fn merged_before_seed(
+src/analyze/mod.rs:6870:fn build_sourced_filter_chain(
+src/analyze/mod.rs:6992:fn block_filter_gates(call: &Expr) -> (Vec<Symbol>, Vec<Symbol>) {
+src/analyze/mod.rs:7031:pub(crate) fn fold_param_observations(
+src/analyze/mod.rs:7088:pub(crate) fn unify_param_ty(stored: Ty, observed: Ty) -> Ty {
+src/analyze/mod.rs:7112:pub(crate) fn controller_view_prefix(class_id: &ClassId) -> String {
+src/analyze/mod.rs:7124:pub(crate) fn view_name_for_action(controller: &ClassId, action: &Action) -> Option<Symbol> {
+src/analyze/mod.rs:7174:pub(crate) fn extract_const_assignments(body: &[ModelBodyItem]) -> HashMap<Symbol, Ty> {
+src/analyze/mod.rs:7190:pub(crate) fn extract_controller_const_assignments(
+src/analyze/mod.rs:7212:fn association_member_ty(assoc: &crate::dialect::Association) -> (Symbol, Ty) {
+src/analyze/mod.rs:7253:fn association_builder_members(assoc: &crate::dialect::Association) -> Vec<(Symbol, Ty)> {
+src/analyze/mod.rs:7276:fn class_ids_for_call_receiver(ty: &Ty) -> Vec<ClassId> {
+src/analyze/mod.rs:7299:pub(crate) fn model_includes(model: &crate::dialect::Model) -> Vec<ClassId> {
+src/analyze/mod.rs:7332:pub(crate) fn source_instance_method(app: &App, owner: &ClassId, name: &str) -> bool {
+src/analyze/mod.rs:7333:    fn lookup(app: &App, owner: &ClassId, name: &str, seen: &mut BTreeSet<ClassId>) -> bool {
+src/analyze/mod.rs:7376:fn keyword_splat(value: &Expr) -> Option<(Vec<(Symbol, Ty)>, Ty)> {
+src/analyze/mod.rs:7450:fn captured_block_ty() -> Ty {
+src/analyze/mod.rs:7475:fn prefer_declared(declared: Option<Ty>, observed: Option<Ty>) -> Option<Ty> {
+src/analyze/mod.rs:7483:fn param_ty_with_default(observed: Option<Ty>, param: &crate::dialect::Param) -> Option<Ty> {
+src/analyze/mod.rs:7498:pub(crate) fn controller_includes(controller: &Controller) -> Vec<ClassId> {
+src/analyze/mod.rs:7520:pub(crate) fn controller_include_groups(controller: &Controller) -> Vec<Vec<ClassId>> {
+src/analyze/mod.rs:7543:fn record_const(expr: &Expr, out: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:7563:/// all return) reports `body.ty == Bottom` even though the early
+src/analyze/mod.rs:7569:pub(crate) fn is_setter_name(name: &Symbol) -> bool {
+src/analyze/mod.rs:7579:fn is_abstract_body(body: &Expr) -> bool {
+src/analyze/mod.rs:7596:fn effective_return_ty(body: &Expr) -> Option<Ty> {
+src/analyze/mod.rs:7654:fn collect_return_types(expr: &Expr, out: &mut Vec<Ty>, saw: &mut bool) {
+src/analyze/mod.rs:7703:fn collect_block_return_types(block: &Expr, out: &mut Vec<Ty>, saw: &mut bool) {
+src/analyze/mod.rs:7728:fn bind_framework_assigned_ivars(body: &Expr, ivars: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:7729:    fn walk(e: &Expr, out: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:7747:fn collect_const_attr_writes(
+src/analyze/mod.rs:7793:fn is_clean_binding(ty: &Ty) -> bool {
+src/analyze/mod.rs:7801:fn ivars_initialized_by<'a>(
+src/analyze/mod.rs:7816:fn ivars_assigned_by_statement(body: &Expr) -> Vec<Symbol> {
+src/analyze/mod.rs:7841:pub fn extract_ivar_assignments(expr: &Expr, out: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:7845:pub(crate) fn extract_ivar_assignments_in(
+src/analyze/mod.rs:7888:fn walk_ivar_assignments(
+src/analyze/mod.rs:8092:fn widen_hash_ivar_value(out: &mut HashMap<Symbol, Ty>, name: &Symbol, incoming: Ty) {
+src/analyze/mod.rs:8144:fn collect_attr_accessor_names(body: &[ModelBodyItem]) -> Vec<Symbol> {
+src/analyze/mod.rs:8170:fn harvest_mailer_with_params(
+src/analyze/mod.rs:8227:fn walk_expr<'a>(e: &'a Expr, f: &mut dyn FnMut(&'a Expr)) {
+src/analyze/mod.rs:8241:fn register_has_secure_password(
+src/analyze/mod.rs:8309:fn register_generates_token_for(
+src/analyze/mod.rs:8338:fn register_has_rich_text(model: &crate::dialect::Model, methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8374:fn register_plain_text_attr(
+src/analyze/mod.rs:8394:fn register_attr_accessors(body: &[ModelBodyItem], methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8427:fn register_ar_attributes(body: &[ModelBodyItem], methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8467:fn register_has_json(body: &[ModelBodyItem], methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8493:fn register_serialized_columns(body: &[ModelBodyItem], methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8507:fn register_typed_store(body: &[ModelBodyItem], methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8521:fn register_typed_store_decls(expr: &Expr, methods: &mut HashMap<Symbol, Ty>) {
+src/analyze/mod.rs:8551:pub(crate) fn typed_store_ty(type_method: &str) -> Option<Ty> {
+src/analyze/mod.rs:8565:pub(crate) fn typed_store_is_array(args: &[Expr]) -> bool {
+src/analyze/mod.rs:8575:fn symbol_arg(expr: &Expr) -> Option<&Symbol> {
+src/analyze/mod.rs:8588:    fn send(method: &str, args: Vec<Expr>, block: Option<Expr>) -> Expr {
+src/analyze/mod.rs:8600:    fn sym(name: &str) -> Expr {
+src/analyze/mod.rs:8606:    fn unknown_item(expr: Expr) -> ModelBodyItem {
+src/analyze/mod.rs:8611:    fn registers_string_and_boolean_accessors() {
+src/analyze/mod.rs:8642:    fn ignores_unknown_items_without_typed_store() {
+src/analyze/mod.rs:8650:    fn registers_any_and_array_columns() {
+src/analyze/mod.rs:8692:    fn method_return_fallback_is_clobber_safe() {
+src/analyze/mod.rs:8723:    fn fn_ty_returning(ret: Ty) -> Ty {
+src/analyze/mod.rs:8733:    fn analyzer_applies_rbs_signatures_to_user_class() {
+src/analyze/mod.rs:8761:    fn analyzer_rbs_signatures_overlay_the_hardcoded_catalog() {
+src/analyze/mod.rs:8791:    fn analyzer_with_no_rbs_signatures_is_unchanged() {
+src/analyze/mod.rs:8815:fn concern_ivar_env_of(
+src/analyze/mod.rs:8882:pub fn register_stdlib_classes(
+src/analyze/mod.rs:8894:fn snapshot_rebuild(e: &Expr) -> bool {
+src/analyze/mod.rs:8907:fn yield_only_locals(body: &Expr) -> std::collections::HashSet<Symbol> {
+src/analyze/mod.rs:8908:    fn walk(
+src/analyze/mod.rs:8960:    fn captured_writes_in_lambdas_disqualify_yield_only_locals() {
+src/analyze/mod.rs:8996:pub(crate) fn return_leaves(body: &Expr) -> Vec<&Expr> {
+src/analyze/mod.rs:8997:    fn tails<'a>(e: &'a Expr, out: &mut Vec<&'a Expr>) {
+src/analyze/mod.rs:9014:    fn returns<'a>(e: &'a Expr, out: &mut Vec<&'a Expr>) {
+src/analyze/mod.rs:9045:pub(crate) fn tuple_return_ty(body: &Expr) -> Option<Ty> {
+src/analyze/mod.rs:9082:    fn a_merged_splat_joins_the_literal_keys_and_fills_the_rest() {
+src/analyze/mod.rs:9113:fn expr_calls_super(body: &Expr) -> bool {
+src/analyze/body/mod.rs:28:fn instance_shaped(ty: &Ty) -> bool {
+src/analyze/body/mod.rs:36:fn bytes_block_has_escaping_break(e: &Expr) -> bool {
+src/analyze/body/mod.rs:50:fn forwarded_block_may_be_nil(ty: &Ty) -> bool {
+src/analyze/body/mod.rs:77:    pub fn global(map: HashMap<Symbol, Ty>) -> Self {
+src/analyze/body/mod.rs:83:    pub fn with_own(&self, own: impl IntoIterator<Item = (Symbol, Ty)>) -> Self {
+src/analyze/body/mod.rs:87:    pub fn get(&self, name: &Symbol) -> Option<&Ty> {
+src/analyze/body/mod.rs:92:    pub fn get_own(&self, name: &Symbol) -> Option<&Ty> {
+src/analyze/body/mod.rs:97:    pub fn get_global(&self, name: &Symbol) -> Option<&Ty> {
+src/analyze/body/mod.rs:289:    pub fn has_schema_column(&self, name: &Symbol) -> bool {
+src/analyze/body/mod.rs:318:pub(crate) fn lexical_class(
+src/analyze/body/mod.rs:352:    pub(super) fn classes(&self) -> &'a HashMap<ClassId, ClassInfo> {
+src/analyze/body/mod.rs:356:    fn has_unknown_ancestor(&self, id: &crate::ident::ClassId) -> bool {
+src/analyze/body/mod.rs:371:    fn app_defines(&self, self_ty: Option<&Ty>, method: &Symbol) -> bool {
+src/analyze/body/mod.rs:389:    pub fn new(classes: &'a HashMap<ClassId, ClassInfo>) -> Self {
+src/analyze/body/mod.rs:394:    pub(crate) fn with_const_resolver(mut self, resolver: std::sync::Arc<ConstResolver>) -> Self {
+src/analyze/body/mod.rs:400:    pub(super) fn with_typed_constants(
+src/analyze/body/mod.rs:408:    pub(super) fn with_data_factories(mut self, factories: &'a HashMap<crate::span::Span, Ty>) -> Self {
+src/analyze/body/mod.rs:415:    pub fn with_inquirers(
+src/analyze/body/mod.rs:430:    pub fn analyze_expr(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
+src/analyze/body/mod.rs:432:        expr.ty = Some(ty.clone());
+src/analyze/body/mod.rs:441:    fn analyze_match_pattern_constants(&self, pattern: &mut MatchPattern, ctx: &Ctx) {
+src/analyze/body/mod.rs:465:    fn match_pattern_bindings(
+src/analyze/body/mod.rs:544:    fn propagate_match_bindings(&self, expr: &Expr, ctx: &mut Ctx, definite: bool) {
+src/analyze/body/mod.rs:554:                ctx.local_bindings.insert(name, ty);
+src/analyze/body/mod.rs:574:    fn self_attribute_ty(&self, name: &Symbol, ctx: &Ctx) -> Option<Ty> {
+src/analyze/body/mod.rs:592:    fn is_class_object(&self, expr: &Expr, ctx: &Ctx) -> bool {
+src/analyze/body/mod.rs:627:    fn is_instance(&self, expr: &Expr, ctx: &Ctx) -> bool {
+src/analyze/body/mod.rs:632:    fn is_module_callback(&self, recv_ty: Option<&Ty>, method: &Symbol) -> bool {
+src/analyze/body/mod.rs:637:    fn owns_operator(&self, ty: Option<&Ty>, method: &Symbol, class_object: bool) -> bool {
+src/analyze/body/mod.rs:657:    fn compute(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
+src/analyze/body/mod.rs:878:                        inner.local_bindings.insert(
+src/analyze/body/mod.rs:1096:                inner.local_bindings.insert(name.clone(), v_ty);
+src/analyze/body/mod.rs:1124:                    inner.local_bindings.insert(param.name.clone(), ty);
+src/analyze/body/mod.rs:1327:                        r.ty = Some(send::param_value_ty());
+src/analyze/body/mod.rs:1740:                    base.local_bindings.insert(k.clone(), v.clone());
+src/analyze/body/mod.rs:1779:                        inner.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/mod.rs:1788:                        fallthrough.local_bindings.insert(name, union_of(old, ty));
+src/analyze/body/mod.rs:1884:                                    local_ctx.ivar_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:1886:                                    local_ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:1894:                                    local_ctx.local_bindings.insert(mark, Ty::Nil);
+src/analyze/body/mod.rs:1897:                                        local_ctx.local_bindings.insert(name.clone(), send::param_value_ty());
+src/analyze/body/mod.rs:1962:                            local_ctx.local_bindings.insert(name, union_of(prior, ty));
+src/analyze/body/mod.rs:1981:                        local_ctx.ivar_bindings.insert(name, ty);
+src/analyze/body/mod.rs:1995:                                        local_ctx.ivar_bindings.insert(name.clone(), merged);
+src/analyze/body/mod.rs:2005:                                        local_ctx.local_bindings.insert(name.clone(), merged);
+src/analyze/body/mod.rs:2026:                                    local_ctx.ivar_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:2029:                                    local_ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:2102:                            bindings.insert(name.clone(), refined.clone());
+src/analyze/body/mod.rs:2141:                                        value.ty = Some(refined.clone());
+src/analyze/body/mod.rs:2143:                                    seed.ty = Some(refined);
+src/analyze/body/mod.rs:2161:                            bindings.insert(name.clone(), refined.clone());
+src/analyze/body/mod.rs:2172:                                    value.ty = Some(refined.clone());
+src/analyze/body/mod.rs:2174:                                seed.ty = Some(refined);
+src/analyze/body/mod.rs:2204:                                value.ty = Some(merged.clone());
+src/analyze/body/mod.rs:2206:                            seed.ty = Some(merged);
+src/analyze/body/mod.rs:2233:                            local_ctx.local_bindings.insert(name, ty);
+src/analyze/body/mod.rs:2465:fn forget_class_object_writes(expr: &Expr, ctx: &mut Ctx) {
+src/analyze/body/mod.rs:2497:pub(super) fn lit_ty(lit: &Literal) -> Ty {
+src/analyze/body/mod.rs:2522:fn written_class_id(path: &[Symbol]) -> ClassId {
+src/analyze/body/mod.rs:2544:fn qualify_resolved_path(path: &mut Vec<Symbol>, resolved: &ClassId) {
+src/analyze/body/mod.rs:2566:fn kernel_array_elem(arg: &Ty) -> Option<Ty> {
+src/analyze/body/mod.rs:2586:pub(super) fn unknown() -> Ty {
+src/analyze/body/mod.rs:2602:fn propagate_expected_to_empty_container(value: &mut Expr, expected: &Ty) {
+src/analyze/body/mod.rs:2607:                value.ty = Some(peeled.clone());
+src/analyze/body/mod.rs:2612:                value.ty = Some(peeled.clone());
+src/analyze/body/mod.rs:2631:pub(crate) fn multiassign_target_ty(rhs: &Option<Ty>, index: usize) -> Option<Ty> {
+src/analyze/body/mod.rs:2662:fn collect_array_pushes(expr: &Expr, out: &mut Vec<(bool, Symbol, Ty)>) {
+src/analyze/body/mod.rs:2698:fn collect_hash_index_writes(expr: &Expr, out: &mut Vec<(bool, Symbol, Ty)>) {
+src/analyze/body/mod.rs:2748:fn collect_local_assignment_tys(expr: &Expr, out: &mut Vec<(Symbol, Ty)>) {
+src/analyze/body/mod.rs:2764:fn top_level_local_assigns(expr: &Expr, out: &mut Vec<(Symbol, Ty)>) {
+src/analyze/body/mod.rs:2780:fn collect_var_assignments_into(expr: &Expr, out: &mut HashMap<Symbol, Ty>) {
+src/analyze/body/mod.rs:2812:pub(crate) fn union_of(a: Ty, b: Ty) -> Ty {
+src/analyze/body/mod.rs:2883:fn push_union_variants(t: Ty, out: &mut Vec<Ty>) {
+src/analyze/body/mod.rs:2929:pub(crate) fn join_ivar_slot(a: Ty, b: Ty) -> Ty {
+src/analyze/body/mod.rs:2938:pub(crate) fn drop_pending_arms(t: Ty) -> Ty {
+src/analyze/body/mod.rs:2962:pub(super) fn union_many(tys: Vec<Ty>) -> Ty {
+src/analyze/body/mod.rs:2982:    fn synth(node: ExprNode) -> Expr {
+src/analyze/body/mod.rs:2986:    fn var(name: &str) -> Expr {
+src/analyze/body/mod.rs:2993:    fn nil_lit() -> Expr {
+src/analyze/body/mod.rs:2997:    fn send(recv: Option<Expr>, method: &str, args: Vec<Expr>) -> Expr {
+src/analyze/body/mod.rs:3007:    fn empty_classes() -> HashMap<ClassId, ClassInfo> {
+src/analyze/body/mod.rs:3011:    fn ctx_with_local(name: &str, ty: Ty) -> Ctx {
+src/analyze/body/mod.rs:3013:        ctx.local_bindings.insert(Symbol::from(name), ty);
+src/analyze/body/mod.rs:3018:    fn const_class_ref_keeps_class_object_without_registry_entry() {
+src/analyze/body/mod.rs:3043:    fn optional_str() -> Ty {
+src/analyze/body/mod.rs:3051:    fn kernel_array_does_not_capture_inherited_or_included_app_methods() {
+src/analyze/body/mod.rs:3074:    fn kernel_array_keeps_the_argument_element_type() {
+src/analyze/body/mod.rs:3093:    fn array_plus_onto_an_unknown_element_takes_the_argument_element() {
+src/analyze/body/mod.rs:3096:        ctx.local_bindings.insert(Symbol::from("strs"), array_of(Ty::Str));
+src/analyze/body/mod.rs:3097:        ctx.local_bindings.insert(Symbol::from("syms"), array_of(Ty::Sym));
+src/analyze/body/mod.rs:3106:    fn if_nil_narrows_variable_to_nil_in_then_branch() {
+src/analyze/body/mod.rs:3115:    fn if_nil_narrows_variable_removing_nil_in_else_branch() {
+src/analyze/body/mod.rs:3124:    fn not_nil_is_inverse() {
+src/analyze/body/mod.rs:3136:    fn explicit_equality_to_nil_narrows() {
+src/analyze/body/mod.rs:3145:    fn explicit_inequality_to_nil_narrows_inversely() {
+src/analyze/body/mod.rs:3156:    fn ivar_narrowing() {
+src/analyze/body/mod.rs:3172:    fn missing_binding_is_a_noop() {
+src/analyze/body/mod.rs:3181:    fn non_narrowing_condition_returns_none() {
+src/analyze/body/mod.rs:3187:    fn is_a_string_narrows_to_str() {
+src/analyze/body/mod.rs:3209:    fn is_a_user_class_narrows_to_class_ty() {
+src/analyze/body/mod.rs:3233:    fn end_to_end_if_nil_narrows_through_analyzer() {
+src/analyze/body/mod.rs:3261:    fn assignment_in_condition_binds_then_narrows() {
+src/analyze/body/mod.rs:3303:    fn narrowing_writes_back_to_var_ty_inside_assign_in_else_branch() {
+src/analyze/body/mod.rs:3342:    fn narrowing_writes_back_to_var_ty_in_else_branch() {
+src/analyze/body/mod.rs:3378:    fn lambda(params: Vec<&str>, body: Expr) -> Expr {
+src/analyze/body/mod.rs:3388:    fn array_map_returns_block_body_type() {
+src/analyze/body/mod.rs:3392:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3409:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3419:    fn array_select_preserves_element_type() {
+src/analyze/body/mod.rs:3423:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3442:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3452:    fn array_flat_map_flattens_one_level() {
+src/analyze/body/mod.rs:3456:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3476:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3486:    fn array_accumulator_element_refined_by_shovel() {
+src/analyze/body/mod.rs:3510:    fn array_accumulator_seed_literal_retro_stamped() {
+src/analyze/body/mod.rs:3540:    fn nil_seeded_local_refined_by_nested_write() {
+src/analyze/body/mod.rs:3580:    fn hash_accumulator_refined_by_nested_index_write() {
+src/analyze/body/mod.rs:3640:    fn nilable_hash_write_leaves_seed_placeholder() {
+src/analyze/body/mod.rs:3654:            e.ty = Some(optional_str());
+src/analyze/body/mod.rs:3676:    fn hash_map_returns_array_of_block_ret() {
+src/analyze/body/mod.rs:3680:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:3700:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3713:    fn hash_transform_values_changes_value_type() {
+src/analyze/body/mod.rs:3717:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:3737:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3756:    fn map_without_block_falls_back_to_input_elem() {
+src/analyze/body/mod.rs:3761:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3776:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3788:    fn incompatible_add_annotates_diagnostic_on_send() {
+src/analyze/body/mod.rs:3825:    fn incompatible_compare_annotates_diagnostic_on_send() {
+src/analyze/body/mod.rs:3861:    fn compatible_compare_leaves_diagnostic_empty() {
+src/analyze/body/mod.rs:3882:    fn incompatible_sub_annotates_diagnostic_on_send() {
+src/analyze/body/mod.rs:3913:    fn compatible_sub_leaves_diagnostic_empty() {
+src/analyze/body/mod.rs:3934:    fn incompatible_mul_annotates_diagnostic_on_send() {
+src/analyze/body/mod.rs:3941:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:3968:    fn incompatible_div_annotates_diagnostic_on_send() {
+src/analyze/body/mod.rs:3993:    fn compatible_add_leaves_diagnostic_empty() {
+src/analyze/body/mod.rs:4026:    pub(in crate::analyze) fn law_universe() -> Vec<Ty> {
+src/analyze/body/mod.rs:4066:    fn union_of_bottom_is_identity() {
+src/analyze/body/mod.rs:4074:    fn union_of_is_idempotent() {
+src/analyze/body/mod.rs:4081:    fn union_of_is_commutative() {
+src/analyze/body/mod.rs:4094:    fn union_of_bool_int_nil_is_structural_not_debug_order() {
+src/analyze/body/mod.rs:4106:    fn union_of_is_associative() {
+src/analyze/body/mod.rs:4122:    fn union_of_absorbs_existing_variants() {
+src/analyze/body/mod.rs:4143:    fn union_of_relations_has_no_cross_model_subtyping() {
+src/analyze/body/mod.rs:4161:    fn union_of_merges_container_spines_through_unions() {
+src/analyze/body/mod.rs:4190:    fn record(fields: &[(&str, Ty)]) -> Ty {
+src/analyze/body/mod.rs:4199:    fn field_order(t: &Ty) -> Vec<String> {
+src/analyze/body/mod.rs:4209:    fn union_of_orders_records_regardless_of_field_order() {
+src/analyze/body/mod.rs:4222:    fn check_record_laws(x: Ty, y: Ty) {
+src/analyze/body/mod.rs:4241:    fn union_of_keeps_one_source_field_order_for_equal_records() {
+src/analyze/body/mod.rs:4267:    fn pending() -> Ty {
+src/analyze/body/mod.rs:4271:    pub(in crate::analyze) fn carried_slot_universe(join: fn(Ty, Ty) -> Ty) -> Vec<Ty> {
+src/analyze/body/mod.rs:4297:    fn check_carried_slot_join_laws(name: &str, join: fn(Ty, Ty) -> Ty) {
+src/analyze/body/mod.rs:4318:    fn param_slot_join_is_a_lattice_join() {
+src/analyze/body/mod.rs:4325:    fn param_slot_join_of_two_pending_values_commutes() {
+src/analyze/body/mod.rs:4335:    fn param_slot_join_classifies_untyped_arms_inside_unions() {
+src/analyze/body/mod.rs:4348:    fn param_slot_join_keeps_untyped_beside_nil_alone() {
+src/analyze/body/mod.rs:4361:    fn param_slot_join_drops_pending_inside_hash_spines() {
+src/analyze/body/mod.rs:4367:    fn ivar_slot_join_is_a_lattice_join() {
+src/analyze/body/mod.rs:4372:    fn ivar_write(name: &str, ty: Ty) -> Expr {
+src/analyze/body/mod.rs:4374:        value.ty = Some(ty);
+src/analyze/body/mod.rs:4379:    fn ivar_index_write(name: &str, ty: Ty) -> Expr {
+src/analyze/body/mod.rs:4381:        key.ty = Some(Ty::Str);
+src/analyze/body/mod.rs:4383:        value.ty = Some(ty);
+src/analyze/body/mod.rs:4394:    fn harvested_ivar(name: &str, stmts: Vec<Expr>) -> Ty {
+src/analyze/body/mod.rs:4400:    fn empty_hash() -> Ty {
+src/analyze/body/mod.rs:4407:    fn empty_hash_seed_and_index_writes_join_in_any_order() {
+src/analyze/body/mod.rs:4432:    fn index_writes_widen_a_nullable_hash_ivar() {
+src/analyze/body/mod.rs:4461:    fn index_writes_leave_a_class_instance_ivar_alone() {
+src/analyze/body/mod.rs:4472:    fn permutations(stmts: Vec<Expr>) -> Vec<Vec<Expr>> {
+src/analyze/body/mod.rs:4492:    fn index_writes_before_the_hash_seed_are_kept_in_any_order() {
+src/analyze/body/mod.rs:4525:    fn index_writes_leave_a_class_instance_ivar_alone_in_any_order() {
+src/analyze/body/mod.rs:4534:    fn concrete_value_shapes_are_truthy_for_boolean_operators() {
+src/analyze/body/mod.rs:4551:    fn nil_arms_of_concrete_value_unions_remain_falsy() {
+src/analyze/body/mod.rs:4568:    fn case_match_hash_pattern_binds_value_omission_key_from_hash_value_ty() {
+src/analyze/body/mod.rs:4619:    fn case_match_array_pattern_with_constant_binds_untyped() {
+src/analyze/body/mod.rs:4661:fn falsy_part(ty: &Ty) -> Option<Ty> {
+src/analyze/body/mod.rs:4686:fn never_falsy(ty: &Ty) -> bool {
+src/analyze/body/mod.rs:4709:fn time_parse_ty(recv: &Expr, method: &Symbol, args: &[Expr]) -> Option<Ty> {
+src/analyze/body/mod.rs:4729:    fn has_declared_constructor(&self, ty: Option<&Ty>) -> bool {
+src/analyze/body/mod.rs:4746:fn is_time_const(e: &Expr) -> bool {
+src/analyze/body/mod.rs:4751:fn expect_hash_arg_ty(recv_ty: Option<&Ty>, method: &str, args: &[crate::expr::Expr]) -> Option<Ty> {
+src/analyze/body/mod.rs:4774:fn promotes_to_param_value(
+src/analyze/body/mod.rs:4825:fn param_local_mark(name: &Symbol) -> Symbol {
+src/analyze/body/mod.rs:4829:fn is_param_local(e: &crate::expr::Expr, locals: &HashMap<Symbol, Ty>) -> bool {
+src/analyze/body/mod.rs:4833:fn reads_structurally(e: &crate::expr::Expr, name: &Symbol) -> bool {
+src/analyze/body/mod.rs:4856:fn is_params_rooted(e: &crate::expr::Expr, locals: &HashMap<Symbol, Ty>) -> bool {
+src/analyze/body/mod.rs:4867:fn is_ivar_params_rooted(e: &crate::expr::Expr, locals: &HashMap<Symbol, Ty>) -> bool {
+src/analyze/body/mod.rs:4891:fn rooted_in_refused_constant(expr: &Expr) -> bool {
+src/analyze/body/mod.rs:4902:fn literal_extremum_ty(recv: Option<&Expr>, recv_ty: &Ty, method: &Symbol, args: &[Expr]) -> Option<Ty> {

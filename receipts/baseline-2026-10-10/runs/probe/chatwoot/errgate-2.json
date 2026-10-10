@@ -1,0 +1,80 @@
+{
+  "command": [
+    "python3",
+    "sources/next/tools/errgate.py",
+    "./runs/probe/chatwoot/base/schedule-2/probe-chatwoot.stderr",
+    "./runs/probe/chatwoot/s3/schedule-2/probe-chatwoot.stderr"
+  ],
+  "summary": {
+    "build": "38403140",
+    "by_kind": {
+      "incompatible_binop": {
+        "corrected_delta": 0,
+        "new": 9,
+        "old": 9,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "ivar_unresolved": {
+        "corrected_delta": 0,
+        "new": 127,
+        "old": 127,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "send_dispatch_failed": {
+        "corrected_delta": 0,
+        "new": 75,
+        "old": 75,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "unsupported": {
+        "corrected_delta": 0,
+        "new": 679,
+        "old": 679,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      }
+    },
+    "common": 890,
+    "input_digest": "22ebbd8797fe45a0",
+    "new_errors": 890,
+    "new_only": 0,
+    "old_errors": 890,
+    "old_only": 0,
+    "oracle_checked": 0,
+    "raw_delta": 0,
+    "vanished": {},
+    "verdicts": {
+      "exposed": 0,
+      "exposed-pending": 0,
+      "regressed": 0,
+      "undetermined": 0
+    }
+  }
+}

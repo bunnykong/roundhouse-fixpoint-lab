@@ -1,0 +1,3468 @@
+{
+  "build_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "build_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "condition": "fixpoint-current-main-20261010-c210f226",
+  "earlier_writes": [
+    {
+      "file": "app/jobs/base.rb",
+      "line": 53,
+      "value": "Discourse.os_hostname; String-valued hostname path"
+    },
+    {
+      "file": "app/jobs/base.rb",
+      "line": 54,
+      "value": "Process.pid; Integer"
+    }
+  ],
+  "hostname_definition": {
+    "end_line": 667,
+    "file": "lib/discourse.rb",
+    "paths": [
+      "Socket.gethostname",
+      "hostname command output .strip",
+      "literal \"unknown_host\" fallback"
+    ],
+    "start_line": 652
+  },
+  "input": {
+    "digest": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+    "files": 26331,
+    "head": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "id": "discourse"
+  },
+  "inspected_reads": 28,
+  "integer_only_receiver_lines": [
+    55,
+    56,
+    57
+  ],
+  "interpretation": "F8's source-level Integer-only receiver witness persists at initializer reads on lines 55\u201357: the hash already holds the hostname String written at line 53 when Process.pid is stored at line 54. The S3 value type at the next three receiver reads is Integer and omits that String. This is not a uniform Integer-only result for the whole class: the late initializer read at line 75 has Integer | String, and stop/write_to_log reads have the same broader types as base.",
+  "late_initializer_string_preserved": true,
+  "limits": [
+    "No app runtime trace or oracle replay was run.",
+    "These are serialized inferred receiver types under verification-off base/S3 flags in dump_ir.",
+    "Retain the historical F8 pin; append this separately pinned source-witness inspection."
+  ],
+  "receipts": {
+    "base": "runs/f8/base/receipt.json",
+    "s3": "runs/f8/s3/receipt.json"
+  },
+  "rows": [
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 53,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "source": "@data[\"hostname\"] = Discourse.os_hostname",
+      "span": {
+        "end": 942,
+        "file": 393,
+        "start": 937
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 54,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "source": "@data[\"pid\"] = Process.pid # Pid",
+      "span": {
+        "end": 994,
+        "file": 393,
+        "start": 989
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 55,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "int"
+        }
+      },
+      "source": "@data[\"database\"] = db # DB name - multisite db name it ran on",
+      "span": {
+        "end": 1037,
+        "file": 393,
+        "start": 1032
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 56,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "int"
+        }
+      },
+      "source": "@data[\"job_id\"] = jid # Job unique ID",
+      "span": {
+        "end": 1110,
+        "file": 393,
+        "start": 1105
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 57,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "int"
+        }
+      },
+      "source": "@data[\"job_name\"] = job_class.name # Job Name - eg: Jobs::AboutStats",
+      "span": {
+        "end": 1158,
+        "file": 393,
+        "start": 1153
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 58,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            }
+          ]
+        }
+      },
+      "source": "@data[\"job_type\"] = job_class.try(:scheduled?) ? \"scheduled\" : \"regular\" # Job Type - either s for scheduled or r for regular",
+      "span": {
+        "end": 1237,
+        "file": 393,
+        "start": 1232
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 59,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            }
+          ]
+        }
+      },
+      "source": "@data[\"opts\"] = opts.to_json # Params - json encoded params for the job",
+      "span": {
+        "end": 1373,
+        "file": 393,
+        "start": 1368
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 62,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            }
+          ]
+        }
+      },
+      "source": "@data[\"status\"] = \"starting\"",
+      "span": {
+        "end": 1509,
+        "file": 393,
+        "start": 1504
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 66,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            }
+          ]
+        }
+      },
+      "source": "@data[\"status\"] = \"pending\"",
+      "span": {
+        "end": 1588,
+        "file": 393,
+        "start": 1583
+      }
+    },
+    {
+      "base_ty": {
+        "key": {
+          "kind": "str"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "float"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "key": {
+                "kind": "var",
+                "var": 0
+              },
+              "kind": "hash",
+              "value": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "str"
+                  },
+                  {
+                    "key": {
+                      "kind": "sym"
+                    },
+                    "kind": "hash",
+                    "value": {
+                      "kind": "var",
+                      "var": 0
+                    }
+                  },
+                  {
+                    "args": [],
+                    "id": "StandardError",
+                    "kind": "class"
+                  }
+                ]
+              }
+            },
+            {
+              "args": [],
+              "id": "Time",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "file": "app/jobs/base.rb",
+      "line": 75,
+      "method": "initialize",
+      "s3_ty": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            }
+          ]
+        }
+      },
+      "source": "@data[\"live_slots_start\"] = GC.stat[:heap_live_slots]",
+      "span": {
+        "end": 1904,
+        "file": 393,
+        "start": 1899
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 87,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"duration\"] = profile[:total_duration] # Duration - length in seconds it took to run",
+      "span": {
+        "end": 2169,
+        "file": 393,
+        "start": 2164
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 88,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"sql_duration\"] = profile.dig(:sql, :duration) || 0 # Sql Duration (s)",
+      "span": {
+        "end": 2270,
+        "file": 393,
+        "start": 2265
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 89,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"sql_calls\"] = profile.dig(:sql, :calls) || 0 # Sql Statements - how many statements ran",
+      "span": {
+        "end": 2357,
+        "file": 393,
+        "start": 2352
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 90,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"redis_duration\"] = profile.dig(:redis, :duration) || 0 # Redis Duration (s)",
+      "span": {
+        "end": 2462,
+        "file": 393,
+        "start": 2457
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 91,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"redis_calls\"] = profile.dig(:redis, :calls) || 0 # Redis commands",
+      "span": {
+        "end": 2555,
+        "file": 393,
+        "start": 2550
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 92,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"net_duration\"] = profile.dig(:net, :duration) || 0 # Redis Duration (s)",
+      "span": {
+        "end": 2638,
+        "file": 393,
+        "start": 2633
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 93,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"net_calls\"] = profile.dig(:net, :calls) || 0 # Redis commands",
+      "span": {
+        "end": 2727,
+        "file": 393,
+        "start": 2722
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 94,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"live_slots_finish\"] = GC.stat[:heap_live_slots]",
+      "span": {
+        "end": 2806,
+        "file": 393,
+        "start": 2801
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 95,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"live_slots\"] = @data[\"live_slots_finish\"] - @data[\"live_slots_start\"]",
+      "span": {
+        "end": 2871,
+        "file": 393,
+        "start": 2866
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 95,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"live_slots\"] = @data[\"live_slots_finish\"] - @data[\"live_slots_start\"]",
+      "span": {
+        "end": 2893,
+        "file": 393,
+        "start": 2888
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 95,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"live_slots\"] = @data[\"live_slots_finish\"] - @data[\"live_slots_start\"]",
+      "span": {
+        "end": 2922,
+        "file": 393,
+        "start": 2917
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 98,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"exception\"] = exception # Exception - if job fails a json encoded exception",
+      "span": {
+        "end": 2993,
+        "file": 393,
+        "start": 2988
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 99,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"status\"] = \"failed\"",
+      "span": {
+        "end": 3088,
+        "file": 393,
+        "start": 3083
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 101,
+      "method": "stop",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"status\"] = \"success\" # Status - fail, success, pending",
+      "span": {
+        "end": 3142,
+        "file": 393,
+        "start": 3137
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 144,
+      "method": "write_to_log",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"@timestamp\"] = Time.now",
+      "span": {
+        "end": 4153,
+        "file": 393,
+        "start": 4148
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 145,
+      "method": "write_to_log",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"duration\"] = current_duration if @data[\"status\"] == \"pending\"",
+      "span": {
+        "end": 4192,
+        "file": 393,
+        "start": 4187
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 145,
+      "method": "write_to_log",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "@data[\"duration\"] = current_duration if @data[\"status\"] == \"pending\"",
+      "span": {
+        "end": 4232,
+        "file": 393,
+        "start": 4227
+      }
+    },
+    {
+      "base_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "file": "app/jobs/base.rb",
+      "line": 146,
+      "method": "write_to_log",
+      "s3_ty": {
+        "kind": "union",
+        "variants": [
+          {
+            "key": {
+              "kind": "str"
+            },
+            "kind": "hash",
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "float"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "key": {
+                    "kind": "var",
+                    "var": 0
+                  },
+                  "kind": "hash",
+                  "value": {
+                    "kind": "union",
+                    "variants": [
+                      {
+                        "kind": "str"
+                      },
+                      {
+                        "key": {
+                          "kind": "sym"
+                        },
+                        "kind": "hash",
+                        "value": {
+                          "kind": "var",
+                          "var": 0
+                        }
+                      },
+                      {
+                        "args": [],
+                        "id": "StandardError",
+                        "kind": "class"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "args": [],
+                  "id": "Time",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "source": "self.class.raw_log(\"#{@data.to_json}\\n\")",
+      "span": {
+        "end": 4291,
+        "file": 393,
+        "start": 4286
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "path": "app/jobs/base.rb",
+      "sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6"
+    },
+    {
+      "path": "lib/discourse.rb",
+      "sha256": "cf9ce165159e57b963664427f7fc3bc538e8813dfbe3abb8630816757ec8cb81"
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+src/analyze/ivar_set.rs:187:        if visiting.insert(method.clone()) {
+src/analyze/ivar_set.rs:190:            visiting.remove(method);
+src/analyze/ivar_set.rs:341:    let merged = match out.remove(&name) {
+src/analyze/ivar_set.rs:345:    out.insert(name, merged);
+src/analyze/ivar_set.rs:413:                out.insert(key, id.clone());
+src/analyze/ivar_set.rs:418:                out.insert(key, id.clone());
+src/analyze/body/narrowing.rs:146:                    on_true.extend(t);
+src/analyze/body/narrowing.rs:148:                    on_false.extend(f);
+src/analyze/body/narrowing.rs:352:                    ctx.local_bindings.insert(n.clone(), narrowed);
+src/analyze/body/narrowing.rs:361:        bindings.insert(name.clone(), narrowed);
+src/analyze/body/narrowing.rs:473:                bindings.insert(key.clone(), t.clone());
+src/analyze/test_module.rs:15:        classes.entry(inner.name.clone())
+src/analyze/test_module.rs:19:        let cls = classes.entry(module.name.clone()).or_default();
+src/analyze/test_module.rs:28:                .entry(method.name.clone())
+src/analyze/test_module.rs:34:            .insert(method.name.clone(), method.kind);
+src/analyze/test_module.rs:48:                .entry(fixture.name.clone())
+src/analyze/test_module.rs:51:                .entry(fixture.name.clone())
+src/analyze/test_module.rs:91:        self.typed_constants = resolved_values;
+src/analyze/test_module.rs:109:                own_constants.insert(name.clone(), ty);
+src/analyze/test_module.rs:115:                ctx.ivar_bindings.retain(|_, ty| !ty.is_unknown());
+src/analyze/test_module.rs:131:                        default_ctx.local_bindings.insert(name, ty.clone());
+src/analyze/class_configuration.rs:41:                                .entry((carrier.clone(), name.clone()))
+src/analyze/class_configuration.rs:68:                            .entry(key.clone())
+src/analyze/class_configuration.rs:94:                            .entry(key.clone())
+src/analyze/class_configuration.rs:139:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:147:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:163:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:168:                            ctx.local_bindings.insert(param.name.clone(), ty.clone());
+src/analyze/class_configuration.rs:172:                        ctx.ivar_bindings.insert(
+src/analyze/class_configuration.rs:181:                method.signature = Some(Ty::Fn {
+src/analyze/class_configuration.rs:213:                        .entry(controller.name.clone())
+src/analyze/class_configuration.rs:243:        expr.ty = Some(ty.clone());
+src/analyze/body/mod.rs:376:            if !seen.insert(cid) {
+src/analyze/body/mod.rs:383:            stack.extend(cls.includes.iter());
+src/analyze/body/mod.rs:384:            stack.extend(cls.parent.iter());
+src/analyze/body/mod.rs:404:        self.typed_constants = Some(values);
+src/analyze/body/mod.rs:432:        expr.ty = Some(ty.clone());
+src/analyze/body/mod.rs:488:                    out.extend(self.match_pattern_bindings(p, None));
+src/analyze/body/mod.rs:498:                    out.extend(self.match_pattern_bindings(p, None));
+src/analyze/body/mod.rs:522:                        Some(p) => out.extend(self.match_pattern_bindings(p, value_ty.as_ref())),
+src/analyze/body/mod.rs:553:                ctx.class_objects.remove(&name);
+src/analyze/body/mod.rs:554:                ctx.local_bindings.insert(name, ty);
+src/analyze/body/mod.rs:877:                        inner.class_objects.remove(name);
+src/analyze/body/mod.rs:878:                        inner.local_bindings.insert(
+src/analyze/body/mod.rs:1096:                inner.local_bindings.insert(name.clone(), v_ty);
+src/analyze/body/mod.rs:1097:                inner.class_objects.remove(name);
+src/analyze/body/mod.rs:1098:                if self.is_class_object(value, ctx) { inner.class_objects.insert(name.clone()); }
+src/analyze/body/mod.rs:1105:                    inner.class_objects.remove(name);
+src/analyze/body/mod.rs:1123:                    inner.class_objects.remove(&param.name);
+src/analyze/body/mod.rs:1124:                    inner.local_bindings.insert(param.name.clone(), ty);
+src/analyze/body/mod.rs:1327:                        r.ty = Some(send::param_value_ty());
+src/analyze/body/mod.rs:1740:                    base.local_bindings.insert(k.clone(), v.clone());
+src/analyze/body/mod.rs:1779:                        inner.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/mod.rs:1788:                        fallthrough.local_bindings.insert(name, union_of(old, ty));
+src/analyze/body/mod.rs:1872:                        local_ctx.class_objects.remove(name);
+src/analyze/body/mod.rs:1873:                        if proven { local_ctx.class_objects.insert(name.clone()); }
+src/analyze/body/mod.rs:1884:                                    local_ctx.ivar_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:1886:                                    local_ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:1894:                                    local_ctx.local_bindings.insert(mark, Ty::Nil);
+src/analyze/body/mod.rs:1897:                                        local_ctx.local_bindings.insert(name.clone(), send::param_value_ty());
+src/analyze/body/mod.rs:1900:                                    local_ctx.local_bindings.remove(&mark);
+src/analyze/body/mod.rs:1908:                                array_seed_idx.insert((is_ivar, name.clone()), i);
+src/analyze/body/mod.rs:1910:                                array_seed_idx.remove(&(is_ivar, name.clone()));
+src/analyze/body/mod.rs:1919:                                hash_seed_idx.insert((is_ivar, name.clone()), i);
+src/analyze/body/mod.rs:1921:                                hash_seed_idx.remove(&(is_ivar, name.clone()));
+src/analyze/body/mod.rs:1937:                                nil_seed.insert(name, (i, Ty::Nil));
+src/analyze/body/mod.rs:1962:                            local_ctx.local_bindings.insert(name, union_of(prior, ty));
+src/analyze/body/mod.rs:1981:                        local_ctx.ivar_bindings.insert(name, ty);
+src/analyze/body/mod.rs:1990:                                            .remove(name)
+src/analyze/body/mod.rs:1995:                                        local_ctx.ivar_bindings.insert(name.clone(), merged);
+src/analyze/body/mod.rs:2000:                                            .remove(name)
+src/analyze/body/mod.rs:2005:                                        local_ctx.local_bindings.insert(name.clone(), merged);
+src/analyze/body/mod.rs:2026:                                    local_ctx.ivar_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:2029:                                    local_ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/body/mod.rs:2102:                            bindings.insert(name.clone(), refined.clone());
+src/analyze/body/mod.rs:2141:                                        value.ty = Some(refined.clone());
+src/analyze/body/mod.rs:2143:                                    seed.ty = Some(refined);
+src/analyze/body/mod.rs:2161:                            bindings.insert(name.clone(), refined.clone());
+src/analyze/body/mod.rs:2172:                                    value.ty = Some(refined.clone());
+src/analyze/body/mod.rs:2174:                                seed.ty = Some(refined);
+src/analyze/body/mod.rs:2198:                            nil_seed.insert(name.clone(), (si, merged.clone()));
+src/analyze/body/mod.rs:2201:                                .insert(name.clone(), merged.clone());
+src/analyze/body/mod.rs:2204:                                value.ty = Some(merged.clone());
+src/analyze/body/mod.rs:2206:                            seed.ty = Some(merged);
+src/analyze/body/mod.rs:2233:                            local_ctx.local_bindings.insert(name, ty);
+src/analyze/body/mod.rs:2476:            names.extend(params.iter().cloned());
+src/analyze/body/mod.rs:2477:            names.extend(rest_param.iter().cloned());
+src/analyze/body/mod.rs:2478:            names.extend(extra_params.iter().map(|p| p.name.clone()));
+src/analyze/body/mod.rs:2479:            names.extend(block_param.iter().cloned());
+src/analyze/body/mod.rs:2487:            for rescue in rescues { names.extend(rescue.binding.iter().cloned()); }
+src/analyze/body/mod.rs:2491:    for name in names { ctx.class_objects.remove(&name); }
+src/analyze/body/mod.rs:2607:                value.ty = Some(peeled.clone());
+src/analyze/body/mod.rs:2612:                value.ty = Some(peeled.clone());
+src/analyze/body/mod.rs:2784:                out.insert(name.clone(), ty);
+src/analyze/body/mod.rs:2948:                variants.retain(|v| !matches!(v, Ty::Var { .. }));
+src/analyze/body/mod.rs:3013:        ctx.local_bindings.insert(Symbol::from(name), ty);
+src/analyze/body/mod.rs:3057:            info.instance_methods.insert(Symbol::from("Array"), ret.clone());
+src/analyze/body/mod.rs:3058:            classes.insert(owner.clone(), info);
+src/analyze/body/mod.rs:3065:            classes.insert(child.clone(), info);
+src/analyze/body/mod.rs:3096:        ctx.local_bindings.insert(Symbol::from("strs"), array_of(Ty::Str));
+src/analyze/body/mod.rs:3097:        ctx.local_bindings.insert(Symbol::from("syms"), array_of(Ty::Sym));
+src/analyze/body/mod.rs:3164:            .insert(Symbol::from("post"), optional_str());
+src/analyze/body/mod.rs:3392:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3409:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3423:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3442:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3456:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3476:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3654:            e.ty = Some(optional_str());
+src/analyze/body/mod.rs:3680:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:3700:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3717:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:3737:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3761:            e.ty = Some(Ty::Array { elem: Box::new(Ty::Int) });
+src/analyze/body/mod.rs:3776:        ctx.local_bindings.insert(
+src/analyze/body/mod.rs:3941:            e.ty = Some(Ty::Hash {
+src/analyze/body/mod.rs:4273:        raw.extend([
+src/analyze/body/mod.rs:4374:        value.ty = Some(ty);
+src/analyze/body/mod.rs:4381:        key.ty = Some(Ty::Str);
+src/analyze/body/mod.rs:4383:        value.ty = Some(ty);
+src/analyze/body/mod.rs:4397:        out.remove(&Symbol::from(name)).expect("ivar harvested")
+src/analyze/body/mod.rs:4479:            let first = rest.remove(i);
+src/analyze/body/mod.rs:4481:                tail.insert(0, first.clone());
+src/analyze/body/mod.rs:4734:            if !seen.insert(id) { break; }
+src/analyze/body/send.rs:361:        for name in params { new_ctx.class_objects.remove(name); }
+src/analyze/body/send.rs:381:                    new_ctx.local_bindings.insert(
+src/analyze/body/send.rs:399:                    new_ctx.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/send.rs:410:                new_ctx.local_bindings.insert(name.clone(), Ty::Untyped);
+src/analyze/body/send.rs:418:            new_ctx.local_bindings.insert(name.clone(), ty.clone());
+src/analyze/body/send.rs:2233:            if !seen.insert(id.clone()) {
+src/analyze/body/send.rs:2240:            stack.extend(m.includes.iter().cloned());
+src/analyze/body/send.rs:2249:            if !seen.insert(id.clone()) {
+src/analyze/body/send.rs:2259:            stack.extend(m.includes.iter().cloned());
+src/analyze/body/send.rs:2281:            if !seen.insert(cid.clone()) {
+src/analyze/body/send.rs:2301:            stack.extend(cls.includes.iter().cloned());
+src/analyze/mod.rs:285:                cls.class_methods.insert(Symbol::from(entry.name), instantiate(kind));
+src/analyze/mod.rs:295:            cls.class_methods.insert(Symbol::from("transaction"), Ty::Untyped);
+src/analyze/mod.rs:296:            cls.class_methods.insert(Symbol::from("connection"), registry::ar::connection_ty());
+src/analyze/mod.rs:297:            cls.class_methods.insert(Symbol::from("connection_pool"), Ty::Untyped);
+src/analyze/mod.rs:298:            cls.class_methods.insert(Symbol::from("establish_connection"), Ty::Untyped);
+src/analyze/mod.rs:299:            cls.class_methods.insert(Symbol::from("table_name"), Ty::Str);
+src/analyze/mod.rs:303:            cls.class_methods.insert(Symbol::from("human_attribute_name"), Ty::Str);
+src/analyze/mod.rs:304:            cls.class_methods.insert(Symbol::from("primary_key"), Ty::Str);
+src/analyze/mod.rs:310:            cls.class_methods.insert(
+src/analyze/mod.rs:314:            cls.class_methods.insert(
+src/analyze/mod.rs:318:            cls.class_methods.insert(Symbol::from("attribute_names"), Ty::Array { elem: Box::new(Ty::Str) });
+src/analyze/mod.rs:319:            cls.class_methods.insert(Symbol::from("column_names"), Ty::Array { elem: Box::new(Ty::Str) });
+src/analyze/mod.rs:320:            cls.class_methods.insert(Symbol::from("columns_hash"), Ty::Untyped);
+src/analyze/mod.rs:326:            cls.class_methods.insert(Symbol::from("columns"), Ty::Array { elem: Box::new(Ty::Untyped) });
+src/analyze/mod.rs:328:                cls.class_methods.insert(Symbol::from(sanitizer), Ty::Str);
+src/analyze/mod.rs:330:            cls.class_methods.insert(Symbol::from("base_class"), Ty::Class { id: ClassId(Symbol::from("Class")), args: vec![] });
+src/analyze/mod.rs:333:                cls.class_methods.insert(Symbol::from(family), Ty::Array { elem: Box::new(class_ty.clone()) });
+src/analyze/mod.rs:336:                cls.class_methods.insert(Symbol::from(text), Ty::Str);
+src/analyze/mod.rs:339:                cls.class_methods.insert(Symbol::from(flag), Ty::Bool);
+src/analyze/mod.rs:344:                cls.class_methods.insert(Symbol::from(opaque), Ty::Untyped);
+src/analyze/mod.rs:359:                cls.class_methods.insert(Symbol::from("unscoped"), relation_of_self.clone());
+src/analyze/mod.rs:360:                cls.class_methods.insert(Symbol::from("none"), relation_of_self.clone());
+src/analyze/mod.rs:361:                cls.class_methods.insert(Symbol::from("delete_all"), Ty::Int);
+src/analyze/mod.rs:362:                cls.class_methods.insert(Symbol::from("update_all"), Ty::Int);
+src/analyze/mod.rs:385:                        .entry(Symbol::from(builder))
+src/analyze/mod.rs:402:                        .entry(Symbol::from(batch))
+src/analyze/mod.rs:406:                    .entry(Symbol::from("in_batches"))
+src/analyze/mod.rs:410:                        .entry(Symbol::from(proj))
+src/analyze/mod.rs:414:                    .entry(Symbol::from("ids"))
+src/analyze/mod.rs:424:                cls.instance_methods.entry(Symbol::from("id")).or_insert(key_ty.clone());
+src/analyze/mod.rs:447:                cls.instance_methods.insert(name.clone(), reader_ty);
+src/analyze/mod.rs:449:                    cls.instance_methods.entry(Symbol::from(format!("{n}_before_type_cast"))).or_insert(ty.clone());
+src/analyze/mod.rs:452:                cls.instance_methods.entry(predicate).or_insert(Ty::Bool);
+src/analyze/mod.rs:454:                cls.instance_methods.entry(writer).or_insert(ty.clone());
+src/analyze/mod.rs:461:                        .entry(Symbol::from(format!("{n}{suffix}")))
+src/analyze/mod.rs:465:                    .entry(Symbol::from(format!("saved_change_to_{n}?")))
+src/analyze/mod.rs:471:                    .entry(Symbol::from(format!("will_save_change_to_{n}?")))
+src/analyze/mod.rs:474:                    .entry(Symbol::from(format!("{n}_was")))
+src/analyze/mod.rs:487:                    .entry(Symbol::from(format!("{n}_previously_was")))
+src/analyze/mod.rs:546:                    materializing.insert(scope.name.clone(), seed);
+src/analyze/mod.rs:558:                        materializing.insert(scope.name.clone(), seed);
+src/analyze/mod.rs:571:                cls.class_methods.entry(scope.name.clone()).or_insert(seed);
+src/analyze/mod.rs:572:                cls.relation_derived.insert(scope.name.clone());
+src/analyze/mod.rs:574:                    cls.materializing_scopes.insert(scope.name.clone());
+src/analyze/mod.rs:584:                    .entry(name)
+src/analyze/mod.rs:590:                        .entry(name)
+src/analyze/mod.rs:598:                    .entry(name)
+src/analyze/mod.rs:609:                cls.instance_methods.entry(attr).or_insert(Ty::Class {
+src/analyze/mod.rs:617:                    .entry(Symbol::from("attachment_changes"))
+src/analyze/mod.rs:621:                cls.instance_methods.entry(attr).or_insert(Ty::Class {
+src/analyze/mod.rs:644:                    .entry(Symbol::from("blob"))
+src/analyze/mod.rs:647:                    .entry(Symbol::from("url"))
+src/analyze/mod.rs:650:                    .entry(Symbol::from("filename"))
+src/analyze/mod.rs:653:                    .entry(Symbol::from("content_type"))
+src/analyze/mod.rs:679:                cls.instance_methods.entry(name).or_insert(Ty::Untyped);
+src/analyze/mod.rs:680:                cls.instance_methods.entry(writer).or_insert(Ty::Untyped);
+src/analyze/mod.rs:689:                .entry(Symbol::from("attachable_sgid"))
+src/analyze/mod.rs:698:                .entry(Symbol::from("to_param"))
+src/analyze/mod.rs:710:                cls.instance_methods.insert(Symbol::from(entry.name), instantiate(kind));
+src/analyze/mod.rs:749:                cls.instance_methods.entry(Symbol::from(name)).or_insert(ty);
+src/analyze/mod.rs:774:                        cls.direct_has_many.insert(name.clone());
+src/analyze/mod.rs:778:                            .entry((name.clone(), m.name.clone()))
+src/analyze/mod.rs:787:                        .entry(Symbol::from(format!("{}_loaded?", name.as_str())))
+src/analyze/mod.rs:790:                        .entry(Symbol::from(format!("reload_{}", name.as_str())))
+src/analyze/mod.rs:801:                        .entry(Symbol::from(format!("{}_loaded?", name.as_str())))
+src/analyze/mod.rs:804:                cls.instance_methods.insert(name, ty.clone());
+src/analyze/mod.rs:805:                cls.instance_methods.entry(writer).or_insert(ty);
+src/analyze/mod.rs:807:                    cls.instance_methods.entry(name).or_insert(ty);
+src/analyze/mod.rs:829:                            if seen.insert(n.clone()) {
+src/analyze/mod.rs:845:                                        .entry(Symbol::from(format!(
+src/analyze/mod.rs:851:                                cls.instance_methods.entry(name).or_insert(ty.clone());
+src/analyze/mod.rs:852:                                cls.instance_methods.entry(writer).or_insert(ty);
+src/analyze/mod.rs:854:                                    cls.instance_methods.entry(name).or_insert(ty);
+src/analyze/mod.rs:859:                                    .entry(scope.name.clone())
+src/analyze/mod.rs:881:            classes.insert(model.name.clone(), cls);
+src/analyze/mod.rs:923:            let cls = classes.entry(class_id.clone()).or_default();
+src/analyze/mod.rs:925:                cls.instance_methods.insert(name.clone(), ty.clone());
+src/analyze/mod.rs:939:            let cls = classes.entry(constant.clone()).or_default();
+src/analyze/mod.rs:941:                cls.class_methods.entry(name.clone()).or_insert(Ty::Str);
+src/analyze/mod.rs:956:            let cls = classes.entry(controller.name.clone()).or_default();
+src/analyze/mod.rs:1004:                classes.entry(id.clone()).or_default().declares_constructor = true;
+src/analyze/mod.rs:1509:            let entry = app.partial_local_types.entry(partial).or_default();
+src/analyze/mod.rs:1512:                    entry.entry(k).or_insert(ty);
+src/analyze/mod.rs:1620:                            let slot = out.entry(s.clone()).or_default();
+src/analyze/mod.rs:1677:                    local_bindings.insert(
+src/analyze/mod.rs:1685:                        local_bindings.insert(p.clone(), t.clone());
+src/analyze/mod.rs:1807:                method.signature = Some(Ty::Fn {
+src/analyze/mod.rs:1921:                    next_resolved.insert(*id, ty.clone());
+src/analyze/mod.rs:1928:                        ambiguous.insert(name.clone());
+src/analyze/mod.rs:1931:                        next.insert(name.clone(), ty);
+src/analyze/mod.rs:1936:                next.remove(name);
+src/analyze/mod.rs:1947:            resolved.insert(
+src/analyze/mod.rs:1979:        self.typed_constants = resolved_values;
+src/analyze/mod.rs:2142:            class_ivars.insert(
+src/analyze/mod.rs:2155:                class_ivars.insert(
+src/analyze/mod.rs:2165:                class_ivars.entry(name).or_insert(Ty::Untyped);
+src/analyze/mod.rs:2251:                    reseeded.insert(name, union_ty);
+src/analyze/mod.rs:2415:                action_bindings.insert(target, ivars);
+src/analyze/mod.rs:2436:                action_bodies.entry(filter.target.clone()).or_insert_with(|| body.clone());
+src/analyze/mod.rs:2458:                        if seen_modules.insert(n.clone()) {
+src/analyze/mod.rs:2474:                        action_bindings.entry(method.name.clone()).or_default();
+src/analyze/mod.rs:2481:                        action_bodies.entry(method.name.clone()).or_insert_with(|| body.clone());
+src/analyze/mod.rs:2495:                                action_bindings.insert(method.name.clone(), ivars.clone());
+src/analyze/mod.rs:2500:                                .entry(method.name.clone())
+src/analyze/mod.rs:2521:                    action_bindings.insert(name.clone(), ivars);
+src/analyze/mod.rs:2524:                    self.controller_action_meta_cache.insert(
+src/analyze/mod.rs:2537:            meta_by_name.insert(
+src/analyze/mod.rs:2640:                if !visited.insert(parent_id.clone()) {
+src/analyze/mod.rs:2659:                chained_filters.extend(
+src/analyze/mod.rs:2666:            chained_filters.extend(
+src/analyze/mod.rs:2695:                    dst.remove(name).unwrap_or_default()
+src/analyze/mod.rs:2699:                merged.extend(ivars.iter().map(|(k, v)| (k.clone(), v.clone())));
+src/analyze/mod.rs:2705:                            merged.insert(k.clone(), v.clone());
+src/analyze/mod.rs:2709:                dst.insert(name.clone(), merged);
+src/analyze/mod.rs:2737:                    chained_bodies.insert(name.clone(), body);
+src/analyze/mod.rs:2741:                chained_bodies.insert(name.clone(), body);
+src/analyze/mod.rs:2762:                    ivars.retain(|_, v| !v.is_open());
+src/analyze/mod.rs:2770:                        chained_bindings.entry(name.clone()).or_default().extend(ivars);
+src/analyze/mod.rs:2772:                        chained_bindings.insert(name.clone(), ivars);
+src/analyze/mod.rs:2796:                visited.insert(filter.target.clone());
+src/analyze/mod.rs:2807:                let entry = chained_bindings.entry(filter.target.clone()).or_default();
+src/analyze/mod.rs:2809:                    let merged = match entry.remove(&k) {
+src/analyze/mod.rs:2813:                    entry.insert(k, merged);
+src/analyze/mod.rs:2862:                            let merged = match env.remove(k) {
+src/analyze/mod.rs:2866:                            env.insert(k.clone(), merged);
+src/analyze/mod.rs:2872:                    controller_ivar_env.insert(ctrl_name.clone(), out.clone());
+src/analyze/mod.rs:2890:                            seed.insert(k, v);
+src/analyze/mod.rs:2944:                        let entry = chained_bindings.entry(action.name.clone()).or_default();
+src/analyze/mod.rs:2949:                            entry.insert(k, v);
+src/analyze/mod.rs:3021:                        chained_effects.insert(name.clone(), eff.clone());
+src/analyze/mod.rs:3025:                    chained_effects.insert(name.clone(), eff.clone());
+src/analyze/mod.rs:3031:                    chained_effects.insert(action.name.clone(), action.effects.clone());
+src/analyze/mod.rs:3066:                controller_resolutions.insert(
+src/analyze/mod.rs:3098:                                ivars.entry(k.clone()).or_insert_with(|| v.clone());
+src/analyze/mod.rs:3132:                            ivars.entry(k.clone()).or_insert_with(|| v.clone());
+src/analyze/mod.rs:3145:                            ivars.entry(k.clone()).or_insert_with(|| v.clone());
+src/analyze/mod.rs:3151:                        .entry(layout_name.clone())
+src/analyze/mod.rs:3153:                        .insert(ctrl_name.clone());
+src/analyze/mod.rs:3155:                        .entry(layout_name.clone())
+src/analyze/mod.rs:3167:                        let merged = match layout_map.remove(k) {
+src/analyze/mod.rs:3174:                        layout_map.insert(k.clone(), merged);
+src/analyze/mod.rs:3197:                        let entry = content_partial_ivars.entry(partial).or_default();
+src/analyze/mod.rs:3202:                            let merged = match entry.remove(k) {
+src/analyze/mod.rs:3206:                            entry.insert(k.clone(), merged);
+src/analyze/mod.rs:3252:                    view_targets.extend(
+src/analyze/mod.rs:3262:                    view_feeders.entry(view_name.clone()).or_default().insert(ctrl_name.clone());
+src/analyze/mod.rs:3263:                    let entry = action_ivars_by_view.entry(view_name).or_default();
+src/analyze/mod.rs:3266:                        let merged = match entry.remove(k) {
+src/analyze/mod.rs:3273:                        entry.insert(k.clone(), merged);
+src/analyze/mod.rs:3295:                        if own_names.contains(name) || !seen_inherited.insert(name.clone()) {
+src/analyze/mod.rs:3314:                                        ivars.entry(k.clone()).or_insert_with(|| v.clone());
+src/analyze/mod.rs:3320:                            .entry(view_name.clone())
+src/analyze/mod.rs:3322:                            .insert(ctrl_name.clone());
+src/analyze/mod.rs:3323:                        let entry = action_ivars_by_view.entry(view_name).or_default();
+src/analyze/mod.rs:3326:                            let merged = match entry.remove(k) {
+src/analyze/mod.rs:3333:                            entry.insert(k.clone(), merged);
+src/analyze/mod.rs:3345:            let entry = self.refined_action_bindings.entry(key).or_default();
+src/analyze/mod.rs:3347:                entry.insert(k, v);
+src/analyze/mod.rs:3409:                            seed.insert(k.clone(), v.clone());
+src/analyze/mod.rs:3578:                    .entry(lc.name.clone())
+src/analyze/mod.rs:3581:                    .insert(params_sym.clone(), Ty::Record { row: row.clone() });
+src/analyze/mod.rs:3647:                    flow_ivars.entry(k.clone()).or_insert_with(|| v.clone());
+src/analyze/mod.rs:3671:                    flow_ivars.insert(
+src/analyze/mod.rs:3702:                        ivars.entry(name.clone()).or_insert_with(|| {
+src/analyze/mod.rs:3708:                        mailer_params_by_view.insert(view_name.clone(), Ty::Record { row: row.clone() });
+src/analyze/mod.rs:3713:                    action_ivars_by_view.entry(view_name).or_default().extend(ivars);
+src/analyze/mod.rs:3740:                    reseeded.insert(name, seeded);
+src/analyze/mod.rs:3761:        self.view_seeds = Some(ViewSeeds {
+src/analyze/mod.rs:3808:                view_ctx.local_bindings.insert(Symbol::from("params"), row.clone());
+src/analyze/mod.rs:3838:                        let layout_map = layout_ivars_by_view.entry(layout_name.clone()).or_default();
+src/analyze/mod.rs:3841:                            let merged = match layout_map.remove(k) {
+src/analyze/mod.rs:3848:                            layout_map.insert(k.clone(), merged);
+src/analyze/mod.rs:3922:            partial_ivars_by_name.insert(partial, ivars);
+src/analyze/mod.rs:3939:                    let entry = partial_ivars_by_name.entry(partial.clone()).or_default();
+src/analyze/mod.rs:3963:                            entry.insert(k.clone(), merged);
+src/analyze/mod.rs:4009:                    let entry = view_feeders.entry(partial.clone()).or_default();
+src/analyze/mod.rs:4011:                    entry.extend(feeders.iter().cloned());
+src/analyze/mod.rs:4058:                view_ctx.local_bindings.entry(Symbol::from("blob")).or_insert(Ty::Class {
+src/analyze/mod.rs:4078:                    .entry(Symbol::from(binding.local.as_str()))
+src/analyze/mod.rs:4249:                ctx.local_bindings.insert(param.name.clone(), Ty::Untyped);
+src/analyze/mod.rs:4259:                ctx.local_bindings.insert(param.name.clone(), ty);
+src/analyze/mod.rs:4268:                ctx.class_objects.insert(param.name.clone());
+src/analyze/mod.rs:4272:            ctx.local_bindings.insert(bp.name.clone(), captured_block_ty());
+src/analyze/mod.rs:4303:                ctx.local_bindings.insert(name.clone(), Ty::Untyped);
+src/analyze/mod.rs:4317:                ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/mod.rs:4332:                ctx.local_bindings.insert(name.clone(), ty);
+src/analyze/mod.rs:4336:            ctx.local_bindings.insert(bp.clone(), captured_block_ty());
+src/analyze/mod.rs:4343:                .insert(rest.clone(), Ty::Array { elem: Box::new(Ty::Untyped) });
+src/analyze/mod.rs:4352:            instance.insert(id.clone(), cls.instance_methods.clone());
+src/analyze/mod.rs:4353:            class_methods.insert(id.clone(), cls.class_methods.clone());
+src/analyze/mod.rs:4366:                block_value.insert(id.clone(), cls.block_value_methods.clone());
+src/analyze/mod.rs:4376:        if self.classes.len() != prev.instance.len() || self.inferred_params != prev.params {
+src/analyze/mod.rs:4473:            if class_id == caller || !seen.insert((class_id, method)) {
+src/analyze/mod.rs:4477:                .entry((class_id.clone(), method.clone()))
+src/analyze/mod.rs:4479:                .insert(caller.clone());
+src/analyze/mod.rs:4510:                self.classes.entry(view_ctx.clone()).or_default().instance_methods.insert(name.clone(), ty);
+src/analyze/mod.rs:4523:                    &mut self.classes.entry(class_id.clone()).or_default().instance_methods
+src/analyze/mod.rs:4526:                    &mut self.classes.entry(class_id.clone()).or_default().class_methods
+src/analyze/mod.rs:4546:                    .entry(class_id.clone())
+src/analyze/mod.rs:4549:                    .insert(method.name.clone());
+src/analyze/mod.rs:4570:                        .entry(class_id.clone())
+src/analyze/mod.rs:4573:                        .insert(method.name.clone());
+src/analyze/mod.rs:4591:                        &mut self.classes.entry(class_id.clone()).or_default().instance_methods
+src/analyze/mod.rs:4594:                        &mut self.classes.entry(class_id.clone()).or_default().class_methods
+src/analyze/mod.rs:4610:                    let class = self.classes.entry(module.name.clone()).or_default();
+src/analyze/mod.rs:4633:                let target = &mut self.classes.entry(class_id.clone()).or_default().class_methods;
+src/analyze/mod.rs:4646:                    &mut self.classes.entry(class_id.clone()).or_default().instance_methods;
+src/analyze/mod.rs:4694:            info.block_value_methods.clear();
+src/analyze/mod.rs:4700:            self.classes.entry(class_id).or_default().block_value_methods.insert(method);
+src/analyze/mod.rs:4746:                cls.class_methods.insert(name, ty);
+src/analyze/mod.rs:4837:                    if seen.insert(n.clone()) {
+src/analyze/mod.rs:4841:                let folded = self.concern_folded.entry(id.clone()).or_default();
+src/analyze/mod.rs:4842:                let cls = self.classes.entry(id.clone()).or_default();
+src/analyze/mod.rs:4847:                    cls.class_methods.insert(name.clone(), ty);
+src/analyze/mod.rs:4848:                    folded.1.insert(name);
+src/analyze/mod.rs:4867:                    inst.retain(|name, _| !lent.contains(name));
+src/analyze/mod.rs:4894:                    if seen.insert(n.clone()) {
+src/analyze/mod.rs:4898:                let folded = self.concern_folded.entry(id.clone()).or_default();
+src/analyze/mod.rs:4899:                let cls = self.classes.entry(id.clone()).or_default();
+src/analyze/mod.rs:4904:                    cls.instance_methods.insert(name.clone(), ty.clone());
+src/analyze/mod.rs:4905:                    folded.0.insert(name.clone());
+src/analyze/mod.rs:4911:                    cls.class_methods.insert(name.clone(), ty.clone());
+src/analyze/mod.rs:4912:                    folded.1.insert(name.clone());
+src/analyze/mod.rs:4955:                    hosts.entry(m.clone()).or_default().insert(id.clone());
+src/analyze/mod.rs:4958:                    if seen.insert(n.clone()) {
+src/analyze/mod.rs:4967:                out.insert(method.clone());
+src/analyze/mod.rs:4973:            let lent_before = self.host_folded.remove(&lc.name).unwrap_or_default();
+src/analyze/mod.rs:4999:            let cls = self.classes.entry(lc.name.clone()).or_default();
+src/analyze/mod.rs:5001:                cls.instance_methods.remove(name);
+src/analyze/mod.rs:5004:                cls.instance_methods.insert(name.clone(), ty);
+src/analyze/mod.rs:5005:                lent.insert(name);
+src/analyze/mod.rs:5008:                self.host_folded.insert(lc.name.clone(), lent);
+src/analyze/mod.rs:5208:                    table.insert(method.clone(), Ty::Untyped);
+src/analyze/mod.rs:5239:        self.inferred_params.clear();
+src/analyze/mod.rs:5258:        self.callers_by_target.clear();
+src/analyze/mod.rs:5389:                defined.insert((lc.name.clone(), m.name.clone(), m.receiver));
+src/analyze/mod.rs:5394:                defined.insert((model.name.clone(), m.name.clone(), m.receiver));
+src/analyze/mod.rs:5399:                defined.insert((c.name.clone(), a.name.clone(), MethodReceiver::Instance));
+src/analyze/mod.rs:5404:                defined.insert((c.name.clone(), m.name.clone(), MethodReceiver::Class));
+src/analyze/mod.rs:5455:                if !seen.insert(module) {
+src/analyze/mod.rs:5462:                    modules.extend(m.includes.iter());
+src/analyze/mod.rs:5517:                owned.insert((lc.name.clone(), n.clone()));
+src/analyze/mod.rs:5520:                module_methods.insert(lc.name.clone(), names);
+src/analyze/mod.rs:5528:                owned.insert((model.name.clone(), m.name.clone()));
+src/analyze/mod.rs:5579:                        if seen.insert(n.clone()) {
+src/analyze/mod.rs:5626:            out.entry((class.clone(), m.name.clone(), m.receiver))
+src/analyze/mod.rs:5663:                out.entry((controller.name.clone(), m.name.clone(), MethodReceiver::Class))
+src/analyze/mod.rs:5677:                out.entry((controller.name.clone(), a.name.clone(), MethodReceiver::Instance))
+src/analyze/mod.rs:6384:    let entry = render_edges.entry(view.clone()).or_default();
+src/analyze/mod.rs:6677:                    if visited.insert(method.clone()) {
+src/analyze/mod.rs:6706:                        visited.remove(method);
+src/analyze/mod.rs:6785:        let merged = match out.remove(&k) {
+src/analyze/mod.rs:6789:        out.insert(k, merged);
+src/analyze/mod.rs:6803:        keys.extend(b.keys().cloned());
+src/analyze/mod.rs:6816:            out.insert(k, t);
+src/analyze/mod.rs:6835:                    seed.insert(k.clone(), v.clone());
+src/analyze/mod.rs:7037:        let entry = rows.entry(key.clone()).or_default();
+src/analyze/mod.rs:7044:        touched.insert(key);
+src/analyze/mod.rs:7334:        if !seen.insert(owner.clone()) {
+src/analyze/mod.rs:7549:        out.insert(last.clone(), ty);
+src/analyze/mod.rs:7563:/// all return) reports `body.ty == Bottom` even though the early
+src/analyze/mod.rs:7732:                out.entry(Symbol::from("page")).or_insert_with(|| Ty::Class {
+src/analyze/mod.rs:7764:                    let entry = out.entry((*target).clone()).or_default();
+src/analyze/mod.rs:7766:                    let merged = match entry.remove(&name) {
+src/analyze/mod.rs:7771:                    entry.insert(name, merged);
+src/analyze/mod.rs:7858:        let joined = match index_writes.remove(&name) {
+src/analyze/mod.rs:7862:        index_writes.insert(name, joined);
+src/analyze/mod.rs:7866:        walk.touched.insert(name);
+src/analyze/mod.rs:7873:        if let Some(ty) = out.remove(&name) {
+src/analyze/mod.rs:7874:            out.insert(name, fixpoint_bound::bound(ty));
+src/analyze/mod.rs:7900:                let merged = match out.remove(name) {
+src/analyze/mod.rs:7904:                out.insert(name.clone(), merged);
+src/analyze/mod.rs:7905:                walk.touched.insert(name.clone());
+src/analyze/mod.rs:7914:                let merged = match out.remove(name) {
+src/analyze/mod.rs:7918:                out.insert(name.clone(), merged);
+src/analyze/mod.rs:7919:                walk.touched.insert(name.clone());
+src/analyze/mod.rs:7934:                        let merged = match out.remove(name) {
+src/analyze/mod.rs:7938:                        out.insert(name.clone(), merged);
+src/analyze/mod.rs:7939:                        walk.touched.insert(name.clone());
+src/analyze/mod.rs:8096:        out.insert(name.clone(), Ty::Hash { key: Box::new(Ty::Str), value: Box::new(incoming) });
+src/analyze/mod.rs:8111:    out.insert(name.clone(), merged);
+src/analyze/mod.rs:8188:        let row = out.entry(id).or_insert_with(crate::ty::Row::closed);
+src/analyze/mod.rs:8201:                row.fields.insert(key.clone(), merged);
+src/analyze/mod.rs:8262:            .entry(Symbol::from(format!("{attr}=")))
+src/analyze/mod.rs:8265:            .entry(Symbol::from(format!("{attr}_confirmation=")))
+src/analyze/mod.rs:8272:        methods.entry(Symbol::from(auth)).or_insert(self_ty.clone());
+src/analyze/mod.rs:8280:            .entry(Symbol::from(format!("{attr}_reset_token")))
+src/analyze/mod.rs:8283:            .entry(Symbol::from(format!("{attr}_reset_token_expires_in")))
+src/analyze/mod.rs:8286:            .entry(Symbol::from(format!("authenticate_{attr}")))
+src/analyze/mod.rs:8289:            .entry(Symbol::from(format!("{attr}_salt")))
+src/analyze/mod.rs:8292:            .entry(Symbol::from(format!("{attr}_challenge=")))
+src/analyze/mod.rs:8295:            .entry(Symbol::from(format!("find_by_{attr}_reset_token")))
+src/analyze/mod.rs:8298:            .entry(Symbol::from(format!("find_by_{attr}_reset_token!")))
+src/analyze/mod.rs:8321:    methods.entry(Symbol::from("generate_token_for")).or_insert(Ty::Str);
+src/analyze/mod.rs:8323:        .entry(Symbol::from("find_by_token_for"))
+src/analyze/mod.rs:8325:    class_methods.entry(Symbol::from("find_by_token_for!")).or_insert(self_ty.clone());
+src/analyze/mod.rs:8345:        methods.insert(Symbol::from("body"), content);
+src/analyze/mod.rs:8346:        methods.entry(Symbol::from("body=")).or_insert(Ty::Str);
+src/analyze/mod.rs:8356:            methods.entry(Symbol::from(name)).or_insert(ret);
+src/analyze/mod.rs:8364:            methods.entry(Symbol::from(name)).or_insert(record.clone());
+src/analyze/mod.rs:8366:        methods.entry(Symbol::from(format!("{a}?"))).or_insert(Ty::Bool);
+src/analyze/mod.rs:8367:        methods.entry(Symbol::from(format!("rich_text_{a}_loaded?"))).or_insert(Ty::Bool);
+src/analyze/mod.rs:8368:        methods.entry(Symbol::from(format!("{a}="))).or_insert(Ty::Untyped);
+src/analyze/mod.rs:8387:            methods.entry(Symbol::from(name)).or_insert(record.clone());
+src/analyze/mod.rs:8389:        methods.entry(Symbol::from(format!("{a}?"))).or_insert(Ty::Bool);
+src/analyze/mod.rs:8390:        methods.entry(Symbol::from(format!("{a}="))).or_insert(Ty::Untyped);
+src/analyze/mod.rs:8410:                methods.entry(name.clone()).or_insert(Ty::Untyped);
+src/analyze/mod.rs:8414:                methods.entry(setter).or_insert(Ty::Untyped);
+src/analyze/mod.rs:8440:        methods.entry(name.clone()).or_insert(ty.clone());
+src/analyze/mod.rs:8442:        methods.entry(setter).or_insert(ty.clone());
+src/analyze/mod.rs:8444:        methods.entry(predicate).or_insert(Ty::Bool);
+src/analyze/mod.rs:8469:        methods.insert(decl.column.clone(), Ty::Untyped);
+src/analyze/mod.rs:8473:            methods.entry(flat.clone()).or_insert(ty.clone());
+src/analyze/mod.rs:8475:                .entry(Symbol::from(format!("{}?", flat.as_str())))
+src/analyze/mod.rs:8478:                .entry(Symbol::from(format!("{}=", flat.as_str())))
+src/analyze/mod.rs:8501:            methods.insert(name.clone(), Ty::Untyped);
+src/analyze/mod.rs:8502:            methods.insert(Symbol::from(format!("{}=", name.as_str())), Ty::Untyped);
+src/analyze/mod.rs:8535:            methods.entry(name.clone()).or_insert(ty.clone());
+src/analyze/mod.rs:8537:            methods.entry(setter).or_insert(ty);
+src/analyze/mod.rs:8541:            methods.entry(predicate).or_insert(Ty::Bool);
+src/analyze/mod.rs:8738:        settings_methods.insert(Symbol::from("theme"), fn_ty_returning(Ty::Str));
+src/analyze/mod.rs:8740:            .insert(ClassId(Symbol::from("Settings")), settings_methods);
+src/analyze/mod.rs:8770:        article_methods.insert(Symbol::from("find"), fn_ty_returning(Ty::Str));
+src/analyze/mod.rs:8771:        app.rbs_signatures.insert(model_name.clone(), article_methods);
+src/analyze/mod.rs:8838:                    queue.extend(controller_includes(parent));
+src/analyze/mod.rs:8849:                        if seen.insert(n.clone()) {
+src/analyze/mod.rs:8854:                let entry = out.entry(m).or_default();
+src/analyze/mod.rs:8859:                    let merged = match entry.remove(k) {
+src/analyze/mod.rs:8864:                    entry.insert(k.clone(), merged);
+src/analyze/mod.rs:8917:                lambda_locals.extend(params.iter().cloned());
+src/analyze/mod.rs:8918:                lambda_locals.extend(extra_params.iter().map(|param| param.name.clone()));
+src/analyze/mod.rs:8920:                    lambda_locals.insert(param.clone());
+src/analyze/mod.rs:8927:                        yields.insert(name.clone());
+src/analyze/mod.rs:8929:                        other.insert(name.clone());
+src/analyze/mod.rs:8938:                            other.insert(name.clone());
+src/analyze/mod.rs:8950:    yields.retain(|n| !other.contains(n));

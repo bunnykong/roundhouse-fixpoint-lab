@@ -1,0 +1,155 @@
+{
+  "bound": {
+    "calls": 194809,
+    "cuts": 0
+  },
+  "census": {
+    "bare_untyped": 7937,
+    "missing": 1903,
+    "typed": 160116,
+    "untyped_anywhere": 12262,
+    "untyped_by_provenance": {
+      "gradual": 3376,
+      "pending": 0,
+      "unresolved": 8894
+    }
+  },
+  "digest": {
+    "attributes": "1b836587673858a5",
+    "block_values": "484b1e9bc6b6652e",
+    "constants": "55055d1f346a5ba0",
+    "controller_bindings": "ffb341a0d175bb09",
+    "controller_cache": "52204343ffec518b",
+    "copies": "910c8cd6d0683d5a",
+    "ir": "fe07db72e5f60f3e",
+    "params": "bc1a6676039815bb",
+    "returns": "f7bad7c0d8f95d33"
+  },
+  "entries": {
+    "attributes": 813,
+    "block_values": 1162,
+    "constants": 500,
+    "controller_bindings": 278,
+    "controller_cache": 152,
+    "copies": 28,
+    "ir": 162019,
+    "params": 5781,
+    "returns": 33691
+  },
+  "harvest_untie_cut": 12,
+  "loops": {
+    "absorb": {
+      "end": "settled",
+      "round": 4
+    },
+    "production": {
+      "end": "settled",
+      "round": 10
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 1
+    }
+  },
+  "precision": {
+    "bare_untyped": 7937,
+    "bottom_anywhere": 973,
+    "fully_typed": 131410,
+    "missing": 1903,
+    "typed": 160116,
+    "untyped_anywhere": 12262,
+    "var_without_untyped": 16444
+  },
+  "schema": 1,
+  "structure": {
+    "end": {
+      "digest": "a3cff1e011529af5",
+      "reference_mode": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "routing": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "universe": {
+        "digest": "999b3ac621d418d1",
+        "n": 170562
+      },
+      "writers": {
+        "digest": "5aafe55a33eaab12",
+        "n": 18800,
+        "slots": 10667
+      }
+    },
+    "schema": 2,
+    "scope": "observed-cumulative-equations",
+    "start": {
+      "digest": "14d25181c3b6737b",
+      "reference_mode": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "routing": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "universe": {
+        "digest": "0ec07581f9be6a95",
+        "n": 166213
+      },
+      "writers": {
+        "digest": "e2208e640a2bf1ae",
+        "n": 6718,
+        "slots": 6411
+      }
+    },
+    "unchanged": false
+  },
+  "verify": [
+    {
+      "loop": "production",
+      "moved": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 3,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0,
+        "view_seeds": 5
+      }
+    },
+    {
+      "loop": "views_and_tests",
+      "moved": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0
+      }
+    },
+    {
+      "loop": "absorb",
+      "moved": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0,
+        "view_seeds": 0
+      }
+    }
+  ]
+}

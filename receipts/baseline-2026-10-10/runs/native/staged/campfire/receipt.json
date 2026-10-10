@@ -1,0 +1,44 @@
+{
+  "app": "campfire",
+  "binary_sha256": "24be06c55e7a3aad24a5d39f3e13152d47d76456ac7f0be6dc424a4380cbccf7",
+  "binary_version": "roundhouse 2026.9.18 (5716ddf3)",
+  "build_head": "5716ddf368aa1df850b7d02906f91976bb8e573a",
+  "build_receipt": "evidence/staged-emission.json",
+  "build_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322",
+  "command": [
+    "binaries/roundhouse-staged",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/campfire",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 0.4685822920873761,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {},
+  "exit": 0,
+  "flags": {},
+  "input": {
+    "digest": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+    "files": 733,
+    "head": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "id": "campfire"
+  },
+  "label": "staged",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T13:46:40.221163+00:00",
+  "summary_counts": {
+    "errors": 0,
+    "notes": 0,
+    "parse_errors": 0,
+    "survey_gaps": 0,
+    "warnings": 404
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 242,
+    "missing_preload": 1,
+    "unresolved_type": 161
+  }
+}

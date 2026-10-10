@@ -1,0 +1,49 @@
+{
+  "app": "mastodon",
+  "binary_sha256": "24be06c55e7a3aad24a5d39f3e13152d47d76456ac7f0be6dc424a4380cbccf7",
+  "binary_version": "roundhouse 2026.9.18 (5716ddf3)",
+  "build_head": "5716ddf368aa1df850b7d02906f91976bb8e573a",
+  "build_receipt": "evidence/staged-emission.json",
+  "build_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322",
+  "command": [
+    "binaries/roundhouse-staged",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/mastodon",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 9.33209966600407,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {
+    "incompatible_binop": 10,
+    "ivar_unresolved": 213,
+    "send_dispatch_failed": 530,
+    "unsupported": 721
+  },
+  "exit": 1,
+  "flags": {},
+  "input": {
+    "digest": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+    "files": 9868,
+    "head": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+    "id": "mastodon"
+  },
+  "label": "staged",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T13:46:40.690099+00:00",
+  "summary_counts": {
+    "errors": 1474,
+    "notes": 177,
+    "parse_errors": 0,
+    "survey_gaps": 51,
+    "warnings": 4125
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 2641,
+    "missing_preload": 2,
+    "unresolved_type": 1482
+  }
+}

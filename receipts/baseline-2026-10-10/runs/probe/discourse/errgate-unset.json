@@ -1,0 +1,90 @@
+{
+  "command": [
+    "python3",
+    "sources/next/tools/errgate.py",
+    "./runs/probe/discourse/base/schedule-unset/probe-discourse.stderr",
+    "./runs/probe/discourse/s3/schedule-unset/probe-discourse.stderr"
+  ],
+  "summary": {
+    "build": "38403140",
+    "by_kind": {
+      "incompatible_binop": {
+        "corrected_delta": -3,
+        "new": 18,
+        "old": 21,
+        "raw_delta": -3,
+        "vanished": {
+          "gained-arm": 3
+        },
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "ivar_unresolved": {
+        "corrected_delta": 0,
+        "new": 26,
+        "old": 26,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "send_dispatch_failed": {
+        "corrected_delta": -8,
+        "new": 698,
+        "old": 706,
+        "raw_delta": -8,
+        "vanished": {
+          "hidden": 8
+        },
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "unsupported": {
+        "corrected_delta": -1,
+        "new": 1595,
+        "old": 1596,
+        "raw_delta": -1,
+        "vanished": {
+          "missing": 1
+        },
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      }
+    },
+    "common": 2337,
+    "input_digest": "6a105d6dda8a6e0b",
+    "new_errors": 2337,
+    "new_only": 0,
+    "old_errors": 2349,
+    "old_only": 12,
+    "oracle_checked": 0,
+    "raw_delta": -12,
+    "vanished": {
+      "gained-arm": 3,
+      "hidden": 8,
+      "missing": 1
+    },
+    "verdicts": {
+      "exposed": 0,
+      "exposed-pending": 0,
+      "regressed": 0,
+      "undetermined": 0
+    }
+  }
+}

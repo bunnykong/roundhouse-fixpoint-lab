@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python3",
+    "sources/next/tools/errgate.py",
+    "./runs/probe/campfire/base/schedule-unset/probe-campfire.stderr",
+    "./runs/probe/campfire/s3/schedule-unset/probe-campfire.stderr"
+  ],
+  "summary": {
+    "build": "38403140",
+    "by_kind": {},
+    "common": 0,
+    "input_digest": "a12d8faec6df4968",
+    "new_errors": 0,
+    "new_only": 0,
+    "old_errors": 0,
+    "old_only": 0,
+    "oracle_checked": 0,
+    "raw_delta": 0,
+    "vanished": {},
+    "verdicts": {
+      "exposed": 0,
+      "exposed-pending": 0,
+      "regressed": 0,
+      "undetermined": 0
+    }
+  }
+}

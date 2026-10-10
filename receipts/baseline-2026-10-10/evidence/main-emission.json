@@ -1,0 +1,52 @@
+{
+  "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+  "binary_version": "roundhouse 2026.9.18 (c210f226)",
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "cargo-target",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--bin",
+        "roundhouse"
+      ],
+      "exit": 0,
+      "log": "evidence/main-roundhouse-build.log",
+      "seconds": 118.13831449998543
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--bin",
+        "astra_emit_all"
+      ],
+      "exit": 0,
+      "log": "evidence/main-astra_emit_all-build.log",
+      "seconds": 1.9589056660188362
+    },
+    {
+      "command": [
+        "cargo-target/release/astra_emit_all",
+        "./emission/main/tree"
+      ],
+      "exit": 0
+    }
+  ],
+  "cwd": "sources/main",
+  "errors": 0,
+  "exit": 0,
+  "files": 11434,
+  "finished_utc": "2026-10-10T12:20:40.507200+00:00",
+  "harness_sha256": "e18d90850e8631886ffcd465c96be268a9be45ae839da94413fc7cddc8ac5a4e",
+  "head": "c210f226346b462214866b5756b457ad53f647b1",
+  "index_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "label": "main",
+  "pairs": 105,
+  "started_utc": "2026-10-10T12:18:33.165836+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "base_flags": {
+    "RH_BRK_ALLARMS": "0",
+    "RH_FOLD": "0",
+    "RH_FOLD_JOIN": "0",
+    "RH_FOLD_SLOTS": "0",
+    "RH_FOLD_TAIL": "0",
+    "RH_SCHED": "rounds"
+  },
+  "baseline": "PROBE_BASE=1, the main-compatible control in the fixpoint-next binary; independent native main for parity.",
+  "builds": {
+    "main": {
+      "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+      "binary_version": "roundhouse 2026.9.18 (c210f226)",
+      "head": "c210f226346b462214866b5756b457ad53f647b1",
+      "index_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0"
+    },
+    "next": {
+      "binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+      "binary_version": "roundhouse 2026.9.18 (38403140)",
+      "head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+      "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba"
+    },
+    "staged": {
+      "binary_sha256": "24be06c55e7a3aad24a5d39f3e13152d47d76456ac7f0be6dc424a4380cbccf7",
+      "binary_version": "roundhouse 2026.9.18 (5716ddf3)",
+      "head": "5716ddf368aa1df850b7d02906f91976bb8e573a",
+      "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322"
+    }
+  },
+  "commands": [
+    "roundhouse check --continue .",
+    "bash probe APP RH_PRECISION_CENSUS=1 RH_FIXPOINT_VERIFY=0",
+    "bash probe APP RH_PRECISION_CENSUS=1 RH_ERRGATE=1 RH_PUBLIC_INPUT=1",
+    "python3 errgate.py BASE.stderr S3.stderr",
+    "cargo test --locked --lib",
+    "cargo test --locked --no-fail-fast"
+  ],
+  "common_flags": {
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_PRECISION_CENSUS": "1"
+  },
+  "compiler_shas": {
+    "main": "c210f226346b462214866b5756b457ad53f647b1",
+    "next": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+    "staged": "5716ddf368aa1df850b7d02906f91976bb8e573a"
+  },
+  "condition": "fixpoint-current-main-20261010-c210f226",
+  "date": "2026-10-10",
+  "input_lab_sha": "d824c4355c7faae4b9bb4a77b25daa178a3df36c",
+  "other_RH_variables": "unset",
+  "packaging": "Raw measurements copied and all numerical reductions rerun; fresh native compiler/analyzer runs not performed by packaging.",
+  "precision_flags": {
+    "RH_FIXPOINT_VERIFY": "0"
+  },
+  "precision_oracle": "No application runtime trace or oracle rerun in this condition; fully typed measures opacity and includes bottom.",
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "repeated_schedule": "unset",
+  "s3_flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "schedule_flags": {
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_VERIFY": "1",
+    "RH_PUBLIC_INPUT": "1"
+  },
+  "scope": "Five pinned public apps; seven public emission fixtures.",
+  "shuffles": [
+    "unset",
+    "1",
+    "2"
+  ],
+  "source_receipts": "runs/**/receipt.json and evidence/*-emission.json retain each exact recorded command."
+}

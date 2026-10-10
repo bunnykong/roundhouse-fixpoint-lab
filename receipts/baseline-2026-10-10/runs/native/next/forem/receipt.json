@@ -1,0 +1,49 @@
+{
+  "app": "forem",
+  "binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+  "binary_version": "roundhouse 2026.9.18 (38403140)",
+  "build_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "build_receipt": "evidence/next-emission.json",
+  "build_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "command": [
+    "binaries/roundhouse-next",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/forem",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 2.6497618329012766,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {
+    "incompatible_binop": 7,
+    "ivar_unresolved": 23,
+    "send_dispatch_failed": 187,
+    "unsupported": 324
+  },
+  "exit": 1,
+  "flags": {},
+  "input": {
+    "digest": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b",
+    "files": 4785,
+    "head": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+    "id": "forem"
+  },
+  "label": "next",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T14:26:55.027995+00:00",
+  "summary_counts": {
+    "errors": 541,
+    "notes": 3451,
+    "parse_errors": 0,
+    "survey_gaps": 22,
+    "warnings": 3213
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 2643,
+    "missing_preload": 1,
+    "unresolved_type": 569
+  }
+}

@@ -1,0 +1,96 @@
+src/analyze/fixpoint_bound/writer_law_tests.rs:41:fn writer_law_bound_idempotence_and_pending() {
+src/analyze/fixpoint_bound/writer_law_tests.rs:125:#[ignore = "known: bounding once and bounding each ivar merge pair disagree at the node limit"]
+src/analyze/fixpoint_bound/writer_law_tests.rs:126:fn writer_law_bound_ivar_schedule() {
+src/analyze/fixpoint_bound/writer_law_tests.rs:131:#[ignore = "known: bounding once and bounding each parameter merge pair disagree at the node limit"]
+src/analyze/fixpoint_bound/writer_law_tests.rs:132:fn writer_law_bound_param_schedule() {
+src/analyze/fixpoint_bound/writer_law_tests.rs:137:fn writer_law_ivar_batch_bound() {
+src/analyze/fixpoint_bound/writer_law_tests.rs:178:fn writer_law_param_batch_bound() {
+src/analyze/fixpoint_bound/writer_law_tests.rs:219:#[ignore = "known: reflective ivar writes do not mark the slot touched for the batch bound"]
+src/analyze/fixpoint_bound/writer_law_tests.rs:220:fn writer_law_reflective_ivar_bound() {
+src/analyze/class_configuration.rs:267:    #[ignore = "known: filtering unknown contributions does not preserve joins"]
+src/analyze/class_configuration.rs:268:    fn writer_law_class_configuration_gate() {
+src/analyze/class_configuration.rs:291:    #[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/class_configuration.rs:292:    fn writer_law_class_configuration_stamp() {
+src/analyze/writer_laws.rs:391:fn writer_law_ivar_join() {
+src/analyze/writer_laws.rs:400:#[ignore = "known: raw unions retain pending as an arm instead of treating it as identity"]
+src/analyze/writer_laws.rs:401:fn writer_law_raw_union_merge() {
+src/analyze/writer_laws.rs:406:fn writer_law_parameter_default_merge() {
+src/analyze/writer_laws.rs:422:fn writer_law_param_join() {
+src/analyze/writer_laws.rs:431:fn writer_law_parameter_row_fold() {
+src/analyze/writer_laws.rs:452:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/writer_laws.rs:453:fn writer_law_constant_overwrite() {
+src/analyze/writer_laws.rs:471:#[ignore = "known: unknown returns become Untyped; harvested return policy is not a join"]
+src/analyze/writer_laws.rs:472:fn writer_law_registry_registration() {
+src/analyze/writer_laws.rs:482:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/writer_laws.rs:483:fn writer_law_current_attribute_copy() {
+src/analyze/writer_laws.rs:500:#[ignore = "known: a joined gradual arm discards a previously clean controller contribution"]
+src/analyze/writer_laws.rs:501:fn writer_law_clean_binding_gate() {
+src/analyze/writer_laws.rs:518:fn writer_law_const_attribute_contribution() {
+src/analyze/writer_laws.rs:548:fn writer_law_ivar_assignment_harvest() {
+src/analyze/writer_laws.rs:568:fn writer_law_hash_index_widening() {
+src/analyze/writer_laws.rs:587:fn writer_law_reflective_ivar_harvest() {
+src/analyze/writer_laws.rs:633:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/writer_laws.rs:634:fn writer_law_concern_surface_copy() {
+src/analyze/writer_laws.rs:668:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/writer_laws.rs:669:fn writer_law_extended_surface_copy() {
+src/analyze/writer_laws.rs:717:#[ignore = "known: view helper returns select the first available owner"]
+src/analyze/writer_laws.rs:718:fn writer_law_view_helper_first_owner() {
+src/analyze/writer_laws.rs:756:#[ignore = "known: unanimous known-host agreement drops unknowns and has no pending identity"]
+src/analyze/writer_laws.rs:757:fn writer_law_host_surface_agreement() {
+src/analyze/writer_laws.rs:810:#[ignore = "known: destructuring does not distribute through joined RHS shapes"]
+src/analyze/writer_laws.rs:811:fn writer_law_multiassign_projection() {
+src/analyze/writer_laws.rs:824:#[ignore = "known: controller map unions retain pending as an arm"]
+src/analyze/writer_laws.rs:825:fn writer_law_controller_union_maps() {
+src/analyze/writer_laws.rs:835:#[ignore = "known: an absent runtime branch contributes Nil, not pending identity"]
+src/analyze/writer_laws.rs:836:fn writer_law_alternative_branch_maps() {
+src/analyze/writer_laws.rs:860:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/writer_laws.rs:861:fn writer_law_partial_local_overwrite() {
+src/analyze/writer_laws.rs:987:#[ignore = "known: layout merge selects the incoming noise when both sides are unknown"]
+src/analyze/writer_laws.rs:988:fn writer_law_layout_noise_merge() {
+src/analyze/writer_laws.rs:993:#[ignore = "known: partial merge keeps existing noise when both sides are unknown"]
+src/analyze/writer_laws.rs:994:fn writer_law_partial_noise_merge() {
+src/analyze/body/writer_law_tests.rs:72:#[ignore = "known: block parameter selection from receiver alternatives does not preserve joins"]
+src/analyze/body/writer_law_tests.rs:73:fn writer_law_closure_each() {
+src/analyze/body/writer_law_tests.rs:78:#[ignore = "known: block parameter selection from receiver alternatives does not preserve joins"]
+src/analyze/body/writer_law_tests.rs:79:fn writer_law_closure_each_with_index() {
+src/analyze/body/writer_law_tests.rs:84:#[ignore = "known: block parameter selection from receiver alternatives does not preserve joins"]
+src/analyze/body/writer_law_tests.rs:85:fn writer_law_closure_then() {
+src/analyze/body/writer_law_tests.rs:157:fn writer_law_closure_array_pushes() {
+src/analyze/body/writer_law_tests.rs:162:fn writer_law_closure_hash_writes() {
+src/analyze/body/writer_law_tests.rs:167:fn writer_law_closure_local_writes() {
+src/analyze/body/writer_law_tests.rs:172:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/body/writer_law_tests.rs:173:fn writer_law_condition_local_overwrite() {
+src/analyze/body/writer_law_tests.rs:230:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/body/writer_law_tests.rs:231:fn writer_law_empty_array_stamp() {
+src/analyze/body/writer_law_tests.rs:236:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/body/writer_law_tests.rs:237:fn writer_law_empty_hash_stamp() {
+src/analyze/body/writer_law_tests.rs:274:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/body/writer_law_tests.rs:275:fn writer_law_match_required() {
+src/analyze/body/writer_law_tests.rs:280:#[ignore = "known: conditional pattern union retains pending arms"]
+src/analyze/body/writer_law_tests.rs:281:fn writer_law_match_conditional() {
+src/analyze/body/writer_law_tests.rs:286:#[ignore = "known: this writer replaces the destination; contribution order and replay change it"]
+src/analyze/body/writer_law_tests.rs:287:fn writer_law_ir_type_overwrite() {
+src/analyze/body/narrowing.rs:531:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:532:    fn writer_law_narrow_non_nil() {
+src/analyze/body/narrowing.rs:541:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:542:    fn writer_law_narrow_nil() {
+src/analyze/body/narrowing.rs:551:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:552:    fn writer_law_narrow_is_a() {
+src/analyze/body/narrowing.rs:561:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:562:    fn writer_law_narrow_is_not_a() {
+src/analyze/body/narrowing.rs:571:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:572:    fn writer_law_narrow_array() {
+src/analyze/body/narrowing.rs:586:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:587:    fn writer_law_narrow_hash() {
+src/analyze/body/narrowing.rs:602:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:603:    fn writer_law_exclude_array() {
+src/analyze/body/narrowing.rs:617:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:618:    fn writer_law_exclude_hash() {
+src/analyze/body/narrowing.rs:633:    #[ignore = "known: narrowing fallback does not preserve pending or joined alternatives"]
+src/analyze/body/narrowing.rs:634:    fn writer_law_narrow_reader() {
+src/analyze/harvest_return.rs:120:    #[ignore = "known: distinct return cores replace; same-core stabilization is not associative"]
+src/analyze/harvest_return.rs:121:    fn writer_law_return_decision() {
+src/analyze/harvest_return.rs:133:    #[ignore = "known: harvested return insertion inherits non-join replacement and stabilization"]
+src/analyze/harvest_return.rs:134:    fn writer_law_return_table() {
+src/analyze/ivar_set.rs:392:    #[ignore = "known: conventional-model projection drops previously retained alternatives"]
+src/analyze/ivar_set.rs:393:    fn writer_law_reflective_named_model_projection() {

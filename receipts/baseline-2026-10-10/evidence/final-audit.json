@@ -1,0 +1,430 @@
+{
+  "branches": {
+    "next": {
+      "author": "268838774+bunnykong@users.noreply.github.com",
+      "committer": "268838774+bunnykong@users.noreply.github.com",
+      "fast_forward": true,
+      "message": "Merge updated fixpoint-staged into fixpoint-next\n\nBring the current upstream baseline into the shuffle, structure and error\ncensus branch without rewriting either published research history.\nPreserve the lawful upstream joins and side-specific parameter storage;\nobserve parameter structure with the same receiver-side keys.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+      "parents": [
+        "559ac52bbe77abb16df26572485d6f914047b057",
+        "5716ddf368aa1df850b7d02906f91976bb8e573a"
+      ],
+      "published": "559ac52bbe77abb16df26572485d6f914047b057",
+      "tip": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+      "tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+      "verified": {
+        "errgate": {
+          "command": [
+            "python3",
+            "tools/test_errgate.py"
+          ],
+          "exit": 0,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba"
+        },
+        "lib": {
+          "command": [
+            "cargo",
+            "test",
+            "--locked",
+            "--lib"
+          ],
+          "exit": 101,
+          "failed": 2,
+          "failed_targets": [
+            "`--lib`"
+          ],
+          "failures": [
+            "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+            "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+          ],
+          "ignored": 1,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+          "passed": 1136
+        },
+        "s3-bound": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "RH_FIXPOINT_STATS=1",
+            "RH_FIXPOINT_DIGEST=1",
+            "cargo",
+            "test",
+            "--locked",
+            "--lib",
+            "a_param_slot_is_bounded_once_after_its_observations"
+          ],
+          "exit": 0,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba"
+        },
+        "s3-joins": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "RH_FIXPOINT_STATS=1",
+            "RH_FIXPOINT_DIGEST=1",
+            "cargo",
+            "test",
+            "--locked",
+            "--lib",
+            "slot_join"
+          ],
+          "exit": 0,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba"
+        },
+        "s3-sides": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "RH_FIXPOINT_STATS=1",
+            "RH_FIXPOINT_DIGEST=1",
+            "cargo",
+            "test",
+            "--locked",
+            "--test",
+            "param_rows_by_side",
+            "--test",
+            "class_side_call_sites"
+          ],
+          "exit": 0,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba"
+        },
+        "suite": {
+          "command": [
+            "cargo",
+            "test",
+            "--locked",
+            "--no-fail-fast"
+          ],
+          "exit": 101,
+          "failed": 3,
+          "failed_targets": [
+            "`--lib`",
+            "`--test haml_class_shortcut_merge`"
+          ],
+          "failures": [
+            "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+            "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+            "spinel_renders_the_same_page"
+          ],
+          "ignored": 236,
+          "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+          "passed": 4970
+        }
+      }
+    },
+    "staged": {
+      "author": "268838774+bunnykong@users.noreply.github.com",
+      "committer": "268838774+bunnykong@users.noreply.github.com",
+      "fast_forward": true,
+      "message": "Merge current upstream main into fixpoint-staged\n\nPreserve main c210f226346b462214866b5756b457ad53f647b1 with stage flags off.\nCarry receiver-side parameter keys through S3 worklist rows, handoffs and\nrecursive slots, sharing main's call-site resolution and lawful joins.\nJoin parameter observations before bounding each row, including worklist\nsite, concern and overlay folds. Keep main's S0 observer fixes and add the\nstaged fold, provenance and worklist observations.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+      "parents": [
+        "92844f68ea0bef9bfb6d8a8f1b0fc4cad4fff51b",
+        "c210f226346b462214866b5756b457ad53f647b1"
+      ],
+      "published": "92844f68ea0bef9bfb6d8a8f1b0fc4cad4fff51b",
+      "tip": "5716ddf368aa1df850b7d02906f91976bb8e573a",
+      "tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322",
+      "verified": {
+        "lib": {
+          "command": [
+            "cargo",
+            "test",
+            "--locked",
+            "--lib"
+          ],
+          "exit": 101,
+          "failed": 2,
+          "failed_targets": [
+            "`--lib`"
+          ],
+          "failures": [
+            "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+            "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+          ],
+          "ignored": 1,
+          "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322",
+          "passed": 1123
+        },
+        "s3-bound": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "cargo",
+            "test",
+            "--locked",
+            "--lib",
+            "a_param_slot_is_bounded_once_after_its_observations"
+          ],
+          "exit": 0,
+          "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322"
+        },
+        "s3-joins": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "cargo",
+            "test",
+            "--locked",
+            "--lib",
+            "slot_join"
+          ],
+          "exit": 0,
+          "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322"
+        },
+        "s3-sides": {
+          "command": [
+            "env",
+            "RH_FOLD=1",
+            "RH_FOLD_SLOTS=1",
+            "RH_FOLD_JOIN=1",
+            "RH_FOLD_TAIL=1",
+            "RH_BRK_ALLARMS=1",
+            "RH_SCHED=sccq",
+            "cargo",
+            "test",
+            "--locked",
+            "--test",
+            "param_rows_by_side",
+            "--test",
+            "class_side_call_sites"
+          ],
+          "exit": 0,
+          "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322"
+        },
+        "suite": {
+          "command": [
+            "cargo",
+            "test",
+            "--locked",
+            "--no-fail-fast"
+          ],
+          "exit": 101,
+          "failed": 3,
+          "failed_targets": [
+            "`--lib`",
+            "`--test haml_class_shortcut_merge`"
+          ],
+          "failures": [
+            "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+            "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+            "spinel_renders_the_same_page"
+          ],
+          "ignored": 236,
+          "index_tree": "26a2cb5cddc8b1f37ddc0d537a513ff87dc82322",
+          "passed": 4957
+        }
+      }
+    }
+  },
+  "inputs": [
+    {
+      "digest": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+      "files": 733,
+      "id": "campfire",
+      "unchanged": true
+    },
+    {
+      "digest": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "files": 9868,
+      "id": "mastodon",
+      "unchanged": true
+    },
+    {
+      "digest": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "files": 9281,
+      "id": "chatwoot",
+      "unchanged": true
+    },
+    {
+      "digest": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b",
+      "files": 4785,
+      "id": "forem",
+      "unchanged": true
+    },
+    {
+      "digest": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "files": 26331,
+      "id": "discourse",
+      "unchanged": true
+    },
+    {
+      "digest": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+      "files": 127,
+      "id": "main/real-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "c0ac1e3501c54379af609c352b77301ed46fdf17728164063c6c1b4bbc35bd0d",
+      "files": 150,
+      "id": "main/store",
+      "unchanged": true
+    },
+    {
+      "digest": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+      "files": 127,
+      "id": "rh/real-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "c0ac1e3501c54379af609c352b77301ed46fdf17728164063c6c1b4bbc35bd0d",
+      "files": 150,
+      "id": "rh/store",
+      "unchanged": true
+    },
+    {
+      "digest": "5e6ded551bc1b5df8264ee2998e8c2ec19f078cc2a9c8f77ff56f26a1ee92afb",
+      "files": 8,
+      "id": "main/tiny-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "5e6ded551bc1b5df8264ee2998e8c2ec19f078cc2a9c8f77ff56f26a1ee92afb",
+      "files": 8,
+      "id": "rh/tiny-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "5e6ded551bc1b5df8264ee2998e8c2ec19f078cc2a9c8f77ff56f26a1ee92afb",
+      "files": 8,
+      "id": "next/tiny-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "a3e30f4e4565a818e60b4d7dd55d190a0906697479ce9b37d630324987138c60",
+      "files": 9,
+      "id": "main/tiny-api",
+      "unchanged": true
+    },
+    {
+      "digest": "a3e30f4e4565a818e60b4d7dd55d190a0906697479ce9b37d630324987138c60",
+      "files": 9,
+      "id": "rh/tiny-api",
+      "unchanged": true
+    },
+    {
+      "digest": "a3e30f4e4565a818e60b4d7dd55d190a0906697479ce9b37d630324987138c60",
+      "files": 9,
+      "id": "next/tiny-api",
+      "unchanged": true
+    },
+    {
+      "digest": "b1aa6be531bd7915134f83bae14dcf7431ada2851a7faa9c62a79ea6471728c5",
+      "files": 10,
+      "id": "main/tiny-blog-uuid",
+      "unchanged": true
+    },
+    {
+      "digest": "b1aa6be531bd7915134f83bae14dcf7431ada2851a7faa9c62a79ea6471728c5",
+      "files": 10,
+      "id": "rh/tiny-blog-uuid",
+      "unchanged": true
+    },
+    {
+      "digest": "b1aa6be531bd7915134f83bae14dcf7431ada2851a7faa9c62a79ea6471728c5",
+      "files": 10,
+      "id": "next/tiny-blog-uuid",
+      "unchanged": true
+    },
+    {
+      "digest": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+      "files": 127,
+      "id": "main/real-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+      "files": 127,
+      "id": "rh/real-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+      "files": 127,
+      "id": "next/real-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "c0ac1e3501c54379af609c352b77301ed46fdf17728164063c6c1b4bbc35bd0d",
+      "files": 150,
+      "id": "main/store",
+      "unchanged": true
+    },
+    {
+      "digest": "c0ac1e3501c54379af609c352b77301ed46fdf17728164063c6c1b4bbc35bd0d",
+      "files": 150,
+      "id": "rh/store",
+      "unchanged": true
+    },
+    {
+      "digest": "c0ac1e3501c54379af609c352b77301ed46fdf17728164063c6c1b4bbc35bd0d",
+      "files": 150,
+      "id": "next/store",
+      "unchanged": true
+    },
+    {
+      "digest": "a81083ce9fe03f4f455b940752f6a458a47f40f9b9eaa9c5d81caccf98639634",
+      "files": 24,
+      "id": "main/roda-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "a81083ce9fe03f4f455b940752f6a458a47f40f9b9eaa9c5d81caccf98639634",
+      "files": 24,
+      "id": "rh/roda-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "a81083ce9fe03f4f455b940752f6a458a47f40f9b9eaa9c5d81caccf98639634",
+      "files": 24,
+      "id": "next/roda-blog",
+      "unchanged": true
+    },
+    {
+      "digest": "b07ddeba18bfbc605d3e8fc0888086944f6ae53fdf33a579b22b80d6ae8a6f90",
+      "files": 5,
+      "id": "main/gem-capabilities/historical/base",
+      "unchanged": true
+    },
+    {
+      "digest": "b07ddeba18bfbc605d3e8fc0888086944f6ae53fdf33a579b22b80d6ae8a6f90",
+      "files": 5,
+      "id": "rh/gem-capabilities/historical/base",
+      "unchanged": true
+    },
+    {
+      "digest": "b07ddeba18bfbc605d3e8fc0888086944f6ae53fdf33a579b22b80d6ae8a6f90",
+      "files": 5,
+      "id": "next/gem-capabilities/historical/base",
+      "unchanged": true
+    }
+  ],
+  "main": "c210f226346b462214866b5756b457ad53f647b1",
+  "main_worktree_status": "",
+  "next_worktree_status": "",
+  "repo_status": ""
+}

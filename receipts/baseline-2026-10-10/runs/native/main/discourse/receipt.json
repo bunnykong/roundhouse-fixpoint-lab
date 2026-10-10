@@ -1,0 +1,49 @@
+{
+  "app": "discourse",
+  "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+  "binary_version": "roundhouse 2026.9.18 (c210f226)",
+  "build_head": "c210f226346b462214866b5756b457ad53f647b1",
+  "build_receipt": "evidence/main-emission.json",
+  "build_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "command": [
+    "binaries/roundhouse-main",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/discourse",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 29.652752958005294,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {
+    "incompatible_binop": 21,
+    "ivar_unresolved": 26,
+    "send_dispatch_failed": 706,
+    "unsupported": 1596
+  },
+  "exit": 1,
+  "flags": {},
+  "input": {
+    "digest": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+    "files": 26331,
+    "head": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "id": "discourse"
+  },
+  "label": "main",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T12:31:27.132096+00:00",
+  "summary_counts": {
+    "errors": 2349,
+    "notes": 5198,
+    "parse_errors": 0,
+    "survey_gaps": 204,
+    "warnings": 8005
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 5620,
+    "missing_preload": 5,
+    "unresolved_type": 2380
+  }
+}

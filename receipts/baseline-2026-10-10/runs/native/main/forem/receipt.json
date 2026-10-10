@@ -1,0 +1,49 @@
+{
+  "app": "forem",
+  "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+  "binary_version": "roundhouse 2026.9.18 (c210f226)",
+  "build_head": "c210f226346b462214866b5756b457ad53f647b1",
+  "build_receipt": "evidence/main-emission.json",
+  "build_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "command": [
+    "binaries/roundhouse-main",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/forem",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 3.807564915972762,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {
+    "incompatible_binop": 7,
+    "ivar_unresolved": 23,
+    "send_dispatch_failed": 187,
+    "unsupported": 324
+  },
+  "exit": 1,
+  "flags": {},
+  "input": {
+    "digest": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b",
+    "files": 4785,
+    "head": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+    "id": "forem"
+  },
+  "label": "main",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T12:31:23.324250+00:00",
+  "summary_counts": {
+    "errors": 541,
+    "notes": 3451,
+    "parse_errors": 0,
+    "survey_gaps": 22,
+    "warnings": 3213
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 2643,
+    "missing_preload": 1,
+    "unresolved_type": 569
+  }
+}

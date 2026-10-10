@@ -1,0 +1,72 @@
+{
+  "binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+  "binary_version": "roundhouse 2026.9.18 (38403140)",
+  "byte_compared_files": 11432,
+  "byte_differences": [],
+  "byte_different_files": 0,
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "cargo-target",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--bin",
+        "roundhouse"
+      ],
+      "exit": 0,
+      "log": "evidence/next-roundhouse-build.log",
+      "seconds": 67.07965416600928
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--bin",
+        "dump_ir"
+      ],
+      "exit": 0,
+      "log": "evidence/next-dump_ir-build.log",
+      "seconds": 1.2575029579456896
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--bin",
+        "astra_emit_all"
+      ],
+      "exit": 0,
+      "log": "evidence/next-astra_emit_all-build.log",
+      "seconds": 1.318268375005573
+    },
+    {
+      "command": [
+        "cargo-target/release/astra_emit_all",
+        "./emission/next/tree"
+      ],
+      "exit": 0
+    }
+  ],
+  "cwd": "sources/next",
+  "diagnostic_binary_sha256": "79e81fa5a16343ded34f87ad4b265ccb6c2eb19244dd68e234da90efb33d1a6b",
+  "differences": [],
+  "different_files": 0,
+  "errors": 0,
+  "exit": 0,
+  "files": 11434,
+  "finished_utc": "2026-10-10T14:26:41.584750+00:00",
+  "harness_sha256": "e18d90850e8631886ffcd465c96be268a9be45ae839da94413fc7cddc8ac5a4e",
+  "head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "label": "next",
+  "pairs": 105,
+  "same_pair_inventory": true,
+  "started_utc": "2026-10-10T14:25:25.362433+00:00"
+}

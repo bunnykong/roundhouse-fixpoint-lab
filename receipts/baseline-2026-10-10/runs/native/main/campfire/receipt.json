@@ -1,0 +1,44 @@
+{
+  "app": "campfire",
+  "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+  "binary_version": "roundhouse 2026.9.18 (c210f226)",
+  "build_head": "c210f226346b462214866b5756b457ad53f647b1",
+  "build_receipt": "evidence/main-emission.json",
+  "build_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "command": [
+    "binaries/roundhouse-main",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/campfire",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 0.588922334020026,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {},
+  "exit": 0,
+  "flags": {},
+  "input": {
+    "digest": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+    "files": 733,
+    "head": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "id": "campfire"
+  },
+  "label": "main",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T12:31:03.979096+00:00",
+  "summary_counts": {
+    "errors": 0,
+    "notes": 0,
+    "parse_errors": 0,
+    "survey_gaps": 0,
+    "warnings": 404
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 242,
+    "missing_preload": 1,
+    "unresolved_type": 161
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "app": "campfire",
+  "app_cwd": "lab/corpus/apps/campfire",
+  "binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+  "binary_version": "roundhouse 2026.9.18 (38403140)",
+  "build_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "build_receipt": "evidence/next-emission.json",
+  "build_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "check": "schedule",
+  "command": [
+    "bash",
+    "probe",
+    "campfire",
+    "RH_PRECISION_CENSUS=1",
+    "RH_ERRGATE=1",
+    "RH_PUBLIC_INPUT=1"
+  ],
+  "cwd": "./runs/probe/campfire/s3/schedule-unset",
+  "elapsed_seconds": 1.5901130000129342,
+  "environment_receipt": "evidence/environment.json",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_SCHED": "sccq"
+  },
+  "input": {
+    "digest": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+    "files": 733,
+    "head": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "id": "campfire"
+  },
+  "mode": "s3",
+  "probe_base": false,
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "shuffle": "unset",
+  "started_utc": "2026-10-10T14:27:26.727148+00:00"
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "base_sha": "c210f226346b462214866b5756b457ad53f647b1",
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--lib",
+      "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+      "--",
+      "--exact",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "condition": {
+      "CARGO_BUILD_JOBS": 4,
+      "CARGO_TARGET_DIR": "cargo-target",
+      "spinel": "toolchain/spinel",
+      "spinel_sha256": "fbd5118b57dcd582b7d6e35c9452f6bc970740334ca9318cdf94c9f47bba0857"
+    },
+    "exit": 101,
+    "log": "./logs/main-control-1.log",
+    "started_utc": "2026-10-10T14:42:08.436243+00:00",
+    "summary": "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1107 filtered out; finished in 0.02s",
+    "target": "lib",
+    "test": "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots"
+  },
+  {
+    "base_sha": "c210f226346b462214866b5756b457ad53f647b1",
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--lib",
+      "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+      "--",
+      "--exact",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "condition": {
+      "CARGO_BUILD_JOBS": 4,
+      "CARGO_TARGET_DIR": "cargo-target",
+      "spinel": "toolchain/spinel",
+      "spinel_sha256": "fbd5118b57dcd582b7d6e35c9452f6bc970740334ca9318cdf94c9f47bba0857"
+    },
+    "exit": 101,
+    "log": "./logs/main-control-2.log",
+    "started_utc": "2026-10-10T14:42:29.609498+00:00",
+    "summary": "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1107 filtered out; finished in 0.01s",
+    "target": "lib",
+    "test": "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+  },
+  {
+    "base_sha": "c210f226346b462214866b5756b457ad53f647b1",
+    "command": [
+      "cargo",
+      "test",
+      "--locked",
+      "--test",
+      "haml_class_shortcut_merge",
+      "spinel_renders_the_same_page",
+      "--",
+      "--exact",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "condition": {
+      "CARGO_BUILD_JOBS": 4,
+      "CARGO_TARGET_DIR": "cargo-target",
+      "spinel": "toolchain/spinel",
+      "spinel_sha256": "fbd5118b57dcd582b7d6e35c9452f6bc970740334ca9318cdf94c9f47bba0857"
+    },
+    "exit": 101,
+    "log": "./logs/main-control-3.log",
+    "started_utc": "2026-10-10T14:42:29.726463+00:00",
+    "summary": "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.65s",
+    "target": "haml_class_shortcut_merge",
+    "test": "spinel_renders_the_same_page"
+  }
+]

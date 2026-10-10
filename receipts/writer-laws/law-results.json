@@ -1,0 +1,2885 @@
+{
+  "base_sha": "c210f226346b462214866b5756b457ad53f647b1",
+  "failed_tests": [
+    "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+    "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+    "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+    "analyze::body::writer_law_tests::writer_law_closure_each",
+    "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+    "analyze::body::writer_law_tests::writer_law_closure_then",
+    "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+    "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+    "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+    "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+    "analyze::body::writer_law_tests::writer_law_match_conditional",
+    "analyze::body::writer_law_tests::writer_law_match_required",
+    "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+    "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+    "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule",
+    "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule",
+    "analyze::fixpoint_bound::writer_law_tests::writer_law_reflective_ivar_bound",
+    "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+    "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+    "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+    "analyze::writer_laws::writer_law_alternative_branch_maps",
+    "analyze::writer_laws::writer_law_clean_binding_gate",
+    "analyze::writer_laws::writer_law_concern_surface_copy",
+    "analyze::writer_laws::writer_law_constant_overwrite",
+    "analyze::writer_laws::writer_law_controller_union_maps",
+    "analyze::writer_laws::writer_law_current_attribute_copy",
+    "analyze::writer_laws::writer_law_extended_surface_copy",
+    "analyze::writer_laws::writer_law_host_surface_agreement",
+    "analyze::writer_laws::writer_law_layout_noise_merge",
+    "analyze::writer_laws::writer_law_multiassign_projection",
+    "analyze::writer_laws::writer_law_partial_local_overwrite",
+    "analyze::writer_laws::writer_law_partial_noise_merge",
+    "analyze::writer_laws::writer_law_raw_union_merge",
+    "analyze::writer_laws::writer_law_registry_registration",
+    "analyze::writer_laws::writer_law_view_helper_first_owner"
+  ],
+  "log": "./logs/laws-final.log",
+  "rows": [
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+      "witness": "(Array[Int]; Bool) => Union[Bool, Array[Int]] != Bool",
+      "witness_nodes": 3,
+      "writer": "apply_narrowing/not-is_a(Array)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_array",
+      "witness": "(Array[Int]; Bool) => Bool != Union[Bool, Array[Int]]",
+      "witness_nodes": 3,
+      "writer": "apply_narrowing/not-is_a(Array)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+      "witness": "(Hash[Str, Int]; Bool) => Union[Bool, Hash[Str, Int]] != Bool",
+      "witness_nodes": 4,
+      "writer": "apply_narrowing/not-is_a(Hash)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash",
+      "witness": "(Bool; Hash[Str, Int]) => Bool != Union[Bool, Hash[Str, Int]]",
+      "witness_nodes": 4,
+      "writer": "apply_narrowing/not-is_a(Hash)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+      "witness": "(Array[Var(3)]; Untyped) => Array[Untyped] != Array[Union[Var(3), Untyped]]",
+      "witness_nodes": 3,
+      "writer": "apply_narrowing/is_a(Array)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+      "witness": "() => Array[Untyped] != Var(0)",
+      "witness_nodes": 0,
+      "writer": "apply_narrowing/is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Array)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_array",
+      "witness": "(Array[Int]; Bool) => Array[Int] != Array[Union[Int, Untyped]]",
+      "witness_nodes": 3,
+      "writer": "apply_narrowing/is_a(Array)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+      "witness": "(Bool; Hash[Str, Int]) => Hash[Union[Str, Untyped], Union[Int, Untyped]] != Hash[Str, Int]",
+      "witness_nodes": 4,
+      "writer": "apply_narrowing/is_a(Hash)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+      "witness": "() => Hash[Untyped, Untyped] != Var(0)",
+      "witness_nodes": 0,
+      "writer": "apply_narrowing/is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Hash)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash",
+      "witness": "(Bool; Hash[Str, Int]) => Hash[Str, Int] != Hash[Union[Str, Untyped], Union[Int, Untyped]]",
+      "witness_nodes": 4,
+      "writer": "apply_narrowing/is_a(Hash)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Int)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+      "witness": "() => Int != Var(0)",
+      "witness_nodes": 0,
+      "writer": "apply_narrowing/is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/is_a(Int)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+      "witness": "(Int; Bool) => Union[Int, Bool] != Bool",
+      "witness_nodes": 2,
+      "writer": "apply_narrowing/not-is_a(Int)"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/not-is_a(Int)"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a",
+      "witness": "(Bool; Int) => Bool != Union[Int, Bool]",
+      "witness_nodes": 2,
+      "writer": "apply_narrowing/not-is_a(Int)"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/nil"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/nil"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+      "witness": "() => Nil != Var(0)",
+      "witness_nodes": 0,
+      "writer": "apply_narrowing/nil"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/nil"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/nil"
+    },
+    {
+      "checks": 80,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/non-nil"
+    },
+    {
+      "checks": 3200,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+      "witness": "(Nil; Bool) => Union[Bool, Nil] != Bool",
+      "witness_nodes": 2,
+      "writer": "apply_narrowing/non-nil"
+    },
+    {
+      "checks": 2,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/non-nil"
+    },
+    {
+      "checks": 3200,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "apply_narrowing/non-nil"
+    },
+    {
+      "checks": 3200,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil",
+      "witness": "(Bool; Nil) => Bool != Union[Bool, Nil]",
+      "witness_nodes": 2,
+      "writer": "apply_narrowing/non-nil"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_binding/reader"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+      "witness": "(Nil; Bool) => Union[Bool, Nil] != Bool",
+      "witness_nodes": 2,
+      "writer": "narrow_binding/reader"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_binding/reader"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_binding/reader"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader",
+      "witness": "(Bool; Nil) => Bool != Union[Bool, Nil]",
+      "witness_nodes": 2,
+      "writer": "narrow_binding/reader"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_array_pushes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_array_pushes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_array_pushes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_array_pushes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_array_pushes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/each"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each",
+      "witness": "(Relation { of: ClassId(Symbol(\"User\")) }; Relation { of: ClassId(Symbol(\"Story\")) }) => Tuple[Union[Story, User], Var(0)] != Tuple[Story, Var(0)]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/each"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each",
+      "witness": "(Relation { of: ClassId(Symbol(\"Story\")) }; Relation { of: ClassId(Symbol(\"User\")) }) => Tuple[Story, Var(0)] != Tuple[User, Var(0)]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each",
+      "witness": "(Bool; Untyped) => Tuple[Untyped, Var(0)] != Tuple[Untyped, Untyped]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/each_with_index"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+      "witness": "(Relation { of: ClassId(Symbol(\"User\")) }; Relation { of: ClassId(Symbol(\"Story\")) }) => Tuple[Union[Story, User], Int] != Tuple[Story, Int]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each_with_index"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/each_with_index"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+      "witness": "(Relation { of: ClassId(Symbol(\"Story\")) }; Relation { of: ClassId(Symbol(\"User\")) }) => Tuple[Story, Int] != Tuple[User, Int]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each_with_index"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_each_with_index",
+      "witness": "(Bool; Untyped) => Tuple[Untyped, Var(0)] != Tuple[Untyped, Untyped]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/each_with_index"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_hash_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_hash_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_hash_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_hash_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_hash_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_local_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_local_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_local_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_local_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_local_writes",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_then",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/then"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_then",
+      "witness": "(Untyped; Bool) => Tuple[Union[Bool, Untyped], Untyped] != Tuple[Union[Bool, Untyped], Var(0)]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/then"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_then",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/then"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_then",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "block_ctx_for/then"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_closure_then",
+      "witness": "(Bool; Untyped) => Tuple[Union[Bool, Untyped], Var(0)] != Tuple[Union[Bool, Untyped], Untyped]",
+      "witness_nodes": 2,
+      "writer": "block_ctx_for/then"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_condition_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_var_assignments_into"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": "(Array[Bool]; Array[Bottom]) => Array[Bottom] != Array[Bool]",
+      "witness_nodes": 4,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": "(Array[Bool]; Array[Bottom]) => Array[Bool] != Array[Bottom]",
+      "witness_nodes": 4,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": "(Array[Bool]; Array[Bool]; Array[Bottom]) => Array[Bottom] != Array[Bool]",
+      "witness_nodes": 6,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_array_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_array/stamp_readback"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": "(Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bottom] != Hash[Str, Bool]",
+      "witness_nodes": 6,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": "(Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bool] != Hash[Str, Bottom]",
+      "witness_nodes": 6,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": "(Hash[Str, Bool]; Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bottom] != Hash[Str, Bool]",
+      "witness_nodes": 9,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_empty_hash_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "empty_hash/stamp_readback"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_ir_type_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "BodyTyper::analyze_expr/ordinary-stamp"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_conditional",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/conditional"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::body::writer_law_tests::writer_law_match_required",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "propagate_match_bindings/required"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "class_configuration/is_uninformative"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "class_configuration/is_uninformative"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "class_configuration/is_uninformative"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "class_configuration/is_uninformative"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate",
+      "witness": "(Bool; Untyped) => Union[Bool, Untyped] != Bool",
+      "witness_nodes": 2,
+      "writer": "class_configuration/is_uninformative"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "seed_empty_hashes"
+    },
+    {
+      "checks": 52,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 48,
+      "law": "within-limit-identity",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 4116,
+      "law": "once-vs-per-pair",
+      "result": "FAIL",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule",
+      "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped != Union[Array[Int], Untyped]",
+      "witness_nodes": 514,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation/once",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "regrouping/per-pair",
+      "result": "FAIL",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule",
+      "witness": "(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped != Union[Array[Int], Untyped]",
+      "witness_nodes": 514,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "once-vs-per-pair",
+      "result": "FAIL",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule",
+      "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Int) => Union[Int, Untyped] != Int",
+      "witness_nodes": 513,
+      "writer": "bound/unify_param_ty"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation/once",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "bound/unify_param_ty"
+    },
+    {
+      "checks": 4116,
+      "law": "regrouping/per-pair",
+      "result": "FAIL",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule",
+      "witness": "(Int; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Union[Int, Untyped] != Int",
+      "witness_nodes": 513,
+      "writer": "bound/unify_param_ty"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation-and-duplicate",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_ivar_batch_bound",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/bound-once"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation-and-duplicate",
+      "result": "PASS",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_param_batch_bound",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/bound-once"
+    },
+    {
+      "checks": 50,
+      "law": "bounded-storage",
+      "result": "FAIL",
+      "test": "analyze::fixpoint_bound::writer_law_tests::writer_law_reflective_ivar_bound",
+      "witness": "(Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]]) => Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]] != Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Untyped]]]]]]]]]]]]]]]]",
+      "witness_nodes": 18,
+      "writer": "harvest_ivar_set/bound-coverage"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_decision",
+      "witness": "(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int",
+      "witness_nodes": 5,
+      "writer": "decide_harvested_return"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::harvest_return::writer_law_tests::writer_law_return_table",
+      "witness": "(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int",
+      "witness_nodes": 5,
+      "writer": "insert_inferred_return"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_to_named_model"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+      "witness": "(Bool; Story) => Union[Bool, Story] != Story",
+      "witness_nodes": 2,
+      "writer": "narrow_to_named_model"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_to_named_model"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "narrow_to_named_model"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection",
+      "witness": "(Bool; Story) => Story != Union[Bool, Story]",
+      "witness_nodes": 2,
+      "writer": "narrow_to_named_model"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": "(Bool) => Union[Bool, Nil] != Bool",
+      "witness_nodes": 1,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": "(Bool) => Union[Bool, Nil] != Bool",
+      "witness_nodes": 1,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_alternative_branch_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "merge_alternative_branches/absent-branch"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_clean_binding_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "is_clean_binding/persisted-controller-contribution"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_clean_binding_gate",
+      "witness": "(Bool; Untyped) => Bool != Var(0)",
+      "witness_nodes": 2,
+      "writer": "is_clean_binding/persisted-controller-contribution"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_clean_binding_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "is_clean_binding/persisted-controller-contribution"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_clean_binding_gate",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "is_clean_binding/persisted-controller-contribution"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_clean_binding_gate",
+      "witness": "(Bool; Untyped) => Var(0) != Bool",
+      "witness_nodes": 2,
+      "writer": "is_clean_binding/persisted-controller-contribution"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_concern_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_concern_surfaces/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_const_attribute_contribution",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_const_attribute_contribution",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_const_attribute_contribution",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_const_attribute_contribution",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_const_attribute_contribution",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "record_const"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "record_const"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "record_const"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "record_const"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "record_const"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "record_const"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_constant_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "record_const"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_controller_union_maps",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_ivar_maps"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_current_attribute_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_current_attribute_forwarders"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_extended_surface_copy",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_extended_modules/copied-entry"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_hash_index_widening",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": "(Untyped) => Var(0) != Untyped",
+      "witness_nodes": 1,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_host_surface_agreement",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_host_surfaces/agreement-gate"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_assignment_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_ivar_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": "(Untyped; Var(0)) => Var(0) != Untyped",
+      "witness_nodes": 2,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": "(Untyped; Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 2,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": "(Untyped) => Var(0) != Untyped",
+      "witness_nodes": 1,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": "(Untyped; Untyped; Var(0)) => Var(0) != Untyped",
+      "witness_nodes": 3,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_layout_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/layout-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_multiassign_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "multiassign_target_ty/position-0"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_multiassign_projection",
+      "witness": "(Relation { of: ClassId(Symbol(\"Story\")) }; Bool) => Story != Var(0)",
+      "witness_nodes": 2,
+      "writer": "multiassign_target_ty/position-0"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_multiassign_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "multiassign_target_ty/position-0"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_multiassign_projection",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "multiassign_target_ty/position-0"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_multiassign_projection",
+      "witness": "(Bool; Relation { of: ClassId(Symbol(\"Story\")) }) => Var(0) != Story",
+      "witness_nodes": 2,
+      "writer": "multiassign_target_ty/position-0"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_param_join",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_default_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_parameter_row_fold",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_local_overwrite",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_partial_render_sites/local-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": "(Untyped; Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 2,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": "(Untyped) => Var(0) != Untyped",
+      "witness_nodes": 1,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": "(Untyped; Untyped; Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 3,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_partial_noise_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "type_views_and_tests/partial-noise-merge"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": "(Bool) => Union[Bool, Var(0)] != Bool",
+      "witness_nodes": 1,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_raw_union_merge",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "union_of/raw-carried-merge"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_reflective_ivar_harvest",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 2,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 1,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 1,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Var(0)) => Untyped != Var(0)",
+      "witness_nodes": 1,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Bool; Bool; Bottom) => Bottom != Bool",
+      "witness_nodes": 3,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_registry_registration",
+      "witness": "(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int",
+      "witness_nodes": 5,
+      "writer": "register_method_return"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": "(Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 2,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": "(Bool) => Var(0) != Bool",
+      "witness_nodes": 1,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "FAIL",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": "(Bool; Bool; Bottom) => Bool != Bottom",
+      "witness_nodes": 3,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "test": "analyze::writer_laws::writer_law_view_helper_first_owner",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_returns_to_registry/helper-first-owner"
+    }
+  ],
+  "test_summary": "test result: FAILED. 14 passed; 41 failed; 0 ignored; 0 measured; 1108 filtered out; finished in 96.89s"
+}

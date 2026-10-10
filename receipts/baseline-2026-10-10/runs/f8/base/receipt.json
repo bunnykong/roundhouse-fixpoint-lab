@@ -1,0 +1,37 @@
+{
+  "binary_sha256": "79e81fa5a16343ded34f87ad4b265ccb6c2eb19244dd68e234da90efb33d1a6b",
+  "build_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "build_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "command": [
+    "binaries/dump_ir-next",
+    "lab/corpus/apps/discourse",
+    "--select",
+    "Jobs::Base::JobInstrumenter",
+    "--format",
+    "json"
+  ],
+  "cwd": "./runs/f8/base",
+  "elapsed_seconds": 28.175744624924846,
+  "environment_receipt": "evidence/environment.json",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "0",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "0",
+    "RH_FOLD_JOIN": "0",
+    "RH_FOLD_SLOTS": "0",
+    "RH_FOLD_TAIL": "0",
+    "RH_SCHED": "rounds"
+  },
+  "input": {
+    "digest": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+    "files": 26331,
+    "head": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "id": "discourse"
+  },
+  "overrides": {
+    "RBENV_VERSION": "4.0.7",
+    "ROUNDHOUSE_INGEST_SURVEY": "1"
+  },
+  "started_utc": "2026-10-10T14:40:58.795023+00:00"
+}

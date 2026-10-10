@@ -1,0 +1,49 @@
+{
+  "app": "chatwoot",
+  "binary_sha256": "c07513c589740ea37c0c10b3af890a1d0b6e2fc12ec9be5b3ec82de4283972b9",
+  "binary_version": "roundhouse 2026.9.18 (c210f226)",
+  "build_head": "c210f226346b462214866b5756b457ad53f647b1",
+  "build_receipt": "evidence/main-emission.json",
+  "build_tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "command": [
+    "binaries/roundhouse-main",
+    "check",
+    "--continue",
+    "."
+  ],
+  "counts_agree_with_summary": true,
+  "cwd": "lab/corpus/apps/chatwoot",
+  "diagnostics_complete": true,
+  "elapsed_seconds": 6.483188249985687,
+  "environment_receipt": "evidence/environment.json",
+  "errors_by_kind": {
+    "incompatible_binop": 9,
+    "ivar_unresolved": 127,
+    "send_dispatch_failed": 75,
+    "unsupported": 679
+  },
+  "exit": 1,
+  "flags": {},
+  "input": {
+    "digest": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+    "files": 9281,
+    "head": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+    "id": "chatwoot"
+  },
+  "label": "main",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "started_utc": "2026-10-10T12:31:16.840174+00:00",
+  "summary_counts": {
+    "errors": 890,
+    "notes": 1105,
+    "parse_errors": 0,
+    "survey_gaps": 38,
+    "warnings": 3617
+  },
+  "warnings_by_kind": {
+    "gradual_untyped": 2086,
+    "missing_preload": 2,
+    "unresolved_type": 1529
+  }
+}

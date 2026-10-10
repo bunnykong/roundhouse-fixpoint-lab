@@ -15,6 +15,8 @@ The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoi
 | F19 | Pending-return comparisons on four public programs | [F19](F19/README.md) |
 | F20 | 532-flow destructuring matrix and runtime comparison | [F20](F20/README.md) |
 | F21 | Spinel extraction and manual kernel references | [F21](F21/README.md) |
+| F22–F24, F26–F28 | October 10 current-main baseline, parity and source witness | [baseline-2026-10-10](baseline-2026-10-10/README.md) |
+| F25 | Finite writer-law inventory and counterexamples | [writer-laws](writer-laws/README.md) |
 
 The remaining additions are small source or observation receipts:
 

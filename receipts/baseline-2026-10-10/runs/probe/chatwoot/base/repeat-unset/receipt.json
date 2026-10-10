@@ -1,0 +1,49 @@
+{
+  "app": "chatwoot",
+  "app_cwd": "lab/corpus/apps/chatwoot",
+  "binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+  "binary_version": "roundhouse 2026.9.18 (38403140)",
+  "build_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "build_receipt": "evidence/next-emission.json",
+  "build_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "check": "repeat",
+  "command": [
+    "bash",
+    "probe",
+    "chatwoot",
+    "RH_PRECISION_CENSUS=1",
+    "RH_ERRGATE=1",
+    "RH_PUBLIC_INPUT=1"
+  ],
+  "cwd": "./runs/probe/chatwoot/base/repeat-unset",
+  "elapsed_seconds": 10.829016542062163,
+  "environment_receipt": "evidence/environment.json",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "0",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "1",
+    "RH_FOLD": "0",
+    "RH_FOLD_JOIN": "0",
+    "RH_FOLD_SLOTS": "0",
+    "RH_FOLD_TAIL": "0",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_SCHED": "rounds"
+  },
+  "input": {
+    "digest": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+    "files": 9281,
+    "head": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+    "id": "chatwoot"
+  },
+  "mode": "base",
+  "probe_base": true,
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "probe_source": "probe",
+  "ruby": "4.0.7",
+  "shuffle": "unset",
+  "started_utc": "2026-10-10T14:30:57.811944+00:00"
+}

@@ -1,0 +1,316 @@
+writer	property	result	checks	witness_nodes	witness	test
+apply_narrowing/not-is_a(Array)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_exclude_array
+apply_narrowing/not-is_a(Array)	monotonicity	FAIL	3200	3	(Array[Int]; Bool) => Union[Bool, Array[Int]] != Bool	analyze::body::narrowing::writer_law_tests::writer_law_exclude_array
+apply_narrowing/not-is_a(Array)	pending	PASS	2			analyze::body::narrowing::writer_law_tests::writer_law_exclude_array
+apply_narrowing/not-is_a(Array)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_exclude_array
+apply_narrowing/not-is_a(Array)	regrouping	FAIL	3200	3	(Array[Int]; Bool) => Bool != Union[Bool, Array[Int]]	analyze::body::narrowing::writer_law_tests::writer_law_exclude_array
+apply_narrowing/not-is_a(Hash)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash
+apply_narrowing/not-is_a(Hash)	monotonicity	FAIL	3200	4	(Hash[Str, Int]; Bool) => Union[Bool, Hash[Str, Int]] != Bool	analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash
+apply_narrowing/not-is_a(Hash)	pending	PASS	2			analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash
+apply_narrowing/not-is_a(Hash)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash
+apply_narrowing/not-is_a(Hash)	regrouping	FAIL	3200	4	(Bool; Hash[Str, Int]) => Bool != Union[Bool, Hash[Str, Int]]	analyze::body::narrowing::writer_law_tests::writer_law_exclude_hash
+apply_narrowing/is_a(Array)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_array
+apply_narrowing/is_a(Array)	monotonicity	FAIL	3200	3	(Array[Var(3)]; Untyped) => Array[Untyped] != Array[Union[Var(3), Untyped]]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_array
+apply_narrowing/is_a(Array)	pending	FAIL	2	0	() => Array[Untyped] != Var(0)	analyze::body::narrowing::writer_law_tests::writer_law_narrow_array
+apply_narrowing/is_a(Array)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_array
+apply_narrowing/is_a(Array)	regrouping	FAIL	3200	3	(Array[Int]; Bool) => Array[Int] != Array[Union[Int, Untyped]]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_array
+apply_narrowing/is_a(Hash)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash
+apply_narrowing/is_a(Hash)	monotonicity	FAIL	3200	4	(Bool; Hash[Str, Int]) => Hash[Union[Str, Untyped], Union[Int, Untyped]] != Hash[Str, Int]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash
+apply_narrowing/is_a(Hash)	pending	FAIL	2	0	() => Hash[Untyped, Untyped] != Var(0)	analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash
+apply_narrowing/is_a(Hash)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash
+apply_narrowing/is_a(Hash)	regrouping	FAIL	3200	4	(Bool; Hash[Str, Int]) => Hash[Str, Int] != Hash[Union[Str, Untyped], Union[Int, Untyped]]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_hash
+apply_narrowing/is_a(Int)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a
+apply_narrowing/is_a(Int)	monotonicity	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a
+apply_narrowing/is_a(Int)	pending	FAIL	2	0	() => Int != Var(0)	analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a
+apply_narrowing/is_a(Int)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a
+apply_narrowing/is_a(Int)	regrouping	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_a
+apply_narrowing/not-is_a(Int)	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a
+apply_narrowing/not-is_a(Int)	monotonicity	FAIL	3200	2	(Int; Bool) => Union[Int, Bool] != Bool	analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a
+apply_narrowing/not-is_a(Int)	pending	PASS	2			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a
+apply_narrowing/not-is_a(Int)	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a
+apply_narrowing/not-is_a(Int)	regrouping	FAIL	3200	2	(Bool; Int) => Bool != Union[Int, Bool]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_is_not_a
+apply_narrowing/nil	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil
+apply_narrowing/nil	monotonicity	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil
+apply_narrowing/nil	pending	FAIL	2	0	() => Nil != Var(0)	analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil
+apply_narrowing/nil	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil
+apply_narrowing/nil	regrouping	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_nil
+apply_narrowing/non-nil	idempotence	PASS	80			analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil
+apply_narrowing/non-nil	monotonicity	FAIL	3200	2	(Nil; Bool) => Union[Bool, Nil] != Bool	analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil
+apply_narrowing/non-nil	pending	PASS	2			analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil
+apply_narrowing/non-nil	permutation	PASS	3200			analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil
+apply_narrowing/non-nil	regrouping	FAIL	3200	2	(Bool; Nil) => Bool != Union[Bool, Nil]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_non_nil
+narrow_binding/reader	idempotence	PASS	40			analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader
+narrow_binding/reader	monotonicity	FAIL	1600	2	(Nil; Bool) => Union[Bool, Nil] != Bool	analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader
+narrow_binding/reader	pending	PASS	1			analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader
+narrow_binding/reader	permutation	PASS	1600			analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader
+narrow_binding/reader	regrouping	FAIL	1600	2	(Bool; Nil) => Bool != Union[Bool, Nil]	analyze::body::narrowing::writer_law_tests::writer_law_narrow_reader
+collect_array_pushes	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_array_pushes
+collect_array_pushes	monotonicity	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_array_pushes
+collect_array_pushes	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_array_pushes
+collect_array_pushes	permutation	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_array_pushes
+collect_array_pushes	regrouping	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_array_pushes
+block_ctx_for/each	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_each
+block_ctx_for/each	monotonicity	FAIL	1600	2	(Relation { of: ClassId(Symbol("User")) }; Relation { of: ClassId(Symbol("Story")) }) => Tuple[Union[Story, User], Var(0)] != Tuple[Story, Var(0)]	analyze::body::writer_law_tests::writer_law_closure_each
+block_ctx_for/each	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_each
+block_ctx_for/each	permutation	FAIL	1600	2	(Relation { of: ClassId(Symbol("Story")) }; Relation { of: ClassId(Symbol("User")) }) => Tuple[Story, Var(0)] != Tuple[User, Var(0)]	analyze::body::writer_law_tests::writer_law_closure_each
+block_ctx_for/each	regrouping	FAIL	1600	2	(Bool; Untyped) => Tuple[Untyped, Var(0)] != Tuple[Untyped, Untyped]	analyze::body::writer_law_tests::writer_law_closure_each
+block_ctx_for/each_with_index	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_each_with_index
+block_ctx_for/each_with_index	monotonicity	FAIL	1600	2	(Relation { of: ClassId(Symbol("User")) }; Relation { of: ClassId(Symbol("Story")) }) => Tuple[Union[Story, User], Int] != Tuple[Story, Int]	analyze::body::writer_law_tests::writer_law_closure_each_with_index
+block_ctx_for/each_with_index	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_each_with_index
+block_ctx_for/each_with_index	permutation	FAIL	1600	2	(Relation { of: ClassId(Symbol("Story")) }; Relation { of: ClassId(Symbol("User")) }) => Tuple[Story, Int] != Tuple[User, Int]	analyze::body::writer_law_tests::writer_law_closure_each_with_index
+block_ctx_for/each_with_index	regrouping	FAIL	1600	2	(Bool; Untyped) => Tuple[Untyped, Var(0)] != Tuple[Untyped, Untyped]	analyze::body::writer_law_tests::writer_law_closure_each_with_index
+collect_hash_index_writes	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_hash_writes
+collect_hash_index_writes	monotonicity	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_hash_writes
+collect_hash_index_writes	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_hash_writes
+collect_hash_index_writes	permutation	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_hash_writes
+collect_hash_index_writes	regrouping	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_hash_writes
+collect_local_assignment_tys	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_local_writes
+collect_local_assignment_tys	monotonicity	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_local_writes
+collect_local_assignment_tys	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_local_writes
+collect_local_assignment_tys	permutation	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_local_writes
+collect_local_assignment_tys	regrouping	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_local_writes
+block_ctx_for/then	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_closure_then
+block_ctx_for/then	monotonicity	FAIL	1600	2	(Untyped; Bool) => Tuple[Union[Bool, Untyped], Untyped] != Tuple[Union[Bool, Untyped], Var(0)]	analyze::body::writer_law_tests::writer_law_closure_then
+block_ctx_for/then	pending	PASS	1			analyze::body::writer_law_tests::writer_law_closure_then
+block_ctx_for/then	permutation	PASS	1600			analyze::body::writer_law_tests::writer_law_closure_then
+block_ctx_for/then	regrouping	FAIL	1600	2	(Bool; Untyped) => Tuple[Union[Bool, Untyped], Var(0)] != Tuple[Union[Bool, Untyped], Untyped]	analyze::body::writer_law_tests::writer_law_closure_then
+collect_var_assignments_into	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	pending-left	PASS	40			analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+collect_var_assignments_into	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_condition_local_overwrite
+empty_array/stamp_readback	commutativity	FAIL	1600	4	(Array[Bool]; Array[Bottom]) => Array[Bottom] != Array[Bool]	analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	duplicate-replay	FAIL	1600	4	(Array[Bool]; Array[Bottom]) => Array[Bool] != Array[Bottom]	analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	pending-left	PASS	40			analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	pending-right	PASS	40			analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	permutation	FAIL	384000	6	(Array[Bool]; Array[Bool]; Array[Bottom]) => Array[Bottom] != Array[Bool]	analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_array/stamp_readback	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_empty_array_stamp
+empty_hash/stamp_readback	commutativity	FAIL	1600	6	(Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bottom] != Hash[Str, Bool]	analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	duplicate-replay	FAIL	1600	6	(Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bool] != Hash[Str, Bottom]	analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	pending-left	PASS	40			analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	pending-right	PASS	40			analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	permutation	FAIL	384000	9	(Hash[Str, Bool]; Hash[Str, Bool]; Hash[Str, Bottom]) => Hash[Str, Bottom] != Hash[Str, Bool]	analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+empty_hash/stamp_readback	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_empty_hash_stamp
+BodyTyper::analyze_expr/ordinary-stamp	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	pending-left	PASS	40			analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+BodyTyper::analyze_expr/ordinary-stamp	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_ir_type_overwrite
+propagate_match_bindings/conditional	commutativity	PASS	1600			analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	duplicate-replay	PASS	1600			analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	pending-left	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	pending-right	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	permutation	PASS	384000			analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/conditional	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_match_conditional
+propagate_match_bindings/required	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	idempotence	PASS	40			analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	pending-left	PASS	40			analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::body::writer_law_tests::writer_law_match_required
+propagate_match_bindings/required	regrouping	PASS	64000			analyze::body::writer_law_tests::writer_law_match_required
+class_configuration/is_uninformative	idempotence	PASS	40			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate
+class_configuration/is_uninformative	monotonicity	PASS	1600			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate
+class_configuration/is_uninformative	pending	PASS	1			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate
+class_configuration/is_uninformative	permutation	PASS	1600			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate
+class_configuration/is_uninformative	regrouping	FAIL	1600	2	(Bool; Untyped) => Union[Bool, Untyped] != Bool	analyze::class_configuration::writer_law_tests::writer_law_class_configuration_gate
+seed_empty_hashes	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	idempotence	PASS	40			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	pending-left	PASS	40			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+seed_empty_hashes	regrouping	PASS	64000			analyze::class_configuration::writer_law_tests::writer_law_class_configuration_stamp
+fixpoint_bound/boundary-universe	idempotence	PASS	52			analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending
+fixpoint_bound/boundary-universe	pending	PASS	1			analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending
+fixpoint_bound/boundary-universe	within-limit-identity	PASS	48			analyze::fixpoint_bound::writer_law_tests::writer_law_bound_idempotence_and_pending
+bound/join_ivar_slot	once-vs-per-pair	FAIL	4116	514	(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped != Union[Array[Int], Untyped]	analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule
+bound/join_ivar_slot	permutation/once	PASS	4116			analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule
+bound/join_ivar_slot	regrouping/per-pair	FAIL	4116	514	(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped != Union[Array[Int], Untyped]	analyze::fixpoint_bound::writer_law_tests::writer_law_bound_ivar_schedule
+bound/unify_param_ty	once-vs-per-pair	FAIL	4116	513	(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Int) => Union[Int, Untyped] != Int	analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule
+bound/unify_param_ty	permutation/once	PASS	4116			analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule
+bound/unify_param_ty	regrouping/per-pair	FAIL	4116	513	(Int; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Union[Int, Untyped] != Int	analyze::fixpoint_bound::writer_law_tests::writer_law_bound_param_schedule
+extract_ivar_assignments/bound-once	permutation-and-duplicate	PASS	4116			analyze::fixpoint_bound::writer_law_tests::writer_law_ivar_batch_bound
+fold_param_observations/bound-once	permutation-and-duplicate	PASS	4116			analyze::fixpoint_bound::writer_law_tests::writer_law_param_batch_bound
+harvest_ivar_set/bound-coverage	bounded-storage	FAIL	50	18	(Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]]) => Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]] != Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Untyped]]]]]]]]]]]]]]]]	analyze::fixpoint_bound::writer_law_tests::writer_law_reflective_ivar_bound
+decide_harvested_return	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	idempotence	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	pending-left	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	pending-right	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::harvest_return::writer_law_tests::writer_law_return_decision
+decide_harvested_return	regrouping	FAIL	64000	5	(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int	analyze::harvest_return::writer_law_tests::writer_law_return_decision
+insert_inferred_return	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	idempotence	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	pending-left	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	pending-right	PASS	40			analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::harvest_return::writer_law_tests::writer_law_return_table
+insert_inferred_return	regrouping	FAIL	64000	5	(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int	analyze::harvest_return::writer_law_tests::writer_law_return_table
+narrow_to_named_model	idempotence	PASS	40			analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection
+narrow_to_named_model	monotonicity	FAIL	1600	2	(Bool; Story) => Union[Bool, Story] != Story	analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection
+narrow_to_named_model	pending	PASS	1			analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection
+narrow_to_named_model	permutation	PASS	1600			analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection
+narrow_to_named_model	regrouping	FAIL	1600	2	(Bool; Story) => Story != Union[Bool, Story]	analyze::ivar_set::writer_law_tests::writer_law_reflective_named_model_projection
+merge_alternative_branches/absent-branch	commutativity	PASS	1600			analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	idempotence	PASS	40			analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	pending-left	FAIL	40	1	(Bool) => Union[Bool, Nil] != Bool	analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	pending-right	FAIL	40	1	(Bool) => Union[Bool, Nil] != Bool	analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	permutation	PASS	384000			analyze::writer_laws::writer_law_alternative_branch_maps
+merge_alternative_branches/absent-branch	regrouping	PASS	64000			analyze::writer_laws::writer_law_alternative_branch_maps
+is_clean_binding/persisted-controller-contribution	idempotence	PASS	40			analyze::writer_laws::writer_law_clean_binding_gate
+is_clean_binding/persisted-controller-contribution	monotonicity	FAIL	1600	2	(Bool; Untyped) => Bool != Var(0)	analyze::writer_laws::writer_law_clean_binding_gate
+is_clean_binding/persisted-controller-contribution	pending	PASS	1			analyze::writer_laws::writer_law_clean_binding_gate
+is_clean_binding/persisted-controller-contribution	permutation	PASS	1600			analyze::writer_laws::writer_law_clean_binding_gate
+is_clean_binding/persisted-controller-contribution	regrouping	FAIL	1600	2	(Bool; Untyped) => Var(0) != Bool	analyze::writer_laws::writer_law_clean_binding_gate
+fold_concern_surfaces/copied-entry	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	idempotence	PASS	40			analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	pending-left	PASS	40			analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_concern_surface_copy
+fold_concern_surfaces/copied-entry	regrouping	PASS	64000			analyze::writer_laws::writer_law_concern_surface_copy
+collect_const_attr_writes	idempotence	PASS	40			analyze::writer_laws::writer_law_const_attribute_contribution
+collect_const_attr_writes	monotonicity	PASS	1600			analyze::writer_laws::writer_law_const_attribute_contribution
+collect_const_attr_writes	pending	PASS	1			analyze::writer_laws::writer_law_const_attribute_contribution
+collect_const_attr_writes	permutation	PASS	1600			analyze::writer_laws::writer_law_const_attribute_contribution
+collect_const_attr_writes	regrouping	PASS	1600			analyze::writer_laws::writer_law_const_attribute_contribution
+record_const	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_constant_overwrite
+record_const	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_constant_overwrite
+record_const	idempotence	PASS	40			analyze::writer_laws::writer_law_constant_overwrite
+record_const	pending-left	PASS	40			analyze::writer_laws::writer_law_constant_overwrite
+record_const	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_constant_overwrite
+record_const	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_constant_overwrite
+record_const	regrouping	PASS	64000			analyze::writer_laws::writer_law_constant_overwrite
+union_ivar_maps	commutativity	PASS	1600			analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	idempotence	PASS	40			analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	pending-left	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	pending-right	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	permutation	PASS	384000			analyze::writer_laws::writer_law_controller_union_maps
+union_ivar_maps	regrouping	PASS	64000			analyze::writer_laws::writer_law_controller_union_maps
+fold_current_attribute_forwarders	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	idempotence	PASS	40			analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	pending-left	PASS	40			analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_current_attribute_copy
+fold_current_attribute_forwarders	regrouping	PASS	64000			analyze::writer_laws::writer_law_current_attribute_copy
+fold_extended_modules/copied-entry	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	idempotence	PASS	40			analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	pending-left	PASS	40			analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_extended_surface_copy
+fold_extended_modules/copied-entry	regrouping	PASS	64000			analyze::writer_laws::writer_law_extended_surface_copy
+widen_hash_ivar_value/value-slot	commutativity	PASS	1600			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	idempotence	PASS	40			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	pending-left	PASS	40			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	pending-right	PASS	40			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	permutation	PASS	384000			analyze::writer_laws::writer_law_hash_index_widening
+widen_hash_ivar_value/value-slot	regrouping	PASS	64000			analyze::writer_laws::writer_law_hash_index_widening
+fold_host_surfaces/agreement-gate	commutativity	PASS	1600			analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	idempotence	FAIL	40	1	(Untyped) => Var(0) != Untyped	analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	pending-left	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	permutation	PASS	384000			analyze::writer_laws::writer_law_host_surface_agreement
+fold_host_surfaces/agreement-gate	regrouping	PASS	64000			analyze::writer_laws::writer_law_host_surface_agreement
+extract_ivar_assignments/plain	commutativity	PASS	1600			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	idempotence	PASS	40			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	pending-left	PASS	40			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	pending-right	PASS	40			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	permutation	PASS	384000			analyze::writer_laws::writer_law_ivar_assignment_harvest
+extract_ivar_assignments/plain	regrouping	PASS	64000			analyze::writer_laws::writer_law_ivar_assignment_harvest
+join_ivar_slot	commutativity	PASS	1600			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	idempotence	PASS	40			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	pending-left	PASS	40			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	pending-right	PASS	40			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	permutation	PASS	384000			analyze::writer_laws::writer_law_ivar_join
+join_ivar_slot	regrouping	PASS	64000			analyze::writer_laws::writer_law_ivar_join
+type_views_and_tests/layout-noise-merge	commutativity	FAIL	1600	2	(Untyped; Var(0)) => Var(0) != Untyped	analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	duplicate-replay	FAIL	1600	2	(Untyped; Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	idempotence	PASS	40			analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	pending-left	PASS	40			analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	pending-right	FAIL	40	1	(Untyped) => Var(0) != Untyped	analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	permutation	FAIL	384000	3	(Untyped; Untyped; Var(0)) => Var(0) != Untyped	analyze::writer_laws::writer_law_layout_noise_merge
+type_views_and_tests/layout-noise-merge	regrouping	PASS	64000			analyze::writer_laws::writer_law_layout_noise_merge
+multiassign_target_ty/position-0	idempotence	PASS	40			analyze::writer_laws::writer_law_multiassign_projection
+multiassign_target_ty/position-0	monotonicity	FAIL	1600	2	(Relation { of: ClassId(Symbol("Story")) }; Bool) => Story != Var(0)	analyze::writer_laws::writer_law_multiassign_projection
+multiassign_target_ty/position-0	pending	PASS	1			analyze::writer_laws::writer_law_multiassign_projection
+multiassign_target_ty/position-0	permutation	PASS	1600			analyze::writer_laws::writer_law_multiassign_projection
+multiassign_target_ty/position-0	regrouping	FAIL	1600	2	(Bool; Relation { of: ClassId(Symbol("Story")) }) => Var(0) != Story	analyze::writer_laws::writer_law_multiassign_projection
+unify_param_ty	commutativity	PASS	1600			analyze::writer_laws::writer_law_param_join
+unify_param_ty	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_param_join
+unify_param_ty	idempotence	PASS	40			analyze::writer_laws::writer_law_param_join
+unify_param_ty	pending-left	PASS	40			analyze::writer_laws::writer_law_param_join
+unify_param_ty	pending-right	PASS	40			analyze::writer_laws::writer_law_param_join
+unify_param_ty	permutation	PASS	384000			analyze::writer_laws::writer_law_param_join
+unify_param_ty	regrouping	PASS	64000			analyze::writer_laws::writer_law_param_join
+param_ty_with_default	commutativity	PASS	1600			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	idempotence	PASS	40			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	pending-left	PASS	40			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	pending-right	PASS	40			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	permutation	PASS	384000			analyze::writer_laws::writer_law_parameter_default_merge
+param_ty_with_default	regrouping	PASS	64000			analyze::writer_laws::writer_law_parameter_default_merge
+fold_param_observations/small	commutativity	PASS	1600			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	idempotence	PASS	40			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	pending-left	PASS	40			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	pending-right	PASS	40			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	permutation	PASS	384000			analyze::writer_laws::writer_law_parameter_row_fold
+fold_param_observations/small	regrouping	PASS	64000			analyze::writer_laws::writer_law_parameter_row_fold
+extract_partial_render_sites/local-slot	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	idempotence	PASS	40			analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	pending-left	PASS	40			analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	pending-right	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_partial_local_overwrite
+extract_partial_render_sites/local-slot	regrouping	PASS	64000			analyze::writer_laws::writer_law_partial_local_overwrite
+type_views_and_tests/partial-noise-merge	commutativity	FAIL	1600	2	(Untyped; Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	idempotence	PASS	40			analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	pending-left	FAIL	40	1	(Untyped) => Var(0) != Untyped	analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	pending-right	PASS	40			analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	permutation	FAIL	384000	3	(Untyped; Untyped; Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_partial_noise_merge
+type_views_and_tests/partial-noise-merge	regrouping	PASS	64000			analyze::writer_laws::writer_law_partial_noise_merge
+union_of/raw-carried-merge	commutativity	PASS	1600			analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	idempotence	PASS	40			analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	pending-left	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	pending-right	FAIL	40	1	(Bool) => Union[Bool, Var(0)] != Bool	analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	permutation	PASS	384000			analyze::writer_laws::writer_law_raw_union_merge
+union_of/raw-carried-merge	regrouping	PASS	64000			analyze::writer_laws::writer_law_raw_union_merge
+harvest_ivar_set	commutativity	PASS	1600			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	idempotence	PASS	40			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	pending-left	PASS	40			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	pending-right	PASS	40			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	permutation	PASS	384000			analyze::writer_laws::writer_law_reflective_ivar_harvest
+harvest_ivar_set	regrouping	PASS	64000			analyze::writer_laws::writer_law_reflective_ivar_harvest
+register_method_return	commutativity	FAIL	1600	2	(Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_registry_registration
+register_method_return	duplicate-replay	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_registry_registration
+register_method_return	idempotence	FAIL	40	1	(Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_registry_registration
+register_method_return	pending-left	FAIL	40	1	(Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_registry_registration
+register_method_return	pending-right	FAIL	40	1	(Var(0)) => Untyped != Var(0)	analyze::writer_laws::writer_law_registry_registration
+register_method_return	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bottom != Bool	analyze::writer_laws::writer_law_registry_registration
+register_method_return	regrouping	FAIL	64000	5	(Int; Bool; Union[Int, Var(0)]) => Union[Int, Var(0)] != Int	analyze::writer_laws::writer_law_registry_registration
+harvest_returns_to_registry/helper-first-owner	commutativity	FAIL	1600	2	(Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	duplicate-replay	PASS	1600			analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	idempotence	PASS	40			analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	pending-left	FAIL	40	1	(Bool) => Var(0) != Bool	analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	pending-right	PASS	40			analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	permutation	FAIL	384000	3	(Bool; Bool; Bottom) => Bool != Bottom	analyze::writer_laws::writer_law_view_helper_first_owner
+harvest_returns_to_registry/helper-first-owner	regrouping	PASS	64000			analyze::writer_laws::writer_law_view_helper_first_owner

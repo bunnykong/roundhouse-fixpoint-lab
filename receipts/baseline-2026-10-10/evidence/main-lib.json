@@ -1,0 +1,43 @@
+{
+  "all_reported_passed": 1105,
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "cargo-target",
+  "command": [
+    "cargo",
+    "test",
+    "--locked",
+    "--lib"
+  ],
+  "completed": true,
+  "cwd": "sources/main",
+  "dyld_library_path": "./lib/openexr:./lib/openjph",
+  "elapsed_seconds": 81.59475116699468,
+  "env_sha256": "dde8519db2a9316d9fe7eb06c01b3f6385469832c204fb3a30f42cf1958b880d",
+  "exit": 101,
+  "failed": 2,
+  "failed_targets": [
+    "`--lib`"
+  ],
+  "failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+  ],
+  "finished_utc": "2026-10-10T11:44:51.974641+00:00",
+  "head": "c210f226346b462214866b5756b457ad53f647b1",
+  "ignored": 1,
+  "label": "main",
+  "log": "evidence/main-lib.log",
+  "passed": 1105,
+  "ruby": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+  "rust_test_threads": "1",
+  "spinel": "toolchain/spinel",
+  "src/analyze/body/mod.rs_sha256": "8040414a49690ef61057a7bf02d5e7465e2d58527b18028a48c203d2b65aed5a",
+  "src/analyze/mod.rs_sha256": "722e0cc62893c679d7dd9c9126b1d3149f8cc060ed8abceac3f22526f6889ec3",
+  "src/emit/ruby/library.rs_sha256": "47362f6109a58d967030f1ff613902ca32c708c996f289938a8684edfc3ac91e",
+  "started_utc": "2026-10-10T11:43:30.082852+00:00",
+  "status": "",
+  "step": "lib",
+  "test_results": 1,
+  "tree": "e60c28b67ce51d70d7427256031aec6ec9d057b0",
+  "working_diff": ""
+}

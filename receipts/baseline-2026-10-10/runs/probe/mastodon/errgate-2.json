@@ -1,0 +1,86 @@
+{
+  "command": [
+    "python3",
+    "sources/next/tools/errgate.py",
+    "./runs/probe/mastodon/base/schedule-2/probe-mastodon.stderr",
+    "./runs/probe/mastodon/s3/schedule-2/probe-mastodon.stderr"
+  ],
+  "summary": {
+    "build": "38403140",
+    "by_kind": {
+      "incompatible_binop": {
+        "corrected_delta": 0,
+        "new": 10,
+        "old": 10,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "ivar_unresolved": {
+        "corrected_delta": 0,
+        "new": 213,
+        "old": 213,
+        "raw_delta": 0,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "send_dispatch_failed": {
+        "corrected_delta": -2,
+        "new": 528,
+        "old": 530,
+        "raw_delta": -2,
+        "vanished": {
+          "gained-arm": 1,
+          "hidden": 1
+        },
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 0
+        }
+      },
+      "unsupported": {
+        "corrected_delta": 1,
+        "new": 722,
+        "old": 721,
+        "raw_delta": 1,
+        "vanished": {},
+        "verdicts": {
+          "exposed": 0,
+          "exposed-pending": 0,
+          "regressed": 0,
+          "undetermined": 1
+        }
+      }
+    },
+    "common": 1472,
+    "input_digest": "d13d8c800104f7ea",
+    "new_errors": 1473,
+    "new_only": 1,
+    "old_errors": 1474,
+    "old_only": 2,
+    "oracle_checked": 0,
+    "raw_delta": -1,
+    "vanished": {
+      "gained-arm": 1,
+      "hidden": 1
+    },
+    "verdicts": {
+      "exposed": 0,
+      "exposed-pending": 0,
+      "regressed": 0,
+      "undetermined": 1
+    }
+  }
+}
