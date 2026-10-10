@@ -1,0 +1,46 @@
+{
+  "off": {
+    "added_files": [],
+    "baseline_binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+    "baseline_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+    "binary_sha256": "117cba8f9e8f9cb2531686f9b0c24eef700d7d6d2ae5377e5ce423a07651fd04",
+    "byte_different_files": 0,
+    "command": [
+      "./target/release/structure_emit_all",
+      "./emission/off/tree"
+    ],
+    "compared_files": 11432,
+    "differences": [],
+    "exit": 0,
+    "flags": {
+      "RH_STRUCT_DUMP": null
+    },
+    "harness_sha256": "e18d90850e8631886ffcd465c96be268a9be45ae839da94413fc7cddc8ac5a4e",
+    "pair_reports_identical": true,
+    "pairs": 105,
+    "removed_files": [],
+    "seconds": 6.003815916948952
+  },
+  "on": {
+    "added_files": [],
+    "baseline_binary_sha256": "a677456508df95d0bf39564c0e410bea5f213509ddd0520c05533861f2903cb3",
+    "baseline_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+    "binary_sha256": "117cba8f9e8f9cb2531686f9b0c24eef700d7d6d2ae5377e5ce423a07651fd04",
+    "byte_different_files": 0,
+    "command": [
+      "./target/release/structure_emit_all",
+      "./emission/on/tree"
+    ],
+    "compared_files": 11432,
+    "differences": [],
+    "exit": 0,
+    "flags": {
+      "RH_STRUCT_DUMP": "./emission/on/structure.jsonl"
+    },
+    "harness_sha256": "e18d90850e8631886ffcd465c96be268a9be45ae839da94413fc7cddc8ac5a4e",
+    "pair_reports_identical": true,
+    "pairs": 105,
+    "removed_files": [],
+    "seconds": 4.7496769580757245
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "app": "discourse",
+  "binary_sha256": "926da70f3f281299f946ce4588a76f42bad4887f13eca7b531c04dcf01ddeb9c",
+  "command": [
+    "bash",
+    "rh/tools/research/probe",
+    "discourse",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_STRUCT_DUMP=./runs/discourse/unset/structure.jsonl"
+  ],
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "cwd": "./runs/discourse/unset",
+  "dump_bytes": 2984770607,
+  "dump_header": {
+    "audit": {
+      "accesses": {
+        "read": 33686098,
+        "write": 17509772
+      },
+      "ambiguous_expression_sites": 109791,
+      "reads_before_return_write": 7719112,
+      "undeclared_reads": 7719271,
+      "undeclared_writes": 265465,
+      "unmapped_expression_sites": 0
+    },
+    "binary_digest": "21b6f90a4174e5ab",
+    "counts": {
+      "ambiguity": {
+        "expression": 6730
+      },
+      "declaration": {
+        "capabilities": 521505
+      },
+      "route": {
+        "attribute": 2847,
+        "call-graph": 31359,
+        "closure-parameter": 16500,
+        "closure-result": 7237,
+        "constant": 17672,
+        "context": 354326,
+        "controller": 254,
+        "copy": 6947,
+        "dispatch": 64694,
+        "expression": 948063,
+        "fold-parameter": 15965,
+        "ivar": 16936,
+        "local": 96939,
+        "narrowing": 2694,
+        "parameter": 137384,
+        "position": 6301,
+        "reference-mode": 1129,
+        "registry": 242470,
+        "return": 462140,
+        "signature": 2
+      },
+      "slot": {
+        "attribute": 2121,
+        "closure-parameter": 6856,
+        "closure-result": 7650,
+        "constant": 3937,
+        "context": 226915,
+        "controller": 254,
+        "expression": 503869,
+        "fold-parameter": 1515,
+        "ivar": 4281,
+        "local": 36714,
+        "narrowing": 474,
+        "parameter": 24055,
+        "position": 2335,
+        "registry": 3160,
+        "return": 96632
+      },
+      "undeclared": {
+        "attribute": 2803,
+        "closure-parameter": 832,
+        "closure-result": 907,
+        "constant": 5643,
+        "context": 8974,
+        "expression": 13452,
+        "fold-parameter": 83,
+        "ivar": 1674,
+        "local": 1001,
+        "narrowing": 22,
+        "parameter": 30031,
+        "position": 24,
+        "registry": 9711,
+        "return": 339928,
+        "signature": 2
+      },
+      "witness": {
+        "read-before-write": 408714
+      },
+      "writer": {
+        "attribute": 2121,
+        "closure-parameter": 7670,
+        "closure-result": 8557,
+        "constant": 4657,
+        "context": 258100,
+        "controller": 254,
+        "expression": 503869,
+        "fold-parameter": 1515,
+        "ivar": 5058,
+        "local": 21800,
+        "narrowing": 549,
+        "parameter": 158956,
+        "position": 2509,
+        "return": 143314
+      }
+    },
+    "end_slots": 920768,
+    "inference_flags": {
+      "RH_BIN": "rh/target/release/roundhouse",
+      "RH_BRK_ALLARMS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    },
+    "input_digest": "e9fcacd3fe61a910",
+    "inventory": "syntax plus cumulative observed discovery",
+    "phase": "before-final-expansion",
+    "schema": "rh-structure-v1",
+    "start_slots": 668825
+  },
+  "dump_sha256": "e351301564e01ff00a33d9dc12bfca884f612469cf6dd416cf3e2a5c9a504bf4",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "./runs/discourse/unset/structure.jsonl"
+  },
+  "input": {
+    "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "files": 26331,
+    "path": "corpus/apps/discourse",
+    "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "schedule": "unset",
+  "seconds": 601.5428554579848,
+  "source_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "source_patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "source_tree": "5fbefd5f66868555a04505e00218a6dded0f3d58",
+  "started_utc": "2026-10-10T18:22:23.667315+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "all_reported_passed": 4970,
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "baseline/target",
+  "command": [
+    "cargo",
+    "test",
+    "--locked",
+    "--no-fail-fast"
+  ],
+  "completed": true,
+  "cwd": "rh-base",
+  "dyld_library_path": "baseline/lib/openexr:baseline/lib/openjph",
+  "elapsed_seconds": 1716.7061310829595,
+  "env_sha256": "dde8519db2a9316d9fe7eb06c01b3f6385469832c204fb3a30f42cf1958b880d",
+  "exit": 101,
+  "failed": 3,
+  "failed_targets": [
+    "`--lib`",
+    "`--test haml_class_shortcut_merge`"
+  ],
+  "failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+    "spinel_renders_the_same_page"
+  ],
+  "finished_utc": "2026-10-10T14:25:25.101564+00:00",
+  "head": "559ac52bbe77abb16df26572485d6f914047b057",
+  "ignored": 236,
+  "index_tree": "2ed4c4fdfde8d5d16e1bff751faff3eebdb5c1ba",
+  "label": "next",
+  "log": "evidence/next-suite.log",
+  "passed": 4970,
+  "ruby": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+  "rust_test_threads": "1",
+  "source_receipt": "../../baseline-2026-10-10/evidence/next-suite.json",
+  "spinel": "toolchains/bin/spinel",
+  "spinel_sha256": "fbd5118b57dcd582b7d6e35c9452f6bc970740334ca9318cdf94c9f47bba0857",
+  "src/analyze/body/mod.rs_sha256": "8c971e292f4a2dbc48a4547b7620bf6d87d374a6e3afd3677118ff7a283cdcda",
+  "src/analyze/mod.rs_sha256": "13a83ff7423dc9d973ec1aa525a77cc4aa5e046f34b52e21e25e38f80e2887a4",
+  "src/emit/ruby/library.rs_sha256": "484aa921e7a95a638c15292a360b5199b3a84fe99dc82b28dfebfab57ae0470d",
+  "started_utc": "2026-10-10T13:56:48.225290+00:00",
+  "step": "suite",
+  "test_results": 697,
+  "tree": "9a6b97c0b5f25bcb27b833232e21d2cdd63d3550",
+  "working_diff_sha256": "f7f168930762ab9549b72383c808c5d5180de659efb2bf787284b44b1809b773"
+}

@@ -1,0 +1,134 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 4851343,
+        "write": 1755726
+      },
+      "ambiguous_expression_sites": 34016,
+      "reads_before_return_write": 1557864,
+      "undeclared_reads": 1779631,
+      "undeclared_writes": 73648,
+      "unmapped_expression_sites": 2216
+    },
+    "right": {
+      "accesses": {
+        "read": 4850642,
+        "write": 1755726
+      },
+      "ambiguous_expression_sites": 34016,
+      "reads_before_return_write": 1557224,
+      "undeclared_reads": 1779631,
+      "undeclared_writes": 73648,
+      "unmapped_expression_sites": 2216
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 178,
+      "right_only": 122,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attachable_sgid\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "Credit",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"valid?\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"IncomingWebhooks::MailchimpUnsubscribesController\\\",\\\"instance\\\",\\\"email_type\\\"]\",\"body/1/0/1/0/0\"]",
+            "[\"Settings::General\",\"instance\",\"broadcast_update_to\"]",
+            "Settings::General",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Authentication::Authenticator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_profile_updated_at\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/authentication/authenticator.rb\\\\\\\",\\\\\\\"5285\\\\\\\",\\\\\\\"5310\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"User\",\"instance\",\"delete\"]",
+            "User",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 178,
+      "right_only": 122,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attachable_sgid\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"valid?\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"IncomingWebhooks::MailchimpUnsubscribesController\\\",\\\"instance\\\",\\\"email_type\\\"]\",\"body/1/0/1/0/0\"]",
+            "[\"Settings::General\",\"instance\",\"broadcast_update_to\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Authentication::Authenticator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_profile_updated_at\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/authentication/authenticator.rb\\\\\\\",\\\\\\\"5285\\\\\\\",\\\\\\\"5310\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"User\",\"instance\",\"delete\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "37a68b85b2155f47",
+  "left": "./runs/forem/unset/structure.jsonl",
+  "right": "./runs/forem/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 730539,
+    "slot": 263592,
+    "writer": 310341
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 4851343,
+        "write": 1755726
+      },
+      "ambiguous_expression_sites": 34016,
+      "reads_before_return_write": 1557864,
+      "undeclared_reads": 1779631,
+      "undeclared_writes": 73648,
+      "unmapped_expression_sites": 2216
+    },
+    "right": {
+      "accesses": {
+        "read": 5018187,
+        "write": 1814801
+      },
+      "ambiguous_expression_sites": 34458,
+      "reads_before_return_write": 1601137,
+      "undeclared_reads": 1828680,
+      "undeclared_writes": 75139,
+      "unmapped_expression_sites": 2216
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 1,
+      "right_only": 6,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"StoriesController\\\",\\\"instance\\\",\\\"assign_feed_stories\\\"]\",\"body/2/0/1/0\"]",
+            "[\"binding\",\"[\\\"StoriesController\\\",\\\"instance\\\",\\\"assign_feed_stories\\\"]\",\"StoriesController\",\"instance\",\"local\",\"__safe_nav9652\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/1/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/1/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/1/0/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 172,
+      "right_only": 296,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attachable_sgid\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "Credit",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"assign_attributes\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"id=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"purchase_id_previously_changed?\"]",
+            "Credit",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"StoriesController\\\",\\\"instance\\\",\\\"assign_feed_stories\\\"]\",\"body/2/0/1/0\"]",
+            "[\"[\\\"StoriesController\\\",\\\"instance\\\",\\\"assign_feed_stories\\\"]\",\"__safe_nav9652\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 11,
+      "right_only": 29,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"set_surrogate_key_header\\\"]\",\"body/1/2\"]",
+            "[\"String\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"Organization\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/2/1/0/2/0\"]",
+            "[\"Organization\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"User\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/2/1/0/1/0\"]",
+            "[\"User\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/2/1/0/2\"]",
+            "[\"User\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 184,
+      "right_only": 339,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attachable_sgid\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"assign_attributes\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"id=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"purchase_id_previously_changed?\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 0,
+      "right_only": 1,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 0,
+      "right_only": 2,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/1/0\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"cached_tag_list\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/1/0/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 14,
+      "right_only": 5,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ArticlesController\",\"instance\",\"organization_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"organization_url\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"organization_url\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"reaction_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"reaction_url\\\"]\",\"no-body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"long_filename?\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"long_filename?\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"long_filename?\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"cloud_cover_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"cloud_cover_url\\\"]\",\"no-body\"]"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "37a68b85b2155f47",
+  "left": "./runs/forem/unset/structure.jsonl",
+  "right": "./runs/forem/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 730526,
+    "slot": 263592,
+    "writer": 310327
+  }
+}

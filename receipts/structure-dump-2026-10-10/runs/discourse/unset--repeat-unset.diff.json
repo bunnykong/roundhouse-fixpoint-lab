@@ -1,0 +1,134 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 33686098,
+        "write": 17509772
+      },
+      "ambiguous_expression_sites": 109791,
+      "reads_before_return_write": 7719112,
+      "undeclared_reads": 7719271,
+      "undeclared_writes": 265465,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 33675676,
+        "write": 17509772
+      },
+      "ambiguous_expression_sites": 109791,
+      "reads_before_return_write": 7709192,
+      "undeclared_reads": 7719271,
+      "undeclared_writes": 265465,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 1302,
+      "right_only": 1405,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"id?\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"image_upload_loaded?\"]",
+            "Badge",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"[]=\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"allow_title_previously_was\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id=\"]",
+            "Badge",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 1302,
+      "right_only": 1405,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"id?\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"image_upload_loaded?\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"[]=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"allow_title_previously_was\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id=\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "e9fcacd3fe61a910",
+  "left": "./runs/discourse/unset/structure.jsonl",
+  "right": "./runs/discourse/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 2429255,
+    "slot": 920768,
+    "writer": 1118929
+  }
+}

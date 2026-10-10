@@ -1,0 +1,146 @@
+{
+  "app": "campfire",
+  "binary_sha256": "926da70f3f281299f946ce4588a76f42bad4887f13eca7b531c04dcf01ddeb9c",
+  "command": [
+    "bash",
+    "rh/tools/research/probe",
+    "campfire",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_STRUCT_DUMP=./runs/campfire/unset/structure.jsonl"
+  ],
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "cwd": "./runs/campfire/unset",
+  "dump_bytes": 97331914,
+  "dump_header": {
+    "audit": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    },
+    "binary_digest": "21b6f90a4174e5ab",
+    "counts": {
+      "ambiguity": {
+        "expression": 709
+      },
+      "declaration": {
+        "capabilities": 33774
+      },
+      "route": {
+        "attribute": 65,
+        "call-graph": 627,
+        "closure-parameter": 619,
+        "closure-result": 581,
+        "constant": 917,
+        "context": 7832,
+        "controller": 65,
+        "copy": 135,
+        "dispatch": 4650,
+        "expression": 62107,
+        "fold-parameter": 10,
+        "ivar": 694,
+        "local": 5012,
+        "narrowing": 33,
+        "parameter": 7851,
+        "reference-mode": 9,
+        "registry": 18216,
+        "return": 26393
+      },
+      "slot": {
+        "attribute": 89,
+        "closure-parameter": 248,
+        "closure-result": 634,
+        "constant": 116,
+        "context": 4398,
+        "controller": 65,
+        "expression": 33562,
+        "fold-parameter": 4,
+        "ivar": 209,
+        "local": 1117,
+        "narrowing": 13,
+        "parameter": 927,
+        "registry": 484,
+        "return": 8356
+      },
+      "undeclared": {
+        "attribute": 65,
+        "closure-parameter": 34,
+        "closure-result": 73,
+        "constant": 554,
+        "context": 133,
+        "expression": 2676,
+        "ivar": 208,
+        "local": 12,
+        "parameter": 3820,
+        "registry": 2318,
+        "return": 20036
+      },
+      "witness": {
+        "read-before-write": 24488
+      },
+      "writer": {
+        "attribute": 89,
+        "closure-parameter": 282,
+        "closure-result": 707,
+        "constant": 109,
+        "context": 4002,
+        "controller": 65,
+        "expression": 33562,
+        "fold-parameter": 4,
+        "ivar": 189,
+        "local": 2066,
+        "narrowing": 13,
+        "parameter": 10957,
+        "return": 9996
+      }
+    },
+    "end_slots": 50222,
+    "inference_flags": {
+      "RH_BIN": "rh/target/release/roundhouse",
+      "RH_BRK_ALLARMS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    },
+    "input_digest": "8f77670b55471db9",
+    "inventory": "syntax plus cumulative observed discovery",
+    "phase": "before-final-expansion",
+    "schema": "rh-structure-v1",
+    "start_slots": 44338
+  },
+  "dump_sha256": "ea349af1ad0195e0790b74cf2f83dcbcb75f7c1a632bb8eb758b996536441dff",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "./runs/campfire/unset/structure.jsonl"
+  },
+  "input": {
+    "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "files": 733,
+    "path": "corpus/apps/campfire",
+    "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "schedule": "unset",
+  "seconds": 2.841681250021793,
+  "source_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "source_patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "source_tree": "5fbefd5f66868555a04505e00218a6dded0f3d58",
+  "started_utc": "2026-10-10T18:13:51.465928+00:00"
+}

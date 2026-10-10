@@ -1,0 +1,134 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 5516202,
+        "write": 2684305
+      },
+      "ambiguous_expression_sites": 21794,
+      "reads_before_return_write": 1516171,
+      "undeclared_reads": 1616697,
+      "undeclared_writes": 83892,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 5515447,
+        "write": 2684305
+      },
+      "ambiguous_expression_sites": 21794,
+      "reads_before_return_write": 1515795,
+      "undeclared_reads": 1616697,
+      "undeclared_writes": 83892,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 119,
+      "right_only": 97,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"validate_token_api_access\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::OnboardingsController\",\"instance\",\"finish_onboarding\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V2::Accounts::ReportsController\\\",\\\"instance\\\",\\\"build_summary\\\"]\",\"body/1/0\"]",
+            "[\"V2::Reports::Conversations::MetricBuilder\",\"instance\",\"bot_summary\"]",
+            "V2::Reports::Conversations::MetricBuilder",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"current_account\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"validate_and_get_locale\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V2::Accounts::ReportsController\\\",\\\"instance\\\",\\\"build_summary\\\"]\",\"body/1/0\"]",
+            "[\"V2::Reports::Conversations::MetricBuilder\",\"instance\",\"builder_params\"]",
+            "V2::Reports::Conversations::MetricBuilder",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 119,
+      "right_only": 97,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"validate_token_api_access\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::OnboardingsController\",\"instance\",\"finish_onboarding\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V2::Accounts::ReportsController\\\",\\\"instance\\\",\\\"build_summary\\\"]\",\"body/1/0\"]",
+            "[\"V2::Reports::Conversations::MetricBuilder\",\"instance\",\"bot_summary\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"current_account\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"validate_and_get_locale\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V2::Accounts::ReportsController\\\",\\\"instance\\\",\\\"build_summary\\\"]\",\"body/1/0\"]",
+            "[\"V2::Reports::Conversations::MetricBuilder\",\"instance\",\"builder_params\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "45c1b795b101c834",
+  "left": "./runs/chatwoot/unset/structure.jsonl",
+  "right": "./runs/chatwoot/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 835144,
+    "slot": 293697,
+    "writer": 355007
+  }
+}

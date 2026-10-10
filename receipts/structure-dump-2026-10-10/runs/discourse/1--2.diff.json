@@ -1,0 +1,1019 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 36790079,
+        "write": 18804412
+      },
+      "ambiguous_expression_sites": 107531,
+      "reads_before_return_write": 8765958,
+      "undeclared_reads": 8759776,
+      "undeclared_writes": 268407,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 36654236,
+        "write": 18496642
+      },
+      "ambiguous_expression_sites": 105447,
+      "reads_before_return_write": 8807509,
+      "undeclared_reads": 8800429,
+      "undeclared_writes": 266919,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "attribute",
+      "left_only": 15,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"UserSilencer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_moderators\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/user_silencer.rb\\\\\\\",\\\\\\\"3220\\\\\\\",\\\\\\\"3237\\\\\\\"]\\\"]\",\"body/2/2/0\"]",
+            "[\"User\",\"reason\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"UserSilencer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_moderators\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/user_silencer.rb\\\\\\\",\\\\\\\"3220\\\\\\\",\\\\\\\"3237\\\\\\\"]\\\"]\",\"body/2/3/5/1\"]",
+            "[\"User\",\"reason\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"UserSilencer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"silence\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/user_silencer.rb\\\\\\\",\\\\\\\"689\\\\\\\",\\\\\\\"696\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"User\",\"keep_posts\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ImportExport::BaseExporter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"export_group_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/import_export/base_exporter.rb\\\\\\\",\\\\\\\"2781\\\\\\\",\\\\\\\"2799\\\\\\\"]\\\"]\",\"body/1/1/0/0\"]",
+            "[\"User\",\"user_ids\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostActionDestroyer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"perform\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/post_action_destroyer.rb\\\\\\\",\\\\\\\"571\\\\\\\",\\\\\\\"578\\\\\\\"]\\\"]\",\"body/6/0/0/0\"]",
+            "[\"Post\",\"skip_delete_check\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "call-graph",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "edge:TopicView#image_url->Post#image_url"
+          ],
+          [
+            "edge:TopicView#summary->Post#excerpt"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "closure-parameter",
+      "left_only": 7,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseMcp::ToolHelpers\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"visible_tag_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_mcp/tool_helpers.rb\\\\\\\",\\\\\\\"3682\\\\\\\",\\\\\\\"3697\\\\\\\"]\\\"]\",\"body/1/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseMcp::ToolHelpers\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"visible_tag_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_mcp/tool_helpers.rb\\\\\\\",\\\\\\\"3682\\\\\\\",\\\\\\\"3697\\\\\\\"]\\\"]\",\"body/1/1\",\"x\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseMcp::ToolHelpers\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"visible_tag_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_mcp/tool_helpers.rb\\\\\\\",\\\\\\\"3682\\\\\\\",\\\\\\\"3697\\\\\\\"]\\\"]\",\"body/1/1/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseMcp::ToolHelpers\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"visible_tag_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_mcp/tool_helpers.rb\\\\\\\",\\\\\\\"3682\\\\\\\",\\\\\\\"3697\\\\\\\"]\\\"]\",\"body/1/1\",\"x\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Email::MessageIdService\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"find_post_from_message_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/email/message_id_service.rb\\\\\\\",\\\\\\\"2736\\\\\\\",\\\\\\\"2762\\\\\\\"]\\\"]\",\"body/1/0/0/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Email::MessageIdService\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"find_post_from_message_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/email/message_id_service.rb\\\\\\\",\\\\\\\"2736\\\\\\\",\\\\\\\"2762\\\\\\\"]\\\"]\",\"body/1/0/0/0/1\",\"message_id\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/1/1/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/1/1/1\",\"x\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/1/1/1/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/1/1/1\",\"x\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/4/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostAlerter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"notify_users\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/services/post_alerter.rb\\\\\\\",\\\\\\\"26816\\\\\\\",\\\\\\\"26828\\\\\\\"]\\\"]\",\"body/4/1\",\"u\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 339,
+      "right_only": 289,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"ListController\",\"instance\",\"local\",\"list\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"body/0/0/0/0\"]",
+            "[\"binding\",\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"ListController\",\"instance\",\"local\",\"list\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"body/2/1/0/0\"]",
+            "[\"binding\",\"[\\\"ListController\\\",\\\"instance\\\",\\\"localize_topic_list_content\\\"]\",\"ListController\",\"instance\",\"local\",\"list\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"publish\\\"]\",\"body/6/0/0\"]",
+            "[\"binding\",\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"publish\\\"]\",\"TopicsController\",\"instance\",\"local\",\"topic\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/0/0/1/0\"]",
+            "[\"binding\",\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"TopicsController\",\"instance\",\"local\",\"__safe_nav7526\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/1/0\"]",
+            "[\"binding\",\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"TopicsController\",\"instance\",\"local\",\"__safe_nav7526\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "controller",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "phase:analysis",
+            "[\"StaticController\",\"show\",\"rename_faq_to_guidelines\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 1411,
+      "right_only": 1558,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"assign_attributes\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"created_at_changed?\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"listable=\"]",
+            "Badge",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"changed\"]",
+            "Badge",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"clear_user_titles!\"]",
+            "Badge",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "fold-parameter",
+      "left_only": 99,
+      "right_only": 49,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CategoryUser\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"muted_category_ids_query\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/models/category_user.rb\\\\\\\",\\\\\\\"7247\\\\\\\",\\\\\\\"7271\\\\\\\"]\\\"]\",\"body/2/0/0/1/0\"]",
+            "[\"TopicQuery\",\"instance\",\"initialize\",\"user\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CategoryUser\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"muted_category_ids_query\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/models/category_user.rb\\\\\\\",\\\\\\\"7247\\\\\\\",\\\\\\\"7271\\\\\\\"]\\\"]\",\"body/2/0/0/1/0\"]",
+            "[\"TopicQuery\",\"instance\",\"remove_muted\",\"user\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CategoryUser\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"muted_category_ids_query\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/models/category_user.rb\\\\\\\",\\\\\\\"7247\\\\\\\",\\\\\\\"7271\\\\\\\"]\\\"]\",\"body/2/0/0/1/0\"]",
+            "[\"TopicQuery\",\"instance\",\"remove_muted_categories\",\"user\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseTagging\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"tags_for_saving\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_tagging.rb\\\\\\\",\\\\\\\"31982\\\\\\\",\\\\\\\"31997\\\\\\\"]\\\"]\",\"body/2/1/0/0/0\"]",
+            "[\"DiscourseTagging\",\"class\",\"add_or_create_synonyms\",\"new_synonym_names\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseTagging\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"tags_for_saving\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_tagging.rb\\\\\\\",\\\\\\\"31982\\\\\\\",\\\\\\\"31997\\\\\\\"]\\\"]\",\"body/2/1/0/0/0\"]",
+            "[\"DiscourseTagging\",\"class\",\"tags_for_saving\",\"tags_arg\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseTagging\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"visible_tag_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_tagging.rb\\\\\\\",\\\\\\\"27409\\\\\\\",\\\\\\\"27424\\\\\\\"]\\\"]\",\"body/1/0/1/1\"]",
+            "[\"DiscourseTagging\",\"class\",\"visible_tag_ids\",\"guardian\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "ivar",
+      "left_only": 11,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AdminUserIndexQuery\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"filter_by_activation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/admin_user_index_query.rb\\\\\\\",\\\\\\\"2395\\\\\\\",\\\\\\\"2415\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"AdminUserIndexQuery\",\"query\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AdminUserIndexQuery\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"filter_by_activation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/admin_user_index_query.rb\\\\\\\",\\\\\\\"2395\\\\\\\",\\\\\\\"2415\\\\\\\"]\\\"]\",\"body/2/0\"]",
+            "[\"AdminUserIndexQuery\",\"query\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AdminUserIndexQuery\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"filter_by_ip\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/admin_user_index_query.rb\\\\\\\",\\\\\\\"4597\\\\\\\",\\\\\\\"4609\\\\\\\"]\\\"]\",\"body/1/2/0/2/0/0\"]",
+            "[\"AdminUserIndexQuery\",\"query\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 35,
+      "right_only": 66,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"body/0/1/1/0/1/1/0\"]",
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"post\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"body/0/1/2/1/1/1\"]",
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"post\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"body/0/1/2/1/2/0\"]",
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"display_post\\\"]\",\"post\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"publish\\\"]\",\"body/6/0/0\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"publish\\\"]\",\"topic\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/0/0/1/0\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"__safe_nav7526\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/1/0\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"__safe_nav7526\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "narrowing",
+      "left_only": 11,
+      "right_only": 41,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ImageSizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"resize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\",\\\\\\\"108\\\\\\\",\\\\\\\"114\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"!blank_width\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ImageSizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"resize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\",\\\\\\\"108\\\\\\\",\\\\\\\"114\\\\\\\"]\\\"]\",\"body/2/2/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_width\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ImageSizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"resize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\",\\\\\\\"108\\\\\\\",\\\\\\\"114\\\\\\\"]\\\"]\",\"body/2/3/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_height\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "parameter",
+      "left_only": 100,
+      "right_only": 148,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"find_post_from_params_by_date\\\"]\",\"body/2/0\"]",
+            "[\"Post\",\"instance\",\"limit\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"PostsController\\\",\\\"instance\\\",\\\"find_post_from_params_by_date\\\"]\",\"body/2/0/0\"]",
+            "[\"Post\",\"instance\",\"order\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseDiff\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"generate_side_by_side_html\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_diff.rb\\\\\\\",\\\\\\\"6335\\\\\\\",\\\\\\\"6361\\\\\\\"]\\\"]\",\"body/1/1/0/0\"]",
+            "[\"Roundhouse::ParamValue\",\"instance\",\"[]\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseDiff\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_class_or_wrap_in_tags\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_diff.rb\\\\\\\",\\\\\\\"5599\\\\\\\",\\\\\\\"5624\\\\\\\"]\\\"]\",\"body/0/0\"]",
+            "[\"ActionController::Parameters\",\"instance\",\"start_with?\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseDiff\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_class_or_wrap_in_tags\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_diff.rb\\\\\\\",\\\\\\\"5599\\\\\\\",\\\\\\\"5624\\\\\\\"]\\\"]\",\"body/0/0\"]",
+            "[\"ActionDispatch::Http::UploadedFile\",\"instance\",\"start_with?\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseDiff\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_class_or_wrap_in_tags\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_diff.rb\\\\\\\",\\\\\\\"5599\\\\\\\",\\\\\\\"5624\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"ActionController::Parameters\",\"instance\",\"index\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "position",
+      "left_only": 73,
+      "right_only": 35,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"bulk_unread_topic_ids\\\"]\",\"body/1/1/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"bulk_unread_topic_ids\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/1/1\\\\\\\"]\\\"]\",\"Key\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"private_message_filter\\\"]\",\"body/1/4\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"private_message_filter\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/4\\\\\\\"]\\\"]\",\"Key\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CookedProcessorMixin\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"convert_to_link!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/cooked_processor_mixin.rb\\\\\\\",\\\\\\\"12062\\\\\\\",\\\\\\\"12078\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CookedProcessorMixin\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"convert_to_link!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/cooked_processor_mixin.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12062\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12078\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Emoji\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"[]\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/models/emoji.rb\\\\\\\",\\\\\\\"2439\\\\\\\",\\\\\\\"2441\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Emoji\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/models/emoji.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2439\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2441\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Idx(1)\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Emoji\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"url_for\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/models/emoji.rb\\\\\\\",\\\\\\\"3435\\\\\\\",\\\\\\\"3442\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Emoji\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_for\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/models/emoji.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3435\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3442\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Idx(1)\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Jobs::PullHotlinkedImages\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"pull_hotlinked_images\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/jobs/regular/pull_hotlinked_images.rb\\\\\\\",\\\\\\\"692\\\\\\\",\\\\\\\"713\\\\\\\"]\\\"]\",\"body/5/1/0/0/4/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::PullHotlinkedImages\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"pull_hotlinked_images\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/pull_hotlinked_images.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"692\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"713\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/5/1/0/0/4/1/1\\\\\\\"]\\\"]\",\"Elem\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "reference-mode",
+      "left_only": 1,
+      "right_only": 11,
+      "samples": {
+        "left_only": [
+          [
+            "Post#image_url"
+          ]
+        ],
+        "right_only": [
+          [
+            "Jobs::UpdateUsername#execute"
+          ],
+          [
+            "PrettyText#avatar_img"
+          ],
+          [
+            "QuoteRewriter#rewrite_cooked_username"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 390,
+      "right_only": 371,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"create_errors_array\\\"]\",\"body/2/0/1\"]",
+            "[\"ActiveRecord::RecordInvalid\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"create_errors_array\\\"]\",\"body/2/1/0/1\"]",
+            "[\"ActiveRecord::RecordInvalid\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"serialize_data\\\"]\",\"body/1/1/1/0/1\"]",
+            "[\"ActiveModel::Serialization\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CrawlerDetection\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"crawler_layout_request?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/crawler_detection.rb\\\\\\\",\\\\\\\"1941\\\\\\\",\\\\\\\"1964\\\\\\\"]\\\"]\",\"body/0/0\"]",
+            "[\"ActionDispatch::Request\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseTagging\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"filter_allowed_tags\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_tagging.rb\\\\\\\",\\\\\\\"18282\\\\\\\",\\\\\\\"18301\\\\\\\"]\\\"]\",\"body/2/0/1/0\"]",
+            "[\"Category\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DiscourseTagging\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"filter_allowed_tags\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/discourse_tagging.rb\\\\\\\",\\\\\\\"18282\\\\\\\",\\\\\\\"18301\\\\\\\"]\\\"]\",\"body/3/0/1/1/0\"]",
+            "[\"Category\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 1900,
+      "right_only": 2326,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"assign_attributes\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"created_at_changed?\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"listable=\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"badge_type_id\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"changed\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::BadgesController\\\",\\\"instance\\\",\\\"update_badge_from_params\\\"]\",\"body/0/1/1/0/5/1/0/1\"]",
+            "[\"Badge\",\"instance\",\"clear_user_titles!\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 43,
+      "right_only": 45,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"ambiguous\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Converters::MarkdownEngine::Config\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"coerce\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/converters/lib/migrations/converters/markdown_engine/config.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5416\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/1/1/1/0\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Converters::MarkdownEngine::Config\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"coerce\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/converters/lib/migrations/converters/markdown_engine/config.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5416\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/1/2/1/0\\\\\\\\\\\\\\\"]\\\\\\\"]\\\"]\",\"Migrations::Converters::MarkdownEngine::Config\",\"class\",\"local\",\"value\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"ambiguous\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_all_table_names\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/tooling/lib/migrations/tooling/schema/dsl/ignored_file_editor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7277\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7300\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/1/0/0\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_all_table_names\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/tooling/lib/migrations/tooling/schema/dsl/ignored_file_editor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7277\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7300\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/1/0/1/0\\\\\\\\\\\\\\\"]\\\\\\\"]\\\"]\",\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\",\"instance\",\"local\",\"block_node\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"ambiguous\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"find_call_with_table\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/tooling/lib/migrations/tooling/schema/dsl/ignored_file_editor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2889\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2909\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/0/0/0\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"find_call_with_table\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/migrations/tooling/lib/migrations/tooling/schema/dsl/ignored_file_editor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2889\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2909\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body/0/0/1/0\\\\\\\\\\\\\\\"]\\\\\\\"]\\\"]\",\"Migrations::Tooling::Schema::DSL::IgnoredFileEditor\",\"instance\",\"local\",\"block_node\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"ambiguous\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_category_change\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5634\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5673\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_tag_changes\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6176\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6211\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"alert_users\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27699\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27710\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_or_update_revision\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23099\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23124\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"perform_edit\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25436\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25448\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"remove_flags_and_unhide_post\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22083\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22111\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\"]\\\"]\",\"PostRevisor\",\"class\",\"local\",\"added_tags\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AdminDashboard::Reports::Registry\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"dispatch_per_source\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/admin_dashboard/reports/registry.rb\\\\\\\",\\\\\\\"402\\\\\\\",\\\\\\\"421\\\\\\\"]\\\"]\",\"AdminDashboard::Reports::Registry\",\"class\",\"local\",\"__mt_524\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AdminDashboard::Reports::Registry\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"dispatch_per_source\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/admin_dashboard/reports/registry.rb\\\\\\\",\\\\\\\"402\\\\\\\",\\\\\\\"421\\\\\\\"]\\\"]\",\"AdminDashboard::Reports::Registry\",\"class\",\"local\",\"group\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "controller",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"StaticController\",\"show\",\"rename_faq_to_guidelines\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "fold-parameter",
+      "left_only": 0,
+      "right_only": 9,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"Jobs::UpdateUsername\",\"instance\",\"execute\",\"args\"]"
+          ],
+          [
+            "[\"PostRevisor\",\"class\",\"create_small_action_for_tag_changes\",\"added_tags\"]"
+          ],
+          [
+            "[\"PostRevisor\",\"class\",\"tags_changed_raw\",\"added\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "narrowing",
+      "left_only": 4,
+      "right_only": 11,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"!blank_width\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_height\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_width\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "parameter",
+      "left_only": 3,
+      "right_only": 5,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"[]\",\"index:1\"]"
+          ],
+          [
+            "[\"ActionDispatch::Http::UploadedFile\",\"instance\",\"[]\",\"index:1\"]"
+          ],
+          [
+            "[\"Post\",\"instance\",\"+\",\"index:0\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"insert\",\"index:0\"]"
+          ],
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"insert\",\"index:1\"]"
+          ],
+          [
+            "[\"ActionDispatch::Http::UploadedFile\",\"instance\",\"insert\",\"index:0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "position",
+      "left_only": 24,
+      "right_only": 13,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"bulk_unread_topic_ids\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/1/1\\\\\\\"]\\\"]\",\"Key\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"private_message_filter\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/4\\\\\\\"]\\\"]\",\"Key\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CookedProcessorMixin\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"convert_to_link!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/cooked_processor_mixin.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12062\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12078\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\"]\",\"Elem\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::PullHotlinkedImages\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"pull_hotlinked_images\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/pull_hotlinked_images.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"692\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"713\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/5/1/0/0/4/1/1\\\\\\\"]\\\"]\",\"Elem\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::UpdateUsername\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"execute\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"242\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"249\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"Val\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::UpdateUsername\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"execute\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"242\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"249\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0/0\\\\\\\"]\\\"]\",\"Val\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 24,
+      "right_only": 26,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"EmbedHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"embed_post_date\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/helpers/embed_helper.rb\\\\\\\",\\\\\\\"151\\\\\\\",\\\\\\\"166\\\\\\\"]\\\"]\",\"EmbedHelper\",\"instance\",\"local\",\"dt\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"EmbedHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"embed_post_date\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/helpers/embed_helper.rb\\\\\\\",\\\\\\\"151\\\\\\\",\\\\\\\"166\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"EmbedHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"embed_post_date_title\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/helpers/embed_helper.rb\\\\\\\",\\\\\\\"56\\\\\\\",\\\\\\\"77\\\\\\\"]\\\"]\",\"EmbedHelper\",\"instance\",\"local\",\"dt\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"EmbedHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"embed_post_date_title\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/helpers/embed_helper.rb\\\\\\\",\\\\\\\"56\\\\\\\",\\\\\\\"77\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Migrations::Conversion::StepRunner\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"initialize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/migrations/core/lib/migrations/conversion/step_runner.rb\\\\\\\",\\\\\\\"1708\\\\\\\",\\\\\\\"1718\\\\\\\"]\\\"]\",\"Migrations::Conversion::StepRunner\",\"instance\",\"local\",\"step\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Migrations::Conversion::StepRunner\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"initialize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/migrations/core/lib/migrations/conversion/step_runner.rb\\\\\\\",\\\\\\\"1708\\\\\\\",\\\\\\\"1718\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"ambiguous\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_category_change\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5634\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5673\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_tag_changes\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6176\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6211\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"alert_users\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27699\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27710\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_or_update_revision\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23099\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23124\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"perform_edit\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25436\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25448\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"remove_flags_and_unhide_post\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22083\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22111\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"body\\\\\\\\\\\\\\\"]\\\\\\\"]\\\"]\",\"PostRevisor\",\"class\",\"local\",\"added_tags\"]",
+            "[\"ambiguous\",\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_category_change\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5634\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5673\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_small_action_for_tag_changes\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6176\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"6211\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"alert_users\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27699\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"27710\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"create_or_update_revision\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23099\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"23124\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"perform_edit\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25436\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"25448\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"PostRevisor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"remove_flags_and_unhide_post\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22083\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"22111\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"FinalDestination::SSRFDetector\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"ip_in_ranges?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/final_destination/ssrf_detector.rb\\\\\\\",\\\\\\\"3483\\\\\\\",\\\\\\\"3496\\\\\\\"]\\\"]\",\"FinalDestination::SSRFDetector\",\"class\",\"local\",\"ip\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"FinalDestination::SSRFDetector\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"ip_in_ranges?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/final_destination/ssrf_detector.rb\\\\\\\",\\\\\\\"3483\\\\\\\",\\\\\\\"3496\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"PostRevisor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"tags_changed_raw\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\",\\\\\\\"6699\\\\\\\",\\\\\\\"6715\\\\\\\"]\\\"]\",\"PostRevisor\",\"class\",\"local\",\"added\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"PostRevisor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"tags_changed_raw\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/post_revisor.rb\\\\\\\",\\\\\\\"6699\\\\\\\",\\\\\\\"6715\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "controller",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"StaticController\",\"show\",\"rename_faq_to_guidelines\"]",
+            "phase:analysis"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "fold-parameter",
+      "left_only": 0,
+      "right_only": 9,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"Jobs::UpdateUsername\",\"instance\",\"execute\",\"args\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"PostRevisor\",\"class\",\"create_small_action_for_tag_changes\",\"added_tags\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"PostRevisor\",\"class\",\"tags_changed_raw\",\"added\"]",
+            "phase:analysis"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "narrowing",
+      "left_only": 5,
+      "right_only": 12,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"!blank_width\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ImageSizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"resize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\",\\\\\\\"108\\\\\\\",\\\\\\\"114\\\\\\\"]\\\"]\",\"body/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_height\"]",
+            "[\"ambiguous\",\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"crop\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"547\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"present_width\"]",
+            "[\"ambiguous\",\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"crop\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"547\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ImageSizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resize\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/image_sizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"108\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"114\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0/0/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0/0/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/0/0/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"show\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/19/1/0/0/1/0\\\\\\\"]\\\"]\",\"truthy___safe_nav7526\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/19/1/0/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "parameter",
+      "left_only": 150,
+      "right_only": 216,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"[]\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"Email::MessageIdService\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"find_post_from_message_ids\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/email/message_id_service.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2736\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2762\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/1/0/0/0/1/0\\\"]\",\"receiver\",\"Email::MessageIdService\"]"
+          ],
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"[]\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Email::MessageIdService\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"find_post_from_message_ids\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/email/message_id_service.rb\\\\\\\",\\\\\\\"2736\\\\\\\",\\\\\\\"2762\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0\"]"
+          ],
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"[]\",\"index:1\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"Email::MessageIdService\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"find_post_from_message_ids\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/email/message_id_service.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2736\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2762\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/1/0/0/0/1/0\\\"]\",\"receiver\",\"Email::MessageIdService\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"!=\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ONPDiff\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"snake\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/onpdiff.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2387\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2392\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/3/1/2/0\\\"]\",\"receiver\",\"ONPDiff\"]"
+          ],
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"!=\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ONPDiff\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"snake\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/onpdiff.rb\\\\\\\",\\\\\\\"2387\\\\\\\",\\\\\\\"2392\\\\\\\"]\\\"]\",\"body/3/1/2/0\"]"
+          ],
+          [
+            "[\"ActionController::Parameters\",\"instance\",\"==\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"DiscourseDiff\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"side_by_side_markdown\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/discourse_diff.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2464\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"2485\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/2/1/2/0\\\"]\",\"receiver\",\"DiscourseDiff\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "position",
+      "left_only": 25,
+      "right_only": 13,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"bulk_unread_topic_ids\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/1/1\\\\\\\"]\\\"]\",\"Key\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"bulk_unread_topic_ids\\\"]\",\"body/1/1/1\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"TopicsController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"private_message_filter\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/4\\\\\\\"]\\\"]\",\"Key\"]",
+            "[\"[\\\"TopicsController\\\",\\\"instance\\\",\\\"private_message_filter\\\"]\",\"body/1/4\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CookedProcessorMixin\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"convert_to_link!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/lib/cooked_processor_mixin.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12062\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12078\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"CookedProcessorMixin\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"convert_to_link!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/lib/cooked_processor_mixin.rb\\\\\\\",\\\\\\\"12062\\\\\\\",\\\\\\\"12078\\\\\\\"]\\\"]\",\"body/1/0\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::PullHotlinkedImages\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"pull_hotlinked_images\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/pull_hotlinked_images.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"692\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"713\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/5/1/0/0/4/1/1\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Jobs::PullHotlinkedImages\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"pull_hotlinked_images\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/jobs/regular/pull_hotlinked_images.rb\\\\\\\",\\\\\\\"692\\\\\\\",\\\\\\\"713\\\\\\\"]\\\"]\",\"body/5/1/0/0/4/1\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::UpdateUsername\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"execute\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"242\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"249\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"Val\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Jobs::UpdateUsername\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"execute\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\",\\\\\\\"242\\\\\\\",\\\\\\\"249\\\\\\\"]\\\"]\",\"body/0/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Jobs::UpdateUsername\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"execute\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"242\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"249\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0/0\\\\\\\"]\\\"]\",\"Val\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Jobs::UpdateUsername\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"execute\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/discourse/app/jobs/regular/update_username.rb\\\\\\\",\\\\\\\"242\\\\\\\",\\\\\\\"249\\\\\\\"]\\\"]\",\"body/3/0/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 19,
+      "right_only": 38,
+      "samples": {
+        "left_only": [
+          [
+            "[\"AdminDashboardSiteTraffic\",\"instance\",\"build_trend\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"default_canonical\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"default_canonical\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"default_canonical\"]",
+            "phase:analysis"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"canonical_url\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"DiscourseMcp::Access\",\"class\",\"user_available?\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"DiscourseMcp::Tools::ModerationSupport\",\"class\",\"bounded\"]",
+            "phase:handoff-return"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "e9fcacd3fe61a910",
+  "left": "./runs/discourse/1/structure.jsonl",
+  "right": "./runs/discourse/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 2427294,
+    "slot": 920705,
+    "writer": 1118701
+  }
+}

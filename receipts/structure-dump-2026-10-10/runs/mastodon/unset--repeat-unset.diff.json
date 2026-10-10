@@ -1,0 +1,134 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 10275571,
+        "write": 3325162
+      },
+      "ambiguous_expression_sites": 101476,
+      "reads_before_return_write": 3909923,
+      "undeclared_reads": 4089538,
+      "undeclared_writes": 177786,
+      "unmapped_expression_sites": 25
+    },
+    "right": {
+      "accesses": {
+        "read": 10277265,
+        "write": 3325162
+      },
+      "ambiguous_expression_sites": 101476,
+      "reads_before_return_write": 3910600,
+      "undeclared_reads": 4089538,
+      "undeclared_writes": 177786,
+      "unmapped_expression_sites": 25
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 585,
+      "right_only": 688,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes_before_type_cast\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"changed?\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"destroyed?\"]",
+            "ApplicationController",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_mode?\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_overridden?\"]",
+            "ApplicationController",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 585,
+      "right_only": 688,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes_before_type_cast\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"changed?\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"destroyed?\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_mode?\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_overridden?\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "2f826183df253e64",
+  "left": "./runs/mastodon/unset/structure.jsonl",
+  "right": "./runs/mastodon/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 1272009,
+    "slot": 416218,
+    "writer": 507334
+  }
+}

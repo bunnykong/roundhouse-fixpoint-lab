@@ -1,0 +1,152 @@
+{
+  "app": "chatwoot",
+  "binary_sha256": "926da70f3f281299f946ce4588a76f42bad4887f13eca7b531c04dcf01ddeb9c",
+  "command": [
+    "bash",
+    "rh/tools/research/probe",
+    "chatwoot",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_STRUCT_DUMP=./runs/chatwoot/2/structure.jsonl"
+  ],
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "cwd": "./runs/chatwoot/2",
+  "dump_bytes": 885899374,
+  "dump_header": {
+    "audit": {
+      "accesses": {
+        "read": 5766207,
+        "write": 2788107
+      },
+      "ambiguous_expression_sites": 22286,
+      "reads_before_return_write": 1562352,
+      "undeclared_reads": 1670300,
+      "undeclared_writes": 85341,
+      "unmapped_expression_sites": 0
+    },
+    "binary_digest": "21b6f90a4174e5ab",
+    "counts": {
+      "ambiguity": {
+        "expression": 2528
+      },
+      "declaration": {
+        "capabilities": 162470
+      },
+      "route": {
+        "attribute": 763,
+        "call-graph": 15400,
+        "closure-parameter": 3302,
+        "closure-result": 1662,
+        "constant": 5467,
+        "context": 87791,
+        "controller": 376,
+        "copy": 6966,
+        "dispatch": 21625,
+        "expression": 291050,
+        "fold-parameter": 1197,
+        "ivar": 5949,
+        "local": 26168,
+        "narrowing": 203,
+        "parameter": 45792,
+        "position": 198,
+        "reference-mode": 211,
+        "registry": 115621,
+        "return": 205967
+      },
+      "slot": {
+        "attribute": 712,
+        "closure-parameter": 1428,
+        "closure-result": 1722,
+        "constant": 1253,
+        "context": 62810,
+        "controller": 376,
+        "expression": 155534,
+        "fold-parameter": 271,
+        "ivar": 1897,
+        "local": 10365,
+        "narrowing": 49,
+        "parameter": 7752,
+        "position": 116,
+        "registry": 1283,
+        "return": 48407
+      },
+      "undeclared": {
+        "attribute": 759,
+        "closure-parameter": 125,
+        "closure-result": 203,
+        "constant": 2232,
+        "context": 2700,
+        "expression": 6191,
+        "fold-parameter": 4,
+        "ivar": 1050,
+        "local": 235,
+        "narrowing": 1,
+        "parameter": 10981,
+        "registry": 12809,
+        "return": 159262
+      },
+      "witness": {
+        "read-before-write": 186709
+      },
+      "writer": {
+        "attribute": 712,
+        "closure-parameter": 1549,
+        "closure-result": 1925,
+        "constant": 1452,
+        "context": 63684,
+        "controller": 376,
+        "expression": 155534,
+        "fold-parameter": 271,
+        "ivar": 1608,
+        "local": 6915,
+        "narrowing": 65,
+        "parameter": 50028,
+        "position": 124,
+        "return": 71044
+      }
+    },
+    "end_slots": 293975,
+    "inference_flags": {
+      "RH_BIN": "rh/target/release/roundhouse",
+      "RH_BRK_ALLARMS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    },
+    "input_digest": "45c1b795b101c834",
+    "inventory": "syntax plus cumulative observed discovery",
+    "phase": "before-final-expansion",
+    "schema": "rh-structure-v1",
+    "start_slots": 217996
+  },
+  "dump_sha256": "f3c3a58266cb3dc896446ae40b053ec711d493cd8b81fa02293981fad7de1a15",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "2",
+    "RH_STRUCT_DUMP": "./runs/chatwoot/2/structure.jsonl"
+  },
+  "input": {
+    "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+    "files": 9281,
+    "path": "corpus/apps/chatwoot",
+    "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "schedule": "2",
+  "seconds": 44.510435624979436,
+  "source_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "source_patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "source_tree": "5fbefd5f66868555a04505e00218a6dded0f3d58",
+  "started_utc": "2026-10-10T18:19:38.167080+00:00"
+}

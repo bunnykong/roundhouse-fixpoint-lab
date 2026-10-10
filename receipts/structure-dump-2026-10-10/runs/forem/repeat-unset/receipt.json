@@ -1,0 +1,151 @@
+{
+  "app": "forem",
+  "binary_sha256": "926da70f3f281299f946ce4588a76f42bad4887f13eca7b531c04dcf01ddeb9c",
+  "command": [
+    "bash",
+    "rh/tools/research/probe",
+    "forem",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_STRUCT_DUMP=./runs/forem/repeat-unset/structure.jsonl"
+  ],
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "cwd": "./runs/forem/repeat-unset",
+  "dump_bytes": 731256859,
+  "dump_header": {
+    "audit": {
+      "accesses": {
+        "read": 4850642,
+        "write": 1755726
+      },
+      "ambiguous_expression_sites": 34016,
+      "reads_before_return_write": 1557224,
+      "undeclared_reads": 1779631,
+      "undeclared_writes": 73648,
+      "unmapped_expression_sites": 2216
+    },
+    "binary_digest": "21b6f90a4174e5ab",
+    "counts": {
+      "ambiguity": {
+        "expression": 6661
+      },
+      "declaration": {
+        "capabilities": 164992
+      },
+      "route": {
+        "attribute": 836,
+        "call-graph": 3666,
+        "closure-parameter": 2893,
+        "closure-result": 1188,
+        "constant": 4056,
+        "context": 75426,
+        "controller": 414,
+        "copy": 514,
+        "dispatch": 18726,
+        "expression": 307873,
+        "fold-parameter": 281,
+        "ivar": 4662,
+        "local": 37231,
+        "narrowing": 129,
+        "parameter": 25344,
+        "position": 10,
+        "reference-mode": 58,
+        "registry": 96314,
+        "return": 151162
+      },
+      "slot": {
+        "attribute": 813,
+        "closure-parameter": 1029,
+        "closure-result": 1314,
+        "constant": 848,
+        "context": 45167,
+        "controller": 414,
+        "expression": 167887,
+        "fold-parameter": 55,
+        "ivar": 1365,
+        "local": 5319,
+        "narrowing": 15,
+        "parameter": 4439,
+        "position": 7,
+        "registry": 1162,
+        "return": 33758
+      },
+      "undeclared": {
+        "attribute": 836,
+        "closure-parameter": 156,
+        "closure-result": 158,
+        "constant": 1567,
+        "context": 2067,
+        "expression": 26233,
+        "fold-parameter": 73,
+        "ivar": 2109,
+        "local": 300,
+        "narrowing": 72,
+        "parameter": 8421,
+        "registry": 14246,
+        "return": 125480
+      },
+      "witness": {
+        "read-before-write": 143738
+      },
+      "writer": {
+        "attribute": 813,
+        "closure-parameter": 1184,
+        "closure-result": 1472,
+        "constant": 1165,
+        "context": 50149,
+        "controller": 414,
+        "expression": 167887,
+        "fold-parameter": 55,
+        "ivar": 1271,
+        "local": 15973,
+        "narrowing": 29,
+        "parameter": 28218,
+        "position": 7,
+        "return": 41704
+      }
+    },
+    "end_slots": 263592,
+    "inference_flags": {
+      "RH_BIN": "rh/target/release/roundhouse",
+      "RH_BRK_ALLARMS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    },
+    "input_digest": "37a68b85b2155f47",
+    "inventory": "syntax plus cumulative observed discovery",
+    "phase": "before-final-expansion",
+    "schema": "rh-structure-v1",
+    "start_slots": 207289
+  },
+  "dump_sha256": "ef833050e1bbdf71bc5824333e506ebc7c1945b46b22cf3a0956c7b797e1d41e",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "./runs/forem/repeat-unset/structure.jsonl"
+  },
+  "input": {
+    "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+    "files": 4785,
+    "path": "corpus/apps/forem",
+    "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "schedule": "repeat-unset",
+  "seconds": 19.434117375058122,
+  "source_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "source_patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "source_tree": "5fbefd5f66868555a04505e00218a6dded0f3d58",
+  "started_utc": "2026-10-10T18:22:03.980471+00:00"
+}

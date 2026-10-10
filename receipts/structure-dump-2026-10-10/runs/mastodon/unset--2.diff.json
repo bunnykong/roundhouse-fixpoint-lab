@@ -1,0 +1,794 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 10275571,
+        "write": 3325162
+      },
+      "ambiguous_expression_sites": 101476,
+      "reads_before_return_write": 3909923,
+      "undeclared_reads": 4089538,
+      "undeclared_writes": 177786,
+      "unmapped_expression_sites": 25
+    },
+    "right": {
+      "accesses": {
+        "read": 10718701,
+        "write": 3398350
+      },
+      "ambiguous_expression_sites": 102261,
+      "reads_before_return_write": 4127817,
+      "undeclared_reads": 4304167,
+      "undeclared_writes": 180966,
+      "unmapped_expression_sites": 25
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "closure-parameter",
+      "left_only": 7,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\",\"to\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\",\"to\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/1\",\"audience\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 28,
+      "right_only": 373,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1/0/1\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"ActivityPub::Activity::Announce\",\"instance\",\"local\",\"to\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/1/0/0/1\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"ActivityPub::Activity::Create\",\"instance\",\"local\",\"audience\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/1/0/2/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"ActivityPub::Activity::Create\",\"instance\",\"local\",\"audience\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"local\",\"query\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"local\",\"record\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"local\",\"user\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 568,
+      "right_only": 577,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes_before_type_cast\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"bad_request\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"changed?\"]",
+            "ApplicationController",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"set_cache_control_defaults\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Form::AdminSettings\\\",\\\"class-body\\\"]\",\"36/1/0/1/0/1/0/2/1\"]",
+            "[\"Form::AdminSettings\",\"instance\",\"[]\"]",
+            "Form::AdminSettings",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Form::AdminSettings\\\",\\\"class-body\\\"]\",\"36/1/0/1/0/1/0/2/1\"]",
+            "[\"Form::AdminSettings\",\"instance\",\"authorized_fetch_overridden?\"]",
+            "Form::AdminSettings",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "fold-parameter",
+      "left_only": 88,
+      "right_only": 236,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"body_to_json\\\"]\",\"body/0/0/0\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"body_to_json\\\"]\",\"body/0/0/0/0\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"supported_context?\\\"]\",\"body\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body\"]",
+            "[\"ActivityPub::ProcessStatusUpdateService\",\"instance\",\"fetch_and_verify_quote!\",\"quote_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body\"]",
+            "[\"ActivityPub::VerifyQuoteService\",\"instance\",\"call\",\"fetchable_quoted_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0\"]",
+            "[\"ActivityPub::ProcessStatusUpdateService\",\"instance\",\"fetch_and_verify_quote!\",\"quote_uri\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "ivar",
+      "left_only": 4,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::CustomEmojiParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"image_remote_url\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/custom_emoji_parser.rb\\\\\\\",\\\\\\\"240\\\\\\\",\\\\\\\"256\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"ActivityPub::Parser::CustomEmojiParser\",\"json\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::CustomEmojiParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"shortcode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/custom_emoji_parser.rb\\\\\\\",\\\\\\\"186\\\\\\\",\\\\\\\"195\\\\\\\"]\\\"]\",\"body/0/0/0\"]",
+            "[\"ActivityPub::Parser::CustomEmojiParser\",\"json\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::CustomEmojiParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"updated_at\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/custom_emoji_parser.rb\\\\\\\",\\\\\\\"299\\\\\\\",\\\\\\\"309\\\\\\\"]\\\"]\",\"body/0/0/0/0\"]",
+            "[\"ActivityPub::Parser::CustomEmojiParser\",\"json\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 1,
+      "right_only": 164,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::CustomEmojiParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"initialize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/custom_emoji_parser.rb\\\\\\\",\\\\\\\"106\\\\\\\",\\\\\\\"116\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::CustomEmojiParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"initialize\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/custom_emoji_parser.rb\\\\\\\",\\\\\\\"106\\\\\\\",\\\\\\\"116\\\\\\\"]\\\"]\",\"json\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"user\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body/0/2\"]",
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"record\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"body/0/3\"]",
+            "[\"[\\\"ActivityPub::FeatureAuthorizationsController\\\",\\\"instance\\\",\\\"authorize_with\\\"]\",\"query\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "narrowing",
+      "left_only": 2,
+      "right_only": 95,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::StatusParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"quote_subpolicy\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/status_parser.rb\\\\\\\",\\\\\\\"3909\\\\\\\",\\\\\\\"3924\\\\\\\"]\\\"]\",\"body/3/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2329\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2337\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"!is_array_value\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Parser::StatusParser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"quote_subpolicy\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/parser/status_parser.rb\\\\\\\",\\\\\\\"3909\\\\\\\",\\\\\\\"3924\\\\\\\"]\\\"]\",\"body/3/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2329\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2337\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"!is_array_value\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessStatusUpdateService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"update_quote_approval!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_status_update_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12855\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12877\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\"]\",\"present_quote_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessStatusUpdateService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"update_quote_approval!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_status_update_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12855\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12877\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\"]\",\"present_quote_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessStatusUpdateService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"update_quote_approval!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_status_update_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12855\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"12877\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\"]\",\"present_quote_uri\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "parameter",
+      "left_only": 14,
+      "right_only": 161,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"Collection\",\"instance\",\"<<\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"Conversation\",\"instance\",\"<<\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/0\"]",
+            "[\"Status\",\"instance\",\"==\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/1\"]",
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/5\"]",
+            "[\"Quote\",\"instance\",\"update!\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "position",
+      "left_only": 121,
+      "right_only": 7,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"first_mentioned_local_account\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4210\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4239\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"first_mentioned_local_account\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4210\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4239\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"first_mentioned_local_account\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4210\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4239\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"fep_521a_public_keys\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\",\\\\\\\"11684\\\\\\\",\\\\\\\"11704\\\\\\\"]\\\"]\",\"body/2/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"fep_521a_public_keys\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11684\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11704\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"fep_521a_public_keys\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\",\\\\\\\"11684\\\\\\\",\\\\\\\"11704\\\\\\\"]\\\"]\",\"body/2/1/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"fep_521a_public_keys\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11684\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11704\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"fep_521a_public_keys\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\",\\\\\\\"11684\\\\\\\",\\\\\\\"11704\\\\\\\"]\\\"]\",\"body/2/1/0/0/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessAccountService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"fep_521a_public_keys\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_account_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11684\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"11704\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "reference-mode",
+      "left_only": 0,
+      "right_only": 3,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "Authorization#authorize_with"
+          ],
+          [
+            "ResolveURLService#check_collection"
+          ],
+          [
+            "ResolveURLService#process_local_url"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 70,
+      "right_only": 113,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+            "[\"Status\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/1\"]",
+            "[\"FeaturedTag\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/1\"]",
+            "[\"Status\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/0/1/0/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/1/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 692,
+      "right_only": 993,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"attributes_before_type_cast\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"bad_request\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"changed?\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body\"]",
+            "[\"ActivityPub::Parser::StatusParser\",\"instance\",\"quote_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0\"]",
+            "[\"ActivityPub::Parser::StatusParser\",\"instance\",\"quote_uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"AccountsController\\\",\\\"instance\\\",\\\"domain_not_allowed?\\\"]\",\"body/0/0\"]",
+            "[\"ActivityPub::Parser::StatusParser\",\"instance\",\"quote_uri\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 2,
+      "right_only": 18,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"UnfilterNotificationsWorker\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"push_to_conversations!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/workers/unfilter_notifications_worker.rb\\\\\\\",\\\\\\\"425\\\\\\\",\\\\\\\"447\\\\\\\"]\\\"]\",\"UnfilterNotificationsWorker\",\"instance\",\"local\",\"notification\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"WebhookPolicy\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/policies/webhook_policy.rb\\\\\\\",\\\\\\\"233\\\\\\\",\\\\\\\"240\\\\\\\"]\\\"]\",\"WebhookPolicy\",\"instance\",\"local\",\"permission\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"AfterBlockDomainFromAccountService\",\"instance\",\"local\",\"follow\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_hashtags_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"1534\\\\\\\",\\\\\\\"1563\\\\\\\"]\\\"]\",\"Extractor\",\"class\",\"local\",\"hash_text\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_hashtags_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"1534\\\\\\\",\\\\\\\"1563\\\\\\\"]\\\"]\",\"Extractor\",\"class\",\"local\",\"matched\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "fold-parameter",
+      "left_only": 0,
+      "right_only": 148,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"query\"]"
+          ],
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"record\"]"
+          ],
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"user\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "narrowing",
+      "left_only": 0,
+      "right_only": 11,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1/0\\\\\\\"]\\\"]\",\"truthy_text\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1\\\\\\\"]\\\"]\",\"truthy_text\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_hashtags_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1534\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1563\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_hashtags_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1534\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1563\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1/0\\\\\\\"]\\\"]\",\"truthy_text\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "parameter",
+      "left_only": 3,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"Collection\",\"instance\",\"<<\",\"index:0\"]"
+          ],
+          [
+            "[\"Conversation\",\"instance\",\"<<\",\"index:0\"]"
+          ],
+          [
+            "[\"Status\",\"instance\",\"<<\",\"index:0\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "position",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"addresses_local_accounts?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16801\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16826\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"Elem\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 0,
+      "right_only": 12,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"AfterBlockDomainFromAccountService\",\"instance\",\"local\",\"follow\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_mentions_or_lists_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"601\\\\\\\",\\\\\\\"639\\\\\\\"]\\\"]\",\"Extractor\",\"class\",\"local\",\"domain\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_mentions_or_lists_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"601\\\\\\\",\\\\\\\"639\\\\\\\"]\\\"]\",\"body/2/2/0/2/2/1\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_mentions_or_lists_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"601\\\\\\\",\\\\\\\"639\\\\\\\"]\\\"]\",\"Extractor\",\"class\",\"local\",\"domain\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_mentions_or_lists_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"601\\\\\\\",\\\\\\\"639\\\\\\\"]\\\"]\",\"body/2/2/0/2/2/1/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "fold-parameter",
+      "left_only": 0,
+      "right_only": 148,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"query\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"record\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ActivityPub::FeatureAuthorizationsController\",\"instance\",\"authorize_with\",\"user\"]",
+            "phase:analysis"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "narrowing",
+      "left_only": 0,
+      "right_only": 15,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1/0\\\\\\\"]\\\"]\",\"truthy_text\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_extra_uris_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"2402\\\\\\\",\\\\\\\"2433\\\\\\\"]\\\"]\",\"body/0/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1\\\\\\\"]\\\"]\",\"truthy_text\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_extra_uris_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"2402\\\\\\\",\\\\\\\"2433\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Extractor\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"extract_extra_uris_with_indices\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2402\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2433\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/1\\\\\\\"]\\\"]\",\"truthy_text\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Extractor\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"extract_extra_uris_with_indices\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/extractor.rb\\\\\\\",\\\\\\\"2402\\\\\\\",\\\\\\\"2433\\\\\\\"]\\\"]\",\"body/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "parameter",
+      "left_only": 16,
+      "right_only": 10,
+      "samples": {
+        "left_only": [
+          [
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/1/1/0\\\"]\",\"receiver\",\"ActivityPub::Activity::Create\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"preload_relations!\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"CreateCollectionService\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"build_items\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/create_collection_service.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"796\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"807\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/2/0\\\"]\",\"receiver\",\"CreateCollectionService\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"accept_quote_request!\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"556\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"577\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/3/0/1\\\"]\",\"receiver\",\"ActivityPub::Activity::QuoteRequest\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/1\"]"
+          ],
+          [
+            "[\"Authorization\",\"instance\",\"authorize_with\",\"query\"]",
+            "phase:handoff-parameter"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "position",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"addresses_local_accounts?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16801\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16826\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"addresses_local_accounts?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"16801\\\\\\\",\\\\\\\"16826\\\\\\\"]\\\"]\",\"body/1/0/1/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/0/0\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 13,
+      "right_only": 21,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ActivityPub::FetchFeaturedCollectionService\",\"instance\",\"process_items\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"forbidden\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"forbidden\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"forbidden\"]",
+            "phase:analysis"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"AccountRelationshipsPresenter\",\"instance\",\"domain_cache_key\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ActivityPub::FetchFeaturedCollectionService\",\"instance\",\"process_note_items\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ActivityPub::FetchRemoteKeyService\",\"instance\",\"find_actor\"]",
+            "phase:handoff-return"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "2f826183df253e64",
+  "left": "./runs/mastodon/unset/structure.jsonl",
+  "right": "./runs/mastodon/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 1271584,
+    "slot": 416211,
+    "writer": 507303
+  }
+}

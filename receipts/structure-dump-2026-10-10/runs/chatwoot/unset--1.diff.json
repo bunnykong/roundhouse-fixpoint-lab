@@ -1,0 +1,674 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 5516202,
+        "write": 2684305
+      },
+      "ambiguous_expression_sites": 21794,
+      "reads_before_return_write": 1516171,
+      "undeclared_reads": 1616697,
+      "undeclared_writes": 83892,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 5884524,
+        "write": 2844690
+      },
+      "ambiguous_expression_sites": 22631,
+      "reads_before_return_write": 1585582,
+      "undeclared_reads": 1695997,
+      "undeclared_writes": 85705,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "attribute",
+      "left_only": 6,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationMailer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"send_mail_with_liquid\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailers/application_mailer.rb\\\\\\\",\\\\\\\"1009\\\\\\\",\\\\\\\"1030\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"ActionController::Parameters\",\"to\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationMailer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"send_mail_with_liquid\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailers/application_mailer.rb\\\\\\\",\\\\\\\"1009\\\\\\\",\\\\\\\"1030\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"ActionDispatch::Http::UploadedFile\",\"to\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationMailer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"send_mail_with_liquid\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailers/application_mailer.rb\\\\\\\",\\\\\\\"1009\\\\\\\",\\\\\\\"1030\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"ActionMailer::MessageDelivery\",\"to\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 68,
+      "right_only": 86,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"DeviseOverrides::SessionsController\",\"instance\",\"local\",\"user\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"body/0/1/3/0/1/1\"]",
+            "[\"binding\",\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"DeviseOverrides::SessionsController\",\"instance\",\"local\",\"user\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::FilteredCountInvalidator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"record_invalidation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/filtered_count_invalidator.rb\\\\\\\",\\\\\\\"6400\\\\\\\",\\\\\\\"6419\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::FilteredCountInvalidator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"record_invalidation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/filtered_count_invalidator.rb\\\\\\\",\\\\\\\"6400\\\\\\\",\\\\\\\"6419\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::FilteredCountInvalidator\",\"instance\",\"local\",\"version\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Contacts::BulkDeleteService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"perform\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/contacts/bulk_delete_service.rb\\\\\\\",\\\\\\\"160\\\\\\\",\\\\\\\"167\\\\\\\"]\\\"]\",\"body/2/1/0/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Contacts::BulkDeleteService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"perform\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/contacts/bulk_delete_service.rb\\\\\\\",\\\\\\\"160\\\\\\\",\\\\\\\"167\\\\\\\"]\\\"]\",\"Contacts::BulkDeleteService\",\"instance\",\"local\",\"x\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::Counter\",\"instance\",\"local\",\"inbox_id\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"body/1/0/2\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::Counter\",\"instance\",\"local\",\"inbox_id\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 131,
+      "right_only": 108,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"account_accessible_for_user?\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"set_locale\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"validate_token_api_access\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::BaseController\",\"instance\",\"switch_locale\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::OnboardingsController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2\"]",
+            "[\"Api::V1::Accounts::OnboardingsController\",\"instance\",\"move_to_step\"]",
+            "Api::V1::Accounts::OnboardingsController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Api::V2::Accounts::ReportsController\\\",\\\"instance\\\",\\\"build_summary\\\"]\",\"body/1/0\"]",
+            "[\"V2::Reports::Conversations::MetricBuilder\",\"instance\",\"summary\"]",
+            "V2::Reports::Conversations::MetricBuilder",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "fold-parameter",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"MailboxSanitizer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"sanitize_mailbox_value\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailboxes/mailbox_sanitizer.rb\\\\\\\",\\\\\\\"675\\\\\\\",\\\\\\\"697\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"MailboxSanitizer\",\"instance\",\"sanitize_mailbox_value\",\"value\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"MailboxSanitizer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"sanitize_mailbox_value\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailboxes/mailbox_sanitizer.rb\\\\\\\",\\\\\\\"675\\\\\\\",\\\\\\\"697\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"MailboxSanitizer\",\"instance\",\"sanitize_mailbox_value\",\"value\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 2,
+      "right_only": 11,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::FilteredCountInvalidator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"record_invalidation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/filtered_count_invalidator.rb\\\\\\\",\\\\\\\"6400\\\\\\\",\\\\\\\"6419\\\\\\\"]\\\"]\",\"body/2/7\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::FilteredCountInvalidator\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"record_invalidation\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/filtered_count_invalidator.rb\\\\\\\",\\\\\\\"6400\\\\\\\",\\\\\\\"6419\\\\\\\"]\\\"]\",\"version\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"activity_part?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"30176\\\\\\\",\\\\\\\"30190\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"activity_part?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"30176\\\\\\\",\\\\\\\"30190\\\\\\\"]\\\"]\",\"part\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"contact\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"contact\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"body/2/1/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImport::ContactManager\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"update_contact_attributes\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_import/contact_manager.rb\\\\\\\",\\\\\\\"1854\\\\\\\",\\\\\\\"1879\\\\\\\"]\\\"]\",\"contact\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "narrowing",
+      "left_only": 12,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"create_conversation_activity\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\",\\\\\\\"2969\\\\\\\",\\\\\\\"2997\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"create_conversation_activity\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\",\\\\\\\"2969\\\\\\\",\\\\\\\"2997\\\\\\\"]\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"create_conversation_activity\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\",\\\\\\\"2969\\\\\\\",\\\\\\\"2997\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"import_contact\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"7878\\\\\\\",\\\\\\\"7892\\\\\\\"]\\\"]\",\"body/0/1/0/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"import_contact\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7878\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7892\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/1/0/0/1/0\\\\\\\"]\\\"]\",\"present_source_id\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"message_sender_for\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"31387\\\\\\\",\\\\\\\"31405\\\\\\\"]\\\"]\",\"body/3\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"message_sender_for\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31387\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31405\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"present_source_id\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "parameter",
+      "left_only": 9,
+      "right_only": 11,
+      "samples": {
+        "left_only": [
+          [
+            "phase:analysis",
+            "[\"DataImportJob\",\"instance\",\"append_label_error\",\"row\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"DataImportJob\",\"instance\",\"append_rejected_contact\",\"row\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"DataImportJob\",\"instance\",\"build_contact_from_row\",\"row\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reindex_message_for_search\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"27098\\\\\\\",\\\\\\\"27124\\\\\\\"]\\\"]\",\"body/0/1\"]",
+            "[\"Message\",\"instance\",\"__send__\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"Conversations::UnreadCounts::Counter\",\"instance\",\"inbox_keys_for_mode\",\"inbox_id\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"Imap::ImapMailbox\",\"instance\",\"process\",\"mail\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "position",
+      "left_only": 0,
+      "right_only": 8,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Val\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/1/0/1/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/1/0/1/1\\\\\\\"]\\\"]\",\"Val\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/2/0/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/2/0/0/1\\\\\\\"]\\\"]\",\"Val\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 31,
+      "right_only": 10,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::AutomationRulesController\\\",\\\"instance\\\",\\\"create\\\"]\",\"body/7\"]",
+            "[\"String\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationMailer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"send_mail_with_liquid\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailers/application_mailer.rb\\\\\\\",\\\\\\\"1009\\\\\\\",\\\\\\\"1030\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"ActionController::Parameters\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationMailer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"send_mail_with_liquid\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailers/application_mailer.rb\\\\\\\",\\\\\\\"1009\\\\\\\",\\\\\\\"1030\\\\\\\"]\\\"]\",\"body/0/1/0\"]",
+            "[\"ActionDispatch::Http::UploadedFile\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::AutomationRulesController\\\",\\\"instance\\\",\\\"update\\\"]\",\"body/2/1/0/0/4\"]",
+            "[\"String\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reindex_message_for_search\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"27098\\\\\\\",\\\\\\\"27124\\\\\\\"]\\\"]\",\"body/0/0/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reindex_message_for_search\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"27098\\\\\\\",\\\\\\\"27124\\\\\\\"]\\\"]\",\"body/0/0/0\"]",
+            "[\"Message\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 193,
+      "right_only": 144,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/0\"]",
+            "[\"Captain::RewriteService\",\"instance\",\"perform\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/1/0/1/1\"]",
+            "[\"Captain::RewriteService\",\"instance\",\"perform\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/2/0/0/1\"]",
+            "[\"Captain::RewriteService\",\"instance\",\"perform\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/0\"]",
+            "[\"Captain::BaseTaskService\",\"instance\",\"make_api_call\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/1/0/1/1\"]",
+            "[\"Captain::BaseTaskService\",\"instance\",\"make_api_call\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/2/0/0/1\"]",
+            "[\"Captain::BaseTaskService\",\"instance\",\"make_api_call\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 10,
+      "right_only": 26,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"DeviseOverrides::SessionsController\",\"instance\",\"local\",\"user\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_label_error\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"5126\\\\\\\",\\\\\\\"5144\\\\\\\"]\\\"]\",\"DataImportJob\",\"instance\",\"local\",\"row\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_rejected_contact\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"1970\\\\\\\",\\\\\\\"1993\\\\\\\"]\\\"]\",\"DataImportJob\",\"instance\",\"local\",\"row\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Contacts::BulkDeleteService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"perform\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/contacts/bulk_delete_service.rb\\\\\\\",\\\\\\\"160\\\\\\\",\\\\\\\"167\\\\\\\"]\\\"]\",\"Contacts::BulkDeleteService\",\"instance\",\"local\",\"x\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::Counter\",\"instance\",\"local\",\"inbox_id\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"unread_inbox_counts\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"2397\\\\\\\",\\\\\\\"2416\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::Counter\",\"instance\",\"local\",\"inbox_id\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "narrowing",
+      "left_only": 1,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"import_contact\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7878\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7892\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/1/0/0/1/0\\\\\\\"]\\\"]\",\"present_source_id\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"message_sender_for\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31387\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31405\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"present_source_id\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "parameter",
+      "left_only": 0,
+      "right_only": 1,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"Message\",\"instance\",\"__send__\",\"index:0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "position",
+      "left_only": 0,
+      "right_only": 7,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Val\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/1/0/1/1\\\\\\\"]\\\"]\",\"Val\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/2/0/0/1\\\\\\\"]\\\"]\",\"Val\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 12,
+      "right_only": 12,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"DeviseOverrides::SessionsController\",\"instance\",\"local\",\"user\"]",
+            "[\"[\\\"DeviseOverrides::SessionsController\\\",\\\"instance\\\",\\\"handle_mfa_required\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_label_error\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"5126\\\\\\\",\\\\\\\"5144\\\\\\\"]\\\"]\",\"DataImportJob\",\"instance\",\"local\",\"row\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_label_error\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"5126\\\\\\\",\\\\\\\"5144\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_rejected_contact\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"1970\\\\\\\",\\\\\\\"1993\\\\\\\"]\\\"]\",\"DataImportJob\",\"instance\",\"local\",\"row\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImportJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"append_rejected_contact\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/data_import_job.rb\\\\\\\",\\\\\\\"1970\\\\\\\",\\\\\\\"1993\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"Conversations::UnreadCounts::Counter\",\"instance\",\"local\",\"inbox_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Conversations::UnreadCounts::Counter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"inbox_keys_for_mode\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/conversations/unread_counts/counter.rb\\\\\\\",\\\\\\\"3159\\\\\\\",\\\\\\\"3178\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Imap::ImapMailbox\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailboxes/imap/imap_mailbox.rb\\\\\\\",\\\\\\\"251\\\\\\\",\\\\\\\"258\\\\\\\"]\\\"]\",\"Imap::ImapMailbox\",\"instance\",\"local\",\"mail\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Imap::ImapMailbox\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/mailboxes/imap/imap_mailbox.rb\\\\\\\",\\\\\\\"251\\\\\\\",\\\\\\\"258\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Inboxes::FetchImapEmailsJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"mark_email_as_failed\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/inboxes/fetch_imap_emails_job.rb\\\\\\\",\\\\\\\"3710\\\\\\\",\\\\\\\"3730\\\\\\\"]\\\"]\",\"Inboxes::FetchImapEmailsJob\",\"instance\",\"local\",\"message_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Inboxes::FetchImapEmailsJob\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"mark_email_as_failed\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/jobs/inboxes/fetch_imap_emails_job.rb\\\\\\\",\\\\\\\"3710\\\\\\\",\\\\\\\"3730\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "narrowing",
+      "left_only": 2,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"get_lead_id\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\",\\\\\\\"5590\\\\\\\",\\\\\\\"5601\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"get_lead_id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5590\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"5601\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"!blank_lead_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Crm::Leadsquared::ProcessorService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"get_lead_id\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/crm/leadsquared/processor_service.rb\\\\\\\",\\\\\\\"5590\\\\\\\",\\\\\\\"5601\\\\\\\"]\\\"]\",\"body/3\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"import_contact\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7878\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"7892\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/1/0/0/1/0\\\\\\\"]\\\"]\",\"present_source_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"import_contact\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"7878\\\\\\\",\\\\\\\"7892\\\\\\\"]\\\"]\",\"body/0/1/0/0/1\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"message_sender_for\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31387\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"31405\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/3/0\\\\\\\"]\\\"]\",\"present_source_id\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"message_sender_for\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"31387\\\\\\\",\\\\\\\"31405\\\\\\\"]\\\"]\",\"body/3\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "parameter",
+      "left_only": 0,
+      "right_only": 4,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"Message\",\"instance\",\"__send__\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"DataImports::Importer\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"reindex_message_for_search\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"27098\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"27124\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/0/1\\\"]\",\"receiver\",\"DataImports::Importer\"]"
+          ],
+          [
+            "[\"Message\",\"instance\",\"__send__\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"DataImports::Importer\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reindex_message_for_search\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/chatwoot/app/services/data_imports/importer.rb\\\\\\\",\\\\\\\"27098\\\\\\\",\\\\\\\"27124\\\\\\\"]\\\"]\",\"body/0/1\"]"
+          ],
+          [
+            "[\"Message\",\"instance\",\"__send__\",\"index:0\"]",
+            "phase:parameter-bound"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "position",
+      "left_only": 0,
+      "right_only": 8,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"Val\"]",
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/1/0/1/1\\\\\\\"]\\\"]\",\"Val\"]",
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/1/0/1/1\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"Api::V1::Accounts::Captain::TasksController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"render_result\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/2/0/0/1\\\\\\\"]\\\"]\",\"Val\"]",
+            "[\"[\\\"Api::V1::Accounts::Captain::TasksController\\\",\\\"instance\\\",\\\"render_result\\\"]\",\"body/2/2/0/0/1\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 24,
+      "right_only": 24,
+      "samples": {
+        "left_only": [
+          [
+            "[\"Api::V1::Accounts::InboxesController\",\"instance\",\"fetch_health_data\"]",
+            "[\"harvest\",\"[\\\"Api::V1::Accounts::InboxesController\\\",\\\"instance\\\",\\\"fetch_health_data\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"Api::V1::Accounts::InboxesController\",\"instance\",\"fetch_health_data\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"Api::V1::Accounts::Instagram::AuthorizationsController\",\"instance\",\"client_id\"]",
+            "[\"harvest\",\"[\\\"Api::V1::Accounts::Instagram::AuthorizationsController\\\",\\\"instance\\\",\\\"client_id\\\"]\",\"no-body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"Api::V1::Accounts::Conversations::DirectUploadsController\",\"instance\",\"current_account\"]",
+            "[\"harvest\",\"[\\\"Api::V1::Accounts::Conversations::DirectUploadsController\\\",\\\"instance\\\",\\\"current_account\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"Api::V1::Accounts::Conversations::DirectUploadsController\",\"instance\",\"current_account\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"Api::V1::Accounts::InboxesController\",\"instance\",\"validate_email_channel\"]",
+            "[\"harvest\",\"[\\\"Api::V1::Accounts::InboxesController\\\",\\\"instance\\\",\\\"validate_email_channel\\\"]\",\"no-body\"]"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "45c1b795b101c834",
+  "left": "./runs/chatwoot/unset/structure.jsonl",
+  "right": "./runs/chatwoot/1/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 834928,
+    "slot": 293686,
+    "writer": 354969
+  }
+}

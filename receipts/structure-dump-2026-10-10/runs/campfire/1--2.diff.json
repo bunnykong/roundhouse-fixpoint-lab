@@ -1,0 +1,116 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 853152,
+        "write": 282689
+      },
+      "ambiguous_expression_sites": 3343,
+      "reads_before_return_write": 274721,
+      "undeclared_reads": 309732,
+      "undeclared_writes": 25520,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 854457,
+        "write": 283636
+      },
+      "ambiguous_expression_sites": 3358,
+      "reads_before_return_write": 274626,
+      "undeclared_reads": 309717,
+      "undeclared_writes": 25552,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 3,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"last_room_visited\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"Rooms::InvolvementsController\",\"instance\",\"set_room\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:handoff-return",
+            "[\"Current\",\"class\",\"session=\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 5,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"last_room_visited\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"last_room_visited\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"last_room_visited\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"Current\",\"class\",\"session=\"]",
+            "phase:handoff-return"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"require_authentication\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"terminate_current_session\\\"]\",\"no-body\"]"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "8f77670b55471db9",
+  "left": "./runs/campfire/1/structure.jsonl",
+  "right": "./runs/campfire/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 135813,
+    "slot": 50222,
+    "writer": 62036
+  }
+}

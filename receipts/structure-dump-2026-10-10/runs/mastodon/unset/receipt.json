@@ -1,0 +1,152 @@
+{
+  "app": "mastodon",
+  "binary_sha256": "926da70f3f281299f946ce4588a76f42bad4887f13eca7b531c04dcf01ddeb9c",
+  "command": [
+    "bash",
+    "rh/tools/research/probe",
+    "mastodon",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_STRUCT_DUMP=./runs/mastodon/unset/structure.jsonl"
+  ],
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "cwd": "./runs/mastodon/unset",
+  "dump_bytes": 1600169382,
+  "dump_header": {
+    "audit": {
+      "accesses": {
+        "read": 10275571,
+        "write": 3325162
+      },
+      "ambiguous_expression_sites": 101476,
+      "reads_before_return_write": 3909923,
+      "undeclared_reads": 4089538,
+      "undeclared_writes": 177786,
+      "unmapped_expression_sites": 25
+    },
+    "binary_digest": "21b6f90a4174e5ab",
+    "counts": {
+      "ambiguity": {
+        "expression": 11392
+      },
+      "declaration": {
+        "capabilities": 226210
+      },
+      "route": {
+        "attribute": 857,
+        "call-graph": 17183,
+        "closure-parameter": 5072,
+        "closure-result": 2793,
+        "constant": 5635,
+        "context": 139043,
+        "controller": 699,
+        "copy": 9748,
+        "dispatch": 32083,
+        "expression": 354608,
+        "fold-parameter": 2955,
+        "ivar": 8204,
+        "local": 27587,
+        "narrowing": 1687,
+        "parameter": 52943,
+        "position": 1336,
+        "reference-mode": 220,
+        "registry": 216136,
+        "return": 394390
+      },
+      "slot": {
+        "attribute": 939,
+        "closure-parameter": 2107,
+        "closure-result": 3136,
+        "constant": 1136,
+        "context": 106923,
+        "controller": 699,
+        "expression": 227462,
+        "fold-parameter": 230,
+        "ivar": 2029,
+        "local": 8424,
+        "narrowing": 209,
+        "parameter": 8257,
+        "position": 173,
+        "registry": 1738,
+        "return": 52756
+      },
+      "undeclared": {
+        "attribute": 855,
+        "closure-parameter": 345,
+        "closure-result": 352,
+        "constant": 1729,
+        "context": 4061,
+        "expression": 26237,
+        "fold-parameter": 30,
+        "ivar": 1199,
+        "local": 3861,
+        "narrowing": 25,
+        "parameter": 14794,
+        "position": 12,
+        "registry": 17562,
+        "return": 333895
+      },
+      "witness": {
+        "read-before-write": 368418
+      },
+      "writer": {
+        "attribute": 939,
+        "closure-parameter": 2423,
+        "closure-result": 3488,
+        "constant": 1463,
+        "context": 112350,
+        "controller": 699,
+        "expression": 227462,
+        "fold-parameter": 230,
+        "ivar": 1945,
+        "local": 15502,
+        "narrowing": 306,
+        "parameter": 60763,
+        "position": 192,
+        "return": 79572
+      }
+    },
+    "end_slots": 416218,
+    "inference_flags": {
+      "RH_BIN": "rh/target/release/roundhouse",
+      "RH_BRK_ALLARMS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    },
+    "input_digest": "2f826183df253e64",
+    "inventory": "syntax plus cumulative observed discovery",
+    "phase": "before-final-expansion",
+    "schema": "rh-structure-v1",
+    "start_slots": 284075
+  },
+  "dump_sha256": "49781ea70c1b4bf94d0c1171f29345c3e12837ebf42ee3b79aba6dbbd18da748",
+  "exit": 0,
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "./runs/mastodon/unset/structure.jsonl"
+  },
+  "input": {
+    "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+    "files": 9868,
+    "path": "corpus/apps/mastodon",
+    "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "schedule": "unset",
+  "seconds": 59.91547408304177,
+  "source_head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "source_patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "source_tree": "5fbefd5f66868555a04505e00218a6dded0f3d58",
+  "started_utc": "2026-10-10T18:14:01.799188+00:00"
+}

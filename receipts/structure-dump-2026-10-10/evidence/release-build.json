@@ -1,0 +1,26 @@
+{
+  "cargo_build_jobs": "4",
+  "cargo_target_dir": "./target",
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bin",
+    "roundhouse"
+  ],
+  "cwd": "rh",
+  "elapsed_seconds": 90.99107329105027,
+  "exit": 0,
+  "finished_utc": "2026-10-10T18:13:32.104055+00:00",
+  "head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "log": "evidence/release-build.log",
+  "patch_sha256": "a8667326320cc931760786de2165f2e557910ff36a9b21115f74641da776a29f",
+  "pid": 68134,
+  "ruby": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+  "rust_test_threads": "1",
+  "started_utc": "2026-10-10T18:12:01.103887+00:00",
+  "status": "A  docs/development/structure-dump.md\nM  src/analyze/body/mod.rs\nM  src/analyze/body/narrowing.rs\nM  src/analyze/body/send.rs\nM  src/analyze/errgate.rs\nM  src/analyze/fold.rs\nM  src/analyze/handoff.rs\nM  src/analyze/harvest_return.rs\nM  src/analyze/mod.rs\nM  src/analyze/sccq.rs\nM  src/analyze/structure.rs\nA  src/analyze/structure_dump.rs\nA  tests/structure_dump.rs\nA  tools/research/probe\nA  tools/research/structure_fixture/app/controllers/structure_controller.rb\nA  tools/research/structure_fixture/app/services/structure_probe.rb\nA  tools/struct_diff.py\nA  tools/test_struct_diff.py",
+  "step": "release-build",
+  "tree": "5fbefd5f66868555a04505e00218a6dded0f3d58"
+}

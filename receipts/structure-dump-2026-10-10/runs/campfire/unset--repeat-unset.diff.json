@@ -1,0 +1,37 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [],
+  "different": false,
+  "input_digest": "8f77670b55471db9",
+  "left": "./runs/campfire/unset/structure.jsonl",
+  "right": "./runs/campfire/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 135816,
+    "slot": 50222,
+    "writer": 62041
+  }
+}

@@ -1,0 +1,797 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 11643276,
+        "write": 3695068
+      },
+      "ambiguous_expression_sites": 102683,
+      "reads_before_return_write": 4527682,
+      "undeclared_reads": 4686474,
+      "undeclared_writes": 181516,
+      "unmapped_expression_sites": 30
+    },
+    "right": {
+      "accesses": {
+        "read": 10718701,
+        "write": 3398350
+      },
+      "ambiguous_expression_sites": 102261,
+      "reads_before_return_write": 4127817,
+      "undeclared_reads": 4304167,
+      "undeclared_writes": 180966,
+      "unmapped_expression_sites": 25
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "closure-parameter",
+      "left_only": 9,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\",\"to\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/0/1\",\"to\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/2/0/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Announce\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"visibility_from_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\",\\\\\\\"1815\\\\\\\",\\\\\\\"1839\\\\\\\"]\\\"]\",\"body/2/0/1\",\"cc\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1/1\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1/1\",\"key\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1/1/0/0/1\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1/1\",\"key\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"unsupported_jsonld_features?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"4020\\\\\\\",\\\\\\\"4048\\\\\\\"]\\\"]\",\"body/1/1\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"unsupported_jsonld_features?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"4020\\\\\\\",\\\\\\\"4048\\\\\\\"]\\\"]\",\"body/1/1\",\"key\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 54,
+      "right_only": 52,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"ActivityPub::InboxesController\",\"instance\",\"local\",\"uri\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"body/0/2\"]",
+            "[\"binding\",\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"ActivityPub::InboxesController\",\"instance\",\"local\",\"uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"Account\",\"instance\",\"local\",\"other_account\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1/1/0/0/1\"]",
+            "[\"binding\",\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"ActivityPub::InboxesController\",\"instance\",\"local\",\"key\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AccountStatusesFilter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"no_replies_scope\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/account_statuses_filter.rb\\\\\\\",\\\\\\\"2493\\\\\\\",\\\\\\\"2509\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AccountStatusesFilter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"no_replies_scope\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/account_statuses_filter.rb\\\\\\\",\\\\\\\"2493\\\\\\\",\\\\\\\"2509\\\\\\\"]\\\"]\",\"AccountStatusesFilter\",\"instance\",\"ivar\",\"account\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AccountStatusesFilter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"no_replies_scope\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/account_statuses_filter.rb\\\\\\\",\\\\\\\"2493\\\\\\\",\\\\\\\"2509\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AccountStatusesFilter\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"no_replies_scope\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/account_statuses_filter.rb\\\\\\\",\\\\\\\"2493\\\\\\\",\\\\\\\"2509\\\\\\\"]\\\"]\",\"AccountStatusesFilter\",\"instance\",\"ivar\",\"current_account\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 845,
+      "right_only": 537,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"[]\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_mode?\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"authorized_fetch_overridden?\"]",
+            "ApplicationController",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"render_with_cache\\\"]\",\"body/4/2/0/2/1/2\"]",
+            "[\"ApplicationController\",\"instance\",\"set_cache_control_defaults\"]",
+            "ApplicationController",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Form::AdminSettings\\\",\\\"class-body\\\"]\",\"36/1/0/1/0/1/0/2/1\"]",
+            "[\"Form::AdminSettings\",\"instance\",\"[]\"]",
+            "Form::AdminSettings",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Form::AdminSettings\\\",\\\"class-body\\\"]\",\"36/1/0/1/0/1/0/2/1\"]",
+            "[\"Form::AdminSettings\",\"instance\",\"authorized_fetch_overridden?\"]",
+            "Form::AdminSettings",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "fold-parameter",
+      "left_only": 79,
+      "right_only": 69,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"body_to_json\\\"]\",\"body/0/0/0\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"body_to_json\\\"]\",\"body/0/0/0/0\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"supported_context?\\\"]\",\"body\"]",
+            "[\"ActivityPub::FetchRemoteFeaturedCollectionService\",\"instance\",\"call\",\"prefetched_body\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"first_lang_string\\\"]\",\"body/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"first_of_value\",\"value\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"first_lang_string\\\"]\",\"body/1/0/0/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"first_of_value\",\"value\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"first_lang_string\\\"]\",\"body/2/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"first_of_value\",\"value\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 8,
+      "right_only": 6,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"body/0/2\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"build_request\\\"]\",\"uri\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"body/0/0/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"other_account\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"body/0/0/1/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::Interactions\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"blocked_by?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interactions.rb\\\\\\\",\\\\\\\"5887\\\\\\\",\\\\\\\"5898\\\\\\\"]\\\"]\",\"other_account\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"quote\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/0/1/0/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"quote\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/1/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"quote\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "narrowing",
+      "left_only": 19,
+      "right_only": 60,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"safe_prefetched_embed\\\"]\",\"body\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"safe_prefetched_embed\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"safe_prefetched_embed\\\"]\",\"body/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_uri_scheme?\\\"]\",\"body\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessFeaturedCollectionService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_featured_collection_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1238\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1241\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\"]\",\"!blank_url\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_uri_scheme?\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::ProcessFeaturedCollectionService\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/services/activitypub/process_featured_collection_service.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1238\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1241\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\"]\",\"!blank_url\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"url_to_href\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1411\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_value\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "parameter",
+      "left_only": 19,
+      "right_only": 6,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AccountSuggestions::SettingSource\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"setting_to_where_condition\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/account_suggestions/setting_source.rb\\\\\\\",\\\\\\\"505\\\\\\\",\\\\\\\"531\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"Account\",\"instance\",\"reduce\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"Collection\",\"instance\",\"<<\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/0\"]",
+            "[\"Status\",\"instance\",\"==\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/1\"]",
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/5\"]",
+            "[\"Quote\",\"instance\",\"update!\",\"index:0\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "position",
+      "left_only": 23,
+      "right_only": 10,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Announce\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"audience_cc\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1737\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1748\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Announce\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"audience_to\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/announce.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1659\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1670\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"audience_cc\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"937\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"948\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body\\\\\\\"]\\\"]\",\"Elem\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1\\\\\\\"]\\\"]\",\"Key\"]",
+            "write",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 49,
+      "right_only": 418,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/1/0\"]",
+            "[\"Account\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/1/0\"]",
+            "[\"Account::Associations\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Add\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"add_featured\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/add.rb\\\\\\\",\\\\\\\"557\\\\\\\",\\\\\\\"569\\\\\\\"]\\\"]\",\"body/1/0/0/1/0\"]",
+            "[\"Account::AttributionDomains\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::InteractionPolicyConcern\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"feature_policy_for_account\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interaction_policy_concern.rb\\\\\\\",\\\\\\\"560\\\\\\\",\\\\\\\"586\\\\\\\"]\\\"]\",\"body/0/0/0\"]",
+            "[\"Account\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Account::InteractionPolicyConcern\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"feature_policy_for_account\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interaction_policy_concern.rb\\\\\\\",\\\\\\\"560\\\\\\\",\\\\\\\"586\\\\\\\"]\\\"]\",\"body/0/0/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Accept\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/accept.rb\\\\\\\",\\\\\\\"2002\\\\\\\",\\\\\\\"2015\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 981,
+      "right_only": 1389,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"ActivityPub::Dereferencer\",\"instance\",\"fetch_object!\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"ActivityPub::Dereferencer\",\"instance\",\"fetch_with_signature!\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"value_or_id\\\"]\",\"body/0/1\"]",
+            "[\"ActivityPub::Dereferencer\",\"instance\",\"fetch_with_token!\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"fetch_resource\\\"]\",\"body/0/2/1/0/1/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"fetch_resource_without_id_validation\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"fetch_resource\\\"]\",\"body/0/2/2/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"fetch_resource_without_id_validation\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"fetch_resource\\\"]\",\"body/2/0/1/0\"]",
+            "[\"JsonLdHelper\",\"instance\",\"fetch_resource_without_id_validation\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 7,
+      "right_only": 13,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"BackupService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"build_outbox_json!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/backup_service.rb\\\\\\\",\\\\\\\"455\\\\\\\",\\\\\\\"473\\\\\\\"]\\\"]\",\"BackupService\",\"instance\",\"local\",\"status\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"BackupService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"download_to_zip\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/backup_service.rb\\\\\\\",\\\\\\\"5432\\\\\\\",\\\\\\\"5447\\\\\\\"]\\\"]\",\"BackupService\",\"instance\",\"local\",\"attachment\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"CacheBuster\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"bust\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/cache_buster.rb\\\\\\\",\\\\\\\"219\\\\\\\",\\\\\\\"223\\\\\\\"]\\\"]\",\"CacheBuster\",\"instance\",\"local\",\"http_client\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::CaseTransform\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"camel_lower\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/case_transform.rb\\\\\\\",\\\\\\\"156\\\\\\\",\\\\\\\"167\\\\\\\"]\\\"]\",\"ActivityPub::CaseTransform\",\"class\",\"local\",\"key\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"AfterBlockDomainFromAccountService\",\"instance\",\"local\",\"follow\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"equals_or_includes?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"152\\\\\\\",\\\\\\\"171\\\\\\\"]\\\"]\",\"JsonLdHelper\",\"instance\",\"ivar\",\"signed_request_actor\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "narrowing",
+      "left_only": 5,
+      "right_only": 8,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Account::InteractionPolicyConcern\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"feature_policy_for_account\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interaction_policy_concern.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"560\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"586\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0\\\\\\\"]\\\"]\",\"!nil_other_account\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Account::InteractionPolicyConcern\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"feature_policy_for_account\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/models/concerns/account/interaction_policy_concern.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"560\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"586\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"notnil_other_account\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2329\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2337\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"is_array_value\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1411\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_value\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1411\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0/0\\\\\\\"]\\\"]\",\"is_array_value\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "parameter",
+      "left_only": 4,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"Account\",\"instance\",\"reduce\",\"index:0\"]"
+          ],
+          [
+            "[\"Collection\",\"instance\",\"<<\",\"index:0\"]"
+          ],
+          [
+            "[\"Conversation\",\"instance\",\"<<\",\"index:0\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "position",
+      "left_only": 3,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"addresses_local_accounts?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16801\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16826\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"Elem\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::CaseTransform\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"camel_lower\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/case_transform.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"156\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"167\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/6\\\\\\\"]\\\"]\",\"Elem\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1\\\\\\\"]\\\"]\",\"Key\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 1,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"BackupService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"download_to_zip\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/backup_service.rb\\\\\\\",\\\\\\\"5432\\\\\\\",\\\\\\\"5447\\\\\\\"]\\\"]\",\"BackupService\",\"instance\",\"local\",\"attachment\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"BackupService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"download_to_zip\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/backup_service.rb\\\\\\\",\\\\\\\"5432\\\\\\\",\\\\\\\"5447\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"AfterBlockDomainFromAccountService\",\"instance\",\"local\",\"follow\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"AfterBlockDomainFromAccountService\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"reject_follow!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/services/after_block_domain_from_account_service.rb\\\\\\\",\\\\\\\"1791\\\\\\\",\\\\\\\"1805\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"equals_or_includes?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"152\\\\\\\",\\\\\\\"171\\\\\\\"]\\\"]\",\"JsonLdHelper\",\"instance\",\"ivar\",\"signed_request_actor\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"equals_or_includes?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"152\\\\\\\",\\\\\\\"171\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"RelationshipSeveranceEvent\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"import_from_active_follows!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/relationship_severance_event.rb\\\\\\\",\\\\\\\"823\\\\\\\",\\\\\\\"850\\\\\\\"]\\\"]\",\"RelationshipSeveranceEvent\",\"instance\",\"local\",\"follows\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"RelationshipSeveranceEvent\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"import_from_active_follows!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/models/relationship_severance_event.rb\\\\\\\",\\\\\\\"823\\\\\\\",\\\\\\\"850\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "narrowing",
+      "left_only": 9,
+      "right_only": 14,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"safe_prefetched_embed\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"safe_prefetched_embed\\\"]\",\"body/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"safe_prefetched_embed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3180\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3201\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_object\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"safe_prefetched_embed\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"3180\\\\\\\",\\\\\\\"3201\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"as_array\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2329\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2337\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/2/0\\\\\\\"]\\\"]\",\"is_array_value\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"as_array\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"2329\\\\\\\",\\\\\\\"2337\\\\\\\"]\\\"]\",\"body/2\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1411\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_value\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"url_to_href\\\"]\",\"body/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"url_to_href\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1411\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"1422\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"is_hash_value\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"url_to_href\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"1411\\\\\\\",\\\\\\\"1422\\\\\\\"]\\\"]\",\"body/0\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "parameter",
+      "left_only": 20,
+      "right_only": 6,
+      "samples": {
+        "left_only": [
+          [
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/1/1/0\\\"]\",\"receiver\",\"ActivityPub::Activity::Create\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"<<\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/1/1/0\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"reduce\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"AccountSuggestions::SettingSource\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"setting_to_where_condition\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/models/account_suggestions/setting_source.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"505\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"531\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body\\\"]\",\"receiver\",\"AccountSuggestions::SettingSource\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"accept_quote_request!\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"556\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"577\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/3/0/1\\\"]\",\"receiver\",\"ActivityPub::Activity::QuoteRequest\"]"
+          ],
+          [
+            "[\"Account\",\"instance\",\"==\",\"index:0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"accept_quote_request!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\",\\\\\\\"556\\\\\\\",\\\\\\\"577\\\\\\\"]\\\"]\",\"body/3/0/1\"]"
+          ],
+          [
+            "[\"Quote\",\"instance\",\"update!\",\"index:0\"]",
+            "[\"[\\\"[\\\\\\\"method\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::Activity::QuoteRequest\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"accept_quote_request!\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"[\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/quote_request.rb\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"556\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"577\\\\\\\\\\\\\\\"]\\\\\\\"]\\\",\\\"body/5\\\"]\",\"receiver\",\"ActivityPub::Activity::QuoteRequest\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "position",
+      "left_only": 3,
+      "right_only": 6,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"addresses_local_accounts?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16801\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"16826\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"addresses_local_accounts?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"16801\\\\\\\",\\\\\\\"16826\\\\\\\"]\\\"]\",\"body/1/0/1/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::Activity::Create\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"process_audience\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3851\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3867\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0/0/0\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::Activity::Create\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"process_audience\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/activity/create.rb\\\\\\\",\\\\\\\"3851\\\\\\\",\\\\\\\"3867\\\\\\\"]\\\"]\",\"body/0/0/0/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ActivityPub::CaseTransform\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"camel_lower\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/case_transform.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"156\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"167\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/6\\\\\\\"]\\\"]\",\"Elem\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ActivityPub::CaseTransform\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"camel_lower\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/lib/activitypub/case_transform.rb\\\\\\\",\\\\\\\"156\\\\\\\",\\\\\\\"167\\\\\\\"]\\\"]\",\"body/6\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]",
+            "[\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"unsupported_jsonld_features?\\\"]\",\"body/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"ActivityPub::InboxesController\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"JsonLdHelper\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"instance\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"unsupported_jsonld_features?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4020\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"4048\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0\\\\\\\"]\\\"]\",\"Key\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"JsonLdHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"unsupported_jsonld_features?\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/mastodon/app/helpers/json_ld_helper.rb\\\\\\\",\\\\\\\"4020\\\\\\\",\\\\\\\"4048\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 20,
+      "right_only": 20,
+      "samples": {
+        "left_only": [
+          [
+            "[\"AccountStatusesFilter\",\"instance\",\"account\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"AccountStatusesFilter\",\"instance\",\"current_account\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ActivityPub::FetchFeaturedCollectionService\",\"instance\",\"process_items\"]",
+            "phase:handoff-return"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ActivityPub::FetchFeaturedCollectionService\",\"instance\",\"process_note_items\"]",
+            "phase:handoff-return"
+          ],
+          [
+            "[\"ActivityPub::InboxesController\",\"instance\",\"equals_or_includes_any?\"]",
+            "[\"harvest\",\"[\\\"ActivityPub::InboxesController\\\",\\\"instance\\\",\\\"equals_or_includes_any?\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ActivityPub::InboxesController\",\"instance\",\"equals_or_includes_any?\"]",
+            "phase:analysis"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "2f826183df253e64",
+  "left": "./runs/mastodon/1/structure.jsonl",
+  "right": "./runs/mastodon/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 1271755,
+    "slot": 416365,
+    "writer": 507459
+  }
+}

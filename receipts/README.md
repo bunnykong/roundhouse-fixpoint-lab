@@ -1,8 +1,8 @@
 # Measurement receipts for the public research corpus
 
-These receipts make F12, F14, F15 and F17–F30's public measurements inspectable and rerunnable.
-Every fact has its original raw inputs, a Python reduction, exact Roundhouse revisions and a fresh-clone
-measurement script. Output paths and input names are relative; source acquisition uses only public repositories.
+These receipts make F12, F14, F15 and F17–F31's public measurements inspectable and rerunnable.
+Receipts retain original inputs or omitted-file hashes, a Python reduction, exact Roundhouse revisions and a
+fresh-clone measurement script. Output paths and input names are relative; source acquisition uses only public repositories.
 The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoint-research`.
 
 | Fact | Measurement | Receipt |
@@ -19,6 +19,7 @@ The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoi
 | F25 | Finite writer-law inventory and counterexamples | [writer-laws](writer-laws/README.md) |
 | F29 | Discourse test reads, runtime membership and coverage limits | [discourse-trace-2026-10-10](discourse-trace-2026-10-10/README.md) |
 | F30 | Warm replay port, six-edit parity and exclusive phase profiles on a shared host | [warm-profile-2026-10-10](warm-profile-2026-10-10/README.md) |
+| F31 | Logical slots, writers, transient routes and repeat/coverage controls | [structure-dump-2026-10-10](structure-dump-2026-10-10/README.md) |
 
 The remaining additions are small source or observation receipts:
 

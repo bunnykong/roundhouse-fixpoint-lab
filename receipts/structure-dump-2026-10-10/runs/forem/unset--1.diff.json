@@ -1,0 +1,440 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 4851343,
+        "write": 1755726
+      },
+      "ambiguous_expression_sites": 34016,
+      "reads_before_return_write": 1557864,
+      "undeclared_reads": 1779631,
+      "undeclared_writes": 73648,
+      "unmapped_expression_sites": 2216
+    },
+    "right": {
+      "accesses": {
+        "read": 4983685,
+        "write": 1812526
+      },
+      "ambiguous_expression_sites": 34780,
+      "reads_before_return_write": 1588939,
+      "undeclared_reads": 1815644,
+      "undeclared_writes": 75562,
+      "unmapped_expression_sites": 2216
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "context",
+      "left_only": 4,
+      "right_only": 7,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"options\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"repository_path\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"Homepage::FetchTagFlares\",\"class\",\"local\",\"articles\"]",
+            "write",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"body/2/0/0/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"MarkdownProcessor::Parser\",\"instance\",\"local\",\"codeblock\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"body/2/0/1/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"MarkdownProcessor::Parser\",\"instance\",\"local\",\"codeblock\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"body/2/0/2/0/0\"]",
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"MarkdownProcessor::Parser\",\"instance\",\"local\",\"codeblock\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 200,
+      "right_only": 354,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"changed_attributes\"]",
+            "Credit",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attributes=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"created_at=\"]",
+            "Credit",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"created_at_previously_changed?\"]",
+            "Credit",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "fold-parameter",
+      "left_only": 3,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"call\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"46\\\\\\\",\\\\\\\"50\\\\\\\"]\\\"]\",\"body/0/0/1\"]",
+            "[\"Images::Optimizer\",\"class\",\"call\",\"img_src\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"Images::Optimizer\",\"class\",\"call\",\"img_src\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"Images::Optimizer\",\"class\",\"call\",\"img_src\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0/1\"]",
+            "[\"Images::Optimizer\",\"class\",\"cloudinary\",\"img_src\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "phase:analysis",
+            "[\"Images::Optimizer\",\"class\",\"cloudinary\",\"img_src\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "local",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"body/2/0/0\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Homepage::FetchTagFlares\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"articles_tag_flares\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/homepage/fetch_tag_flares.rb\\\\\\\",\\\\\\\"492\\\\\\\",\\\\\\\"511\\\\\\\"]\\\"]\",\"articles\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "narrowing",
+      "left_only": 4,
+      "right_only": 1,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1\\\\\\\"]\\\"]\",\"truthy_img_src\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"truthy_img_src\"]",
+            "write",
+            "reference"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"truthy_img_src\"]",
+            "read",
+            "reference"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0/1\"]",
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"call\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"46\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"50\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/0/0\\\\\\\"]\\\"]\",\"present_img_src\"]",
+            "read",
+            "reference"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "registry",
+      "left_only": 10,
+      "right_only": 24,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"set_surrogate_key_header\\\"]\",\"body/1/2\"]",
+            "[\"String\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"follow_button\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"3797\\\\\\\",\\\\\\\"3810\\\\\\\"]\\\"]\",\"body/0\"]",
+            "[\"Organization\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"user_colors\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"4855\\\\\\\",\\\\\\\"4866\\\\\\\"]\\\"]\",\"body/0/0\"]",
+            "[\"User\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"ApplicationHelper\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"user_colors\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/helpers/application_helper.rb\\\\\\\",\\\\\\\"4855\\\\\\\",\\\\\\\"4866\\\\\\\"]\\\"]\",\"body/1\"]",
+            "[\"User\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Articles::Suggest\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"call\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/articles/suggest.rb\\\\\\\",\\\\\\\"310\\\\\\\",\\\\\\\"314\\\\\\\"]\\\"]\",\"body/1/1/0\"]",
+            "[\"ApplicationRecord\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 223,
+      "right_only": 392,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"[]=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"broadcast_replace_to\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"changed_attributes\"]",
+            "read",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"attributes=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"created_at=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "[\"[\\\"Admin::OrganizationsController\\\",\\\"instance\\\",\\\"update_org_credits\\\"]\",\"body/3\"]",
+            "[\"Credit\",\"instance\",\"created_at_previously_changed?\"]",
+            "read",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "context",
+      "left_only": 2,
+      "right_only": 2,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"options\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"repository_path\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"MarkdownProcessor::Parser\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"escape_liquid_tags_in_codeblock\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/markdown_processor/parser.rb\\\\\\\",\\\\\\\"4518\\\\\\\",\\\\\\\"4549\\\\\\\"]\\\"]\",\"MarkdownProcessor::Parser\",\"instance\",\"local\",\"codeblock\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"Podcasts::Feed\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"refetch_items\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/podcasts/feed.rb\\\\\\\",\\\\\\\"1772\\\\\\\",\\\\\\\"1785\\\\\\\"]\\\"]\",\"Podcasts::Feed\",\"instance\",\"local\",\"episode\"]"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "slot",
+      "kind": "narrowing",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"truthy_img_src\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1\\\\\\\"]\\\"]\",\"truthy_img_src\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "context",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"options\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"body\"]"
+          ],
+          [
+            "[\"binding\",\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"GithubTag::GithubReadmeTag\",\"instance\",\"ivar\",\"repository_path\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"GithubTag::GithubReadmeTag\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"clean_relative_path!\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/liquid_tags/github_tag/github_readme_tag.rb\\\\\\\",\\\\\\\"2133\\\\\\\",\\\\\\\"2153\\\\\\\"]\\\"]\",\"body\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "narrowing",
+      "left_only": 2,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1/0\\\\\\\"]\\\"]\",\"truthy_img_src\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1/0\"]"
+          ],
+          [
+            "[\"[\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0\\\\\\\"]\\\",\\\"[\\\\\\\"[\\\\\\\\\\\\\\\"method\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Images::Optimizer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"class\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"cloudinary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"551\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"561\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"]\\\\\\\",\\\\\\\"body/1/0/1\\\\\\\"]\\\"]\",\"truthy_img_src\"]",
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Images::Optimizer\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"cloudinary\\\\\\\"]\\\",\\\"[\\\\\\\"corpus/apps/forem/app/services/images/optimizer.rb\\\\\\\",\\\\\\\"551\\\\\\\",\\\\\\\"561\\\\\\\"]\\\"]\",\"body/1\"]"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 15,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ArticlesController\",\"instance\",\"article_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"article_url\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"article_url\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"reaction_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"reaction_url\\\"]\",\"no-body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ArticlesController\",\"instance\",\"cloud_cover_url\"]",
+            "[\"harvest\",\"[\\\"ArticlesController\\\",\\\"instance\\\",\\\"cloud_cover_url\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ArticlesController\",\"instance\",\"cloud_cover_url\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"GaEventsController\",\"instance\",\"cloud_cover_url\"]",
+            "[\"harvest\",\"[\\\"GaEventsController\\\",\\\"instance\\\",\\\"cloud_cover_url\\\"]\",\"no-body\"]"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "37a68b85b2155f47",
+  "left": "./runs/forem/unset/structure.jsonl",
+  "right": "./runs/forem/1/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 730450,
+    "slot": 263588,
+    "writer": 310322
+  }
+}

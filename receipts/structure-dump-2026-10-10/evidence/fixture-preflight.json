@@ -1,0 +1,33 @@
+{
+  "cargo_build_jobs": "4",
+  "cargo_target_dir": "./target",
+  "command": [
+    "env",
+    "RH_FOLD=1",
+    "RH_FOLD_SLOTS=1",
+    "RH_FOLD_JOIN=1",
+    "RH_FOLD_TAIL=1",
+    "RH_BRK_ALLARMS=1",
+    "RH_SCHED=sccq",
+    "RH_SHUFFLE=1",
+    "RH_STRUCT_DUMP=./evidence/fixture-preflight.jsonl",
+    "./target/debug/roundhouse",
+    "check",
+    "--continue",
+    "tools/research/structure_fixture"
+  ],
+  "cwd": "rh",
+  "elapsed_seconds": 2.3510610840748996,
+  "exit": 0,
+  "finished_utc": "2026-10-10T16:52:38.282061+00:00",
+  "head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "log": "evidence/fixture-preflight.log",
+  "patch_sha256": "bf96c46cf62fe0c24914e34106587a2aa1327f6d808e65179e4c579f04ca4c40",
+  "pid": 48897,
+  "ruby": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+  "rust_test_threads": "1",
+  "started_utc": "2026-10-10T16:52:35.922574+00:00",
+  "status": "A  docs/development/structure-dump.md\nM  src/analyze/body/mod.rs\nM  src/analyze/body/narrowing.rs\nM  src/analyze/body/send.rs\nM  src/analyze/errgate.rs\nM  src/analyze/fold.rs\nM  src/analyze/handoff.rs\nM  src/analyze/harvest_return.rs\nM  src/analyze/mod.rs\nM  src/analyze/sccq.rs\nM  src/analyze/structure.rs\nA  src/analyze/structure_dump.rs\nA  tests/structure_dump.rs\nA  tools/research/probe\nA  tools/research/structure_fixture/app/controllers/structure_controller.rb\nA  tools/research/structure_fixture/app/services/structure_probe.rb\nA  tools/struct_diff.py\nA  tools/test_struct_diff.py",
+  "step": "fixture-preflight",
+  "tree": "20ab0dcdc1965d0aa4a27237d0c008d5a4c06a9c"
+}

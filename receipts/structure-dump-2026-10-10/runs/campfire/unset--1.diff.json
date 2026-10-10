@@ -1,0 +1,139 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 853152,
+        "write": 282689
+      },
+      "ambiguous_expression_sites": 3343,
+      "reads_before_return_write": 274721,
+      "undeclared_reads": 309732,
+      "undeclared_writes": 25520,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "dispatch",
+      "left_only": 1,
+      "right_only": 0,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Current\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"session=\\\\\\\"]\\\",\\\"[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1004\\\\\\\",\\\\\\\"1012\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"Current\",\"instance\",\"session=\"]",
+            "Current",
+            "inline"
+          ]
+        ],
+        "right_only": []
+      }
+    },
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 3,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"[\\\"method\\\",\\\"[\\\\\\\"Current\\\\\\\",\\\\\\\"class\\\\\\\",\\\\\\\"session=\\\\\\\"]\\\",\\\"[\\\\\\\"synthetic\\\\\\\",\\\\\\\"1004\\\\\\\",\\\\\\\"1012\\\\\\\"]\\\"]\",\"body\"]",
+            "[\"Current\",\"instance\",\"session=\"]",
+            "read",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+            "write",
+            "inline"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"terminate_current_session\\\"]\",\"body/0/1\"]",
+            "[\"Current\",\"class\",\"session\"]",
+            "read",
+            "reference"
+          ],
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"resume_session\"]",
+            "write",
+            "inline"
+          ],
+          [
+            "phase:analysis",
+            "[\"ApplicationController\",\"instance\",\"start_new_session_for\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 4,
+      "right_only": 4,
+      "samples": {
+        "left_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"require_authentication\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"terminate_current_session\\\"]\",\"no-body\"]"
+          ]
+        ],
+        "right_only": [
+          [
+            "[\"ApplicationController\",\"instance\",\"resume_session\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"resume_session\\\"]\",\"no-body\"]"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"resume_session\"]",
+            "phase:analysis"
+          ],
+          [
+            "[\"ApplicationController\",\"instance\",\"start_new_session_for\"]",
+            "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"start_new_session_for\\\"]\",\"no-body\"]"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "8f77670b55471db9",
+  "left": "./runs/campfire/unset/structure.jsonl",
+  "right": "./runs/campfire/1/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 135812,
+    "slot": 50222,
+    "writer": 62037
+  }
+}
