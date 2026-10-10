@@ -1,0 +1,288 @@
+{
+  "canonical": {
+    "iterations": 500000,
+    "seconds": {
+      "control": [
+        1.3183542919999987,
+        1.5599980420000001,
+        1.0430251669999997,
+        0.9981449999999974,
+        0.961830625000001,
+        0.8251059580000017,
+        0.797348834000001
+      ],
+      "fast": [
+        0.8563909159999987,
+        1.0671771250000006,
+        0.4853892089999974,
+        0.4934440000000002,
+        0.445786959000003,
+        0.4733580419999974,
+        0.4867964590000007
+      ]
+    },
+    "median_seconds": {
+      "control": 0.9981449999999974,
+      "fast": 0.4867964590000007
+    },
+    "control_over_fast": 2.050436032444509,
+    "allocation": {
+      "control": {
+        "one": {
+          "objects": 78,
+          "object_payload_bytes": 8257,
+          "named_counts": {
+            "String": 18,
+            "(no-scan)": 6,
+            "unnamed-scanner": 11,
+            "Hash(String,Integer)": 1,
+            "Array": 35,
+            "Hash(String)": 3,
+            "Hash": 4
+          }
+        },
+        "hundred": {
+          "objects": 5325,
+          "object_payload_bytes": 775705,
+          "named_counts": {
+            "String": 18,
+            "(no-scan)": 6,
+            "unnamed-scanner": 1001,
+            "Array": 3500,
+            "Hash(String)": 300,
+            "Hash": 400,
+            "Hash(String,Integer)": 100
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 53.0,
+        "payload_bytes_per_iteration": 7752.0
+      },
+      "fast": {
+        "one": {
+          "objects": 53,
+          "object_payload_bytes": 3809,
+          "named_counts": {
+            "String": 18,
+            "(no-scan)": 6,
+            "Array": 6,
+            "Array(String)": 4,
+            "Hash(String)": 7,
+            "unnamed-scanner": 11,
+            "Hash(String,Integer)": 1
+          }
+        },
+        "hundred": {
+          "objects": 2825,
+          "object_payload_bytes": 330905,
+          "named_counts": {
+            "String": 18,
+            "(no-scan)": 6,
+            "Array": 600,
+            "Array(String)": 400,
+            "Hash(String)": 700,
+            "unnamed-scanner": 1001,
+            "Hash(String,Integer)": 100
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 28.0,
+        "payload_bytes_per_iteration": 3304.0
+      }
+    },
+    "output": "{\"a\" => {\"b\" => [1, \"x\"], \"d\" => 2}, \"c\" => [{\"b\" => [1, \"x\"], \"e\" => nil}]}\n",
+    "scope": "manually specialized C over existing boxed representation; unchanged generated driver"
+  },
+  "cycle": {
+    "iterations": 1000000,
+    "seconds": {
+      "control": [
+        0.6754168750000034,
+        0.6494010420000009,
+        0.6913351250000019,
+        0.714101540999998,
+        0.644210207999997,
+        0.7237590830000045,
+        0.6736792920000028
+      ],
+      "fast": [
+        0.2304604170000033,
+        0.2531314580000057,
+        0.23717941700000011,
+        0.23516520799999796,
+        0.25479758300000555,
+        0.23042545900000277,
+        0.23780275000000017
+      ]
+    },
+    "median_seconds": {
+      "control": 0.6754168750000034,
+      "fast": 0.23717941700000011
+    },
+    "control_over_fast": 2.8477044236937434,
+    "allocation": {
+      "control": {
+        "one": {
+          "objects": 45,
+          "object_payload_bytes": 3326,
+          "named_counts": {
+            "String": 16,
+            "(no-scan)": 6,
+            "Array": 6,
+            "Hash(String)": 2,
+            "Hash": 3,
+            "unnamed-scanner": 11,
+            "Hash(String,String)": 1
+          }
+        },
+        "hundred": {
+          "objects": 1629,
+          "object_payload_bytes": 218750,
+          "named_counts": {
+            "String": 16,
+            "(no-scan)": 6,
+            "unnamed-scanner": 1001,
+            "Array": 303,
+            "Hash(String)": 2,
+            "Hash": 300,
+            "Hash(String,String)": 1
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 16.0,
+        "payload_bytes_per_iteration": 2176.0
+      },
+      "fast": {
+        "one": {
+          "objects": 35,
+          "object_payload_bytes": 1870,
+          "named_counts": {
+            "String": 16,
+            "(no-scan)": 6,
+            "unnamed-scanner": 1,
+            "Hash(String,String)": 1,
+            "Array": 6,
+            "Hash(String)": 5
+          }
+        },
+        "hundred": {
+          "objects": 629,
+          "object_payload_bytes": 73150,
+          "named_counts": {
+            "String": 16,
+            "(no-scan)": 6,
+            "Hash(String,String)": 1,
+            "Array": 303,
+            "Hash(String)": 302,
+            "unnamed-scanner": 1
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 6.0,
+        "payload_bytes_per_iteration": 720.0
+      }
+    },
+    "output": "{\"a\" => [1, {\"b\" => \"x\"}], \"c\" => {\"d\" => [nil, 7, [8, \"y\"]]}}\n",
+    "scope": "manually specialized C over existing boxed representation; unchanged generated driver"
+  },
+  "tree_sum": {
+    "iterations": 2000000,
+    "seconds": {
+      "control": [
+        0.49985016600000165,
+        0.5031315829999983,
+        0.5324991660000009,
+        0.5461599590000006,
+        0.5285508750000005,
+        0.505350166999996,
+        0.4931403329999995
+      ],
+      "fast": [
+        0.11740333299999861,
+        0.11642887499999688,
+        0.144269125000001,
+        0.13341199999999986,
+        0.12731791600000264,
+        0.15059879100000018,
+        0.1329936659999973
+      ]
+    },
+    "median_seconds": {
+      "control": 0.505350166999996,
+      "fast": 0.1329936659999973
+    },
+    "control_over_fast": 3.799806277992264,
+    "allocation": {
+      "control": {
+        "one": {
+          "objects": 14,
+          "object_payload_bytes": 1747,
+          "named_counts": {
+            "String": 1,
+            "Array": 9,
+            "Hash(String)": 3,
+            "unnamed-scanner": 1
+          }
+        },
+        "hundred": {
+          "objects": 410,
+          "object_payload_bytes": 65107,
+          "named_counts": {
+            "String": 1,
+            "Array": 405,
+            "Hash(String)": 3,
+            "unnamed-scanner": 1
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 4.0,
+        "payload_bytes_per_iteration": 640.0
+      },
+      "fast": {
+        "one": {
+          "objects": 10,
+          "object_payload_bytes": 1107,
+          "named_counts": {
+            "String": 1,
+            "Array": 5,
+            "Hash(String)": 3,
+            "unnamed-scanner": 1
+          }
+        },
+        "hundred": {
+          "objects": 10,
+          "object_payload_bytes": 1107,
+          "named_counts": {
+            "String": 1,
+            "Array": 5,
+            "Hash(String)": 3,
+            "unnamed-scanner": 1
+          }
+        },
+        "argv": [
+          "001",
+          "100"
+        ],
+        "objects_per_iteration": 0.0,
+        "payload_bytes_per_iteration": 0.0
+      }
+    },
+    "output": "28\n",
+    "scope": "manually specialized C over existing boxed representation; unchanged generated driver"
+  }
+}

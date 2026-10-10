@@ -1,0 +1,170 @@
+{
+  "canonical": {
+    "compile": {
+      "label": "canonical-compile",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/canonical.rb",
+        "--warn-widen",
+        "-o",
+        "patches/spinel-recursive/bin/canonical"
+      ],
+      "seconds": 1.22008925,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "spinel: patches/spinel-recursive/programs/canonical.rb:2:15: warning: parameter `value` of `canonical` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/canonical.rb:4:62: note: passed `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/canonical.rb:4:18: note: from `value.sort` is Array[untyped]\nspinel: patches/spinel-recursive/programs/canonical.rb:4:18: note: from `value` is untyped -- untraced from here\nspinel: patches/spinel-recursive/programs/canonical.rb:2:1: warning: the return of `canonical` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/canonical.rb:3:3: note: returned `case value\u2026` is untyped\nspinel: patches/spinel-recursive/programs/canonical.rb:6:8: note: from `value` is untyped\nspinel: patches/spinel-recursive/programs/canonical.rb:4:62: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/canonical.rb:4:18: note: from `value.sort` is Array[untyped]\nspinel: patches/spinel-recursive/programs/canonical.rb:4:18: note: from `value` is untyped -- untraced from here\npatches/spinel-recursive/programs/canonical.rb -> patches/spinel-recursive/bin/canonical\n"
+    },
+    "emit": {
+      "label": "canonical-emit-c",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/canonical.rb",
+        "-c",
+        "-o",
+        "patches/spinel-recursive/generated/canonical.c"
+      ],
+      "seconds": 0.011125249999999864,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Wrote patches/spinel-recursive/generated/canonical.c\n"
+    },
+    "oracle": {
+      "label": "canonical-oracle",
+      "argv": [
+        "ruby",
+        "--disable-gems",
+        "patches/spinel-recursive/programs/canonical.rb",
+        "1"
+      ],
+      "seconds": 0.148569709,
+      "returncode": 0,
+      "stdout": "{\"a\" => {\"b\" => [1, \"x\"], \"d\" => 2}, \"c\" => [{\"b\" => [1, \"x\"], \"e\" => nil}]}\n",
+      "stderr": ""
+    },
+    "native": {
+      "label": "canonical-native-output",
+      "argv": [
+        "patches/spinel-recursive/bin/canonical",
+        "1"
+      ],
+      "seconds": 1.0658313750000001,
+      "returncode": 0,
+      "stdout": "{\"a\" => {\"b\" => [1, \"x\"], \"d\" => 2}, \"c\" => [{\"b\" => [1, \"x\"], \"e\" => nil}]}\n",
+      "stderr": ""
+    },
+    "matches": true,
+    "source_sha256": "6357aa5f54c8598f8c84635a2b0dd7cd135f64af5a925b3445ee61614b550ff3"
+  },
+  "cycle": {
+    "compile": {
+      "label": "cycle-compile",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/cycle.rb",
+        "--warn-widen",
+        "-o",
+        "patches/spinel-recursive/bin/cycle"
+      ],
+      "seconds": 0.7340196250000002,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "spinel: patches/spinel-recursive/programs/cycle.rb:2:12: warning: parameter `value` of `walk_0` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/cycle.rb:14:41: note: passed `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:14:5: note: from `value` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:4:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:4:5: note: from `value` is untyped -- untraced from here\nspinel: patches/spinel-recursive/programs/cycle.rb:2:1: warning: the return of `walk_0` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/cycle.rb:3:3: note: returned `if value.is_a?(Hash)\u2026` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:4:5: note: from `value.transform_values { |v| walk_1(v) }` is Hash[untyped, untyped]\nspinel: patches/spinel-recursive/programs/cycle.rb:14:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:14:5: note: from `value` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:4:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:4:5: note: from `value` is untyped -- untraced from here\nspinel: patches/spinel-recursive/programs/cycle.rb:12:12: warning: parameter `value` of `walk_1` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/cycle.rb:4:41: note: passed `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:4:5: note: from `value` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:14:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:14:5: note: from `value` is untyped -- untraced from here\nspinel: patches/spinel-recursive/programs/cycle.rb:12:1: warning: the return of `walk_1` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/cycle.rb:13:3: note: returned `if value.is_a?(Hash)\u2026` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:14:5: note: from `value.transform_values { |v| walk_0(v) }` is Hash[untyped, untyped]\nspinel: patches/spinel-recursive/programs/cycle.rb:4:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:4:5: note: from `value` is untyped\nspinel: patches/spinel-recursive/programs/cycle.rb:14:41: note: from `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/cycle.rb:14:5: note: from `value` is untyped -- untraced from here\npatches/spinel-recursive/programs/cycle.rb -> patches/spinel-recursive/bin/cycle\n"
+    },
+    "emit": {
+      "label": "cycle-emit-c",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/cycle.rb",
+        "-c",
+        "-o",
+        "patches/spinel-recursive/generated/cycle.c"
+      ],
+      "seconds": 0.012325791000000308,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Wrote patches/spinel-recursive/generated/cycle.c\n"
+    },
+    "oracle": {
+      "label": "cycle-oracle",
+      "argv": [
+        "ruby",
+        "--disable-gems",
+        "patches/spinel-recursive/programs/cycle.rb",
+        "1"
+      ],
+      "seconds": 0.10180029099999999,
+      "returncode": 0,
+      "stdout": "{\"a\" => [1, {\"b\" => \"x\"}], \"c\" => {\"d\" => [nil, 7, [8, \"y\"]]}}\n",
+      "stderr": ""
+    },
+    "native": {
+      "label": "cycle-native-output",
+      "argv": [
+        "patches/spinel-recursive/bin/cycle",
+        "1"
+      ],
+      "seconds": 1.5352451249999999,
+      "returncode": 0,
+      "stdout": "{\"a\" => [1, {\"b\" => \"x\"}], \"c\" => {\"d\" => [nil, 7, [8, \"y\"]]}}\n",
+      "stderr": ""
+    },
+    "matches": true,
+    "source_sha256": "67f8ce668f8c55e1ece38b554b4cb12e87a49ede08ab4e11cd31881b60278cf3"
+  },
+  "tree_sum": {
+    "compile": {
+      "label": "tree_sum-compile",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/tree_sum.rb",
+        "--warn-widen",
+        "-o",
+        "patches/spinel-recursive/bin/tree_sum"
+      ],
+      "seconds": 0.6194682499999997,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "spinel: patches/spinel-recursive/programs/tree_sum.rb:2:16: warning: parameter `value` of `sum_leaves` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/tree_sum.rb:6:48: note: passed `v` is untyped (a parameter of the block on:)\nspinel: patches/spinel-recursive/programs/tree_sum.rb:6:5: note: from `value` is untyped -- untraced from here\nspinel: patches/spinel-recursive/programs/tree_sum.rb:2:1: warning: the return of `sum_leaves` widened to untyped (boxed poly slow path)\nspinel: patches/spinel-recursive/programs/tree_sum.rb:3:3: note: returned `case value\u2026` is untyped -- born here: no untyped input\npatches/spinel-recursive/programs/tree_sum.rb -> patches/spinel-recursive/bin/tree_sum\n"
+    },
+    "emit": {
+      "label": "tree_sum-emit-c",
+      "argv": [
+        "patches/spinel-recursive/spinel/bin/spinel",
+        "patches/spinel-recursive/programs/tree_sum.rb",
+        "-c",
+        "-o",
+        "patches/spinel-recursive/generated/tree_sum.c"
+      ],
+      "seconds": 0.009268041000000338,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Wrote patches/spinel-recursive/generated/tree_sum.c\n"
+    },
+    "oracle": {
+      "label": "tree_sum-oracle",
+      "argv": [
+        "ruby",
+        "--disable-gems",
+        "patches/spinel-recursive/programs/tree_sum.rb",
+        "1"
+      ],
+      "seconds": 0.10674933399999986,
+      "returncode": 0,
+      "stdout": "28\n",
+      "stderr": ""
+    },
+    "native": {
+      "label": "tree_sum-native-output",
+      "argv": [
+        "patches/spinel-recursive/bin/tree_sum",
+        "1"
+      ],
+      "seconds": 1.3377197499999998,
+      "returncode": 0,
+      "stdout": "28\n",
+      "stderr": ""
+    },
+    "matches": true,
+    "source_sha256": "6f88ef0ecd502880c9ac3f461dffc3d3b781de767ffa85d2290aab80e68373b3"
+  }
+}

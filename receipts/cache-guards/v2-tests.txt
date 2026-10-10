@@ -1,0 +1,14 @@
+test a_changed_constant_uncovering_an_unchanged_body_matches_cold ... ok
+test a_shadow_difference_fails_and_does_not_replace_the_cache ... ok
+test adding_a_method_invalidates_a_recorded_missing_lookup ... ok
+test cache_guards_do_not_add_scheduler_dependencies ... ok
+test chain_body_edit_matches_cold_and_records_each_evaluation ... ok
+test deep_bodies_can_load_their_persisted_evaluations ... ok
+test default_parameter_and_body_evaluations_replay_separately ... ok
+test deleting_a_method_cannot_replay_its_write ... ok
+test deleting_a_seed_from_a_cycle_matches_cold ... ok
+test moving_a_body_keeps_its_hash_and_remaps_diagnostics ... ok
+test record_fields_named_like_wire_markers_keep_their_types ... ok
+test repeated_method_definitions_keep_distinct_writer_and_site_keys ... ok
+test warm_without_a_shadow_is_rejected ... ok
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.48s

@@ -1,0 +1,63 @@
+{
+  "commit": "96519abf042435d4cfefe5a05d7450b042275fa7",
+  "lines": [
+    [
+      3,
+      "//! Storage identity retains record order and untyped provenance. A second"
+    ],
+    [
+      83,
+      "    arcs: IdMap<usize, (Arc<Ty>, TyId)>,"
+    ],
+    [
+      84,
+      "    // Shared payload ids are globally unique and refreshed on every mutation."
+    ],
+    [
+      113,
+      "            arcs: IdMap::default(),"
+    ],
+    [
+      298,
+      "const CACHE_LIMIT: usize = 262_144;"
+    ],
+    [
+      324,
+      "                if memo.arena.cache_size() + memo.binary.len() >= CACHE_LIMIT {"
+    ],
+    [
+      340,
+      "pub(crate) fn reset() {"
+    ],
+    [
+      341,
+      "    DEPTH.with(|depth| assert_eq!(depth.get(), 0, \"reset inside a type operation\"));"
+    ],
+    [
+      470,
+      "    fn reference_ids_stay_nominal_and_functions_retain_all_metadata() {"
+    ],
+    [
+      602,
+      "        reset();"
+    ],
+    [
+      617,
+      "        reset();"
+    ],
+    [
+      624,
+      "        reset();"
+    ],
+    [
+      629,
+      "        reset();"
+    ],
+    [
+      650,
+      "        reset();"
+    ]
+  ],
+  "path": "src/ty_arena.rs",
+  "source_sha256": "44cf147f8142030d012fa8c0dad1f6e935839e271ed274572f7e1d7545432d07"
+}

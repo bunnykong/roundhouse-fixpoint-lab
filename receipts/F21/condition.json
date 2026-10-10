@@ -1,0 +1,23 @@
+{
+  "clang": [
+    "-O2",
+    "-ffp-contract=off",
+    "-DSP_INT_OVERFLOW_MODE_RAISE",
+    "-Wno-all",
+    "-Wno-unknown-warning-option",
+    "-Wno-alloc-size-larger-than",
+    "-Wno-format-truncation",
+    "-Wl,-dead_strip"
+  ],
+  "host": "arm64 macOS",
+  "pairs": 7,
+  "repetitions": {
+    "canonical": 500000,
+    "cycle": 1000000,
+    "tree_sum": 2000000
+  },
+  "repository": "https://github.com/matz/spinel.git",
+  "ruby": "4.0.7",
+  "spinel": "e527d205d274ccdbbca926edaddce386b8c17fa2",
+  "validation": "96 deterministic closed-builtin JSON trees per program; also SPINEL_GC_STRESS=2"
+}

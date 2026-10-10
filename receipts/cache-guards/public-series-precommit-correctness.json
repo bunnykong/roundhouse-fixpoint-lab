@@ -1,0 +1,1058 @@
+[
+  {
+    "label": "mastodon-seed",
+    "app": "mastodon",
+    "exit_code": 1,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:15:40.532049+00:00",
+    "finished_at_utc": "2026-10-08T21:19:03.646136+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      },
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "gradual_untyped": 2675,
+      "summary_counts": {
+        "parse_errors": 0,
+        "errors": 1583,
+        "warnings": 4103,
+        "notes": 263,
+        "survey_gaps": 138
+      },
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 0,
+        "recorded": 66173,
+        "replayed": 0,
+        "typed": 66173,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "69c4d7f271269999",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null,
+    "save": null
+  },
+  {
+    "label": "mastodon-boolean-correctness",
+    "app": "mastodon",
+    "exit_code": 3,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:19:03.763496+00:00",
+    "finished_at_utc": "2026-10-08T21:21:36.257044+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {},
+      "warnings_by_kind": {},
+      "notes_by_kind": {},
+      "gradual_untyped": 0,
+      "summary_counts": null,
+      "counts_agree_with_summary": null,
+      "diagnostics_complete": false,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218414,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "8509a49c1b1c4322",
+        "params": "a64e379af4ea95c3",
+        "returns": "db73fcc7a1891687",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 66173,
+        "recorded": 60578,
+        "replayed": 17020,
+        "typed": 43558,
+        "uncovered": 1,
+        "unused": 49148
+      },
+      "first_difference": {
+        "cold": "4938c95b3281b10f",
+        "part": "controller_cache",
+        "slot": "ActivityPub::InboxesController",
+        "warm": "dc3b51a6e6c3dee6"
+      },
+      "shadow": "fail",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "4728ae006ab7ebbe",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "075a741d1c01c18a",
+        "params": "85ed6c4c16b4a053",
+        "returns": "3ba9b318d311e873",
+        "side_table": "3f9bdcb1efe5856b"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "mastodon",
+      "kind": "boolean",
+      "file": "app/models/account.rb",
+      "method": "sign?",
+      "start": 11788,
+      "end": 11792,
+      "old_body": "true",
+      "replacement": "false",
+      "original_file_sha256": "156dd0c115d5601b97e7b88ea53285387c08247da6c000dd15463635da31e2b2",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "7b46000eae0e8d33c5d3a50fec3e26b885c479f88fcf0dbd820c5f88b64da33e"
+  },
+  {
+    "label": "mastodon-return-type-correctness",
+    "app": "mastodon",
+    "exit_code": 1,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:21:36.327491+00:00",
+    "finished_at_utc": "2026-10-08T21:25:31.987695+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 210,
+        "send_dispatch_failed": 494,
+        "unsupported": 870
+      },
+      "warnings_by_kind": {
+        "gradual_untyped": 2675,
+        "missing_preload": 2,
+        "unresolved_type": 1426
+      },
+      "notes_by_kind": {
+        "incompatible_binop": 1,
+        "ivar_unresolved": 23,
+        "send_dispatch_failed": 74,
+        "unresolved_type": 128,
+        "unsupported": 37
+      },
+      "gradual_untyped": 2675,
+      "summary_counts": {
+        "parse_errors": 0,
+        "errors": 1583,
+        "warnings": 4103,
+        "notes": 263,
+        "survey_gaps": 138
+      },
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218415,
+        "params": 12609,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 1,
+        "loaded": 66173,
+        "recorded": 66183,
+        "replayed": 17020,
+        "typed": 49163,
+        "uncovered": 2,
+        "unused": 49150
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "cb1bcb01ed3cb537",
+        "params": "a64e379af4ea95c3",
+        "returns": "52c594e5e0dd9165",
+        "side_table": "5dcf107d1f9b9323"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "mastodon",
+      "kind": "return-type",
+      "file": "app/models/domain_block.rb",
+      "method": "to_log_human_identifier",
+      "start": 1313,
+      "end": 1319,
+      "old_body": "domain",
+      "replacement": "domain.length",
+      "original_file_sha256": "f65107d688c7dfff522fbc48780e62db6369d5a7e57b699393d208087a5ca07b",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "f465a7594a7d1a9e0dfee48837bfed746c2e2a9bbcaefb402319a8e810d86078"
+  },
+  {
+    "label": "mastodon-withdraw-read-correctness",
+    "app": "mastodon",
+    "exit_code": 3,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:25:32.057241+00:00",
+    "finished_at_utc": "2026-10-08T21:28:03.708935+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {},
+      "warnings_by_kind": {},
+      "notes_by_kind": {},
+      "gradual_untyped": 0,
+      "summary_counts": null,
+      "counts_agree_with_summary": null,
+      "diagnostics_complete": false,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1648,
+        "constants": 600,
+        "controller_bindings": 525,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 218413,
+        "params": 12608,
+        "returns": 50088,
+        "side_table": 631
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "065d6b97e530386e",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "fc0c5657faa93e5a",
+        "params": "18d043ec2d4350bb",
+        "returns": "00d6bc8086a169c9",
+        "side_table": "5dcf107d1f9b9323"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 66173,
+        "recorded": 60579,
+        "replayed": 17020,
+        "typed": 43559,
+        "uncovered": 1,
+        "unused": 49146
+      },
+      "first_difference": {
+        "cold": "4938c95b3281b10f",
+        "part": "controller_cache",
+        "slot": "ActivityPub::InboxesController",
+        "warm": "dc3b51a6e6c3dee6"
+      },
+      "shadow": "fail",
+      "warm_digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "f21b785b407f0d48",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "a92fd2b920aae954",
+        "controller_cache": "4728ae006ab7ebbe",
+        "copies": "f21a132bbf7bfdfc",
+        "ir": "7adce70028337273",
+        "params": "2b9f01cfe9f0d008",
+        "returns": "7b1913720a0c0d95",
+        "side_table": "3f9bdcb1efe5856b"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "mastodon",
+      "kind": "withdraw-read",
+      "file": "app/services/clear_domain_media_service.rb",
+      "method": "blocked_domain",
+      "start": 867,
+      "end": 886,
+      "old_body": "domain_block.domain",
+      "replacement": "nil",
+      "original_file_sha256": "f8babeca374f50ab85bb508332c091f4c744de6676767893fc3de34ff542054a",
+      "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "18c620d6b3309a84b2fcfa331f856b48bb9604d95560744281e1ec902eb8441a"
+  },
+  {
+    "label": "discourse-seed",
+    "app": "discourse",
+    "exit_code": 1,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:28:03.722009+00:00",
+    "finished_at_utc": "2026-10-08T21:34:29.647792+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {
+        "incompatible_binop": 13,
+        "ivar_unresolved": 26,
+        "send_dispatch_failed": 702,
+        "unsupported": 2382
+      },
+      "warnings_by_kind": {
+        "gradual_untyped": 5878,
+        "missing_preload": 5,
+        "unresolved_type": 2600
+      },
+      "notes_by_kind": {
+        "incompatible_binop": 9,
+        "ivar_unresolved": 177,
+        "send_dispatch_failed": 1182,
+        "unresolved_type": 1752,
+        "unsupported": 1734
+      },
+      "gradual_untyped": 5878,
+      "summary_counts": {
+        "parse_errors": 0,
+        "errors": 3123,
+        "warnings": 8483,
+        "notes": 4854,
+        "survey_gaps": 221
+      },
+      "counts_agree_with_summary": true,
+      "diagnostics_complete": true,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491759,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 0,
+        "recorded": 127847,
+        "replayed": 0,
+        "typed": 127847,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "first_difference": null,
+      "shadow": "pass",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "2fe23c27f8fcdd62",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      }
+    },
+    "warm_wall": null,
+    "save": null
+  },
+  {
+    "label": "discourse-boolean-correctness",
+    "app": "discourse",
+    "exit_code": 3,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:34:29.976274+00:00",
+    "finished_at_utc": "2026-10-08T21:40:54.679812+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {},
+      "warnings_by_kind": {},
+      "notes_by_kind": {},
+      "gradual_untyped": 0,
+      "summary_counts": null,
+      "counts_agree_with_summary": null,
+      "diagnostics_complete": false,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491760,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "d7427019dc4ab005",
+        "params": "0b186ec8a8f56de5",
+        "returns": "8de8c222ae0e00e9",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127665,
+        "replayed": 39192,
+        "typed": 88473,
+        "uncovered": 2,
+        "unused": 88647
+      },
+      "first_difference": {
+        "cold": "ac66619b7f8dd3a9",
+        "part": "controller_cache",
+        "slot": "ListController",
+        "warm": "99f4ae9b4bc30d53"
+      },
+      "shadow": "fail",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "74c49b380f0f0d09",
+        "copies": "384e1b86c19043be",
+        "ir": "a145d8bcebbcd7ec",
+        "params": "c1e4d02263660a4e",
+        "returns": "8011ebe6de014e2d",
+        "side_table": "d8849d38a19e481d"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "discourse",
+      "kind": "boolean",
+      "file": "app/models/bookmark.rb",
+      "method": "auto_delete_when_reminder_sent?",
+      "start": 4076,
+      "end": 4155,
+      "old_body": "auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent]",
+      "replacement": "!(auto_delete_preference == Bookmark.auto_delete_preferences[:when_reminder_sent])",
+      "original_file_sha256": "ef41c095312d09a91880a11599ecf756b5b8905f0e1ac6a559d6a33c98cf0f05",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "9185c39f40cbb3507d76c298ab9aec85d9098a0a220dbbf6b4796064fa1e9806"
+  },
+  {
+    "label": "discourse-return-type-correctness",
+    "app": "discourse",
+    "exit_code": 3,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:40:54.912298+00:00",
+    "finished_at_utc": "2026-10-08T21:47:12.372237+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {},
+      "warnings_by_kind": {},
+      "notes_by_kind": {},
+      "gradual_untyped": 0,
+      "summary_counts": null,
+      "counts_agree_with_summary": null,
+      "diagnostics_complete": false,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491754,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4432
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "ec2d0fa9a776954d",
+        "params": "0b186ec8a8f56de5",
+        "returns": "6e3c535afc4ddfd4",
+        "side_table": "4a18fb4d8958a46d"
+      },
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 127847,
+        "recorded": 127660,
+        "replayed": 39188,
+        "typed": 88472,
+        "uncovered": 4,
+        "unused": 88649
+      },
+      "first_difference": {
+        "cold": "ac66619b7f8dd3a9",
+        "part": "controller_cache",
+        "slot": "ListController",
+        "warm": "99f4ae9b4bc30d53"
+      },
+      "shadow": "fail",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "74c49b380f0f0d09",
+        "copies": "384e1b86c19043be",
+        "ir": "353c3313ca507e9c",
+        "params": "c1e4d02263660a4e",
+        "returns": "2e5faed95b6b7495",
+        "side_table": "e50b569123feca4e"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "discourse",
+      "kind": "return-type",
+      "file": "app/models/category.rb",
+      "method": "slug_url_without_id",
+      "start": 35425,
+      "end": 35474,
+      "old_body": "\"#{Discourse.base_path}/c/#{slug_path.join(\"/\")}\"",
+      "replacement": "0",
+      "original_file_sha256": "656e0a44302c4b0ecb5840ceaa88d2e7708f3672945ce8935a90dce9b8a84725",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "64a5ef576b9626dd2a12279fd820d510cc998a4d01421710438a9fcf84a57efc"
+  },
+  {
+    "label": "discourse-withdraw-read-correctness",
+    "app": "discourse",
+    "exit_code": 3,
+    "timed": false,
+    "wall_seconds": null,
+    "started_at_utc": "2026-10-08T21:47:12.537368+00:00",
+    "finished_at_utc": "2026-10-08T21:53:46.988212+00:00",
+    "binary_sha256": "b3a6b295a6e7b09988bde377e31eb481c91b9e724cb95b6d8f62f51e993f057d",
+    "diagnostics": {
+      "errors_by_kind": {},
+      "warnings_by_kind": {},
+      "notes_by_kind": {},
+      "gradual_untyped": 0,
+      "summary_counts": null,
+      "counts_agree_with_summary": null,
+      "diagnostics_complete": false,
+      "rh_dyn": {
+        "present": false,
+        "records": 0,
+        "rounds": {},
+        "converged": null,
+        "convergence_basis": "no_probe"
+      },
+      "probe_records": [],
+      "ignored_probe_records": 0,
+      "truncated_lines": 0
+    },
+    "fixpoint": {
+      "digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "entries": {
+        "attributes": 2107,
+        "block_values": 3010,
+        "constants": 2018,
+        "controller_bindings": 147,
+        "controller_cache": 153,
+        "copies": 324,
+        "ir": 491750,
+        "params": 23872,
+        "returns": 92722,
+        "side_table": 4433
+      },
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "schema": 1
+    },
+    "warm": {
+      "cold_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "033a1bd3ba213cb0",
+        "copies": "384e1b86c19043be",
+        "ir": "96e48ea89093407a",
+        "params": "0b186ec8a8f56de5",
+        "returns": "00ae9dd336ec99ad",
+        "side_table": "fdbc0cd796998a4b"
+      },
+      "evaluations": {
+        "invalidated": 8,
+        "loaded": 127847,
+        "recorded": 127665,
+        "replayed": 39192,
+        "typed": 88473,
+        "uncovered": 2,
+        "unused": 88645
+      },
+      "first_difference": {
+        "cold": "ac66619b7f8dd3a9",
+        "part": "controller_cache",
+        "slot": "ListController",
+        "warm": "99f4ae9b4bc30d53"
+      },
+      "shadow": "fail",
+      "warm_digest": {
+        "attributes": "9a4c33bc518f79c6",
+        "block_values": "db997febef5a89aa",
+        "constants": "2c16db7ac6c0dc20",
+        "controller_bindings": "a4366e3ab711cdb1",
+        "controller_cache": "74c49b380f0f0d09",
+        "copies": "384e1b86c19043be",
+        "ir": "4ef3491f30bd8a12",
+        "params": "c1e4d02263660a4e",
+        "returns": "7f3c9870a36a285d",
+        "side_table": "d8849d38a19e481d"
+      }
+    },
+    "warm_wall": null,
+    "save": null,
+    "edit": {
+      "app": "discourse",
+      "kind": "withdraw-read",
+      "file": "app/services/username_checker_service.rb",
+      "method": "is_developer?",
+      "start": 905,
+      "end": 1017,
+      "old_body": "Rails.configuration.respond_to?(:developer_emails) &&\n      Rails.configuration.developer_emails.include?(value)",
+      "replacement": "nil",
+      "original_file_sha256": "e28d857f46851bd0d6e521bbd9d5d40b3dc6dc920646a93c9bc3032672928094",
+      "input_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "condition": "warm-replay-public-edits-v1",
+      "base_condition": "five public apps at corpus/apps.json pins"
+    },
+    "edited_file_sha256": "6f7556dd52dce723d79be23988af3e7155d2fccc3034fb3c8ded70e58a6af6e3"
+  }
+]

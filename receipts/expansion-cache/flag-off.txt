@@ -1,0 +1,21 @@
+
+running 1 test
+test analyze::fold::expansion_budget_cache_tests::later_small_expansion_matches_a_fresh_reader ... FAILED
+
+failures:
+
+---- analyze::fold::expansion_budget_cache_tests::later_small_expansion_matches_a_fresh_reader stdout ----
+
+thread 'analyze::fold::expansion_budget_cache_tests::later_small_expansion_matches_a_fresh_reader' (66360166) panicked at src/analyze/fold.rs:1064:9:
+assertion `left == right` failed: a prior root's budget must not poison this complete expansion
+  left: Array { elem: Untyped { why: Unresolved } }
+ right: Array { elem: Array { elem: Str } }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    analyze::fold::expansion_budget_cache_tests::later_small_expansion_matches_a_fresh_reader
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1060 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--lib`

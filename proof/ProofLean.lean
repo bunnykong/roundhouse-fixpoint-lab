@@ -15,3 +15,5 @@ import ProofLean.Cases
 import ProofLean.Check
 import ProofLean.ShapeCases
 import ProofLean.ShapeCheck
+import ProofLean.Certificate
+import ProofLean.Edit

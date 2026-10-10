@@ -1,0 +1,1422 @@
+diff --git a/src/analyze/c1fp.rs b/src/analyze/c1fp.rs
+index dd9205f4..5f6179ba 100644
+--- a/src/analyze/c1fp.rs
++++ b/src/analyze/c1fp.rs
+@@ -191,3 +191,57 @@ impl Analyzer {
+         StateFp { sig, ir, side }
+     }
+ }
++
++impl StateFp {
++    /// the digests split for attribution (numbers only). Per
++    /// signature kind (`c` class method, `i` instance method, `k` constant,
++    /// `a` attribute, `b` block-value set, `p` parameter row): the entry
++    /// count, a digest, and 64 bucket digests (16 bits each, bucket by key
++    /// hash); for IR sites, types and decisions apart, 256 buckets each by
++    /// site. Two runs' differing buckets bound the differing entries below.
++    pub(crate) fn det_line(&self) -> String {
++        fn h<T: Hash>(t: &T) -> u64 {
++            let mut s = DefaultHasher::new();
++            t.hash(&mut s);
++            s.finish()
++        }
++        let mut kinds: BTreeMap<char, (u64, DefaultHasher, Vec<DefaultHasher>)> = BTreeMap::new();
++        for (k, v) in &self.sig {
++            let kind = if k.ends_with(":b") {
++                'b'
++            } else {
++                k.rsplitn(3, ':').nth(1).and_then(|s| s.chars().next()).unwrap_or('?')
++            };
++            let e = kinds
++                .entry(kind)
++                .or_insert_with(|| (0, DefaultHasher::new(), (0..64).map(|_| DefaultHasher::new()).collect()));
++            e.0 += 1;
++            (k, v).hash(&mut e.1);
++            (k, v).hash(&mut e.2[(h(k) % 64) as usize]);
++        }
++        let hex = |bs: Vec<DefaultHasher>| bs.into_iter().map(|b| format!("{:04x}", b.finish() & 0xffff)).collect::<String>();
++        let mut parts: Vec<String> = Vec::new();
++        for (kind, (n, d, bs)) in kinds {
++            parts.push(format!("\"{kind}\":{{\"n\":{n},\"d\":\"{:016x}\",\"b\":\"{}\"}}", d.finish(), hex(bs)));
++        }
++        let mut ty_b: Vec<DefaultHasher> = (0..256).map(|_| DefaultHasher::new()).collect();
++        let mut dec_b: Vec<DefaultHasher> = (0..256).map(|_| DefaultHasher::new()).collect();
++        let (mut ty_d, mut dec_d) = (DefaultHasher::new(), DefaultHasher::new());
++        for (f, a, b, t, d) in &self.ir {
++            let site = (f, a, b);
++            let i = (h(&site) % 256) as usize;
++            (site, t).hash(&mut ty_b[i]);
++            (site, t).hash(&mut ty_d);
++            (site, d).hash(&mut dec_b[i]);
++            (site, d).hash(&mut dec_d);
++        }
++        format!(
++            "{{\"sig\":{{{}}},\"ir_ty\":{{\"d\":\"{:016x}\",\"b\":\"{}\"}},\"ir_dec\":{{\"d\":\"{:016x}\",\"b\":\"{}\"}}}}",
++            parts.join(","),
++            ty_d.finish(),
++            hex(ty_b),
++            dec_d.finish(),
++            hex(dec_b)
++        )
++    }
++}
+diff --git a/src/analyze/det.rs b/src/analyze/det.rs
+new file mode 100644
+index 00000000..4b866b52
+--- /dev/null
++++ b/src/analyze/det.rs
+@@ -0,0 +1,493 @@
++//! prototype (experiment, experiment): determinism detectors, off by default.
++//!
++//! - `RH_DESCENT=1`, the descent sanitizer. Every instrumented slot write is
++//!   checked against the join order: `Var` and `Bottom` are ⊥, a union is
++//!   the set of its arms, `untyped` is one arm (gradual evidence, not ⊤),
++//!   constructors compare pointwise and records field by field. A write
++//!   whose new value is not above or equal to the old one is a descent. A
++//!   monotone run from ⊥ has none, so each hit names a non-monotone rule
++//!   site. `rh-descent:` prints, per site: writes, descents, and the
++//!   descents that only drop `untyped` arms, that replace a value by one
++//!   with no informative core, and the rest. Aggregates only.
++//! - `RH_SHUFFLE=<seed>`, the shuffled-order control: a seeded permutation of
++//!   the worklist's pop order within each drain (`shuffle_key`), and of every
++//!   HashMap's iteration order. For the latter the binary's
++//!   `CCRandomGenerateBytes` hook derives std's hash keys from the seed
++//!   (`RH_HASHSEED=<seed>` fixes them alone, without the worklist
++//!   permutation). Same seed, same order; an order-independent typer reaches
++//!   the same final state for every seed.
++use std::collections::BTreeMap;
++use std::sync::{LazyLock, Mutex};
++
++use crate::ty::Ty;
++
++static DESCENT: LazyLock<bool> = LazyLock::new(|| std::env::var("RH_DESCENT").is_ok_and(|v| v == "1"));
++static SHUFFLE: LazyLock<Option<u64>> =
++    LazyLock::new(|| std::env::var("RH_SHUFFLE").ok().and_then(|v| v.trim().parse().ok()));
++
++/// Per site: writes, descents, untyped-only drops, drops of fold-reference
++/// arms (with or without `untyped`), to-pending/untyped, other.
++static COUNTS: Mutex<BTreeMap<&'static str, [u64; 6]>> = Mutex::new(BTreeMap::new());
++static SHUFFLED_POPS: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
++static VALS: Mutex<BTreeMap<&'static str, u64>> = Mutex::new(BTreeMap::new());
++/// The same digests per harvest round (`next_round`), to find where two runs
++/// first diverge.
++static BY_ROUND: Mutex<BTreeMap<(u32, &'static str), u64>> = Mutex::new(BTreeMap::new());
++static ROUND: std::sync::atomic::AtomicU32 = std::sync::atomic::AtomicU32::new(0);
++
++/// A fold slot was interned (`fold::intern`, inside the fold's state borrow):
++/// remember its key's hash the way `c1fp::type_hash` computes it, so value
++/// hashing never has to read the fold's state (which is borrowed there).
++pub(crate) fn note_slot_key(slot: u32, key: &super::fold::SlotKey) {
++    if *DESCENT {
++        use std::hash::{Hash, Hasher};
++        let mut kh = std::collections::hash_map::DefaultHasher::new();
++        format!("{:?}", Some(key)).hash(&mut kh);
++        let h = kh.finish();
++        VAL_MEMO.with(|m| {
++            m.borrow_mut().insert(slot, h);
++        });
++    }
++}
++
++/// A main-loop harvest starts: later writes belong to the next round.
++pub(crate) fn next_round() {
++    if *DESCENT || det_on() {
++        ROUND.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
++    }
++}
++
++/// The current main-loop round (`RH_DET`: the fold's derived side-table
++/// slots restart on their first write in a round, see `fold::param_ref`).
++pub(crate) fn round() -> u64 {
++    ROUND.load(std::sync::atomic::Ordering::Relaxed) as u64
++}
++std::thread_local! {
++    static VAL_MEMO: std::cell::RefCell<std::collections::HashMap<u32, u64>> = std::cell::RefCell::new(std::collections::HashMap::new());
++}
++/// Certificate fields: cuts that stop a rule before it settles.
++static CAPS: Mutex<BTreeMap<&'static str, u64>> = Mutex::new(BTreeMap::new());
++
++/// A cap or limit fired (`RH_DESCENT=1` only): it stopped a rule before its
++/// output held still, so the slot is not at its fixpoint.
++pub(crate) fn note_cap(name: &'static str) {
++    if *DESCENT {
++        *CAPS.lock().unwrap_or_else(|e| e.into_inner()).entry(name).or_insert(0) += 1;
++    }
++}
++
++pub(crate) fn descent_on() -> bool {
++    *DESCENT
++}
++
++/// A write of `new` over `old` at `site` (`old` is `None` for a first write).
++pub(crate) fn note(site: &'static str, old: Option<&Ty>, new: &Ty) {
++    if !*DESCENT {
++        return;
++    }
++    let kind = match old {
++        Some(old) if !leq(old, new) => Some(if leq(&strip_untyped(old, false), new) {
++            2
++        } else if leq(&strip_untyped(old, true), new) {
++            3
++        } else if !informative(new) {
++            4
++        } else {
++            5
++        }),
++        _ => None,
++    };
++    // The multiset of values written at this site, as a sum of mixed
++    // structural hashes (order-independent, `Var` ids ignored, references by
++    // slot key): two runs whose sites wrote the same values agree here.
++    let vh = mix(VAL_MEMO.with(|m| super::c1fp::type_hash(new, &mut m.borrow_mut())));
++    {
++        let mut v = VALS.lock().unwrap_or_else(|e| e.into_inner());
++        let x = v.entry(site).or_insert(0);
++        *x = x.wrapping_add(vh);
++        let r = ROUND.load(std::sync::atomic::Ordering::Relaxed);
++        let mut by = BY_ROUND.lock().unwrap_or_else(|e| e.into_inner());
++        let y = by.entry((r, site)).or_insert(0);
++        *y = y.wrapping_add(vh);
++    }
++    let mut c = COUNTS.lock().unwrap_or_else(|e| e.into_inner());
++    let e = c.entry(site).or_insert([0; 6]);
++    e[0] += 1;
++    if let Some(k) = kind {
++        e[1] += 1;
++        e[k] += 1;
++    }
++}
++
++/// Public inputs only (`RH_DET_TRACE=<method name>`): `note`, and print the
++/// write when the slot's method is the traced one.
++static TRACE: LazyLock<std::collections::HashSet<String>> = LazyLock::new(|| {
++    std::env::var("RH_DET_TRACE").map(|v| v.split(',').map(str::to_string).collect()).unwrap_or_default()
++});
++pub(crate) fn note_named(site: &'static str, name: &str, old: Option<&Ty>, new: &Ty) {
++    note(site, old, new);
++    if !TRACE.is_empty() && TRACE.contains(name) {
++        eprintln!(
++            "rh-det-trace: {site} {name} leq={} old={} new={}",
++            old.is_none_or(|o| leq(o, new)),
++            old.map(|o| format!("{o:?}").chars().take(300).collect::<String>()).unwrap_or_default(),
++            format!("{new:?}").chars().take(300).collect::<String>()
++        );
++    }
++}
++
++/// A row write: each position is a slot.
++pub(crate) fn note_row(site: &'static str, old: Option<&[Ty]>, new: &[Ty]) {
++    if !*DESCENT {
++        return;
++    }
++    for (i, t) in new.iter().enumerate() {
++        note(site, old.and_then(|o| o.get(i)), t);
++    }
++}
++
++/// The join order (see the module comment). `a ⊑ b`.
++pub(crate) fn leq(a: &Ty, b: &Ty) -> bool {
++    if a == b {
++        return true;
++    }
++    match (a, b) {
++        (Ty::Var { .. } | Ty::Bottom, _) => true,
++        (Ty::Union { variants }, _) => variants.iter().all(|v| leq(v, b)),
++        (_, Ty::Union { variants }) => variants.iter().any(|v| leq(a, v)),
++        (Ty::Array { elem: x }, Ty::Array { elem: y }) => leq(x, y),
++        (Ty::Hash { key: k1, value: v1 }, Ty::Hash { key: k2, value: v2 }) => leq(k1, k2) && leq(v1, v2),
++        (Ty::Tuple { elems: x }, Ty::Tuple { elems: y }) => {
++            x.len() == y.len() && x.iter().zip(y.iter()).all(|(p, q)| leq(p, q))
++        }
++        (Ty::Class { id: i1, args: a1 }, Ty::Class { id: i2, args: a2 }) => {
++            i1 == i2 && a1.len() == a2.len() && a1.iter().zip(a2.iter()).all(|(p, q)| leq(p, q))
++        }
++        (Ty::Record { row: r1 }, Ty::Record { row: r2 }) => r1.fields.iter().all(|(k, v)| {
++            r2.fields.iter().find(|(k2, _)| *k2 == k).is_some_and(|(_, w)| leq(v, w))
++        }),
++        (Ty::Fn { params: p1, ret: r1, .. }, Ty::Fn { params: p2, ret: r2, .. }) => {
++            p1.len() == p2.len() && p1.iter().zip(p2.iter()).all(|(x, y)| leq(&x.ty, &y.ty)) && leq(r1, r2)
++        }
++        _ => false,
++    }
++}
++
++fn informative(t: &Ty) -> bool {
++    match t {
++        Ty::Untyped | Ty::Var { .. } | Ty::Bottom => false,
++        Ty::Union { variants } => variants.iter().any(informative),
++        _ => true,
++    }
++}
++
++/// `t` with every `untyped` arm (and, with `refs`, every fold reference),
++/// at any depth, read as ⊥. A reference's value is not known here.
++fn strip_untyped(t: &Ty, refs: bool) -> Ty {
++    let bot = || Ty::Var { var: crate::ident::TyVar(0) };
++    match t {
++        Ty::Untyped => bot(),
++        Ty::Rec { .. } if refs => bot(),
++        Ty::Union { variants } => {
++            let kept: Vec<Ty> = variants
++                .iter()
++                .filter(|v| !matches!(v, Ty::Untyped) && !(refs && matches!(v, Ty::Rec { .. })))
++                .map(|v| strip_untyped(v, refs))
++                .collect();
++            match kept.len() {
++                0 => bot(),
++                1 => kept.into_iter().next().unwrap(),
++                _ => Ty::Union { variants: kept.into() },
++            }
++        }
++        Ty::Array { elem } => Ty::Array { elem: std::sync::Arc::new(strip_untyped(elem, refs)) },
++        Ty::Hash { key, value } => Ty::Hash {
++            key: std::sync::Arc::new(strip_untyped(key, refs)),
++            value: std::sync::Arc::new(strip_untyped(value, refs)),
++        },
++        Ty::Tuple { elems } => Ty::Tuple { elems: elems.iter().map(|v| strip_untyped(v, refs)).collect() },
++        Ty::Class { id, args } => Ty::Class { id: id.clone(), args: args.iter().map(|v| strip_untyped(v, refs)).collect() },
++        Ty::Record { row } => Ty::Record {
++            row: crate::ty::Row {
++                fields: row.fields.iter().map(|(k, v)| (k.clone(), strip_untyped(v, refs))).collect(),
++                rest: row.rest.clone(),
++            },
++        },
++        other => other.clone(),
++    }
++}
++
++/// SplitMix64's finalizer.
++pub(crate) fn mix(x: u64) -> u64 {
++    let mut z = x.wrapping_add(0x9E37_79B9_7F4A_7C15);
++    z = (z ^ (z >> 30)).wrapping_mul(0xBF58_476D_1CE4_E5B9);
++    z = (z ^ (z >> 27)).wrapping_mul(0x94D0_49BB_1331_11EB);
++    z ^ (z >> 31)
++}
++
++/// The worklist's priority for unit `u` in drain `drain`: its WTO position,
++/// or under `RH_SHUFFLE` a seeded per-drain permutation of the units.
++pub(crate) fn shuffle_key(u: u32, drain: u64, pos: u32) -> u32 {
++    match *SHUFFLE {
++        None => pos,
++        Some(seed) => {
++            SHUFFLED_POPS.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
++            (mix(mix(seed ^ mix(drain)) ^ u as u64) >> 32) as u32
++        }
++    }
++}
++
++/// The `rh-descent:` and `rh-shuffle:` lines (numbers and site labels only).
++pub(crate) fn report() {
++    if *DESCENT {
++        let c = COUNTS.lock().unwrap_or_else(|e| e.into_inner());
++        let mut total = [0u64; 6];
++        let sites: Vec<String> = c
++            .iter()
++            .map(|(site, v)| {
++                for i in 0..6 {
++                    total[i] += v[i];
++                }
++                format!("\"{site}\":[{},{},{},{},{},{}]", v[0], v[1], v[2], v[3], v[4], v[5])
++            })
++            .collect();
++        eprintln!(
++            "rh-descent: {{\"columns\":[\"writes\",\"descents\",\"drop_untyped\",\"drop_ref\",\"to_pending\",\"other\"],\"total\":[{},{},{},{},{},{}],\"sites\":{{{}}},\"caps\":{{{}}},\"values\":{{{}}},\"by_round\":{{{}}}}}",
++            total[0], total[1], total[2], total[3], total[4], total[5], sites.join(","),
++            CAPS.lock().unwrap_or_else(|e| e.into_inner()).iter().map(|(k, v)| format!("\"{k}\":{v}")).collect::<Vec<_>>().join(","),
++            VALS.lock().unwrap_or_else(|e| e.into_inner()).iter().map(|(k, v)| format!("\"{k}\":\"{v:016x}\"")).collect::<Vec<_>>().join(","),
++            BY_ROUND.lock().unwrap_or_else(|e| e.into_inner()).iter().map(|((r, k), v)| format!("\"{r}@{k}\":\"{:08x}\"", v >> 32)).collect::<Vec<_>>().join(",")
++        );
++    }
++    if SHUFFLE.is_some() || std::env::var("RH_HASHSEED").is_ok() {
++        eprintln!(
++            "rh-shuffle: {{\"seed\":{},\"hashseed\":{},\"keyed_pushes\":{},\"hash_key_calls\":{}}}",
++            SHUFFLE.map(|s| s.to_string()).unwrap_or_else(|| "null".into()),
++            std::env::var("RH_HASHSEED").ok().and_then(|v| v.parse::<u64>().ok()).map(|s| s.to_string()).unwrap_or_else(|| "null".into()),
++            SHUFFLED_POPS.load(std::sync::atomic::Ordering::Relaxed),
++            crate::HASH_KEY_CALLS.load(std::sync::atomic::Ordering::Relaxed),
++        );
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn join_order_basics() {
++        let u = |a: Ty, b: Ty| crate::analyze::body::union_of(a, b);
++        assert!(leq(&Ty::Var { var: crate::ident::TyVar(3) }, &Ty::Int));
++        assert!(leq(&Ty::Int, &u(Ty::Int, Ty::Untyped)));
++        assert!(!leq(&u(Ty::Int, Ty::Untyped), &Ty::Int));
++        assert!(!leq(&Ty::Int, &Ty::Untyped));
++        assert!(leq(&strip_untyped(&u(Ty::Int, Ty::Untyped), false), &Ty::Int));
++        assert_eq!(shuffle_key(5, 1, 7), 7);
++    }
++}
++
++// ------------------------------------------------ Round 2: `RH_DET=1|2`
++
++/// Opt-in (`RH_DET=1` J₀, `RH_DET=2` J₁): the least monotone
++/// replacements (THEORY.md §1.2, §2). Off by default.
++static DET: LazyLock<u8> = LazyLock::new(|| std::env::var("RH_DET").ok().and_then(|v| v.trim().parse().ok()).unwrap_or(0));
++
++/// The replacements are on.
++pub(crate) fn det_on() -> bool {
++    *DET >= 1
++}
++
++/// How a writer's new value meets the entry it wrote before
++/// (`RH_DET_WRITE=join|last`, default `join`): `join` is the inflationary
++/// join of everything the entry was ever written; `last` is theory's
++/// per-writer entry (the Kleene step), which needs monotone body transfers:
++/// with today's, Chatwoot's loops never settle under it (27 frozen units).
++static WRITE_JOIN: LazyLock<bool> = LazyLock::new(|| !std::env::var("RH_DET_WRITE").is_ok_and(|v| v == "last"));
++pub(crate) fn write_join() -> bool {
++    *WRITE_JOIN
++}
++
++/// J₁: the gradual bit is kept by every join (the best transformer); J₀
++/// (`RH_DET=1`) lets an informative non-`Nil` arm absorb it, as main does.
++pub(crate) fn keep_gradual() -> bool {
++    *DET >= 2
++}
++
++/// The join of D (theory §1.2): `union_of` (canonical, spine-merging), then
++/// `norm`. Commutative, associative and idempotent, so no write order can
++/// matter.
++pub(crate) fn lat_join(a: Ty, b: Ty) -> Ty {
++    let j = super::body::union_of(a, b);
++    norm_opt(&j, true).unwrap_or(j)
++}
++
++/// D's normal form, at every position: `Var` arms vanish (⊥); arms of one
++/// shape merge pointwise, as `union_of` already does for Array and Hash
++/// spines (Tuples of one arity, Classes of one id and arity, Records of one
++/// key set), so a transient arm typed against a pending input is absorbed by
++/// the arm it later becomes instead of staying beside it; under J₀ an
++/// `untyped` arm beside an informative arm other than `Nil` is absorbed. The
++/// result depends only on the arm set at each position, so the join stays
++/// associative. Below the top, J₀ reads `untyped` as ⊥ like `Var`, so the
++/// two are one marker there (printed `untyped`): `Array[Var]` from an empty
++/// literal and `Array[untyped]` from the same literal typed against a
++/// placeholder are the same value. `None` when `t` is already normal.
++fn norm_opt(t: &Ty, top: bool) -> Option<Ty> {
++    fn each(xs: &[Ty]) -> Option<Vec<Ty>> {
++        let mut out: Option<Vec<Ty>> = None;
++        for (i, x) in xs.iter().enumerate() {
++            if let Some(n) = norm_opt(x, false) {
++                out.get_or_insert_with(|| xs[..i].to_vec()).push(n);
++            } else if let Some(o) = out.as_mut() {
++                o.push(x.clone());
++            }
++        }
++        out
++    }
++    fn same_shape(a: &Ty, b: &Ty) -> bool {
++        match (a, b) {
++            (Ty::Tuple { elems: x }, Ty::Tuple { elems: y }) => x.len() == y.len(),
++            (Ty::Class { id: i, args: x }, Ty::Class { id: j, args: y }) => i == j && x.len() == y.len() && !x.is_empty(),
++            (Ty::Record { row: x }, Ty::Record { row: y }) => {
++                x.fields.len() == y.fields.len() && x.fields.iter().all(|(k, _)| y.fields.iter().any(|(k2, _)| k2.as_str() == k.as_str()))
++            }
++            _ => false,
++        }
++    }
++    fn pointwise(a: &Ty, b: &Ty) -> Ty {
++        let j = |x: &Ty, y: &Ty| lat_join(x.clone(), y.clone());
++        match (a, b) {
++            (Ty::Tuple { elems: x }, Ty::Tuple { elems: y }) => {
++                Ty::Tuple { elems: x.iter().zip(y.iter()).map(|(p, q)| j(p, q)).collect() }
++            }
++            (Ty::Class { id, args: x }, Ty::Class { args: y, .. }) => {
++                Ty::Class { id: id.clone(), args: x.iter().zip(y.iter()).map(|(p, q)| j(p, q)).collect() }
++            }
++            (Ty::Record { row: x }, Ty::Record { row: y }) => Ty::Record {
++                row: crate::ty::Row {
++                    fields: x
++                        .fields
++                        .iter()
++                        .map(|(k, v)| {
++                            let w = y.fields.iter().find(|(k2, _)| k2.as_str() == k.as_str()).map(|(_, w)| w.clone());
++                            (k.clone(), match w { Some(w) => j(v, &w), None => v.clone() })
++                        })
++                        .collect(),
++                    rest: x.rest.clone(),
++                },
++            },
++            _ => a.clone(),
++        }
++    }
++    let below = !top && !keep_gradual();
++    match t {
++        Ty::Var { .. } if below => Some(Ty::Untyped),
++        Ty::Union { variants } => {
++            let mut changed = false;
++            let mut arms: Vec<Ty> = Vec::with_capacity(variants.len());
++            for v in variants.iter() {
++                if matches!(v, Ty::Var { .. }) {
++                    changed = true;
++                    if below {
++                        arms.push(Ty::Untyped);
++                    }
++                    continue;
++                }
++                match norm_opt(v, top) {
++                    // A nested union (built outside `union_of`) is spliced, so
++                    // equal arm sets have one form.
++                    Some(Ty::Union { variants: inner }) => {
++                        changed = true;
++                        arms.extend(inner.iter().cloned());
++                    }
++                    Some(n) => {
++                        changed = true;
++                        arms.push(n);
++                    }
++                    None if matches!(v, Ty::Union { .. }) => {
++                        changed = true;
++                        if let Ty::Union { variants: inner } = v {
++                            arms.extend(inner.iter().cloned());
++                        }
++                    }
++                    None => arms.push(v.clone()),
++                }
++            }
++            let mut i = 0;
++            while i < arms.len() {
++                let mut k = i + 1;
++                while k < arms.len() {
++                    if same_shape(&arms[i], &arms[k]) {
++                        let b = arms.remove(k);
++                        arms[i] = pointwise(&arms[i], &b);
++                        changed = true;
++                    } else {
++                        k += 1;
++                    }
++                }
++                i += 1;
++            }
++            if !keep_gradual()
++                && arms.iter().any(|v| matches!(v, Ty::Untyped))
++                && arms.iter().any(|v| !matches!(v, Ty::Untyped | Ty::Var { .. } | Ty::Bottom | Ty::Nil))
++            {
++                arms.retain(|v| !matches!(v, Ty::Untyped));
++                changed = true;
++            }
++            if !changed {
++                return None;
++            }
++            Ty::canonicalize_variants(&mut arms);
++            arms.dedup();
++            Some(match arms.len() {
++                0 => Ty::Var { var: crate::ident::TyVar(0) },
++                1 => arms.pop().unwrap(),
++                _ => Ty::Union { variants: arms.into() },
++            })
++        }
++        Ty::Array { elem } => norm_opt(elem, false).map(|e| Ty::Array { elem: std::sync::Arc::new(e) }),
++        Ty::Hash { key, value } => {
++            let (k, v) = (norm_opt(key, false), norm_opt(value, false));
++            if k.is_none() && v.is_none() {
++                return None;
++            }
++            Some(Ty::Hash {
++                key: std::sync::Arc::new(k.unwrap_or_else(|| (**key).clone())),
++                value: std::sync::Arc::new(v.unwrap_or_else(|| (**value).clone())),
++            })
++        }
++        Ty::Tuple { elems } => each(elems).map(|e| Ty::Tuple { elems: e.into() }),
++        Ty::Class { id, args } => each(args).map(|a| Ty::Class { id: id.clone(), args: a.into() }),
++        Ty::Record { row } => {
++            let vals: Vec<Ty> = row.fields.iter().map(|(_, v)| v.clone()).collect();
++            each(&vals).map(|nv| Ty::Record {
++                row: crate::ty::Row {
++                    fields: row.fields.iter().map(|(k, _)| k.clone()).zip(nv).collect(),
++                    rest: row.rest.clone(),
++                },
++            })
++        }
++        _ => None,
++    }
++}
++
++/// One value on its own, normalized as a join with ⊥ would leave it.
++pub(crate) fn lat_norm(t: Ty) -> Ty {
++    lat_join(Ty::Var { var: crate::ident::TyVar(0) }, t)
++}
++
++#[cfg(test)]
++mod lat_tests {
++    use super::*;
++
++    #[test]
++    fn lat_join_is_order_free_on_pending_pairs() {
++        let v = Ty::Var { var: crate::ident::TyVar(4) };
++        assert_eq!(lat_join(v.clone(), Ty::Untyped), lat_join(Ty::Untyped, v.clone()));
++        let a = crate::analyze::body::union_of(Ty::Str, Ty::Untyped);
++        let b = crate::analyze::body::union_of(Ty::Str, v.clone());
++        assert_eq!(lat_join(a.clone(), b.clone()), lat_join(b, a));
++        let nil = crate::analyze::body::union_of(Ty::Nil, Ty::Untyped);
++        assert_eq!(lat_join(nil.clone(), Ty::Nil), lat_join(Ty::Nil, nil));
++    }
++}
+diff --git a/src/analyze/fold.rs b/src/analyze/fold.rs
+index 1e96059c..7ed76d35 100644
+--- a/src/analyze/fold.rs
++++ b/src/analyze/fold.rs
+@@ -56,7 +56,7 @@ pub(crate) static BRK_NOABSORB: LazyLock<bool> =
+ /// `RH_FOLD_QUIET=1`: no `rh-fold:` lines (test suites that compare stderr).
+ pub(crate) static QUIET: LazyLock<bool> =
+     LazyLock::new(|| std::env::var("RH_FOLD_QUIET").is_ok_and(|s| s == "1"));
+-/// `RH_FOLD_PATHSEEN=1` restores round 1's path-based `resolve`
++/// `RH_FOLD_PATHSEEN=1` restores prototype's path-based `resolve`
+ /// (exponential on rings of top-level references; ablation only).
+ static PATHSEEN: LazyLock<bool> =
+     LazyLock::new(|| std::env::var("RH_FOLD_PATHSEEN").is_ok_and(|s| s == "1"));
+@@ -251,6 +251,7 @@ fn intern(key: SlotKey) -> u32 {
+         }
+         let id = s.keys.len() as u32;
+         s.keys.push(key.clone());
++        super::det::note_slot_key(id, &key);
+         s.ids.insert(key, id);
+         id
+     })
+@@ -323,13 +324,27 @@ pub(crate) fn param_ref(class: &ClassId, method: &Symbol, index: usize, value: T
+         // every typing that seeds this parameter flows into
+         // one set variable (two bodies can share the key, and Pass A and the
+         // reseeded pass both seed it); join instead of last-write-wins.
++        // prototype (`RH_DET`): a parameter slot is derived from this round's
++        // rows, so its first write in a round restarts it (a row value a
++        // transient caller wrote in an earlier round washes out); later
++        // writes in the round join, so two seedings cannot ping-pong.
++        let det_fresh = super::det::det_on() && {
++            let r = super::det::round();
++            let fresh = s.site_epoch.get(&slot).is_none_or(|e| *e < r);
++            s.site_epoch.insert(slot, r);
++            fresh
++        };
+         let value = match s.param_values.get(&slot) {
++            _ if det_fresh => super::det::lat_norm(value),
++            Some(old) if super::det::det_on() => super::det::lat_join(old.clone(), value),
+             Some(old) if *PENDJOIN && *JOIN => join_slot(old.clone(), value),
++            _ if super::det::det_on() => super::det::lat_norm(value),
+             _ => value,
+         };
+         if s.param_values.get(&slot) != Some(&value) {
+             note_moved(slot, s.param_values.get(&slot));
+         }
++        super::det::note("fold.param_seed", s.param_values.get(&slot), &value);
+         s.param_values.insert(slot, value);
+     });
+     Ty::Rec { slot }
+@@ -383,10 +398,13 @@ fn accumulate(key: SlotKey, value: Ty) -> Ty {
+     let value = strip_self(value, slot);
+     ST.with(|s| {
+         let mut s = s.borrow_mut();
+-        let epoch = s.epoch;
++        // prototype (`RH_DET`): site slots restart per main-loop round, like
++        // parameter slots (`param_ref`), instead of per typing pass.
++        let det = super::det::det_on();
++        let epoch = if det { super::det::round() } else { s.epoch };
+         let fresh = s.site_epoch.get(&slot).is_none_or(|e| *e < epoch);
+         // an arm the slot already holds changes nothing.
+-        if *PENDJOIN && (!fresh || (*JOIN && !*RESTART)) {
++        if *PENDJOIN && (!fresh || (*JOIN && !*RESTART && !det)) {
+             if let Some(old) = s.param_values.get(&slot) {
+                 if contains_arm(old, &value) {
+                     s.site_epoch.insert(slot, epoch);
+@@ -401,8 +419,9 @@ fn accumulate(key: SlotKey, value: Ty) -> Ty {
+             // controllers keeps its spans). Two pending values must join
+             // order-independently; `join` keeps the last one, so two units
+             // writing `Var` and `Var | untyped` ping-pong forever.
+-            Some(old) if (!fresh || (*JOIN && !*RESTART)) && *PENDJOIN => join_slot(old.clone(), value),
+-            Some(old) if !fresh || (*JOIN && !*RESTART) => join(old.clone(), value),
++            Some(old) if (!fresh || (*JOIN && !*RESTART && !det)) && *PENDJOIN => join_slot(old.clone(), value),
++            Some(old) if !fresh || (*JOIN && !*RESTART && !det) => join(old.clone(), value),
++            _ if super::det::det_on() => super::det::lat_norm(value),
+             _ => value,
+         };
+         s.site_epoch.insert(slot, epoch);
+@@ -415,6 +434,7 @@ fn accumulate(key: SlotKey, value: Ty) -> Ty {
+                 }
+             }
+         }
++        super::det::note("fold.site_slot", s.param_values.get(&slot), &joined);
+         s.param_values.insert(slot, joined);
+     });
+     Ty::Rec { slot }
+@@ -455,14 +475,14 @@ pub(crate) fn sorted_order() -> bool {
+     *SORTED
+ }
+ 
+-/// `RH_FOLD_SITES_RESTART=1` keeps round 1's per-pass restart of
++/// `RH_FOLD_SITES_RESTART=1` keeps prototype's per-pass restart of
+ /// site sets (`At`, `Narrow`) even under `RH_FOLD_JOIN`: they are derived
+ /// state, recomputed each pass from the joined handoffs, so placeholders
+ /// from early passes wash out. Only returns and parameter rows join.
+ static RESTART: LazyLock<bool> =
+     LazyLock::new(|| std::env::var("RH_FOLD_SITES_RESTART").is_ok_and(|s| s == "1"));
+ /// `RH_FOLD_SIDECHECK=0` drops the side table from the loop's
+-/// convergence test (ablation; round 1 never checked it).
++/// convergence test (ablation; prototype never checked it).
+ static SIDECHECK: LazyLock<bool> =
+     LazyLock::new(|| !std::env::var("RH_FOLD_SIDECHECK").is_ok_and(|s| s == "0"));
+ 
+@@ -993,10 +1013,12 @@ fn scc(succ: &[Vec<usize>]) -> Vec<Vec<usize>> {
+ /// `RH_FOLD_JOIN`: join a reference-mode method's parameter row with the
+ /// row it had last round.
+ pub(crate) fn join_params(params: &mut HashMap<(ClassId, Symbol), Vec<Ty>>) {
+-    if !active() {
++    // prototype (`RH_DET`): rows are the join over call sites
++    // (`unify_param_ty` is `lat_join`); no pass after it.
++    if !active() || super::det::det_on() {
+         return;
+     }
+-    if !*JOIN {
++    if !round_join() {
+         // Transfer-risk count only: a rebuilt row that does not cover
+         // last round's row is a non-monotone step.
+         ST.with(|s| {
+@@ -1029,7 +1051,8 @@ pub(crate) fn join_params(params: &mut HashMap<(ClassId, Symbol), Vec<Ty>>) {
+                     row.resize(prev.len(), Ty::Var { var: crate::ident::TyVar(0) });
+                 }
+                 for (slot, old) in row.iter_mut().zip(prev) {
+-                    let joined = join_handoff(old, slot.clone());
++                    let joined = join_handoff(old.clone(), slot.clone());
++                    super::det::note("fold.join_params", Some(&old), &joined);
+                     if &joined != slot {
+                         *s.counts.entry("join_param_widened").or_default() += 1;
+                     }
+@@ -1048,6 +1071,11 @@ pub(crate) fn join_params(params: &mut HashMap<(ClassId, Symbol), Vec<Ty>>) {
+ /// The handoff join: pending `Var`/`Untyped` arms of either side yield to
+ /// the other side's informative core (#521's rule), everything else joins.
+ pub(crate) fn join(old: Ty, new: Ty) -> Ty {
++    // prototype (`RH_DET=1|2`): the join of D (theory §2.2): no `informative`
++    // prefix, `Var` arms vanish, the bit per J₀/J₁.
++    if super::det::det_on() {
++        return super::det::lat_join(old, new);
++    }
+     if old == new {
+         return new;
+     }
+@@ -1073,7 +1101,16 @@ pub(crate) fn join(old: Ty, new: Ty) -> Ty {
+     super::body::union_of(old, new)
+ }
+ 
+-/// `RH_FOLD_JOIN_V1=1` restores round 1's join (ablation).
++/// The inflationary round joins (`RH_FOLD_JOIN`: a reference-mode return or
++/// row joins with its value after the previous harvest). prototype
++/// (`RH_DET`): off, because they keep what a transient typing wrote in an
++/// earlier round (theory §2.4: they mask descents; with per-round slots and
++/// the join of D they are not needed to settle).
++fn round_join() -> bool {
++    *JOIN && !super::det::det_on()
++}
++
++/// `RH_FOLD_JOIN_V1=1` restores prototype's join (ablation).
+ static FIXJOIN: LazyLock<bool> = LazyLock::new(|| !std::env::var("RH_FOLD_JOIN_V1").is_ok_and(|s| s == "1"));
+ /// `RH_FOLD_GRADUAL=1`, the handoff join keeps gradual arms.
+ pub(crate) static GRADUAL: LazyLock<bool> =
+@@ -1086,10 +1123,15 @@ fn join_slot(old: Ty, new: Ty) -> Ty {
+     // Fast path (prototype): a value the slot already holds, whole or as one
+     // arm, changes nothing; level-2 unfolding re-accumulates the same
+     // children at every visit, and `union_of` on the accumulated union was
+-    // 80% of the private engine's first drain.
++    // 80% of the private engine's first drain. (Under `RH_DET` the slot's
++    // values are joined from their first write on, so `old` is normal and
++    // this is still the join.)
+     if contains_arm(&old, &new) {
+         return old;
+     }
++    if super::det::det_on() {
++        return super::det::lat_join(old, new);
++    }
+     if !informative(&old) && !informative(&new) {
+         return super::body::union_of(old, new);
+     }
+@@ -1146,7 +1188,11 @@ fn strip_var(t: Ty) -> Ty {
+ /// `RH_FOLD_JOIN` for harvested returns: every reference-mode return slot
+ /// joins with the value it held after the previous harvest.
+ pub(crate) fn join_rets(classes: &mut HashMap<ClassId, ClassInfo>) {
+-    if !active() {
++    // prototype (`RH_DET`): `decide_harvested_return` is the one merge
++    // decision for a harvested return, reference-mode or not (dai199 on
++    // #617: replace the rules inside it, not add a pass after it), so this
++    // pass does nothing.
++    if !active() || super::det::det_on() {
+         return;
+     }
+     ST.with(|s| {
+@@ -1168,7 +1214,7 @@ pub(crate) fn join_rets(classes: &mut HashMap<ClassId, ClassInfo>) {
+                         *s.counts.entry("harvest_nonmonotone").or_default() += 1;
+                     }
+                 }
+-                if !*JOIN {
++                if !round_join() {
+                     s.prev_rets.insert(key, cur.clone());
+                     continue;
+                 }
+@@ -1184,6 +1230,7 @@ pub(crate) fn join_rets(classes: &mut HashMap<ClassId, ClassInfo>) {
+                     *s.counts.entry("join_ret_widened").or_default() += 1;
+                     table.insert(method.clone(), joined.clone());
+                 }
++                super::det::note("fold.join_rets", s.prev_rets.get(&key), &joined);
+                 s.prev_rets.insert(key, joined);
+             }
+         }
+@@ -1312,7 +1359,8 @@ pub(crate) fn alias_includers(module: &ClassId, method: &Symbol) -> Vec<ClassId>
+ 
+ /// `join_rets` for one method (both sides), after the engine harvested it.
+ pub(crate) fn join_ret_one(classes: &mut HashMap<ClassId, ClassInfo>, class: &ClassId, method: &Symbol) {
+-    if !active() || !*JOIN {
++    // (`round_join` is off under `RH_DET`: see `join_rets`.)
++    if !active() || !round_join() {
+         return;
+     }
+     ST.with(|s| {
+@@ -1336,6 +1384,7 @@ pub(crate) fn join_ret_one(classes: &mut HashMap<ClassId, ClassInfo>, class: &Cl
+                 *s.counts.entry("join_ret_widened").or_default() += 1;
+                 table.insert(method.clone(), joined.clone());
+             }
++            super::det::note("fold.join_ret_one", s.prev_rets.get(&key), &joined);
+             s.prev_rets.insert(key, joined);
+         }
+     });
+@@ -1344,7 +1393,7 @@ pub(crate) fn join_ret_one(classes: &mut HashMap<ClassId, ClassInfo>, class: &Cl
+ /// `join_params` for one row the engine recomputed: a reference-mode
+ /// method's row joins with its previous row (`commit` records it).
+ pub(crate) fn join_param_row(key: &MethodKey, raw: Option<Vec<Ty>>, commit: bool) -> Option<Vec<Ty>> {
+-    if !active() || !*JOIN {
++    if !active() || !round_join() {
+         return raw;
+     }
+     ST.with(|s| {
+@@ -1358,7 +1407,9 @@ pub(crate) fn join_param_row(key: &MethodKey, raw: Option<Vec<Ty>>, commit: bool
+                 row.resize(prev.len(), Ty::Var { var: crate::ident::TyVar(0) });
+             }
+             for (slot, old) in row.iter_mut().zip(prev) {
+-                *slot = join_handoff(old, slot.clone());
++                let joined = join_handoff(old.clone(), slot.clone());
++                super::det::note("fold.join_param_row", Some(&old), &joined);
++                *slot = joined;
+             }
+         }
+         if row.is_empty() {
+@@ -1390,6 +1441,8 @@ pub(crate) fn note_loop(name: &str, rounds: usize, converged: bool) {
+ pub(crate) struct Expander<'a> {
+     classes: &'a HashMap<ClassId, ClassInfo>,
+     memo: HashMap<u32, Ty>,
++    /// prototype (`RH_DET_EXPAND=2`): nodes each memoized expansion used.
++    memo_cost: HashMap<u32, usize>,
+     stack: Vec<u32>,
+     /// prototype (`RH_FOLD_TAIL`): constructor depth when each stack entry
+     /// was pushed, and the current depth. A back edge met at the same
+@@ -1402,6 +1455,14 @@ pub(crate) struct Expander<'a> {
+     pub tail_edges: u64,
+ }
+ 
++/// `RH_DET_EXPAND=1`, budget-cut expansions are not memoized;
++/// `=2` also charges a memo hit the nodes its expansion used (and expands
++/// afresh when the budget left is smaller), so a top-level expansion's
++/// result no longer depends on which expansions ran before it.
++static DET_EXPAND_LEVEL: LazyLock<u8> =
++    LazyLock::new(|| std::env::var("RH_DET_EXPAND").ok().and_then(|v| v.parse().ok()).unwrap_or(0));
++static DET_EXPAND: LazyLock<bool> = LazyLock::new(|| *DET_EXPAND_LEVEL >= 1);
++
+ /// Node budget per top-level expansion (`RH_FOLD_EXPAND=N`, default 256).
+ static EXPAND_NODES: LazyLock<usize> =
+     LazyLock::new(|| std::env::var("RH_FOLD_EXPAND").ok().and_then(|s| s.parse().ok()).unwrap_or(256));
+@@ -1411,6 +1472,7 @@ impl<'a> Expander<'a> {
+         Expander {
+             classes,
+             memo: HashMap::new(),
++            memo_cost: HashMap::new(),
+             stack: Vec::new(),
+             depth_at: Vec::new(),
+             ctor: 0,
+@@ -1457,12 +1519,23 @@ impl<'a> Expander<'a> {
+                     return Ty::Untyped;
+                 }
+                 if let Some(m) = self.memo.get(slot) {
+-                    return m.clone();
++                    if *DET_EXPAND_LEVEL >= 2 {
++                        let cost = self.memo_cost.get(slot).copied().unwrap_or(1);
++                        if *budget + 1 >= cost {
++                            *budget = *budget + 1 - cost;
++                            return m.clone();
++                        }
++                        // Not enough budget left: expand afresh, as without the memo.
++                    } else {
++                        return m.clone();
++                    }
+                 }
+                 let Some(v) = value_of(*slot, self.classes) else { return Ty::Untyped };
+                 self.stack.push(*slot);
+                 self.depth_at.push(self.ctor);
+                 let cyc_before = self.cyclic.len();
++                let cuts_before = self.budget_cuts;
++                let budget_before = *budget + 1;
+                 let r = self.go(&v, budget);
+                 // A slot made only of unguarded back edges never returns a
+                 // value; keep main's `untyped` rather than leaking `Bottom`
+@@ -1471,7 +1544,16 @@ impl<'a> Expander<'a> {
+                 self.stack.pop();
+                 self.depth_at.pop();
+                 // Only an expansion that met no back edge is context-free.
+-                if self.cyclic.len() == cyc_before && !self.cyclic.contains(slot) {
++                // prototype (`RH_DET_EXPAND=1`): an expansion the node budget
++                // cut is not context-free either; memoizing it lets the first
++                // expansion of a slot (in HashMap order) decide every later one.
++                if self.cyclic.len() == cyc_before
++                    && !self.cyclic.contains(slot)
++                    && !(*DET_EXPAND && self.budget_cuts != cuts_before)
++                {
++                    if !self.memo.contains_key(slot) {
++                        self.memo_cost.insert(*slot, budget_before - *budget);
++                    }
+                     self.memo.insert(*slot, r.clone());
+                 }
+                 r
+diff --git a/src/analyze/harvest_return.rs b/src/analyze/harvest_return.rs
+index 65dd6e76..61d4da9d 100644
+--- a/src/analyze/harvest_return.rs
++++ b/src/analyze/harvest_return.rs
+@@ -120,7 +120,8 @@ fn untie_recursive_return(existing: &Ty, new: &Ty) -> Option<Ty> {
+ 
+ enum HarvestWrite {
+     Keep,
+-    Set(Ty),
++    /// The value, and the rule that decided it (sanitizer).
++    Set(Ty, &'static str),
+ }
+ 
+ /// Single merge decision for an existing harvested return vs a new body type.
+@@ -128,21 +129,53 @@ fn decide_harvested_return(existing: &Ty, new: Ty) -> HarvestWrite {
+     if matches!(existing, Ty::Fn { .. }) {
+         return HarvestWrite::Keep;
+     }
++    // prototype (`RH_DET=1|2`): the join of D instead of the history-relative
++    // branches (theory §2.1). No first-written, stabilize, informative-keep
++    // or Nil branch: the entry is the join of everything its writers wrote,
++    // which no write order can change. `untie` stays as a cut on the new
++    // value (a recursive return nesting the old one would otherwise grow
++    // forever); its firings are a certificate field, counted as before.
++    if super::det::det_on() {
++        let new = match untie_recursive_return(existing, &new) {
++            Some(untied) => {
++                super::dyn_probe::count("harvest_untie_cut");
++                super::det::note_cap("harvest_untie_cut");
++                super::det::note("harvest.untie", Some(existing), &untied);
++                untied
++            }
++            None => new,
++        };
++        // One writer per entry (the method's body): its entry is its latest
++        // value, normalized as a join with ⊥ (theory's H*); `RH_DET_WRITE=join`
++        // keeps the inflationary join instead.
++        let next = if super::det::write_join() {
++            super::det::lat_join(existing.clone(), new)
++        } else {
++            super::det::lat_norm(new)
++        };
++        if existing == &next {
++            return HarvestWrite::Keep;
++        }
++        return HarvestWrite::Set(next, "harvest.det");
++    }
+     if existing == &new {
+         return HarvestWrite::Keep;
+     }
+     if let Some(untied) = untie_recursive_return(existing, &new) {
+         super::dyn_probe::count("harvest_untie_cut");
++        // every firing of #528's history cut (dai199: report it
++        // per stage), next to the other caps in `rh-descent:`.
++        super::det::note_cap("harvest_untie_cut");
+         if existing == &untied {
+             return HarvestWrite::Keep;
+         }
+-        return HarvestWrite::Set(untied);
++        return HarvestWrite::Set(untied, "harvest.untie");
+     }
+     if let Some(stable) = stabilize_untyped_return_oscillation(existing, &new) {
+         if existing == &stable {
+             return HarvestWrite::Keep;
+         }
+-        return HarvestWrite::Set(stable);
++        return HarvestWrite::Set(stable, "harvest.stabilize");
+     }
+     // Bare `Untyped`/`Var`, and unions of only those, must not wipe a
+     // concrete return. `Union[Untyped, Untyped]` is not `is_unknown()`
+@@ -151,7 +184,7 @@ fn decide_harvested_return(existing: &Ty, new: Ty) -> HarvestWrite {
+         return HarvestWrite::Keep;
+     }
+     // Distinct cores: last-write wins (residual thrash; not this PR's fix).
+-    HarvestWrite::Set(new)
++    HarvestWrite::Set(new, "harvest.lastwrite")
+ }
+ 
+ /// Conservative insertion into the harvested-return table.
+@@ -169,11 +202,15 @@ pub(super) fn insert_inferred_return(
+     let ty = super::dyn_probe::maybe_bound(ty);
+     match table.get(method) {
+         None => {
++            // prototype (`RH_DET`): a first write is a join with ⊥.
++            let ty = if super::det::det_on() && !matches!(ty, Ty::Fn { .. }) { super::det::lat_norm(ty) } else { ty };
++            super::det::note_named("harvest.first", method.as_str(), None, &ty);
+             table.insert(method.clone(), ty);
+         }
+         Some(existing) => match decide_harvested_return(existing, ty) {
+             HarvestWrite::Keep => {}
+-            HarvestWrite::Set(next) => {
++            HarvestWrite::Set(next, rule) => {
++                super::det::note_named(rule, method.as_str(), Some(existing), &next);
+                 table.insert(method.clone(), next);
+             }
+         },
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 23eeacb5..93a13917 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -52,6 +52,7 @@ pub(crate) mod fold;
+ mod slots;
+ mod sccq;
+ mod c1fp;
++mod det;
+ mod dirty_retype;
+ mod typing_mode;
+ mod inferred_types;
+@@ -1564,6 +1565,17 @@ impl Analyzer {
+         self.type_direct_helper_bodies(app);
+         self.type_rails_application_body(app);
+ 
++        // the same digests before the final expansion, where
++        // references still hash by slot key (`rh-det-pre:`, numbers only).
++        if std::env::var("RH_C1_DIGEST").is_ok_and(|v| v == "1") && det::descent_on() {
++            let fp = self.c1_state_fp(app);
++            let (sig, ir, side) = fp.digest();
++            eprintln!(
++                "rh-det-pre: {{\"sig\":\"{sig:016x}\",\"ir\":\"{ir:016x}\",\"side\":\"{side:016x}\",\"split\":{}}}",
++                fp.det_line()
++            );
++        }
++
+         // prototype fold (RH_FOLD): expand every slot reference before
+         // anything downstream of analysis sees a type.
+         self.fold_finish(app);
+@@ -1589,7 +1601,11 @@ impl Analyzer {
+                 }
+                 let _ = std::fs::write(path, out);
+             }
++            // the same digests split by kind and bucket.
++            eprintln!("rh-det: {}", fp.det_line());
+         }
++        // `rh-descent:` (`RH_DESCENT=1`), `rh-shuffle:` (`RH_SHUFFLE`).
++        det::report();
+ 
+         self.stamp_inferred_method_signatures(app);
+     }
+@@ -1654,9 +1670,24 @@ impl Analyzer {
+         let snapshot = self.classes.clone();
+         let mut ex = fold::Expander::new(&snapshot);
+         let mut rewritten = 0u64;
+-        for cls in self.classes.values_mut() {
++        // prototype (`RH_DET`): the expander shares a memo, a cyclic set and
++        // per-expansion budgets across expansions, so its results depend on
++        // the order it meets them. Walk the HashMaps in key order, so the
++        // final state is a function of the fixpoint alone (Round 1, §5).
++        let canonical = det::det_on();
++        let mut class_ids: Vec<ClassId> = self.classes.keys().cloned().collect();
++        if canonical {
++            class_ids.sort_by(|a, b| a.0.as_str().cmp(b.0.as_str()));
++        }
++        for cid in &class_ids {
++            let Some(cls) = self.classes.get_mut(cid) else { continue };
+             for table in [&mut cls.instance_methods, &mut cls.class_methods] {
+-                for t in table.values_mut() {
++                let mut names: Vec<Symbol> = table.keys().cloned().collect();
++                if canonical {
++                    names.sort_by(|a, b| a.as_str().cmp(b.as_str()));
++                }
++                for name in &names {
++                    let Some(t) = table.get_mut(name) else { continue };
+                     if fold::contains_rec(t) {
+                         *t = ex.expand(t);
+                         rewritten += 1;
+@@ -1665,7 +1696,12 @@ impl Analyzer {
+             }
+         }
+         let expand_rows = |rows: &mut HashMap<(ClassId, Symbol), Vec<Ty>>, ex: &mut fold::Expander, n: &mut u64| {
+-            for row in rows.values_mut() {
++            let mut keys: Vec<(ClassId, Symbol)> = rows.keys().cloned().collect();
++            if canonical {
++                keys.sort_by(|a, b| (a.0 .0.as_str(), a.1.as_str()).cmp(&(b.0 .0.as_str(), b.1.as_str())));
++            }
++            for k in &keys {
++                let Some(row) = rows.get_mut(k) else { continue };
+                 for t in row.iter_mut() {
+                     if fold::contains_rec(t) {
+                         *t = ex.expand(t);
+@@ -1677,8 +1713,18 @@ impl Analyzer {
+         expand_rows(&mut self.inferred_params, &mut ex, &mut rewritten);
+         expand_rows(&mut app.inferred_method_params, &mut ex, &mut rewritten);
+         for map in [&mut app.view_ivar_types, &mut app.partial_local_types] {
+-            for inner in map.values_mut() {
+-                for t in inner.values_mut() {
++            let mut outer: Vec<_> = map.keys().cloned().collect();
++            if canonical {
++                outer.sort_by(|a, b| format!("{a:?}").cmp(&format!("{b:?}")));
++            }
++            for ok in &outer {
++                let Some(inner) = map.get_mut(ok) else { continue };
++                let mut ik: Vec<_> = inner.keys().cloned().collect();
++                if canonical {
++                    ik.sort_by(|a, b| format!("{a:?}").cmp(&format!("{b:?}")));
++                }
++                for k in &ik {
++                    let Some(t) = inner.get_mut(k) else { continue };
+                     if fold::contains_rec(t) {
+                         *t = ex.expand(t);
+                         rewritten += 1;
+@@ -1686,9 +1732,19 @@ impl Analyzer {
+                 }
+             }
+         }
+-        for res in app.controller_resolutions.values_mut() {
++        let mut res_keys: Vec<_> = app.controller_resolutions.keys().cloned().collect();
++        if canonical {
++            res_keys.sort_by(|a, b| format!("{a:?}").cmp(&format!("{b:?}")));
++        }
++        for rk in &res_keys {
++            let Some(res) = app.controller_resolutions.get_mut(rk) else { continue };
+             for f in res.filter_chain.iter_mut() {
+-                for t in f.assigns.values_mut() {
++                let mut ak: Vec<_> = f.assigns.keys().cloned().collect();
++                if canonical {
++                    ak.sort_by(|a, b| format!("{a:?}").cmp(&format!("{b:?}")));
++                }
++                for k in &ak {
++                    let Some(t) = f.assigns.get_mut(k) else { continue };
+                     if fold::contains_rec(t) {
+                         *t = ex.expand(t);
+                         rewritten += 1;
+@@ -4839,7 +4895,32 @@ impl Analyzer {
+     /// RBS-derived `Ty::Fn` is preserved — its return is already what
+     /// dispatch resolves to via `unwrap_fn_ret`). Skip methods whose
+     /// body is `Ty::Var` (no information gained).
++    /// prototype (`RH_DESCENT=1`): one harvest's net registry writes,
++    /// checked against the join order (the catch-all behind the rule sites).
+     fn harvest_returns_to_registry(&mut self, app: &App, harvest_tests: bool) {
++        det::next_round();
++        if !det::descent_on() {
++            return self.harvest_returns_to_registry_raw(app, harvest_tests);
++        }
++        let snapshot = |classes: &HashMap<ClassId, ClassInfo>| {
++            let mut m: HashMap<(ClassId, u8, Symbol), Ty> = HashMap::new();
++            for (id, ci) in classes {
++                for (kind, table) in [(0u8, &ci.class_methods), (1, &ci.instance_methods), (2, &ci.constants)] {
++                    for (name, t) in table {
++                        m.insert((id.clone(), kind, name.clone()), t.clone());
++                    }
++                }
++            }
++            m
++        };
++        let before = snapshot(&self.classes);
++        self.harvest_returns_to_registry_raw(app, harvest_tests);
++        for (k, t) in snapshot(&self.classes) {
++            det::note("round.registry", before.get(&k), &t);
++        }
++    }
++
++    fn harvest_returns_to_registry_raw(&mut self, app: &App, harvest_tests: bool) {
+         self.harvest_method_returns(app, harvest_tests);
+         // prototype fold (RH_FOLD_JOIN): reference-mode returns join with
+         // the value they held after the previous harvest.
+@@ -4861,7 +4942,9 @@ impl Analyzer {
+                 .filter_map(|cid| self.classes.get(cid))
+                 .find_map(|c| c.instance_methods.get(name).cloned());
+             if let Some(ty) = ty {
+-                self.classes.entry(view_ctx.clone()).or_default().instance_methods.insert(name.clone(), ty);
++                let t = &mut self.classes.entry(view_ctx.clone()).or_default().instance_methods;
++                det::note_named("copy.view_ctx", name.as_str(), t.get(name), &ty);
++                t.insert(name.clone(), ty);
+             }
+         }
+     }
+@@ -5128,6 +5211,7 @@ impl Analyzer {
+                 .collect();
+             let Some(cls) = self.classes.get_mut(id) else { continue };
+             for (name, ty) in copied {
++                det::note_named("copy.current_attr", name.as_str(), cls.class_methods.get(&name), &ty);
+                 cls.class_methods.insert(name, ty);
+             }
+         }
+@@ -5229,6 +5313,7 @@ impl Analyzer {
+                     if cls.class_methods.contains_key(&name) && !folded.1.contains(&name) {
+                         continue;
+                     }
++                    det::note_named("copy.extend_module", name.as_str(), cls.class_methods.get(&name), &ty);
+                     cls.class_methods.insert(name.clone(), ty);
+                     folded.1.insert(name);
+                 }
+@@ -5286,6 +5371,7 @@ impl Analyzer {
+                     if cls.instance_methods.contains_key(name) && !folded.0.contains(name) {
+                         continue; // own/catalog entry wins
+                     }
++                    det::note_named("copy.concern_inst", name.as_str(), cls.instance_methods.get(name), ty);
+                     cls.instance_methods.insert(name.clone(), ty.clone());
+                     folded.0.insert(name.clone());
+                     // the copy's source, so a copy of a
+@@ -5296,6 +5382,7 @@ impl Analyzer {
+                     if cls.class_methods.contains_key(name) && !folded.1.contains(name) {
+                         continue;
+                     }
++                    det::note_named("copy.concern_class", name.as_str(), cls.class_methods.get(name), ty);
+                     cls.class_methods.insert(name.clone(), ty.clone());
+                     folded.1.insert(name.clone());
+                     fold::note_alias(&id, name, &m);
+@@ -5390,6 +5477,7 @@ impl Analyzer {
+                 cls.instance_methods.remove(name);
+             }
+             for (name, ty) in agreed {
++                det::note_named("copy.host_lend", name.as_str(), cls.instance_methods.get(&name), &ty);
+                 cls.instance_methods.insert(name.clone(), ty);
+                 lent.insert(name);
+             }
+@@ -5575,13 +5663,26 @@ impl Analyzer {
+     /// at a higher level — we work with structured `Ty` values rather
+     /// than string fingerprints, so unification is direct: same type →
+     /// keep; nil + T → T?; otherwise → union widen.
++    /// prototype (`RH_DESCENT=1`): one round's net parameter-row writes,
++    /// checked against the join order (the catch-all behind the rule sites).
+     fn unify_params_from_call_sites(&mut self, app: &App, scope: UnifyScope) {
++        if !det::descent_on() {
++            return self.unify_params_from_call_sites_raw(app, scope);
++        }
++        let before = self.inferred_params.clone();
++        self.unify_params_from_call_sites_raw(app, scope);
++        for (k, row) in &self.inferred_params {
++            det::note_row("round.params", before.get(k).map(|r| r.as_slice()), row);
++        }
++    }
++
++    fn unify_params_from_call_sites_raw(&mut self, app: &App, scope: UnifyScope) {
+         // Rebuilt from scratch every fixpoint round. The table is pure
+         // derived state — a function of the types the last typing pass
+         // wrote onto the call-site argument expressions — and carrying
+-        // it forward makes it MONOTONIC in the wrong direction: round 1
++        // it forward makes it MONOTONIC in the wrong direction: prototype
+         // sees `self.id = generate_id` before `generate_id` is known
+-        // and records `Untyped`; round 2 sees `Str`; unify fuses them
++        // and records `Untyped`; prototype sees `Str`; unify fuses them
+         // into `Str | Untyped`, which is `untyped` with extra steps.
+         // The refined round strictly dominates the one before it, so
+         // the earlier observation has nothing to contribute.
+@@ -5801,7 +5902,7 @@ impl Analyzer {
+                 entry.resize(arity, Ty::Var { var: crate::ident::TyVar(0) });
+             }
+             for (slot, observed) in entry.iter_mut().zip(arg_tys.into_iter()) {
+-                *slot = unify_param_ty(slot.clone(), observed);
++                { let next = unify_param_ty(slot.clone(), observed); det::note("params.unify.sites", Some(&*slot), &next); *slot = next; }
+             }
+         }
+     }
+@@ -6017,7 +6118,7 @@ impl Analyzer {
+                 entry.resize(tys.len(), Ty::Var { var: crate::ident::TyVar(0) });
+             }
+             for (slot, observed) in entry.iter_mut().zip(tys.into_iter()) {
+-                *slot = unify_param_ty(slot.clone(), observed);
++                { let next = unify_param_ty(slot.clone(), observed); det::note("params.unify.concern", Some(&*slot), &next); *slot = next; }
+             }
+         }
+     }
+@@ -7425,6 +7526,11 @@ fn block_filter_gates(call: &Expr) -> (Vec<Symbol>, Vec<Symbol>) {
+ /// - already a Union containing `observed` → keep
+ /// - otherwise → widen via `union_of`
+ fn unify_param_ty(stored: Ty, observed: Ty) -> Ty {
++    // prototype (`RH_DET=1|2`): the join of D (theory §2.2). Commutative on
++    // pending pairs, so neither call-site nor includer order can matter.
++    if det::det_on() {
++        return det::lat_join(stored, observed);
++    }
+     if stored == observed {
+         return stored;
+     }
+diff --git a/src/analyze/sccq.rs b/src/analyze/sccq.rs
+index 856311cf..99c1322e 100644
+--- a/src/analyze/sccq.rs
++++ b/src/analyze/sccq.rs
+@@ -805,7 +805,8 @@ impl Engine {
+         if unit.dirty == 0 {
+             self.seq += 1;
+             unit.seq = self.seq;
+-            let pos = if fifo_order() { 0 } else { unit.pos };
++            // prototype (`RH_SHUFFLE=<seed>`): a seeded permutation per drain.
++            let pos = if fifo_order() { 0 } else { super::det::shuffle_key(u, self.stats.drain_evals.len() as u64, unit.pos) };
+             self.heap.push(Reverse((pos, unit.seq, u)));
+             self.pending += 1;
+             self.stats.marks += 1;
+@@ -926,7 +927,7 @@ impl Engine {
+                 e.resize(arity, var0());
+             }
+             for (slot, observed) in e.iter_mut().zip(args.iter()) {
+-                *slot = super::unify_param_ty(slot.clone(), observed.clone());
++                { let next = super::unify_param_ty(slot.clone(), observed.clone()); super::det::note("params.unify.sccq_sites", Some(&*slot), &next); *slot = next; }
+             }
+         }
+         entry
+@@ -944,7 +945,7 @@ impl Engine {
+                         e.resize(tys.len(), var0());
+                     }
+                     for (slot, observed) in e.iter_mut().zip(tys.iter()) {
+-                        *slot = super::unify_param_ty(slot.clone(), observed.clone());
++                        { let next = super::unify_param_ty(slot.clone(), observed.clone()); super::det::note("params.unify.sccq_concern", Some(&*slot), &next); *slot = next; }
+                     }
+                 }
+             }
+@@ -957,7 +958,7 @@ impl Engine {
+                     e.resize(arity, var0());
+                 }
+                 for (slot, observed) in e.iter_mut().zip(args.iter()) {
+-                    *slot = super::unify_param_ty(slot.clone(), observed.clone());
++                    { let next = super::unify_param_ty(slot.clone(), observed.clone()); super::det::note("params.unify.sccq_overlay", Some(&*slot), &next); *slot = next; }
+                 }
+             }
+         }
+@@ -2098,6 +2099,11 @@ impl Analyzer {
+             if round > 0 {
+                 reapplied += 1;
+             }
++            // the bounded re-application stopped while the entry
++            // still moved (a cap; theory's certificate wants zero).
++            if round + 1 == limit {
++                super::det::note_cap(if self_reading { "harvest_reapply_limit_self" } else { "harvest_reapply_limit" });
++            }
+         }
+         // Block-value verdicts share one name set per class: recompute the
+         // name from every unit of this class that defines it.
+@@ -2739,7 +2745,7 @@ impl Analyzer {
+         eng.heap.clear();
+         for u in pending {
+             let unit = &eng.units[u as usize];
+-            let pos = if fifo_order() { 0 } else { unit.pos };
++            let pos = if fifo_order() { 0 } else { super::det::shuffle_key(u, eng.stats.drain_evals.len() as u64, unit.pos) };
+             eng.heap.push(Reverse((pos, unit.seq, u)));
+         }
+         if eng.stats.graph_first.is_none() {
+diff --git a/src/analyze/slots.rs b/src/analyze/slots.rs
+index fbf9a6df..efc5f791 100644
+--- a/src/analyze/slots.rs
++++ b/src/analyze/slots.rs
+@@ -1,4 +1,4 @@
+-//! prototype research prototype (origin-aware inference, round 2): the slot-read graph.
++//! prototype research prototype (origin-aware inference, prototype): the slot-read graph.
+ //! Env-gated and inert by default (`RH_FOLD=1` and `RH_FOLD_SLOTS=1`).
+ //!
+ //! Reference mode used to come from the call graph: a method was read by
+diff --git a/src/bin/roundhouse.rs b/src/bin/roundhouse.rs
+index 35e4c192..dcc84571 100644
+--- a/src/bin/roundhouse.rs
++++ b/src/bin/roundhouse.rs
+@@ -488,3 +488,89 @@ fn run_transpile(
+     );
+     Ok(())
+ }
++
++/// prototype (experiment): `RH_HASHSEED=<seed>`, or `RH_SHUFFLE=<seed>`, makes
++/// std's hash keys, and with them every HashMap's iteration order, a
++/// function of the seed. std draws the keys from `CCRandomGenerateBytes`,
++/// which this definition shadows inside the binary; each thread's draws are
++/// numbered, so the keys do not depend on thread timing. With neither
++/// variable set it forwards to the system's generator.
++#[cfg(target_vendor = "apple")]
++mod hash_seed {
++    use std::ffi::{CStr, c_char, c_void};
++    use std::sync::atomic::{AtomicPtr, AtomicU8, AtomicU64, Ordering};
++
++    unsafe extern "C" {
++        fn dlsym(handle: *mut c_void, symbol: *const c_char) -> *mut c_void;
++        fn getenv(name: *const c_char) -> *const c_char;
++    }
++    const RTLD_NEXT: *mut c_void = -1isize as *mut c_void;
++    static REAL: AtomicPtr<c_void> = AtomicPtr::new(std::ptr::null_mut());
++    /// 0: not read yet, 1: unset, 2: `SEED` holds the seed.
++    static STATE: AtomicU8 = AtomicU8::new(0);
++    static SEED: AtomicU64 = AtomicU64::new(0);
++    static SHARED: AtomicU64 = AtomicU64::new(1 << 40);
++    std::thread_local! {
++        static DRAWN: std::cell::Cell<u64> = const { std::cell::Cell::new(0) };
++    }
++
++    fn parse(p: *const c_char) -> Option<u64> {
++        if p.is_null() {
++            return None;
++        }
++        unsafe { CStr::from_ptr(p) }.to_str().ok()?.trim().parse().ok()
++    }
++
++    fn seed() -> Option<u64> {
++        match STATE.load(Ordering::Acquire) {
++            1 => None,
++            2 => Some(SEED.load(Ordering::Relaxed)),
++            _ => {
++                let s = parse(unsafe { getenv(c"RH_HASHSEED".as_ptr()) })
++                    .or_else(|| parse(unsafe { getenv(c"RH_SHUFFLE".as_ptr()) }).map(|s| s ^ 0x5EED_5EED));
++                if let Some(s) = s {
++                    SEED.store(s, Ordering::Relaxed);
++                }
++                STATE.store(if s.is_some() { 2 } else { 1 }, Ordering::Release);
++                s
++            }
++        }
++    }
++
++    fn mix(x: u64) -> u64 {
++        let mut z = x.wrapping_add(0x9E37_79B9_7F4A_7C15);
++        z = (z ^ (z >> 30)).wrapping_mul(0xBF58_476D_1CE4_E5B9);
++        z = (z ^ (z >> 27)).wrapping_mul(0x94D0_49BB_1331_11EB);
++        z ^ (z >> 31)
++    }
++
++    #[allow(non_snake_case)]
++    #[unsafe(no_mangle)]
++    pub extern "C" fn CCRandomGenerateBytes(bytes: *mut c_void, count: usize) -> i32 {
++        if let Some(seed) = seed() {
++            roundhouse::HASH_KEY_CALLS.fetch_add(1, Ordering::Relaxed);
++            let out = unsafe { std::slice::from_raw_parts_mut(bytes as *mut u8, count) };
++            for chunk in out.chunks_mut(8) {
++                let n = DRAWN
++                    .try_with(|d| {
++                        let n = d.get();
++                        d.set(n + 1);
++                        n
++                    })
++                    .unwrap_or_else(|_| SHARED.fetch_add(1, Ordering::Relaxed));
++                chunk.copy_from_slice(&mix(seed ^ mix(n)).to_le_bytes()[..chunk.len()]);
++            }
++            return 0;
++        }
++        let mut f = REAL.load(Ordering::Acquire);
++        if f.is_null() {
++            f = unsafe { dlsym(RTLD_NEXT, c"CCRandomGenerateBytes".as_ptr()) };
++            REAL.store(f, Ordering::Release);
++        }
++        if f.is_null() {
++            return -1;
++        }
++        let real: extern "C" fn(*mut c_void, usize) -> i32 = unsafe { std::mem::transmute(f) };
++        real(bytes, count)
++    }
++}
+diff --git a/src/lib.rs b/src/lib.rs
+index 11a576b0..650e36cf 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -6,6 +6,8 @@
+ 
+ pub mod adapter;
+ pub mod analyze;
++/// calls to the binary's seeded `CCRandomGenerateBytes` hook (`RH_HASHSEED`, `RH_SHUFFLE`).
++pub static HASH_KEY_CALLS: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+ pub mod app;
+ pub mod builder;
+ pub mod bytecode;

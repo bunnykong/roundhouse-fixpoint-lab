@@ -1,0 +1,4 @@
+type j = Hash[String, j] | Array[j] | Integer | String | nil
+class JProbe
+  def self.echo: (j value) -> j
+end

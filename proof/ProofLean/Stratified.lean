@@ -1,15 +1,14 @@
 import ProofLean.Core
 
 /-!
-# Dependency-ordered evaluation is exact (DESIGN v0.6: dependency-ordered queries with delta kernels)
+# Dependency-ordered evaluation is exact
 
 Give every slot a rank such that a rule's premises (its conditions and its source) never have a
 higher rank than its conclusion: the condensation order of the slot graph, with each strongly
 connected component at one rank.  Then solving rank by rank, each rank to its own least fixpoint
 with the lower ranks frozen, computes exactly the global least solution (`layer_eq_solve`, a finite
 form of Bekić's lemma).  When premises are strictly lower (an acyclic part), each rank's local
-iteration takes at most one round (`strict_one_round`): the 64-link chain needs one evaluation per
-slot, the count the control experiment measured.
+iteration takes at most one round (`strict_one_round`).
 -/
 
 set_option linter.unusedSectionVars false

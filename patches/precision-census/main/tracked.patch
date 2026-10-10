@@ -1,0 +1,62 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index 8aec1736..4eaeafac 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -394,6 +394,7 @@ impl<'a> BodyTyper<'a> {
+     /// raise-equivalent without re-classifying.
+     pub fn analyze_expr(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
+         let ty = self.compute(expr, ctx);
++        super::precdiff_probe::flow(expr, &ty, ctx, self.classes());
+         expr.ty = Some(ty.clone());
+         expr.decisions &= !crate::expr::CLASS_OBJECT_VALUE;
+         if self.is_class_object(expr, ctx) { expr.decisions |= crate::expr::CLASS_OBJECT_VALUE; }
+diff --git a/src/analyze/harvest_return.rs b/src/analyze/harvest_return.rs
+index 29209c27..bdf833f9 100644
+--- a/src/analyze/harvest_return.rs
++++ b/src/analyze/harvest_return.rs
+@@ -120,12 +120,14 @@ fn decide_harvested_return(existing: &Ty, new: Ty) -> HarvestWrite {
+         return HarvestWrite::Keep;
+     }
+     if let Some(untied) = untie_recursive_return(existing, &new) {
++        super::precdiff_probe::event("harvest_untie_cut", || serde_json::json!({"old": existing, "candidate": new, "stored": untied}));
+         if existing == &untied {
+             return HarvestWrite::Keep;
+         }
+         return HarvestWrite::Set(untied);
+     }
+     if let Some(stable) = stabilize_untyped_return_oscillation(existing, &new) {
++        super::precdiff_probe::event("harvest.stabilize", || serde_json::json!({"old": existing, "candidate": new, "stored": stable}));
+         if existing == &stable {
+             return HarvestWrite::Keep;
+         }
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index e1dd288a..a90ae8d5 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -23,6 +23,8 @@
+ //!
+ //! Each of those comes when a fixture forces it.
+ 
++pub mod precdiff_probe;
++
+ mod alba;
+ mod enum_raw_input;
+ mod body;
+@@ -1452,7 +1454,9 @@ impl Analyzer {
+         self.type_direct_helper_bodies(app);
+         self.type_rails_application_body(app);
+ 
++        precdiff_probe::snapshot(app, self, "pre-expand");
+         self.stamp_inferred_method_signatures(app);
++        precdiff_probe::flush_flow();
+     }
+ 
+     /// Type the bodies of `direct :name do |…| … end` helpers, with the
+@@ -5029,6 +5033,7 @@ impl Analyzer {
+         method: &Symbol,
+         ty: Ty,
+     ) {
++        precdiff_probe::harvest_context(table as *const _ as usize, method.as_str());
+         harvest_return::insert_inferred_return(table, method, ty);
+     }
+ 

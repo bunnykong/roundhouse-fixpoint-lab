@@ -1,0 +1,504 @@
+{
+  "condition": "five public apps at corpus/apps.json pins",
+  "join_rate": 1.0,
+  "left": "main",
+  "per_app": {
+    "campfire": {
+      "S3_unmatched": 0,
+      "different_printed_type": 24,
+      "duplicate_key_pairs": 5967,
+      "duplicate_keys": 1230,
+      "equal_category": 32524,
+      "full_net": -11,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 25466,
+        "untyped": 4797,
+        "var": 2272
+      },
+      "left_rec_rows": 0,
+      "left_rows": 32535,
+      "less_precise": 11,
+      "main_unmatched": 0,
+      "matched": 32535,
+      "matched_score_net": -22,
+      "more_precise": 0,
+      "precision_score_net": -22,
+      "right_categories": {
+        "full": 25455,
+        "untyped": 4808,
+        "var": 2272
+      },
+      "right_rec_rows": 6,
+      "right_rows": 32535,
+      "source_pairs": 31135,
+      "synthetic_pairs": 1400,
+      "transitions": {
+        "full->full": 25455,
+        "full->untyped": 11,
+        "untyped->untyped": 4797,
+        "var->var": 2272
+      },
+      "unique_key_pairs": 26568,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 11,
+      "var_net": 0
+    },
+    "chatwoot": {
+      "S3_unmatched": 0,
+      "different_printed_type": 838,
+      "duplicate_key_pairs": 21618,
+      "duplicate_keys": 5084,
+      "equal_category": 146848,
+      "full_net": -59,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 91289,
+        "untyped": 28912,
+        "var": 26948
+      },
+      "left_rec_rows": 0,
+      "left_rows": 147149,
+      "less_precise": 194,
+      "main_unmatched": 0,
+      "matched": 147149,
+      "matched_score_net": -144,
+      "more_precise": 107,
+      "precision_score_net": -144,
+      "right_categories": {
+        "full": 91230,
+        "untyped": 28997,
+        "var": 26922
+      },
+      "right_rec_rows": 0,
+      "right_rows": 147149,
+      "source_pairs": 138096,
+      "synthetic_pairs": 9053,
+      "transitions": {
+        "full->full": 91191,
+        "full->untyped": 81,
+        "full->var": 17,
+        "untyped->full": 24,
+        "untyped->untyped": 28820,
+        "untyped->var": 68,
+        "var->full": 15,
+        "var->untyped": 96,
+        "var->var": 26837
+      },
+      "unique_key_pairs": 125531,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 85,
+      "var_net": -26
+    },
+    "discourse": {
+      "S3_unmatched": 0,
+      "different_printed_type": 10645,
+      "duplicate_key_pairs": 55440,
+      "duplicate_keys": 8514,
+      "equal_category": 473947,
+      "full_net": -1523,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 306709,
+        "untyped": 71842,
+        "var": 100724
+      },
+      "left_rec_rows": 0,
+      "left_rows": 479275,
+      "less_precise": 3701,
+      "main_unmatched": 0,
+      "matched": 479275,
+      "matched_score_net": -3275,
+      "more_precise": 1627,
+      "precision_score_net": -3275,
+      "right_categories": {
+        "full": 305186,
+        "untyped": 73594,
+        "var": 100495
+      },
+      "right_rec_rows": 0,
+      "right_rows": 479275,
+      "source_pairs": 453044,
+      "synthetic_pairs": 26231,
+      "transitions": {
+        "full->full": 304029,
+        "full->untyped": 1943,
+        "full->var": 737,
+        "untyped->full": 742,
+        "untyped->untyped": 70630,
+        "untyped->var": 470,
+        "var->full": 415,
+        "var->untyped": 1021,
+        "var->var": 99288
+      },
+      "unique_key_pairs": 423835,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 1752,
+      "var_net": -229
+    },
+    "forem": {
+      "S3_unmatched": 0,
+      "different_printed_type": 552,
+      "duplicate_key_pairs": 22204,
+      "duplicate_keys": 7793,
+      "equal_category": 160099,
+      "full_net": -194,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 130438,
+        "untyped": 13032,
+        "var": 16897
+      },
+      "left_rec_rows": 0,
+      "left_rows": 160367,
+      "less_precise": 233,
+      "main_unmatched": 0,
+      "matched": 160367,
+      "matched_score_net": -371,
+      "more_precise": 35,
+      "precision_score_net": -371,
+      "right_categories": {
+        "full": 130244,
+        "untyped": 13209,
+        "var": 16914
+      },
+      "right_rec_rows": 0,
+      "right_rows": 160367,
+      "source_pairs": 155605,
+      "synthetic_pairs": 4762,
+      "transitions": {
+        "full->full": 130222,
+        "full->untyped": 185,
+        "full->var": 31,
+        "untyped->full": 12,
+        "untyped->untyped": 13007,
+        "untyped->var": 13,
+        "var->full": 10,
+        "var->untyped": 17,
+        "var->var": 16870
+      },
+      "unique_key_pairs": 138163,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 177,
+      "var_net": 17
+    },
+    "mastodon": {
+      "S3_unmatched": 0,
+      "different_printed_type": 3029,
+      "duplicate_key_pairs": 68188,
+      "duplicate_keys": 15014,
+      "equal_category": 208802,
+      "full_net": -201,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 156585,
+        "untyped": 29026,
+        "var": 24440
+      },
+      "left_rec_rows": 0,
+      "left_rows": 210051,
+      "less_precise": 684,
+      "main_unmatched": 0,
+      "matched": 210051,
+      "matched_score_net": -306,
+      "more_precise": 565,
+      "precision_score_net": -306,
+      "right_categories": {
+        "full": 156384,
+        "untyped": 29131,
+        "var": 24536
+      },
+      "right_rec_rows": 0,
+      "right_rows": 210051,
+      "source_pairs": 199642,
+      "synthetic_pairs": 10409,
+      "transitions": {
+        "full->full": 155997,
+        "full->untyped": 263,
+        "full->var": 325,
+        "untyped->full": 76,
+        "untyped->untyped": 28772,
+        "untyped->var": 178,
+        "var->full": 311,
+        "var->untyped": 96,
+        "var->var": 24033
+      },
+      "unique_key_pairs": 141863,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 105,
+      "var_net": 96
+    }
+  },
+  "pooled": {
+    "S3_unmatched": 0,
+    "different_printed_type": 15088,
+    "duplicate_key_pairs": 173417,
+    "duplicate_keys": 37635,
+    "equal_category": 1022220,
+    "full_net": -1988,
+    "left_rec_rows": 0,
+    "left_rows": 1029377,
+    "less_precise": 4823,
+    "main_unmatched": 0,
+    "matched": 1029377,
+    "matched_score_net": -4118,
+    "more_precise": 2334,
+    "precision_score_net": -4118,
+    "right_rec_rows": 6,
+    "right_rows": 1029377,
+    "source_pairs": 977522,
+    "synthetic_pairs": 51855,
+    "unique_key_pairs": 855960,
+    "untyped_net": 2130,
+    "var_net": -142
+  },
+  "right": "S3",
+  "terms_exact": true,
+  "terms_reconciliation": [
+    {
+      "app": "campfire",
+      "arm": "main",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 4139,
+        "bottom_anywhere": 22,
+        "fully_typed": 25466,
+        "missing": 377,
+        "typed": 32535,
+        "untyped_anywhere": 4797,
+        "var_without_untyped": 2272
+      },
+      "terms": {
+        "bare_untyped": 4139,
+        "bottom_anywhere": 22,
+        "fully_typed": 25466,
+        "missing": 377,
+        "typed": 32535,
+        "untyped_anywhere": 4797,
+        "var_without_untyped": 2272
+      }
+    },
+    {
+      "app": "campfire",
+      "arm": "S3",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 4147,
+        "bottom_anywhere": 22,
+        "fully_typed": 25455,
+        "missing": 377,
+        "typed": 32535,
+        "untyped_anywhere": 4808,
+        "var_without_untyped": 2272
+      },
+      "terms": {
+        "bare_untyped": 4147,
+        "bottom_anywhere": 22,
+        "fully_typed": 25455,
+        "missing": 377,
+        "typed": 32535,
+        "untyped_anywhere": 4808,
+        "var_without_untyped": 2272
+      }
+    },
+    {
+      "app": "mastodon",
+      "arm": "main",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 17521,
+        "bottom_anywhere": 1881,
+        "fully_typed": 156585,
+        "missing": 8363,
+        "typed": 210051,
+        "untyped_anywhere": 29026,
+        "var_without_untyped": 24440
+      },
+      "terms": {
+        "bare_untyped": 17521,
+        "bottom_anywhere": 1881,
+        "fully_typed": 156585,
+        "missing": 8363,
+        "typed": 210051,
+        "untyped_anywhere": 29026,
+        "var_without_untyped": 24440
+      }
+    },
+    {
+      "app": "mastodon",
+      "arm": "S3",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 17657,
+        "bottom_anywhere": 1881,
+        "fully_typed": 156384,
+        "missing": 8363,
+        "typed": 210051,
+        "untyped_anywhere": 29131,
+        "var_without_untyped": 24536
+      },
+      "terms": {
+        "bare_untyped": 17657,
+        "bottom_anywhere": 1881,
+        "fully_typed": 156384,
+        "missing": 8363,
+        "typed": 210051,
+        "untyped_anywhere": 29131,
+        "var_without_untyped": 24536
+      }
+    },
+    {
+      "app": "chatwoot",
+      "arm": "main",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 16859,
+        "bottom_anywhere": 2444,
+        "fully_typed": 91289,
+        "missing": 1571,
+        "typed": 147149,
+        "untyped_anywhere": 28912,
+        "var_without_untyped": 26948
+      },
+      "terms": {
+        "bare_untyped": 16859,
+        "bottom_anywhere": 2444,
+        "fully_typed": 91289,
+        "missing": 1571,
+        "typed": 147149,
+        "untyped_anywhere": 28912,
+        "var_without_untyped": 26948
+      }
+    },
+    {
+      "app": "chatwoot",
+      "arm": "S3",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 16761,
+        "bottom_anywhere": 2444,
+        "fully_typed": 91230,
+        "missing": 1571,
+        "typed": 147149,
+        "untyped_anywhere": 28997,
+        "var_without_untyped": 26922
+      },
+      "terms": {
+        "bare_untyped": 16761,
+        "bottom_anywhere": 2444,
+        "fully_typed": 91230,
+        "missing": 1571,
+        "typed": 147149,
+        "untyped_anywhere": 28997,
+        "var_without_untyped": 26922
+      }
+    },
+    {
+      "app": "forem",
+      "arm": "main",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 8711,
+        "bottom_anywhere": 972,
+        "fully_typed": 130438,
+        "missing": 2000,
+        "typed": 160367,
+        "untyped_anywhere": 13032,
+        "var_without_untyped": 16897
+      },
+      "terms": {
+        "bare_untyped": 8711,
+        "bottom_anywhere": 972,
+        "fully_typed": 130438,
+        "missing": 2000,
+        "typed": 160367,
+        "untyped_anywhere": 13032,
+        "var_without_untyped": 16897
+      }
+    },
+    {
+      "app": "forem",
+      "arm": "S3",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 8741,
+        "bottom_anywhere": 972,
+        "fully_typed": 130244,
+        "missing": 2000,
+        "typed": 160367,
+        "untyped_anywhere": 13209,
+        "var_without_untyped": 16914
+      },
+      "terms": {
+        "bare_untyped": 8741,
+        "bottom_anywhere": 972,
+        "fully_typed": 130244,
+        "missing": 2000,
+        "typed": 160367,
+        "untyped_anywhere": 13209,
+        "var_without_untyped": 16914
+      }
+    },
+    {
+      "app": "discourse",
+      "arm": "main",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 38584,
+        "bottom_anywhere": 7785,
+        "fully_typed": 306709,
+        "missing": 12484,
+        "typed": 479275,
+        "untyped_anywhere": 71842,
+        "var_without_untyped": 100724
+      },
+      "terms": {
+        "bare_untyped": 38584,
+        "bottom_anywhere": 7785,
+        "fully_typed": 306709,
+        "missing": 12484,
+        "typed": 479275,
+        "untyped_anywhere": 71842,
+        "var_without_untyped": 100724
+      }
+    },
+    {
+      "app": "discourse",
+      "arm": "S3",
+      "exact": true,
+      "observed": {
+        "bare_untyped": 39075,
+        "bottom_anywhere": 7757,
+        "fully_typed": 305186,
+        "missing": 12484,
+        "typed": 479275,
+        "untyped_anywhere": 73594,
+        "var_without_untyped": 100495
+      },
+      "terms": {
+        "bare_untyped": 39075,
+        "bottom_anywhere": 7757,
+        "fully_typed": 305186,
+        "missing": 12484,
+        "typed": 479275,
+        "untyped_anywhere": 73594,
+        "var_without_untyped": 100495
+      }
+    }
+  ]
+}

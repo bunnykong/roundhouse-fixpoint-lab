@@ -1,0 +1,39 @@
+[
+  {
+    "app": "campfire",
+    "arm": "main",
+    "census": {
+      "bare_untyped": 4139,
+      "bottom_anywhere": 22,
+      "fully_typed": 25466,
+      "missing": 377,
+      "typed": 32535,
+      "untyped_anywhere": 4797,
+      "var_without_untyped": 2272
+    },
+    "commit": "194f26cfaaada2a654e5f65949012f396706a275",
+    "flags": {}
+  },
+  {
+    "app": "campfire",
+    "arm": "S3",
+    "census": {
+      "bare_untyped": 4147,
+      "bottom_anywhere": 22,
+      "fully_typed": 25455,
+      "missing": 377,
+      "typed": 32535,
+      "untyped_anywhere": 4808,
+      "var_without_untyped": 2272
+    },
+    "commit": "92844f68ea0bef9bfb6d8a8f1b0fc4cad4fff51b",
+    "flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_SCHED": "sccq"
+    }
+  }
+]

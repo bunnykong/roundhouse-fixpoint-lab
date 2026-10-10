@@ -12,6 +12,10 @@ No build output or dependency cache is distributed. [PROOF.md](PROOF.md) states 
 This proves the calculus, its lowering, and its concrete-language soundness theorem; transferring those
 results to the current analyzer requires the listed implementation obligations.
 
+[Run replay and certified edits](run-replay.md) states the assumptions checked by
+`ProofLean/Certificate.lean` and `ProofLean/Edit.lean`. The
+[routing model](../reproductions/routing_model.py) gives finite counterexamples to weaker assumptions.
+
 For JSON input relations in the format documented in `ProofLean/Oracle.lean`:
 
 ```sh

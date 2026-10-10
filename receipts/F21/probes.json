@@ -1,0 +1,235 @@
+{
+  "alias": {
+    "label": "extract-alias",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel_rbs_extract",
+      "patches/spinel-recursive/signatures/alias"
+    ],
+    "seconds": 0.013332167000000006,
+    "returncode": 0,
+    "stdout": "class JProbe\n",
+    "stderr": ""
+  },
+  "union": {
+    "label": "extract-union",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel_rbs_extract",
+      "patches/spinel-recursive/signatures/union"
+    ],
+    "seconds": 0.034212124999999996,
+    "returncode": 0,
+    "stdout": "class JProbe\ncmeth echo poly poly\n",
+    "stderr": ""
+  },
+  "untyped": {
+    "label": "extract-untyped",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel_rbs_extract",
+      "patches/spinel-recursive/signatures/untyped"
+    ],
+    "seconds": 0.019173582999999994,
+    "returncode": 0,
+    "stdout": "class JProbe\ncmeth echo poly poly\n",
+    "stderr": ""
+  },
+  "containers": {
+    "label": "extract-containers",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel_rbs_extract",
+      "patches/spinel-recursive/signatures/containers"
+    ],
+    "seconds": 0.008463916999999987,
+    "returncode": 0,
+    "stdout": "class ContainerProbe\nmeth ints str_int_hash int_array\nmeth mixed str_poly_hash poly_array\nmeth unknown_keys int_array_array poly\n",
+    "stderr": ""
+  },
+  "compile_alias": {
+    "label": "alias-probe-compile-alias",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel",
+      "patches/spinel-recursive/programs/alias_probe.rb",
+      "--rbs",
+      "patches/spinel-recursive/signatures/alias",
+      "-o",
+      "patches/spinel-recursive/bin/alias_probe_alias"
+    ],
+    "seconds": 1.362021666,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "patches/spinel-recursive/programs/alias_probe.rb -> patches/spinel-recursive/bin/alias_probe_alias\n"
+  },
+  "run_alias": {
+    "label": "alias-probe-run-alias",
+    "argv": [
+      "patches/spinel-recursive/bin/alias_probe_alias"
+    ],
+    "seconds": 0.5819029999999998,
+    "returncode": 0,
+    "stdout": "{\"b\" => [1, \"x\", nil]}\n",
+    "stderr": ""
+  },
+  "compile_union": {
+    "label": "alias-probe-compile-union",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel",
+      "patches/spinel-recursive/programs/alias_probe.rb",
+      "--rbs",
+      "patches/spinel-recursive/signatures/union",
+      "-o",
+      "patches/spinel-recursive/bin/alias_probe_union"
+    ],
+    "seconds": 1.3411276669999999,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "patches/spinel-recursive/programs/alias_probe.rb -> patches/spinel-recursive/bin/alias_probe_union\n"
+  },
+  "run_union": {
+    "label": "alias-probe-run-union",
+    "argv": [
+      "patches/spinel-recursive/bin/alias_probe_union"
+    ],
+    "seconds": 0.443114542,
+    "returncode": 0,
+    "stdout": "{\"b\" => [1, \"x\", nil]}\n",
+    "stderr": ""
+  },
+  "compile_untyped": {
+    "label": "alias-probe-compile-untyped",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel",
+      "patches/spinel-recursive/programs/alias_probe.rb",
+      "--rbs",
+      "patches/spinel-recursive/signatures/untyped",
+      "-o",
+      "patches/spinel-recursive/bin/alias_probe_untyped"
+    ],
+    "seconds": 0.8688764999999998,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "patches/spinel-recursive/programs/alias_probe.rb -> patches/spinel-recursive/bin/alias_probe_untyped\n"
+  },
+  "run_untyped": {
+    "label": "alias-probe-run-untyped",
+    "argv": [
+      "patches/spinel-recursive/bin/alias_probe_untyped"
+    ],
+    "seconds": 1.032551958,
+    "returncode": 0,
+    "stdout": "{\"b\" => [1, \"x\", nil]}\n",
+    "stderr": ""
+  },
+  "graph_compile": {
+    "label": "graph-cycles-compile",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel",
+      "patches/spinel-recursive/programs/graph_cycles.rb",
+      "-o",
+      "patches/spinel-recursive/bin/graph_cycles"
+    ],
+    "seconds": 0.80860325,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "patches/spinel-recursive/programs/graph_cycles.rb -> patches/spinel-recursive/bin/graph_cycles\n"
+  },
+  "graph_oracle": {
+    "label": "graph-cycles-oracle",
+    "argv": [
+      "ruby",
+      "--disable-gems",
+      "patches/spinel-recursive/programs/graph_cycles.rb"
+    ],
+    "seconds": 0.2602540830000004,
+    "returncode": 0,
+    "stdout": "true\n[[...]]\ntrue\n{\"self\" => {...}}\n",
+    "stderr": ""
+  },
+  "graph_native": {
+    "label": "graph-cycles-native",
+    "argv": [
+      "patches/spinel-recursive/bin/graph_cycles"
+    ],
+    "seconds": 0.6829313749999999,
+    "returncode": 0,
+    "stdout": "true\n[[...]]\ntrue\n{\"self\" => {...}}\n",
+    "stderr": ""
+  },
+  "graph_emit": {
+    "label": "graph-cycles-emit",
+    "argv": [
+      "patches/spinel-recursive/spinel/bin/spinel",
+      "patches/spinel-recursive/programs/graph_cycles.rb",
+      "-c",
+      "-o",
+      "patches/spinel-recursive/generated/graph_cycles.c"
+    ],
+    "seconds": 0.07049495800000027,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Wrote patches/spinel-recursive/generated/graph_cycles.c\n"
+  },
+  "layout_compile": {
+    "label": "layout-compile",
+    "argv": [
+      "cc",
+      "-O2",
+      "-Wno-unused-function",
+      "-I",
+      "patches/spinel-recursive/spinel/lib",
+      "patches/spinel-recursive/generated/layout.c",
+      "patches/spinel-recursive/spinel/lib/libspinel_rt.a",
+      "-lm",
+      "-o",
+      "patches/spinel-recursive/bin/layout"
+    ],
+    "seconds": 0.9603917500000003,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "In file included from patches/spinel-recursive/generated/layout.c:1:\npatches/spinel-recursive/spinel/lib/spinel_rt.h:15:92: warning: '/*' within block comment [-Wcomment]\n   15 | #include \"sp_re.h\"      /* regexp wrappers + MatchData (lib/sp_re.c); engine = build/regexp/*.o */\n      |                                                                                            ^\nIn file included from patches/spinel-recursive/generated/layout.c:1:\nIn file included from patches/spinel-recursive/spinel/lib/spinel_rt.h:15:\npatches/spinel-recursive/spinel/lib/sp_re.h:6:16: warning: '/*' within block comment [-Wcomment]\n    6 |  * build/regexp/*.o library; this layer is spinel's Ruby-facing surface\n      |                ^\npatches/spinel-recursive/spinel/lib/sp_re.h:27:55: warning: '/*' within block comment [-Wcomment]\n   27 | /* ---- regexp engine ABI (implemented in build/regexp/*.o) ---- */\n      |                                                       ^\nIn file included from patches/spinel-recursive/generated/layout.c:1:\npatches/spinel-recursive/spinel/lib/spinel_rt.h:11664:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]\n 11664 | }\n       | ^\npatches/spinel-recursive/spinel/lib/spinel_rt.h:11756:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]\n 11756 | }\n       | ^\npatches/spinel-recursive/spinel/lib/spinel_rt.h:11777:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]\n 11777 | }\n       | ^\npatches/spinel-recursive/spinel/lib/spinel_rt.h:11794:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]\n 11794 | }\n       | ^\npatches/spinel-recursive/spinel/lib/spinel_rt.h:11810:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]\n 11810 | }\n       | ^\n8 warnings generated.\n"
+  },
+  "layout": {
+    "label": "layout-run",
+    "argv": [
+      "patches/spinel-recursive/bin/layout"
+    ],
+    "seconds": 0.6347379169999989,
+    "returncode": 0,
+    "stdout": "sp_RbVal=16 J=16 sp_PolyArray=160 sp_StrPolyHash=80 sp_PolyPolyHash=96\nInt-element=8 J-element=16 Inline-poly-payload=128\n",
+    "stderr": ""
+  },
+  "canonical_alloc_1": {
+    "returncode": 0,
+    "stdout": "{\"a\" => {\"b\" => [1, \"x\"], \"d\" => 2}, \"c\" => [{\"b\" => [1, \"x\"], \"e\" => nil}]}\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/canonical-alloc-1.txt"
+  },
+  "canonical_alloc_100": {
+    "returncode": 0,
+    "stdout": "{\"a\" => {\"b\" => [1, \"x\"], \"d\" => 2}, \"c\" => [{\"b\" => [1, \"x\"], \"e\" => nil}]}\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/canonical-alloc-100.txt"
+  },
+  "cycle_alloc_1": {
+    "returncode": 0,
+    "stdout": "{\"a\" => [1, {\"b\" => \"x\"}], \"c\" => {\"d\" => [nil, 7, [8, \"y\"]]}}\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/cycle-alloc-1.txt"
+  },
+  "cycle_alloc_100": {
+    "returncode": 0,
+    "stdout": "{\"a\" => [1, {\"b\" => \"x\"}], \"c\" => {\"d\" => [nil, 7, [8, \"y\"]]}}\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/cycle-alloc-100.txt"
+  },
+  "tree_sum_alloc_1": {
+    "returncode": 0,
+    "stdout": "28\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/tree_sum-alloc-1.txt"
+  },
+  "tree_sum_alloc_100": {
+    "returncode": 0,
+    "stdout": "28\n",
+    "stderr": "",
+    "report": "patches/spinel-recursive/evidence/tree_sum-alloc-100.txt"
+  }
+}

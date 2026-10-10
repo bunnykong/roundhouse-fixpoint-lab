@@ -1,6 +1,6 @@
 # Measurement receipts for the public research corpus
 
-These receipts make F12, F14, F15, F17 and F18's public measurements inspectable and rerunnable.
+These receipts make F12, F14, F15 and F17–F21's public measurements inspectable and rerunnable.
 Every fact has its original raw inputs, a Python reduction, exact Roundhouse revisions and a fresh-clone
 measurement script. Output paths and input names are relative; source acquisition uses only public repositories.
 The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoint-research`.
@@ -12,6 +12,26 @@ The linked fact cells belong to Roundhouse's `docs/research/facts.md` on `fixpoi
 | F15 | Warm replay, mandatory cold shadow, timed edit pairs | [F15](F15/README.md) |
 | F17 | Settling witness on upstream main | [F17](F17/README.md) |
 | F18 | Keep-unresolved costs and 59 producer witnesses | [F18](F18/README.md) |
+| F19 | Pending-return comparisons on four public programs | [F19](F19/README.md) |
+| F20 | 532-flow destructuring matrix and runtime comparison | [F20](F20/README.md) |
+| F21 | Spinel extraction and manual kernel references | [F21](F21/README.md) |
+
+The remaining additions are small source or observation receipts:
+
+| Material | Receipt |
+| --- | --- |
+| Writer-rule implementation boundaries | [writer-boundaries](writer-boundaries/README.md) |
+| Structure and dependency contract | [structure-contract](structure-contract/README.md) |
+| Public-app precision attribution | [precision-attribution](precision-attribution/README.md) |
+| Budget-dependent expansion cache | [expansion-cache](expansion-cache/README.md) |
+| Warm-cache guards and scheduling reads | [cache-guards](cache-guards/README.md) |
+| Arena ownership and type-ID lifetimes | [type-id-lifetimes](type-id-lifetimes/README.md) |
+| Long literal dispatch name | [long-name](long-name/README.md) |
+
+All historical prototype hashes map to the executable-equivalent, comment-scrubbed public snapshots
+in [prototypes.json](prototypes.json). [moved-files.json](moved-files.json) maps the relocated proof
+and Ruby fixture files. [files.json](files.json) inventories every added or changed file, excluding itself.
+Every count stays attached to its exact condition.
 
 From this checkout, recompute the historical numbers with Python 3.9+:
 
@@ -20,6 +40,7 @@ for fact in F12 F14 F15 F17 F18; do
   python3 -B "receipts/$fact/recompute.py"
 done
 python3 -B receipts/compare.py
+python3 -B receipts/check_additions.py
 ```
 
 Each receipt's `rerun.py` clones Roundhouse unless `--source` supplies an existing public clone.

@@ -1,7 +1,7 @@
 import ProofLean.Core
 
 /-!
-# Incremental inference is two jobs (the relational model)
+# Incremental inference is two jobs
 
 * **Additions are exact.**  If an edit only adds rules (new call targets, new writes, new bodies),
   the old least solution lies below the new one, so restarting the new program's iteration from the
@@ -9,7 +9,7 @@ import ProofLean.Core
   "re-type only what changed" for additive edits.
 * **Deletions are not.**  Removing a rule can leave a cycle that supports itself: the old solution
   is still a fixpoint of the new program but not its least one (`deletion_keeps_cycle`).  A
-  deletion needs rederivation (DRed, or a rebuild of the affected component), as the relational model shows.
+  deletion needs rederivation (DRed, or a rebuild of the affected component).
 -/
 
 set_option linter.unusedSectionVars false

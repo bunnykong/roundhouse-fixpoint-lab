@@ -1,0 +1,36 @@
+{
+  "classified_records": 4823,
+  "direct_origin": {
+    "assigned value": 281,
+    "block value": 113,
+    "block/branch value": 300,
+    "constant": 3,
+    "container/literal value": 200,
+    "expression children": 131,
+    "ivar": 315,
+    "local binding; upstream trace required": 725,
+    "method return": 1872,
+    "method return via local": 50,
+    "parameter row": 830,
+    "parameter row via local": 3
+  },
+  "losses": 4823,
+  "mechanism": {
+    "Var already present before expansion": 290,
+    "reference expansion carries explicit Var": 820,
+    "reference expansion carries explicit untyped": 1132,
+    "reference expansion guarded cycle cut": 67,
+    "reference expansion prints a known Bottom as untyped": 10,
+    "reference expansion unproductive tail cycle": 55,
+    "untyped already present before expansion": 2449
+  },
+  "stage": {
+    "S2b all-arms or interaction": 6,
+    "S2b all-arms sensitivity": 815,
+    "S2b join or interaction": 41,
+    "S2b join sensitivity": 712,
+    "S2c reference/slot sensitivity": 456,
+    "S2c slot-cycle sensitivity": 1292,
+    "S3 worklist/order sensitivity": 1501
+  }
+}

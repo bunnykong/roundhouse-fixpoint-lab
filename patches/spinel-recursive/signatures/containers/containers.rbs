@@ -1,0 +1,5 @@
+class ContainerProbe
+  def ints: (Array[Integer] a) -> Hash[String, Integer]
+  def mixed: (Array[untyped] a) -> Hash[String, untyped]
+  def unknown_keys: (Hash[untyped, untyped] h) -> Array[Array[Integer]]
+end

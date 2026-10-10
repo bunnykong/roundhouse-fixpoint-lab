@@ -1,0 +1,109 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index 7959ea5e..e3470756 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -440,6 +440,7 @@ impl<'a> BodyTyper<'a> {
+     /// raise-equivalent without re-classifying.
+     pub fn analyze_expr(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
+         let ty = self.compute(expr, ctx);
++        super::precdiff_probe::flow(expr, &ty, ctx, self.classes().raw());
+         expr.ty = Some(ty.clone());
+         expr.decisions &= !crate::expr::CLASS_OBJECT_VALUE;
+         if self.is_class_object(expr, ctx) { expr.decisions |= crate::expr::CLASS_OBJECT_VALUE; }
+diff --git a/src/analyze/fold.rs b/src/analyze/fold.rs
+index 36f2c351..4db36ce8 100644
+--- a/src/analyze/fold.rs
++++ b/src/analyze/fold.rs
+@@ -1020,3 +1020,26 @@ mod tests {
+         assert_eq!(comps, vec![vec![0, 1], vec![2], vec![3]]);
+     }
+ }
++
++// Opt-in public census: preserve slot origins before recursive references expand.
++pub(super) fn precdiff_slots(classes:&HashMap<ClassId,ClassInfo>)->serde_json::Value {
++    ST.with(|s| {
++        let s=s.borrow();
++        serde_json::Value::Array(s.keys.iter().enumerate().map(|(slot,key)| {
++            let origin=match key {
++                SlotKey::Ret{class,method,class_side}=>serde_json::json!({"kind":"return","class":class.0.as_str(),"method":method.as_str(),"class_side":class_side}),
++                SlotKey::Param{class,method,index}=>serde_json::json!({"kind":"parameter","class":class.0.as_str(),"method":method.as_str(),"index":index}),
++                SlotKey::Narrow{site,filter}=>serde_json::json!({"kind":"narrowing","site":site,"filter":filter}),
++                SlotKey::At{site,step}=>serde_json::json!({"kind":"position","site":site,"step":format!("{step:?}")}),
++            };
++            let value=match key {
++                SlotKey::Ret{class,method,class_side}=>classes.get(class).and_then(|c| {
++                    let table=if *class_side {&c.class_methods} else {&c.instance_methods};
++                    table.get(method).map(|t|match t {Ty::Fn{ret,..}=>(**ret).clone(),other=>other.clone()})
++                }),
++                _=>s.values.get(&(slot as u32)).cloned(),
++            };
++            serde_json::json!({"slot":slot,"origin":origin,"type":value})
++        }).collect())
++    })
++}
+diff --git a/src/analyze/harvest_return.rs b/src/analyze/harvest_return.rs
+index 12fe0570..df04b42c 100644
+--- a/src/analyze/harvest_return.rs
++++ b/src/analyze/harvest_return.rs
+@@ -135,12 +135,14 @@ fn decide_harvested_return(existing: &Ty, new: Ty) -> HarvestWrite {
+     }
+     if let Some(untied) = untie_recursive_return(existing, &new) {
+         super::fixpoint_check::note_untie_cut();
++        super::precdiff_probe::event("harvest_untie_cut", || serde_json::json!({"old": existing, "candidate": new, "stored": untied}));
+         if existing == &untied {
+             return HarvestWrite::Keep;
+         }
+         return HarvestWrite::Set(untied);
+     }
+     if let Some(stable) = stabilize_untyped_return_oscillation(existing, &new) {
++        super::precdiff_probe::event("harvest.stabilize", || serde_json::json!({"old": existing, "candidate": new, "stored": stable}));
+         if existing == &stable {
+             return HarvestWrite::Keep;
+         }
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 58e63477..5aae3f73 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -23,6 +23,8 @@
+ //!
+ //! Each of those comes when a fixture forces it.
+ 
++pub mod precdiff_probe;
++
+ mod alba;
+ mod enum_raw_input;
+ mod body;
+@@ -1550,12 +1552,16 @@ impl Analyzer {
+         self.type_rails_application_body(app);
+         // `RH_FOLD`: expand every reference before anything downstream of
+         // analysis sees a type.
++        precdiff_probe::snapshot(app, self, "pre-expand");
+         self.fold_finish(app);
++        precdiff_probe::snapshot(app, self, "post-expand");
+ 
+         self.settle_pending(app);
++        precdiff_probe::snapshot(app, self, "post-settle");
+ 
+         self.stamp_inferred_method_signatures(app);
+         self.report_fixpoint_checks(app);
++        precdiff_probe::flush_flow();
+     }
+ 
+     /// With the add-only rules or the fold, what is still pending when
+@@ -5393,6 +5399,8 @@ impl Analyzer {
+             }
+             _ => {
+                 if !matches!(table.get(method), Some(t) if !matches!(t, Ty::Var { .. })) {
++                    precdiff_probe::harvest_context(table as *const _ as usize, method.as_str());
++                    precdiff_probe::event("register_method_return.fallback", || serde_json::json!({"body_type": body_ty}));
+                     table.insert(method.clone(), Ty::unresolved());
+                 }
+             }
+@@ -5404,6 +5412,7 @@ impl Analyzer {
+         method: &Symbol,
+         ty: Ty,
+     ) {
++        precdiff_probe::harvest_context(table as *const _ as usize, method.as_str());
+         harvest_return::insert_inferred_return(table, method, ty);
+     }
+ 

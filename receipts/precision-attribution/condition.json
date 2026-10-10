@@ -1,0 +1,24 @@
+{
+  "apps": "../public-app-pins.json",
+  "flags_main": {},
+  "flags_staged": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "main": "194f26cfaaada2a654e5f65949012f396706a275",
+  "priority": [
+    "S3 worklist/order (S2c control)",
+    "S2b all-arms",
+    "S2b join",
+    "S2c slot-cycle",
+    "S2c tail",
+    "S2c reference/slot",
+    "S2b all-arms interaction",
+    "S2b join interaction"
+  ],
+  "staged": "92844f68ea0bef9bfb6d8a8f1b0fc4cad4fff51b"
+}

@@ -1,0 +1,1963 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index e96944e5..72a6f368 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -24,7 +24,7 @@ x86_64-pc-windows-msvc = ["roundhouse"]
+ 
+ [dependencies]
+ serde = { version = "1", features = ["derive", "rc"] }
+-serde_json = "1"
++serde_json = { version = "1", features = ["unbounded_depth"] }
+ serde_yaml_ng = "0.10"
+ indexmap = { version = "2", features = ["serde"] }
+ ruby-prism = "1.9.0"
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index 7959ea5e..55a0aed0 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -69,19 +69,31 @@ impl ConstScope {
+ 
+     pub fn get(&self, name: &Symbol) -> Option<&Ty> {
+         super::sccq::rec_const_name(name);
+-        self.own.get(name).or_else(|| self.global.get(name))
++        let value = self.own.get(name).or_else(|| self.global.get(name));
++        if super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed) {
++            super::warm::read_value(format!("const:{}", name.as_str()), value);
++        }
++        value
+     }
+ 
+     /// Only the constants this scope's class declares itself.
+     pub fn get_own(&self, name: &Symbol) -> Option<&Ty> {
+         super::sccq::rec_const_name(name);
+-        self.own.get(name)
++        let value = self.own.get(name);
++        if super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed) {
++            super::warm::read_value(format!("own:{}", name.as_str()), value);
++        }
++        value
+     }
+ 
+     /// Only the app-wide, by-bare-name registry.
+     pub fn get_global(&self, name: &Symbol) -> Option<&Ty> {
+         super::sccq::rec_const_name(name);
+-        self.global.get(name)
++        let value = self.global.get(name);
++        if super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed) {
++            super::warm::read_value(format!("global:{}", name.as_str()), value);
++        }
++        value
+     }
+ 
+     /// A copy of the app-wide registry (the worklist diffs it between
+@@ -346,6 +358,7 @@ impl<'a> Classes<'a> {
+     #[inline]
+     pub(super) fn get(&self, id: &ClassId) -> Option<&'a ClassInfo> {
+         let found = self.0.get(id);
++        super::warm::read_class(id, found, false);
+         if let Some(info) = found {
+             super::sccq::rec_class(info.sccq_idx);
+         }
+@@ -354,11 +367,15 @@ impl<'a> Classes<'a> {
+ 
+     #[inline]
+     pub(super) fn contains_key(&self, id: &ClassId) -> bool {
++        super::warm::read_class(id, self.0.get(id), false);
+         self.0.contains_key(id)
+     }
+ 
+     #[inline]
+     pub(super) fn values(&self) -> std::collections::hash_map::Values<'a, ClassId, ClassInfo> {
++        if super::warm::extra_needed() || super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed) {
++            for (id, info) in self.0 { super::warm::read_class(id, Some(info), true); }
++        }
+         self.0.values()
+     }
+ 
+@@ -439,11 +456,29 @@ impl<'a> BodyTyper<'a> {
+     /// annotation rides with the IR so emitters can render a runtime
+     /// raise-equivalent without re-classifying.
+     pub fn analyze_expr(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
++        let extra = if super::warm::extra_needed() {
++            let mut constants: Vec<_> = self.typed_constants.into_iter().flat_map(|c| c.iter())
++                .map(|(id, ty)| (id.get().to_string(), super::warm::input_type_hash(ty))).collect();
++            constants.sort_unstable();
++            let mut inquirers: Vec<_> = self.inquirers.into_iter().flat_map(|c| c.iter()).map(Symbol::as_str).collect();
++            inquirers.sort_unstable();
++            let mut factories: Vec<_> = self.data_factories.into_iter().flat_map(|c| c.iter())
++                .map(|(s, t)| (s.file.0, s.start, s.end, super::warm::input_type_hash(t))).collect();
++            factories.sort_unstable();
++            serde_json::json!({"constants": constants, "inquirers": inquirers, "factories": factories})
++        } else { serde_json::Value::Null };
++        let evaluation = super::warm::Evaluation::begin(expr, ctx, self.classes, extra);
++        if let Some(body) = evaluation.as_ref().and_then(|e| e.replay.as_ref()) {
++            *expr = body.clone();
++            evaluation.as_ref().unwrap().finish(expr);
++            return expr.ty.clone().unwrap_or_else(Ty::pending_untyped);
++        }
+         let ty = self.compute(expr, ctx);
+         expr.ty = Some(ty.clone());
+         expr.decisions &= !crate::expr::CLASS_OBJECT_VALUE;
+         if self.is_class_object(expr, ctx) { expr.decisions |= crate::expr::CLASS_OBJECT_VALUE; }
+         diagnostic::detect_diagnostic(expr);
++        if let Some(evaluation) = &evaluation { evaluation.finish(expr); }
+         ty
+     }
+ 
+@@ -851,8 +886,9 @@ impl<'a> BodyTyper<'a> {
+                             qualify_resolved_path(path, name);
+                         }
+                         super::sccq::rec_const_id(declaration);
+-                        self.typed_constants
+-                            .and_then(|values| values.get(declaration))
++                        let value = self.typed_constants.and_then(|values| values.get(declaration));
++                        super::warm::read_decl(declaration, value);
++                        value
+                             .cloned()
+                             .or_else(|| runtime.as_ref().map(|ty| (**ty).clone()))
+                             .unwrap_or_else(unknown)
+@@ -880,7 +916,9 @@ impl<'a> BodyTyper<'a> {
+                             let name = written_class_id(path);
+                             let id = declaration_id_from_lookup_name(name.0.as_str());
+                             super::sccq::rec_const_id(&id);
+-                            self.typed_constants.and_then(|values| values.get(&id)).cloned()
++                            let value = self.typed_constants.and_then(|values| values.get(&id));
++                            super::warm::read_decl(&id, value);
++                            value.cloned()
+                         };
+                         // Otherwise retain the written class path, but
+                         // never guess another class by its suffix.
+diff --git a/src/analyze/body/send.rs b/src/analyze/body/send.rs
+index 7eef745d..49d3c461 100644
+--- a/src/analyze/body/send.rs
++++ b/src/analyze/body/send.rs
+@@ -2112,6 +2112,7 @@ impl<'a> BodyTyper<'a> {
+             let Some(cls) = self.classes().get(&cid) else { continue };
+             // Every method of the class is read: a class-wide dependency.
+             crate::analyze::sccq::rec_wild(cls.sccq_idx);
++            crate::analyze::warm::read_class(&cid, Some(cls), true);
+             for (name, ty) in cls.instance_methods.iter() {
+                 // `RH_FOLD`: a dynamic send reads a reference-mode return
+                 // by reference, as a named one does.
+diff --git a/src/analyze/fixpoint_check.rs b/src/analyze/fixpoint_check.rs
+index 038d59ec..7f2de311 100644
+--- a/src/analyze/fixpoint_check.rs
++++ b/src/analyze/fixpoint_check.rs
+@@ -250,7 +250,7 @@ fn ir_rows(e: &Expr, out: &mut Vec<IrRow>) {
+ }
+ 
+ /// The carried state, as one hash per entry.
+-pub(super) struct StateFp {
++pub(crate) struct StateFp {
+     parts: BTreeMap<&'static str, BTreeMap<String, u64>>,
+     /// Sorted, so two fingerprints compare as multisets.
+     ir: Vec<IrRow>,
+@@ -294,13 +294,41 @@ impl StateFp {
+         out
+     }
+ 
+-    fn digests(&self) -> BTreeMap<&'static str, String> {
++    pub(crate) fn digests(&self) -> BTreeMap<&'static str, String> {
+         let mut out: BTreeMap<&'static str, String> =
+             self.parts.iter().map(|(name, part)| (*name, format!("{:016x}", hash_of(part)))).collect();
+         out.insert("ir", format!("{:016x}", hash_of(&self.ir)));
+         out
+     }
+ 
++    /// The first differing carried-state slot, followed by the first IR
++    /// site if the keyed tables agree. Use the same inventory as S0.
++    pub(crate) fn first_difference(&self, other: &Self) -> Option<serde_json::Value> {
++        let empty = BTreeMap::new();
++        let parts: BTreeSet<_> = self.parts.keys().chain(other.parts.keys()).copied().collect();
++        for part in parts {
++            let a = self.parts.get(part).unwrap_or(&empty);
++            let b = other.parts.get(part).unwrap_or(&empty);
++            let keys: BTreeSet<_> = a.keys().chain(b.keys()).collect();
++            for key in keys {
++                if a.get(key) != b.get(key) {
++                    return Some(serde_json::json!({"part": part, "slot": key,
++                        "warm": a.get(key).map(|v| format!("{v:016x}")),
++                        "cold": b.get(key).map(|v| format!("{v:016x}"))}));
++                }
++            }
++        }
++        for index in 0..self.ir.len().max(other.ir.len()) {
++            if self.ir.get(index) != other.ir.get(index) {
++                let site = self.ir.get(index).or_else(|| other.ir.get(index)).unwrap();
++                return Some(serde_json::json!({"part": "ir", "index": index,
++                    "slot": format!("{}:{}:{}", site.0, site.1, site.2),
++                    "warm": self.ir.get(index), "cold": other.ir.get(index)}));
++            }
++        }
++        None
++    }
++
+     fn sizes(&self) -> BTreeMap<&'static str, u64> {
+         let mut out: BTreeMap<&'static str, u64> =
+             self.parts.iter().map(|(name, part)| (*name, part.len() as u64)).collect();
+@@ -381,7 +409,7 @@ fn loop_end(end: LoopEnd) -> serde_json::Value {
+ 
+ impl Analyzer {
+     /// The carried state (see the module docs), one hash per entry.
+-    pub(super) fn state_fp(&self, app: &App) -> StateFp {
++    pub(crate) fn state_fp(&self, app: &App) -> StateFp {
+         let mut parts: BTreeMap<&'static str, BTreeMap<String, u64>> = BTreeMap::new();
+         let mut put = |part: &'static str, key: String, hash: u64| {
+             parts.entry(part).or_default().insert(key, hash);
+diff --git a/src/analyze/fold.rs b/src/analyze/fold.rs
+index 36f2c351..d25cf20d 100644
+--- a/src/analyze/fold.rs
++++ b/src/analyze/fold.rs
+@@ -82,7 +82,7 @@ pub(crate) fn pseudo_site(tag: &str) -> SiteId {
+     (u32::MAX, h.finish() as u32, 0)
+ }
+ 
+-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
++#[derive(Clone, Debug, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
+ pub(crate) enum SlotKey {
+     Ret { class: ClassId, method: Symbol, class_side: bool },
+     Param { class: ClassId, method: Symbol, index: usize },
+@@ -95,7 +95,7 @@ pub(crate) enum SlotKey {
+     At { site: SiteId, step: Step },
+ }
+ 
+-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
++#[derive(Clone, Debug, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
+ pub(crate) enum Step {
+     Elem,
+     Key,
+@@ -285,20 +285,23 @@ pub(crate) fn value_of(slot: u32, classes: &HashMap<ClassId, ClassInfo>) -> Opti
+     // A typing that reads a slot's value depends on it: the worklist
+     // re-types the reader when the value moves.
+     super::sccq::rec_fold_slot(slot);
+-    match key_of(slot)? {
++    let key = key_of(slot)?;
++    let value = match &key {
+         SlotKey::Ret { class, method, class_side } => {
+-            let cls = classes.get(&class)?;
+-            let table = if class_side { &cls.class_methods } else { &cls.instance_methods };
+-            let t = table.get(&method)?;
+-            Some(match t {
+-                Ty::Fn { ret, .. } => (**ret).clone(),
+-                other => other.clone(),
++            classes.get(class).and_then(|cls| {
++                let table = if *class_side { &cls.class_methods } else { &cls.instance_methods };
++                table.get(method).map(|t| match t {
++                    Ty::Fn { ret, .. } => (**ret).clone(),
++                    other => other.clone(),
++                })
+             })
+         }
+         SlotKey::Param { .. } | SlotKey::Narrow { .. } | SlotKey::At { .. } => {
+             ST.with(|s| s.borrow().values.get(&slot).cloned())
+         }
+-    }
++    };
++    super::warm::fold_read(&key, value.as_ref());
++    value
+ }
+ 
+ /// A structural fingerprint of `t`, blind to provenance as equality is.
+@@ -314,7 +317,10 @@ fn fingerprint(t: &Ty) -> u64 {
+ /// `RH_FOLD_JOIN` they also join across passes; without it, the first
+ /// write in a new pass replaces the last pass's value.
+ fn accumulate(key: SlotKey, value: Ty) -> Ty {
++    let recording = super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed);
++    let recorded_key = recording.then(|| key.clone());
+     let slot = intern(key);
++    let before = recording.then(|| ST.with(|s| s.borrow().values.get(&slot).cloned())).flatten();
+     let value = strip_self(value, slot);
+     let print = fingerprint(&value);
+     ST.with(|s| {
+@@ -347,9 +353,52 @@ fn accumulate(key: SlotKey, value: Ty) -> Ty {
+         }
+         s.values.insert(slot, joined);
+     });
++    if recording {
++        let after = ST.with(|s| s.borrow().values.get(&slot).cloned());
++        if let Some(after) = after { super::warm::fold_write(recorded_key.as_ref().unwrap(), before.as_ref(), &after); }
++    }
+     Ty::Rec { slot }
+ }
+ 
++pub(crate) fn warm_intern(key: SlotKey) -> u32 { intern(key) }
++
++pub(crate) fn warm_value(key: &SlotKey, classes: &HashMap<ClassId, ClassInfo>) -> Option<Ty> {
++    match key {
++        SlotKey::Ret { class, method, class_side } => {
++            let cls = classes.get(class)?;
++            let t = if *class_side { cls.class_methods.get(method)? } else { cls.instance_methods.get(method)? };
++            Some(match t { Ty::Fn { ret, .. } => (**ret).clone(), t => t.clone() })
++        },
++        _ => ST.with(|s| {
++            let s = s.borrow();
++            s.ids.get(key).and_then(|id| s.values.get(id)).cloned()
++        }),
++    }
++}
++
++pub(crate) fn warm_write(key: SlotKey, value: Ty) {
++    let slot = intern(key);
++    ST.with(|s| {
++        let mut s = s.borrow_mut();
++        if s.values.get(&slot) != Some(&value) { note_moved(slot, s.values.get(&slot)); }
++        let epoch = s.epoch;
++        s.site_epoch.insert(slot, epoch);
++        s.joined.remove(&slot);
++        s.values.insert(slot, value);
++    });
++}
++
++pub(crate) fn warm_structure() -> serde_json::Value {
++    ST.with(|s| {
++        let s = s.borrow();
++        let mut methods: Vec<_> = s.rec_methods.iter().map(|(c, m)| (c.0.as_str(), m.as_str())).collect();
++        methods.sort_unstable();
++        let mut aliases: Vec<_> = s.aliases.iter().map(|((c, m), a)| (c.0.as_str(), m.as_str(), a.0.as_str())).collect();
++        aliases.sort_unstable();
++        serde_json::json!({"active": s.active, "methods": methods, "aliases": aliases})
++    })
++}
++
+ /// Whether the state a loop's signature check cannot see is unchanged
+ /// since the last call: the side table, and `carried`, a fingerprint of
+ /// other state carried between rounds (the controller bindings). A return
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 58e63477..c4785250 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -54,6 +54,7 @@ mod handoff;
+ pub(crate) mod fold;
+ mod slots;
+ mod sccq;
++pub(crate) mod warm;
+ pub use fixpoint_rounds::{FixpointRounds, LoopEnd};
+ mod dirty_retype;
+ mod typing_mode;
+diff --git a/src/analyze/sccq.rs b/src/analyze/sccq.rs
+index 59421eeb..c15a0404 100644
+--- a/src/analyze/sccq.rs
++++ b/src/analyze/sccq.rs
+@@ -397,6 +397,7 @@ const DIRTY_FULL: u8 = 2;
+ 
+ pub(super) struct Unit {
+     pub family: Family,
++    pub class_side: bool,
+     pub ci: usize,
+     pub mi: usize,
+     pub entry: usize,
+@@ -1115,12 +1116,13 @@ impl Analyzer {
+         };
+         let sole_includer = app.sole_includer_of_modules();
+         let new_unit = |eng: &mut Engine, family: Family, ci: usize, mi: usize, entry: usize,
+-                        class: &ClassId, name: &Symbol, _class_side: bool, body: &Expr,
++                        class: &ClassId, name: &Symbol, class_side: bool, body: &Expr,
+                         extra: &[&Expr], own_key: Option<ParamKey>| -> u32 {
+             let (ivars, ivar_write) = scan_ivars(body);
+             let id = eng.units.len() as u32;
+             eng.units.push(Unit {
+                 family,
++                class_side,
+                 ci,
+                 mi,
+                 entry,
+@@ -1280,6 +1282,7 @@ impl Analyzer {
+             }
+         }
+         eng.unit_ord = vec![u32::MAX; eng.units.len()];
++        super::warm::register(app, &eng.units);
+         self.sccq = Some(Box::new(eng));
+         // Main's tests loop re-harvests every body, typed or not; the worklist keeps
+         // that (the harvest is not idempotent: `decide_harvested_return`).
+@@ -1331,6 +1334,7 @@ impl Analyzer {
+ 
+     /// Start recording a fine typing inside a class pass.
+     pub(super) fn sccq_rec_begin(&self, unit: Option<u32>) {
++        super::warm::begin_unit(unit);
+         if unit.is_some() && self.sccq.is_some() {
+             rec_begin();
+         }
+@@ -1338,6 +1342,7 @@ impl Analyzer {
+ 
+     /// Stop recording; `pass_a` replaces the unit's reads, otherwise they merge.
+     pub(super) fn sccq_rec_end(&mut self, unit: Option<u32>, pass_a: bool, body: Option<&Expr>) {
++        super::warm::end_unit();
+         let Some(u) = unit else { return };
+         let Some(eng) = self.sccq.as_mut() else { return };
+         let reads = rec_end();
+@@ -2015,6 +2020,8 @@ impl Analyzer {
+     // ── one unit ──
+ 
+     fn sccq_eval(&mut self, eng: &mut Engine, app: &mut App, u: u32, level: u8) {
++        super::warm::begin_unit(Some(u));
++        let _warm_unit = super::warm::UnitScope;
+         let cap = unit_cap();
+         {
+             let unit = &mut eng.units[u as usize];
+@@ -2337,6 +2344,7 @@ impl Analyzer {
+             eng.stats.restamps += 1;
+             eng.mark(u, DIRTY_FULL);
+         }
++        super::warm::end_unit();
+     }
+ 
+     /// Seed units whose read slots moved between `prev` and now.
+@@ -2896,7 +2904,7 @@ fn literal_stamps(body: &Expr) -> u64 {
+     h.finish()
+ }
+ 
+-fn unit_body(app: &App, family: Family, ci: usize, mi: usize) -> &Expr {
++pub(super) fn unit_body(app: &App, family: Family, ci: usize, mi: usize) -> &Expr {
+     match family {
+         Family::Lib => &app.library_classes[ci].methods[mi].body,
+         Family::ModelMethod => &app.models[ci].methods().nth(mi).expect("model method").body,
+diff --git a/src/analyze/warm.rs b/src/analyze/warm.rs
+new file mode 100644
+index 00000000..edb2507d
+--- /dev/null
++++ b/src/analyze/warm.rs
+@@ -0,0 +1,484 @@
++//! Experimental, chronological evaluation replay for `check` only.
++//!
++//! No final analyzer state is loaded. The ordinary driver starts with its
++//! freshly constructed registry and replays surviving evaluations in trace
++//! order. Equality is the conservative first covered-read test. Uncovered
++//! evaluations run normally and the existing worklist finishes the phase.
++//! The staged transfers are not all monotone: a cold shadow is mandatory.
++
++use std::cell::RefCell;
++use std::collections::{BTreeMap, HashMap};
++use std::path::PathBuf;
++use std::sync::atomic::{AtomicBool, Ordering};
++
++use serde::{Deserialize, Serialize};
++use serde_json::Value;
++
++use super::body::{ClassInfo, Ctx};
++use super::sccq::{Family, Unit};
++use crate::App;
++use crate::expr::Expr;
++use crate::ident::{ClassId, Symbol};
++use crate::ty::Ty;
++
++mod fingerprint;
++mod wire;
++use fingerprint::{class_hash, inputs};
++use wire::{SiteMap, encode};
++
++pub(crate) static ACTIVE: AtomicBool = AtomicBool::new(false);
++
++#[derive(Clone, Debug, Serialize, Deserialize)]
++struct Record {
++    unit: String,
++    body: u64,
++    root: u32,
++    input: u64,
++    reads: BTreeMap<String, u64>,
++    write: Value,
++    fold_writes: Vec<(Value, Value)>,
++}
++
++#[derive(Default, Serialize, Deserialize)]
++struct Cache {
++    schema: u32,
++    compiler: String,
++    flags: Vec<(String, String)>,
++    environment: u64,
++    records: Vec<Record>,
++}
++
++#[derive(Default, Serialize)]
++pub(crate) struct Stats {
++    loaded: usize,
++    invalidated: usize,
++    replayed: usize,
++    uncovered: usize,
++    typed: usize,
++    unused: usize,
++    recorded: usize,
++}
++
++struct Session {
++    dir: PathBuf,
++    cache: Cache,
++    old: Vec<Record>,
++    cursor: usize,
++    units: HashMap<u32, (String, u64, Vec<Symbol>)>,
++    unit: Option<u32>,
++    root: u32,
++    depth: usize,
++    current: Option<Record>,
++    sites: SiteMap,
++    stats: Stats,
++}
++
++thread_local! {
++    static SESSION: RefCell<Option<Session>> = const { RefCell::new(None) };
++}
++
++fn flags() -> Vec<(String, String)> {
++    let mut flags: Vec<_> = std::env::vars()
++        .filter(|(k, _)| {
++            k.starts_with("RH_") && !k.starts_with("RH_WARM") && !k.starts_with("RH_FIXPOINT")
++        })
++        .collect();
++    flags.sort_unstable();
++    flags
++}
++
++fn decode_cache(bytes: &[u8]) -> serde_json::Result<Cache> {
++    // A valid ingested expression can nest beyond JSON's default depth
++    // limit. Only the owned trace reader opts out of that parser limit.
++    let mut reader = serde_json::Deserializer::from_slice(bytes);
++    reader.disable_recursion_limit();
++    let cache = Cache::deserialize(&mut reader)?;
++    reader.end()?;
++    Ok(cache)
++}
++
++/// Called by the check command, never by emission or the LSP.
++pub(crate) fn start(app: &App) -> Result<bool, String> {
++    let Some(dir) = std::env::var_os("RH_WARM").filter(|d| !d.is_empty()) else {
++        return Ok(false);
++    };
++    for (key, value) in [
++        ("RH_SCHED", "sccq"),
++        ("RH_BRK_ALLARMS", "1"),
++        ("RH_FOLD_JOIN", "1"),
++        ("RH_FOLD", "1"),
++        ("RH_FOLD_SLOTS", "1"),
++        ("RH_FOLD_TAIL", "1"),
++        ("RH_WARM_SHADOW", "1"),
++    ] {
++        if std::env::var(key).as_deref() != Ok(value) {
++            return Err(format!("RH_WARM requires {key}={value}"));
++        }
++    }
++    let dir = PathBuf::from(dir);
++    let environment = fingerprint::environment(app);
++    let cache = Cache {
++        schema: 1,
++        compiler: crate::version::COMMIT.unwrap_or("unknown").to_owned(),
++        flags: flags(),
++        environment,
++        records: Vec::new(),
++    };
++    let old = match std::fs::read(dir.join("evaluations.json")) {
++        Ok(bytes) => match decode_cache(&bytes) {
++            Ok(c)
++                if c.schema == cache.schema
++                    && c.compiler == cache.compiler
++                    && c.flags == cache.flags
++                    && c.environment == environment =>
++            {
++                c.records
++            }
++            _ => {
++                eprintln!("rh-warm: cache incompatible; starting cold");
++                Vec::new()
++            }
++        },
++        Err(e) if e.kind() == std::io::ErrorKind::NotFound => Vec::new(),
++        Err(e) => return Err(format!("read warm cache: {e}")),
++    };
++    let loaded = old.len();
++    SESSION.with(|s| {
++        *s.borrow_mut() = Some(Session {
++            dir,
++            cache,
++            old,
++            cursor: 0,
++            units: HashMap::new(),
++            unit: None,
++            root: 0,
++            depth: 0,
++            current: None,
++            sites: SiteMap::new(app),
++            stats: Stats {
++                loaded,
++                ..Stats::default()
++            },
++        })
++    });
++    ACTIVE.store(true, Ordering::Relaxed);
++    Ok(true)
++}
++
++pub(crate) fn read(key: String, value: u64) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    SESSION.with(|s| {
++        if let Some(s) = s.borrow_mut().as_mut() {
++            if let Some(r) = s.current.as_mut() {
++                r.reads.entry(key).or_insert(value);
++            }
++        }
++    });
++}
++
++pub(crate) fn names() -> Vec<Symbol> {
++    SESSION.with(|s| {
++        let s = s.borrow();
++        s.as_ref()
++            .and_then(|s| s.unit.and_then(|u| s.units.get(&u)))
++            .map(|(_, _, n)| n.clone())
++            .unwrap_or_default()
++    })
++}
++
++pub(crate) fn read_class(id: &ClassId, info: Option<&ClassInfo>, wild: bool) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    let key = format!("{}:{}", if wild { "wild" } else { "class" }, id.0.as_str());
++    let needed = SESSION.with(|s| {
++        s.borrow()
++            .as_ref()
++            .and_then(|s| s.current.as_ref())
++            .is_some_and(|r| !r.reads.contains_key(&key))
++    });
++    if needed {
++        read(key, class_hash(info, &names(), wild));
++    }
++}
++
++pub(crate) fn read_value(key: String, value: Option<&Ty>) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    read(key, fingerprint::value_hash(value));
++}
++
++/// Cache inputs retain provenance and keyed recursive identities, unlike
++/// the semantic result digest used by the cold shadow.
++pub(crate) fn input_type_hash(value: &Ty) -> u64 {
++    fingerprint::value_hash(Some(value))
++}
++
++pub(crate) fn read_decl(id: &rubydex::model::ids::DeclarationId, value: Option<&Ty>) {
++    if ACTIVE.load(Ordering::Relaxed) {
++        read_value(format!("decl:{}", id.get()), value);
++    }
++}
++
++pub(crate) fn fold_read(key: &super::fold::SlotKey, value: Option<&Ty>) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    if let Some(key) = wire::slot_key(key) {
++        read_value(format!("fold:{}", key), value);
++    }
++}
++
++pub(crate) fn fold_write(key: &super::fold::SlotKey, before: Option<&Ty>, after: &Ty) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    fold_read(key, before);
++    let Some(key) = wire::slot_key(key) else {
++        return;
++    };
++    let Some(value) = encode(serde_json::to_value(after).unwrap()) else {
++        return;
++    };
++    SESSION.with(|s| {
++        if let Some(r) = s.borrow_mut().as_mut().and_then(|s| s.current.as_mut()) {
++            r.fold_writes.push((key, value));
++        }
++    });
++}
++
++pub(crate) struct Pending {
++    dir: PathBuf,
++    cache: Cache,
++    pub(crate) stats: Stats,
++}
++
++/// Stop recording before starting the cold shadow. The previous cache is
++/// left intact until the complete-state comparison has passed.
++pub(crate) fn stop() -> Option<Pending> {
++    ACTIVE.store(false, Ordering::Relaxed);
++    SESSION.with(|s| s.borrow_mut().take()).map(|mut s| {
++        s.stats.unused = s.old.len() - s.cursor;
++        s.stats.recorded = s.cache.records.len();
++        Pending {
++            dir: s.dir,
++            cache: s.cache,
++            stats: s.stats,
++        }
++    })
++}
++
++impl Pending {
++    pub(crate) fn save(&self) -> Result<(), String> {
++        std::fs::create_dir_all(&self.dir).map_err(|e| format!("create warm cache: {e}"))?;
++        let path = self
++            .dir
++            .join(format!("evaluations.{}.tmp", std::process::id()));
++        let file = std::fs::File::create(&path).map_err(|e| format!("write warm cache: {e}"))?;
++        let mut writer = std::io::BufWriter::new(file);
++        serde_json::to_writer(&mut writer, &self.cache)
++            .map_err(|e| format!("serialize warm cache: {e}"))?;
++        use std::io::Write;
++        writer
++            .flush()
++            .map_err(|e| format!("flush warm cache: {e}"))?;
++        writer
++            .get_ref()
++            .sync_all()
++            .map_err(|e| format!("sync warm cache: {e}"))?;
++        std::fs::rename(&path, self.dir.join("evaluations.json"))
++            .map_err(|e| format!("publish warm cache: {e}"))
++    }
++}
++
++pub(super) fn register(app: &App, units: &[Unit]) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    SESSION.with(|s| {
++        let mut s = s.borrow_mut();
++        let s = s.as_mut().unwrap();
++        let mut occurrences = HashMap::<String, usize>::new();
++        for (id, u) in units.iter().enumerate() {
++            let file = super::sccq::unit_body(app, u.family, u.ci, u.mi)
++                .span
++                .file
++                .0;
++            let path = file
++                .checked_sub(1)
++                .and_then(|f| app.sources.get(f as usize))
++                .map(|source| source.path.as_str())
++                .unwrap_or("synthetic");
++            let prefix = format!(
++                "{:?}:{}:{}:{}",
++                u.family,
++                u.class.0.as_str(),
++                if u.class_side { "class" } else { "instance" },
++                path
++            );
++            // Reopened classes and repeated definitions can have the same
++            // semantic name. Keep their writers and source sites distinct.
++            let occurrence = occurrences
++                .entry(format!("{prefix}:{}", u.name.as_str()))
++                .or_default();
++            let key = format!("{prefix}:{}:{}", *occurrence, u.name.as_str());
++            *occurrence += 1;
++            let body = fingerprint::unit(app, u);
++            s.sites.add_unit(app, u, &key);
++            s.units.insert(id as u32, (key, body, u.names.clone()));
++        }
++        let valid: HashMap<_, _> = s.units.values().map(|(k, b, _)| (k.clone(), *b)).collect();
++        s.old.retain(|r| valid.get(&r.unit) == Some(&r.body));
++        s.stats.invalidated = s.stats.loaded - s.old.len();
++    });
++}
++
++pub(super) fn begin_unit(unit: Option<u32>) {
++    if !ACTIVE.load(Ordering::Relaxed) {
++        return;
++    }
++    SESSION.with(|s| {
++        if let Some(s) = s.borrow_mut().as_mut() {
++            s.unit = unit;
++            s.root = 0;
++        }
++    });
++}
++
++pub(super) fn end_unit() {
++    begin_unit(None);
++}
++
++pub(super) struct UnitScope;
++impl Drop for UnitScope {
++    fn drop(&mut self) {
++        end_unit();
++    }
++}
++
++pub(crate) fn extra_needed() -> bool {
++    ACTIVE.load(Ordering::Relaxed)
++        && SESSION.with(|s| {
++            s.borrow()
++                .as_ref()
++                .is_some_and(|s| s.depth == 0 && s.unit.is_some())
++        })
++}
++
++/// One outer body/default evaluation. Recursive expression visits are part
++/// of the same record, rather than separate cache entries.
++pub(crate) struct Evaluation {
++    outer: bool,
++    pub(crate) replay: Option<Expr>,
++}
++
++impl Drop for Evaluation {
++    fn drop(&mut self) {
++        SESSION.with(|s| {
++            if let Some(s) = s.borrow_mut().as_mut() {
++                s.depth -= 1;
++            }
++        });
++    }
++}
++
++impl Evaluation {
++    pub(crate) fn begin(
++        expr: &Expr,
++        ctx: &Ctx,
++        classes: &HashMap<ClassId, ClassInfo>,
++        extra: Value,
++    ) -> Option<Self> {
++        if !ACTIVE.load(Ordering::Relaxed) {
++            return None;
++        }
++        let outer = SESSION.with(|s| {
++            let mut s = s.borrow_mut();
++            let s = s.as_mut().unwrap();
++            s.depth += 1;
++            s.depth == 1 && s.unit.is_some()
++        });
++        let mut eval = Self {
++            outer,
++            replay: None,
++        };
++        if !outer {
++            return Some(eval);
++        }
++        let input = inputs(expr, ctx, classes, &extra);
++        let candidate = SESSION.with(|s| {
++            let mut s = s.borrow_mut();
++            let s = s.as_mut().unwrap();
++            let (key, body, _) = &s.units[&s.unit.unwrap()];
++            let root = s.root;
++            s.root += 1;
++            let candidate = s
++                .old
++                .get(s.cursor)
++                .filter(|r| &r.unit == key && r.root == root)
++                .cloned();
++            if candidate.is_some() {
++                s.cursor += 1;
++            }
++            s.current = Some(Record {
++                unit: key.clone(),
++                body: *body,
++                root,
++                input,
++                reads: BTreeMap::new(),
++                write: Value::Null,
++                fold_writes: Vec::new(),
++            });
++            candidate
++        });
++        if let Some(r) = candidate {
++            if r.input == input && fingerprint::covered(&r.reads, ctx, classes, &extra) {
++                if !wire::ready(&r.write, &r.fold_writes) {
++                    SESSION.with(|s| s.borrow_mut().as_mut().unwrap().stats.uncovered += 1);
++                    SESSION.with(|s| s.borrow_mut().as_mut().unwrap().stats.typed += 1);
++                    return Some(eval);
++                }
++                if let Some(body) = wire::restore(&r.write, expr) {
++                    if wire::apply_fold_writes(&r.fold_writes) {
++                        fingerprint::replay_reads(&r.reads, classes);
++                        SESSION.with(|s| {
++                            let mut s = s.borrow_mut();
++                            let s = s.as_mut().unwrap();
++                            s.stats.replayed += 1;
++                            s.current = Some(r);
++                        });
++                        eval.replay = Some(body);
++                        return Some(eval);
++                    }
++                }
++            }
++            SESSION.with(|s| s.borrow_mut().as_mut().unwrap().stats.uncovered += 1);
++        }
++        SESSION.with(|s| s.borrow_mut().as_mut().unwrap().stats.typed += 1);
++        Some(eval)
++    }
++
++    pub(crate) fn finish(&self, expr: &Expr) {
++        if !self.outer {
++            return;
++        }
++        let output = if self.replay.is_none() {
++            encode(serde_json::to_value(expr).expect("expression JSON"))
++        } else {
++            None
++        };
++        SESSION.with(|s| {
++            let mut s = s.borrow_mut();
++            let s = s.as_mut().unwrap();
++            if let Some(mut r) = s.current.take() {
++                if self.replay.is_none() {
++                    r.write = output.unwrap_or(Value::Null);
++                }
++                s.cache.records.push(r);
++            }
++        });
++    }
++}
+diff --git a/src/analyze/warm/fingerprint.rs b/src/analyze/warm/fingerprint.rs
+new file mode 100644
+index 00000000..e89e36ba
+--- /dev/null
++++ b/src/analyze/warm/fingerprint.rs
+@@ -0,0 +1,237 @@
++use super::*;
++use std::hash::{Hash, Hasher};
++
++pub(super) fn hash(value: &Value) -> u64 {
++    let mut h = std::collections::hash_map::DefaultHasher::new();
++    serde_json::to_vec(value).unwrap().hash(&mut h);
++    h.finish()
++}
++
++fn strip(value: &mut Value, syntax: bool) {
++    match value {
++        Value::Object(map) => {
++            map.remove("span");
++            map.remove("name_span");
++            if syntax && map.contains_key("node") {
++                for key in [
++                    "ty",
++                    "effects",
++                    "diagnostic",
++                    "decisions",
++                    "leading_blank_line",
++                ] {
++                    map.remove(key);
++                }
++            }
++            // Binding identities are local to ingest; names carry syntax.
++            if syntax && map.get("id").is_some_and(Value::is_number) {
++                map.remove("id");
++            }
++            for v in map.values_mut() {
++                strip(v, syntax);
++            }
++        }
++        Value::Array(items) => {
++            for v in items {
++                strip(v, syntax);
++            }
++        }
++        _ => {}
++    }
++}
++
++pub(super) fn body_hash(mut value: Value) -> u64 {
++    strip(&mut value, true);
++    hash(&value)
++}
++
++pub(super) fn unit(app: &App, u: &Unit) -> u64 {
++    let value = match u.family {
++        Family::Lib => serde_json::to_value(&app.library_classes[u.ci].methods[u.mi]),
++        Family::ModelMethod => serde_json::to_value(app.models[u.ci].methods().nth(u.mi).unwrap()),
++        Family::ModelScope => serde_json::to_value(app.models[u.ci].scopes().nth(u.mi).unwrap()),
++        Family::CtrlAction => {
++            serde_json::to_value(app.controllers[u.ci].actions().nth(u.mi).unwrap())
++        }
++        Family::CtrlClassMethod => serde_json::to_value(
++            app.controllers[u.ci]
++                .body
++                .iter()
++                .filter_map(|b| match b {
++                    crate::dialect::ControllerBodyItem::ClassMethod {
++                        method,
++                        configuration_slot: None,
++                        ..
++                    } => Some(method),
++                    _ => None,
++                })
++                .nth(u.mi)
++                .unwrap(),
++        ),
++    }
++    .unwrap();
++    body_hash(value)
++}
++
++pub(super) fn environment(app: &App) -> u64 {
++    // Global passes rebuild these non-unit inputs. Schema, route, view and
++    // test-overlay edits start with a cold trace; class declarations and
++    // constants are checked by the evaluations' input and read hashes.
++    let mut value = serde_json::to_value(app).unwrap();
++    let map = value.as_object_mut().unwrap();
++    for key in [
++        "sources",
++        "root",
++        "models",
++        "library_classes",
++        "controllers",
++        "const_resolver",
++    ] {
++        map.remove(key);
++    }
++    strip(&mut value, false);
++    hash(&value)
++}
++
++pub(super) fn value_hash(value: Option<&Ty>) -> u64 {
++    let value = serde_json::to_value(value).unwrap();
++    hash(&encode(value).unwrap_or(Value::Null))
++}
++
++fn sorted_names(names: &std::collections::HashSet<Symbol>) -> Vec<&str> {
++    let mut out: Vec<_> = names.iter().map(Symbol::as_str).collect();
++    out.sort_unstable();
++    out
++}
++
++pub(super) fn class_hash(info: Option<&ClassInfo>, names: &[Symbol], wild: bool) -> u64 {
++    let Some(c) = info else {
++        return hash(&Value::Null);
++    };
++    let methods = |m: &HashMap<Symbol, Ty>| -> BTreeMap<String, Value> {
++        m.iter()
++            .filter(|(n, _)| wild || names.contains(n))
++            .map(|(n, t)| {
++                (
++                    n.as_str().to_owned(),
++                    encode(serde_json::to_value(t).unwrap()).unwrap_or(Value::Null),
++                )
++            })
++            .collect()
++    };
++    let mut extensions: Vec<_> = c
++        .assoc_extensions
++        .iter()
++        .map(|((a, m), t)| (a.as_str(), m.as_str(), value_hash(Some(t))))
++        .collect();
++    extensions.sort_unstable();
++    let value = serde_json::json!({
++        "is_module": c.is_module, "constants": encode(serde_json::to_value(&c.constants).unwrap()),
++        "table": c.table, "attributes": encode(serde_json::to_value(&c.attributes).unwrap()),
++        "class_methods": methods(&c.class_methods), "instance_methods": methods(&c.instance_methods),
++        "constructor": c.declares_constructor, "derived": sorted_names(&c.relation_derived),
++        "materializing": sorted_names(&c.materializing_scopes), "block": sorted_names(&c.block_value_methods),
++        "class_kinds": c.class_method_kinds, "instance_kinds": c.instance_method_kinds,
++        "parent": c.parent, "includes": c.includes, "extensions": extensions,
++        "gem_boundary": c.gem_boundary, "open": c.open, "app_declared": c.app_declared,
++    });
++    hash(&value)
++}
++
++pub(super) fn inputs(
++    expr: &Expr,
++    ctx: &Ctx,
++    classes: &HashMap<ClassId, ClassInfo>,
++    extra: &Value,
++) -> u64 {
++    let mut stamps = serde_json::to_value(expr).unwrap();
++    strip(&mut stamps, false);
++    let mut keys: Vec<_> = classes.keys().map(|c| c.0.as_str()).collect();
++    keys.sort_unstable();
++    let mut objects: Vec<_> = ctx.class_objects.iter().map(Symbol::as_str).collect();
++    objects.sort_unstable();
++    hash(&serde_json::json!({
++        "stamps": encode(stamps), "self": encode(serde_json::to_value(&ctx.self_ty).unwrap()),
++        "ivars": encode(serde_json::to_value(&ctx.ivar_bindings).unwrap()),
++        "locals": encode(serde_json::to_value(&ctx.local_bindings).unwrap()),
++        "objects": objects, "keys": keys, "extra": extra,
++        "mode": super::super::fold::warm_structure(),
++        "flags": [ctx.annotate_self_dispatch, ctx.in_view, ctx.class_side, ctx.claimed_macro_template],
++    }))
++}
++
++pub(super) fn covered(
++    reads: &BTreeMap<String, u64>,
++    ctx: &Ctx,
++    classes: &HashMap<ClassId, ClassInfo>,
++    extra: &Value,
++) -> bool {
++    let names = super::names();
++    reads.iter().all(|(key, expected)| {
++        let Some((kind, name)) = key.split_once(':') else {
++            return false;
++        };
++        let current = match kind {
++            "class" | "wild" => class_hash(
++                classes.get(&ClassId(Symbol::from(name))),
++                &names,
++                kind == "wild",
++            ),
++            "const" => value_hash(ctx.constants.get(&Symbol::from(name))),
++            "own" => value_hash(ctx.constants.get_own(&Symbol::from(name))),
++            "global" => value_hash(ctx.constants.get_global(&Symbol::from(name))),
++            "decl" => {
++                if !name.parse::<u64>().is_ok_and(|id| id != 0) {
++                    return false;
++                }
++                extra
++                    .get("constants")
++                    .and_then(Value::as_array)
++                    .and_then(|values| values.iter().find(|pair| pair[0].as_str() == Some(name)))
++                    .and_then(|pair| pair[1].as_u64())
++                    .unwrap_or_else(|| value_hash(None))
++            }
++            "fold" => {
++                let Ok(wire) = serde_json::from_str(name) else {
++                    return false;
++                };
++                let Some(key) = wire::decode_key(&wire) else {
++                    return false;
++                };
++                value_hash(super::super::fold::warm_value(&key, classes).as_ref())
++            }
++            _ => return false,
++        };
++        current == *expected
++    })
++}
++
++pub(super) fn replay_reads(reads: &BTreeMap<String, u64>, classes: &HashMap<ClassId, ClassInfo>) {
++    for key in reads.keys() {
++        let (kind, name) = key.split_once(':').unwrap();
++        match kind {
++            "class" | "wild" => {
++                if let Some(c) = classes.get(&ClassId(Symbol::from(name))) {
++                    super::super::sccq::rec_class(c.sccq_idx);
++                    if kind == "wild" {
++                        super::super::sccq::rec_wild(c.sccq_idx);
++                    }
++                }
++            }
++            "const" | "own" | "global" => super::super::sccq::rec_const_name(&Symbol::from(name)),
++            "decl" => {
++                if let Ok(id) = name.parse::<u64>() {
++                    super::super::sccq::rec_const_id(&rubydex::model::ids::DeclarationId::new(id));
++                }
++            }
++            "fold" => {
++                if let Ok(value) = serde_json::from_str(name) {
++                    if let Some(key) = wire::decode_key(&value) {
++                        super::super::sccq::rec_fold_slot(super::super::fold::warm_intern(key));
++                    }
++                }
++            }
++            _ => {}
++        }
++    }
++}
+diff --git a/src/analyze/warm/wire.rs b/src/analyze/warm/wire.rs
+new file mode 100644
+index 00000000..c8a6a151
+--- /dev/null
++++ b/src/analyze/warm/wire.rs
+@@ -0,0 +1,347 @@
++use super::super::fold::{SiteId, SlotKey};
++use super::*;
++
++#[derive(Default)]
++pub(super) struct SiteMap {
++    forward: HashMap<SiteId, Value>,
++    reverse: HashMap<String, SiteId>,
++    files: HashMap<u32, (String, u64)>,
++}
++
++impl SiteMap {
++    pub(super) fn new(app: &App) -> Self {
++        Self {
++            files: app
++                .sources
++                .iter()
++                .enumerate()
++                .map(|(i, f)| {
++                    (
++                        (i + 1) as u32,
++                        (
++                            f.path.clone(),
++                            fingerprint::hash(&Value::String(f.text.clone())),
++                        ),
++                    )
++                })
++                .collect(),
++            ..Self::default()
++        }
++    }
++
++    pub(super) fn add_unit(&mut self, app: &App, u: &Unit, key: &str) {
++        let mut roots = vec![super::super::sccq::unit_body(app, u.family, u.ci, u.mi)];
++        let defaults: Vec<&Expr> = match u.family {
++            Family::Lib => app.library_classes[u.ci].methods[u.mi]
++                .params
++                .iter()
++                .filter_map(|p| p.default.as_ref())
++                .collect(),
++            Family::ModelMethod => app.models[u.ci]
++                .methods()
++                .nth(u.mi)
++                .unwrap()
++                .params
++                .iter()
++                .filter_map(|p| p.default.as_ref())
++                .collect(),
++            Family::CtrlAction => {
++                let a = app.controllers[u.ci].actions().nth(u.mi).unwrap();
++                a.opt_params
++                    .iter()
++                    .map(|(_, e)| e)
++                    .chain(a.kw_params.iter().filter_map(|(_, e)| e.as_ref()))
++                    .collect()
++            }
++            Family::CtrlClassMethod => app.controllers[u.ci]
++                .body
++                .iter()
++                .filter_map(|b| match b {
++                    crate::dialect::ControllerBodyItem::ClassMethod {
++                        method,
++                        configuration_slot: None,
++                        ..
++                    } => Some(method),
++                    _ => None,
++                })
++                .nth(u.mi)
++                .unwrap()
++                .params
++                .iter()
++                .filter_map(|p| p.default.as_ref())
++                .collect(),
++            Family::ModelScope => Vec::new(),
++        };
++        roots.extend(defaults);
++        fn walk(map: &mut SiteMap, expr: &Expr, key: &str, root: usize, position: &mut usize) {
++            let site = super::super::fold::site_of(&expr.span);
++            let wire = serde_json::json!({"unit": key, "root": root, "position": *position});
++            if !expr.span.is_synthetic() {
++                map.forward.entry(site).or_insert_with(|| wire.clone());
++                map.reverse.insert(wire.to_string(), site);
++            }
++            *position += 1;
++            expr.node
++                .for_each_child(&mut |e| walk(map, e, key, root, position));
++        }
++        for (root, expr) in roots.into_iter().enumerate() {
++            walk(self, expr, key, root, &mut 0);
++        }
++    }
++
++    fn site(&self, site: SiteId) -> Option<Value> {
++        if site.0 == 0 || site.0 == u32::MAX {
++            return Some(serde_json::json!({"sentinel": site}));
++        }
++        if let Some(wire) = self.forward.get(&site) {
++            return Some(wire.clone());
++        }
++        let (path, file_hash) = self.files.get(&site.0)?;
++        Some(serde_json::json!({"file": path, "hash": file_hash, "start": site.1, "end": site.2}))
++    }
++
++    fn resolve(&self, wire: &Value) -> Option<SiteId> {
++        if let Some(site) = wire.get("sentinel") {
++            return serde_json::from_value(site.clone()).ok();
++        }
++        if let Some(site) = self.reverse.get(&wire.to_string()) {
++            return Some(*site);
++        }
++        let path = wire.get("file")?.as_str()?;
++        let hash = wire.get("hash")?.as_u64()?;
++        let (&file, _) = self
++            .files
++            .iter()
++            .find(|(_, (p, h))| p == path && *h == hash)?;
++        Some((
++            file,
++            u32::try_from(wire.get("start")?.as_u64()?).ok()?,
++            u32::try_from(wire.get("end")?.as_u64()?).ok()?,
++        ))
++    }
++}
++
++pub(super) fn slot_key(key: &SlotKey) -> Option<Value> {
++    let mut value = serde_json::to_value(key).ok()?;
++    if let Some(map) = value.as_object_mut() {
++        for nested in map.values_mut().filter_map(Value::as_object_mut) {
++            if let Some(site) = nested.get_mut("site") {
++                let raw: SiteId = serde_json::from_value(site.clone()).ok()?;
++                *site = SESSION.with(|s| s.borrow().as_ref()?.sites.site(raw))?;
++            }
++        }
++    }
++    Some(value)
++}
++
++pub(super) fn decode_key(value: &Value) -> Option<SlotKey> {
++    let mut value = value.clone();
++    if let Some(map) = value.as_object_mut() {
++        for nested in map.values_mut().filter_map(Value::as_object_mut) {
++            if let Some(site) = nested.get_mut("site") {
++                let raw = SESSION.with(|s| s.borrow().as_ref()?.sites.resolve(site))?;
++                *site = serde_json::to_value(raw).ok()?;
++            }
++        }
++    }
++    serde_json::from_value(value).ok()
++}
++
++pub(super) fn encode(mut value: Value) -> Option<Value> {
++    fn walk(value: &mut Value) -> Option<()> {
++        match value {
++            Value::Object(map) => {
++                if map.get("kind").and_then(Value::as_str) == Some("rec") {
++                    let slot = u32::try_from(map.get("slot")?.as_u64()?).ok()?;
++                    let key = super::super::fold::key_of(slot)?;
++                    map.insert(
++                        "slot".into(),
++                        serde_json::json!({"warm_slot": slot_key(&key)?}),
++                    );
++                    return Some(());
++                }
++                if map.len() == 3
++                    && ["file", "start", "end"]
++                        .iter()
++                        .all(|key| map.get(*key).is_some_and(Value::is_u64))
++                {
++                    let span: crate::span::Span =
++                        serde_json::from_value(Value::Object(map.clone())).ok()?;
++                    let site = SESSION.with(|s| {
++                        s.borrow()
++                            .as_ref()?
++                            .sites
++                            .site(super::super::fold::site_of(&span))
++                    })?;
++                    *value = serde_json::json!({"warm_span": site});
++                    return Some(());
++                }
++                for v in map.values_mut() {
++                    walk(v)?;
++                }
++            }
++            Value::Array(items) => {
++                for v in items {
++                    walk(v)?;
++                }
++            }
++            _ => {}
++        }
++        Some(())
++    }
++    walk(&mut value)?;
++    Some(value)
++}
++
++fn span_marker(value: &Value) -> Option<&Value> {
++    let map = value.as_object()?;
++    if map.len() != 1 {
++        return None;
++    }
++    let site = map.get("warm_span")?;
++    (site.get("unit").is_some_and(Value::is_string)
++        || site.get("file").is_some_and(Value::is_string)
++        || site.get("sentinel").is_some_and(Value::is_array))
++    .then_some(site)
++}
++
++fn valid(value: &Value) -> bool {
++    if let Some(site) = span_marker(value) {
++        return SESSION.with(|s| {
++            s.borrow()
++                .as_ref()
++                .is_some_and(|s| s.sites.resolve(site).is_some())
++        });
++    }
++    match value {
++        Value::Object(map) if map.get("kind").and_then(Value::as_str) == Some("rec") => map
++            .get("slot")
++            .and_then(|slot| slot.get("warm_slot"))
++            .and_then(decode_key)
++            .is_some(),
++        Value::Object(map) => map.values().all(valid),
++        Value::Array(items) => items.iter().all(valid),
++        _ => true,
++    }
++}
++
++/// Resolve every source/key dependency before restoring any fold identity.
++pub(super) fn ready(write: &Value, writes: &[(Value, Value)]) -> bool {
++    valid(write)
++        && writes
++            .iter()
++            .all(|(key, value)| decode_key(key).is_some() && valid(value))
++}
++
++pub(super) fn decode(mut value: Value) -> Option<Value> {
++    fn walk(value: &mut Value) -> Option<()> {
++        if let Some(site) = span_marker(value) {
++            let raw = SESSION.with(|s| s.borrow().as_ref()?.sites.resolve(site))?;
++            *value = serde_json::json!({"file": raw.0, "start": raw.1, "end": raw.2});
++            return Some(());
++        }
++        match value {
++            Value::Object(map) => {
++                if map.get("kind").and_then(Value::as_str) == Some("rec") {
++                    let key = decode_key(map.get("slot")?.get("warm_slot")?)?;
++                    map.insert(
++                        "slot".into(),
++                        Value::from(super::super::fold::warm_intern(key)),
++                    );
++                    return Some(());
++                }
++                for v in map.values_mut() {
++                    walk(v)?;
++                }
++            }
++            Value::Array(items) => {
++                for v in items {
++                    walk(v)?;
++                }
++            }
++            _ => {}
++        }
++        Some(())
++    }
++    walk(&mut value)?;
++    Some(value)
++}
++
++pub(super) fn restore(write: &Value, current: &Expr) -> Option<Expr> {
++    // Spans are resolved by unit and syntax position. Rebind source-local
++    // VarIds from the current syntax rather than importing an old file's ids.
++    let mut output = write.clone();
++    let input = serde_json::to_value(current).ok()?;
++    fn bindings(value: &Value, out: &mut BTreeMap<String, Vec<Value>>) {
++        match value {
++            Value::Object(map) => {
++                if matches!(map.get("kind").and_then(Value::as_str), Some("var" | "let")) {
++                    if let (Some(name), Some(id)) =
++                        (map.get("name").and_then(Value::as_str), map.get("id"))
++                    {
++                        out.entry(name.to_owned()).or_default().push(id.clone());
++                    }
++                }
++                for v in map.values() {
++                    bindings(v, out);
++                }
++            }
++            Value::Array(items) => {
++                for v in items {
++                    bindings(v, out);
++                }
++            }
++            _ => {}
++        }
++    }
++    fn rebind(value: &mut Value, ids: &mut BTreeMap<String, Vec<Value>>) -> Option<()> {
++        match value {
++            Value::Object(map) => {
++                if matches!(map.get("kind").and_then(Value::as_str), Some("var" | "let"))
++                    && map.contains_key("id")
++                    && map.get("name").is_some_and(Value::is_string)
++                {
++                    let name = map.get("name")?.as_str()?;
++                    let ids = ids.get_mut(name)?;
++                    if ids.is_empty() {
++                        return None;
++                    }
++                    map.insert("id".into(), ids.remove(0));
++                }
++                for v in map.values_mut() {
++                    rebind(v, ids)?;
++                }
++            }
++            Value::Array(items) => {
++                for v in items {
++                    rebind(v, ids)?;
++                }
++            }
++            _ => {}
++        }
++        Some(())
++    }
++    let mut ids = BTreeMap::new();
++    bindings(&input, &mut ids);
++    rebind(&mut output, &mut ids)?;
++    serde_json::from_value(decode(output)?).ok()
++}
++
++pub(super) fn apply_fold_writes(writes: &[(Value, Value)]) -> bool {
++    let Some(decoded): Option<Vec<_>> = writes
++        .iter()
++        .map(|(key, value)| {
++            Some((
++                decode_key(key)?,
++                serde_json::from_value::<Ty>(decode(value.clone())?).ok()?,
++            ))
++        })
++        .collect()
++    else {
++        return false;
++    };
++    for (key, value) in decoded {
++        super::super::fold::warm_write(key, value);
++    }
++    true
++}
+diff --git a/src/cli.rs b/src/cli.rs
+index 680022a5..f9b49136 100644
+--- a/src/cli.rs
++++ b/src/cli.rs
+@@ -95,6 +95,9 @@ Serve the MCP tools over stdio for the Rails app at APP
+ /// deduplicated punch list is printed at the end. Useful for
+ /// scope-estimation passes on unfamiliar apps.
+ pub fn check(args: &[String], default_app: &str) -> ExitCode {
++    let warm_check_start = (std::env::var("RH_WARM_TIMINGS").as_deref() == Ok("1")
++        && std::env::var_os("RH_WARM").is_some()).then(std::time::Instant::now);
++    let mut warm_shadow_seconds = 0.0;
+     let mut continue_on_error = std::env::var("ROUNDHOUSE_INGEST_SURVEY")
+         .map(|v| v == "1" || v == "true")
+         .unwrap_or(false);
+@@ -187,7 +190,52 @@ pub fn check(args: &[String], default_app: &str) -> ExitCode {
+             return ExitCode::from(2);
+         }
+     };
+-    crate::timings::phase("analyze", || Analyzer::new(&app).analyze(&mut app));
++    let warming = match crate::analyze::warm::start(&app) {
++        Ok(active) => active,
++        Err(error) => {
++            eprintln!("roundhouse-check: {error}");
++            return ExitCode::from(2);
++        }
++    };
++    let mut cold_app = warming.then(|| app.clone());
++    let timing = warming && std::env::var("RH_WARM_TIMINGS").as_deref() == Ok("1");
++    let warm_start = timing.then(std::time::Instant::now);
++    let mut analyzer = Analyzer::new(&app);
++    crate::timings::phase("analyze", || analyzer.analyze(&mut app));
++    let warm_seconds = warm_start.map(|t| t.elapsed().as_secs_f64());
++    if let Some(pending) = crate::analyze::warm::stop() {
++        let shadow_start = timing.then(std::time::Instant::now);
++        let warm = analyzer.state_fp(&app);
++        let cold_start = timing.then(std::time::Instant::now);
++        let cold_app = cold_app.as_mut().unwrap();
++        let mut cold_analyzer = Analyzer::new(cold_app);
++        cold_analyzer.analyze(cold_app);
++        let cold_seconds = cold_start.map(|t| t.elapsed().as_secs_f64());
++        let cold = cold_analyzer.state_fp(cold_app);
++        let first = warm.first_difference(&cold);
++        warm_shadow_seconds = shadow_start.map_or(0.0, |t| t.elapsed().as_secs_f64());
++        let mut report = serde_json::json!({"shadow": if first.is_none() { "pass" } else { "fail" },
++            "warm_digest": warm.digests(), "cold_digest": cold.digests(),
++            "first_difference": first, "evaluations": pending.stats});
++        if timing {
++            report["warm_analyze_seconds"] = serde_json::json!(warm_seconds);
++            report["cold_analyze_seconds"] = serde_json::json!(cold_seconds);
++            report["shadow_seconds"] = serde_json::json!(warm_shadow_seconds);
++        }
++        eprintln!("rh-warm: {report}");
++        if first.is_some() {
++            eprintln!("roundhouse-check: warm shadow differs from cold; cache not published");
++            return ExitCode::from(3);
++        }
++        let save_start = timing.then(std::time::Instant::now);
++        if let Err(error) = pending.save() {
++            eprintln!("roundhouse-check: {error}");
++            return ExitCode::from(2);
++        }
++        if let Some(t) = save_start {
++            eprintln!("rh-warm-save: {{\"seconds\":{}}}", t.elapsed().as_secs_f64());
++        }
++    }
+     let mut diags = crate::timings::phase("diagnose", || diagnose(&app));
+     // Survey mode: diagnostics that trace back to a recorded ingest gap
+     // are the tool's coverage problem, not the app's — downgrade them to
+@@ -265,6 +313,13 @@ pub fn check(args: &[String], default_app: &str) -> ExitCode {
+         survey_errors.len(),
+     );
+ 
++    if let Some(start) = warm_check_start {
++        let total = start.elapsed().as_secs_f64();
++        eprintln!("rh-warm-wall: {}", serde_json::json!({"total_seconds": total,
++            "shadow_seconds": warm_shadow_seconds,
++            "check_excluding_shadow_seconds": total - warm_shadow_seconds}));
++    }
++
+     // Survey errors are informational; they don't gate exit code.
+     // Strict-mode ingest errors are caught above. Parse (syntax) errors
+     // and analyze errors both gate.
+diff --git a/tests/warm_check.rs b/tests/warm_check.rs
+new file mode 100644
+index 00000000..c79a3486
+--- /dev/null
++++ b/tests/warm_check.rs
+@@ -0,0 +1,376 @@
++//! Cross-process edit regressions: persisted evaluations, never an old answer.
++use serde::Deserialize;
++use serde_json::Value;
++
++fn cache_data(cache: &Path) -> Value {
++    let bytes = fs::read(cache.join("evaluations.json")).unwrap();
++    let mut reader = serde_json::Deserializer::from_slice(&bytes);
++    reader.disable_recursion_limit();
++    Value::deserialize(&mut reader).unwrap()
++}
++use std::fs;
++use std::path::{Path, PathBuf};
++use std::process::Command;
++
++struct Fixture(PathBuf);
++impl Fixture {
++    fn new(name: &str, service: &str) -> Self {
++        let root = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
++            .join(".warm-tests")
++            .join(format!("{}-{name}", std::process::id()));
++        if root.exists() {
++            fs::remove_dir_all(&root).unwrap();
++        }
++        for directory in [
++            "app/services",
++            "app/controllers",
++            "app/views/bench",
++            "config",
++            "db",
++        ] {
++            fs::create_dir_all(root.join(directory)).unwrap();
++        }
++        let fixture = Self(root);
++        fixture.write(
++            "db/schema.rb",
++            "ActiveRecord::Schema[8.0].define(version: 1) do\nend\n",
++        );
++        fixture.write(
++            "config/routes.rb",
++            "Rails.application.routes.draw do\nroot 'bench#index'\nend\n",
++        );
++        fixture.write(
++            "app/controllers/application_controller.rb",
++            "class ApplicationController < ActionController::Base\nend\n",
++        );
++        fixture.write("app/controllers/bench_controller.rb", "class BenchController < ApplicationController\ndef index\n@answer = Chain.new.link0\nend\nend\n");
++        fixture.write("app/views/bench/index.html.erb", "<%= @answer %>\n");
++        fixture.edit(service);
++        fixture
++    }
++    fn write(&self, path: &str, source: &str) {
++        fs::write(self.0.join(path), source).unwrap();
++    }
++    fn edit(&self, source: &str) {
++        self.write("app/services/chain.rb", source);
++    }
++    fn check(&self, cache: Option<&Path>) -> Value {
++        let mut command = Command::new(env!("CARGO_BIN_EXE_roundhouse"));
++        for (key, _) in
++            std::env::vars().filter(|(k, _)| k.starts_with("RH_") || k == "ROUNDHOUSE_TIMINGS")
++        {
++            command.env_remove(key);
++        }
++        command
++            .args(["check", "--continue"])
++            .arg(&self.0)
++            .env("RH_SCHED", "sccq")
++            .env("RH_BRK_ALLARMS", "1")
++            .env("RH_FOLD_JOIN", "1")
++            .env("RH_FOLD", "1")
++            .env("RH_FOLD_SLOTS", "1")
++            .env("RH_FOLD_TAIL", "1")
++            .env("RH_FIXPOINT_DIGEST", "1")
++            .env("NO_COLOR", "1");
++        if let Some(cache) = cache {
++            command.env("RH_WARM", cache).env("RH_WARM_SHADOW", "1");
++        }
++        let output = command.output().unwrap();
++        let stderr = String::from_utf8_lossy(&output.stderr);
++        assert!(
++            matches!(output.status.code(), Some(0 | 1)),
++            "check failed: {}\n{stderr}",
++            output.status
++        );
++        let prefix = if cache.is_some() {
++            "rh-warm: "
++        } else {
++            "rh-fixpoint: "
++        };
++        let report: Value = stderr
++            .lines()
++            .rev()
++            .find_map(|l| l.strip_prefix(prefix))
++            .and_then(|l| serde_json::from_str(l).ok())
++            .unwrap_or_else(|| panic!("missing report\n{stderr}"));
++        if cache.is_some() {
++            assert_eq!(report["shadow"], "pass", "{report}");
++            assert_eq!(report["warm_digest"], report["cold_digest"], "{report}");
++        }
++        report
++    }
++    fn seed(&self) -> PathBuf {
++        let cache = self.0.join("cache");
++        let report = self.check(Some(&cache));
++        assert_eq!(report["evaluations"]["replayed"], 0);
++        let data = cache_data(&cache);
++        assert!(data["records"].as_array().unwrap().len() > 1);
++        for r in data["records"].as_array().unwrap() {
++            assert!(r["unit"].is_string() && r["body"].is_u64() && r["reads"].is_object());
++            assert!(!r["write"].is_null(), "unserializable evaluation: {r}");
++        }
++        cache
++    }
++    fn compare(&self, cache: &Path) -> Value {
++        let warm = self.check(Some(cache));
++        let cold = self.check(None);
++        assert_eq!(warm["warm_digest"], cold["digest"]);
++        println!(
++            "warm-case: {}",
++            serde_json::json!({"case": self.0.file_name().unwrap().to_str(),
++            "evaluations": warm["evaluations"], "shadow": warm["shadow"], "digest": warm["warm_digest"]})
++        );
++        warm
++    }
++}
++impl Drop for Fixture {
++    fn drop(&mut self) {
++        fs::remove_dir_all(&self.0).unwrap();
++    }
++}
++
++fn chain(tail: &str) -> String {
++    let mut source = String::from("class Chain\n");
++    for i in 0..63 {
++        source.push_str(&format!("def link{i}\nlink{}\nend\n", i + 1));
++    }
++    source.push_str(&format!("def link63\n{tail}\nend\nend\n"));
++    source
++}
++
++#[test]
++fn chain_body_edit_matches_cold_and_records_each_evaluation() {
++    let f = Fixture::new("chain", &chain("1"));
++    let cache = f.seed();
++    let unchanged = f.compare(&cache);
++    assert!(
++        unchanged["evaluations"]["replayed"].as_u64().unwrap() >= 64,
++        "{unchanged}"
++    );
++    f.edit(&chain("'changed'"));
++    let edit = f.compare(&cache);
++    assert!(
++        edit["evaluations"]["invalidated"].as_u64().unwrap() > 0,
++        "{edit}"
++    );
++    assert!(
++        edit["evaluations"]["typed"].as_u64().unwrap() <= 129,
++        "{edit}"
++    );
++    f.edit(&chain("1"));
++    f.compare(&cache);
++}
++
++#[test]
++fn deleting_a_seed_from_a_cycle_matches_cold() {
++    let before = "class Chain\ndef link0\n[1, link1]\nend\ndef link1\nlink0\nend\nend\n";
++    let after = "class Chain\ndef link0\nlink1\nend\ndef link1\nlink0\nend\nend\n";
++    let f = Fixture::new("cycle", before);
++    let cache = f.seed();
++    f.compare(&cache);
++    f.edit(after);
++    f.compare(&cache);
++}
++
++#[test]
++fn adding_a_method_invalidates_a_recorded_missing_lookup() {
++    let f = Fixture::new("add", "class Chain\ndef link0\nadded\nend\nend\n");
++    let cache = f.seed();
++    f.edit("class Chain\ndef link0\nadded\nend\ndef added\n1\nend\nend\n");
++    f.compare(&cache);
++}
++
++#[test]
++fn deleting_a_method_cannot_replay_its_write() {
++    let f = Fixture::new(
++        "delete",
++        "class Chain\ndef link0\nremoved\nend\ndef removed\n1\nend\nend\n",
++    );
++    let cache = f.seed();
++    f.edit("class Chain\ndef link0\nremoved\nend\nend\n");
++    let report = f.compare(&cache);
++    assert!(report["evaluations"]["invalidated"].as_u64().unwrap() > 0);
++    let data = cache_data(&cache);
++    assert!(
++        data["records"]
++            .as_array()
++            .unwrap()
++            .iter()
++            .all(|r| !r["unit"].as_str().unwrap().ends_with(":removed"))
++    );
++}
++
++#[test]
++fn moving_a_body_keeps_its_hash_and_remaps_diagnostics() {
++    let body = "class Chain\ndef link0\nx = 1\nx + 'bad'\nend\nend\n";
++    let f = Fixture::new("offset", body);
++    let cache = f.seed();
++    f.edit(&format!("# A line above the unchanged body.\n{body}"));
++    let report = f.compare(&cache);
++    assert_eq!(report["evaluations"]["invalidated"], 0, "{report}");
++    assert!(
++        report["evaluations"]["replayed"].as_u64().unwrap() > 0,
++        "{report}"
++    );
++}
++
++#[test]
++fn warm_without_a_shadow_is_rejected() {
++    let f = Fixture::new("mandatory", &chain("1"));
++    let output = Command::new(env!("CARGO_BIN_EXE_roundhouse"))
++        .args(["check", "--continue"])
++        .arg(&f.0)
++        .env("RH_WARM", f.0.join("cache"))
++        .env_remove("RH_WARM_SHADOW")
++        .output()
++        .unwrap();
++    assert_eq!(output.status.code(), Some(2));
++}
++
++#[test]
++fn default_parameter_and_body_evaluations_replay_separately() {
++    let f = Fixture::new(
++        "defaults",
++        "class Chain\ndef link0(value = 1)\nvalue\nend\nend\n",
++    );
++    let cache = f.seed();
++    let unchanged = f.compare(&cache);
++    assert_eq!(unchanged["evaluations"]["typed"], 0, "{unchanged}");
++    f.edit("class Chain\ndef link0(value = 1)\n[value]\nend\nend\n");
++    f.compare(&cache);
++}
++
++#[test]
++fn a_changed_constant_uncovering_an_unchanged_body_matches_cold() {
++    let f = Fixture::new(
++        "constant",
++        "class Chain\nSEED = 1\ndef link0\nSEED\nend\nend\n",
++    );
++    let cache = f.seed();
++    assert!(
++        cache_data(&cache)["records"]
++            .as_array()
++            .unwrap()
++            .iter()
++            .any(|r| r["reads"]
++                .as_object()
++                .unwrap()
++                .keys()
++                .any(|key| key.starts_with("decl:")))
++    );
++    f.edit("class Chain\nSEED = 'changed'\ndef link0\nSEED\nend\nend\n");
++    let report = f.compare(&cache);
++    assert_eq!(report["evaluations"]["invalidated"], 0, "{report}");
++    assert!(
++        report["evaluations"]["uncovered"].as_u64().unwrap() > 0,
++        "{report}"
++    );
++}
++
++#[test]
++fn deep_bodies_can_load_their_persisted_evaluations() {
++    let body = format!(
++        "class Chain\ndef link0\n{}1{}\nend\nend\n",
++        "[".repeat(72),
++        "]".repeat(72)
++    );
++    let f = Fixture::new("deep", &body);
++    let cache = f.seed();
++    let report = f.compare(&cache);
++    assert!(
++        report["evaluations"]["loaded"].as_u64().unwrap() > 0,
++        "{report}"
++    );
++    assert!(
++        report["evaluations"]["replayed"].as_u64().unwrap() > 0,
++        "{report}"
++    );
++}
++
++#[test]
++fn repeated_method_definitions_keep_distinct_writer_and_site_keys() {
++    let f = Fixture::new(
++        "repeated",
++        "class Chain\ndef link0\n1\nend\ndef link0\n1\nend\nend\n",
++    );
++    let cache = f.seed();
++    f.compare(&cache);
++    f.edit("class Chain\ndef link0\n1\nend\ndef link0\n'changed'\nend\nend\n");
++    f.compare(&cache);
++}
++
++#[test]
++fn record_fields_named_like_wire_markers_keep_their_types() {
++    let before = "class Chain\nextend T::Sig\n\
++        sig { params(value: {file: Integer, start: Integer, end: Integer}).returns(Integer) }\n\
++        def link0(value = {})\nvalue[:start]\nend\n\
++        sig { params(value: {warm_span: Integer}).returns(Integer) }\n\
++        def marker(value = {})\nvalue[:warm_span]\nend\nend\n";
++    let f = Fixture::new("record-fields", before);
++    let cache = f.seed();
++    let report = f.compare(&cache);
++    assert_eq!(report["evaluations"]["typed"], 0, "{report}");
++    f.edit(&before.replace("value[:start]", "value[:start].to_s"));
++    f.compare(&cache);
++}
++
++#[test]
++fn a_shadow_difference_fails_and_does_not_replace_the_cache() {
++    let f = Fixture::new("failure", "class Chain\ndef link0\n1\nend\nend\n");
++    let cache = f.seed();
++    let path = cache.join("evaluations.json");
++    let mut data = cache_data(&cache);
++    fn corrupt_literal(value: &mut Value) {
++        match value {
++            Value::Object(map) => {
++                if map.get("kind").and_then(Value::as_str) == Some("lit") {
++                    map.insert(
++                        "value".into(),
++                        serde_json::json!({"kind": "str", "value": "corrupt"}),
++                    );
++                }
++                for value in map.values_mut() {
++                    corrupt_literal(value);
++                }
++            }
++            Value::Array(items) => {
++                for value in items {
++                    corrupt_literal(value);
++                }
++            }
++            _ => {}
++        }
++    }
++    for r in data["records"].as_array_mut().unwrap() {
++        if r["unit"].as_str().unwrap().ends_with(":link0") {
++            r["write"]["ty"] = serde_json::json!({"kind": "str"});
++            corrupt_literal(&mut r["write"]);
++        }
++    }
++    let corrupted = serde_json::to_vec(&data).unwrap();
++    fs::write(&path, &corrupted).unwrap();
++    let output = Command::new(env!("CARGO_BIN_EXE_roundhouse"))
++        .args(["check", "--continue"])
++        .arg(&f.0)
++        .env("RH_SCHED", "sccq")
++        .env("RH_BRK_ALLARMS", "1")
++        .env("RH_FOLD_JOIN", "1")
++        .env("RH_FOLD", "1")
++        .env("RH_FOLD_SLOTS", "1")
++        .env("RH_FOLD_TAIL", "1")
++        .env("RH_WARM", &cache)
++        .env("RH_WARM_SHADOW", "1")
++        .output()
++        .unwrap();
++    let stderr = String::from_utf8_lossy(&output.stderr);
++    assert_eq!(output.status.code(), Some(3), "{stderr}");
++    let report: Value = stderr
++        .lines()
++        .find_map(|l| l.strip_prefix("rh-warm: "))
++        .map(|l| serde_json::from_str(l).unwrap())
++        .unwrap();
++    assert_eq!(report["shadow"], "fail");
++    assert!(report["first_difference"]["part"].is_string());
++    println!("warm-failure-case: {report}");
++    assert_eq!(fs::read(path).unwrap(), corrupted);
++}

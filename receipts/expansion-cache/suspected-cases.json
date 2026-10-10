@@ -1,0 +1,2539 @@
+[
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "ActivityPub::CollectionsController",
+        "method": "set_items",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 117590,
+      "recv_type": null,
+      "root": 9309,
+      "seq": 117592,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> (String | Var[0] | nil | untyped) !EffectSet { effects: {} }",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "ActivityPub::CollectionsController",
+        "method": "set_items",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 117590,
+      "recv_type": null,
+      "root": 9309,
+      "seq": 117592,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> (Rec[64] | Var[0] | untyped) !EffectSet { effects: {} }",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71651,
+      "recv_type": null,
+      "root": 6649,
+      "seq": 71654,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> Hash[Symbol, (String | nil | untyped)] !EffectSet { effects: {} }",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71651,
+      "recv_type": null,
+      "root": 6649,
+      "seq": 71654,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> Hash[Symbol, (Rec[64] | String | untyped)] !EffectSet { effects: {} }",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 1596,
+      "file": "app/controllers/activitypub/collections_controller.rb",
+      "file_id": 1043,
+      "kind": "If",
+      "owner": {
+        "class": "ActivityPub::CollectionsController",
+        "method": "set_items",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 117592,
+      "recv_type": null,
+      "root": 9309,
+      "seq": 117593,
+      "start": 1521,
+      "symbol": "",
+      "type": "(String | Var[0] | nil | untyped)",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 1596,
+      "file": "app/controllers/activitypub/collections_controller.rb",
+      "file_id": 1043,
+      "kind": "If",
+      "owner": {
+        "class": "ActivityPub::CollectionsController",
+        "method": "set_items",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 117592,
+      "recv_type": null,
+      "root": 9309,
+      "seq": 117593,
+      "start": 1521,
+      "symbol": "",
+      "type": "(Rec[64] | Var[0] | untyped)",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 10331,
+      "file": "app/lib/activitypub/activity/create.rb",
+      "file_id": 267,
+      "kind": "Hash",
+      "owner": {
+        "class": "ActivityPub::Activity::Create",
+        "method": "process_tagged_collection",
+        "params": [
+          "tag"
+        ],
+        "side": "Instance"
+      },
+      "parent": 34716,
+      "recv_type": null,
+      "root": 3407,
+      "seq": 34718,
+      "start": 10223,
+      "symbol": "",
+      "type": "Hash[Symbol, (Account | Collection | Conversation | Status | String | nil | untyped)]",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 10331,
+      "file": "app/lib/activitypub/activity/create.rb",
+      "file_id": 267,
+      "kind": "Hash",
+      "owner": {
+        "class": "ActivityPub::Activity::Create",
+        "method": "process_tagged_collection",
+        "params": [
+          "tag"
+        ],
+        "side": "Instance"
+      },
+      "parent": 34716,
+      "recv_type": null,
+      "root": 3407,
+      "seq": 34718,
+      "start": 10223,
+      "symbol": "",
+      "type": "Hash[Symbol, (Account | Collection | Conversation | Rec[64] | Status | String | untyped)]",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 9883,
+      "file": "app/services/activitypub/process_status_update_service.rb",
+      "file_id": 653,
+      "kind": "Send",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71648,
+      "recv_type": "Array[(Account | Collection | Conversation | Status | nil | untyped)]",
+      "root": 6649,
+      "seq": 71651,
+      "start": 9696,
+      "symbol": "map",
+      "type": "Array[Hash[Symbol, (String | nil | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 9883,
+      "file": "app/services/activitypub/process_status_update_service.rb",
+      "file_id": 653,
+      "kind": "Send",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71648,
+      "recv_type": "Array[(Rec[73] | Rec[83])]",
+      "root": 6649,
+      "seq": 71651,
+      "start": 9696,
+      "symbol": "map",
+      "type": "Array[Hash[Symbol, (Rec[64] | String | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "mastodon",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 9881,
+      "file": "app/services/activitypub/process_status_update_service.rb",
+      "file_id": 653,
+      "kind": "Hash",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71654,
+      "recv_type": null,
+      "root": 6649,
+      "seq": 71655,
+      "start": 9739,
+      "symbol": "",
+      "type": "Hash[Symbol, (String | nil | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 9881,
+      "file": "app/services/activitypub/process_status_update_service.rb",
+      "file_id": 653,
+      "kind": "Hash",
+      "owner": {
+        "class": "ActivityPub::ProcessStatusUpdateService",
+        "method": "update_tagged_objects!",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 71654,
+      "recv_type": null,
+      "root": 6649,
+      "seq": 71655,
+      "start": 9739,
+      "symbol": "",
+      "type": "Hash[Symbol, (Rec[64] | String | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "64": {
+          "class": "ActivityPub::TagManager",
+          "class_side": false,
+          "kind": "return",
+          "method": "uri_for"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158932,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158934,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> Hash[Symbol, (Integer | String | bool | untyped)] !EffectSet { effects: {} }",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 0,
+      "file": "<synthetic>",
+      "file_id": 0,
+      "kind": "Lambda",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158932,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158934,
+      "start": 0,
+      "symbol": "",
+      "type": "fn() -> Hash[Symbol, (Integer | Rec[3905] | bool | untyped)] !EffectSet { effects: {} }",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 2348,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "counts_for",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 42814,
+      "recv_type": null,
+      "root": 2713,
+      "seq": 42817,
+      "start": 2343,
+      "symbol": "posts",
+      "type": "(Array[(Post | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 2348,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "counts_for",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 42814,
+      "recv_type": null,
+      "root": 2713,
+      "seq": 42817,
+      "start": 2343,
+      "symbol": "posts",
+      "type": "(Array[(Post | Rec[1862] | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6413,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43111,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43112,
+      "start": 6408,
+      "symbol": "posts",
+      "type": "(Array[(Post | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6413,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43111,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43112,
+      "start": 6408,
+      "symbol": "posts",
+      "type": "(Array[(Post | Rec[1862] | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6422,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43114,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43115,
+      "start": 6419,
+      "symbol": "x",
+      "type": "(Post | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6422,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43114,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43115,
+      "start": 6419,
+      "symbol": "x",
+      "type": "(Post | Rec[1862] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6489,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43117,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43118,
+      "start": 6484,
+      "symbol": "posts",
+      "type": "(Array[(Post | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6489,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43117,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43118,
+      "start": 6484,
+      "symbol": "posts",
+      "type": "(Array[(Post | Rec[1862] | Var[0])] | Relation[Post] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6514,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43128,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43129,
+      "start": 6510,
+      "symbol": "post",
+      "type": "(Post | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6514,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43128,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43129,
+      "start": 6510,
+      "symbol": "post",
+      "type": "(Post | Rec[1862] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6526,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43123,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43124,
+      "start": 6522,
+      "symbol": "post",
+      "type": "(Post | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6526,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43123,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43124,
+      "start": 6522,
+      "symbol": "post",
+      "type": "(Post | Rec[1862] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6572,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43125,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43127,
+      "start": 6568,
+      "symbol": "post",
+      "type": "(Post | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6572,
+      "file": "app/models/topic_link.rb",
+      "file_id": 316,
+      "kind": "Var",
+      "owner": {
+        "class": "TopicLink",
+        "method": "visible_source_post_ids",
+        "params": [
+          "guardian",
+          "topic",
+          "posts"
+        ],
+        "side": "Class"
+      },
+      "parent": 43125,
+      "recv_type": null,
+      "root": 2719,
+      "seq": 43127,
+      "start": 6568,
+      "symbol": "post",
+      "type": "(Post | Rec[1862] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1861": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_using"
+        },
+        "1862": {
+          "class": "PostsController",
+          "class_side": false,
+          "kind": "return",
+          "method": "find_post_from_params"
+        }
+      },
+      "raw_nodes": 2,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4837,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Assign",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158881,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158931,
+      "start": 4616,
+      "symbol": "",
+      "type": "Array[Hash[Symbol, (Integer | String | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4837,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Assign",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158881,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158931,
+      "start": 4616,
+      "symbol": "",
+      "type": "Array[Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4837,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Send",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158931,
+      "recv_type": "Array[(Tag | Var[0] | untyped)]",
+      "root": 10700,
+      "seq": 158932,
+      "start": 4633,
+      "symbol": "map",
+      "type": "Array[Hash[Symbol, (Integer | String | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4837,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Send",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158931,
+      "recv_type": "Rec[3904]",
+      "root": 10700,
+      "seq": 158932,
+      "start": 4633,
+      "symbol": "map",
+      "type": "Array[Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4827,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Seq",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158934,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158935,
+      "start": 4668,
+      "symbol": "",
+      "type": "Hash[Symbol, (Integer | String | bool | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4827,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Seq",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158934,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158935,
+      "start": 4668,
+      "symbol": "",
+      "type": "Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4827,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Hash",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158935,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158942,
+      "start": 4740,
+      "symbol": "",
+      "type": "Hash[Symbol, (Integer | String | bool | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4827,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Hash",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158935,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158942,
+      "start": 4740,
+      "symbol": "",
+      "type": "Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4880,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Var",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158964,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158966,
+      "start": 4872,
+      "symbol": "disabled",
+      "type": "Array[Hash[Symbol, (Integer | String | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4880,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Var",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158964,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158966,
+      "start": 4872,
+      "symbol": "disabled",
+      "type": "Array[Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4893,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Var",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158959,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158960,
+      "start": 4885,
+      "symbol": "disabled",
+      "type": "Array[Hash[Symbol, (Integer | String | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 4893,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "Var",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "append_disabled_tags",
+        "params": [
+          "params",
+          "category",
+          "tags",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 158959,
+      "recv_type": null,
+      "root": 10700,
+      "seq": 158960,
+      "start": 4885,
+      "symbol": "disabled",
+      "type": "Array[Hash[Symbol, (Integer | Rec[3905] | bool | untyped)]]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3905": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "explain_exclusion"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6056,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "BoolOp",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "explain_exclusion",
+        "params": [
+          "tag",
+          "params",
+          "selected_ids",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 159072,
+      "recv_type": null,
+      "root": 10703,
+      "seq": 159073,
+      "start": 5973,
+      "symbol": "",
+      "type": "(Var[0] | bool | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 6056,
+      "file": "app/services/tags/search.rb",
+      "file_id": 1063,
+      "kind": "BoolOp",
+      "owner": {
+        "class": "Tags::Search",
+        "method": "explain_exclusion",
+        "params": [
+          "tag",
+          "params",
+          "selected_ids",
+          "guardian"
+        ],
+        "side": "Instance"
+      },
+      "parent": 159072,
+      "recv_type": null,
+      "root": 10703,
+      "seq": 159073,
+      "start": 5973,
+      "symbol": "",
+      "type": "(Rec[3914] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "3914": {
+          "class": "Tags::Search",
+          "class_side": false,
+          "kind": "return",
+          "method": "tag_visible?"
+        }
+      },
+      "raw_nodes": 1,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13013,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216638,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216639,
+      "start": 13004,
+      "symbol": "tag_names",
+      "type": "(Array[(String | Var[0])] | String | bool | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13013,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216638,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216639,
+      "start": 13004,
+      "symbol": "tag_names",
+      "type": "(Array[(Rec[5032] | Var[0])] | String | bool | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {
+        "var": 1
+      },
+      "leaf_witnesses": [
+        {
+          "kind": "var",
+          "origins": [
+            {
+              "kind": "position",
+              "site": [
+                1307,
+                12909,
+                12944
+              ],
+              "step": "Elem"
+            }
+          ],
+          "slot_path": [
+            5032
+          ]
+        }
+      ],
+      "missing": [],
+      "origins": {
+        "5032": {
+          "kind": "position",
+          "site": [
+            1307,
+            12909,
+            12944
+          ],
+          "step": "Elem"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13028,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216640,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216641,
+      "start": 13019,
+      "symbol": "tag_names",
+      "type": "(Array[(String | Var[0])] | String | bool | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13028,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216640,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216641,
+      "start": 13019,
+      "symbol": "tag_names",
+      "type": "(Array[(Rec[5032] | Var[0])] | String | bool | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {
+        "var": 1
+      },
+      "leaf_witnesses": [
+        {
+          "kind": "var",
+          "origins": [
+            {
+              "kind": "position",
+              "site": [
+                1307,
+                12909,
+                12944
+              ],
+              "step": "Elem"
+            }
+          ],
+          "slot_path": [
+            5032
+          ]
+        }
+      ],
+      "missing": [],
+      "origins": {
+        "5032": {
+          "kind": "position",
+          "site": [
+            1307,
+            12909,
+            12944
+          ],
+          "step": "Elem"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13075,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216644,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216646,
+      "start": 13071,
+      "symbol": "name",
+      "type": "(String | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13075,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216644,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216646,
+      "start": 13071,
+      "symbol": "name",
+      "type": "(Rec[5032] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {
+        "var": 1
+      },
+      "leaf_witnesses": [
+        {
+          "kind": "var",
+          "origins": [
+            {
+              "kind": "position",
+              "site": [
+                1307,
+                12909,
+                12944
+              ],
+              "step": "Elem"
+            }
+          ],
+          "slot_path": [
+            5032
+          ]
+        }
+      ],
+      "missing": [],
+      "origins": {
+        "5032": {
+          "kind": "position",
+          "site": [
+            1307,
+            12909,
+            12944
+          ],
+          "step": "Elem"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13099,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216649,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216651,
+      "start": 13095,
+      "symbol": "name",
+      "type": "(String | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13099,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "tag_names_not_allowed_in_category",
+        "params": [
+          "category",
+          "tag_names",
+          "restricted_to"
+        ],
+        "side": "Class"
+      },
+      "parent": 216649,
+      "recv_type": null,
+      "root": 13801,
+      "seq": 216651,
+      "start": 13095,
+      "symbol": "name",
+      "type": "(Rec[5032] | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {
+        "var": 1
+      },
+      "leaf_witnesses": [
+        {
+          "kind": "var",
+          "origins": [
+            {
+              "kind": "position",
+              "site": [
+                1307,
+                12909,
+                12944
+              ],
+              "step": "Elem"
+            }
+          ],
+          "slot_path": [
+            5032
+          ]
+        }
+      ],
+      "missing": [],
+      "origins": {
+        "5032": {
+          "kind": "position",
+          "site": [
+            1307,
+            12909,
+            12944
+          ],
+          "step": "Elem"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13298,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "validate_category_restricted_tags",
+        "params": [
+          "guardian",
+          "model",
+          "category",
+          "tags"
+        ],
+        "side": "Class"
+      },
+      "parent": 216675,
+      "recv_type": null,
+      "root": 13803,
+      "seq": 216676,
+      "start": 13293,
+      "symbol": "x",
+      "type": "(Hash[Symbol, Var[0]] | String | Symbol | Tag | Var[0] | nil | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 13298,
+      "file": "lib/discourse_tagging.rb",
+      "file_id": 1307,
+      "kind": "Var",
+      "owner": {
+        "class": "DiscourseTagging",
+        "method": "validate_category_restricted_tags",
+        "params": [
+          "guardian",
+          "model",
+          "category",
+          "tags"
+        ],
+        "side": "Class"
+      },
+      "parent": 216675,
+      "recv_type": null,
+      "root": 13803,
+      "seq": 216676,
+      "start": 13293,
+      "symbol": "x",
+      "type": "(Rec[2207] | Symbol | Tag | Var[0] | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {
+        "var": 1
+      },
+      "leaf_witnesses": [
+        {
+          "kind": "var",
+          "origins": [
+            {
+              "kind": "position",
+              "site": [
+                1307,
+                13240,
+                13270
+              ],
+              "step": "Elem"
+            }
+          ],
+          "slot_path": [
+            2207
+          ]
+        }
+      ],
+      "missing": [],
+      "origins": {
+        "1864": {
+          "class": "GroupMessage",
+          "index": 0,
+          "kind": "parameter",
+          "method": "create"
+        },
+        "1867": {
+          "class": "GroupMessage",
+          "index": 0,
+          "kind": "parameter",
+          "method": "initialize"
+        },
+        "2207": {
+          "kind": "position",
+          "site": [
+            1307,
+            13240,
+            13270
+          ],
+          "step": "Elem"
+        }
+      },
+      "raw_nodes": 11,
+      "root_explicit_bottom": false,
+      "slots": 3
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 31035,
+      "file": "lib/email/receiver.rb",
+      "file_id": 1330,
+      "kind": "Hash",
+      "owner": {
+        "class": "Email::Receiver",
+        "method": "process_destination",
+        "params": [
+          "destination",
+          "user",
+          "body",
+          "elided"
+        ],
+        "side": "Instance"
+      },
+      "parent": 225033,
+      "recv_type": null,
+      "root": 14169,
+      "seq": 225034,
+      "start": 30874,
+      "symbol": "",
+      "type": "Hash[Symbol, (String | User | Var[0] | bool | nil | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 31035,
+      "file": "lib/email/receiver.rb",
+      "file_id": 1330,
+      "kind": "Hash",
+      "owner": {
+        "class": "Email::Receiver",
+        "method": "process_destination",
+        "params": [
+          "destination",
+          "user",
+          "body",
+          "elided"
+        ],
+        "side": "Instance"
+      },
+      "parent": 225033,
+      "recv_type": null,
+      "root": 14169,
+      "seq": 225034,
+      "start": 30874,
+      "symbol": "",
+      "type": "Hash[Symbol, (Rec[1377] | Rec[1378] | String | User | Var[0] | bool | nil | untyped)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "243": {
+          "class": "User",
+          "class_side": true,
+          "kind": "return",
+          "method": "find_by_email"
+        },
+        "1377": {
+          "class": "Email::Receiver",
+          "index": 1,
+          "kind": "parameter",
+          "method": "process_destination"
+        },
+        "1378": {
+          "class": "Email::Receiver",
+          "index": 2,
+          "kind": "parameter",
+          "method": "process_destination"
+        }
+      },
+      "raw_nodes": 8,
+      "root_explicit_bottom": false,
+      "slots": 3
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 33937,
+      "file": "lib/email/receiver.rb",
+      "file_id": 1330,
+      "kind": "Hash",
+      "owner": {
+        "class": "Email::Receiver",
+        "method": "create_group_post",
+        "params": [
+          "group",
+          "user",
+          "body",
+          "elided"
+        ],
+        "side": "Instance"
+      },
+      "parent": 225208,
+      "recv_type": null,
+      "root": 14170,
+      "seq": 225209,
+      "start": 33635,
+      "symbol": "",
+      "type": "Hash[Symbol, (Array[untyped] | String | User | Var[0] | bool | nil)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 33937,
+      "file": "lib/email/receiver.rb",
+      "file_id": 1330,
+      "kind": "Hash",
+      "owner": {
+        "class": "Email::Receiver",
+        "method": "create_group_post",
+        "params": [
+          "group",
+          "user",
+          "body",
+          "elided"
+        ],
+        "side": "Instance"
+      },
+      "parent": 225208,
+      "recv_type": null,
+      "root": 14170,
+      "seq": 225209,
+      "start": 33635,
+      "symbol": "",
+      "type": "Hash[Symbol, (Array[untyped] | Rec[1386] | Rec[1388] | String | Var[0] | bool)]",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "243": {
+          "class": "User",
+          "class_side": true,
+          "kind": "return",
+          "method": "find_by_email"
+        },
+        "1377": {
+          "class": "Email::Receiver",
+          "index": 1,
+          "kind": "parameter",
+          "method": "process_destination"
+        },
+        "1378": {
+          "class": "Email::Receiver",
+          "index": 2,
+          "kind": "parameter",
+          "method": "process_destination"
+        },
+        "1386": {
+          "class": "Email::Receiver",
+          "index": 1,
+          "kind": "parameter",
+          "method": "create_group_post"
+        },
+        "1387": {
+          "class": "Email::Receiver",
+          "index": 2,
+          "kind": "parameter",
+          "method": "create_group_post"
+        },
+        "1388": {
+          "class": "Email::Receiver",
+          "class_side": false,
+          "kind": "return",
+          "method": "new_group_topic_body"
+        },
+        "3542": {
+          "class": "Email::Receiver",
+          "index": 0,
+          "kind": "parameter",
+          "method": "new_group_topic_body"
+        }
+      },
+      "raw_nodes": 17,
+      "root_explicit_bottom": false,
+      "slots": 7
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 525,
+      "file": "lib/reviewable/collection.rb",
+      "file_id": 1823,
+      "kind": "Var",
+      "owner": {
+        "class": "Reviewable::Collection",
+        "method": "has?",
+        "params": [
+          "action_id"
+        ],
+        "side": "Instance"
+      },
+      "parent": 309655,
+      "recv_type": null,
+      "root": 19886,
+      "seq": 309656,
+      "start": 516,
+      "symbol": "action_id",
+      "type": "(String | Symbol | Var[0] | nil | untyped)",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 525,
+      "file": "lib/reviewable/collection.rb",
+      "file_id": 1823,
+      "kind": "Var",
+      "owner": {
+        "class": "Reviewable::Collection",
+        "method": "has?",
+        "params": [
+          "action_id"
+        ],
+        "side": "Instance"
+      },
+      "parent": 309655,
+      "recv_type": null,
+      "root": 19886,
+      "seq": 309656,
+      "start": 516,
+      "symbol": "action_id",
+      "type": "(Rec[633] | String | Var[0] | nil | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "633": {
+          "class": "Reviewable",
+          "index": 1,
+          "kind": "parameter",
+          "method": "perform"
+        },
+        "5127": {
+          "class": "Reviewable",
+          "index": 1,
+          "kind": "parameter",
+          "method": "bulk_perform_targets"
+        }
+      },
+      "raw_nodes": 4,
+      "root_explicit_bottom": false,
+      "slots": 2
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 12594,
+      "file": "lib/topic_view.rb",
+      "file_id": 1965,
+      "kind": "OpAssign",
+      "owner": {
+        "class": "TopicView",
+        "method": "image_upload",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": null,
+      "recv_type": null,
+      "root": 21634,
+      "seq": 345987,
+      "start": 12447,
+      "symbol": "",
+      "type": "(Upload | nil | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 12594,
+      "file": "lib/topic_view.rb",
+      "file_id": 1965,
+      "kind": "OpAssign",
+      "owner": {
+        "class": "TopicView",
+        "method": "image_upload",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": null,
+      "recv_type": null,
+      "root": 21634,
+      "seq": 345987,
+      "start": 12447,
+      "symbol": "",
+      "type": "(Rec[1832] | Upload | nil | untyped)",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1832": {
+          "class": "TopicView",
+          "class_side": false,
+          "kind": "return",
+          "method": "og_image_upload"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  },
+  {
+    "app": "discourse",
+    "expression": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 12594,
+      "file": "lib/topic_view.rb",
+      "file_id": 1965,
+      "kind": "If",
+      "owner": {
+        "class": "TopicView",
+        "method": "image_upload",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 345987,
+      "recv_type": null,
+      "root": 21634,
+      "seq": 345988,
+      "start": 12471,
+      "symbol": "",
+      "type": "(Upload | nil | untyped)",
+      "unknowns": {
+        "Unresolved": 1
+      }
+    },
+    "before_expansion": {
+      "bits": 3,
+      "category": "untyped",
+      "end": 12594,
+      "file": "lib/topic_view.rb",
+      "file_id": 1965,
+      "kind": "If",
+      "owner": {
+        "class": "TopicView",
+        "method": "image_upload",
+        "params": [],
+        "side": "Instance"
+      },
+      "parent": 345987,
+      "recv_type": null,
+      "root": 21634,
+      "seq": 345988,
+      "start": 12471,
+      "symbol": "",
+      "type": "(Rec[1832] | Upload | nil | untyped)",
+      "unknowns": {
+        "Gradual": 1
+      }
+    },
+    "graph": {
+      "back_edges": [],
+      "leaf_counts": {},
+      "leaf_witnesses": [],
+      "missing": [],
+      "origins": {
+        "1832": {
+          "class": "TopicView",
+          "class_side": false,
+          "kind": "return",
+          "method": "og_image_upload"
+        }
+      },
+      "raw_nodes": 3,
+      "root_explicit_bottom": false,
+      "slots": 1
+    }
+  }
+]

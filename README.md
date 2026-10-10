@@ -5,12 +5,14 @@ Companion to the RFC [rubys/roundhouse#617](https://github.com/rubys/roundhouse/
 A small, reproducible place to explore why structural inference grows, what makes iteration converge,
 and how finite constructor-site identities give a least solution. It contains public Ruby reproductions,
 pinned public-app recipes, executable models, a runtime shape oracle, experimental Roundhouse patches,
-and a Lean proof of the finite-site core. Everything in this repository is Apache-2.0 licensed.
+and a Lean proof of the finite-site core. Original lab material is Apache-2.0 licensed; derivative-source credits and licenses are in [NOTICE](NOTICE).
 
 The [typed-recursion demo](patches/emit-rec/README.md) compiles three controller walk shapes
 as native recursive types in Rust and Crystal, with their pages checked against CRuby.
 The [soundness/settling 2×2](reproductions/settle_sound/README.md) shows why correcting Ruby
 flow and making inference settle are both needed on the merged-back normalizer.
+The [research receipts](receipts/README.md) include pending-return counterexamples, a destructuring
+matrix, writer and cache boundaries, and manual recursive-kernel references.
 
 Start with the [small fixtures](reproductions/README.md), [models](models/README.md), or
 [proof scope](proof/PROOF.md). The patches are research configurations; the docs retain failed designs

@@ -1,0 +1,75 @@
+{
+  "condition": "five public apps at corpus/apps.json pins",
+  "join_rate": 1.0,
+  "left": "main",
+  "per_app": {
+    "campfire": {
+      "S3_unmatched": 0,
+      "different_printed_type": 24,
+      "duplicate_key_pairs": 5967,
+      "duplicate_keys": 1230,
+      "equal_category": 32524,
+      "full_net": -11,
+      "join_rate": 1.0,
+      "left_categories": {
+        "full": 25466,
+        "untyped": 4797,
+        "var": 2272
+      },
+      "left_rec_rows": 0,
+      "left_rows": 32535,
+      "less_precise": 11,
+      "main_unmatched": 0,
+      "matched": 32535,
+      "matched_score_net": -22,
+      "more_precise": 0,
+      "precision_score_net": -22,
+      "right_categories": {
+        "full": 25455,
+        "untyped": 4808,
+        "var": 2272
+      },
+      "right_rec_rows": 6,
+      "right_rows": 32535,
+      "source_pairs": 31135,
+      "synthetic_pairs": 1400,
+      "transitions": {
+        "full->full": 25455,
+        "full->untyped": 11,
+        "untyped->untyped": 4797,
+        "var->var": 2272
+      },
+      "unique_key_pairs": 26568,
+      "unmatched_categories": {
+        "S3": {},
+        "main": {}
+      },
+      "untyped_net": 11,
+      "var_net": 0
+    }
+  },
+  "pooled": {
+    "S3_unmatched": 0,
+    "different_printed_type": 24,
+    "duplicate_key_pairs": 5967,
+    "duplicate_keys": 1230,
+    "equal_category": 32524,
+    "full_net": -11,
+    "left_rec_rows": 0,
+    "left_rows": 32535,
+    "less_precise": 11,
+    "main_unmatched": 0,
+    "matched": 32535,
+    "matched_score_net": -22,
+    "more_precise": 0,
+    "precision_score_net": -22,
+    "right_rec_rows": 6,
+    "right_rows": 32535,
+    "source_pairs": 31135,
+    "synthetic_pairs": 1400,
+    "unique_key_pairs": 26568,
+    "untyped_net": 11,
+    "var_net": 0
+  },
+  "right": "S3"
+}
