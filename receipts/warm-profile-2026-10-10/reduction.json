@@ -1,0 +1,81 @@
+{
+  "condition": "warm-next-F15-profile-20261010-c210f226",
+  "raw_runs_checked": 20,
+  "profiles": [
+    {
+      "app": "mastodon",
+      "edit": "boolean",
+      "parity": "match",
+      "total_fingerprints": 133.388889913,
+      "input_fingerprints": 118.912938681,
+      "cold_analysis": 6.25,
+      "whole_warm": 156.64440845802892,
+      "warm_excluding_shadow": 149.838484375,
+      "ratio": 19.631731773949927
+    },
+    {
+      "app": "mastodon",
+      "edit": "return-type",
+      "parity": "match",
+      "total_fingerprints": 135.130724149,
+      "input_fingerprints": 120.970678299,
+      "cold_analysis": 6.14,
+      "whole_warm": 158.2593094999902,
+      "warm_excluding_shadow": 151.29228783300002,
+      "ratio": 20.10994990031422
+    },
+    {
+      "app": "mastodon",
+      "edit": "withdraw-read",
+      "parity": "match",
+      "total_fingerprints": 131.111723251,
+      "input_fingerprints": 116.55931697,
+      "cold_analysis": 6.21,
+      "whole_warm": 152.95794962497894,
+      "warm_excluding_shadow": 145.766267542,
+      "ratio": 19.916503379551365
+    },
+    {
+      "app": "discourse",
+      "edit": "boolean",
+      "parity": "match",
+      "total_fingerprints": 347.49259523600006,
+      "input_fingerprints": 262.097936804,
+      "cold_analysis": 29.18,
+      "whole_warm": 451.00232570804656,
+      "warm_excluding_shadow": 420.220243375,
+      "ratio": 12.787445047487822
+    },
+    {
+      "app": "discourse",
+      "edit": "return-type",
+      "parity": "match",
+      "total_fingerprints": 355.676948642,
+      "input_fingerprints": 268.518440764,
+      "cold_analysis": 28.48,
+      "whole_warm": 462.67100766603835,
+      "warm_excluding_shadow": 431.584321167,
+      "ratio": 13.472842307860654
+    },
+    {
+      "app": "discourse",
+      "edit": "withdraw-read",
+      "parity": "match",
+      "total_fingerprints": 357.213043338,
+      "input_fingerprints": 270.771227878,
+      "cold_analysis": 28.35,
+      "whole_warm": 462.7278109579347,
+      "warm_excluding_shadow": 431.699671958,
+      "ratio": 13.45294303985877
+    }
+  ],
+  "flags_off_shared_outcomes": 5209,
+  "added_passes": 14,
+  "input_fingerprints_total_seconds": 1157.830539396,
+  "input_fingerprints_share_of_summed_warm_excluding_shadow": 0.6691110063818065,
+  "emission_record": {
+    "pairs": 105,
+    "files": 11432
+  },
+  "native_runs_performed": 0
+}

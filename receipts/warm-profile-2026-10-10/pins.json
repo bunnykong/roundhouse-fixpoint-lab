@@ -1,0 +1,39 @@
+{
+  "app_ruby": "4.0.7",
+  "apps": {
+    "discourse": {
+      "files": 26331,
+      "frozen_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "git_metadata": true,
+      "observed_commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "source": "$INPUT_APPS/discourse",
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "mastodon": {
+      "files": 9868,
+      "frozen_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "git_metadata": false,
+      "observed_commit": null,
+      "source": "$INPUT_APPS/mastodon",
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "benchmark": false,
+  "binary_sha256": "f8491bd0094efe849422cda9988bca6d13a4f0ee90526d5562b9e86beedd4c1c",
+  "build_jobs": 4,
+  "condition": "warm-next-F15-profile-20261010-c210f226",
+  "frozen_edits_sha256": "84e8edb9bf2b1870a0d8b5ede27630cef65c646ee9181d67bf01b3fb9381effb",
+  "main": "c210f226346b462214866b5756b457ad53f647b1",
+  "next": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "recorded_commit": "d9ec78c31db361db8818b13153e5ddddee484c57",
+  "rust": "1.98.1",
+  "scope": "one cold-first timed pair per edit, preceded by a correctness replay; shared host",
+  "source_parents": [
+    "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+    "990137f742397a0aecc7efd14869f39c6412ba55"
+  ],
+  "source_tree": "8dab26db49ac9d9e723721139bae515899f47c10",
+  "suite_ruby": "3.4.4",
+  "warm": "990137f742397a0aecc7efd14869f39c6412ba55"
+}

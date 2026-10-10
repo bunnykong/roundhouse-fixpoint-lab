@@ -1,0 +1,24 @@
+{
+  "existing": [
+    "returns",
+    "constants",
+    "attributes",
+    "block_values",
+    "params",
+    "controller_bindings",
+    "controller_cache",
+    "view_seeds",
+    "copies",
+    "side_table",
+    "ir"
+  ],
+  "added": [
+    "sccq_dependencies",
+    "sccq_contexts",
+    "sccq_entry_contexts"
+  ],
+  "dependencies": "per-unit normalized scheduling reads by class/constant/fold keys, call sites, dirty/frozen state",
+  "contexts": "all Ctx values and flags, both constant layers, entry readiness/self/ivars/constants/concern/current/initialized/reseeded state",
+  "excluded": "work counters and append-only stale reverse-index entries validated against current reads; no guard/rule changes",
+  "diagnostics": "F15 kind dictionaries and command summary; diagnostic content multiset separately recorded"
+}

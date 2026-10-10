@@ -1,0 +1,105 @@
+{
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "-Vv"
+      ],
+      "exit": 0,
+      "stdout": "cargo 1.98.1 (797e8a9bc 2026-08-05)\nrelease: 1.98.1\ncommit-hash: 797e8a9bca276c1c9f9f738d2a20f484fa4eea9d\ncommit-date: 2026-08-05\nhost: aarch64-apple-darwin\nlibgit2: 1.9.4 (sys:0.21.0 vendored)\nlibcurl: 8.7.1 (sys:0.4.90+curl-8.21.0 system ssl:(SecureTransport) LibreSSL/3.3.6)\nssl: OpenSSL 3.6.3 9 Jun 2026\nos: Mac OS 26.3.1 [64-bit]",
+      "stderr": "",
+      "executable": "$USER_DIR/.cargo/bin/cargo",
+      "cwd": "$BASELINE/main"
+    },
+    {
+      "command": [
+        "rustc",
+        "-Vv"
+      ],
+      "exit": 0,
+      "stdout": "rustc 1.98.1 (48a229cea 2026-09-01)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: aarch64-apple-darwin\nrelease: 1.98.1\nLLVM version: 22.1.8",
+      "stderr": "",
+      "executable": "$USER_DIR/.cargo/bin/rustc",
+      "cwd": "$BASELINE/main"
+    },
+    {
+      "command": [
+        "ruby",
+        "-v"
+      ],
+      "exit": 0,
+      "stdout": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+      "stderr": "",
+      "executable": "$USER_DIR/.rbenv/versions/3.4.4/bin/ruby"
+    },
+    {
+      "command": [
+        "bash",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GNU bash, version 5.2.0(1)-release (aarch64-apple-darwin25.3.0)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.",
+      "stderr": "",
+      "executable": "$BASELINE/host-tools/bin/bash"
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "Python 3.12.13",
+      "stderr": "",
+      "executable": "/opt/homebrew/opt/python@3.12/libexec/bin/python3"
+    },
+    {
+      "command": [
+        "jq",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "jq-1.7.1-apple",
+      "stderr": "",
+      "executable": "/usr/bin/jq"
+    },
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "missing": true
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "v26.0.0",
+      "stderr": "",
+      "executable": "/opt/homebrew/bin/node"
+    }
+  ],
+  "spinel": {
+    "path": "$TOOLCHAINS/bin/spinel",
+    "sha256": "fbd5118b57dcd582b7d6e35c9452f6bc970740334ca9318cdf94c9f47bba0857"
+  },
+  "env": {
+    "PATH": "/opt/homebrew/opt/python@3.12/libexec/bin:$BASELINE/host-tools/bin:$USER_DIR/.rbenv/versions/3.4.4/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/libpq/bin:$USER_DIR/.rbenv/shims:$USER_DIR/.rbenv/bin:/opt/homebrew/Caskroom/codex/0.162.1/codex-path:$USER_DIR/.local/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:$USER_DIR/.codex/tmp/arg0/codex-arg0bYARlB:$USER_DIR/.grok/bin:$USER_DIR/.cargo/bin:$USER_DIR/.orbstack/bin",
+    "TMPDIR": "$BASELINE/tmp",
+    "CARGO_TARGET_DIR": "$BASELINE/target",
+    "CARGO_HOME": "$BASELINE/cargo-home",
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_INCREMENTAL": "0",
+    "RBENV_VERSION": "3.4.4",
+    "GEM_HOME": "$BASELINE/gems",
+    "GEM_PATH": "$BASELINE/gems:$USER_DIR/.rbenv/versions/3.4.4/lib/ruby/gems/3.4.0",
+    "GEM_SPEC_CACHE": "$BASELINE/tmp/gem-spec-cache",
+    "BUNDLE_USER_HOME": "$BASELINE/tmp/bundle",
+    "XDG_CACHE_HOME": "$BASELINE/tmp/cache",
+    "SPINEL": "$TOOLCHAINS/bin/spinel",
+    "DYLD_LIBRARY_PATH": "$BASELINE/lib/openexr:$BASELINE/lib/openjph",
+    "MT_NO_PLUGINS": "1",
+    "RUST_TEST_THREADS": "1"
+  }
+}

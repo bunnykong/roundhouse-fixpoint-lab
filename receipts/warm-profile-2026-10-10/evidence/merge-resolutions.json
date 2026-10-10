@@ -1,0 +1,31 @@
+[
+  {
+    "file": "src/analyze/body/mod.rs",
+    "ours": "                        let value = self.typed_constants\n                            .and_then(|values| values.get(declaration))\n",
+    "theirs": "                        let value = self.typed_constants.and_then(|values| values.get(declaration));\n                        super::warm::read_decl(declaration, value);\n                        value\n",
+    "resolution": "                        let value = self.typed_constants.and_then(|values| values.get(declaration));\n                        super::warm::read_decl(declaration, value);\n                        let value = value\n",
+    "reason": "Record the resolved declaration read before the refreshed fallback, preserving app-declared Struct class recognition."
+  },
+  {
+    "file": "src/analyze/fixpoint_check.rs",
+    "ours": "    pub(super) fn context_slot_keys(&self) -> Vec<String> {\n        self.parts.iter().filter(|(part, _)| matches!(**part,\n            \"controller_bindings\" | \"controller_cache\" | \"view_seeds\" | \"copies\"))\n            .flat_map(|(part, entries)| entries.keys().map(move |key| format!(\"{part}:{key}\")))\n            .collect()\n",
+    "theirs": "    /// The first differing carried-state slot, followed by the first IR\n    /// site if the keyed tables agree. Use the same inventory as S0.\n    pub(crate) fn first_difference(&self, other: &Self) -> Option<serde_json::Value> {\n        let empty = BTreeMap::new();\n        let parts: BTreeSet<_> = self.parts.keys().chain(other.parts.keys()).copied().collect();\n        for part in parts {\n            let a = self.parts.get(part).unwrap_or(&empty);\n            let b = other.parts.get(part).unwrap_or(&empty);\n            let keys: BTreeSet<_> = a.keys().chain(b.keys()).collect();\n            for key in keys {\n                if a.get(key) != b.get(key) {\n                    return Some(serde_json::json!({\"part\": part, \"slot\": key,\n                        \"warm\": a.get(key).map(|v| format!(\"{v:016x}\")),\n                        \"cold\": b.get(key).map(|v| format!(\"{v:016x}\"))}));\n                }\n            }\n        }\n        for index in 0..self.ir.len().max(other.ir.len()) {\n            if self.ir.get(index) != other.ir.get(index) {\n                let site = self.ir.get(index).or_else(|| other.ir.get(index)).unwrap();\n                return Some(serde_json::json!({\"part\": \"ir\", \"index\": index,\n                    \"slot\": format!(\"{}:{}:{}\", site.0, site.1, site.2),\n                    \"warm\": self.ir.get(index), \"cold\": other.ir.get(index)}));\n            }\n        }\n        None\n",
+    "resolution": "    pub(super) fn context_slot_keys(&self) -> Vec<String> {\n        self.parts.iter().filter(|(part, _)| matches!(**part,\n            \"controller_bindings\" | \"controller_cache\" | \"view_seeds\" | \"copies\"))\n            .flat_map(|(part, entries)| entries.keys().map(move |key| format!(\"{part}:{key}\")))\n            .collect()\n    }\n\n    /// The first differing carried-state slot, followed by the first IR\n    /// site if the keyed tables agree. Use the same inventory as S0.\n    pub(crate) fn first_difference(&self, other: &Self) -> Option<serde_json::Value> {\n        let empty = BTreeMap::new();\n        let parts: BTreeSet<_> = self.parts.keys().chain(other.parts.keys()).copied().collect();\n        for part in parts {\n            let a = self.parts.get(part).unwrap_or(&empty);\n            let b = other.parts.get(part).unwrap_or(&empty);\n            let keys: BTreeSet<_> = a.keys().chain(b.keys()).collect();\n            for key in keys {\n                if a.get(key) != b.get(key) {\n                    return Some(serde_json::json!({\"part\": part, \"slot\": key,\n                        \"warm\": a.get(key).map(|v| format!(\"{v:016x}\")),\n                        \"cold\": b.get(key).map(|v| format!(\"{v:016x}\"))}));\n                }\n            }\n        }\n        for index in 0..self.ir.len().max(other.ir.len()) {\n            if self.ir.get(index) != other.ir.get(index) {\n                let site = self.ir.get(index).or_else(|| other.ir.get(index)).unwrap();\n                return Some(serde_json::json!({\"part\": \"ir\", \"index\": index,\n                    \"slot\": format!(\"{}:{}:{}\", site.0, site.1, site.2),\n                    \"warm\": self.ir.get(index), \"cold\": other.ir.get(index)}));\n            }\n        }\n        None\n",
+    "reason": "Retain next context_slot_keys and add the warm first_difference comparator; preserve main canonical filter hashing."
+  },
+  {
+    "file": "src/analyze/fold.rs",
+    "ours": "    if super::fixpoint_check::stats_on() { super::structure::fold_write(&key, \"site-transfer\"); }\n",
+    "theirs": "    let recording = super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed);\n    let recorded_key = recording.then(|| key.clone());\n",
+    "resolution": "    if super::fixpoint_check::stats_on() { super::structure::fold_write(&key, \"site-transfer\"); }\n    let recording = super::warm::ACTIVE.load(std::sync::atomic::Ordering::Relaxed);\n    let recorded_key = recording.then(|| key.clone());\n",
+    "reason": "Retain next structure fold_write observation and warm before/after write recording in the same accumulation."
+  },
+  {
+    "file": "src/analyze/sccq.rs",
+    "reason": "Remove automatically merged duplicate Unit.class_side field and initializer: next already carries receiver side for side-keyed parameter rows."
+  },
+  {
+    "file": "src/analyze/warm/fingerprint.rs",
+    "reason": "Port the context fingerprint to refreshed Ctx.instance_body alongside the four existing context flags. The same input-hash equality guard remains in force."
+  }
+]

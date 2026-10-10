@@ -1,0 +1,45 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "--locked",
+    "--no-fail-fast"
+  ],
+  "head": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "index_tree": "8dab26db49ac9d9e723721139bae515899f47c10",
+  "cwd": "$PROFILE/rh",
+  "started_utc": "2026-10-10T15:51:49.952537+00:00",
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "$PROFILE/target",
+  "env": {
+    "PATH": "/opt/homebrew/opt/python@3.12/libexec/bin:$PROFILE/host-tools/bin:$USER_DIR/.rbenv/versions/3.4.4/bin:$USER_DIR/.rbenv/shims:$USER_DIR/.rbenv/bin:$USER_DIR/.local/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/Caskroom/codex/0.162.1/codex-path:$USER_DIR/.codex/tmp/arg0/codex-arg0YMvXbT:$USER_DIR/.grok/bin:$USER_DIR/.cargo/bin:$USER_DIR/.orbstack/bin",
+    "CARGO_HOME": "$PROFILE/cargo-home",
+    "CARGO_INCREMENTAL": "0",
+    "TMPDIR": "$PROFILE/tmp",
+    "RBENV_VERSION": "3.4.4",
+    "GEM_HOME": "$PROFILE/gems",
+    "GEM_PATH": "$PROFILE/gems:$USER_DIR/.rbenv/versions/3.4.4/lib/ruby/gems/3.4.0",
+    "DYLD_LIBRARY_PATH": "$PROFILE/lib/openexr:$PROFILE/lib/openjph",
+    "SPINEL": "$TOOLCHAINS/bin/spinel",
+    "RUST_TEST_THREADS": "1"
+  },
+  "worktree_diff_sha256": "d85018e170f30ed6a5d405b635e33b3b91f84afdabdd2123d8d37931eac87435",
+  "log": "logs/suite.log",
+  "exit": 101,
+  "elapsed_seconds": 1863.327855666983,
+  "finished_utc": "2026-10-10T16:22:53.326184+00:00",
+  "passed": 4984,
+  "failed": 3,
+  "ignored": 236,
+  "test_results": 698,
+  "failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+    "spinel_renders_the_same_page"
+  ],
+  "failed_targets": [
+    "`--lib`",
+    "`--test haml_class_shortcut_merge`"
+  ],
+  "completed": true
+}

@@ -1,0 +1,1390 @@
+{
+  "binary_sha256": "f8491bd0094efe849422cda9988bca6d13a4f0ee90526d5562b9e86beedd4c1c",
+  "command": [
+    "$PROFILE/bin/warm-next-roundhouse",
+    "check",
+    "--continue",
+    "."
+  ],
+  "condition": "warm-next-F15-profile-20261010-c210f226",
+  "cwd": "$PROFILE/profiles/apps/discourse",
+  "diagnostic_content_sha256": "8b312afae8ff4fe4e711311ed999cce478fd01f62afe6887a11d23a2f3eb8043",
+  "diagnostics": {
+    "error": {
+      "incompatible_binop": 18,
+      "ivar_unresolved": 26,
+      "send_dispatch_failed": 698,
+      "unsupported": 1595
+    },
+    "note": {
+      "incompatible_binop": 12,
+      "ivar_unresolved": 145,
+      "send_dispatch_failed": 1233,
+      "unresolved_type": 1783,
+      "unsupported": 2009
+    },
+    "warning": {
+      "gradual_untyped": 5937,
+      "missing_preload": 5,
+      "unresolved_type": 2356
+    }
+  },
+  "exit": 1,
+  "finished_utc": "2026-10-10T17:30:57.997305+00:00",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_WARM": "$PROFILE/profiles/caches/discourse-boolean",
+    "RH_WARM_SHADOW": "1",
+    "RH_WARM_TIMINGS": "1"
+  },
+  "peak_rss_mb": 44925,
+  "reports": {
+    "rh-det": [
+      {
+        "ir_dec": {
+          "b": "fc941b2fae2fd9c4b9d2ec325e40dd7d95b08041cbc7009b3e63408999b7f83160f2af535513149a42db57d26e60885c6c4e7b3b551478bbe94af71a0130601c7199691ba9df3f3575e72458e55fb1edf8ecdb91825420b8d9cbbe2b6783c6a63292d396d49868a37adeca14b9650b5169782975c28104da3b3b13d4950788503ce39fce30befd777ef3377309a19db755c3696629bfd3e7328e97850ec7f7ed7f03f097719da68ef835231d4192917b056de93139b26853d56d7514f8766053f17338156621338fb60ab191d239a65f1c8f58e95b52270b9d04120da6922928f434e93ed2648f75be43fefcd83f1f8b37b96da4b16480c32e73457f85aad010daa61a8a2183a5b864b015dc0641b3be7ef74f7ab477d53120056c405b8cbc04938b888ccb5518b63b119d7b850cea6517dfb83cb2c2a2cf988667058e9a1b453a19f2f98bfa1b16ed4868a8d5dccfbd7bf22a9be74f0891bfa1beee410bca665fa6e2df1d3291fdde2758d6e92973470f25d8829e7d1a3747e9ea8e2bcba72e3d161a47311872769b1e55c8affaba8f6df604ce0e6a370ca6c8de42ec5f761a0545dd469071f4e36019104a449bab976e2be9ffcc8028a3b9a31a2218182ca536818e9b30082c529eb2b74136294494c444730abbdf742a58e3634196dc043c07bb91f5262cdde65c8c7bb94074326b467cd1b8c538a49434df2120e5b60ba9",
+          "d": "984379c23078faea"
+        },
+        "ir_ty": {
+          "b": "39296a9c0b9b0fd72f71ae5f929d3d6800a5c8a5ad2fe0821a58b06fa72cc35b0dcf0365950b675a3aa68722255f5cd39529a2e1b83f1614625257a6b5ed7e2db049e122cf7576f06a430f9ae3e95b469f1cb5c058bc32a24a9176eb7fdcd4faad566dde66f21f95988e2a42aef7c12055cc67c058c563a9d74ab8687621edf87ccfb0021222e1f33e11d4fd9cf235eb91e0897956ea488500afd8cc5e355a0166e558acfe36a3802fca96ac8c3fced96e51266939d613ae591b88f748b90b0ccc2403df61d92df36a07feda7e8f82b729cf055dde7c102b67353dceb6d40fd52e4090ea9816ca5e7a91841689573878bc26e9658edb0c9c962067e8b00bf6d684eedc71371a843568bdaf2efce1aa4603379de1d1ccbb79352a81626eaf825caf3ee71e4121f6220524b71c54d5f28843c1fddd7c3fb1be96407b6d8c67d55cf95a14783cb8c84914ae2d8d8bc98293265dceb4c29dedc48f69c5b11c5f317405be454767b1f5da290b839afb5e38a23198c0596614f14e16dd2386080aa87e820931e0aae08cce608e9e4ef21abac5bcc7f97782472277e4096daf1ca2a421fe975ed24a0895cc8756a4678ba074381c60bde445c4747a2c0f3cf194326e2362de9c730dd00db9ad62a31baabb29c9d54ac4cecc45f397debe6d2882dded8a05f89b445a0ed668a626ba24b5ec21e2ba067e3de80ee41a582b09ca34490cb7",
+          "d": "8725385872d04b7f"
+        },
+        "sig": {
+          "a": {
+            "b": "207f005bf6e10e1533ae8163f0b79c7cd8b0d5418a96a962496c9eb1ea57eec773453fca8de51170da3b764d6bfaee1f7cca2321db9d5e3248527f1989037304257cce8262e94739a9407744e962527f797693d107b713c34e4bd1cb7893f5e7b585762a8cc43f7119ce1d65f6ada952be8495dd50b95eee22d8624faa478a41",
+            "d": "1fb47bc9de824657",
+            "n": 2121
+          },
+          "b": {
+            "b": "972bdeda662cb0a0adb84503fc6a7ff9e53cbfbb72e4b2cf156dd4e33671a5f2b224a1298230662aac08ab27d7ae1c649895e637d97e967789be6a8d61c4e6c2c45c31c9891d4603e2f5945e12d2887b31eb84febc30023abba4d8ee711621a98c6f9eb5abd28a9c00ed2e63dd85bd7b885641cb59c5ddf3d9af6b5ed859abb2",
+            "d": "3575e824e8589cbd",
+            "n": 3160
+          },
+          "c": {
+            "b": "5332ea96e3eaef5ab441ab5d805db6e73df9a709789204f8bb1a242b2f5c8f3eb3a89b4a7ad6763f6abc162ef7851f2eb7f852b3bf29332a2e027f82ea317d6e0c155b650d62bc7c4b5601a4effc384db18f8670739f1d30879f8dc84ab99fa8c17f62ed9a4ce6660ee216f0c33c042b9657ac356d817b146989ff9d93774371",
+            "d": "c0d211587d3760e9",
+            "n": 39078
+          },
+          "i": {
+            "b": "864f2d5492d7bbce933adc8c61c5de7d7616d659deccf1f802be00fd370b933df0033fa798c99bd11a2d6b310ace3c5d0e570891c8bae7bdab74bbada0863809ffeb361ba9bb495086773e173f3c07913d43ab5149cb04cc18b77bcab439004a0a1f7554e44ec24c8e3309648f18b50e2f1e4ce69885cf49f4a3ee58eaed3172",
+            "d": "053fd200d7d0dade",
+            "n": 57462
+          },
+          "p": {
+            "b": "11f0acc4b1540e0f631d210c6add2c22ff3931c607c0456f444d05a3af2ad1d21b0caa9f2976b86e875a0b6b5e9adaae6902ee54374da07c30ac4c87ffa8a7f91fedf9ba9a4a161393263f39bea7db86c51f703eaeeb79a47cd98edb41f7b1edcd9953981f00724e6514a05853c5be5a28e8e5af75a37a26b91a4b6d4a16ff58",
+            "d": "8744c5271900320b",
+            "n": 24794
+          },
+          "s": {
+            "b": "dce4d166c26426ee373520b32c8663d3242d974bd57460b195d52243fc05ad06b2474ffb7b8eb7fd52f0758ac40037e07732aa4339bb49e2cea12c200917fbaa256e67199b183bbec1175f83b4c304e9e80217d5e047cddfd3239e7338b8e89daaf643fe8ac0bb57a430ac1004bd24f4d5cc7a5dff9f6980e860088b5b559d54",
+            "d": "e250a2f5704cc4e9",
+            "n": 4334
+          }
+        }
+      },
+      {
+        "ir_dec": {
+          "b": "fc941b2fae2fd9c4b9d2ec325e40dd7d95b08041cbc7009b3e63408999b7f83160f2af535513149a42db57d26e60885c6c4e7b3b551478bbe94af71a0130601c7199691ba9df3f3575e72458e55fb1edf8ecdb91825420b8d9cbbe2b6783c6a63292d396d49868a37adeca14b9650b5169782975c28104da3b3b13d4950788503ce39fce30befd777ef3377309a19db755c3696629bfd3e7328e97850ec7f7ed7f03f097719da68ef835231d4192917b056de93139b26853d56d7514f8766053f17338156621338fb60ab191d239a65f1c8f58e95b52270b9d04120da6922928f434e93ed2648f75be43fefcd83f1f8b37b96da4b16480c32e73457f85aad010daa61a8a2183a5b864b015dc0641b3be7ef74f7ab477d53120056c405b8cbc04938b888ccb5518b63b119d7b850cea6517dfb83cb2c2a2cf988667058e9a1b453a19f2f98bfa1b16ed4868a8d5dccfbd7bf22a9be74f0891bfa1beee410bca665fa6e2df1d3291fdde2758d6e92973470f25d8829e7d1a3747e9ea8e2bcba72e3d161a47311872769b1e55c8affaba8f6df604ce0e6a370ca6c8de42ec5f761a0545dd469071f4e36019104a449bab976e2be9ffcc8028a3b9a31a2218182ca536818e9b30082c529eb2b74136294494c444730abbdf742a58e3634196dc043c07bb91f5262cdde65c8c7bb94074326b467cd1b8c538a49434df2120e5b60ba9",
+          "d": "984379c23078faea"
+        },
+        "ir_ty": {
+          "b": "39296a9c0b9b0fd72f71ae5f929d3d6800a5c8a5ad2fe0821a58b06fa72cc35b0dcf0365950b675a3aa68722255f5cd39529a2e1b83f1614625257a6b5ed7e2db049e122cf7576f06a430f9ae3e95b469f1cb5c058bc32a24a9176eb7fdcd4faad566dde66f21f95988e2a42aef7c12055cc67c058c563a9d74ab8687621edf87ccfb0021222e1f33e11d4fd9cf235eb91e0897956ea488500afd8cc5e355a0166e558acfe36a3802fca96ac8c3fced96e51266939d613ae591b88f748b90b0ccc2403df61d92df36a07feda7e8f82b729cf055dde7c102b67353dceb6d40fd52e4090ea9816ca5e7a91841689573878bc26e9658edb0c9c962067e8b00bf6d684eedc71371a843568bdaf2efce1aa4603379de1d1ccbb79352a81626eaf825caf3ee71e4121f6220524b71c54d5f28843c1fddd7c3fb1be96407b6d8c67d55cf95a14783cb8c84914ae2d8d8bc98293265dceb4c29dedc48f69c5b11c5f317405be454767b1f5da290b839afb5e38a23198c0596614f14e16dd2386080aa87e820931e0aae08cce608e9e4ef21abac5bcc7f97782472277e4096daf1ca2a421fe975ed24a0895cc8756a4678ba074381c60bde445c4747a2c0f3cf194326e2362de9c730dd00db9ad62a31baabb29c9d54ac4cecc45f397debe6d2882dded8a05f89b445a0ed668a626ba24b5ec21e2ba067e3de80ee41a582b09ca34490cb7",
+          "d": "8725385872d04b7f"
+        },
+        "sig": {
+          "a": {
+            "b": "207f005bf6e10e1533ae8163f0b79c7cd8b0d5418a96a962496c9eb1ea57eec773453fca8de51170da3b764d6bfaee1f7cca2321db9d5e3248527f1989037304257cce8262e94739a9407744e962527f797693d107b713c34e4bd1cb7893f5e7b585762a8cc43f7119ce1d65f6ada952be8495dd50b95eee22d8624faa478a41",
+            "d": "1fb47bc9de824657",
+            "n": 2121
+          },
+          "b": {
+            "b": "972bdeda662cb0a0adb84503fc6a7ff9e53cbfbb72e4b2cf156dd4e33671a5f2b224a1298230662aac08ab27d7ae1c649895e637d97e967789be6a8d61c4e6c2c45c31c9891d4603e2f5945e12d2887b31eb84febc30023abba4d8ee711621a98c6f9eb5abd28a9c00ed2e63dd85bd7b885641cb59c5ddf3d9af6b5ed859abb2",
+            "d": "3575e824e8589cbd",
+            "n": 3160
+          },
+          "c": {
+            "b": "5332ea96e3eaef5ab441ab5d805db6e73df9a709789204f8bb1a242b2f5c8f3eb3a89b4a7ad6763f6abc162ef7851f2eb7f852b3bf29332a2e027f82ea317d6e0c155b650d62bc7c4b5601a4effc384db18f8670739f1d30879f8dc84ab99fa8c17f62ed9a4ce6660ee216f0c33c042b9657ac356d817b146989ff9d93774371",
+            "d": "c0d211587d3760e9",
+            "n": 39078
+          },
+          "i": {
+            "b": "864f2d5492d7bbce933adc8c61c5de7d7616d659deccf1f802be00fd370b933df0033fa798c99bd11a2d6b310ace3c5d0e570891c8bae7bdab74bbada0863809ffeb361ba9bb495086773e173f3c07913d43ab5149cb04cc18b77bcab439004a0a1f7554e44ec24c8e3309648f18b50e2f1e4ce69885cf49f4a3ee58eaed3172",
+            "d": "053fd200d7d0dade",
+            "n": 57462
+          },
+          "p": {
+            "b": "11f0acc4b1540e0f631d210c6add2c22ff3931c607c0456f444d05a3af2ad1d21b0caa9f2976b86e875a0b6b5e9adaae6902ee54374da07c30ac4c87ffa8a7f91fedf9ba9a4a161393263f39bea7db86c51f703eaeeb79a47cd98edb41f7b1edcd9953981f00724e6514a05853c5be5a28e8e5af75a37a26b91a4b6d4a16ff58",
+            "d": "8744c5271900320b",
+            "n": 24794
+          },
+          "s": {
+            "b": "dce4d166c26426ee373520b32c8663d3242d974bd57460b195d52243fc05ad06b2474ffb7b8eb7fd52f0758ac40037e07732aa4339bb49e2cea12c200917fbaa256e67199b183bbec1175f83b4c304e9e80217d5e047cddfd3239e7338b8e89daaf643fe8ac0bb57a430ac1004bd24f4d5cc7a5dff9f6980e860088b5b559d54",
+            "d": "e250a2f5704cc4e9",
+            "n": 4334
+          }
+        }
+      }
+    ],
+    "rh-det-pre": [
+      {
+        "ir_dec": {
+          "b": "fc941b2fae2fd9c4b9d2ec325e40dd7d95b08041cbc7009b3e63408999b7f83160f2af535513149a42db57d26e60885c6c4e7b3b551478bbe94af71a0130601c7199691ba9df3f3575e72458e55fb1edf8ecdb91825420b8d9cbbe2b6783c6a63292d396d49868a37adeca14b9650b5169782975c28104da3b3b13d4950788503ce39fce30befd777ef3377309a19db755c3696629bfd3e7328e97850ec7f7ed7f03f097719da68ef835231d4192917b056de93139b26853d56d7514f8766053f17338156621338fb60ab191d239a65f1c8f58e95b52270b9d04120da6922928f434e93ed2648f75be43fefcd83f1f8b37b96da4b16480c32e73457f85aad010daa61a8a2183a5b864b015dc0641b3be7ef74f7ab477d53120056c405b8cbc04938b888ccb5518b63b119d7b850cea6517dfb83cb2c2a2cf988667058e9a1b453a19f2f98bfa1b16ed4868a8d5dccfbd7bf22a9be74f0891bfa1beee410bca665fa6e2df1d3291fdde2758d6e92973470f25d8829e7d1a3747e9ea8e2bcba72e3d161a47311872769b1e55c8affaba8f6df604ce0e6a370ca6c8de42ec5f761a0545dd469071f4e36019104a449bab976e2be9ffcc8028a3b9a31a2218185c6836818e9b30082c529eb2b74136294494c444730abbdf742a58e3634196dc043c07bb91f5262cdde65c8c7bb94074326b467cd1b8c538a49434df2120e5b60ba9",
+          "d": "bdf65f4b14909dd7"
+        },
+        "ir_ty": {
+          "b": "9e3bd335365e13cf9e23c91bf2d928b761db2b289043642dfd850b7f849ac7eef78c5a9819e118de9133d62711e49b22492e4ba0ecc84dc917715ce2a7d03789a789a52a170d7cdb1d7899558f4c714bdddb35762749209a5793274764fda057487f5bcd706d9afcc47b54ae3baaa5de38c7b03911394d2596c7344409e1fbb1a31ab1279a6ba60757778d6f1d18a7d603a158341f0a980bbe9a69fcd092761e4abe39e67d8293d2ba6e0917835fff696a936817a49a43d5b570f38f1c2fd220e800253dd706fc5e76139f6a1ee25c3d459613a91bce30f5d0fd0b08f3794ede4377d302ed6618942b75725caf0aa2f63d312dcf730110ed69c09535153de532b0025e69d4cbb5f6be59772bbf5d187e8f67e5a0af8b71d2ed9fa5427c9cbd0968e79f512286a5172bc2aed5fb8f4388bb50cb4c4dbd93e2c4c9295ed08d30c0a6178e7ee5173a736db29f7de92926c870e00d99d76e97d3411a9b269f54a3728a0cfe8790aa4a75be74c1405b1e207d3d818a13566143a95e1d934452507e60eb83630cc74c9970f943dcac1feeb4c0001e53dfb046c1f3ca0c762d59be5523d577cea4b5c3ed4b63bb622fa55e8ec6fb291ed91169d7683f0abecb324f3ae2cb3108921c0bc609b18503955028b5bfc014c64849b988702b600fdb7a700e2d282c74c021a596de3ebb550211bae3359b194ebae8b4485abbef46626d46906d",
+          "d": "c4f41fc915e35004"
+        },
+        "sig": {
+          "a": {
+            "b": "207f005bf6e10e1533ae8163f0b79c7cd8b0d5418a96a962496c9eb1ea57eec773453fca8de51170da3b764d6bfaee1f7cca2321db9d5e3248527f1989037304257cce8262e94739a9407744e962527f797693d107b713c34e4bd1cb7893f5e7b585762a8cc43f7119ce1d65f6ada952be8495dd50b95eee22d8624faa478a41",
+            "d": "1fb47bc9de824657",
+            "n": 2121
+          },
+          "b": {
+            "b": "972bdeda662cb0a0adb84503fc6a7ff9e53cbfbb72e4b2cf156dd4e33671a5f2b224a1298230662aac08ab27d7ae1c649895e637d97e967789be6a8d61c4e6c2c45c31c9891d4603e2f5945e12d2887b31eb84febc30023abba4d8ee711621a98c6f9eb5abd28a9c00ed2e63dd85bd7b885641cb59c5ddf3d9af6b5ed859abb2",
+            "d": "3575e824e8589cbd",
+            "n": 3160
+          },
+          "c": {
+            "b": "fa8d62ed05179c809106955f45afe2710b8a0b8aab6e422ea325272c3a225ff26bcfc86ad2ab671da5519e89d2126eaf3405807e70a5ce8e350147fd0ee6288d22ffc810eb12e51f5bb55113ad3d9a942589c7497e959be4a9cfb9b7223ed1757a0f99a33802cf0e1ef82a917550d0709b5d542d56e3557ba6445673aea8638f",
+            "d": "75a259b4411b5057",
+            "n": 39078
+          },
+          "i": {
+            "b": "1e29fd4fab8baa616287c3ef79bb4eefdbe8b07417697801f86ff316b553c19de098d57ae3cb59f6f7c36779a27ada3f3a97635c82a6a052b5eb51d0fe298837f1bf3cb39cfdfe841503f3b9912ab2ceb599b64f0ac853b8cc2aad09f6cc717933d3941db31f49610392faf3a790f181a9d9bec51ab47e7185448ee77b50789c",
+            "d": "02c1806fff29b6c6",
+            "n": 57462
+          },
+          "p": {
+            "b": "d8d271922776e449aa354ca3cd26e812585425bc763786bc40dfc6f844f91e0b4098ed64e5731eecb0294cf9088113a926cf5c69dd280c0068ed784ca169e1c098a813ee4e07c4dfa9a919d2f0df3572469f3812ee4e48d4db8d69dfe93b67a8cd5abe03590ccb49c29a4141e1ec9c0f2406658dc6c6b3848509bce8f1a9ee20",
+            "d": "c040642868094266",
+            "n": 24794
+          },
+          "s": {
+            "b": "dce4d166c26426ee373520b32c8663d3242d974bd57460b195d52243fc05ad06b2474ffb7b8eb7fd52f0758ac40037e07732aa4339bb49e2cea12c200917fbaa256e67199b183bbec1175f83b4c304e9e80217d5e047cddfd3239e7338b8e89daaf643fe8ac0bb57a430ac1004bd24f4d5cc7a5dff9f6980e860088b5b559d54",
+            "d": "e250a2f5704cc4e9",
+            "n": 4334
+          }
+        }
+      },
+      {
+        "ir_dec": {
+          "b": "fc941b2fae2fd9c4b9d2ec325e40dd7d95b08041cbc7009b3e63408999b7f83160f2af535513149a42db57d26e60885c6c4e7b3b551478bbe94af71a0130601c7199691ba9df3f3575e72458e55fb1edf8ecdb91825420b8d9cbbe2b6783c6a63292d396d49868a37adeca14b9650b5169782975c28104da3b3b13d4950788503ce39fce30befd777ef3377309a19db755c3696629bfd3e7328e97850ec7f7ed7f03f097719da68ef835231d4192917b056de93139b26853d56d7514f8766053f17338156621338fb60ab191d239a65f1c8f58e95b52270b9d04120da6922928f434e93ed2648f75be43fefcd83f1f8b37b96da4b16480c32e73457f85aad010daa61a8a2183a5b864b015dc0641b3be7ef74f7ab477d53120056c405b8cbc04938b888ccb5518b63b119d7b850cea6517dfb83cb2c2a2cf988667058e9a1b453a19f2f98bfa1b16ed4868a8d5dccfbd7bf22a9be74f0891bfa1beee410bca665fa6e2df1d3291fdde2758d6e92973470f25d8829e7d1a3747e9ea8e2bcba72e3d161a47311872769b1e55c8affaba8f6df604ce0e6a370ca6c8de42ec5f761a0545dd469071f4e36019104a449bab976e2be9ffcc8028a3b9a31a2218185c6836818e9b30082c529eb2b74136294494c444730abbdf742a58e3634196dc043c07bb91f5262cdde65c8c7bb94074326b467cd1b8c538a49434df2120e5b60ba9",
+          "d": "bdf65f4b14909dd7"
+        },
+        "ir_ty": {
+          "b": "9e3bd335365e13cf9e23c91bf2d928b761db2b289043642dfd850b7f849ac7eef78c5a9819e118de9133d62711e49b22492e4ba0ecc84dc917715ce2a7d03789a789a52a170d7cdb1d7899558f4c714bdddb35762749209a5793274764fda057487f5bcd706d9afcc47b54ae3baaa5de38c7b03911394d2596c7344409e1fbb1a31ab1279a6ba60757778d6f1d18a7d603a158341f0a980bbe9a69fcd092761e4abe39e67d8293d2ba6e0917835fff696a936817a49a43d5b570f38f1c2fd220e800253dd706fc5e76139f6a1ee25c3d459613a91bce30f5d0fd0b08f3794ede4377d302ed6618942b75725caf0aa2f63d312dcf730110ed69c09535153de532b0025e69d4cbb5f6be59772bbf5d187e8f67e5a0af8b71d2ed9fa5427c9cbd0968e79f512286a5172bc2aed5fb8f4388bb50cb4c4dbd93e2c4c9295ed08d30c0a6178e7ee5173a736db29f7de92926c870e00d99d76e97d3411a9b269f54a3728a0cfe8790aa4a75be74c1405b1e207d3d818a13566143a95e1d934452507e60eb83630cc74c9970f943dcac1feeb4c0001e53dfb046c1f3ca0c762d59be5523d577cea4b5c3ed4b63bb622fa55e8ec6fb291ed91169d7683f0abecb324f3ae2cb3108921c0bc609b18503955028b5bfc014c64849b988702b600fdb7a700e2d282c74c021a596de3ebb550211bae3359b194ebae8b4485abbef46626d46906d",
+          "d": "c4f41fc915e35004"
+        },
+        "sig": {
+          "a": {
+            "b": "207f005bf6e10e1533ae8163f0b79c7cd8b0d5418a96a962496c9eb1ea57eec773453fca8de51170da3b764d6bfaee1f7cca2321db9d5e3248527f1989037304257cce8262e94739a9407744e962527f797693d107b713c34e4bd1cb7893f5e7b585762a8cc43f7119ce1d65f6ada952be8495dd50b95eee22d8624faa478a41",
+            "d": "1fb47bc9de824657",
+            "n": 2121
+          },
+          "b": {
+            "b": "972bdeda662cb0a0adb84503fc6a7ff9e53cbfbb72e4b2cf156dd4e33671a5f2b224a1298230662aac08ab27d7ae1c649895e637d97e967789be6a8d61c4e6c2c45c31c9891d4603e2f5945e12d2887b31eb84febc30023abba4d8ee711621a98c6f9eb5abd28a9c00ed2e63dd85bd7b885641cb59c5ddf3d9af6b5ed859abb2",
+            "d": "3575e824e8589cbd",
+            "n": 3160
+          },
+          "c": {
+            "b": "fa8d62ed05179c809106955f45afe2710b8a0b8aab6e422ea325272c3a225ff26bcfc86ad2ab671da5519e89d2126eaf3405807e70a5ce8e350147fd0ee6288d22ffc810eb12e51f5bb55113ad3d9a942589c7497e959be4a9cfb9b7223ed1757a0f99a33802cf0e1ef82a917550d0709b5d542d56e3557ba6445673aea8638f",
+            "d": "75a259b4411b5057",
+            "n": 39078
+          },
+          "i": {
+            "b": "1e29fd4fab8baa616287c3ef79bb4eefdbe8b07417697801f86ff316b553c19de098d57ae3cb59f6f7c36779a27ada3f3a97635c82a6a052b5eb51d0fe298837f1bf3cb39cfdfe841503f3b9912ab2ceb599b64f0ac853b8cc2aad09f6cc717933d3941db31f49610392faf3a790f181a9d9bec51ab47e7185448ee77b50789c",
+            "d": "02c1806fff29b6c6",
+            "n": 57462
+          },
+          "p": {
+            "b": "d8d271922776e449aa354ca3cd26e812585425bc763786bc40dfc6f844f91e0b4098ed64e5731eecb0294cf9088113a926cf5c69dd280c0068ed784ca169e1c098a813ee4e07c4dfa9a919d2f0df3572469f3812ee4e48d4db8d69dfe93b67a8cd5abe03590ccb49c29a4141e1ec9c0f2406658dc6c6b3848509bce8f1a9ee20",
+            "d": "c040642868094266",
+            "n": 24794
+          },
+          "s": {
+            "b": "dce4d166c26426ee373520b32c8663d3242d974bd57460b195d52243fc05ad06b2474ffb7b8eb7fd52f0758ac40037e07732aa4339bb49e2cea12c200917fbaa256e67199b183bbec1175f83b4c304e9e80217d5e047cddfd3239e7338b8e89daaf643fe8ac0bb57a430ac1004bd24f4d5cc7a5dff9f6980e860088b5b559d54",
+            "d": "e250a2f5704cc4e9",
+            "n": 4334
+          }
+        }
+      }
+    ],
+    "rh-fixpoint": [
+      {
+        "digest": {
+          "attributes": "5cc2defdf294dec4",
+          "block_values": "57bc4a99488cab19",
+          "constants": "807156413118363c",
+          "controller_bindings": "a996b0554c41c25e",
+          "controller_cache": "6bcec8d26cc0ad86",
+          "copies": "e6c0ca020c600edc",
+          "ir": "7b618fe475b8cc51",
+          "params": "2f53853facabc77e",
+          "returns": "1fff21da5dbce34c",
+          "sccq_contexts": "3f1fa4b4a3d94150",
+          "sccq_dependencies": "661f312478454505",
+          "sccq_entry_contexts": "dae3706dd2d411d9",
+          "side_table": "fbefb2660e4d5558"
+        },
+        "entries": {
+          "attributes": 2121,
+          "block_values": 3160,
+          "constants": 2067,
+          "controller_bindings": 154,
+          "controller_cache": 153,
+          "copies": 325,
+          "ir": 497493,
+          "params": 24794,
+          "returns": 96550,
+          "sccq_contexts": 20113,
+          "sccq_dependencies": 20113,
+          "sccq_entry_contexts": 3012,
+          "side_table": 4324
+        },
+        "loops": {
+          "absorb": {
+            "end": "settled",
+            "round": 2
+          },
+          "production": {
+            "end": "settled",
+            "round": 5
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "schema": 1
+      },
+      {
+        "digest": {
+          "attributes": "5cc2defdf294dec4",
+          "block_values": "57bc4a99488cab19",
+          "constants": "807156413118363c",
+          "controller_bindings": "a996b0554c41c25e",
+          "controller_cache": "6bcec8d26cc0ad86",
+          "copies": "e6c0ca020c600edc",
+          "ir": "7b618fe475b8cc51",
+          "params": "2f53853facabc77e",
+          "returns": "1fff21da5dbce34c",
+          "sccq_contexts": "3f1fa4b4a3d94150",
+          "sccq_dependencies": "661f312478454505",
+          "sccq_entry_contexts": "dae3706dd2d411d9",
+          "side_table": "fbefb2660e4d5558"
+        },
+        "entries": {
+          "attributes": 2121,
+          "block_values": 3160,
+          "constants": 2067,
+          "controller_bindings": 154,
+          "controller_cache": 153,
+          "copies": 325,
+          "ir": 497493,
+          "params": 24794,
+          "returns": 96550,
+          "sccq_contexts": 20113,
+          "sccq_dependencies": 20113,
+          "sccq_entry_contexts": 3012,
+          "side_table": 4324
+        },
+        "loops": {
+          "absorb": {
+            "end": "settled",
+            "round": 2
+          },
+          "production": {
+            "end": "settled",
+            "round": 5
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "schema": 1
+      }
+    ],
+    "rh-warm": [
+      {
+        "cold_analyze_seconds": 28.079892291,
+        "cold_digest": {
+          "attributes": "5cc2defdf294dec4",
+          "block_values": "57bc4a99488cab19",
+          "constants": "807156413118363c",
+          "controller_bindings": "a996b0554c41c25e",
+          "controller_cache": "6bcec8d26cc0ad86",
+          "copies": "e6c0ca020c600edc",
+          "ir": "7b618fe475b8cc51",
+          "params": "2f53853facabc77e",
+          "returns": "1fff21da5dbce34c",
+          "sccq_contexts": "3f1fa4b4a3d94150",
+          "sccq_dependencies": "661f312478454505",
+          "sccq_entry_contexts": "dae3706dd2d411d9",
+          "side_table": "fbefb2660e4d5558"
+        },
+        "evaluations": {
+          "invalidated": 6,
+          "loaded": 136952,
+          "recorded": 136951,
+          "replayed": 133343,
+          "typed": 3608,
+          "uncovered": 1835,
+          "unused": 1768
+        },
+        "first_difference": null,
+        "ingest_seconds": 2.562206625,
+        "phases": {
+          "schema": 1,
+          "scope": "warm-start-through-stop-exclusive-wall",
+          "scope_counts": {
+            "class_fingerprints": 987769,
+            "fingerprints": 157065,
+            "fresh_typing": 117273,
+            "guards": 136951,
+            "input_fingerprints": 136951,
+            "load_decode": 1,
+            "old_trace_cleanup": 1,
+            "other": 0,
+            "recording": 139420,
+            "replay": 266686,
+            "shadow_clone": 1,
+            "value_fingerprints": 284589559
+          },
+          "seconds": {
+            "class_fingerprints": 9.262242561,
+            "fingerprints": 22.961477444,
+            "fresh_typing": 0.567707219,
+            "guards": 7.675945659,
+            "input_fingerprints": 261.801934468,
+            "load_decode": 4.73932775,
+            "old_trace_cleanup": 3.439508,
+            "other": 33.641533868,
+            "recording": 0.294874361,
+            "replay": 15.774644077,
+            "shadow_clone": 0.109886958,
+            "value_fingerprints": 52.399662427
+          },
+          "total_seconds": 412.668744792
+        },
+        "shadow": "pass",
+        "shadow_clone_seconds": 0.109887,
+        "shadow_seconds": 29.138396167,
+        "warm_analyze_seconds": 404.050330292,
+        "warm_digest": {
+          "attributes": "5cc2defdf294dec4",
+          "block_values": "57bc4a99488cab19",
+          "constants": "807156413118363c",
+          "controller_bindings": "a996b0554c41c25e",
+          "controller_cache": "6bcec8d26cc0ad86",
+          "copies": "e6c0ca020c600edc",
+          "ir": "7b618fe475b8cc51",
+          "params": "2f53853facabc77e",
+          "returns": "1fff21da5dbce34c",
+          "sccq_contexts": "3f1fa4b4a3d94150",
+          "sccq_dependencies": "661f312478454505",
+          "sccq_entry_contexts": "dae3706dd2d411d9",
+          "side_table": "fbefb2660e4d5558"
+        }
+      }
+    ],
+    "rh-warm-cleanup": [
+      {
+        "published_records_drop_seconds": 3.555147625
+      }
+    ],
+    "rh-warm-save": [
+      {
+        "seconds": 6.315397208
+      }
+    ],
+    "rh-warm-wall": [
+      {
+        "check_excluding_shadow_seconds": 425.809035166,
+        "shadow_seconds": 29.138396167,
+        "total_seconds": 454.947431333
+      }
+    ]
+  },
+  "started_utc": "2026-10-10T17:23:22.122242+00:00",
+  "summaries": [
+    "0 parse error(s), 2337 error(s), 8298 warning(s), 5182 gap-attributed note(s), 204 survey gap(s)"
+  ],
+  "timeout_seconds": 1800,
+  "timings": [
+    {
+      "peak_rss_mb": 677,
+      "phase": "rubydex: index",
+      "seconds": 0.04
+    },
+    {
+      "peak_rss_mb": 683,
+      "phase": "rubydex: resolve",
+      "seconds": 0.03
+    },
+    {
+      "peak_rss_mb": 689,
+      "phase": "rubydex: answers",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 953,
+      "phase": "rubydex: wait",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 954,
+      "phase": "ingest",
+      "seconds": 2.56
+    },
+    {
+      "peak_rss_mb": 28478,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 28890,
+      "phase": "typing: models",
+      "seconds": 5.65
+    },
+    {
+      "peak_rss_mb": 29356,
+      "phase": "typing: controllers A",
+      "seconds": 1.89
+    },
+    {
+      "peak_rss_mb": 29708,
+      "phase": "typing: controllers B",
+      "seconds": 2.18
+    },
+    {
+      "peak_rss_mb": 29719,
+      "phase": "typing: concern splice",
+      "seconds": 0.08
+    },
+    {
+      "peak_rss_mb": 32182,
+      "phase": "typing: library",
+      "seconds": 30.95
+    },
+    {
+      "peak_rss_mb": 32182,
+      "phase": "typing passes (initial)",
+      "seconds": 40.84
+    },
+    {
+      "peak_rss_mb": 32212,
+      "phase": "sccq production 0: harvest returns",
+      "seconds": 0.08
+    },
+    {
+      "peak_rss_mb": 32321,
+      "phase": "sccq production 0: unify params",
+      "seconds": 0.77
+    },
+    {
+      "peak_rss_mb": 40165,
+      "phase": "sccq production 0: worklist",
+      "seconds": 212.54
+    },
+    {
+      "peak_rss_mb": 40602,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 40602,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 40618,
+      "phase": "typing: controllers A",
+      "seconds": 5.4
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "typing: controllers B",
+      "seconds": 6.2
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "sccq production 0: class passes",
+      "seconds": 11.95
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "sccq production 1: harvest returns",
+      "seconds": 0.06
+    },
+    {
+      "peak_rss_mb": 40752,
+      "phase": "sccq production 1: unify params",
+      "seconds": 1.17
+    },
+    {
+      "peak_rss_mb": 41066,
+      "phase": "sccq production 1: worklist",
+      "seconds": 28.07
+    },
+    {
+      "peak_rss_mb": 41069,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 41069,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 41512,
+      "phase": "typing: controllers A",
+      "seconds": 5.53
+    },
+    {
+      "peak_rss_mb": 41772,
+      "phase": "typing: controllers B",
+      "seconds": 6.28
+    },
+    {
+      "peak_rss_mb": 41777,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 41777,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 41777,
+      "phase": "sccq production 1: class passes",
+      "seconds": 12.15
+    },
+    {
+      "peak_rss_mb": 41778,
+      "phase": "sccq production 2: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 41789,
+      "phase": "sccq production 2: unify params",
+      "seconds": 1.01
+    },
+    {
+      "peak_rss_mb": 42227,
+      "phase": "sccq production 2: worklist",
+      "seconds": 3.58
+    },
+    {
+      "peak_rss_mb": 42394,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 42394,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 42449,
+      "phase": "typing: controllers A",
+      "seconds": 5.62
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "typing: controllers B",
+      "seconds": 6.36
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "typing: concern splice",
+      "seconds": 0.25
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "sccq production 2: class passes",
+      "seconds": 12.33
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "sccq production 3: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "sccq production 3: unify params",
+      "seconds": 0.96
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "sccq production 3: worklist",
+      "seconds": 0.16
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 42546,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 42733,
+      "phase": "typing: controllers A",
+      "seconds": 5.55
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "typing: controllers B",
+      "seconds": 6.33
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "sccq production 3: class passes",
+      "seconds": 12.22
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "sccq production 4: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "sccq production 4: unify params",
+      "seconds": 0.94
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "sccq production 4: worklist",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 42745,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 42804,
+      "phase": "typing: controllers A",
+      "seconds": 5.57
+    },
+    {
+      "peak_rss_mb": 43071,
+      "phase": "typing: controllers B",
+      "seconds": 6.31
+    },
+    {
+      "peak_rss_mb": 43091,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 43091,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43091,
+      "phase": "sccq production 4: class passes",
+      "seconds": 12.22
+    },
+    {
+      "peak_rss_mb": 43092,
+      "phase": "sccq production 5: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43097,
+      "phase": "sccq production 5: unify params",
+      "seconds": 0.94
+    },
+    {
+      "peak_rss_mb": 43106,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43106,
+      "phase": "typing: views",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43106,
+      "phase": "typing: tests",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43106,
+      "phase": "typing passes (views after fixpoint)",
+      "seconds": 0.03
+    },
+    {
+      "peak_rss_mb": 43108,
+      "phase": "unify params (after views)",
+      "seconds": 0.56
+    },
+    {
+      "peak_rss_mb": 43112,
+      "phase": "round 1: tests",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43112,
+      "phase": "round 1: unify params (tests)",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43112,
+      "phase": "sccq absorb 0: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43142,
+      "phase": "sccq absorb 0: unify params",
+      "seconds": 0.96
+    },
+    {
+      "peak_rss_mb": 43224,
+      "phase": "sccq absorb 0: worklist",
+      "seconds": 1.03
+    },
+    {
+      "peak_rss_mb": 43251,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43252,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 5.7
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 6.35
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 0: class passes",
+      "seconds": 12.39
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: unify params",
+      "seconds": 0.95
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: worklist",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 5.56
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 6.15
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.24
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: class passes",
+      "seconds": 12.03
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 2: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 2: unify params",
+      "seconds": 0.95
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: views",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: tests",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing passes (views after helper harvest)",
+      "seconds": 0.03
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "stamp effects",
+      "seconds": 0.06
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "analyze",
+      "seconds": 404.03
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.11
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.19
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing passes (initial)",
+      "seconds": 0.49
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 0: harvest returns",
+      "seconds": 0.06
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 0: unify params",
+      "seconds": 0.74
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 0: worklist",
+      "seconds": 12.18
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 0: class passes",
+      "seconds": 0.27
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 1: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 1: unify params",
+      "seconds": 0.96
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 1: worklist",
+      "seconds": 1.68
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 1: class passes",
+      "seconds": 0.27
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 2: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 2: unify params",
+      "seconds": 0.82
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 2: worklist",
+      "seconds": 0.15
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 2: class passes",
+      "seconds": 0.28
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 3: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 3: unify params",
+      "seconds": 0.77
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 3: worklist",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 3: class passes",
+      "seconds": 0.28
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 4: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 4: unify params",
+      "seconds": 0.74
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 4: worklist",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 4: class passes",
+      "seconds": 0.28
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 5: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq production 5: unify params",
+      "seconds": 0.75
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: views",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: tests",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing passes (views after fixpoint)",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "unify params (after views)",
+      "seconds": 0.48
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "round 1: tests",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "round 1: unify params (tests)",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 0: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 0: unify params",
+      "seconds": 0.75
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 0: worklist",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 0: class passes",
+      "seconds": 0.28
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: unify params",
+      "seconds": 0.75
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: worklist",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: models",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers A",
+      "seconds": 0.07
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: controllers B",
+      "seconds": 0.12
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: concern splice",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: library",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 1: class passes",
+      "seconds": 0.27
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 2: harvest returns",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "sccq absorb 2: unify params",
+      "seconds": 0.74
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: constants",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: views",
+      "seconds": 0.01
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing: tests",
+      "seconds": 0.0
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "typing passes (views after helper harvest)",
+      "seconds": 0.02
+    },
+    {
+      "peak_rss_mb": 43579,
+      "phase": "stamp effects",
+      "seconds": 0.05
+    },
+    {
+      "peak_rss_mb": 44925,
+      "phase": "diagnose",
+      "seconds": 0.26
+    }
+  ],
+  "wall_seconds": 455.8250410000328
+}

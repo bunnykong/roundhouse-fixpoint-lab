@@ -1,0 +1,76 @@
+{
+  "baseline": "38403140379cd69759b0fe6247c6a8c4a48a37a9",
+  "shared_tests": 5209,
+  "different": [],
+  "missing": [],
+  "added": [
+    [
+      "tests/warm_check.rs",
+      "a_changed_constant_uncovering_an_unchanged_body_matches_cold"
+    ],
+    [
+      "tests/warm_check.rs",
+      "a_shadow_difference_fails_and_does_not_replace_the_cache"
+    ],
+    [
+      "tests/warm_check.rs",
+      "adding_a_method_invalidates_a_recorded_missing_lookup"
+    ],
+    [
+      "tests/warm_check.rs",
+      "cache_guards_do_not_add_scheduler_dependencies"
+    ],
+    [
+      "tests/warm_check.rs",
+      "chain_body_edit_matches_cold_and_records_each_evaluation"
+    ],
+    [
+      "tests/warm_check.rs",
+      "deep_bodies_can_load_their_persisted_evaluations"
+    ],
+    [
+      "tests/warm_check.rs",
+      "default_parameter_and_body_evaluations_replay_separately"
+    ],
+    [
+      "tests/warm_check.rs",
+      "deleting_a_method_cannot_replay_its_write"
+    ],
+    [
+      "tests/warm_check.rs",
+      "deleting_a_seed_from_a_cycle_matches_cold"
+    ],
+    [
+      "tests/warm_check.rs",
+      "moving_a_body_keeps_its_hash_and_remaps_diagnostics"
+    ],
+    [
+      "tests/warm_check.rs",
+      "phase_profiling_preserves_replay_and_cold_comparison"
+    ],
+    [
+      "tests/warm_check.rs",
+      "record_fields_named_like_wire_markers_keep_their_types"
+    ],
+    [
+      "tests/warm_check.rs",
+      "repeated_method_definitions_keep_distinct_writer_and_site_keys"
+    ],
+    [
+      "tests/warm_check.rs",
+      "warm_without_a_shadow_is_rejected"
+    ]
+  ],
+  "passed": 4984,
+  "failed": 3,
+  "ignored": 236,
+  "baseline_passed": 4970,
+  "baseline_failed": 3,
+  "baseline_ignored": 236,
+  "failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+    "spinel_renders_the_same_page"
+  ],
+  "equal_failures": true
+}

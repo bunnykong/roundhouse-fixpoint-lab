@@ -1,0 +1,35 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--bin",
+    "roundhouse"
+  ],
+  "head": "d9ec78c31db361db8818b13153e5ddddee484c57",
+  "index_tree": "8dab26db49ac9d9e723721139bae515899f47c10",
+  "cwd": "$PROFILE/rh",
+  "started_utc": "2026-10-10T16:24:42.165783+00:00",
+  "cargo_build_jobs": 4,
+  "cargo_target_dir": "$PROFILE/target",
+  "env": {
+    "PATH": "/opt/homebrew/opt/python@3.12/libexec/bin:$PROFILE/host-tools/bin:$USER_DIR/.rbenv/versions/3.4.4/bin:$USER_DIR/.rbenv/shims:$USER_DIR/.rbenv/bin:$USER_DIR/.local/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/Caskroom/codex/0.162.1/codex-path:$USER_DIR/.codex/tmp/arg0/codex-arg0YMvXbT:$USER_DIR/.grok/bin:$USER_DIR/.cargo/bin:$USER_DIR/.orbstack/bin",
+    "CARGO_HOME": "$PROFILE/cargo-home",
+    "CARGO_INCREMENTAL": "0",
+    "TMPDIR": "$PROFILE/tmp",
+    "RBENV_VERSION": "3.4.4",
+    "GEM_HOME": "$PROFILE/gems",
+    "GEM_PATH": "$PROFILE/gems:$USER_DIR/.rbenv/versions/3.4.4/lib/ruby/gems/3.4.0",
+    "DYLD_LIBRARY_PATH": "$PROFILE/lib/openexr:$PROFILE/lib/openjph",
+    "SPINEL": "$TOOLCHAINS/bin/spinel",
+    "RUST_TEST_THREADS": "1"
+  },
+  "worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "log": "logs/release-build.log",
+  "exit": 0,
+  "elapsed_seconds": 74.43276983301621,
+  "finished_utc": "2026-10-10T16:25:56.613022+00:00",
+  "binary_sha256": "f8491bd0094efe849422cda9988bca6d13a4f0ee90526d5562b9e86beedd4c1c",
+  "binary": "$PROFILE/target/release/roundhouse"
+}
