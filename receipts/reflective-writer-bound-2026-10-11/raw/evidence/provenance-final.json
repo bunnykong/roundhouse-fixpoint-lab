@@ -1,0 +1,191 @@
+{
+  "candidate_added_files": [],
+  "candidate_patch": "$EXPERIMENT/evidence/provenance-final-candidate.patch",
+  "candidate_patch_sha256": "9423c204468e3c658e8588acd056e732ba8f94fb850551c598ff937bd07ab705",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "RBENV_VERSION": "4.0.7",
+    "TMPDIR": "$EXPERIMENT/week/tmp",
+    "WEEK": "$EXPERIMENT/week"
+  },
+  "executable_sha256": {
+    "$EXPERIMENT/week/bound/base/target-laws/debug/deps/roundhouse-ade61decbfdea4eb@5b27f3ea751109611ddbd3b63541aa14a2c8b37668899717968e0c6987fff8b4": {
+      "path": "$EXPERIMENT/week/bound/base/target-laws/debug/deps/roundhouse-ade61decbfdea4eb",
+      "receipts": [
+        "reflect-before.json",
+        "batch-before.json",
+        "bound-before.json",
+        "default-library-control.json"
+      ],
+      "sha256": "5b27f3ea751109611ddbd3b63541aa14a2c8b37668899717968e0c6987fff8b4",
+      "source": "captured at execution"
+    },
+    "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/analyze-3b2753bf2db93037@58b512419fae62a6ff1bb5eb1443a4d75e6e20c0630ba4955c79d36e0231af93": {
+      "path": "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/analyze-3b2753bf2db93037",
+      "receipts": [
+        "reflective-integration.json"
+      ],
+      "sha256": "58b512419fae62a6ff1bb5eb1443a4d75e6e20c0630ba4955c79d36e0231af93",
+      "source": "supplemental capture of unchanged integration executable"
+    },
+    "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/roundhouse-ade61decbfdea4eb@1187ee9e62ec14b39a5f71ff53d4962268292aad42ab7bd88f1f36b5523ff6ca": {
+      "path": "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/roundhouse-ade61decbfdea4eb",
+      "receipts": [
+        "entrances.json",
+        "default-library.json",
+        "bound-after.json",
+        "partitions.json",
+        "membership-canaries.json",
+        "batch-after.json",
+        "reflect-after.json"
+      ],
+      "sha256": "1187ee9e62ec14b39a5f71ff53d4962268292aad42ab7bd88f1f36b5523ff6ca",
+      "source": "captured at execution"
+    },
+    "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/roundhouse-ade61decbfdea4eb@b923358ff549375f864caa10bb2882a0b2e6ee47ea3a6692e8cae1a79eb3f26f": {
+      "path": "$EXPERIMENT/week/bound/candidate/target-laws/debug/deps/roundhouse-ade61decbfdea4eb",
+      "receipts": [
+        "reflect-after-final.json",
+        "entrances-final.json",
+        "partitions-final.json",
+        "batch-after-final.json",
+        "default-library-final.json",
+        "membership-canaries-final.json",
+        "bound-after-final.json"
+      ],
+      "sha256": "b923358ff549375f864caa10bb2882a0b2e6ee47ea3a6692e8cae1a79eb3f26f",
+      "source": "captured at execution"
+    }
+  },
+  "readonly_dependency_sha256": {
+    "$EXPERIMENT/RESULT.md": "a6c7d6b503959ebfc256a7e853bca2fef19a1d19450480df14ba8f7f0e1c8596",
+    "$EXPERIMENT/week/sound/adapter/component_gate.py": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+    "$EXPERIMENT/week/sound/adapter/export.py": "9ae3ed0c8609c20bc2ce14ee31ccd872203a293d2a44b39eafa6feb036e0c28c",
+    "$EXPERIMENT/week/lab/receipts/writer-laws/recompute.py": "9ef6aa61f89076732173cc4310e6d44a9d0371e8e25ad30ccda618b77f9d834f",
+    "$WORKSPACE/phase2/writer-laws-writer-laws/README.md": "be7fb40d92bfa6a55802d26a14932edf016fa350be10e0a3cfff72c2f5e70a0e",
+    "$WORKSPACE/phase2/launch/CONFLICTS.md": "957a2c312960b9d3d1282e6e7052398285c04aa3ea917664705047db32ea1348",
+    "$WORKSPACE/phase2/launch/LAUNCH-BRIEF.md": "7c6f4098458f564fa7097ce6c9aa46ad25debceaadab91714a8ae1fd95faa78d",
+    "$WORKSPACE/workshop/flock.py": "b7a7a78cadf649de767c0a2d6628be2591060d51e46c7651790994f50e87ff67"
+  },
+  "receipt_branch": "reflective-writer-bound-writer-bound",
+  "runner_sha256": {
+    "capture_provenance.py": "5490b0e8c354595bfa69a7eca4b0fc41629ad0c67b337bbcad1a9d01034ae2a7",
+    "cleanup.py": "578bec77f73f10e5fed7b2b10645f67be4cafcc5fc7a34fce3199993db8f0644",
+    "finalize.sh": "fcf535cd006b0bad5d9f24bd0e3975960bfbc3d73cda1a304b8937f633ba00b4",
+    "run_after.sh": "2560a0563bfa2312c03eb48f585a584dccfcd9e0727736c230f27a7e4f541ae1",
+    "run_before.sh": "931f5a413ae7aab4a716e557082be4e4634795d03e9a3864a8b9179965c52157",
+    "run_laws.py": "75c568755a7c733dffce5f10b7ebbaf2a72abb66159f172753da9e195bdcc720",
+    "setup.sh": "98791eb5e8675e13363e477a780cd46a1a5ebb046c63f76808bf6c1b88a29044",
+    "verify_move5.py": "9380fa16e286163e3dcab3e6feb17dc4a634aa574faa75e2212fe044a3a77169"
+  },
+  "source_branch": "reflective-writer-bound-writer-bound",
+  "sources": {
+    "base": {
+      "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+      "head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+      "path": "$EXPERIMENT/week/bound/base",
+      "status": "",
+      "tracked_content_sha256": "5698e078d61fcaf8ffec630ec72ed5c648267c243c9a7eedf4e94ae2cbc22535",
+      "tree": "be46c4bb68f570e13fd152c9dcc30c07552f093f"
+    },
+    "candidate": {
+      "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+      "head": "7a7004c27a6fa4ddb0806ca9663b6d19c5a8015f",
+      "path": "$EXPERIMENT/week/bound/candidate",
+      "status": "",
+      "tracked_content_sha256": "30e3b4aed2f91f102701aff643da3f174f1b8cce1c9f66ba7a2106a0bf0c8654",
+      "tree": "f5e422cad85f0c5f978a77319fa0c8ff660de889"
+    },
+    "input_harness": {
+      "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+      "head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+      "path": "$WORKSPACE/phase2/writer-laws-writer-laws/rh",
+      "status": "",
+      "tracked_content_sha256": "5698e078d61fcaf8ffec630ec72ed5c648267c243c9a7eedf4e94ae2cbc22535",
+      "tree": "be46c4bb68f570e13fd152c9dcc30c07552f093f"
+    },
+    "lab": {
+      "cargo_lock_sha256": null,
+      "head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+      "path": "$EXPERIMENT/week/lab",
+      "status": "",
+      "tracked_content_sha256": "b512f201c07e7fcf97e26e69dd19808895c2a83af24e2c41cc63b3582535e75c",
+      "tree": "5ea80fbfb0bc3105c4bed5ce1c07fae189bbadf3"
+    }
+  },
+  "toolchains": [
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "Python 3.9.6\n"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "cargo 1.98.1 (797e8a9bc 2026-08-05)\n"
+    },
+    {
+      "command": [
+        "rustc",
+        "+1.98.1",
+        "-Vv"
+      ],
+      "exit": 0,
+      "output": "rustc 1.98.1 (48a229cea 2026-09-01)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: aarch64-apple-darwin\nrelease: 1.98.1\nLLVM version: 22.1.8\n"
+    },
+    {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "git version 2.50.1 (Apple Git-155)\n"
+    },
+    {
+      "command": [
+        "jq",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "jq-1.7.1-apple\n"
+    },
+    {
+      "command": [
+        "bash",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)\nCopyright (C) 2007 Free Software Foundation, Inc.\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "-r",
+        "prism",
+        "-e",
+        "puts RUBY_DESCRIPTION; puts Prism::VERSION"
+      ],
+      "exit": 0,
+      "output": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]\n1.9.0\n"
+    },
+    {
+      "command": [
+        "ruby",
+        "-r",
+        "prism",
+        "-e",
+        "puts RUBY_DESCRIPTION; puts Prism::VERSION"
+      ],
+      "exit": 0,
+      "output": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]\n1.8.1\n"
+    }
+  ]
+}

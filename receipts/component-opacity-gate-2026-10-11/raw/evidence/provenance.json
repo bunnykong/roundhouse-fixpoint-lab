@@ -1,0 +1,250 @@
+{
+  "agent": "component-opacity-gate",
+  "baseline_adapter_sha256": {
+    ".gitignore": "fc27896797982b9b543c874b9167011cd4dac9113ea0d8d00562a188964072bd",
+    "Cargo.lock": "cb479c924ed62749946a67ccdfd15d901944f027db353f1f4f82ef5e0bbe2589",
+    "Cargo.toml": "992c223643546e850804d4b3e0a2860e58d80b77548e23227a5ccf3c0bce2b7f",
+    "README.md": "11afc39cd95d8dcbda229ecc928f1688ecd349cee99c2d1e66cf922498dc6b8e",
+    "app_record.rb": "8b5cd53fd7c32b6e27616c5464dbc364ac2bc506bbf4cbaa01431f2299740390",
+    "build.py": "954fa232bedcbb3f39a152f84ce0f18bb5657afe146cd879650da8aec83a2c22",
+    "compare.py": "6e9f63a745a8a690ce51c62d7ccb360ee1a6842bc9cfff2bc4efdc25894fd539",
+    "docker_session.py": "7e41758ae5de939d9d43c6dc9fcb6682be8918883fcb9cabaad1bd5b5459a7dc",
+    "export.py": "9ae3ed0c8609c20bc2ce14ee31ccd872203a293d2a44b39eafa6feb036e0c28c",
+    "f17-graph-observer.patch": "7d9d6820428c046903d4d01e81c3e3331b66929c2e55de1fe372a92ba8379a4e",
+    "oracle_ext.py": "01928a32b6c803fded3a76274331612c2a883a19bc765b5e085c1d52a7b90514",
+    "prepare_slots.rb": "c534bedfca36f495c062bee589e69040beae882a01548b1f944c1fecaabfc195",
+    "provenance.json": "66ce318fb6a2ec4f845655a3b1f6dde9c87acb3ed2569f7312badc79e1d7a09d",
+    "s3-graph-observer.patch": "e08868a1cc6c43da916e6d7be21d65ad76872f3a322e13cd4cd86275bbb78daa",
+    "s3_graph_observer.rs": "a3957809464ef8939a7ede482b9e98643584a61cb65589fe2f30d5a8fe5d004f",
+    "seed.rb": "1af9307f27e154a7f1bd3b0e0fbbef2be0e9912b715d9da3aa9c11e30747b96a",
+    "sound_types.rs": "751c572210dbe47bd0a2d0b6fbecb8bdb0bc3ff20f20e2265c647f4c658f49e6",
+    "test_contract.py": "4bfdf17f9321a462172b4288c9a9e2ca5378ab2cf12e7140872b9f24288400d1"
+  },
+  "branch": "component-opacity-gate-soundness-gate",
+  "candidate_files_sha256": {
+    "capture_provenance.py": "80839eec476c8ab2dc61d84a92e47d303a139f8cc11d40aaab896aecc00befae",
+    "run_after_controls.sh": "7aa4ad3055f3016886e40c80ea41f12d035570124f1c6dfd89635fbe9799e295",
+    "setup.sh": "99df2de637f20b263ec0611269278b6fd8e2d3afc502080250142bf7c9243198",
+    "week/sound/adapter/.gitignore": "fc27896797982b9b543c874b9167011cd4dac9113ea0d8d00562a188964072bd",
+    "week/sound/adapter/Cargo.lock": "cb479c924ed62749946a67ccdfd15d901944f027db353f1f4f82ef5e0bbe2589",
+    "week/sound/adapter/Cargo.toml": "992c223643546e850804d4b3e0a2860e58d80b77548e23227a5ccf3c0bce2b7f",
+    "week/sound/adapter/README.md": "11afc39cd95d8dcbda229ecc928f1688ecd349cee99c2d1e66cf922498dc6b8e",
+    "week/sound/adapter/app_record.rb": "8b5cd53fd7c32b6e27616c5464dbc364ac2bc506bbf4cbaa01431f2299740390",
+    "week/sound/adapter/build.py": "954fa232bedcbb3f39a152f84ce0f18bb5657afe146cd879650da8aec83a2c22",
+    "week/sound/adapter/compare.py": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+    "week/sound/adapter/component_gate.py": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+    "week/sound/adapter/docker_session.py": "7e41758ae5de939d9d43c6dc9fcb6682be8918883fcb9cabaad1bd5b5459a7dc",
+    "week/sound/adapter/export.py": "9ae3ed0c8609c20bc2ce14ee31ccd872203a293d2a44b39eafa6feb036e0c28c",
+    "week/sound/adapter/f17-graph-observer.patch": "7d9d6820428c046903d4d01e81c3e3331b66929c2e55de1fe372a92ba8379a4e",
+    "week/sound/adapter/oracle_ext.py": "01928a32b6c803fded3a76274331612c2a883a19bc765b5e085c1d52a7b90514",
+    "week/sound/adapter/prepare_slots.rb": "c534bedfca36f495c062bee589e69040beae882a01548b1f944c1fecaabfc195",
+    "week/sound/adapter/provenance.json": "66ce318fb6a2ec4f845655a3b1f6dde9c87acb3ed2569f7312badc79e1d7a09d",
+    "week/sound/adapter/s3-graph-observer.patch": "e08868a1cc6c43da916e6d7be21d65ad76872f3a322e13cd4cd86275bbb78daa",
+    "week/sound/adapter/s3_graph_observer.rs": "a3957809464ef8939a7ede482b9e98643584a61cb65589fe2f30d5a8fe5d004f",
+    "week/sound/adapter/seed.rb": "1af9307f27e154a7f1bd3b0e0fbbef2be0e9912b715d9da3aa9c11e30747b96a",
+    "week/sound/adapter/sound_types.rs": "751c572210dbe47bd0a2d0b6fbecb8bdb0bc3ff20f20e2265c647f4c658f49e6",
+    "week/sound/adapter/test_contract.py": "4bfdf17f9321a462172b4288c9a9e2ca5378ab2cf12e7140872b9f24288400d1",
+    "week/sound/scripts/fixture_check.py": "8dcc8ea807d5f1a39fbcc516ea62a05b00b6395ff0712ba00d0737e6e22d7909",
+    "week/sound/scripts/opacity_control.py": "c04722afe1e7500193746164613e66597dccb75690008bc61a51fe2fb610b080",
+    "week/sound/scripts/test_component_gate.py": "d38d58135e27b11fa76c1b80801139a0cc3999ac2fde82601af015c10112efe4",
+    "week/sound/scripts/verify_move1.py": "7191c3c027a30582cf3189d6d5c704d4a0f123015ac729e8823b8ba6b21a22ef"
+  },
+  "clones": {
+    "lab": {
+      "head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+      "status": ""
+    },
+    "sound-source": {
+      "head": "48c652873a88d8bc291df1d606ad1464f9168ae3",
+      "status": ""
+    }
+  },
+  "fresh_runtime_execution": false,
+  "frozen_receipt_sha256": {
+    "comparisons/E-main.json": "2af7a6552e33df91c7dbec66775191c5262773b26de4c8ac575370a37c794f5a",
+    "comparisons/E-s3-instrumented.json": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+    "comparisons/E-s3.json": "7d12dd73fae083de1f07c02c0f894033f2c43723d3ccc9bef5edc3d3db01018b",
+    "comparisons/I-main.json": "c68c46fd927dba8e5b138fbfc03e802746dd9660f20393b9ad2decfdb8c896c3",
+    "comparisons/I-s3-instrumented.json": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+    "comparisons/I-s3.json": "94a999aa6c921460b56c390294ee5046af3221b5c5694976881dfb1aaa8113c8",
+    "comparisons/P-main.json": "3928f2592e3b85a5ccb67830ff44207ab6a022fd6676584a0a94d336dbd4025a",
+    "comparisons/P-s3-instrumented.json": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+    "comparisons/P-s3.json": "f9589f6fdc874471fa2f35e84e8a151f0d6175b1d9cb3936054ae946c67ae5f3",
+    "evidence/coverage.json": "da04927e6f6a662176b529766e77a1a9c37c0b18c4d786f2181ddb61bb4cade5",
+    "evidence/discourse-observer-parity.json": "71c3645e3adef2a17de8cb86550f1ad61254155292eeed74adcabe7a2b1cd99d",
+    "evidence/earlier-graph-observer.patch": "5475af3acb9e4d947fc614dfd8e4b5d75b4535d30cb5bbcf01acc6401f24a202",
+    "evidence/f17-adapter-historical-match.json": "a2f2878a23fceff2274f0725d65810c8f6c45ccf00c9b1bb11def4482174df1c",
+    "evidence/f17-live-adapter-match.json": "60b3157d12ea9469f468d7a33c7fa6eb94669b9d024070dc117f450f50e6df35",
+    "evidence/f17-recomputed.json": "4d1982f8e1dd6a464a66af4ac0e7c6e8eec5fdb9ffaac0052df7421bcf4642b4",
+    "evidence/runtime-dependencies.json": "92be69bc63f0cd37afe18a82c032114cef265ad928d21520708792e52c5b6371",
+    "exports/main/categories.json": "94c59deef5bba9857fc0323621b32282dbb6a67f2c32297e0c71a2c65e314e5b",
+    "exports/main/final.rbs": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+    "exports/main/graph.rbs": "d4a212403247757279e87f1eec379762e8c06d758d659fd703d22d7845c46628",
+    "exports/main/raw.json": "e7cb5ad1ce3f763217b9c032c35e2ec3e6f1a4bf1d16c12e40bcbf93ae2bce3d",
+    "exports/main/receipt.json": "efa163cba63aea7f8dacd24d09d0dcbf6ba074ba7353cd1926f0ea96190a4b23",
+    "exports/main/selection.json": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+    "exports/main/stderr.txt": "fb207584486df5141b69e97a124355be095f0554f3e60928858412370eac6ed6",
+    "exports/main/stdout.json": "3c589f852f5ef0c2c2fe3d66511464c3d9ad5f12d94ca0c7e7fc9cd52f76d795",
+    "exports/main/telemetry.json": "10e87de0a37b5a9f2811e1cb94af61d0e6437a1ed85c0f8b0f700465c706f93c",
+    "exports/s3-instrumented/categories.json": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+    "exports/s3-instrumented/final.rbs": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+    "exports/s3-instrumented/graph-categories.json": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+    "exports/s3-instrumented/graph-raw.json": "f1d18edeac48f81cb053f97dad7f7182e174858300a2a5456aa95b6a0faea45d",
+    "exports/s3-instrumented/graph.rbs": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+    "exports/s3-instrumented/raw.json": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+    "exports/s3-instrumented/receipt.json": "4731f5166567f96781de6bc7a98b57f6541ce2fdb3636d8b48899fb9df9d6a1e",
+    "exports/s3-instrumented/selection.json": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+    "exports/s3-instrumented/stderr.txt": "204bfef0a63d3cead1572e25bf79a4643db48acad779383d6026051ce87ce7ca",
+    "exports/s3-instrumented/stdout.json": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+    "exports/s3-instrumented/telemetry.json": "347006f355fbcff30caca379123de7db75a67ddd72e2a0f8b1e559eb00938a6b",
+    "exports/s3/categories.json": "0f51a12eb8301e4289a5d14f48f095767a01b02e566f308ee9daa6b5cf8b6628",
+    "exports/s3/final.rbs": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+    "exports/s3/graph.rbs": "2113eb96785b37d00de1bea2a8cc5ee54da8739b36452b313a723fe8e63f69a8",
+    "exports/s3/raw.json": "492cdcb3a0bf86eb141ea478466ce927148c79efddd9f70da034bc8177af5e2c",
+    "exports/s3/receipt.json": "c8806f3719d1aebe874ff3231537294b93ff61e8cfed2a446b82a8f954b43e1e",
+    "exports/s3/selection.json": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+    "exports/s3/stderr.txt": "bb9d71d514fcc3d6dbf93044bf885e83fdea5081a024bdc527ddfa473ccabb7b",
+    "exports/s3/stdout.json": "a0b87fa38e5ab2ea7c07962002e9f2d6f92de8ca6813256f857f322180ea45e7",
+    "exports/s3/telemetry.json": "582d373cbb49d55293da9abbb0431dcb112e8fa725101c74f8790443b342bc4a",
+    "runtime/Gemfile.lock.patch": "fc599be9fe0307529cba67f8e86d4a858ba1bb401ef719788f9cbf61aaabb397",
+    "runtime/Gemfile.patch": "a779d2ac0f6e862930f68664eef728eaa3ca5a35cff5080fd95cdf625b95e6ff",
+    "selection.json": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+    "sessions/E/image-digests.log": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+    "sessions/E/receipt.json": "15d0c7120e8639622eb3443d0276e0c625f5457aa47df6678a3e68bb1aa5e47a",
+    "sessions/E/rspec.log": "777ac0c96682897686a3b5ba24ffc033ff54c148b4a8101efef528dcf01600e0",
+    "sessions/I/image-digests.log": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+    "sessions/I/receipt.json": "2a2674e2316fa92bd018b338ebc2570da86dcb745541ff615e2148ea38a71205",
+    "sessions/I/rspec.log": "51b86c203329ec24aff93a2826e6e2bde8fb316459a77e12ac9572efc8756313",
+    "sessions/P-repeat/image-digests.log": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+    "sessions/P-repeat/receipt.json": "a4f9d566f246bab096b1d07c0ae53b5f3a21c0af81a25914981aebf13bc374b1",
+    "sessions/P-repeat/rspec.log": "3f738d13c088c4a587238a1e86221228fc86f4dc037dc90034bfd00fa7115a90",
+    "sessions/P/image-digests.log": "130eb4aa007e2054975dd15603f4590f7c78edf8178f9a307c91ffb45ebeb467",
+    "sessions/P/receipt.json": "97876b55e005c68cdab3347c155cb82b293ff86e184eea16899b1c9b480f37cc",
+    "sessions/P/rspec.log": "2f518c5a716b9aa52720b974b5bf9223554608b9ff25a1f1391697868d732641",
+    "slots.json": "0d4ecf082ef2ac1fbf439a5c2eb22376c6767a847db78553d894b3bf85a9c9fc",
+    "traces/E.jsonl": "b2d18602f0d64213eb0155284100b41e8815c8eb4d4931f6a6c221003f48f51c",
+    "traces/I.jsonl": "84768aa7a8f6c3d9dfa469d1c8321ad31e437dfd32e6d89a14e32f1e2e1fced5",
+    "traces/P-repeat.jsonl": "9c9356ee42e564b1f40d51da41a7e17a9b8fb6c08ffee9a630474cc7f4cc821c",
+    "traces/P.jsonl": "98849b903ef72b9ce1edf109c99194db498f19d254fc75e71480e228e49b15f0"
+  },
+  "git_root": "$EXPERIMENT",
+  "inherited_candidate_flags": {},
+  "kind": "saved replay and synthetic export/checker controls",
+  "native_build": false,
+  "patch_sha256": "e44815317fc9bbef84d951a555bb212353149d8190840a5ace4aae06e80e045f",
+  "recorded_compiler_input_flags_and_binaries": {
+    "arms": {
+      "main": {
+        "binary_sha256": "6c4bc7111c188fe68d31c92d73e0a474394d34e7d8018ccfef5b4d361f547ccb",
+        "flags": {
+          "RH_FIXPOINT_STATS": "1",
+          "RH_FOLD_PRINT": "1",
+          "SOUND_MISSING": "1"
+        },
+        "graph_stage": "final-only",
+        "loops": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "observation_overlay_sha256": null,
+        "source": "c210f226346b462214866b5756b457ad53f647b1"
+      },
+      "s3": {
+        "binary_sha256": "d677f637b0d273db5eadc62a8e8fb943438b030a16e4170024360c76b4147934",
+        "flags": {
+          "RH_BRK_ALLARMS": "1",
+          "RH_FIXPOINT_STATS": "1",
+          "RH_FOLD": "1",
+          "RH_FOLD_JOIN": "1",
+          "RH_FOLD_PRINT": "1",
+          "RH_FOLD_SLOTS": "1",
+          "RH_FOLD_TAIL": "1",
+          "RH_SCHED": "sccq",
+          "SOUND_MISSING": "1"
+        },
+        "graph_stage": "final-only",
+        "loops": {
+          "absorb": {
+            "end": "settled",
+            "round": 2
+          },
+          "production": {
+            "end": "settled",
+            "round": 5
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "observation_overlay_sha256": null,
+        "source": "38403140379cd69759b0fe6247c6a8c4a48a37a9"
+      },
+      "s3-instrumented": {
+        "binary_sha256": "859e1aacded9a830693b3a9d81996e41e5428fc182c686fc91a9ac8a9c9264ac",
+        "flags": {
+          "RH_BRK_ALLARMS": "1",
+          "RH_FIXPOINT_STATS": "1",
+          "RH_FOLD": "1",
+          "RH_FOLD_JOIN": "1",
+          "RH_FOLD_PRINT": "1",
+          "RH_FOLD_SLOTS": "1",
+          "RH_FOLD_TAIL": "1",
+          "RH_SCHED": "sccq",
+          "SOUND_MISSING": "1",
+          "SOUND_SELECTION": "./session/discourse/selection.json"
+        },
+        "graph_stage": "before-fold-expansion",
+        "loops": {
+          "absorb": {
+            "end": "settled",
+            "round": 2
+          },
+          "production": {
+            "end": "settled",
+            "round": 5
+          },
+          "views_and_tests": {
+            "end": "settled",
+            "round": 1
+          }
+        },
+        "observation_overlay_sha256": "5475af3acb9e4d947fc614dfd8e4b5d75b4535d30cb5bbcf01acc6401f24a202",
+        "source": "38403140379cd69759b0fe6247c6a8c4a48a37a9"
+      }
+    },
+    "condition": "sound-traces-20261010-c210f226",
+    "discourse": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "discourse_tag": "v2026.9.0",
+    "discourse_tree": "489a5c0b678235dd773e6274bf97f6e8879fee8d",
+    "f17_condition": "settle-sound-published-v1",
+    "f17_corrected_s3": "96cdea9a1e6e6bb32a267a247d72f99b98a50b70",
+    "f17_main": "1ce9969564303ebe1bf5b8ca3304f982272079c1",
+    "lab": "56255dd54bed3815b4774282ae92380524b13136",
+    "public_adapter": "48c652873a88d8bc291df1d606ad1464f9168ae3",
+    "public_adapter_branch": "sound-exporter",
+    "public_adapter_path": "tools/sound-exporter",
+    "recorded_adapter": "6b55749cf12a9299636b5f53957f0a2bb2ec1544",
+    "ruby": "4.0.7",
+    "rust": "1.98.1",
+    "selected_source_sha256": "8085676c5a125751d2b99b23794712cad6435674a3363fdb942a15d1d82d93f6",
+    "selection_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9"
+  },
+  "source_condition": "sound-traces-20261010-c210f226",
+  "toolchains": [
+    "Python 3.9.6",
+    "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "cargo 1.98.1 (797e8a9bc 2026-08-05)",
+    "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+    "jq-1.7.1-apple",
+    "git version 2.50.1 (Apple Git-155)"
+  ]
+}

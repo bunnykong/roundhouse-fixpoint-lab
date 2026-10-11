@@ -1,0 +1,24 @@
+{
+  "base": {
+    "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57",
+    "branch": "",
+    "git_status": "",
+    "binary_sha256": "56f6d39a35c1c3e44e916be2520981348518f372a931d6611853e89f6d62f465",
+    "binary_version": "roundhouse 2026.9.18 (d9ec78c3)"
+  },
+  "a": {
+    "source_head": "1fbfee1a8b1b518028176ca48aa2a912f3d31e23",
+    "branch": "warm-fingerprint-components-warm",
+    "git_status": "",
+    "binary_sha256": "a54791443c64f1940f1133713df1134ba0db1a6d9a926185c1dc503cadebf14e",
+    "binary_version": "roundhouse 2026.9.18 (1fbfee1a)"
+  },
+  "candidate_patch_sha256": "7d1b118b54fc7fa5f95aa91c9f0d16a5925bf7c30355511dd29694c376f3cfd7",
+  "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "modified_helpers": {
+    "week/warm/scripts/replay_pairs.py": "6cc81d0918d5bb1639fa4732015054a3c82568047b371439e2f113a1b77ccf4c",
+    "week/warm/scripts/saved_analysis.py": "aa24bdb3a18ee0c956504ea40d58e3ce4bc69463c85fff91794261aa57a33b38",
+    "week/warm/scripts/session.sh": "67785aa0ad86059c7e55ef1b37a0b50ab1ea0cb6ea78bae9b234e0a78b394571"
+  },
+  "author_commit": "1fbfee1a8b1b518028176ca48aa2a912f3d31e23\n268838774+bunnykong@users.noreply.github.com\n268838774+bunnykong@users.noreply.github.com\nReuse byte-identical warm fingerprint components\n\nSplit expression/context encoding, registry keys, recursive metadata,\nextra construction, canonical assembly, and hashing. Reuse registry keys\nby exact membership and metadata/extra by audited mutation generations.\nKeep the original canonical bytes, guard channel, scheduler reads, trace\norder, and mandatory cold shadow. RH_WARM_FP_AUDIT fails on any byte,\nhash, or guard disagreement and reports complete comparison counts.\n\nAdd direct mutation canaries and audit the existing warm replay cases.\nSix native canaries and sixteen warm_check cases pass. All 1,139 shared\nflags-off library outcomes match the parent, including inherited failures.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\n"
+}

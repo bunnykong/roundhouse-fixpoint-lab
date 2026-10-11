@@ -1,0 +1,665 @@
+{
+  "added_source_sha256": {
+    "src/analyze/fixpoint_bound/writer_law_partitions.rs": "22bf1290008a12af75e17d654092ad54dc9f91eb67ec56f05688325cba83e14d"
+  },
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "b923358ff549375f864caa10bb2882a0b2e6ee47ea3a6692e8cae1a79eb3f26f"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "--",
+    "--nocapture",
+    "--test-threads=1"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/candidate",
+  "default": true,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/candidate/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 101,
+  "expected_exit": 101,
+  "integration": null,
+  "label": "default-library-final",
+  "log_sha256": "9eca96d3f1270423619c957a9796392f32bf91e1abad618a0e5829f7a0198119",
+  "properties": [
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_array_pushes"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_hash_index_writes"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_local_assignment_tys"
+    },
+    {
+      "checks": 19392,
+      "law": "finite-value-inclusion",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "reflective-entrances/complete-boundary"
+    },
+    {
+      "checks": 300,
+      "law": "plain-reflective-storage",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "reflective-entrances/complete-boundary"
+    },
+    {
+      "checks": 52,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 48,
+      "law": "within-limit-identity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation-and-duplicate",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/bound-once"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation-and-duplicate",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/bound-once"
+    },
+    {
+      "checks": 50,
+      "law": "bounded-storage",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set/bound-coverage"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "monotonicity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "collect_const_attr_writes"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "widen_hash_ivar_value/value-slot"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/plain"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "join_ivar_slot"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "unify_param_ty"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "param_ty_with_default"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fold_param_observations/small"
+    },
+    {
+      "checks": 1600,
+      "law": "commutativity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 1600,
+      "law": "duplicate-replay",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "pending-left",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 40,
+      "law": "pending-right",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 384000,
+      "law": "permutation",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    },
+    {
+      "checks": 64000,
+      "law": "regrouping",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set"
+    }
+  ],
+  "results": [
+    {
+      "failed": 43,
+      "filtered": 0,
+      "ignored": 42,
+      "measured": 0,
+      "passed": 1082
+    }
+  ],
+  "selection": "ALL",
+  "source_diff_sha256": "74e6f7ab044091f12feb15dbb3761b6fc697e303f13c71affa3366565692806a",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "candidate"
+}

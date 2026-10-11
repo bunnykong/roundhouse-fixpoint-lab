@@ -1,0 +1,359 @@
+{
+  "additional_opacity_vs_plain": 0,
+  "closed_boundary_samples": 50,
+  "component_guard_sha256": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "control_condition": "writer-laws-20261010-c210f226",
+  "criteria": {
+    "independent_finite_values_retained": true,
+    "no_new_opacity_against_plain_bound": true,
+    "old_pairwise_failures_unchanged": true,
+    "plain_reflective_storage_equal": true,
+    "w53_remains_passing": true,
+    "w55_passes": true
+  },
+  "default_library_parity": {
+    "additional_failures": [],
+    "baseline": [
+      {
+        "failed": 43,
+        "filtered": 0,
+        "ignored": 42,
+        "measured": 0,
+        "passed": 1078
+      }
+    ],
+    "candidate": [
+      {
+        "failed": 43,
+        "filtered": 0,
+        "ignored": 42,
+        "measured": 0,
+        "passed": 1082
+      }
+    ],
+    "failure_names": [
+      "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+      "ide::tests::complete_at_offers_members_kwargs_and_ivars",
+      "ide::tests::def_headers_hover_and_reference",
+      "ide::tests::gap_report_attributes_ingest_gap_files_as_tool_coverage",
+      "ide::tests::gap_report_complete_when_every_hop_resolves",
+      "ide::tests::members_of_enumerates_columns_associations_and_finders",
+      "ide::tests::query_real_blog_end_to_end",
+      "ide::tests::references_empty_off_a_variable",
+      "ide::tests::references_finds_ivar_across_controller_actions",
+      "ide::tests::references_local_is_body_scoped",
+      "ide::tests::references_method_is_type_directed",
+      "ide::tests::related_files_walks_the_render_graph",
+      "ide::tests::traceroute_composes_route_filters_action_view_layout",
+      "ide::tests::traceroute_hops_stay_clean_when_the_chain_preloads",
+      "ide::tests::traceroute_marks_gated_out_filters_and_resolves_routes",
+      "ide::tests::type_at_reaches_class_body_dsl",
+      "lower::broadcasts::tests::model_without_broadcasts_lowers_to_empty",
+      "lower::broadcasts::tests::real_blog_article_broadcasts_to_prepend",
+      "lower::broadcasts::tests::real_blog_comment_has_broadcasts_to_and_commit_hooks",
+      "lower::model_to_library::accessor_surface::tests::selected_blog_ownership_matches_complete_materialization",
+      "lsp::tests::code_lens_traces_each_action_over_the_protocol",
+      "lsp::tests::completion_over_the_protocol",
+      "lsp::tests::hover_reports_inferred_type_over_the_protocol",
+      "mcp::tests::diagnostics_filters_by_severity_code_and_limit",
+      "mcp::tests::diagnostics_real_blog_has_no_errors",
+      "mcp::tests::diagnostics_reports_the_missing_preload_coverage_triple",
+      "mcp::tests::diagnostics_surfaces_uningested_view_templates",
+      "mcp::tests::initialize_reports_server_info_and_echoes_version",
+      "mcp::tests::notification_without_id_gets_no_response",
+      "mcp::tests::references_lists_ivar_uses",
+      "mcp::tests::related_files_follows_analyzed_edges_from_a_relative_path",
+      "mcp::tests::tools_list_advertises_every_tool",
+      "mcp::tests::trace_targets_lists_routes_and_narrows_by_controller",
+      "mcp::tests::traceroute_attributes_a_helper_n_plus_one_to_the_action",
+      "mcp::tests::traceroute_ends_a_redirecting_action_in_a_response_hop",
+      "mcp::tests::traceroute_misses_politely",
+      "mcp::tests::traceroute_returns_the_structured_chain_with_coverage",
+      "mcp::tests::type_at_resolves_a_string_in_class_body_dsl",
+      "mcp::tests::unknown_gem_surface_is_attributed_not_accused",
+      "mcp::tests::wont_lower_lowers_datetime_cleanly_and_bad_target_is_an_error",
+      "project::tests::a_stale_seed_file_is_replaced_not_preserved",
+      "project::tests::seed_sql_is_generated_from_the_apps_own_seeds",
+      "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+    ],
+    "green": false,
+    "source": "matched fresh-clone library runs; real-blog fixture absent in both arms"
+  },
+  "expected_plain_bound_opacity": 4,
+  "finite_boundary_witnesses": 3232,
+  "finite_membership_limits": [
+    "finite witness shapes, not exhaustive Ruby values",
+    "Record/Fn/Relation/SelfInstance not witnessed",
+    "nominal class identity only; generic interiors not checked",
+    "no actual application inference or S3 port"
+  ],
+  "inherited_properties": {
+    "bound/join_ivar_slot": [
+      {
+        "checks": 4116,
+        "law": "once-vs-per-pair",
+        "result": "FAIL",
+        "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped != Union[Array[Int], Untyped]",
+        "witness_nodes": 514,
+        "writer": "bound/join_ivar_slot"
+      },
+      {
+        "checks": 4116,
+        "law": "permutation/once",
+        "result": "PASS",
+        "witness": null,
+        "witness_nodes": null,
+        "writer": "bound/join_ivar_slot"
+      },
+      {
+        "checks": 4116,
+        "law": "regrouping/per-pair",
+        "result": "FAIL",
+        "witness": "(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped != Union[Array[Int], Untyped]",
+        "witness_nodes": 514,
+        "writer": "bound/join_ivar_slot"
+      }
+    ],
+    "bound/unify_param_ty": [
+      {
+        "checks": 4116,
+        "law": "once-vs-per-pair",
+        "result": "FAIL",
+        "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Int) => Union[Int, Untyped] != Int",
+        "witness_nodes": 513,
+        "writer": "bound/unify_param_ty"
+      },
+      {
+        "checks": 4116,
+        "law": "permutation/once",
+        "result": "PASS",
+        "witness": null,
+        "witness_nodes": null,
+        "writer": "bound/unify_param_ty"
+      },
+      {
+        "checks": 4116,
+        "law": "regrouping/per-pair",
+        "result": "FAIL",
+        "witness": "(Int; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Union[Int, Untyped] != Int",
+        "witness_nodes": 513,
+        "writer": "bound/unify_param_ty"
+      }
+    ],
+    "fixpoint_bound/boundary-universe": [
+      {
+        "checks": 52,
+        "law": "idempotence",
+        "result": "PASS",
+        "witness": null,
+        "witness_nodes": null,
+        "writer": "fixpoint_bound/boundary-universe"
+      },
+      {
+        "checks": 1,
+        "law": "pending",
+        "result": "PASS",
+        "witness": null,
+        "witness_nodes": null,
+        "writer": "fixpoint_bound/boundary-universe"
+      },
+      {
+        "checks": 48,
+        "law": "within-limit-identity",
+        "result": "PASS",
+        "witness": null,
+        "witness_nodes": null,
+        "writer": "fixpoint_bound/boundary-universe"
+      }
+    ]
+  },
+  "metrics": {
+    "entrances": [
+      {
+        "eligible_entrances": 300,
+        "finite_membership_checks": 19392,
+        "no_witness_samples": 6
+      },
+      {
+        "ineligible_controls": 8
+      }
+    ],
+    "membership-canaries": [
+      {
+        "membership_canaries": 6
+      }
+    ],
+    "partitions": [
+      {
+        "duplicate_round_differences": 548,
+        "finite_membership_checks": 418656,
+        "partition_differences": 2104,
+        "partition_round_schedules": 32928
+      }
+    ]
+  },
+  "partition_status": "known algebraic failure; no finite value omission witnessed",
+  "receipt_labels": {
+    "batch-after": "batch-after-final",
+    "batch-before": "batch-before",
+    "bound-after": "bound-after-final",
+    "bound-before": "bound-before",
+    "default-library": "default-library-final",
+    "default-library-control": "default-library-control",
+    "entrances": "entrances-final",
+    "membership-canaries": "membership-canaries-final",
+    "partitions": "partitions-final",
+    "reflect-after": "reflect-after-final",
+    "reflect-before": "reflect-before",
+    "reflective-integration": "reflective-integration"
+  },
+  "results": {
+    "batch-after": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 1166,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ]
+    },
+    "batch-before": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 1162,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ]
+    },
+    "bound-after": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 3,
+          "filtered": 1160,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 4
+        }
+      ]
+    },
+    "bound-before": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 2,
+          "filtered": 1160,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ]
+    },
+    "default-library": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 43,
+          "filtered": 0,
+          "ignored": 42,
+          "measured": 0,
+          "passed": 1082
+        }
+      ]
+    },
+    "default-library-control": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 43,
+          "filtered": 0,
+          "ignored": 42,
+          "measured": 0,
+          "passed": 1078
+        }
+      ]
+    },
+    "entrances": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 1165,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 2
+        }
+      ]
+    },
+    "membership-canaries": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 1166,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ]
+    },
+    "partitions": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 1,
+          "filtered": 1166,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ]
+    },
+    "reflect-after": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 1166,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ]
+    },
+    "reflect-before": {
+      "exit": 101,
+      "results": [
+        {
+          "failed": 1,
+          "filtered": 1162,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ]
+    },
+    "reflective-integration": {
+      "exit": 0,
+      "results": [
+        {
+          "failed": 0,
+          "filtered": 101,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 6
+        }
+      ]
+    }
+  },
+  "scope": "W55 reflective bound entrance only",
+  "verdict": "confirmed"
+}

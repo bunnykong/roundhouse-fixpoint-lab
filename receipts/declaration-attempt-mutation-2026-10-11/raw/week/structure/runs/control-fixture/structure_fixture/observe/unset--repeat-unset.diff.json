@@ -1,0 +1,37 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 1895,
+        "write": 1226
+      },
+      "ambiguous_expression_sites": 0,
+      "reads_before_return_write": 204,
+      "undeclared_reads": 178,
+      "undeclared_writes": 11,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 1895,
+        "write": 1226
+      },
+      "ambiguous_expression_sites": 0,
+      "reads_before_return_write": 204,
+      "undeclared_reads": 178,
+      "undeclared_writes": 11,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [],
+  "different": false,
+  "input_digest": "1c1e4c054beeadde",
+  "left": "$EXPERIMENT/week/structure/runs/control-fixture/structure_fixture/observe/unset/structure.jsonl",
+  "right": "$EXPERIMENT/week/structure/runs/control-fixture/structure_fixture/observe/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 396,
+    "slot": 2901,
+    "writer": 2663
+  }
+}

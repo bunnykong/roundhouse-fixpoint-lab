@@ -1,0 +1,67 @@
+{
+  "added_source_sha256": {
+    "src/analyze/fixpoint_bound/writer_law_partitions.rs": "22bf1290008a12af75e17d654092ad54dc9f91eb67ec56f05688325cba83e14d"
+  },
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "b923358ff549375f864caa10bb2882a0b2e6ee47ea3a6692e8cae1a79eb3f26f"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "writer_law_bound_reflective_",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/candidate",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/candidate/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 0,
+  "expected_exit": 0,
+  "integration": null,
+  "label": "entrances-final",
+  "log_sha256": "18c2e02d27731179663f979063e846a2dea4cf60e7b23c00f212cd4ce8211c61",
+  "properties": [
+    {
+      "checks": 19392,
+      "law": "finite-value-inclusion",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "reflective-entrances/complete-boundary"
+    },
+    {
+      "checks": 300,
+      "law": "plain-reflective-storage",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "reflective-entrances/complete-boundary"
+    }
+  ],
+  "results": [
+    {
+      "failed": 0,
+      "filtered": 1165,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 2
+    }
+  ],
+  "selection": "writer_law_bound_reflective_",
+  "source_diff_sha256": "74e6f7ab044091f12feb15dbb3761b6fc697e303f13c71affa3366565692806a",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "candidate"
+}

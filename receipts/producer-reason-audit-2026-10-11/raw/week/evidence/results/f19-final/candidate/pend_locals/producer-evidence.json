@@ -1,0 +1,101 @@
+{
+  "complete_writer_inventory": false,
+  "equal_merges": 32,
+  "input_shapes": {
+    "owner=Scanner|includer=Scanner|instance|capture_len|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-314": [
+      "{\"kind\":\"untyped\"}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=Scanner|includer=Scanner|instance|capture|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:108-134": [
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=Scanner|includer=Scanner|instance|last_for|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:205-229": [
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:62-154": [
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"untyped\"}}",
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"var\",\"var\":0}}"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:4-9": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:9-13": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=Scanner|includer=Scanner|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-309": [
+      "{\"kind\":\"str\"}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture_len|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:132-153": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:92-109": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|last_for|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:111-130": [
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"int\"}}"
+    ]
+  },
+  "parameter_losses_by_kind": {
+    "LegacyAmbiguousVar": 20
+  },
+  "parameter_merges": 28,
+  "parameter_routes": {
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:4-9": [],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:9-13": [],
+    "parameter|owner=Scanner|includer=Scanner|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-309": [
+      "Scanner"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture_len|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:132-153": [
+      "Scanner"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:92-109": [
+      "Scanner"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|last_for|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:111-130": [
+      "Scanner"
+    ]
+  },
+  "parameter_type_origin_losses": 20,
+  "scheduler_dependencies_migrated": false,
+  "schema": 1,
+  "scope": "direct return bodies and raw parameter producers; cumulative observational evidence",
+  "tag_only_changes": 0,
+  "unscoped_inputs": 0,
+  "visits": {
+    "owner=Scanner|includer=Scanner|instance|capture_len|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-314": 6,
+    "owner=Scanner|includer=Scanner|instance|capture|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:108-134": 6,
+    "owner=Scanner|includer=Scanner|instance|last_for|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:205-229": 6,
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:62-154": 5,
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:4-9": 3,
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:9-13": 3,
+    "parameter|owner=Scanner|includer=Scanner|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-309": 6,
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture_len|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:132-153": 9,
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:92-109": 9,
+    "parameter|owner=TreesController|includer=TreesController|Instance|last_for|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:111-130": 9
+  },
+  "writers": {
+    "owner=Scanner|includer=Scanner|instance|capture_len|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-314": [
+      "$:LegacyAmbiguousVar",
+      "$:Unresolved"
+    ],
+    "owner=Scanner|includer=Scanner|instance|capture|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:108-134": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=Scanner|includer=Scanner|instance|last_for|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:205-229": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:62-154": [
+      "$/element:LegacyAmbiguousVar",
+      "$/element:Unresolved"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:4-9": [],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/views/trees/index.html.erb:9-13": [],
+    "parameter|owner=Scanner|includer=Scanner|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/models/scanner.rb:299-309": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture_len|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:132-153": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|capture|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:92-109": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|last_for|arg=0|$EXPERIMENT/week/lab/reproductions/pend_locals/app/controllers/trees_controller.rb:111-130": []
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "cold_analyze_seconds": 0.006627875,
+  "cold_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "7f6daeba8c2c1ef8",
+    "controller_cache": "1591765753636d0a",
+    "ir": "d40f68ee02a5c9c7",
+    "params": "bd162e85baf44ca7",
+    "returns": "8b8f60904de08591",
+    "sccq_contexts": "36fa3f587976bd67",
+    "sccq_dependencies": "de66de5328b7038c",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "evaluations": {
+    "invalidated": 0,
+    "loaded": 8,
+    "recorded": 8,
+    "replayed": 8,
+    "typed": 0,
+    "uncovered": 0,
+    "unused": 0
+  },
+  "first_difference": null,
+  "ingest_seconds": 0.012057959,
+  "phases": {
+    "schema": 1,
+    "scope": "warm-start-through-stop-exclusive-wall",
+    "scope_counts": {
+      "class_fingerprints": 6,
+      "fingerprints": 11,
+      "fresh_typing": 2,
+      "guards": 8,
+      "input_fingerprints": 8,
+      "load_decode": 1,
+      "old_trace_cleanup": 1,
+      "other": 0,
+      "recording": 8,
+      "replay": 16,
+      "shadow_clone": 1,
+      "value_fingerprints": 0
+    },
+    "seconds": {
+      "class_fingerprints": 0.00002129,
+      "fingerprints": 0.000074999,
+      "fresh_typing": 0.000029292,
+      "guards": 0.000054754,
+      "input_fingerprints": 0.000239665,
+      "load_decode": 0.000279959,
+      "old_trace_cleanup": 0.000022834,
+      "other": 0.007099288,
+      "recording": 9.59e-7,
+      "replay": 0.000128376,
+      "shadow_clone": 0.000012625,
+      "value_fingerprints": 0.0
+    },
+    "total_seconds": 0.007964041
+  },
+  "shadow": "pass",
+  "shadow_clone_seconds": 0.000012667,
+  "shadow_seconds": 0.008091125,
+  "test_diagnostics": [],
+  "test_entries": {
+    "block_values": 274,
+    "controller_bindings": 1,
+    "controller_cache": 2,
+    "ir": 18,
+    "params": 3,
+    "returns": 2479,
+    "sccq_contexts": 2,
+    "sccq_dependencies": 2,
+    "sccq_entry_contexts": 3
+  },
+  "warm_analyze_seconds": 0.007564333,
+  "warm_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "7f6daeba8c2c1ef8",
+    "controller_cache": "1591765753636d0a",
+    "ir": "d40f68ee02a5c9c7",
+    "params": "bd162e85baf44ca7",
+    "returns": "8b8f60904de08591",
+    "sccq_contexts": "36fa3f587976bd67",
+    "sccq_dependencies": "de66de5328b7038c",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  }
+}

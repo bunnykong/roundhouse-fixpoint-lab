@@ -1,0 +1,60 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": {
+        "kind": "str"
+      }
+    }
+  ],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Str"
+    ],
+    "Chain.instance.link0": [
+      "Str"
+    ],
+    "Chain.instance.link1": [
+      "Str"
+    ]
+  },
+  "spans": [
+    {
+      "end": 27,
+      "file": 2,
+      "start": 22,
+      "type": [
+        "union",
+        [
+          {
+            "kind": "str"
+          },
+          [
+            "untyped",
+            "Unresolved"
+          ]
+        ]
+      ]
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": {
+      "kind": "str"
+    },
+    "Chain.instance.link0": [
+      "union",
+      [
+        {
+          "kind": "str"
+        },
+        [
+          "untyped",
+          "Unresolved"
+        ]
+      ]
+    ],
+    "Chain.instance.link1": {
+      "kind": "str"
+    }
+  }
+}

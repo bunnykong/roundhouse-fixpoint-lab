@@ -62,3 +62,14 @@ Shared `support.py` handles clean environments, input verification, source build
 `errgate.py` is the unchanged comparator from Roundhouse `b64163fe` (Apache-2.0; see the lab's NOTICE).
 `app-trees.json` records the historical public source inventories, independently of fetch.sh's local manifest updates.
 `hash_seed.c` contains the original entropy-control policy and reports activation.
+
+## October 11 bounded experiments
+
+| Receipt | Verdict | Scope |
+| --- | --- | --- |
+| [Rejecting newly opaque exported components](component-opacity-gate-2026-10-11/README.md) | Inconclusive for the complete control gate. | October 11; pinned unscored reference |
+| [Separating declarations, attempted writers and mutations](declaration-attempt-mutation-2026-10-11/README.md) | Killed for this fixture envelope. | October 11; pinned unscored reference |
+| [Producer reasons and a bounded return accumulator](producer-reason-audit-2026-10-11/README.md) | Killed at complete producer conservation. | October 11; pinned unscored reference |
+| [Reusing byte-identical warm fingerprint components](warm-fingerprint-components-2026-10-11/README.md) | Confirmed for the bounded Mastodon boolean edit. | October 11; pinned unscored reference |
+| [Reflective ivar writes reach the complete-body bound](reflective-writer-bound-2026-10-11/README.md) | Confirmed for the narrow reflective writer repair. | October 11; pinned unscored reference |
+| [Native replay storage and cycle support withdrawal](replay-storage-support-2026-10-11/README.md) | Checks confirmed; current storage killed against native fidelity. | October 11; pinned unscored reference |

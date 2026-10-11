@@ -1,0 +1,232 @@
+{
+  "complete_writer_inventory": false,
+  "equal_merges": 126,
+  "input_shapes": {
+    "owner=TreesController|includer=TreesController|instance|even_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:356-397": [
+      "{\"kind\":\"union\",\"variants\":[{\"kind\":\"untyped\"},{\"kind\":\"rec\",\"slot\":4}]}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:62-123": [
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"union\",\"variants\":[{\"kind\":\"rec\",\"slot\":0},{\"kind\":\"rec\",\"slot\":2},{\"kind\":\"rec\",\"slot\":4}]}}",
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"var\",\"var\":0}}"
+    ],
+    "owner=TreesController|includer=TreesController|instance|odd_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:429-475": [
+      "{\"kind\":\"union\",\"variants\":[{\"kind\":\"untyped\"},{\"kind\":\"rec\",\"slot\":2}]}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=TreesController|includer=TreesController|instance|walk_tree|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": [
+      "{\"kind\":\"rec\",\"slot\":0}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=TreesController|includer=TreesController|instance|walker|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": [
+      "{\"kind\":\"class\",\"id\":\"Walker\",\"args\":[]}"
+    ],
+    "owner=Walker|includer=Walker|instance|initialize|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:120-174": [
+      "{\"kind\":\"hash\",\"key\":{\"kind\":\"str\"},\"value\":{\"kind\":\"int\"}}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=Walker|includer=Walker|instance|scale|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:196-202": [
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "owner=Walker|includer=Walker|instance|walk|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-359": [
+      "{\"kind\":\"union\",\"variants\":[{\"kind\":\"array\",\"elem\":{\"kind\":\"rec\",\"slot\":0}},{\"kind\":\"untyped\"}]}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:4-9": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:9-13": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Class|new|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": [
+      "{\"kind\":\"hash\",\"key\":{\"kind\":\"str\"},\"value\":{\"kind\":\"int\"}}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:439-455": [
+      "{\"kind\":\"int\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:391-396": [
+      "{\"kind\":\"int\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:469-474": [
+      "{\"kind\":\"int\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:458-475": [
+      "{\"kind\":\"int\"}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:95-108": [
+      "{\"kind\":\"int\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:110-122": [
+      "{\"kind\":\"int\"}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:381-397": [
+      "{\"kind\":\"int\"}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk_tree|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:71-93": [
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"union\",\"variants\":[{\"kind\":\"int\"},{\"kind\":\"array\",\"elem\":{\"kind\":\"int\"}}]}}"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": [
+      "{\"kind\":\"array\",\"elem\":{\"kind\":\"union\",\"variants\":[{\"kind\":\"int\"},{\"kind\":\"array\",\"elem\":{\"kind\":\"int\"}}]}}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:347-359": [
+      "{\"kind\":\"rec\",\"slot\":8}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [
+      "{\"kind\":\"str\"}"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=1|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [
+      "{\"kind\":\"int\"}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|is_a?|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-317": [
+      "{\"kind\":\"class\",\"id\":\"Array\",\"args\":[]}"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:335-342": [
+      "{\"kind\":\"rec\",\"slot\":7}",
+      "{\"kind\":\"var\",\"var\":0}"
+    ]
+  },
+  "parameter_losses_by_kind": {
+    "LegacyAmbiguousVar": 68
+  },
+  "parameter_merges": 136,
+  "parameter_routes": {
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:4-9": [],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:9-13": [],
+    "parameter|owner=TreesController|includer=TreesController|Class|new|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": [
+      "Walker"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:439-455": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:391-396": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:469-474": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:458-475": [
+      "TreesController"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:95-108": [
+      "TreesController"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:110-122": [
+      "TreesController"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:381-397": [
+      "TreesController"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk_tree|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:71-93": [
+      "TreesController"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": [
+      "Walker"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:347-359": [],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [
+      "Walker"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=1|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [
+      "Walker"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|is_a?|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-317": [],
+    "parameter|owner=Walker|includer=Walker|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:335-342": [
+      "Walker"
+    ]
+  },
+  "parameter_type_origin_losses": 68,
+  "scheduler_dependencies_migrated": false,
+  "schema": 1,
+  "scope": "direct return bodies and raw parameter producers; cumulative observational evidence",
+  "tag_only_changes": 0,
+  "unscoped_inputs": 0,
+  "visits": {
+    "owner=TreesController|includer=TreesController|instance|even_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:356-397": 6,
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:62-123": 6,
+    "owner=TreesController|includer=TreesController|instance|odd_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:429-475": 6,
+    "owner=TreesController|includer=TreesController|instance|walk_tree|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": 6,
+    "owner=TreesController|includer=TreesController|instance|walker|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": 6,
+    "owner=Walker|includer=Walker|instance|initialize|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:120-174": 8,
+    "owner=Walker|includer=Walker|instance|scale|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:196-202": 6,
+    "owner=Walker|includer=Walker|instance|walk|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-359": 10,
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:4-9": 3,
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:9-13": 3,
+    "parameter|owner=TreesController|includer=TreesController|Class|new|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": 11,
+    "parameter|owner=TreesController|includer=TreesController|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:439-455": 13,
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:391-396": 13,
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:469-474": 13,
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:458-475": 13,
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:95-108": 14,
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:110-122": 14,
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:381-397": 13,
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk_tree|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:71-93": 14,
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": 12,
+    "parameter|owner=Walker|includer=Walker|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:347-359": 9,
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": 8,
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=1|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": 8,
+    "parameter|owner=Walker|includer=Walker|Instance|is_a?|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-317": 9,
+    "parameter|owner=Walker|includer=Walker|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:335-342": 9
+  },
+  "writers": {
+    "owner=TreesController|includer=TreesController|instance|even_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:356-397": [
+      "$/arm:ReferenceRequiresDependencyAudit",
+      "$/arm:Unresolved",
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=TreesController|includer=TreesController|instance|index|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:62-123": [
+      "$/element/arm:ReferenceRequiresDependencyAudit",
+      "$/element:LegacyAmbiguousVar"
+    ],
+    "owner=TreesController|includer=TreesController|instance|odd_count|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:429-475": [
+      "$/arm:ReferenceRequiresDependencyAudit",
+      "$/arm:Unresolved",
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=TreesController|includer=TreesController|instance|walk_tree|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": [
+      "$:LegacyAmbiguousVar",
+      "$:ReferenceRequiresDependencyAudit"
+    ],
+    "owner=TreesController|includer=TreesController|instance|walker|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": [],
+    "owner=Walker|includer=Walker|instance|initialize|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:120-174": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=Walker|includer=Walker|instance|scale|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:196-202": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "owner=Walker|includer=Walker|instance|walk|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-359": [
+      "$/arm/element:ReferenceRequiresDependencyAudit",
+      "$/arm:Unresolved",
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:4-9": [],
+    "parameter|owner=<template>|includer=<template>|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/views/trees/index.html.erb:9-13": [],
+    "parameter|owner=TreesController|includer=TreesController|Class|new|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:157-185": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:439-455": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:391-396": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|-|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:469-474": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:458-475": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|even_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:95-108": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:110-122": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|odd_count|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:381-397": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk_tree|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:71-93": [],
+    "parameter|owner=TreesController|includer=TreesController|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/controllers/trees_controller.rb:207-221": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|+|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:347-359": [
+      "$:LegacyAmbiguousVar",
+      "$:ReferenceRequiresDependencyAudit"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [],
+    "parameter|owner=Walker|includer=Walker|Instance|instance_variable_set|arg=1|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:139-172": [
+      "$:LegacyAmbiguousVar"
+    ],
+    "parameter|owner=Walker|includer=Walker|Instance|is_a?|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:300-317": [],
+    "parameter|owner=Walker|includer=Walker|Instance|walk|arg=0|$EXPERIMENT/week/lab/reproductions/pend_rec/app/models/walker.rb:335-342": [
+      "$:LegacyAmbiguousVar",
+      "$:ReferenceRequiresDependencyAudit"
+    ]
+  }
+}

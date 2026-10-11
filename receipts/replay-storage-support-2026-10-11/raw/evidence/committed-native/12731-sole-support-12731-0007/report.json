@@ -1,0 +1,51 @@
+{
+  "cold_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "f8a0f691c0be60d9",
+    "controller_cache": "c21d846d3458ce6c",
+    "ir": "644d2d2ea1d2f815",
+    "params": "8132b5c184b5c7ab",
+    "returns": "c31d492516bb096c",
+    "sccq_contexts": "a8ef9437b10fe59d",
+    "sccq_dependencies": "d65287f80aedd2a5",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "evaluations": {
+    "invalidated": 0,
+    "loaded": 13,
+    "recorded": 13,
+    "replayed": 13,
+    "typed": 0,
+    "uncovered": 0,
+    "unused": 0
+  },
+  "first_difference": null,
+  "shadow": "pass",
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/controllers/bench_controller.rb:3:11: warning[gradual_untyped]: method call resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/controllers/bench_controller.rb:3:1: warning[gradual_untyped]: expression resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/views/bench/index.html.erb:1:5: warning[gradual_untyped]: ivar read resolves to RBS `untyped` (gradual escape)"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_bindings": 1,
+    "controller_cache": 2,
+    "ir": 19,
+    "params": 2,
+    "returns": 2480,
+    "sccq_contexts": 3,
+    "sccq_dependencies": 3,
+    "sccq_entry_contexts": 3
+  },
+  "warm_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "f8a0f691c0be60d9",
+    "controller_cache": "c21d846d3458ce6c",
+    "ir": "644d2d2ea1d2f815",
+    "params": "8132b5c184b5c7ab",
+    "returns": "c31d492516bb096c",
+    "sccq_contexts": "a8ef9437b10fe59d",
+    "sccq_dependencies": "d65287f80aedd2a5",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  }
+}

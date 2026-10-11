@@ -1,0 +1,42 @@
+[
+  {
+    "change": "Set WEEK to agents/component-opacity-gate/week and keep the move-local D at WEEK/sound.",
+    "reason": "The user's D is the write boundary; the brief also uses D for its move subdirectory.",
+    "kind": "requested relocation"
+  },
+  {
+    "change": "Use the existing workshop flock.py for every replay/test/analysis, and --exclusive for opacity_control.py.",
+    "reason": "The user requires shared locks for analyses and exclusive locks for timing; opacity_control.py records seconds.",
+    "kind": "requested execution wrapper"
+  },
+  {
+    "change": "Keep Git metadata in an independent repository in agents/component-opacity-gate on component-opacity-gate-soundness-gate; disable clone push URLs.",
+    "reason": "Writing a branch in the shared frontier Git directory would cross the task's write boundary.",
+    "kind": "boundary adaptation"
+  },
+  {
+    "change": "Save the populated corpus MANIFEST.json as evidence/fetched-corpus-manifest.json, then restore the lab's pinned manifest.",
+    "reason": "The prescribed fetch.sh succeeded but rewrote corpus/MANIFEST.json with downloaded tree census values; preserve the frozen checkout.",
+    "kind": "minimal frozen-input correction"
+  },
+  {
+    "change": "No docs/pitfalls.md was read: that path does not exist in this frontier checkout.",
+    "reason": "The supplied repository instructions reference research workspace documentation; the actual repository README describes Analyzer frontier.",
+    "kind": "read-first caveat"
+  },
+  {
+    "change": "Extend opacity_control.py's reporting with checker hashes, mapped/missing counts and canonical component deltas.",
+    "reason": "The move requires these measurements; the synthetic mutation and fixed trace/selection are unchanged.",
+    "kind": "measurement reporting"
+  },
+  {
+    "change": "Keep the prescribed Integer | String | nil widening exactly as written and record its I exit 1.",
+    "reason": "Two recorded @timestamp Time values do not belong to that union. Both the published and strengthened checkers reject them; do not add Time or suppress membership to make the control pass.",
+    "kind": "positive-control caveat, not a semantic command change"
+  },
+  {
+    "change": "Create WEEK/sound/tmp before the additional published test_contract.py suite.",
+    "reason": "That suite uses LAB.parent/tmp explicitly, while common setup only creates WEEK/tmp.",
+    "kind": "additional-test path correction"
+  }
+]

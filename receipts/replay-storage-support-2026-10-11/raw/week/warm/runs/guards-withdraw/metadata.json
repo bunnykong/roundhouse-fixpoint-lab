@@ -1,0 +1,33 @@
+{
+  "binary": "$EXPERIMENT/week/warm/build/guards/release/roundhouse",
+  "binary_sha256": "38e932d79ad5a46d7ffd49357e147dde987e225d13363de19a3e0a74a90c944e",
+  "binary_version": "roundhouse 2026.9.18 (fa084d79)",
+  "candidate_warm_flags": {},
+  "condition": "replay-storage-support-20261011-guards-withdraw",
+  "f30_runner_sha256": "061d97c7b5a154bd832bcb62209c9ad7d2dad80093b6e0e6bf86372d748a8868",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "host": "macOS-26.3.1-arm64-arm-64bit",
+  "pairs": 1,
+  "parent_reference": {
+    "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+    "binary_sha256": "f355c2e8ed826622a892af7ca2cebd9e2d4c9f1d8423ef1c583c1d0ea3248d31",
+    "comparison": "fresh cold parent at identical app path; all identity fields retained",
+    "condition": "replay-storage-support-20261011-base-withdraw",
+    "receipt": "$EXPERIMENT/week/warm/runs/base-withdraw",
+    "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57"
+  },
+  "ruby": "ruby 4.0.7",
+  "runner_sha256": "6cc81d0918d5bb1639fa4732015054a3c82568047b371439e2f113a1b77ccf4c",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "fa084d7932b21baae84db260e725d70256c685ef",
+  "timings": "instrumented paired profiles; validation reported separately"
+}

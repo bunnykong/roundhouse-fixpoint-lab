@@ -1,0 +1,22 @@
+[
+  {"change": "Relocate Common setup WEEK to agents/replay-storage-support/week; D in session.sh remains the copied week/warm root.",
+   "reason": "The user's write boundary overrides preparation notes-local outputs."},
+  {"change": "Independently clone the warm fingerprint components lab and source repository; copy its corpus, Cargo cache and helpers.",
+   "reason": "Worktree creation must update only local metadata; offline cache avoids the warm fingerprint components Rubydex SSH failure."},
+  {"change": "Retain d9ec78c3 for base and init_trial guards, and copy trial a at 1fbfee1a as an unbuilt reference.",
+   "reason": "Follow replay storage support's supplied init_trial pin and keep the optimization out of this test-only comparison."},
+  {"change": "Use explicit exclusive mode in trial; shared mode for builds, tests, corpus verification and reductions.",
+   "reason": "The lock defaults to shared; user requires every timed measurement to be exclusive."},
+  {"change": "Rename native conditions to replay-storage-support-20261011-* and preserve warm fingerprint components's same-root parent control.",
+   "reason": "New receipts need distinct conditions; scheduler keys contain absolute paths."},
+  {"change": "Use the preparation notes's warm_check-only warm_tests on guards rather than warm fingerprint components's additional warm_fp_ selection.",
+   "reason": "The d9ec78c3 guard source has no warm fingerprint components fingerprint canaries; an empty selection would establish nothing."},
+  {"change": "Add --exact to the two explicit test selections, and capture expected nonzero exits without ending the driver.",
+   "reason": "The storage canary must stay red and the remaining experiment must still execute."},
+  {"change": "Set WEEK and LAB in separate export statements in the local setup helper.",
+   "reason": "A combined export referenced unset WEEK under set -u; initial failure retained in setup.log."},
+  {"change": "Parse the native snapshot marker anywhere on its test-harness line, retaining the first failed suite log.",
+   "reason": "Rust prepends 'test NAME ...' to the first println; the initial parser found no snapshot."},
+  {"change": "Use an empty preceding Ruby file to renumber source IDs without adding global class keys.",
+   "reason": "The storage identity canary should isolate span/ID remapping from a conservative global-key guard change."}
+]

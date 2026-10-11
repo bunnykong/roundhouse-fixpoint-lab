@@ -1,0 +1,3100 @@
+{
+  "condition": "replay-storage-support-20261011-storage-support",
+  "no_speed_claim": true,
+  "profiles": {
+    "base-withdraw": {
+      "binary_sha256": "f355c2e8ed826622a892af7ca2cebd9e2d4c9f1d8423ef1c583c1d0ea3248d31",
+      "cold_analysis_seconds": 7.69,
+      "cold_command_seconds": 8.757498042000009,
+      "cold_peak_rss_mb": 787,
+      "condition": "replay-storage-support-20261011-base-withdraw",
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 60698,
+        "recorded": 60701,
+        "replayed": 22597,
+        "typed": 38104,
+        "uncovered": 46,
+        "unused": 38049
+      },
+      "fingerprint_seconds": 132.46328692,
+      "pair": 1,
+      "parent_same_root_parity": true,
+      "parity": true,
+      "phase_scopes": {
+        "class_fingerprints": 625094,
+        "fingerprints": 69539,
+        "fresh_typing": 70168,
+        "guards": 60701,
+        "input_fingerprints": 60701,
+        "load_decode": 1,
+        "old_trace_cleanup": 1,
+        "other": 0,
+        "recording": 67249,
+        "replay": 45194,
+        "shadow_clone": 1,
+        "value_fingerprints": 36821135
+      },
+      "phase_seconds": {
+        "class_fingerprints": 3.274788734,
+        "fingerprints": 3.273072274,
+        "fresh_typing": 1.571168155,
+        "guards": 0.426626724,
+        "input_fingerprints": 117.931744349,
+        "load_decode": 0.998961666,
+        "old_trace_cleanup": 0.541452,
+        "other": 8.475786152,
+        "recording": 0.92867858,
+        "replay": 0.860204594,
+        "shadow_clone": 0.043241334,
+        "value_fingerprints": 7.983681563
+      },
+      "publish_seconds": 0.641338,
+      "published_bytes": 474582620,
+      "published_cleanup_seconds": 0.548738875,
+      "receipt": "week/warm/runs/base-withdraw",
+      "seed_bytes": 474574287,
+      "shadow_seconds": 7.886633958,
+      "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57",
+      "warm_analysis_seconds": 144.547375625,
+      "warm_excluding_shadow_seconds": 148.497369875,
+      "warm_peak_rss_mb": 11382,
+      "whole_warm_seconds": 156.60059420800002
+    },
+    "guards-withdraw": {
+      "binary_sha256": "38e932d79ad5a46d7ffd49357e147dde987e225d13363de19a3e0a74a90c944e",
+      "cold_analysis_seconds": 7.6,
+      "cold_command_seconds": 8.668940125000006,
+      "cold_peak_rss_mb": 779,
+      "condition": "replay-storage-support-20261011-guards-withdraw",
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 60698,
+        "recorded": 60701,
+        "replayed": 22597,
+        "typed": 38104,
+        "uncovered": 46,
+        "unused": 38049
+      },
+      "fingerprint_seconds": 132.925185085,
+      "pair": 1,
+      "parent_same_root_parity": true,
+      "parity": true,
+      "phase_scopes": {
+        "class_fingerprints": 625094,
+        "fingerprints": 69539,
+        "fresh_typing": 70168,
+        "guards": 60701,
+        "input_fingerprints": 60701,
+        "load_decode": 1,
+        "old_trace_cleanup": 1,
+        "other": 0,
+        "recording": 67249,
+        "replay": 45194,
+        "shadow_clone": 1,
+        "value_fingerprints": 36821135
+      },
+      "phase_seconds": {
+        "class_fingerprints": 3.328330026,
+        "fingerprints": 3.066581371,
+        "fresh_typing": 1.6192620949999998,
+        "guards": 0.388960441,
+        "input_fingerprints": 118.50441926,
+        "load_decode": 0.986565458,
+        "old_trace_cleanup": 0.539228458,
+        "other": 8.595675685,
+        "recording": 0.973515128,
+        "replay": 0.826114776,
+        "shadow_clone": 0.041471041,
+        "value_fingerprints": 8.025854428
+      },
+      "publish_seconds": 0.648045375,
+      "published_bytes": 476615015,
+      "published_cleanup_seconds": 0.543411708,
+      "receipt": "week/warm/runs/guards-withdraw",
+      "seed_bytes": 476606639,
+      "shadow_seconds": 8.227754000000001,
+      "source_head": "fa084d7932b21baae84db260e725d70256c685ef",
+      "warm_analysis_seconds": 145.163991292,
+      "warm_excluding_shadow_seconds": 149.092580208,
+      "warm_peak_rss_mb": 11306,
+      "whole_warm_seconds": 157.532636625
+    }
+  },
+  "selective_replay_authorized": false,
+  "stale_controls": [
+    {
+      "changed_records": 5,
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 13,
+        "recorded": 14,
+        "replayed": 4,
+        "typed": 10,
+        "uncovered": 9,
+        "unused": 0
+      },
+      "exit": 3,
+      "first_difference": {
+        "cold": "6512fe4114bba623",
+        "part": "returns",
+        "slot": "BenchController#index",
+        "warm": "31f2cf094ccf03bb"
+      },
+      "publication_rejected": true,
+      "shadow": "fail"
+    }
+  ],
+  "storage_cases": [
+    {
+      "after": [
+        "untyped",
+        "Gradual"
+      ],
+      "before": [
+        "untyped",
+        "Pending"
+      ],
+      "case": "tag-Pending",
+      "ordinary_equal": true,
+      "preserved": false
+    },
+    {
+      "after": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Gradual"
+          ]
+        ]
+      ],
+      "before": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Pending"
+          ]
+        ]
+      ],
+      "case": "nested-Pending",
+      "ordinary_equal": true,
+      "preserved": false
+    },
+    {
+      "after": [
+        "untyped",
+        "Gradual"
+      ],
+      "before": [
+        "untyped",
+        "Gradual"
+      ],
+      "case": "tag-Gradual",
+      "ordinary_equal": true,
+      "preserved": true
+    },
+    {
+      "after": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Gradual"
+          ]
+        ]
+      ],
+      "before": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Gradual"
+          ]
+        ]
+      ],
+      "case": "nested-Gradual",
+      "ordinary_equal": true,
+      "preserved": true
+    },
+    {
+      "after": [
+        "untyped",
+        "Gradual"
+      ],
+      "before": [
+        "untyped",
+        "Unresolved"
+      ],
+      "case": "tag-Unresolved",
+      "ordinary_equal": true,
+      "preserved": false
+    },
+    {
+      "after": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Gradual"
+          ]
+        ]
+      ],
+      "before": [
+        "hash",
+        {
+          "kind": "sym"
+        },
+        [
+          "array",
+          [
+            "untyped",
+            "Unresolved"
+          ]
+        ]
+      ],
+      "case": "nested-Unresolved",
+      "ordinary_equal": true,
+      "preserved": false
+    },
+    {
+      "after": [
+        "record",
+        [
+          [
+            "a",
+            {
+              "kind": "str"
+            }
+          ],
+          [
+            "z",
+            {
+              "kind": "int"
+            }
+          ]
+        ],
+        null
+      ],
+      "before": [
+        "record",
+        [
+          [
+            "a",
+            {
+              "kind": "str"
+            }
+          ],
+          [
+            "z",
+            {
+              "kind": "int"
+            }
+          ]
+        ],
+        null
+      ],
+      "case": "record-forward",
+      "ordinary_equal": true,
+      "preserved": true
+    },
+    {
+      "after": [
+        "record",
+        [
+          [
+            "a",
+            {
+              "kind": "str"
+            }
+          ],
+          [
+            "z",
+            {
+              "kind": "int"
+            }
+          ]
+        ],
+        null
+      ],
+      "before": [
+        "record",
+        [
+          [
+            "z",
+            {
+              "kind": "int"
+            }
+          ],
+          [
+            "a",
+            {
+              "kind": "str"
+            }
+          ]
+        ],
+        null
+      ],
+      "case": "record-reversed",
+      "ordinary_equal": true,
+      "preserved": false
+    }
+  ],
+  "storage_identities": [
+    {
+      "after": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 66,
+            "file": 3,
+            "start": 53,
+            "type": {
+              "kind": "int"
+            }
+          },
+          {
+            "end": 105,
+            "file": 3,
+            "start": 92,
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "int"
+          }
+        }
+      },
+      "before": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 46,
+            "file": 2,
+            "start": 33,
+            "type": {
+              "kind": "int"
+            }
+          },
+          {
+            "end": 85,
+            "file": 2,
+            "start": 72,
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "int"
+          }
+        }
+      },
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 14,
+        "recorded": 14,
+        "replayed": 14,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "persisted_writes_compared": 4,
+      "roots": 4,
+      "writers": 2
+    }
+  ],
+  "storage_summary": [
+    {
+      "identity_replay": "pass",
+      "losses": [
+        "tag-Pending",
+        "nested-Pending",
+        "tag-Unresolved",
+        "nested-Unresolved",
+        "record-reversed"
+      ],
+      "negative_controls_rejected": 2,
+      "payload_cases": 8
+    }
+  ],
+  "support_cases": [
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "a8ef9437b10fe59d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 13,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ],
+          "Chain.instance.link1": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 52,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.instance.link0": {
+            "kind": "int"
+          },
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "sole-support"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "a8ef9437b10fe59d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 2,
+        "typed": 11,
+        "uncovered": 8,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [],
+          "Chain.instance.link0": [],
+          "Chain.instance.link1": []
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link1": [
+            "untyped",
+            "Unresolved"
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "sole-support"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "a8ef9437b10fe59d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 13,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [],
+          "Chain.instance.link0": [],
+          "Chain.instance.link1": []
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link1": [
+            "untyped",
+            "Unresolved"
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "sole-support"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-sole-support/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 8,
+      "contexts": "8b13d6bc3ee0bbcb",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 13,
+        "recorded": 10,
+        "replayed": 2,
+        "typed": 8,
+        "uncovered": 1,
+        "unused": 8
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "sole-support"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b9bc2ac60a8f62b7",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 13,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ],
+          "Chain.instance.link1": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 52,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "int"
+          },
+          "Chain.instance.link1": {
+            "kind": "int"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "two-supports"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b9bc2ac60a8f62b7",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 2,
+        "typed": 11,
+        "uncovered": 8,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ],
+          "Chain.instance.link1": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.instance.link1": {
+            "kind": "int"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "two-supports"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b9bc2ac60a8f62b7",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 9,
+        "typed": 4,
+        "uncovered": 2,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [],
+          "Chain.instance.link0": [],
+          "Chain.instance.link1": []
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link1": [
+            "untyped",
+            "Unresolved"
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "two-supports"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-two-supports/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 8,
+      "contexts": "033f79213f2f7c9a",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 13,
+        "recorded": 10,
+        "replayed": 2,
+        "typed": 8,
+        "uncovered": 1,
+        "unused": 8
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "two-supports"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "fca2df2aac287e77",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 13,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": true,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                }
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int",
+            "Str"
+          ],
+          "Chain.instance.link0": [
+            "Int",
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Int",
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 52,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                }
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ],
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ],
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "distinct-arms"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "fca2df2aac287e77",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 2,
+        "typed": 11,
+        "uncovered": 8,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": true,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "str"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Str"
+          ],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "str"
+          },
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.instance.link1": {
+            "kind": "str"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "distinct-arms"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "fca2df2aac287e77",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 13,
+        "recorded": 13,
+        "replayed": 9,
+        "typed": 4,
+        "uncovered": 2,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [],
+          "Chain.instance.link0": [],
+          "Chain.instance.link1": []
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link1": [
+            "untyped",
+            "Unresolved"
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "distinct-arms"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-distinct-arms/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 8,
+      "contexts": "2dd285858226976f",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 13,
+        "recorded": 10,
+        "replayed": 2,
+        "typed": 8,
+        "uncovered": 1,
+        "unused": 8
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "distinct-arms"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 22,
+      "contexts": "ff9ccc066c4aa3f1",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 22,
+        "recorded": 22,
+        "replayed": 22,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "array",
+              [
+                "union",
+                [
+                  {
+                    "kind": "int"
+                  },
+                  {
+                    "kind": "str"
+                  },
+                  [
+                    "untyped",
+                    "Unresolved"
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int",
+            "Str"
+          ],
+          "Chain.class.link0": [
+            "Int"
+          ],
+          "Chain.class.link1": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 57,
+            "file": 2,
+            "start": 27,
+            "type": {
+              "kind": "int"
+            }
+          },
+          {
+            "end": 169,
+            "file": 2,
+            "start": 122,
+            "type": {
+              "kind": "str"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "array",
+            [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          ],
+          "Chain.class.link0": {
+            "kind": "int"
+          },
+          "Chain.class.link1": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "str"
+          },
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "receiver-side"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 22,
+      "contexts": "ff9ccc066c4aa3f1",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 22,
+        "recorded": 22,
+        "replayed": 7,
+        "typed": 15,
+        "uncovered": 11,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "array",
+              [
+                "union",
+                [
+                  {
+                    "kind": "int"
+                  },
+                  {
+                    "kind": "str"
+                  },
+                  [
+                    "untyped",
+                    "Unresolved"
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int",
+            "Str"
+          ],
+          "Chain.class.link0": [
+            "Int"
+          ],
+          "Chain.class.link1": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 32,
+            "file": 2,
+            "start": 27,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          },
+          {
+            "end": 144,
+            "file": 2,
+            "start": 97,
+            "type": {
+              "kind": "str"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "array",
+            [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          ],
+          "Chain.class.link0": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.class.link1": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "str"
+          },
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "receiver-side"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 22,
+      "contexts": "ff9ccc066c4aa3f1",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 22,
+        "recorded": 22,
+        "replayed": 14,
+        "typed": 8,
+        "uncovered": 5,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "array",
+              [
+                "union",
+                [
+                  {
+                    "kind": "str"
+                  },
+                  [
+                    "untyped",
+                    "Unresolved"
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Str"
+          ],
+          "Chain.class.link0": [],
+          "Chain.class.link1": [],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 32,
+            "file": 2,
+            "start": 27,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          },
+          {
+            "end": 119,
+            "file": 2,
+            "start": 72,
+            "type": {
+              "kind": "str"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "array",
+            [
+              "union",
+              [
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          ],
+          "Chain.class.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.class.link1": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": {
+            "kind": "str"
+          },
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "receiver-side"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:class:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-receiver-side/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 18,
+      "contexts": "ff9ccc066c4aa3f1",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 22,
+        "recorded": 20,
+        "replayed": 5,
+        "typed": 15,
+        "uncovered": 4,
+        "unused": 10
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "array",
+              [
+                "union",
+                [
+                  {
+                    "kind": "str"
+                  },
+                  [
+                    "untyped",
+                    "Unresolved"
+                  ],
+                  {
+                    "kind": "nil"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil",
+            "Str"
+          ],
+          "Chain.class.link0": [
+            "Nil"
+          ],
+          "Chain.class.link1": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 32,
+            "file": 2,
+            "start": 27,
+            "type": {
+              "kind": "nil"
+            }
+          },
+          {
+            "end": 117,
+            "file": 2,
+            "start": 70,
+            "type": {
+              "kind": "str"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "array",
+            [
+              "union",
+              [
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ],
+                {
+                  "kind": "nil"
+                }
+              ]
+            ]
+          ],
+          "Chain.class.link0": {
+            "kind": "nil"
+          },
+          "Chain.class.link1": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "str"
+          },
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "receiver-side"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link0": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b2c1e9a539290d95",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 18,
+        "recorded": 18,
+        "replayed": 18,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int"
+          ],
+          "Chain.instance.link0": [
+            "Int"
+          ],
+          "Chain.instance.link1": [
+            "Int"
+          ]
+        },
+        "spans": [
+          {
+            "end": 67,
+            "file": 2,
+            "start": 33,
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "int"
+          },
+          "Chain.instance.link0": {
+            "kind": "int"
+          },
+          "Chain.instance.link1": {
+            "kind": "int"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "default-root"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link0": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b2c1e9a539290d95",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 6,
+        "loaded": 18,
+        "recorded": 18,
+        "replayed": 12,
+        "typed": 6,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "nil"
+                }
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int",
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Int",
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Int",
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 69,
+            "file": 2,
+            "start": 35,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "nil"
+                }
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "nil"
+              }
+            ]
+          ],
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "nil"
+              }
+            ]
+          ],
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "nil"
+              }
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "default-root"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link0": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 13,
+      "contexts": "b2c1e9a539290d95",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 18,
+        "recorded": 18,
+        "replayed": 14,
+        "typed": 4,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 69,
+            "file": 2,
+            "start": 35,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "default-root"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link0": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-default-root/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 8,
+      "contexts": "2be02354453d3755",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 4,
+        "loaded": 18,
+        "recorded": 14,
+        "replayed": 3,
+        "typed": 11,
+        "uncovered": 2,
+        "unused": 9
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 69,
+            "file": 2,
+            "start": 35,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "default-root"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 21,
+      "contexts": "503bc1f16628c83d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 0,
+        "loaded": 21,
+        "recorded": 21,
+        "replayed": 21,
+        "typed": 0,
+        "uncovered": 0,
+        "unused": 0
+      },
+      "expected_int": true,
+      "expected_str": true,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                }
+              ]
+            ]
+          },
+          {
+            "name": "other",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                }
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Int",
+            "Str"
+          ],
+          "BenchController.instance.other": [
+            "Int",
+            "Str"
+          ],
+          "Chain.instance.link0": [
+            "Int",
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Int",
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 52,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                }
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ],
+          "BenchController.instance.other": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ],
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ],
+          "Chain.instance.link1": [
+            "union",
+            [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "str"
+              }
+            ]
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "before",
+      "variant": "controller-context"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 21,
+      "contexts": "503bc1f16628c83d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 3,
+        "loaded": 21,
+        "recorded": 21,
+        "replayed": 10,
+        "typed": 11,
+        "uncovered": 8,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": true,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "str"
+            }
+          },
+          {
+            "name": "other",
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Str"
+          ],
+          "BenchController.instance.other": [
+            "Str"
+          ],
+          "Chain.instance.link0": [
+            "Str"
+          ],
+          "Chain.instance.link1": [
+            "Str"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "union",
+              [
+                {
+                  "kind": "str"
+                },
+                [
+                  "untyped",
+                  "Unresolved"
+                ]
+              ]
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "str"
+          },
+          "BenchController.instance.other": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.instance.link0": [
+            "union",
+            [
+              {
+                "kind": "str"
+              },
+              [
+                "untyped",
+                "Unresolved"
+              ]
+            ]
+          ],
+          "Chain.instance.link1": {
+            "kind": "str"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-one",
+      "variant": "controller-context"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link1": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": false,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 21,
+      "contexts": "503bc1f16628c83d",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 21,
+        "recorded": 21,
+        "replayed": 10,
+        "typed": 11,
+        "uncovered": 9,
+        "unused": 0
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          },
+          {
+            "name": "other",
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [],
+          "BenchController.instance.other": [],
+          "Chain.instance.link0": [],
+          "Chain.instance.link1": []
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": [
+              "untyped",
+              "Unresolved"
+            ]
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": [
+            "untyped",
+            "Unresolved"
+          ],
+          "BenchController.instance.other": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link0": [
+            "untyped",
+            "Unresolved"
+          ],
+          "Chain.instance.link1": [
+            "untyped",
+            "Unresolved"
+          ]
+        }
+      },
+      "shadow": "pass",
+      "stage": "remove-both",
+      "variant": "controller-context"
+    },
+    {
+      "actual_reads": {
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link0": {
+          "classes": [
+            "Chain"
+          ],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        },
+        "Lib:Chain:instance:$EXPERIMENT/week/warm/trials/guards/.warm-tests/12731-controller-context/app/services/chain.rb:0:link1": {
+          "classes": [],
+          "const_ids": [],
+          "const_names": [],
+          "fold_slots": [],
+          "wild": []
+        }
+      },
+      "actual_reads_changed": true,
+      "component_coverage_certified": false,
+      "conservative_guard_entries": 14,
+      "contexts": "3066ed7d10efcfee",
+      "entry_contexts": "b7d93004327d7250",
+      "evaluations": {
+        "invalidated": 2,
+        "loaded": 21,
+        "recorded": 16,
+        "replayed": 3,
+        "typed": 13,
+        "uncovered": 1,
+        "unused": 15
+      },
+      "expected_int": false,
+      "expected_str": false,
+      "native": {
+        "actions": [
+          {
+            "name": "index",
+            "type": {
+              "kind": "nil"
+            }
+          },
+          {
+            "name": "other",
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "known_atoms": {
+          "BenchController.instance.index": [
+            "Nil"
+          ],
+          "BenchController.instance.other": [
+            "Nil"
+          ],
+          "Chain.instance.link0": [
+            "Nil"
+          ],
+          "Chain.instance.link1": [
+            "Nil"
+          ]
+        },
+        "spans": [
+          {
+            "end": 27,
+            "file": 2,
+            "start": 22,
+            "type": {
+              "kind": "nil"
+            }
+          }
+        ],
+        "types": {
+          "BenchController.instance.index": {
+            "kind": "nil"
+          },
+          "BenchController.instance.other": {
+            "kind": "nil"
+          },
+          "Chain.instance.link0": {
+            "kind": "nil"
+          },
+          "Chain.instance.link1": {
+            "kind": "nil"
+          }
+        }
+      },
+      "shadow": "pass",
+      "stage": "split-scc",
+      "variant": "controller-context"
+    }
+  ],
+  "support_summary": [
+    {
+      "completed_rows": 24,
+      "failed_variants": [],
+      "selective_replay_authorized": false,
+      "variants": 6
+    }
+  ],
+  "tests": {
+    "storage": {
+      "log": "evidence/committed-storage.log",
+      "result": [
+        "FAILED",
+        "0",
+        "1",
+        "0"
+      ],
+      "sha256": "da128090dbef47a3fc5af764e772af00c6f0fa715848b60e70606a2a093629a2"
+    },
+    "support": {
+      "log": "evidence/committed-support.log",
+      "result": [
+        "ok",
+        "1",
+        "0",
+        "0"
+      ],
+      "sha256": "903b0a0b3cbc68944eb47fe05540ae2c44919bb4f8597384f03fd6ea1058db5d"
+    },
+    "warm-suite": {
+      "log": "evidence/committed-warm-suite.log",
+      "result": [
+        "FAILED",
+        "15",
+        "1",
+        "0"
+      ],
+      "sha256": "198dc15568515884134ad5e0db6436b0e0fe807dc4e373bcff1111735f9b7994"
+    }
+  }
+}

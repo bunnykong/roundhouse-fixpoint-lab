@@ -1,0 +1,70 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 1676,
+        "write": 1148
+      },
+      "ambiguous_expression_sites": 0,
+      "reads_before_return_write": 190,
+      "undeclared_reads": 166,
+      "undeclared_writes": 11,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 1888,
+        "write": 1234
+      },
+      "ambiguous_expression_sites": 0,
+      "reads_before_return_write": 218,
+      "undeclared_reads": 190,
+      "undeclared_writes": 11,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [
+    {
+      "entity": "route",
+      "kind": "return",
+      "left_only": 0,
+      "right_only": 1,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "phase:handoff-return",
+            "[\"StructureProbe\",\"class\",\"written_later\"]",
+            "write",
+            "inline"
+          ]
+        ]
+      }
+    },
+    {
+      "entity": "writer",
+      "kind": "return",
+      "left_only": 0,
+      "right_only": 1,
+      "samples": {
+        "left_only": [],
+        "right_only": [
+          [
+            "[\"StructureProbe\",\"class\",\"written_later\"]",
+            "phase:handoff-return"
+          ]
+        ]
+      }
+    }
+  ],
+  "different": true,
+  "input_digest": "70952c4118c297c5",
+  "left": "$EXPERIMENT/week/structure/runs/declaration-fixture-v2/structure_fixture/observe/1/structure.jsonl",
+  "right": "$EXPERIMENT/week/structure/runs/declaration-fixture-v2/structure_fixture/observe/2/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 396,
+    "slot": 2901,
+    "writer": 2663
+  }
+}

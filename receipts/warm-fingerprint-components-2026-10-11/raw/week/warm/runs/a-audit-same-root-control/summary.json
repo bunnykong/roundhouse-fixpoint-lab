@@ -1,0 +1,121 @@
+{
+  "app_path": "$EXPERIMENT/week/warm/runs/a-audit/apps/mastodon",
+  "candidate_identity": {
+    "diagnostic_content": "2af428a61c09e95c86be702c72eae2250123d22498918381126d37ccf02cadeb",
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 10,
+        "ivar_unresolved": 213,
+        "send_dispatch_failed": 527,
+        "unsupported": 722
+      },
+      "note": {
+        "ivar_unresolved": 20,
+        "send_dispatch_failed": 47,
+        "unresolved_type": 67,
+        "unsupported": 43
+      },
+      "warning": {
+        "gradual_untyped": 2677,
+        "missing_preload": 2,
+        "unresolved_type": 1476
+      }
+    },
+    "digest": {
+      "attributes": "a37c9d9b810b8be2",
+      "block_values": "44edea0c5cb70b1b",
+      "constants": "add5ece3236e2ec4",
+      "controller_bindings": "574505146cc62934",
+      "controller_cache": "48093f2208b6a727",
+      "copies": "93553523fa62cefd",
+      "ir": "4775d79f45aecbec",
+      "params": "a93f58f9829b509b",
+      "returns": "29672463675b770a",
+      "sccq_contexts": "c012c6bfffb8146a",
+      "sccq_dependencies": "4c4aa35eff3949bc",
+      "sccq_entry_contexts": "042a57fb26e95294",
+      "side_table": "1aacc54adfdd59b1"
+    },
+    "entries": {
+      "attributes": 939,
+      "block_values": 1738,
+      "constants": 600,
+      "controller_bindings": 532,
+      "controller_cache": 310,
+      "copies": 391,
+      "ir": 217940,
+      "params": 12636,
+      "returns": 52621,
+      "sccq_contexts": 8837,
+      "sccq_dependencies": 8837,
+      "sccq_entry_contexts": 1469,
+      "side_table": 612
+    },
+    "exit": 1,
+    "summaries": [
+      "0 parse error(s), 1472 error(s), 4155 warning(s), 177 gap-attributed note(s), 51 survey gap(s)"
+    ]
+  },
+  "condition": "warm-fingerprint-components-20261011-a-audit-same-root-control",
+  "differing_identity_fields": [],
+  "edited_tree_sha256": "315d0c04ba0412abe546aa7510158133d2a750408905670e4a4590a23aff521c",
+  "parent_binary_sha256": "56f6d39a35c1c3e44e916be2520981348518f372a931d6611853e89f6d62f465",
+  "parent_equals_candidate": true,
+  "parent_identity": {
+    "diagnostic_content": "2af428a61c09e95c86be702c72eae2250123d22498918381126d37ccf02cadeb",
+    "diagnostics": {
+      "error": {
+        "incompatible_binop": 10,
+        "ivar_unresolved": 213,
+        "send_dispatch_failed": 527,
+        "unsupported": 722
+      },
+      "note": {
+        "ivar_unresolved": 20,
+        "send_dispatch_failed": 47,
+        "unresolved_type": 67,
+        "unsupported": 43
+      },
+      "warning": {
+        "gradual_untyped": 2677,
+        "missing_preload": 2,
+        "unresolved_type": 1476
+      }
+    },
+    "digest": {
+      "attributes": "a37c9d9b810b8be2",
+      "block_values": "44edea0c5cb70b1b",
+      "constants": "add5ece3236e2ec4",
+      "controller_bindings": "574505146cc62934",
+      "controller_cache": "48093f2208b6a727",
+      "copies": "93553523fa62cefd",
+      "ir": "4775d79f45aecbec",
+      "params": "a93f58f9829b509b",
+      "returns": "29672463675b770a",
+      "sccq_contexts": "c012c6bfffb8146a",
+      "sccq_dependencies": "4c4aa35eff3949bc",
+      "sccq_entry_contexts": "042a57fb26e95294",
+      "side_table": "1aacc54adfdd59b1"
+    },
+    "entries": {
+      "attributes": 939,
+      "block_values": 1738,
+      "constants": 600,
+      "controller_bindings": 532,
+      "controller_cache": 310,
+      "copies": 391,
+      "ir": 217940,
+      "params": 12636,
+      "returns": 52621,
+      "sccq_contexts": 8837,
+      "sccq_dependencies": 8837,
+      "sccq_entry_contexts": 1469,
+      "side_table": 612
+    },
+    "exit": 1,
+    "summaries": [
+      "0 parse error(s), 1472 error(s), 4155 warning(s), 177 gap-attributed note(s), 51 survey gap(s)"
+    ]
+  },
+  "shadow_cold_parity": true
+}

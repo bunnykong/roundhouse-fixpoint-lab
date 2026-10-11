@@ -1,0 +1,21 @@
+{
+  "brief": "phase2/launch/LAUNCH-BRIEF.md Common setup and reflective writer bound",
+  "native_brief_commands_worked": true,
+  "changes": [
+    {"change": "WEEK is agents/reflective-writer-bound/week; move D is WEEK/bound; the handoff is agents/reflective-writer-bound/RESULT.md.", "reason": "Explicit user write boundary."},
+    {"change": "Independent Git repositories under the task directory, with the required local branch in the task root and candidate clone.", "reason": "Keep source repositories and frontier Git metadata untouched."},
+    {"change": "Copied the preparation notes Cargo cache into the isolated WEEK/cargo-home before building.", "reason": "Avoid repeated downloads while retaining pinned lockfile and dedicated targets."},
+    {"change": "Wrapped corpus fetch, Cargo, tests and analysis with the requested workshop shared lock.", "reason": "User coordination requirement. No comparative timing measurement was made."},
+    {"change": "Captured the manifest populated by fetch, then restored the lab's original tracked manifest.", "reason": "Fetch succeeded on all five pins but writes corpus/MANIFEST.json; keep the lab at its clean recorded input."},
+    {"change": "Preserved raw Cargo exits and nonzero test counts in receipt JSON, while drivers accept the advance prediction exit 101 for known failures.", "reason": "A failing control or partition law must not become a claimed pass."},
+    {"change": "Added /target-laws/ to each task-local clone's .git/info/exclude.", "reason": "The brief's law target path is not covered by the compiler's /target ignore; this avoids recording build outputs as source changes."},
+    {"change": "The receipt runner now limits added-source hashes to src/ and recognizes Cargo's integration-test output prefix.", "reason": "Earlier intact receipts also contain cache-file hashes, and the integration receipt initially lacked its executable hash. Provenance supplements the unchanged integration executable and preserves original receipts."},
+    {"change": "Added matched default-library and six existing reflective integration controls.", "reason": "The first extra library run returned 101 rather than the runner's expected 0. The untouched clone has exactly the same 43 failed tests: 41 fixture prerequisites and two inherited assertions. Updated driver expectations preserve this failed baseline."},
+    {"change": "Read component opacity gate's component guard without editing or copying its implementation.", "reason": "Check paired native boundary JSON for extra opacity against the existing plain bound."},
+    {"change": "Strengthened new tests with native Debug-shape equality after the first successful run; reran affected candidate selections under fresh -final labels.", "reason": "Ty equality ignores record field order; the final receipt should also establish native storage fidelity for these samples."},
+    {"change": "The first verifier was invoked before the default-library receipt existed; it failed before producing a measurement. Re-ran sequentially at fresh output paths after prerequisites completed.", "reason": "Preserve the incomplete attempt and require complete receipts before a verdict."},
+    {"change": "Fixed a post-commit metadata helper's source-function name shadowing; final metadata uses fresh labels and the finalizer resumes an already committed candidate.", "reason": "The runtime capture error stopped packaging before cleanup, without affecting native tests or the repair commit. Earlier provisional JSON and the failed capture log are retained."}
+  ],
+  "absent_read_first_input": "docs/pitfalls.md does not exist in this Analyzer frontier checkout.",
+  "scope": "No new widening domain, no history-cut removal, no next port, no application campaign, no push or GitHub write."
+}

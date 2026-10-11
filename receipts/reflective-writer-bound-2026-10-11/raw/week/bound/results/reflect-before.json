@@ -1,0 +1,55 @@
+{
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "5b27f3ea751109611ddbd3b63541aa14a2c8b37668899717968e0c6987fff8b4"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "writer_law_reflective_ivar_bound",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/base",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/base/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 101,
+  "expected_exit": 101,
+  "label": "reflect-before",
+  "log_sha256": "b93fd1494ccee753f0bd09d9559a59ec7c2a59ab7e0adab665526679390a8bd7",
+  "properties": [
+    {
+      "checks": 50,
+      "law": "bounded-storage",
+      "result": "FAIL",
+      "witness": "(Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]]) => Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]] != Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Untyped]]]]]]]]]]]]]]]]",
+      "witness_nodes": 18,
+      "writer": "harvest_ivar_set/bound-coverage"
+    }
+  ],
+  "results": [
+    {
+      "failed": 1,
+      "filtered": 1162,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 0
+    }
+  ],
+  "selection": "writer_law_reflective_ivar_bound",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "base"
+}

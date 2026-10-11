@@ -1,0 +1,37 @@
+{
+  "audit": {
+    "left": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    },
+    "right": {
+      "accesses": {
+        "read": 830676,
+        "write": 278606
+      },
+      "ambiguous_expression_sites": 3324,
+      "reads_before_return_write": 265510,
+      "undeclared_reads": 300472,
+      "undeclared_writes": 25483,
+      "unmapped_expression_sites": 0
+    }
+  },
+  "by_kind": [],
+  "different": false,
+  "input_digest": "3bab9fff4c055a46",
+  "left": "$EXPERIMENT/week/structure/runs/control-campfire/campfire/observe/unset/structure.jsonl",
+  "right": "$EXPERIMENT/week/structure/runs/control-campfire/campfire/observe/repeat-unset/structure.jsonl",
+  "schema": "rh-structure-diff-v1",
+  "shared": {
+    "route": 135816,
+    "slot": 50222,
+    "writer": 62041
+  }
+}

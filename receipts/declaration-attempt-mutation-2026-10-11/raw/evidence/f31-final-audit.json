@@ -1,0 +1,97 @@
+{
+  "condition": "declaration-campfire-v2; S3; verification off; unset--1",
+  "count": 8,
+  "diff_sha256": "07524001cebe2cf25c4442929b04e46e18f6f9e4b20eda474341237a4cc00924",
+  "matches_controller_mutation_eight_facts": true,
+  "return_writer_facts": [
+    {
+      "direction": "left_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "require_authentication"
+      ],
+      "writer": [
+        "harvest",
+        "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+        "no-body"
+      ]
+    },
+    {
+      "direction": "left_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "require_authentication"
+      ],
+      "writer": "phase:analysis"
+    },
+    {
+      "direction": "right_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "resume_session"
+      ],
+      "writer": [
+        "harvest",
+        "[\"ApplicationController\",\"instance\",\"resume_session\"]",
+        "no-body"
+      ]
+    },
+    {
+      "direction": "right_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "resume_session"
+      ],
+      "writer": "phase:analysis"
+    },
+    {
+      "direction": "right_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "start_new_session_for"
+      ],
+      "writer": [
+        "harvest",
+        "[\"ApplicationController\",\"instance\",\"start_new_session_for\"]",
+        "no-body"
+      ]
+    },
+    {
+      "direction": "right_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "start_new_session_for"
+      ],
+      "writer": "phase:analysis"
+    },
+    {
+      "direction": "left_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "terminate_current_session"
+      ],
+      "writer": [
+        "harvest",
+        "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+        "no-body"
+      ]
+    },
+    {
+      "direction": "left_only",
+      "target": [
+        "ApplicationController",
+        "instance",
+        "terminate_current_session"
+      ],
+      "writer": "phase:analysis"
+    }
+  ],
+  "source_commit": "7972f4cdfac1449ddf4b58cc47c6322391f1a6bd"
+}

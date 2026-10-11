@@ -1,0 +1,119 @@
+{
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "5b27f3ea751109611ddbd3b63541aa14a2c8b37668899717968e0c6987fff8b4"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "writer_law_bound_",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/base",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/base/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 101,
+  "expected_exit": 101,
+  "label": "bound-before",
+  "log_sha256": "3a64e6f865e4f51ff37906f18ef2f7978257feef3342c4c2ff9cfe8d10cc8ae3",
+  "properties": [
+    {
+      "checks": 52,
+      "law": "idempotence",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 1,
+      "law": "pending",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 48,
+      "law": "within-limit-identity",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "fixpoint_bound/boundary-universe"
+    },
+    {
+      "checks": 4116,
+      "law": "once-vs-per-pair",
+      "result": "FAIL",
+      "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped != Union[Array[Int], Untyped]",
+      "witness_nodes": 514,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation/once",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "regrouping/per-pair",
+      "result": "FAIL",
+      "witness": "(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped != Union[Array[Int], Untyped]",
+      "witness_nodes": 514,
+      "writer": "bound/join_ivar_slot"
+    },
+    {
+      "checks": 4116,
+      "law": "once-vs-per-pair",
+      "result": "FAIL",
+      "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Int) => Union[Int, Untyped] != Int",
+      "witness_nodes": 513,
+      "writer": "bound/unify_param_ty"
+    },
+    {
+      "checks": 4116,
+      "law": "permutation/once",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "bound/unify_param_ty"
+    },
+    {
+      "checks": 4116,
+      "law": "regrouping/per-pair",
+      "result": "FAIL",
+      "witness": "(Int; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Union[Int, Untyped] != Int",
+      "witness_nodes": 513,
+      "writer": "bound/unify_param_ty"
+    }
+  ],
+  "results": [
+    {
+      "failed": 2,
+      "filtered": 1160,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 1
+    }
+  ],
+  "selection": "writer_law_bound_",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "base"
+}

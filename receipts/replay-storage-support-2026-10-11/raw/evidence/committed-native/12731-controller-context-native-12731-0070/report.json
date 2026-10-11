@@ -1,0 +1,114 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "other",
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      ]
+    }
+  ],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Int",
+      "Str"
+    ],
+    "BenchController.instance.other": [
+      "Int",
+      "Str"
+    ],
+    "Chain.instance.link0": [
+      "Int",
+      "Str"
+    ],
+    "Chain.instance.link1": [
+      "Int",
+      "Str"
+    ]
+  },
+  "spans": [
+    {
+      "end": 52,
+      "file": 2,
+      "start": 22,
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      ]
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "str"
+        }
+      ]
+    ],
+    "BenchController.instance.other": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "str"
+        }
+      ]
+    ],
+    "Chain.instance.link0": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "str"
+        }
+      ]
+    ],
+    "Chain.instance.link1": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "str"
+        }
+      ]
+    ]
+  }
+}

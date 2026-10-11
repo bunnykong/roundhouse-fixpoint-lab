@@ -1,0 +1,78 @@
+{
+  "assignment_root": "$EXPERIMENT",
+  "week": "$EXPERIMENT/week",
+  "changes": [
+    {
+      "command": "Common setup exports",
+      "change": "WEEK is the assignment's week directory; LAB is WEEK/lab; warm fingerprint components's copied runner derives its own D as WEEK/warm.",
+      "reason": "The user's required write boundary replaces launch/week-20261014. setup.sh records the common pins and clean environment."
+    },
+    {
+      "command": "build base",
+      "change": "Populate the local Cargo git and registry caches from writer-laws's existing cache; rebuild with CARGO_NET_OFFLINE=true.",
+      "reason": "The first build returned 101 because Cargo could not authenticate the pinned git@github.com:Shopify/rubydex dependency. No dependency pin or lockfile was changed.",
+      "receipts": [
+        "evidence/build-base.log",
+        "evidence/build-base-offline.log"
+      ]
+    },
+    {
+      "command": "trial",
+      "change": "Use flock.py --exclusive for every native profile instead of session.sh's shared heavy helper; keep builds and tests shared.",
+      "reason": "User timing requirement and CONFLICTS C30. The imported F30 check function takes no nested lock."
+    },
+    {
+      "command": "trial condition labels",
+      "change": "Prefix fresh condition IDs with warm-fingerprint-components-20261011 instead of incremental.",
+      "reason": "Distinguish new local measurements from frozen F30 and preparation notes preparation."
+    },
+    {
+      "command": "warm_tests a",
+      "change": "Add a focused --lib warm_fp_ run under RH_FOLD=1 and RH_WARM_FP_AUDIT=1, with --include-ignored, before the original warm_check integration target.",
+      "reason": "Direct Ctx.instance_body, fold-generation and stale-generation canaries require native internal access. The fold-on canary is intentionally ignored by the ordinary flags-off library suite and explicitly selected here."
+    },
+    {
+      "command": "replay_pairs.py audit acceptance",
+      "change": "For RH_WARM_FP_AUDIT=1, require enabled instrumentation and nonzero, complete extra/input/guard comparison counts.",
+      "reason": "CONFLICTS C26-C27: naming an audit flag or exit 0 alone cannot pass the experiment."
+    },
+    {
+      "command": "native runner deadline",
+      "change": "Set PROFILE_STOP_UTC to 11:33 UTC for subsequent commands.",
+      "reason": "The existing imported F30 helper supports this deadline; reserve time to write receipts and clean targets before about 11:53 UTC."
+    },
+    {
+      "command": "extra library-control failure classification",
+      "change": "Correct the reducer assertion from 42 explicit fixture failures to 39 explicit fixture failures plus two LSP missing-path failures and two inherited assertions.",
+      "reason": "The shared-outcome comparison already matched all 1,139 tests, but the first reducer classified three messages too broadly. The corrected command exits 0; both logs remain.",
+      "receipts": [
+        "evidence/control-check.log",
+        "evidence/control-check-fixed.log",
+        "evidence/control-summary.json"
+      ]
+    },
+    {
+      "command": "initial warm_tests selection",
+      "change": "The first queued native-unit selection used the already-sourced helper before --include-ignored was added. Run a separate explicit --include-ignored selection.",
+      "reason": "The first selection passed five and ignored the fold-on canary; the explicit selection passed all six, with zero ignored. warm_check passed sixteen.",
+      "receipts": [
+        "evidence/warm-tests-a.log",
+        "evidence/warm-fp-canaries-a.log"
+      ]
+    },
+    {
+      "command": "trial a-audit --reference / trial a-fast --reference",
+      "change": "The original parent comparison used cold digests from different scratch paths. Replay the hash-verified pristine parent binary at the candidate edited app path, preserving every identity field. For the completed audit, add one short same-root parent cold control and a separate validated packet instead of repeating all three audit runs.",
+      "reason": "Native audit exited 1 solely on scheduler-context/dependency digests; those unit keys include absolute source paths. All values, diagnostics and counts matched. The pristine parent at the candidate path matches every field. This is a runner-path correction, not a weakened gate.",
+      "receipts": [
+        "evidence/trial-a-audit.log",
+        "evidence/parent-difference.json",
+        "evidence/parent-same-root.log",
+        "week/warm/runs/a-audit-same-root-control/summary.json",
+        "week/warm/runs/a-audit-same-root-control/validated-audit-results.json"
+      ],
+      "source": "src/analyze/sccq.rs:2918"
+    }
+  ],
+  "repository_orientation": "The supplied research workspace docs/pitfalls.md path is absent here. The actual frontier README.md, state notes, theory notes, design notes, and applicable Roundhouse AGENTS.md were read. No root documentation was modified."
+}

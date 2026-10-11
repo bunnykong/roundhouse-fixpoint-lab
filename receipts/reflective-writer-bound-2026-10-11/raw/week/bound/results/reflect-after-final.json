@@ -1,0 +1,59 @@
+{
+  "added_source_sha256": {
+    "src/analyze/fixpoint_bound/writer_law_partitions.rs": "22bf1290008a12af75e17d654092ad54dc9f91eb67ec56f05688325cba83e14d"
+  },
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "b923358ff549375f864caa10bb2882a0b2e6ee47ea3a6692e8cae1a79eb3f26f"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "writer_law_reflective_ivar_bound",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/candidate",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/candidate/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 0,
+  "expected_exit": 0,
+  "integration": null,
+  "label": "reflect-after-final",
+  "log_sha256": "aaf0eb0a4bab334dc3bdf2d001ed8132da1afa3daed914ad15fb53ae2159b2b4",
+  "properties": [
+    {
+      "checks": 50,
+      "law": "bounded-storage",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "harvest_ivar_set/bound-coverage"
+    }
+  ],
+  "results": [
+    {
+      "failed": 0,
+      "filtered": 1166,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 1
+    }
+  ],
+  "selection": "writer_law_reflective_ivar_bound",
+  "source_diff_sha256": "74e6f7ab044091f12feb15dbb3761b6fc697e303f13c71affa3366565692806a",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "candidate"
+}

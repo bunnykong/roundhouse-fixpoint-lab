@@ -1,0 +1,55 @@
+{
+  "binary_sha256": {
+    "target-laws/debug/deps/roundhouse-ade61decbfdea4eb": "5b27f3ea751109611ddbd3b63541aa14a2c8b37668899717968e0c6987fff8b4"
+  },
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--lib",
+    "writer_law_ivar_batch_bound",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/base",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/base/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "batch-before",
+  "log_sha256": "01ee71944bacc166fce5a2a984e72e5ddf9d10b1f332f60f0d18a360f34a8e7d",
+  "properties": [
+    {
+      "checks": 4116,
+      "law": "permutation-and-duplicate",
+      "result": "PASS",
+      "witness": null,
+      "witness_nodes": null,
+      "writer": "extract_ivar_assignments/bound-once"
+    }
+  ],
+  "results": [
+    {
+      "failed": 0,
+      "filtered": 1162,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 1
+    }
+  ],
+  "selection": "writer_law_ivar_batch_bound",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "base"
+}

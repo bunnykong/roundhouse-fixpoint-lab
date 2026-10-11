@@ -1,0 +1,28 @@
+Candidate source: week/warm/trials/a, parent d9ec78c31db361db8818b13153e5ddddee484c57.
+Canonical input fields retain expr type stamps, all five Ctx flags, self, local and ivar bindings,
+class object names, sorted registry keys, extra, and fold metadata. No expression or Ctx bytes are memoized.
+
+Registry keys: every call compares cached key count and exact ClassId membership before reusing sorted bytes.
+This detects additions, removals, and same-length replacements; no pointer or probabilistic key hash is used.
+The detected generations are counted as class_key_generations; ClassInfo contents continue through old read guards.
+
+fold::warm_structure observes State.active, State.rec_methods and State.aliases only.
+Production writers found by rg: reset replaces State; note_alias inserts aliases; add_rec_methods inserts
+rec_methods and sets active; deactivate clears active. All four advance warm_structure_generation on change.
+Repeated identical alias insertions do not change the component. Three direct State replacements under cfg(test)
+are not production writers. Metadata byte buffers are scoped to one warm Session and dropped before shadow.
+
+extra observes Analyzer.typed_constants, inquirers and data_factories.
+Analyzer::new constructs inquirers and factories once from the current input. No later mutation site exists.
+Full-pass run_typing_passes and test-only type_tests_only both replace constants through
+replace_typed_constants, which advances warm_extra_generation conservatively on every replacement,
+including equal replacements. The initial source review found the second caller before measurements. Analyzer::body_typer supplies that generation only after
+all component setters. Other BodyTypers, including build_constant_registry's temporary resolved maps, have
+no generation and never reuse extra. Component setters revoke any previously attached generation.
+Only check starts warm recording, with one main Analyzer per Session. Cold shadow starts after stop clears
+both Session and component state. Reuse assumes this current CLI lifetime, not a future resident service.
+
+Audit flag: RH_WARM_FP_AUDIT=1 builds original extra on every reused call, original canonical JSON on every
+outer evaluation, and recomputes the original hash algorithm and original covered-read decision. Any difference
+panics. It never converts conservative guards into scheduler reads; the existing scratch read discard remains.
+The runner requires audit_enabled=true and nonzero, complete extra/input/guard comparisons before accepting a run.

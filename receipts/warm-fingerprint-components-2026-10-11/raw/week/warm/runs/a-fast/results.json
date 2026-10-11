@@ -1,0 +1,243 @@
+{
+  "cold_identities": {
+    "mastodon-boolean": {
+      "diagnostic_content": "2af428a61c09e95c86be702c72eae2250123d22498918381126d37ccf02cadeb",
+      "diagnostics": {
+        "error": {
+          "incompatible_binop": 10,
+          "ivar_unresolved": 213,
+          "send_dispatch_failed": 527,
+          "unsupported": 722
+        },
+        "note": {
+          "ivar_unresolved": 20,
+          "send_dispatch_failed": 47,
+          "unresolved_type": 67,
+          "unsupported": 43
+        },
+        "warning": {
+          "gradual_untyped": 2677,
+          "missing_preload": 2,
+          "unresolved_type": 1476
+        }
+      },
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "44edea0c5cb70b1b",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "574505146cc62934",
+        "controller_cache": "48093f2208b6a727",
+        "copies": "93553523fa62cefd",
+        "ir": "4775d79f45aecbec",
+        "params": "a93f58f9829b509b",
+        "returns": "29672463675b770a",
+        "sccq_contexts": "16d397b1893a8e1d",
+        "sccq_dependencies": "67c96e00029e744f",
+        "sccq_entry_contexts": "042a57fb26e95294",
+        "side_table": "1aacc54adfdd59b1"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1738,
+        "constants": 600,
+        "controller_bindings": 532,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 217940,
+        "params": 12636,
+        "returns": 52621,
+        "sccq_contexts": 8837,
+        "sccq_dependencies": 8837,
+        "sccq_entry_contexts": 1469,
+        "side_table": 612
+      },
+      "exit": 1,
+      "summaries": [
+        "0 parse error(s), 1472 error(s), 4155 warning(s), 177 gap-attributed note(s), 51 survey gap(s)"
+      ]
+    }
+  },
+  "condition": "warm-fingerprint-components-20261011-a-fast",
+  "pairs": [
+    {
+      "app": "mastodon",
+      "cold_peak_rss_mb": 717,
+      "cold_wall_seconds": 7.349010957987048,
+      "edit": "boolean",
+      "order": [
+        "cold",
+        "warm"
+      ],
+      "pair": 1,
+      "parent_same_root_parity": true,
+      "parent_same_root_wall_seconds": 7.625184917007573,
+      "parity": true,
+      "published_bytes": 467429345,
+      "ratio": 3.2522485580218294,
+      "seed_bytes": 467429249,
+      "seed_sha256": "d05295e7b6fb31a6433219db9766a7a96f21e8ad58a4e11db437a0c6e03a1714",
+      "warm_excluding_shadow_seconds": 23.900810291,
+      "warm_peak_rss_mb": 11280,
+      "warm_report": {
+        "cold_analyze_seconds": 5.9907559169999995,
+        "cold_digest": {
+          "attributes": "a37c9d9b810b8be2",
+          "block_values": "44edea0c5cb70b1b",
+          "constants": "add5ece3236e2ec4",
+          "controller_bindings": "574505146cc62934",
+          "controller_cache": "48093f2208b6a727",
+          "copies": "93553523fa62cefd",
+          "ir": "4775d79f45aecbec",
+          "params": "a93f58f9829b509b",
+          "returns": "29672463675b770a",
+          "sccq_contexts": "16d397b1893a8e1d",
+          "sccq_dependencies": "67c96e00029e744f",
+          "sccq_entry_contexts": "042a57fb26e95294",
+          "side_table": "1aacc54adfdd59b1"
+        },
+        "evaluations": {
+          "invalidated": 12,
+          "loaded": 60698,
+          "recorded": 60698,
+          "replayed": 59629,
+          "typed": 1069,
+          "uncovered": 1057,
+          "unused": 0
+        },
+        "fingerprint_components": {
+          "audit_enabled": false,
+          "counters": {
+            "class_key_bytes_encoded": 48975,
+            "class_key_bytes_used": 2972684550,
+            "class_key_calls": 60698,
+            "class_key_generation_hits": 60697,
+            "class_key_generations": 1,
+            "context_bytes": 53754363,
+            "expression_bytes": 128524307,
+            "extra_bytes_encoded": 161442,
+            "extra_bytes_used": 1633201086,
+            "extra_calls": 60698,
+            "extra_generation_hits": 60692,
+            "extra_generations": 6,
+            "final_bytes": 27767599592,
+            "guard_accepts": 59629,
+            "guard_rejects": 1069,
+            "input_calls": 60698,
+            "metadata_bytes_encoded": 2067967,
+            "metadata_bytes_used": 22974397352,
+            "metadata_calls": 60698,
+            "metadata_generation_hits": 60693,
+            "metadata_generations": 5
+          },
+          "peak_retained_canonical_bytes": 593311,
+          "retained_canonical_bytes": 593311,
+          "retained_class_key_count": 1738,
+          "retained_extra_values": 1,
+          "size_scope": "canonical buffers plus separately counted keys and one materialized extra Value"
+        },
+        "first_difference": null,
+        "ingest_seconds": 0.683362583,
+        "phases": {
+          "fingerprint_components": {
+            "audit_enabled": false,
+            "counters": {
+              "class_key_bytes_encoded": 48975,
+              "class_key_bytes_used": 2972684550,
+              "class_key_calls": 60698,
+              "class_key_generation_hits": 60697,
+              "class_key_generations": 1,
+              "context_bytes": 53754363,
+              "expression_bytes": 128524307,
+              "extra_bytes_encoded": 161442,
+              "extra_bytes_used": 1633201086,
+              "extra_calls": 60698,
+              "extra_generation_hits": 60692,
+              "extra_generations": 6,
+              "final_bytes": 27767599592,
+              "guard_accepts": 59629,
+              "guard_rejects": 1069,
+              "input_calls": 60698,
+              "metadata_bytes_encoded": 2067967,
+              "metadata_bytes_used": 22974397352,
+              "metadata_calls": 60698,
+              "metadata_generation_hits": 60693,
+              "metadata_generations": 5
+            },
+            "peak_retained_canonical_bytes": 593311,
+            "retained_canonical_bytes": 593311,
+            "retained_class_key_count": 1738,
+            "retained_extra_values": 1,
+            "size_scope": "canonical buffers plus separately counted keys and one materialized extra Value"
+          },
+          "schema": 2,
+          "scope": "warm-start-through-stop-exclusive-wall",
+          "scope_counts": {
+            "class_fingerprints": 627046,
+            "fingerprints": 8838,
+            "fp_audit": 0,
+            "fp_class_keys": 60698,
+            "fp_context_encoding": 60698,
+            "fp_expression_encoding": 60698,
+            "fp_extra_construction": 60698,
+            "fp_final_encoding": 60698,
+            "fp_final_hashing": 60698,
+            "fp_recursive_metadata": 60698,
+            "fresh_typing": 33133,
+            "guards": 60698,
+            "input_fingerprints": 60698,
+            "load_decode": 1,
+            "old_trace_cleanup": 1,
+            "other": 0,
+            "recording": 60841,
+            "replay": 119258,
+            "shadow_clone": 1,
+            "value_fingerprints": 221045
+          },
+          "seconds": {
+            "class_fingerprints": 2.846996234,
+            "fingerprints": 0.236432169,
+            "fp_audit": 0.0,
+            "fp_class_keys": 1.223479705,
+            "fp_context_encoding": 0.249676322,
+            "fp_expression_encoding": 0.880966799,
+            "fp_extra_construction": 0.003813629,
+            "fp_final_encoding": 0.39773113,
+            "fp_final_hashing": 4.696227416,
+            "fp_recursive_metadata": 0.009367697,
+            "fresh_typing": 0.15441497,
+            "guards": 1.204980282,
+            "input_fingerprints": 0.033848661,
+            "load_decode": 0.955829291,
+            "old_trace_cleanup": 0.52561775,
+            "other": 5.707860087,
+            "recording": 0.024371032,
+            "replay": 2.587105851,
+            "shadow_clone": 0.039595125,
+            "value_fingerprints": 0.180944975
+          },
+          "total_seconds": 21.959259125
+        },
+        "shadow": "pass",
+        "shadow_clone_seconds": 0.03959525,
+        "shadow_seconds": 6.381462792,
+        "warm_analyze_seconds": 20.280508958,
+        "warm_digest": {
+          "attributes": "a37c9d9b810b8be2",
+          "block_values": "44edea0c5cb70b1b",
+          "constants": "add5ece3236e2ec4",
+          "controller_bindings": "574505146cc62934",
+          "controller_cache": "48093f2208b6a727",
+          "copies": "93553523fa62cefd",
+          "ir": "4775d79f45aecbec",
+          "params": "a93f58f9829b509b",
+          "returns": "29672463675b770a",
+          "sccq_contexts": "16d397b1893a8e1d",
+          "sccq_dependencies": "67c96e00029e744f",
+          "sccq_entry_contexts": "042a57fb26e95294",
+          "side_table": "1aacc54adfdd59b1"
+        }
+      },
+      "whole_warm_seconds": 30.49189208401367
+    }
+  ]
+}

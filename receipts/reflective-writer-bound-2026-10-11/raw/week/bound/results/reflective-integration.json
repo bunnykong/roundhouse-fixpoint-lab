@@ -1,0 +1,48 @@
+{
+  "added_source_sha256": {
+    "src/analyze/fixpoint_bound/writer_law_partitions.rs": "e21138ff72ea006a278760d598a6895399d07e8ba29be4f56c5c934834a0923b"
+  },
+  "binary_sha256": {},
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--test",
+    "analyze",
+    "instance_variable_set",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "reflective-writer-bound-20261011-bf2f052f",
+  "cwd": "$EXPERIMENT/week/bound/candidate",
+  "default": false,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound/candidate/target-laws",
+    "RBENV_VERSION": "3.4.4"
+  },
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "reflective-integration",
+  "log_sha256": "e632b560e749d2a8d9eb649f953e21def8030aa0d7ff1e4c5889bb14ee36a0e3",
+  "properties": [],
+  "results": [
+    {
+      "failed": 0,
+      "filtered": 101,
+      "ignored": 0,
+      "measured": 0,
+      "passed": 6
+    }
+  ],
+  "selection": "instance_variable_set",
+  "source_diff_sha256": "74e6f7ab044091f12feb15dbb3761b6fc697e303f13c71affa3366565692806a",
+  "source_head": "bf2f052ff34a240dab0cb05b1185c0e3ad571888",
+  "timed_measurement": false,
+  "timing_scope": "Cargo/test-harness durations are shared-host diagnostics, not performance measurements.",
+  "tree": "candidate"
+}

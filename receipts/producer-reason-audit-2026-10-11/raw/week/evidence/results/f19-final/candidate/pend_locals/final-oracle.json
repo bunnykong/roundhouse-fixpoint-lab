@@ -1,0 +1,39 @@
+{
+  "accepted": 4,
+  "coverage": {
+    "missing": [],
+    "missing_observations": [],
+    "opaque": [
+      "scanner_capture_len_ret",
+      "scanner_capture_ret",
+      "scanner_last_for_ret"
+    ],
+    "selected_slots": 3,
+    "tags": {
+      "Gradual": [],
+      "Pending": [],
+      "Unresolved": [
+        "scanner_capture_len_ret",
+        "scanner_capture_ret",
+        "scanner_last_for_ret"
+      ],
+      "Var": []
+    },
+    "unsupported": []
+  },
+  "legacy_membership_only": true,
+  "records": 4,
+  "slots": {
+    "Scanner#capture:return": 2,
+    "Scanner#capture_len:return": 1,
+    "Scanner#last_for:return": 1
+  },
+  "strict_selected_gate": true,
+  "tightness": {
+    "exercised": 3,
+    "meaning": "candidate over-approximations; finite samples cannot prove exactness",
+    "total": 3,
+    "unexercised": []
+  },
+  "violations": []
+}

@@ -1,0 +1,43 @@
+{
+  "branch": "replay-storage-support-replay-support",
+  "commit": "fa084d7932b21baae84db260e725d70256c685ef",
+  "parent": "d9ec78c31db361db8818b13153e5ddddee484c57",
+  "changed_files": [
+    "tests/warm_check.rs"
+  ],
+  "author": "bunnykong <268838774+bunnykong@users.noreply.github.com>",
+  "committer": "bunnykong <268838774+bunnykong@users.noreply.github.com>",
+  "trailer": "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+  "patch_sha256": "cad42f13cec9c87018fbf5eafa64259f5d2f32f71c70114c41a45ae10859a349",
+  "binaries": {
+    "base": {
+      "path": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "sha256": "f355c2e8ed826622a892af7ca2cebd9e2d4c9f1d8423ef1c583c1d0ea3248d31",
+      "version": "roundhouse 2026.9.18 (d9ec78c3)",
+      "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57"
+    },
+    "guards": {
+      "path": "$EXPERIMENT/week/warm/build/guards/release/roundhouse",
+      "sha256": "38e932d79ad5a46d7ffd49357e147dde987e225d13363de19a3e0a74a90c944e",
+      "version": "roundhouse 2026.9.18 (fa084d79)",
+      "source_head": "fa084d7932b21baae84db260e725d70256c685ef"
+    }
+  },
+  "helpers": {
+    "setup.sh": "f4f0cbf25a12b3d4fb2acb8c5c9e150242a131c1e5fabee066cb969c0cb2e998",
+    "run_checks.sh": "61fa935029aa64e1d92733ff8861c84bb6c2f8297976a17d542b6c4414194936",
+    "finish.sh": "e3b1b60173dbe248b681c886b22db8244663ba549f7651ffb40470bfacd3cdcb",
+    "prepare.sh": "e83b41b825694d54a2ca02eab9b116c95f92d65e2f4b436982e7689c1513133d",
+    "reproduce.sh": "860770078517f409ad21e140d3b91dcd387c5e2f521d31c04c7a2c0fbe080f19",
+    "seal.py": "076f3a9be1d7d9d1cbec688761780cbea3e1cdf75049fcdf13ebcf6306b1a2ad",
+    "reduce.py": "9680c45699980db0d37378ddc13e1ca8ac2ce893fd7bed05fafcf75ce125dd85",
+    "make_report.py": "6390bd149e256f8d3f790a1559486563cc8374d9c0196184b71e157b6159cb23",
+    "week/warm/scripts/replay_pairs.py": "6cc81d0918d5bb1639fa4732015054a3c82568047b371439e2f113a1b77ccf4c",
+    "week/warm/scripts/session.sh": "795909e185348eac017d655722d3ec88fbbce8243be86195ae970d00511eb53f"
+  },
+  "test_binaries": {
+    "week/warm/build/guards/release/deps/warm_check-f27463afbd49ca13": "cf69065689672dbd88d70718c4c8d7630148c8a4c26fcbdc68ded45ddd5c1e21"
+  },
+  "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "copied_m4_head": "1fbfee1a8b1b518028176ca48aa2a912f3d31e23"
+}
