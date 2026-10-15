@@ -1,0 +1,97 @@
+{
+  "all_candidate_diagnostics_equal_matched_baseline": true,
+  "all_candidate_loops_settle": true,
+  "all_fixture_controls_match_baseline": true,
+  "arm_a": {
+    "changed_categories_against_baseline_unset": [
+      "copies"
+    ],
+    "confirm_criteria": {
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": false,
+      "5": true,
+      "6": false
+    },
+    "flags_off_comparison": "both literal unset-baseline and matched-schedule comparisons retained; no waiver",
+    "flags_off_literal_unset_baseline_demand": false,
+    "flags_off_matched_schedule_neutrality": true,
+    "kill_criteria_triggered": [],
+    "verdict": "inconclusive"
+  },
+  "arm_b": {
+    "all_loops_settle": true,
+    "provenance_equal_unset_2": false,
+    "returns_equal_unset_2": true,
+    "verdict": "inconclusive",
+    "warning_counts_2": {
+      "gradual_untyped": 245,
+      "missing_preload": 1,
+      "unresolved_type": 161
+    },
+    "warning_counts_unset": {
+      "gradual_untyped": 245,
+      "missing_preload": 1,
+      "unresolved_type": 161
+    },
+    "warning_multiset_equal_baseline": true,
+    "warning_multiset_equal_unset_2": true
+  },
+  "binary_sha256": "21a7d11ca486e4144a9d1f14c6550ed0a3720860240a9f0dbfbe77a06c01a0f9",
+  "candidate_receipts_verified": {
+    "a/campfire-1": true,
+    "a/campfire-2": true,
+    "a/campfire-repeat-unset": true,
+    "a/campfire-unset": true,
+    "a/fixture-1": true,
+    "a/fixture-unset": true,
+    "b/campfire-1": true,
+    "b/campfire-2": true,
+    "b/campfire-repeat-unset": true,
+    "b/campfire-unset": true,
+    "b/fixture-1": true,
+    "b/fixture-unset": true,
+    "both/campfire-1": true,
+    "both/campfire-2": true,
+    "both/campfire-repeat-unset": true,
+    "both/campfire-unset": true,
+    "both/fixture-1": true,
+    "both/fixture-unset": true,
+    "off/campfire-1": true,
+    "off/campfire-2": true,
+    "off/campfire-repeat-unset": true,
+    "off/campfire-unset": true,
+    "off/fixture-1": true,
+    "off/fixture-unset": true
+  },
+  "combined": {
+    "all_loops_settle": true,
+    "all_ten_digests_equal_across_schedules": true,
+    "mutation_sets_equal_across_schedules": true,
+    "provenance_equal_unset_2": false
+  },
+  "condition": "structure-success-20261015-bf56edf9",
+  "default_suite": {
+    "failed": 45,
+    "ignored": 1,
+    "log": "$WORKSPACE/agents/writer-ownership-initial/checks-default-initial.log",
+    "passed": 1105,
+    "setup_error": "RBENV_VERSION=3.4 was not an installed exact version; generated fixtures also absent"
+  },
+  "advance prediction_inputs_unchanged": {
+    "protocol.md": true,
+    "workshop/bin/build.json": true,
+    "workshop/bin/roundhouse": true,
+    "workshop/diff.sh": true,
+    "workshop/inputs/manifest.json": true,
+    "workshop/run.sh": true,
+    "workshop/theory/protocol.md": true,
+    "workshop/theory/THEORY.md": true,
+    "workshop/theory/digests.py": true,
+    "workshop/theory/run_candidate.py": true,
+    "workshop/theory/support.py": true
+  },
+  "source_commit": "642217d87f3f02c729d66829b64e182eb48e6539",
+  "source_status": ""
+}

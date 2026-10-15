@@ -1,0 +1,78 @@
+{
+  "condition": "fingerprint-gates-20261015-1fbfee1a",
+  "edited_audits": [
+    {
+      "accepts": 58526,
+      "edit": "mastodon-boolean",
+      "extra": 60698,
+      "guard": 60698,
+      "input": 60698,
+      "rejects": 2172
+    },
+    {
+      "accepts": 58520,
+      "edit": "mastodon-return-type",
+      "extra": 60698,
+      "guard": 60698,
+      "input": 60698,
+      "rejects": 2178
+    },
+    {
+      "accepts": 22597,
+      "edit": "mastodon-withdraw-read",
+      "extra": 60701,
+      "guard": 60701,
+      "input": 60701,
+      "rejects": 38104
+    },
+    {
+      "accepts": 135162,
+      "edit": "discourse-boolean",
+      "extra": 136952,
+      "guard": 136952,
+      "input": 136952,
+      "rejects": 1790
+    },
+    {
+      "accepts": 133148,
+      "edit": "discourse-return-type",
+      "extra": 136947,
+      "guard": 136947,
+      "input": 136947,
+      "rejects": 3799
+    },
+    {
+      "accepts": 135018,
+      "edit": "discourse-withdraw-read",
+      "extra": 136952,
+      "guard": 136952,
+      "input": 136952,
+      "rejects": 1934
+    }
+  ],
+  "raw_aggregate_equal": true,
+  "raw_receipts_checked": 26,
+  "raw_text_equal": true,
+  "stages": {
+    "base-six": {
+      "missing_final_receipt": [],
+      "pairs": 1,
+      "raw_receipts": 2
+    },
+    "cold-five": {
+      "missing_final_receipt": [],
+      "pairs": 2,
+      "raw_receipts": 4
+    },
+    "fast-five": {
+      "missing_final_receipt": [],
+      "pairs": 0,
+      "raw_receipts": 0
+    },
+    "fast-six-audit": {
+      "missing_final_receipt": [],
+      "pairs": 6,
+      "raw_receipts": 20
+    }
+  }
+}

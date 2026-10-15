@@ -1,0 +1,102 @@
+{
+  "adapter_sha256": {
+    "compare.py": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+    "component_gate.py": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+    "export.py": "f6d00d06008b02c8da766c254c0b8892826ac372066dda63660227080dc19c22",
+    "oracle_ext.py": "01928a32b6c803fded3a76274331612c2a883a19bc765b5e085c1d52a7b90514"
+  },
+  "binary_sha256": "171529627a9dce93603c15c02607ff82d591a15a044858eb5f612b51124c2ba9",
+  "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+  "condition": "reflective-evaluated-containers-f29-reflective-bound-20261015-v1",
+  "fresh_static_exports": true,
+  "graph_certificate": false,
+  "native_exporter_sha256": "501c3a1f13f1ffc2b0e2a710d1c8db414af9f61d5424a17b43ae870093f93c4c",
+  "rows": [
+    {
+      "accepted": 17,
+      "arm": "s3",
+      "missing": 0,
+      "new_unknown_paths": null,
+      "no_slot": 0,
+      "observed": 24,
+      "raw_exit": 1,
+      "records": 24,
+      "rejected": 7,
+      "selected": 28,
+      "setting": "P"
+    },
+    {
+      "accepted": 17,
+      "arm": "candidate",
+      "missing": 0,
+      "new_unknown_paths": 0,
+      "no_slot": 0,
+      "observed": 24,
+      "raw_exit": 1,
+      "records": 24,
+      "rejected": 7,
+      "selected": 28,
+      "setting": "P"
+    },
+    {
+      "accepted": 54,
+      "arm": "s3",
+      "missing": 0,
+      "new_unknown_paths": null,
+      "no_slot": 0,
+      "observed": 25,
+      "raw_exit": 1,
+      "records": 75,
+      "rejected": 21,
+      "selected": 28,
+      "setting": "E"
+    },
+    {
+      "accepted": 54,
+      "arm": "candidate",
+      "missing": 0,
+      "new_unknown_paths": 0,
+      "no_slot": 0,
+      "observed": 25,
+      "raw_exit": 1,
+      "records": 75,
+      "rejected": 21,
+      "selected": 28,
+      "setting": "E"
+    },
+    {
+      "accepted": 20,
+      "arm": "s3",
+      "missing": 0,
+      "new_unknown_paths": null,
+      "no_slot": 0,
+      "observed": 25,
+      "raw_exit": 1,
+      "records": 28,
+      "rejected": 8,
+      "selected": 28,
+      "setting": "I"
+    },
+    {
+      "accepted": 20,
+      "arm": "candidate",
+      "missing": 0,
+      "new_unknown_paths": 0,
+      "no_slot": 0,
+      "observed": 25,
+      "raw_exit": 1,
+      "records": 28,
+      "rejected": 8,
+      "selected": 28,
+      "setting": "I"
+    }
+  ],
+  "saved_runtime_observations": true,
+  "selection_sha256": "cb8c6f7fbdae23b2fa1f1570db4f68516f1b0756e5ca80e2884c93e7e458ebf9",
+  "timed_measurement": false,
+  "traces_sha256": {
+    "E": "b2d18602f0d64213eb0155284100b41e8815c8eb4d4931f6a6c221003f48f51c",
+    "I": "84768aa7a8f6c3d9dfa469d1c8321ad31e437dfd32e6d89a14e32f1e2e1fced5",
+    "P": "98849b903ef72b9ce1edf109c99194db498f19d254fc75e71480e228e49b15f0"
+  }
+}

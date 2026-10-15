@@ -1,0 +1,37 @@
+{
+  "binary": "$EXPERIMENT/week/warm/build/fast/release/roundhouse",
+  "binary_sha256": "60a9235ac29ed5376f6773ecc217fe502049ccd4b22b2cc0946f4b6a718764fe",
+  "binary_version": "roundhouse 2026.9.18 (1fbfee1a)",
+  "candidate_warm_flags": {
+    "RH_WARM_FP_AUDIT": "1"
+  },
+  "condition": "warm-fingerprint-edit-audits-20261011-fast-six-audit",
+  "extra_correctness_run": false,
+  "f30_runner_sha256": "061d97c7b5a154bd832bcb62209c9ad7d2dad80093b6e0e6bf86372d748a8868",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "host": "macOS-26.3.1-arm64-arm-64bit",
+  "lock_mode": "exclusive per native command",
+  "lock_wait_in_wall": false,
+  "pairs": 1,
+  "parent_reference": {
+    "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+    "binary_sha256": "0c87a99518bcb66517a16633819a2c4365497dc4619534fd6783719a8189eef6",
+    "comparison": "fresh cold parent at identical app path; all identity fields retained",
+    "receipt": "$EXPERIMENT/evidence/build-artifacts.json",
+    "role": "sealed compiler provenance, not a saved performance result",
+    "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57"
+  },
+  "ruby": "ruby 4.0.7",
+  "runner_sha256": "35e5869db53b07380e033182da5a0df579d0bdd2edd4396d33cbab7372d8c47e",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "1fbfee1a8b1b518028176ca48aa2a912f3d31e23",
+  "timings": "instrumented alternating pairs; validation reported separately"
+}

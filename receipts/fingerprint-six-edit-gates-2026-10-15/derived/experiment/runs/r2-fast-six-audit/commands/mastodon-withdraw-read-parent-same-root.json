@@ -1,0 +1,21 @@
+{
+  "batch": "mastodon-withdraw-read-parent-same-root",
+  "commands": [
+    {
+      "app": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/apps/mastodon",
+      "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_SCHED": "sccq"
+      },
+      "out": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/runs/mastodon-withdraw-read-parent-same-root"
+    }
+  ],
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-audit",
+  "lock_mode": "shared"
+}

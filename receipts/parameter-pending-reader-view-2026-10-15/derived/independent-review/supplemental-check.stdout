@@ -1,0 +1,39 @@
+{
+  "condition": "rv-parameter-pending-reader-view-pattern-and-debug-e248de81-v1",
+  "sample_set": "unchanged registered 28 samples",
+  "all_A10_failure_occurrences": 6627,
+  "pattern_exceptions": 0,
+  "classification": {
+    "assoc": {
+      "cases": 276,
+      "pattern_exceptions": [],
+      "pending_source": "explicit input"
+    },
+    "fold2": {
+      "cases": 138,
+      "pattern_exceptions": [],
+      "pending_source": "fresh row cell"
+    },
+    "fold3": {
+      "cases": 6210,
+      "pattern_exceptions": [],
+      "pending_source": "fresh row cell"
+    },
+    "pid": {
+      "cases": 3,
+      "pattern_exceptions": [],
+      "pending_source": "explicit identity operand"
+    }
+  },
+  "a11_debug_oracle": {
+    "arm": [
+      "1",
+      "1"
+    ],
+    "counts": {},
+    "examples": {},
+    "no_early_never": true,
+    "seed_ok": true
+  },
+  "debug_oracle_scope": "same registered sample set and law operations; compares complete Debug strings including all reason names and record order"
+}

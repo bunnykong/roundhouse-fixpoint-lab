@@ -1,0 +1,168 @@
+{
+  "condition": "c5-card1b-lineage-factorial-a7b6d3f8-v1-shared-host",
+  "scope": "Every example printed by the unchanged cap-five harness; unprinted counterexamples were counted, not classified.",
+  "examples": [
+    {
+      "law": "assoc",
+      "example_index": 1,
+      "case": "Nil | Untyped { why: Pending } | Untyped { why: Unresolved }",
+      "pending_source": "explicit input",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "assoc",
+      "example_index": 2,
+      "case": "Nil | Untyped { why: Pending } | Untyped { why: Gradual }",
+      "pending_source": "explicit input",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "assoc",
+      "example_index": 3,
+      "case": "Nil | Untyped { why: Pending } | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "pending_source": "explicit input",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "assoc",
+      "example_index": 4,
+      "case": "Int | Untyped { why: Pending } | Untyped { why: Unresolved }",
+      "pending_source": "explicit input",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "assoc",
+      "example_index": 5,
+      "case": "Int | Untyped { why: Pending } | Untyped { why: Gradual }",
+      "pending_source": "explicit input",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold2",
+      "example_index": 1,
+      "case": "Nil | Untyped { why: Unresolved }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold2",
+      "example_index": 2,
+      "case": "Nil | Untyped { why: Gradual }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold2",
+      "example_index": 3,
+      "case": "Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold2",
+      "example_index": 4,
+      "case": "Int | Untyped { why: Unresolved }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold2",
+      "example_index": 5,
+      "case": "Int | Untyped { why: Gradual }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold3",
+      "example_index": 1,
+      "case": "Bottom | Nil | Untyped { why: Unresolved }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold3",
+      "example_index": 2,
+      "case": "Bottom | Nil | Untyped { why: Gradual }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold3",
+      "example_index": 3,
+      "case": "Bottom | Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold3",
+      "example_index": 4,
+      "case": "Bottom | Int | Untyped { why: Unresolved }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "fold3",
+      "example_index": 5,
+      "case": "Bottom | Int | Untyped { why: Gradual }",
+      "pending_source": "fresh row cell",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "pid",
+      "example_index": 1,
+      "case": "Untyped { why: Unresolved }",
+      "pending_source": "explicit identity operand",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "pid",
+      "example_index": 2,
+      "case": "Untyped { why: Gradual }",
+      "pending_source": "explicit identity operand",
+      "evidence_kind": "G",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    },
+    {
+      "law": "pid",
+      "example_index": 3,
+      "case": "Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "pending_source": "explicit identity operand",
+      "evidence_kind": "U",
+      "meeting_level": "top-level arm (including flattened union)",
+      "fits_printed_pattern": true
+    }
+  ]
+}

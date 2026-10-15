@@ -1,0 +1,68 @@
+{
+  "audit_reproduced": true,
+  "historical_default_comparison": {
+    "changed": 0,
+    "counts": {
+      "FAILED": 43,
+      "ignored": 2,
+      "ok": 1100
+    },
+    "native_runs": 0,
+    "outcomes": 1145
+  },
+  "promotion_blocked": true,
+  "saved_f30_controls": {
+    "deliberate_corruptions": 2,
+    "native_runs": 0,
+    "pairs": 6
+  },
+  "summary_reproduced_except_timestamp": true,
+  "synthetic_controls": [
+    {
+      "control": "input_coverage_gap",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "extra_coverage_gap",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "guard_coverage_gap",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "audit_disabled",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "empty_inventory",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "wrong_digest",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "shadow_failure",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "missing_edited_row",
+      "native_runs": 0,
+      "rejected": true
+    },
+    {
+      "control": "duplicate_edit",
+      "native_runs": 0,
+      "rejected": true
+    }
+  ],
+  "verdict": "inconclusive"
+}

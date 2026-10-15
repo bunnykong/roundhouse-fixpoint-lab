@@ -1,0 +1,50 @@
+{
+  "condition": "rv-fingerprint-six-edit-gates-20261015-audit",
+  "first_differing_byte_offset": 167213247,
+  "snippets": {
+    "unset": "d\":\"union\",\"variants\":[{\"kind\":\"rec\",\"slot\":{\"warm_slot\":{\"Ret\":{\"class\":\"Web::PushNotificationWorker\",\"class_side\":false,\"method\":\"perform_standard_request\"}}}},{\"kind\":\"rec\",\"slot\":{\"warm_slot\":{\"Ret\":{\"class\":\"Web::PushNotificationWorker\",\"class_side\":false,\"method\":\"perform_legacy_request\"}}}}]}}],\"kind\":\"seq\"},\"span\":{\"warm_span\":{\"p",
+    "unset-repeat": "d\":\"union\",\"variants\":[{\"kind\":\"rec\",\"slot\":{\"warm_slot\":{\"Ret\":{\"class\":\"Web::PushNotificationWorker\",\"class_side\":false,\"method\":\"perform_legacy_request\"}}}},{\"kind\":\"rec\",\"slot\":{\"warm_slot\":{\"Ret\":{\"class\":\"Web::PushNotificationWorker\",\"class_side\":false,\"method\":\"perform_standard_request\"}}}}]}}],\"kind\":\"seq\"},\"span\":{\"warm_span\":{\"p"
+  },
+  "seed_comparison": {
+    "audit_counters_equal": true,
+    "cache_sha256": {
+      "unset": "4229e966bd3e649747f70d75160a169383b366964b8bcb61f19c1a38933f407a",
+      "unset-repeat": "7fd00f9ef55e87a652ecef767750bb4138e97ac2d892b0e0ace9afb7227f5d2b"
+    },
+    "edited_audit_counter_differences": {
+      "audited_guard_accepts": [
+        59645,
+        59629
+      ],
+      "audited_guard_rejects": [
+        1053,
+        1069
+      ],
+      "guard_accepts": [
+        59645,
+        59629
+      ],
+      "guard_rejects": [
+        1053,
+        1069
+      ]
+    },
+    "edited_evaluation_differences": {
+      "replayed": [
+        59645,
+        59629
+      ],
+      "typed": [
+        1053,
+        1069
+      ],
+      "uncovered": [
+        1041,
+        1057
+      ]
+    },
+    "retained_identity_equal": true
+  },
+  "unset_repeat_retained_identity_equal": true,
+  "interpretation": "The first observed cache-byte difference reorders union variants; this does not establish that all byte differences or the 16 replay changes share that cause."
+}

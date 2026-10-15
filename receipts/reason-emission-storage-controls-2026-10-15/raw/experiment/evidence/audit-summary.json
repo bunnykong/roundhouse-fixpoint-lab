@@ -1,0 +1,420 @@
+{
+  "arms": {
+    "legacy-g": {
+      "cold_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "cold_settled": 0,
+      "warm_census": {
+        "gradual": 16656,
+        "pending": 0,
+        "unresolved": 12132
+      },
+      "warm_cold_identity_differences": [],
+      "warm_minus_cold_reasons": {
+        "gradual": 11197,
+        "pending": 0,
+        "unresolved": -11179
+      },
+      "warm_settled": 0
+    },
+    "legacy-u": {
+      "cold_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "cold_settled": 0,
+      "warm_census": {
+        "gradual": 16656,
+        "pending": 0,
+        "unresolved": 12132
+      },
+      "warm_cold_identity_differences": [],
+      "warm_minus_cold_reasons": {
+        "gradual": 11197,
+        "pending": 0,
+        "unresolved": -11179
+      },
+      "warm_settled": 0
+    },
+    "lossless-g": {
+      "cold_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "cold_settled": 0,
+      "warm_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "warm_cold_identity_differences": [],
+      "warm_minus_cold_reasons": {
+        "gradual": 0,
+        "pending": 0,
+        "unresolved": 0
+      },
+      "warm_settled": 0
+    },
+    "lossless-u": {
+      "cold_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "cold_settled": 0,
+      "warm_census": {
+        "gradual": 5459,
+        "pending": 0,
+        "unresolved": 23311
+      },
+      "warm_cold_identity_differences": [],
+      "warm_minus_cold_reasons": {
+        "gradual": 0,
+        "pending": 0,
+        "unresolved": 0
+      },
+      "warm_settled": 0
+    }
+  },
+  "cold_policy_comparisons": {
+    "legacy": {
+      "cold_identity_differences": [
+        {
+          "left": "31ff633626be4025",
+          "path": "/digest/sccq_contexts",
+          "right": "df91609ca6443bd1"
+        },
+        {
+          "left": "c74227c985bab8ac",
+          "path": "/digest/sccq_dependencies",
+          "right": "320a3d401fed4124"
+        }
+      ],
+      "delta_bounded": true,
+      "diagnostics_differences": [],
+      "non_timing_fixpoint_differences": [
+        {
+          "left": "31ff633626be4025",
+          "path": "/digest/sccq_contexts",
+          "right": "df91609ca6443bd1"
+        },
+        {
+          "left": "c74227c985bab8ac",
+          "path": "/digest/sccq_dependencies",
+          "right": "320a3d401fed4124"
+        },
+        {
+          "left": 210,
+          "path": "/fold/slots/ret",
+          "right": 212
+        },
+        {
+          "left": "25ca07cb7ae17843",
+          "path": "/structure/end/digest",
+          "right": "d653362bf53d1b9f"
+        },
+        {
+          "left": "ad8beca140440f06",
+          "path": "/structure/end/universe/digest",
+          "right": "95a5424bc7ad18b1"
+        },
+        {
+          "left": 219388,
+          "path": "/structure/end/universe/n",
+          "right": 219390
+        }
+      ],
+      "other_fixpoint_differences": [
+        {
+          "left": "31ff633626be4025",
+          "path": "/digest/sccq_contexts",
+          "right": "df91609ca6443bd1"
+        },
+        {
+          "left": "c74227c985bab8ac",
+          "path": "/digest/sccq_dependencies",
+          "right": "320a3d401fed4124"
+        },
+        {
+          "left": 210,
+          "path": "/fold/slots/ret",
+          "right": 212
+        },
+        {
+          "left": "25ca07cb7ae17843",
+          "path": "/structure/end/digest",
+          "right": "d653362bf53d1b9f"
+        },
+        {
+          "left": "ad8beca140440f06",
+          "path": "/structure/end/universe/digest",
+          "right": "95a5424bc7ad18b1"
+        },
+        {
+          "left": 219388,
+          "path": "/structure/end/universe/n",
+          "right": 219390
+        },
+        {
+          "left": 1.177,
+          "path": "/worklist/engine/class_pass_secs",
+          "right": 0.831
+        },
+        {
+          "left": 1.628,
+          "path": "/worklist/engine/engine_secs",
+          "right": 1.338
+        },
+        {
+          "left": 0.037,
+          "path": "/worklist/engine/graph_first/secs_edges",
+          "right": 0.035
+        },
+        {
+          "left": 0.046,
+          "path": "/worklist/engine/graph_first/secs_total",
+          "right": 0.041
+        },
+        {
+          "left": 0.058,
+          "path": "/worklist/engine/graph_last/secs_edges",
+          "right": 0.043
+        },
+        {
+          "left": 0.071,
+          "path": "/worklist/engine/graph_last/secs_total",
+          "right": 0.051
+        },
+        {
+          "left": 0.177,
+          "path": "/worklist/engine/graph_secs",
+          "right": 0.142
+        },
+        {
+          "left": 0.367,
+          "path": "/worklist/engine/index_secs",
+          "right": 0.29
+        },
+        {
+          "left": 0.1,
+          "path": "/worklist/fold/t_harvest",
+          "right": 0.08
+        },
+        {
+          "left": 0.45,
+          "path": "/worklist/fold/t_rows",
+          "right": 0.38
+        },
+        {
+          "left": 0.94,
+          "path": "/worklist/fold/t_sites",
+          "right": 0.78
+        },
+        {
+          "left": 0.58,
+          "path": "/worklist/fold/t_typing",
+          "right": 0.47
+        }
+      ],
+      "pending_zero": true,
+      "reason_delta_u_minus_g": {
+        "gradual": 0,
+        "pending": 0,
+        "unresolved": 0
+      }
+    },
+    "lossless": {
+      "cold_identity_differences": [
+        {
+          "left": "819c8386a27e9ca0",
+          "path": "/digest/sccq_contexts",
+          "right": "b10bb3e108678fca"
+        },
+        {
+          "left": "be07f44b7d378379",
+          "path": "/digest/sccq_dependencies",
+          "right": "b5066d314a5a5fe4"
+        }
+      ],
+      "delta_bounded": true,
+      "diagnostics_differences": [],
+      "non_timing_fixpoint_differences": [
+        {
+          "left": "819c8386a27e9ca0",
+          "path": "/digest/sccq_contexts",
+          "right": "b10bb3e108678fca"
+        },
+        {
+          "left": "be07f44b7d378379",
+          "path": "/digest/sccq_dependencies",
+          "right": "b5066d314a5a5fe4"
+        },
+        {
+          "left": 210,
+          "path": "/fold/slots/ret",
+          "right": 211
+        },
+        {
+          "left": "25ca07cb7ae17843",
+          "path": "/structure/end/digest",
+          "right": "b885225e7e453a2e"
+        },
+        {
+          "left": "ad8beca140440f06",
+          "path": "/structure/end/universe/digest",
+          "right": "3a7065c576e9bc96"
+        },
+        {
+          "left": 219388,
+          "path": "/structure/end/universe/n",
+          "right": 219389
+        },
+        {
+          "left": [
+            15621,
+            38,
+            0,
+            0
+          ],
+          "path": "/worklist/engine/moved_slots",
+          "right": [
+            15621,
+            40,
+            0,
+            0
+          ]
+        }
+      ],
+      "other_fixpoint_differences": [
+        {
+          "left": "819c8386a27e9ca0",
+          "path": "/digest/sccq_contexts",
+          "right": "b10bb3e108678fca"
+        },
+        {
+          "left": "be07f44b7d378379",
+          "path": "/digest/sccq_dependencies",
+          "right": "b5066d314a5a5fe4"
+        },
+        {
+          "left": 210,
+          "path": "/fold/slots/ret",
+          "right": 211
+        },
+        {
+          "left": "25ca07cb7ae17843",
+          "path": "/structure/end/digest",
+          "right": "b885225e7e453a2e"
+        },
+        {
+          "left": "ad8beca140440f06",
+          "path": "/structure/end/universe/digest",
+          "right": "3a7065c576e9bc96"
+        },
+        {
+          "left": 219388,
+          "path": "/structure/end/universe/n",
+          "right": 219389
+        },
+        {
+          "left": 0.831,
+          "path": "/worklist/engine/class_pass_secs",
+          "right": 0.812
+        },
+        {
+          "left": 1.356,
+          "path": "/worklist/engine/engine_secs",
+          "right": 1.406
+        },
+        {
+          "left": 0.035,
+          "path": "/worklist/engine/graph_first/secs_edges",
+          "right": 0.036
+        },
+        {
+          "left": 0.041,
+          "path": "/worklist/engine/graph_first/secs_total",
+          "right": 0.042
+        },
+        {
+          "left": 0.042,
+          "path": "/worklist/engine/graph_last/secs_edges",
+          "right": 0.041
+        },
+        {
+          "left": 0.05,
+          "path": "/worklist/engine/graph_last/secs_total",
+          "right": 0.049
+        },
+        {
+          "left": 0.141,
+          "path": "/worklist/engine/graph_secs",
+          "right": 0.145
+        },
+        {
+          "left": 0.29,
+          "path": "/worklist/engine/index_secs",
+          "right": 0.297
+        },
+        {
+          "left": [
+            15621,
+            38,
+            0,
+            0
+          ],
+          "path": "/worklist/engine/moved_slots",
+          "right": [
+            15621,
+            40,
+            0,
+            0
+          ]
+        },
+        {
+          "left": 0.38,
+          "path": "/worklist/fold/t_rows",
+          "right": 0.4
+        },
+        {
+          "left": 0.79,
+          "path": "/worklist/fold/t_sites",
+          "right": 0.82
+        },
+        {
+          "left": 0.47,
+          "path": "/worklist/fold/t_typing",
+          "right": 0.49
+        }
+      ],
+      "pending_zero": true,
+      "reason_delta_u_minus_g": {
+        "gradual": 0,
+        "pending": 0,
+        "unresolved": 0
+      }
+    }
+  },
+  "emission": {
+    "base": {
+      "pair_count": 105,
+      "scrambled_nodes": 0,
+      "settled_exprs": 0
+    },
+    "scramble": {
+      "pair_count": 105,
+      "scrambled_nodes": 3804,
+      "settled_exprs": 0
+    },
+    "settle": {
+      "pair_count": 105,
+      "scrambled_nodes": 0,
+      "settled_exprs": 0
+    }
+  }
+}

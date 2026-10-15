@@ -1,0 +1,27 @@
+{
+  "apps": {
+    "discourse": {
+      "app": "$EXPERIMENT/week/warm/runs/r2-base-seed/apps/discourse",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "receipt": "$EXPERIMENT/week/warm/runs/r2-base-seed/runs/discourse-seed/run.json",
+      "seed": "$EXPERIMENT/week/warm/runs/r2-base-seed/caches/discourse",
+      "seed_bytes": 2157339582,
+      "seed_sha256": "5ebc1626046b06d94aeb06a3e4070443da9bfe9f35f42bc8a374a28157738c58"
+    },
+    "mastodon": {
+      "app": "$EXPERIMENT/week/warm/runs/r2-base-seed/apps/mastodon",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "receipt": "$EXPERIMENT/week/warm/runs/r2-base-seed/runs/mastodon-seed/run.json",
+      "seed": "$EXPERIMENT/week/warm/runs/r2-base-seed/caches/mastodon",
+      "seed_bytes": 491914930,
+      "seed_sha256": "bedb3fd7ba92bc2368404c77e1dc2325a214e97ad540a249c86432d2867436ef"
+    }
+  },
+  "batch_worker_sha256": "2c650325b3ccb214db56fb5edf322b9796fdcf54c81ae51ff5b7e4d91400c3f2",
+  "binary_sha256": "8ce7d3b6e1cc4e2f68d8931080144622cf7ce6412d1b8e27afae9911b6fd1fd9",
+  "complete": false,
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-parent-seed",
+  "lock_mode": "shared",
+  "performance_role": "cache preparation only; excluded from cost comparisons",
+  "runner_sha256": "778cefebeb9e157b44dcec6b2ae2146db1aa93a413952607e74eb43bd5e15dfb"
+}

@@ -1,0 +1,67 @@
+{
+  "condition": "fingerprint-gates-20261015-1fbfee1a",
+  "criteria_changed": false,
+  "card_unchanged": true,
+  "changes": [
+    {
+      "command": "python3 -B resume_parent.py; bash priority_five.sh",
+      "when": "After the first cold pair completed following a 3312-second exclusive wait; before any candidate cost measurement",
+      "reason": "Use the remaining window for short candidate and broader cold pairs. The sandbox denied SIGSTOP to the descriptor-identified parent orchestrator; no process was paused and the watchdog exited. The parent continues normally while the candidate queue starts independently.",
+      "suspension_receipt": "evidence/resume-parent.log",
+      "parent_reference": "The already-supported sealed parent binary supplies fresh same-path cold controls, without needing the complete parent warm profile first",
+      "counts_and_criteria": "Unchanged: all 30 candidate pairs remain scheduled; complete distributions and parent warm profiles remain necessary for their original gates"
+    },
+    {
+      "command": "bash resume_costs.sh (uses a fixed run-costs-sealed.sh copy of run.sh at 1a1a2006)",
+      "when": "After all six native audits and the audit reducer passed; audit shell exited 2 at its stale read offset",
+      "reason": "Editing the original shell file while its audit case was running made Bash resume parsing at an invalid offset. The current file passes bash -n. Preserve the raw exit and resume only the unstarted cost stages from an immutable driver copy.",
+      "native_measurements_repeated": false,
+      "criteria_changed": false
+    },
+    {
+      "command": "Ruby -c sanity checks in the delivered replay_pairs.py",
+      "reason": "Place the inherited per-edit syntax check under shared mode as well as the native checks",
+      "exception": "The already-loaded audit controller retains P5's unwrapped Ruby -c checks. The initial standalone Bash syntax check was also unwrapped. Native audits, Cargo builds/tests, analyses and every cost pair use the requested lock modes.",
+      "cost_protocol": "All future per-edit syntax checks are shared; no cost pair began before this correction"
+    },
+    {
+      "command": "bash run.sh five (adds --prepared week/warm/runs/r2-fast-seed internally)",
+      "when": "Decided before any cost timing, after verifying src/analyze/warm.rs excludes RH_WARM_* instrumentation from cache flags",
+      "reason": "Reuse this condition's own freshly generated candidate seeds at their exact app paths, rather than redo unmeasured seed construction",
+      "controls": "All six audits pass first; same binary hash, zero-loaded seed and passing shadow, unchanged input tree, unchanged seed file bytes; cost runs remain audit-off",
+      "criteria_changed": false
+    },
+    {
+      "command": "python3 -B launch_cold.py",
+      "when": "Queued before cost measurement; launches only after all six edited audits pass",
+      "reason": "Run the independent short three-app cold gate alongside parent profiling rather than leaving it last in the serial controller",
+      "serialization": "Each complete pair holds the same exclusive host lock; no native timing commands overlap",
+      "counts_and_criteria": "Unchanged: five parent/candidate pairs on each of three apps; revalidate an already completed packet instead of rerunning it"
+    },
+    {
+      "command": "bash run.sh prepare-parent",
+      "when": "After focused controls and before any performance pair; while shared edit audits continue",
+      "reason": "Prepare each parent's unedited, compiler-stamped seed under shared mode without serializing that setup after all audits",
+      "native_pin": "d9ec78c31db361db8818b13153e5ddddee484c57",
+      "performance_role": "None: shared seed walls are excluded from every cost comparison",
+      "receipt": "week/warm/runs/r2-base-seed/prepared-state.json"
+    },
+    {
+      "command": "bash run.sh parent (adds --prepared week/warm/runs/r2-base-seed internally)",
+      "reason": "Consume only that same binary's validated seed at its exact prepared app path; retain all six fresh exclusive warm/cold parent pairs",
+      "controls": "Binary hash, zero-loaded seed, passing cold shadow, unchanged input tree, seed file hash; all-six audit gate remains mandatory"
+    },
+    {
+      "command": "bash default_suite.sh; shared-lock python3 -B check_default.py",
+      "reason": "Supplementary flags-off default-suite check and name-by-name comparison to the retained P5 control",
+      "performance_role": "None"
+    }
+  ],
+  "source_versions": {
+    "audits": "Controller loaded at aba61629; exact runner hash and source snapshot retained in r2-fast-six-audit metadata",
+    "prepared_seeds": "d55c7a7f; native inference source and measured binaries remain unchanged",
+    "cost_harness_snapshot": "1a1a2006; includes prepared seeds, the parallel cold queue, independent reducers, shared Ruby syntax checks and tested scratch creation, all before the first cost pair",
+    "native_batch_worker": "3455af8b; unchanged since the original build seal",
+    "original_build_seal": "evidence/build-artifacts.json"
+  }
+}

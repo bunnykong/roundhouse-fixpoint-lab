@@ -1,0 +1,7 @@
+{
+  "condition": "writer-ownership-20261015-bf56edf9",
+  "fact": 44,
+  "scope": "Problems 1\u20132; Campfire only, verification off.",
+  "text": "On October 15 condition `writer-ownership-20261015-bf56edf9`, Campfire `90b33002` with compiler `f78d995f` and verification off confirms the bounded spliced-writer ownership repair; independent review upholds it after 28 fresh runs. Successful-writer differences are an insertion-credit race between the counted no-body controller harvest and the uncounted concern copy. Declaring the copy an existence-only non-writer makes the mutation set identical on unset/1/2/repeat: 681 members, exactly baseline unset plus three no-body harvests. Attempted/concrete remain 740/556, exactly ten copy bindings disappear (132 to 122), all nine value digests match their corresponding baseline schedule, and warnings (407), loop endings (3/4/1) and the fixture (10/10) are unchanged. Separately, skipping `stabilize` makes all ten digest categories agree across those schedules, but changes returns, IR and controller cache against baseline. Seven expressions still differ only in Gradual versus Unresolved reasons. The superseded registration was inconclusive because it required the ownership digest being changed to remain equal. These results cover Campfire only and establish neither soundness, arbitrary-order inference nor complete membership.",
+  "verdict": "Bounded ownership and value-level stabilization confirmed; review upheld."
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "analyze::harvest_return::tests"
+  ],
+  "exit_code": 0,
+  "seconds": 11.864496667000001,
+  "ruby": "ruby 3.4.9 (2026-03-11 revision 76cca827ab) +PRISM [arm64-darwin25]",
+  "ruby_version_exit": 0,
+  "environment": {
+    "CARGO_HOME": "$WORKSPACE/agents/writer-ownership-initial/cargo-home",
+    "CARGO_TARGET_DIR": "$WORKSPACE/agents/writer-ownership-initial/target",
+    "CARGO_BUILD_JOBS": "4",
+    "RBENV_VERSION": "3.4.9"
+  }
+}

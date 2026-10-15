@@ -1,0 +1,22 @@
+{
+  "condition": "rv-parameter-pending-value-only-postgate-a7b6d3f8-v1",
+  "registered_utc": "2026-10-15T05:34:00.417334+00:00",
+  "source_head": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "purpose": "Adversarial diagnostics after exact replay, not an amendment to the original card or builder result.",
+  "production_edits": false,
+  "diagnostic_only": true,
+  "hypotheses": [
+    "Pending join Unresolved retains both reasons.",
+    "Grouping Nil, Pending, Unresolved differs under native storage equality.",
+    "The native fold of Nil and Unresolved remains arrival-dependent.",
+    "The literal Step 3 assertions still leave grouping storage equality red."
+  ],
+  "schedules": [
+    "unset",
+    "1",
+    "2",
+    "unset-repeat"
+  ],
+  "native_order_note": "Witness explicitly evaluates both input orders; RH_SHUFFLE has no role in the direct fold.",
+  "timing_claim": false
+}

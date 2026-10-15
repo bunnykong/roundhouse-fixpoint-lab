@@ -1,0 +1,68 @@
+{
+  "B_provenance": {
+    "1": {
+      "gradual": 649,
+      "pending": 0,
+      "unresolved": 4166
+    },
+    "2": {
+      "gradual": 642,
+      "pending": 0,
+      "unresolved": 4173
+    },
+    "repeat-unset": {
+      "gradual": 649,
+      "pending": 0,
+      "unresolved": 4166
+    },
+    "unset": {
+      "gradual": 649,
+      "pending": 0,
+      "unresolved": 4166
+    }
+  },
+  "H1": {
+    "confirm": {
+      "1_baseline_puzzle": true,
+      "2_schedule_identity": true,
+      "3_support_and_681_mutations": true,
+      "4_exact_ownership": true,
+      "5_matched_values_census": true,
+      "6_warnings_and_loops": true,
+      "7_fixture": false,
+      "8_flags_off_matched": true
+    },
+    "kills": [],
+    "verdict": "inconclusive"
+  },
+  "H2": {
+    "confirm": {
+      "1_all_ten_digests_equal": true,
+      "2_expected_baseline_changes": true,
+      "3_provenance_recorded_without_judgment": true,
+      "4_both_composes": true
+    },
+    "kills": [],
+    "verdict": "confirmed"
+  },
+  "H3": {
+    "status": "diagnostic only; no verdict"
+  },
+  "added_mutation_identities": [
+    [
+      "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"authenticated_as\\\"]\",\"no-body\"]",
+      "[\"ApplicationController\",\"instance\",\"authenticated_as\"]"
+    ],
+    [
+      "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"resume_session\\\"]\",\"no-body\"]",
+      "[\"ApplicationController\",\"instance\",\"resume_session\"]"
+    ],
+    [
+      "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"start_new_session_for\\\"]\",\"no-body\"]",
+      "[\"ApplicationController\",\"instance\",\"start_new_session_for\"]"
+    ]
+  ],
+  "all_campfire_concrete_support_equal": true,
+  "all_ten_spliced_slots_credited": true,
+  "condition": "structure-success-2-20261015-bf56edf9"
+}

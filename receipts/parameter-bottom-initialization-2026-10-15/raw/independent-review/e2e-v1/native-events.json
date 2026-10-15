@@ -1,0 +1,90 @@
+{
+  "unsorted-array": [
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "join",
+      "stored": "Bottom",
+      "observed": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+      "output": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+      "count": 6
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "bound",
+      "stored": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+      "observed": "Bottom",
+      "output": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+      "count": 6
+    }
+  ],
+  "bare-bottom": [
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "bound",
+      "stored": "Untyped { why: Pending }",
+      "observed": "Bottom",
+      "output": "Untyped { why: Pending }",
+      "count": 6
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "join",
+      "stored": "Bottom",
+      "observed": "Bottom",
+      "output": "Untyped { why: Pending }",
+      "count": 6
+    }
+  ],
+  "union-bottom": [
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "bound",
+      "stored": "Var { var: TyVar(0) }",
+      "observed": "Bottom",
+      "output": "Var { var: TyVar(0) }",
+      "count": 2
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "join",
+      "stored": "Bottom",
+      "observed": "Var { var: TyVar(0) }",
+      "output": "Var { var: TyVar(0) }",
+      "count": 2
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "bound",
+      "stored": "Untyped { why: Pending }",
+      "observed": "Bottom",
+      "output": "Untyped { why: Pending }",
+      "count": 6
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "join",
+      "stored": "Bottom",
+      "observed": "Bottom",
+      "output": "Untyped { why: Pending }",
+      "count": 6
+    }
+  ],
+  "canonical-array": [
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "join",
+      "stored": "Bottom",
+      "observed": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+      "output": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+      "count": 6
+    },
+    {
+      "destination": "ProbeController|observe|Instance|param=0",
+      "phase": "bound",
+      "stored": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+      "observed": "Bottom",
+      "output": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+      "count": 6
+    }
+  ]
+}

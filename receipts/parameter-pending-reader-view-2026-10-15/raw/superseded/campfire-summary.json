@@ -1,0 +1,264 @@
+{
+  "pairs": {
+    "s3--audit": [
+      {
+        "name": "precision",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "differences": 0
+      },
+      {
+        "name": "unset",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "differences": 0
+      },
+      {
+        "name": "seed-1",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "differences": 0
+      },
+      {
+        "name": "seed-2",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "differences": 0
+      },
+      {
+        "name": "unset-repeat",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "differences": 0
+      }
+    ],
+    "audit--candidate": [
+      {
+        "name": "precision",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "differences": 44
+      },
+      {
+        "name": "unset",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "differences": 44
+      },
+      {
+        "name": "seed-1",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "differences": 45
+      },
+      {
+        "name": "seed-2",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "differences": 45
+      },
+      {
+        "name": "unset-repeat",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "differences": 44
+      }
+    ]
+  },
+  "audits": {
+    "audit": [
+      {
+        "name": "precision",
+        "equal_merges": 37635,
+        "tag_only_changes": 23,
+        "parameter_merges": 15649,
+        "parameter_repair_merges": 0,
+        "parameter_seed_initializations": 0,
+        "parameter_type_origin_losses": 7239,
+        "parameter_output_origin_losses": 7713,
+        "parameter_losses_by_kind": {
+          "Gradual": 72,
+          "LegacyAmbiguousVar": 6933,
+          "Unresolved": 234
+        },
+        "parameter_unmapped_merges": 338,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 44,
+        "loss_destinations": 763
+      },
+      {
+        "name": "unset",
+        "equal_merges": 47970,
+        "tag_only_changes": 35,
+        "parameter_merges": 18705,
+        "parameter_repair_merges": 0,
+        "parameter_seed_initializations": 0,
+        "parameter_type_origin_losses": 8769,
+        "parameter_output_origin_losses": 9320,
+        "parameter_losses_by_kind": {
+          "Gradual": 80,
+          "LegacyAmbiguousVar": 8420,
+          "Unresolved": 269
+        },
+        "parameter_unmapped_merges": 422,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 44,
+        "loss_destinations": 763
+      },
+      {
+        "name": "seed-1",
+        "equal_merges": 48222,
+        "tag_only_changes": 25,
+        "parameter_merges": 18833,
+        "parameter_repair_merges": 0,
+        "parameter_seed_initializations": 0,
+        "parameter_type_origin_losses": 8866,
+        "parameter_output_origin_losses": 9412,
+        "parameter_losses_by_kind": {
+          "Gradual": 92,
+          "LegacyAmbiguousVar": 8477,
+          "Unresolved": 297
+        },
+        "parameter_unmapped_merges": 432,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 44,
+        "loss_destinations": 763
+      },
+      {
+        "name": "seed-2",
+        "equal_merges": 48460,
+        "tag_only_changes": 26,
+        "parameter_merges": 18822,
+        "parameter_repair_merges": 0,
+        "parameter_seed_initializations": 0,
+        "parameter_type_origin_losses": 8845,
+        "parameter_output_origin_losses": 9400,
+        "parameter_losses_by_kind": {
+          "Gradual": 82,
+          "LegacyAmbiguousVar": 8485,
+          "Unresolved": 278
+        },
+        "parameter_unmapped_merges": 431,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 44,
+        "loss_destinations": 763
+      },
+      {
+        "name": "unset-repeat",
+        "equal_merges": 47970,
+        "tag_only_changes": 35,
+        "parameter_merges": 18705,
+        "parameter_repair_merges": 0,
+        "parameter_seed_initializations": 0,
+        "parameter_type_origin_losses": 8769,
+        "parameter_output_origin_losses": 9320,
+        "parameter_losses_by_kind": {
+          "Gradual": 80,
+          "LegacyAmbiguousVar": 8420,
+          "Unresolved": 269
+        },
+        "parameter_unmapped_merges": 422,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 44,
+        "loss_destinations": 763
+      }
+    ],
+    "candidate": [
+      {
+        "name": "precision",
+        "equal_merges": 50344,
+        "tag_only_changes": 1921,
+        "parameter_merges": 15820,
+        "parameter_repair_merges": 15820,
+        "parameter_seed_initializations": 7611,
+        "parameter_type_origin_losses": 0,
+        "parameter_output_origin_losses": 0,
+        "parameter_losses_by_kind": {},
+        "parameter_unmapped_merges": 394,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 45,
+        "loss_destinations": 0
+      },
+      {
+        "name": "unset",
+        "equal_merges": 63100,
+        "tag_only_changes": 2297,
+        "parameter_merges": 18868,
+        "parameter_repair_merges": 18868,
+        "parameter_seed_initializations": 9190,
+        "parameter_type_origin_losses": 0,
+        "parameter_output_origin_losses": 0,
+        "parameter_losses_by_kind": {},
+        "parameter_unmapped_merges": 484,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 45,
+        "loss_destinations": 0
+      },
+      {
+        "name": "seed-1",
+        "equal_merges": 63637,
+        "tag_only_changes": 2475,
+        "parameter_merges": 19015,
+        "parameter_repair_merges": 19015,
+        "parameter_seed_initializations": 9212,
+        "parameter_type_origin_losses": 0,
+        "parameter_output_origin_losses": 0,
+        "parameter_losses_by_kind": {},
+        "parameter_unmapped_merges": 496,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 45,
+        "loss_destinations": 0
+      },
+      {
+        "name": "seed-2",
+        "equal_merges": 63597,
+        "tag_only_changes": 2357,
+        "parameter_merges": 18921,
+        "parameter_repair_merges": 18921,
+        "parameter_seed_initializations": 9211,
+        "parameter_type_origin_losses": 0,
+        "parameter_output_origin_losses": 0,
+        "parameter_losses_by_kind": {},
+        "parameter_unmapped_merges": 497,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 45,
+        "loss_destinations": 0
+      },
+      {
+        "name": "unset-repeat",
+        "equal_merges": 63101,
+        "tag_only_changes": 2297,
+        "parameter_merges": 18868,
+        "parameter_repair_merges": 18868,
+        "parameter_seed_initializations": 9190,
+        "parameter_type_origin_losses": 0,
+        "parameter_output_origin_losses": 0,
+        "parameter_losses_by_kind": {},
+        "parameter_unmapped_merges": 484,
+        "unscoped_inputs": 0,
+        "writers": 8186,
+        "unmapped_writers": 116,
+        "reference_writers": 45,
+        "loss_destinations": 0
+      }
+    ]
+  }
+}

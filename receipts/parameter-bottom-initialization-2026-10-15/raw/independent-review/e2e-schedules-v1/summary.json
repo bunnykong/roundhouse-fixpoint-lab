@@ -1,0 +1,439 @@
+{
+  "condition": "rv-param-init-native-rbs-app-e2e-schedules-v1-20261015",
+  "source_head": "0db5d628937965f0299dc6b9b2a6bc7267a2a8fb",
+  "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+  "binary_sha256": "aafa7c0c00ea3d1ea6d2be9fb751f8b6b50cd05258e08efee478d4f34ca7dfef",
+  "input_files": {
+    "bare-bottom": {
+      "Gemfile": "7b925b66fe789d41fa185dcb4f1079d21507db3d7dd7a873610fad343fbda047",
+      "app/controllers/application_controller.rb": "c7279227656b36b3500f97e5331b497f88eb66f60f0b7d8a2e2a69c65bf9130d",
+      "app/controllers/probe_controller.rb": "63c506dc6476b572317ca4a7caa2be15d9418a4a8b6ad805dd190f2bf5d01e8c",
+      "app/models/source.rb": "7a41d034849b2e10016f3ad5591023963bbeaa6b6860fe04f28608dd1d4096c2",
+      "config/routes.rb": "c0687332770daaf4c2921f358e7aaecc0ce9b06b1cafeab6711918a6d12eaf2c",
+      "db/schema.rb": "5815498f1cb91a07c9157a5a88e645d2d990065b24a2303985f5fac15e5dbc21",
+      "sig/source.rbs": "6a7432096acbc98b13eb49f8375dee6433a6fb78aa36e3cb2eca31b545ea0c1f"
+    },
+    "union-bottom": {
+      "Gemfile": "7b925b66fe789d41fa185dcb4f1079d21507db3d7dd7a873610fad343fbda047",
+      "app/controllers/application_controller.rb": "c7279227656b36b3500f97e5331b497f88eb66f60f0b7d8a2e2a69c65bf9130d",
+      "app/controllers/probe_controller.rb": "63c506dc6476b572317ca4a7caa2be15d9418a4a8b6ad805dd190f2bf5d01e8c",
+      "app/models/source.rb": "7a41d034849b2e10016f3ad5591023963bbeaa6b6860fe04f28608dd1d4096c2",
+      "config/routes.rb": "c0687332770daaf4c2921f358e7aaecc0ce9b06b1cafeab6711918a6d12eaf2c",
+      "db/schema.rb": "5815498f1cb91a07c9157a5a88e645d2d990065b24a2303985f5fac15e5dbc21",
+      "sig/source.rbs": "24a2a0c46ec94385921454f66488ad9c532d1f865131844d1584536949822049"
+    }
+  },
+  "rows": [
+    {
+      "audit": 0,
+      "schedule": "unset",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "unset",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "1",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "1",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "2",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "2",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "unset-repeat",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 0,
+      "schedule": "unset-repeat",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": null,
+      "events": []
+    },
+    {
+      "audit": 1,
+      "schedule": "unset",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Untyped { why: Pending }",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "unset",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Bottom",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Union { variants: Shared([Bottom, Bottom]) }",
+          "output": "Bottom",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "1",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Bottom",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Union { variants: Shared([Bottom, Bottom]) }",
+          "output": "Bottom",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "1",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Untyped { why: Pending }",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "2",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Bottom",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Union { variants: Shared([Bottom, Bottom]) }",
+          "output": "Bottom",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "2",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Untyped { why: Pending }",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "unset-repeat",
+      "case": "bare-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Untyped { why: Pending }",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Untyped { why: Pending }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "audit": 1,
+      "schedule": "unset-repeat",
+      "case": "union-bottom",
+      "raw_exit": 0,
+      "exports": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      },
+      "bound": {
+        "calls": 27,
+        "cuts": 0
+      },
+      "complete_writer_inventory": false,
+      "events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Bottom",
+          "observed": "Bottom",
+          "output": "Bottom",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Union { variants: Shared([Bottom, Bottom]) }",
+          "output": "Bottom",
+          "count": 6
+        }
+      ]
+    }
+  ],
+  "timing_claim": false,
+  "runtime_witness_claim": false,
+  "same_all_non_rbs_inputs": true
+}

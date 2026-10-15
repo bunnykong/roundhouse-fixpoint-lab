@@ -1,0 +1,34 @@
+{
+  "analyzer_exit": 0,
+  "analyzer_seconds": 8.676717708,
+  "app": "campfire",
+  "binary_sha256": "0f7359e71b0c6917c457ffa813d982641ca899a4531ac9b6d82f682bfc95db67",
+  "command": [
+    "$EXPERIMENT/workshop/bin/roundhouse",
+    "check",
+    "--continue",
+    "."
+  ],
+  "condition": "writer-ownership-baseline-bf56edf9-s3-observe-v1",
+  "cwd": "$EXPERIMENT/workshop/inputs/campfire",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_DECL_DUMP": "$EXPERIMENT/workshop/runs/campfire-1/declarations.jsonl",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "1",
+    "RH_STRUCT_DUMP": "$EXPERIMENT/workshop/runs/campfire-1/structure.jsonl"
+  },
+  "input_tree_sha256": "0d3bb5ca7799e141fcd574c18ba84cdbb1dc67effed0ec3680aa939f4f4ee8eb",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "schedule": "1",
+  "source_commit": "bf56edf9e74ce2481e43e473de87466aac96283c",
+  "total_seconds": 18.776264708000003,
+  "verification": false
+}

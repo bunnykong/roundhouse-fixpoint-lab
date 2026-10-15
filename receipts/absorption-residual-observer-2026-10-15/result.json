@@ -1,0 +1,7 @@
+{
+  "condition": "absorption-residual-observer-20261015-134457dc",
+  "fact": 49,
+  "scope": "Problem 3; failed observer coverage, without refuting conservation.",
+  "text": "On October 15 condition `absorption-residual-observer-20261015-134457dc`, compiler `be7a677d` is killed as an absorption-loss observer; independent review upholds the builder's negative verdict. The 28-sample native harness passes 131,712 cell permutations and 1,568/131,712 two-/three-input row orders; the Campfire `90b33002` precision run has matching loss and residual sets of 24 mapped Gradual/Unresolved pairs. Discourse `343b20f9` nevertheless has 78 missing pairs across 68 destinations (19 Gradual, 59 Unresolved): the observer inspects one union level while native normalization first flattens nested unions. This is an observer coverage failure and does not refute conservation. Independent native probes also give the same stored type `Int` for `[Var, Int]` and `[Int, Var]` but residual masks 0 and 8. The cumulative residual varies by schedule on Campfire despite equal parameter value digests, which ignore reasons. Passing abstract cell laws therefore do not certify production residual state; lifecycle, normalization and downstream propagation remain open.",
+  "verdict": "Killed observer coverage; review upheld and added a production residual-order witness."
+}

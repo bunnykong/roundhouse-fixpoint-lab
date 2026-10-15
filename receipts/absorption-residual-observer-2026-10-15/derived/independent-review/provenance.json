@@ -1,0 +1,103 @@
+{
+  "files": [
+    {
+      "path": "$EXPERIMENT/protocol.md",
+      "bytes": 13162,
+      "sha256": "a9630e4b793d24e420266871405734a15a11053d433033dcf74adeac8a9fc005",
+      "st_mtime": "2026-10-15T05:53:58.774528+00:00",
+      "st_birthtime": "2026-10-15T05:13:36.206172+00:00",
+      "st_ctime": "2026-10-15T05:53:58.774528+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/RESULT.md",
+      "bytes": 12078,
+      "sha256": "41800f35b1a6a704c885c3cbd221400693e01bc879c902a4ad029a436394ec49",
+      "st_mtime": "2026-10-15T07:25:55.166350+00:00",
+      "st_birthtime": "2026-10-15T06:08:20.995726+00:00",
+      "st_ctime": "2026-10-15T07:25:55.166350+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer/laws.log",
+      "bytes": 5873,
+      "sha256": "45c00743f8995175a2535d18c4a703f756248a18bab257eb6cd4972b384a80a3",
+      "st_mtime": "2026-10-15T05:58:37.813436+00:00",
+      "st_birthtime": "2026-10-15T05:57:09.970693+00:00",
+      "st_ctime": "2026-10-15T05:58:37.813436+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer/contracts.log",
+      "bytes": 4226,
+      "sha256": "1251c9c96084511cf8e56d7e7ee715bfe064293cf1eac2b17943ce7a31622e9c",
+      "st_mtime": "2026-10-15T05:58:38.064795+00:00",
+      "st_birthtime": "2026-10-15T05:58:37.820415+00:00",
+      "st_ctime": "2026-10-15T05:58:38.064795+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer-campfire/condition.json",
+      "bytes": 52565,
+      "sha256": "fcbde48e4205043f15e350a9d63422e38725dedb1625880fbc95d8d1942c4940",
+      "st_mtime": "2026-10-15T06:03:48.280524+00:00",
+      "st_birthtime": "2026-10-15T06:03:48.280362+00:00",
+      "st_ctime": "2026-10-15T06:03:48.280524+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer-campfire/candidate/precision/stdout.json",
+      "bytes": 3377,
+      "sha256": "0fcbb62553540481ca563e9da395deab332e58e4749193a8ef606bae07169d99",
+      "st_mtime": "2026-10-15T06:03:22.854796+00:00",
+      "st_birthtime": "2026-10-15T06:03:22.854655+00:00",
+      "st_ctime": "2026-10-15T06:03:22.854796+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer-discourse/stdout.json",
+      "bytes": 3463,
+      "sha256": "a57dc6d40f8f6977a7fa889616eb16505f1c5244eddfa9ff6f134bbb8aac9333",
+      "st_mtime": "2026-10-15T06:24:25.716837+00:00",
+      "st_birthtime": "2026-10-15T06:04:13.774378+00:00",
+      "st_ctime": "2026-10-15T06:24:25.716837+00:00"
+    },
+    {
+      "path": "$EXPERIMENT/week/evidence/results/absorption-observer/inputs.json",
+      "bytes": 5107,
+      "sha256": "c4571a5ea8cbd9ed4aa55dec4b295b42e93af5636ffe064cd223fec336e6e570",
+      "st_mtime": "2026-10-15T06:01:08.777503+00:00",
+      "st_birthtime": "2026-10-15T06:00:12.942138+00:00",
+      "st_ctime": "2026-10-15T06:01:08.777503+00:00"
+    }
+  ],
+  "repo": {
+    "exit": 0,
+    "stdout": "$HOST_PATH",
+    "stderr": ""
+  },
+  "card_history": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "card_tracked": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ignored": {
+    "exit": 0,
+    "stdout": ".gitignore:1:.work/\tprotocol.md\n.gitignore:1:.work/\tRESULT.md\n",
+    "stderr": ""
+  },
+  "commit": {
+    "exit": 0,
+    "stdout": "commit be7a677d8f1383b46df8d2dd29639dceabab50cb\nAuthor:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nAuthorDate: Thu Oct 15 01:22:55 2026 -0600\nCommit:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nCommitDate: Thu Oct 15 01:22:55 2026 -0600\n\n    Prototype a residual for native parameter absorption\n    \n    Keep native parameter values unchanged while collecting hidden evidence bits\n    under RH_ABSORPTION_RESIDUAL=1. Reuse audit destination identities, record helper\n    entrance conversions, and expose a public-input-only residual map.\n    \n    Add the advance prediction residual cell laws and native row-order checks through\n    fold_param_observations and its bound pass.\n    \n    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n",
+    "stderr": ""
+  },
+  "history": {
+    "exit": 0,
+    "stdout": "be7a677d8f1383b46df8d2dd29639dceabab50cb 2026-10-15T01:22:55-06:00 2026-10-15T01:22:55-06:00 Prototype a residual for native parameter absorption\n134457dcac997512896e4239835130ae1425d1e4 2026-10-11T22:35:26+08:00 2026-10-11T22:35:26+08:00 test: expose native parameter seed arrival priority\nf29ad7fc8bd2e3ea424b28e288c997553a7ac8a2 2026-10-11T21:48:38+08:00 2026-10-11T21:48:38+08:00 research: preserve native parameter reasons behind a repair switch\nd83849d3f7750b0121390f0c89a52ec81ad84b6e 2026-10-11T18:44:52+08:00 2026-10-11T18:44:52+08:00 research: conserve producer reasons and test a return accumulator\n",
+    "stderr": ""
+  },
+  "status": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

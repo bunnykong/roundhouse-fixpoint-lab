@@ -1,0 +1,40 @@
+{
+  "audit_error": "The initial script additionally required the full fold report equal across fixture schedules. This work-counter requirement is absent from H1.7; Campfire fold equality remains required under H1.4.",
+  "card_criterion": "H1 confirm 7: fixture identities 10/10 with no differences; nine emitted digests equal to baseline",
+  "card_sha256": "999cf4a04f6c020f02aa2fbe1b906074c4beb04dded17cb77d108473e7bbe11e",
+  "condition": "writer-ownership-20261015-bf56edf9",
+  "corrected_script_sha256": "e7b0f96ccdd7edaa8e6f3ff2c86e886f434c365dbb4d20280164e3e11bd4a676",
+  "fold_accumulations_skipped": {
+    "a/fixture-1": 10,
+    "a/fixture-unset": 6,
+    "baseline/fixture-1": 10,
+    "baseline/fixture-unset": 6,
+    "off/fixture-1": 10,
+    "off/fixture-unset": 6
+  },
+  "initial_audit_preserved": "$EXPERIMENT/gate-audit.json",
+  "initial_script": "$EXPERIMENT/analyze_residual.initial.py",
+  "initial_script_sha256": "119a62fd6227f8b028feb68d5d28da25245e6198f802a80bae2ee6d02bd38920",
+  "matched_fixture_fold_reports_equal": true,
+  "raw_comparisons_unchanged": "$EXPERIMENT/comparisons.json",
+  "registered_checks": {
+    "a/fixture-1--baseline-matched": {
+      "all_nine_digests_equal": true,
+      "attempts_10_each_no_differences": true,
+      "declarations_equal": true,
+      "mutations_10_each_no_differences": true
+    },
+    "a/fixture-unset--1": {
+      "all_nine_digests_equal": true,
+      "attempts_10_each_no_differences": true,
+      "declarations_equal": true,
+      "mutations_10_each_no_differences": true
+    },
+    "a/fixture-unset--baseline-matched": {
+      "all_nine_digests_equal": true,
+      "attempts_10_each_no_differences": true,
+      "declarations_equal": true,
+      "mutations_10_each_no_differences": true
+    }
+  }
+}

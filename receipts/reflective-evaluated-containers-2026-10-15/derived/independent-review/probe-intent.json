@@ -1,0 +1,17 @@
+{
+  "condition": "rv-reflective-evaluated-containers-20261015/closures",
+  "recorded_utc": "2026-10-15T07:21:04.205164+00:00",
+  "hypothesis": "The new evaluated_children flag skips immediately invoked Lambda receivers inside the named containers.",
+  "expected_control": "The same eligible native writer reached by a bare .call is harvested; unused bare lambda values are not harvested.",
+  "falsifier": "If all immediately invoked closures are harvested and match the plain bound, this proposed counterexample fails.",
+  "scopes": [
+    "Array elements",
+    "Hash key and value",
+    "nested containers",
+    "positional splat",
+    "keyword splat",
+    "new ivar RHS traversal"
+  ],
+  "runtime_already_executed": true,
+  "native_static_probe_executed": false
+}

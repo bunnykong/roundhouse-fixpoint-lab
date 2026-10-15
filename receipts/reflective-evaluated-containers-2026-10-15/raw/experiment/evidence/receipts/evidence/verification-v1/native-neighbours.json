@@ -1,0 +1,92 @@
+[
+  {
+    "actual_touched": [
+      "x"
+    ],
+    "expected_reflection": true,
+    "expected_touched": [
+      "x"
+    ],
+    "ir_kinds": [
+      "Array",
+      "Lambda",
+      "Lit",
+      "Send"
+    ],
+    "method": "write_block"
+  },
+  {
+    "actual_touched": [],
+    "expected_reflection": false,
+    "expected_touched": [],
+    "ir_kinds": [
+      "Array",
+      "Lambda",
+      "Lit",
+      "Send"
+    ],
+    "method": "defer_in_array"
+  },
+  {
+    "actual_touched": [],
+    "expected_reflection": false,
+    "expected_touched": [],
+    "ir_kinds": [
+      "Array",
+      "Lit"
+    ],
+    "method": "query_in_array"
+  },
+  {
+    "actual_touched": [
+      "x"
+    ],
+    "expected_reflection": true,
+    "expected_touched": [
+      "x"
+    ],
+    "ir_kinds": [
+      "Array",
+      "ForwardKeywordsWithPairs",
+      "Lit",
+      "Send"
+    ],
+    "method": "write_forwarded_keywords"
+  },
+  {
+    "actual_touched": [
+      "holder",
+      "x"
+    ],
+    "expected_reflection": true,
+    "expected_touched": [
+      "holder",
+      "x"
+    ],
+    "ir_kinds": [
+      "Array",
+      "Lit",
+      "OpAssign",
+      "Send"
+    ],
+    "method": "write_ivar_op_rhs"
+  },
+  {
+    "actual_touched": [
+      "holder",
+      "x"
+    ],
+    "expected_reflection": true,
+    "expected_touched": [
+      "holder",
+      "x"
+    ],
+    "ir_kinds": [
+      "Array",
+      "Assign",
+      "Lit",
+      "Send"
+    ],
+    "method": "write_ivar_rhs"
+  }
+]

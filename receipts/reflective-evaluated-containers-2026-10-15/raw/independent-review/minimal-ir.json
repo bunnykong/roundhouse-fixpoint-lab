@@ -1,0 +1,124 @@
+{
+  "actual": null,
+  "body": {
+    "node": {
+      "elements": [
+        {
+          "node": {
+            "args": [],
+            "block": null,
+            "kind": "send",
+            "method": "call",
+            "parenthesized": false,
+            "recv": {
+              "node": {
+                "block_param": null,
+                "block_style": "brace",
+                "body": {
+                  "node": {
+                    "args": [
+                      {
+                        "node": {
+                          "kind": "lit",
+                          "value": {
+                            "kind": "sym",
+                            "value": "@x"
+                          }
+                        },
+                        "span": {
+                          "end": 74,
+                          "file": 1,
+                          "start": 71
+                        },
+                        "ty": {
+                          "kind": "sym"
+                        }
+                      },
+                      {
+                        "node": {
+                          "kind": "lit",
+                          "value": {
+                            "kind": "int",
+                            "value": 1
+                          }
+                        },
+                        "span": {
+                          "end": 77,
+                          "file": 1,
+                          "start": 76
+                        },
+                        "ty": {
+                          "kind": "int"
+                        }
+                      }
+                    ],
+                    "block": null,
+                    "kind": "send",
+                    "method": "instance_variable_set",
+                    "parenthesized": true,
+                    "recv": null
+                  },
+                  "span": {
+                    "end": 78,
+                    "file": 1,
+                    "start": 49
+                  },
+                  "ty": {
+                    "kind": "var",
+                    "var": 0
+                  }
+                },
+                "kind": "lambda",
+                "params": []
+              },
+              "span": {
+                "end": 80,
+                "file": 1,
+                "start": 44
+              },
+              "ty": {
+                "block": null,
+                "effects": {
+                  "effects": []
+                },
+                "kind": "fn",
+                "params": [],
+                "ret": {
+                  "kind": "var",
+                  "var": 0
+                }
+              }
+            }
+          },
+          "span": {
+            "end": 85,
+            "file": 1,
+            "start": 44
+          },
+          "ty": {
+            "kind": "var",
+            "var": 0
+          }
+        }
+      ],
+      "kind": "array",
+      "style": "brackets"
+    },
+    "span": {
+      "end": 86,
+      "file": 1,
+      "start": 43
+    },
+    "ty": {
+      "elem": {
+        "kind": "var",
+        "var": 0
+      },
+      "kind": "array"
+    }
+  },
+  "eligible": true,
+  "plain": {
+    "kind": "int"
+  }
+}

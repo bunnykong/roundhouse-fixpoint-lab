@@ -1,0 +1,256 @@
+{
+  "source_head": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+  "source_status": "",
+  "runner_sha256": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6",
+  "runner_snapshot_equal": true,
+  "binary_sha256_now": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+  "binary_sha256_in_metadata": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+  "card_sha256": "7e88dc8c854dc4fbdf738d2f8729694e6604098041ac83f30617a99c99ed763e",
+  "binary_receipt_before_native_gate": "bcd17f16014bf969e1e407bf0e9740dd46fb32aefb683d26a81db916265a41ee  $EXPERIMENT/week/warm/build/codec/release/roundhouse\n12db93afe88d51ac0b5fbd26558c8cf032d9f50267eb301056c82cb3c5198608  $EXPERIMENT/week/warm/build/codec/release/emit_reason_controls\n",
+  "binary_receipt_after_native_gate": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3  week/warm/build/codec/release/roundhouse\n12db93afe88d51ac0b5fbd26558c8cf032d9f50267eb301056c82cb3c5198608  week/warm/build/codec/release/emit_reason_controls\n",
+  "binary_version": "roundhouse 2026.9.18 (35cef988)",
+  "branch": "reason-emission-storage-controls",
+  "new_commits_from_card_base": 1,
+  "author_email": "268838774+bunnykong@users.noreply.github.com",
+  "committer_email": "268838774+bunnykong@users.noreply.github.com",
+  "coauthor_trailer": "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+  "card_unchanged": true,
+  "arm_source_heads": {
+    "legacy-g": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+    "legacy-u": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+    "lossless-g": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+    "lossless-u": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210"
+  },
+  "arm_binary_sha256": {
+    "legacy-g": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+    "legacy-u": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+    "lossless-g": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+    "lossless-u": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3"
+  },
+  "arm_runner_sha256": {
+    "legacy-g": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6",
+    "legacy-u": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6",
+    "lossless-g": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6",
+    "lossless-u": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6"
+  },
+  "provenance_flags_exact_per_command": {
+    "legacy-g": {
+      "mastodon-seed": true,
+      "mastodon-withdraw-read-correctness": true,
+      "mastodon-withdraw-read-1-cold": true,
+      "mastodon-withdraw-read-1-warm": true
+    },
+    "legacy-u": {
+      "mastodon-seed": true,
+      "mastodon-withdraw-read-correctness": true,
+      "mastodon-withdraw-read-1-cold": true,
+      "mastodon-withdraw-read-1-warm": true
+    },
+    "lossless-g": {
+      "mastodon-seed": true,
+      "mastodon-withdraw-read-correctness": true,
+      "mastodon-withdraw-read-1-cold": true,
+      "mastodon-withdraw-read-1-warm": true
+    },
+    "lossless-u": {
+      "mastodon-seed": true,
+      "mastodon-withdraw-read-correctness": true,
+      "mastodon-withdraw-read-1-cold": true,
+      "mastodon-withdraw-read-1-warm": true
+    }
+  },
+  "pair_counts": {
+    "legacy-g": 1,
+    "legacy-u": 1,
+    "lossless-g": 1,
+    "lossless-u": 1
+  },
+  "separate_cold_parity": {
+    "legacy-g": true,
+    "legacy-u": true,
+    "lossless-g": true,
+    "lossless-u": true
+  },
+  "all_loop_endings": {
+    "legacy-g": {
+      "warm": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "shadow": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "cold": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      }
+    },
+    "legacy-u": {
+      "warm": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "shadow": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "cold": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      }
+    },
+    "lossless-g": {
+      "warm": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "shadow": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "cold": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      }
+    },
+    "lossless-u": {
+      "warm": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "shadow": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "cold": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      }
+    }
+  },
+  "cargo_clean_exit": "0",
+  "cargo_target_removed": true,
+  "recovery_binary_sha256_before_removal": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+  "recovery_binary_removed": true
+}

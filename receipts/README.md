@@ -86,3 +86,18 @@ Measured October 11 in separate continuations; these are bounded unscored refere
 | [F41](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f41) | [A Time-inclusive widening calibrates the component gate](time-widening-calibration-2026-10-11/README.md) | Confirmed for bounded checker calibration. |
 | [F42](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f42) | [Fingerprint edit audits stop after the three Mastodon comparisons](warm-fingerprint-edit-audits-2026-10-11/README.md) | Inconclusive; three edited comparisons and cost gates incomplete. |
 | [F43](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f43) | [A reflective write in an Array escapes the harvest walker](reflective-array-entrance-2026-10-11/README.md) | Killed by an uncovered reflective Array entrance. |
+
+## October 15, 2026
+
+Seven unscored references retain confirmed, overturned and inconclusive results in separately pinned conditions.
+Saved reducers check retained evidence; publication added no native analyzer run or benchmark.
+
+| Receipt | Result | Record |
+| --- | --- | --- |
+| [writer-ownership](writer-ownership-2026-10-15/README.md) | Bounded ownership and value-level stabilization confirmed; review upheld. | [F44](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f44) |
+| [parameter-pending-reader-view](parameter-pending-reader-view-2026-10-15/README.md) | Both identity levels and the reader view confirmed within the registered samples/input; review upheld. | [F45](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f45) |
+| [parameter-bottom-initialization](parameter-bottom-initialization-2026-10-15/README.md) | Builder confirmation overturned: union-of-Bottoms exports early never. | [F46](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f46) |
+| [reflective-evaluated-containers](reflective-evaluated-containers-2026-10-15/README.md) | Builder local confirmation overturned: invoked closure writes are missed. | [F47](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f47) |
+| [fingerprint-six-edit-gates](fingerprint-six-edit-gates-2026-10-15/README.md) | Inconclusive: six audits pass; candidate cost replication is absent; review upheld. | [F48](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f48) |
+| [absorption-residual-observer](absorption-residual-observer-2026-10-15/README.md) | Killed observer coverage; review upheld and added a production residual-order witness. | [F49](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f49) |
+| [reason-emission-storage-controls](reason-emission-storage-controls-2026-10-15/README.md) | Emission/census confirmations bounded; settlement comparison killed but causality untested; review upheld. | [F50](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f50) |

@@ -1,0 +1,24 @@
+{
+  "source_commit": "f78d995f65816dead93dd615dcba370661c50d1f",
+  "source_branch": "writer-ownership",
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "build_seconds": 150.21105987500002,
+  "exit_code": 0,
+  "environment": {
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "CARGO_BUILD_JOBS": "4",
+    "RBENV_VERSION": "4.0.7"
+  },
+  "rust": "rustc 1.98.1 (48a229cea 2026-09-01)",
+  "binary_sha256": "c5dd74600113701fb54f0180c9a13ed6eca02c661d3e85861c9712685dd69344"
+}

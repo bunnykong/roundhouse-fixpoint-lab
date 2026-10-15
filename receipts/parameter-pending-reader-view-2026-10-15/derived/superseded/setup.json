@@ -1,0 +1,15 @@
+{
+  "condition": "pending-value-only-pending-identity-134457dc-v1-shared-host",
+  "started_utc": "2026-10-15T05:15:20.910613+00:00",
+  "card_sha256": "a127e923a9b08f8ef82fa8249b30f5674e93ca6ee981db86e2d908c72aa5b009",
+  "design_sha256": "67f2a33927511578724f5eca32ee3c4dd947153f565cd96c94025e24cd681b04",
+  "source_head": "134457dcac997512896e4239835130ae1425d1e4",
+  "source_branch": "parameter-pending-value-only",
+  "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "operational_adaptations": [
+    "Use the user-assigned existing parameter-pending-value-only directory and parameter-pending-value-only branch.",
+    "Dereference the source apps symlink while copying, keeping all writes local.",
+    "Root docs/pitfalls.md is absent; root README and applicable AGENTS.md read."
+  ],
+  "timing_claim": false
+}

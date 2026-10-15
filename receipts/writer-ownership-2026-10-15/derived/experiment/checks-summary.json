@@ -1,0 +1,35 @@
+{
+  "default": {
+    "exit_code": 101,
+    "failed": 43,
+    "ignored": 1,
+    "passed": 1107,
+    "status": "FAILED"
+  },
+  "log": "$EXPERIMENT/checks-default.log",
+  "relevant_tests": {
+    "analyze::fixpoint_check::tests::moved_counts_changed_added_and_removed_entries": "ok",
+    "analyze::fixpoint_check::tests::stats_are_per_analyze": "ok",
+    "analyze::fixpoint_check::tests::type_hash_ignores_arm_order_and_variable_ids": "ok",
+    "analyze::fixpoint_check::tests::type_hash_tells_containers_apart": "ok",
+    "analyze::fixpoint_check::tests::untyped_is_found_at_any_depth": "ok",
+    "analyze::fixpoint_check::tests::view_seed_filters_ignore_arm_order_and_variable_ids": "ok",
+    "analyze::harvest_return::tests::a_nested_union_of_unknown_arms_is_not_informative": "ok",
+    "analyze::harvest_return::tests::configuration_versus_configuration_or_untyped_stabilizes_to_configuration": "ok",
+    "analyze::harvest_return::tests::distinct_concrete_cores_do_not_stabilize": "ok",
+    "analyze::harvest_return::tests::insert_distinct_cores_last_write_wins": "ok",
+    "analyze::harvest_return::tests::insert_gradual_first_write_then_same_core_concrete_narrows": "ok",
+    "analyze::harvest_return::tests::insert_gradual_nil_is_sticky_against_bare_nil": "ok",
+    "analyze::harvest_return::tests::insert_keeps_known_return_against_bare_untyped": "ok",
+    "analyze::harvest_return::tests::insert_keeps_known_return_against_untyped_only_union": "ok",
+    "analyze::harvest_return::tests::insert_preserves_first_write_of_gradual_union": "ok",
+    "analyze::harvest_return::tests::insert_preserves_rbs_fn": "ok",
+    "analyze::harvest_return::tests::insert_recursive_return_flattened_into_a_union_is_cut": "ok",
+    "analyze::harvest_return::tests::insert_recursive_return_nested_in_a_record_keeps_the_previous": "ok",
+    "analyze::harvest_return::tests::insert_recursive_return_that_nests_its_previous_round_keeps_the_previous": "ok",
+    "analyze::harvest_return::tests::insert_scalar_previous_return_is_not_a_recursion_witness": "ok",
+    "analyze::harvest_return::tests::insert_stabilizes_configuration_versus_noisy": "ok",
+    "analyze::harvest_return::tests::nil_versus_nil_or_untyped_keeps_gradual_nil": "ok",
+    "analyze::harvest_return::tests::var_nil_versus_untyped_nil_keeps_gradual_nil": "ok"
+  }
+}

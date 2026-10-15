@@ -1,0 +1,45 @@
+{
+  "parent": [
+    {
+      "app": "mastodon",
+      "edit": "boolean",
+      "cold_wall_seconds": 7.6231251250000005,
+      "warm_excluding_shadow_seconds": 150.235947084,
+      "whole_warm_seconds": 157.333679416,
+      "warm_peak_rss_mb": 11386,
+      "cold_peak_rss_mb": 704,
+      "seed_bytes": 491914930,
+      "published_bytes": 491914998
+    }
+  ],
+  "cold": [
+    {
+      "app": "mastodon",
+      "candidate_peak_rss_mb": 719,
+      "candidate_wall_seconds": 7.294016749999999,
+      "order": [
+        "parent",
+        "candidate"
+      ],
+      "pair": 1,
+      "parent_peak_rss_mb": 706,
+      "parent_wall_seconds": 7.890746208,
+      "parity": true,
+      "ratio": 0.9243760422309604
+    },
+    {
+      "app": "mastodon",
+      "candidate_peak_rss_mb": 706,
+      "candidate_wall_seconds": 7.566365458,
+      "order": [
+        "candidate",
+        "parent"
+      ],
+      "pair": 2,
+      "parent_peak_rss_mb": 704,
+      "parent_wall_seconds": 7.065983917,
+      "parity": true,
+      "ratio": 1.0708155505132322
+    }
+  ]
+}

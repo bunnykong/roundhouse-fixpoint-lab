@@ -1,0 +1,7 @@
+{
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a",
+  "fact": 48,
+  "scope": "Problem 5; six edited correctness audits, zero of thirty candidate cost pairs, no timing claim.",
+  "text": "On October 15 condition `fingerprint-six-edit-gates-20261015-1fbfee1a`, the six edited audits all pass for native candidate `1fbfee1a` against parent `d9ec78c3`: three edits each on Mastodon `163f96ce` and Discourse `343b20f9`, with zero disagreements across 60,698\u201360,701 and 136,947\u2013136,952 input/extra/guard comparisons per edit respectively, plus shadow, separate-cold and same-path parent parity. Independent review upholds the inconclusive verdict and rechecks the raw receipts; additional Mastodon schedule probes preserve parity within each schedule without establishing schedule independence. Parent profiles complete 1/6, candidate cost pairs 0/30 and broader cold pairs 2/15. Thus this closes F42's six-edit correctness coverage gap while leaving the cost gates unassessed. No candidate timing, useful-cost, total-warm regression or 100 ms claim follows. The cold oracle's reason omission, record normalization and diagnostic-comparison scope remain limits; exact incremental replay and soundness remain open.",
+  "verdict": "Inconclusive: six audits pass; candidate cost replication is absent; review upheld."
+}

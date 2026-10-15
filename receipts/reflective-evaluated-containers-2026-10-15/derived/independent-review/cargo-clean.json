@@ -1,0 +1,32 @@
+{
+  "completed_utc": "2026-10-15T07:41:05.138355+00:00",
+  "condition": "rv-reflective-evaluated-containers-20261015",
+  "targets": [
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--target-dir",
+        "$HOST_PATH"
+      ],
+      "exit": 0,
+      "files_after": 0,
+      "files_before": 1992,
+      "target": "$HOST_PATH"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--target-dir",
+        "$HOST_PATH"
+      ],
+      "exit": 0,
+      "files_after": 0,
+      "files_before": 3116,
+      "target": "$HOST_PATH"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "condition": "reason-emission-storage-controls-20261015-71b09336",
+  "fact": 50,
+  "scope": "Problems 3 and 5; one Mastodon edit, bounded emission checks, settlement untested.",
+  "text": "On October 15 condition `reason-emission-storage-controls-20261015-71b09336`, compiler `35cef988` confirms that scrambling 3,804 stored reason positions leaves 105 fixture/target pairs (11,432 files) byte-identical under unset/1/2/repeat; independent review upholds this bounded result. For one Mastodon `163f96ce` withdrawal edit, lossless warm and cold reason censuses agree at 5,459 Gradual and 23,311 Unresolved, with 22,597 replayed evaluations; supplemental shuffled conditions also preserve their own warm/cold censuses. The legacy codec's warm census counts 11,197 more Gradual and 11,179 fewer Unresolved than cold. These are overlapping census-category differences, not a count of relabeled positions; the equal-gap forecast is refuted. The registered settlement comparison is killed operationally but remains causally open: scheduler digests include source paths and differ even under identical flags, while zero expressions are settled. Settlement is therefore untested by a positive witness. Matching aggregate censuses do not establish equality at every stored position, general replay fidelity or runtime soundness; shuffled Unresolved-policy warm replay remains untested.",
+  "verdict": "Emission/census confirmations bounded; settlement comparison killed but causality untested; review upheld."
+}

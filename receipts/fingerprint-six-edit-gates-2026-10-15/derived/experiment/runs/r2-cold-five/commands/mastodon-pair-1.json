@@ -1,0 +1,37 @@
+{
+  "batch": "mastodon-pair-1",
+  "commands": [
+    {
+      "app": "$EXPERIMENT/week/warm/runs/r2-cold-five/apps/mastodon",
+      "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_VERIFY": "0",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_SCHED": "sccq"
+      },
+      "out": "$EXPERIMENT/week/warm/runs/r2-cold-five/runs/mastodon-1-parent"
+    },
+    {
+      "app": "$EXPERIMENT/week/warm/runs/r2-cold-five/apps/mastodon",
+      "binary": "$EXPERIMENT/week/warm/build/fast/release/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_VERIFY": "0",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_SCHED": "sccq"
+      },
+      "out": "$EXPERIMENT/week/warm/runs/r2-cold-five/runs/mastodon-1-candidate"
+    }
+  ],
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-cold",
+  "lock_mode": "exclusive"
+}

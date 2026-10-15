@@ -1,0 +1,27 @@
+{
+  "condition": "pending-factorial-default-suite-e248de81-v1-shared-host",
+  "source_commit": "e248de81c331a21db5b0d87dcccf45d624cd3132",
+  "flags": "RH_* and ROUNDHOUSE_* unset by session.sh",
+  "rust": "1.98.1",
+  "ruby": "3.4.4",
+  "command": "cargo +1.98.1 test --locked",
+  "exit": 101,
+  "test_results": [
+    {
+      "status": "FAILED",
+      "passed": 1142,
+      "failed": 2,
+      "ignored": 16,
+      "measured": 0,
+      "filtered": 0
+    }
+  ],
+  "failed_tests": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+  ],
+  "scope": "Compilation succeeds. The library suite fails; Cargo stops before integration binaries and doctests.",
+  "baseline_control_status": "Both focused failures reproduce with identical assertions on the frozen base.",
+  "initial_build_fix": "ownership-adaptation.json",
+  "baseline_control_condition": "pending-factorial-default-control-a7b6d3f8-v1-shared-host"
+}

@@ -1,0 +1,35 @@
+{
+  "checked_utc": "2026-10-15T07:39:27.355716+00:00",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "commands": [
+    {
+      "command": [
+        "ruby",
+        "-e",
+        "require \"prism\"; puts RUBY_DESCRIPTION; puts \"Prism #{Prism::VERSION}\""
+      ],
+      "exit": 0,
+      "stdout": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]\nPrism 1.8.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "$HOST_PATH",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "roundhouse 2026.9.18 (aba61629)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "$HOST_PATH",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "roundhouse 2026.9.18 (d9ec78c3)\n",
+      "stderr": ""
+    }
+  ],
+  "native_target_builds": 0
+}

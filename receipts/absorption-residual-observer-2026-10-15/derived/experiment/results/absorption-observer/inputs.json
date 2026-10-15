@@ -1,0 +1,32 @@
+{
+  "agent_card_before_addendum_equals_shared": true,
+  "apps": {
+    "campfire": {
+      "head": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "initial_status": "",
+      "tree": "6a4b38fb83d6df1579419660945448201ae90326"
+    },
+    "discourse": {
+      "copy_before_pristine_checkout_status": "D .agents/skills\n D .claude/skills\n T .github/instructions/copilot.instructions.md\n T AGENTS.md\n T CLAUDE.md\n T GEMINI.md\n D d\n T migrations/CLAUDE.md\n T public/images/welcome/emoji-completion.png\n T public/images/welcome/like-link-flag-bookmark.png\n T public/images/welcome/notification-panel.png\n T public/images/welcome/progress-bar.png\n T public/images/welcome/quote-reply.png\n T public/images/welcome/reply-as-linked-topic.png\n T public/images/welcome/reply-post.png\n T public/images/welcome/reply-topic.png\n T public/images/welcome/topic-list-select-areas.png\n T public/images/welcome/topic-notification-control.png\n T public/images/welcome/topics-new-unread.png\n T public/images/welcome/username-completion.png\n?? .agents/skills/discourse-acl-authoring/SKILL.md\n?? .agents/skills/discourse-acl-authoring/agents/openai.yaml\n?? .agents/skills/discourse-acl-authoring/references/backend-model.md\n?? .agents/skills/discourse-acl-authoring/references/frontend-d-access-control.md\n?? .agents/skills/discourse-acl-authoring/references/manager-and-plugin-integration.md\n?? .agents/skills/discourse-acl-authoring/references/testing-and-review.md\n?? .agents/skills/discourse-admin-ui/SKILL.md\n?? .agents/skills/discourse-admin-ui/agents/openai.yaml\n?? .agents/skills/discourse-admin-ui/references/content-patterns.md\n?? .agents/skills/discourse-admin-ui/references/filtered-settings-pages.md\n?? .agents/skills/discourse-admin-ui/references/page-shell.md\n?? .agents/skills/discourse-admin-ui/references/plugin-admin-interfaces.md\n?? .agents/skills/discourse-ai-llm-presets/SKILL.md\n?? .agents/skills/discourse-content-localization/SKILL.md\n?? .agents/skills/discourse-frontend-conventions/SKILL.md\n?? .agents/skills/discourse-migration/SKILL.md\n?? .agents/skills/discourse-pr/SKILL.md\n?? .agents/skills/discourse-screenshots/SKILL.md\n?? .agents/skills/discourse-service-authoring/SKILL.md\n?? .agents/skills/discourse-site-settings/SKILL.md\n?? .agents/skills/discourse-upcoming-changes-authoring/SKILL.md\n?? .agents/skills/discourse-upcoming-changes/SKILL.md\n?? .agents/skills/discourse-upcoming-changes/scripts/optimize_upcoming_change_image.rb\n?? .agents/skills/discourse-warpdrive-models/SKILL.md\n?? .agents/skills/discourse-writing-html-css/SKILL.md\n?? .agents/skills/discourse-writing-html-css/references/accessibility.md\n?? .agents/skills/discourse-writing-html-css/references/color-and-theming.md\n?? .agents/skills/discourse-writing-html-css/references/css-authoring.md\n?? .agents/skills/discourse-writing-html-css/references/css-repair.md\n?? .agents/skills/discourse-writing-html-css/references/layout-and-responsive.md\n?? .agents/skills/discourse-writing-js-tests/SKILL.md\n?? .agents/skills/discourse-writing-rspec-tests/SKILL.md\n?? .agents/skills/discourse-writing-rspec-tests/references/request-specs.md\n?? .agents/skills/discourse-writing-rspec-tests/references/system-tests.md\n?? .agents/skills/discourse-writing-rspec-tests/references/theme-tests.md\n?? .agents/skills/discourse-writing-rspec-tests/references/tracking-helpers.md\n?? .agents/skills/discourse-writing-typescript/SKILL.md\n?? .agents/skills/discourse-writing-typescript/references/conversion-completeness.md\n?? .agents/skills/discourse-writing-typescript/references/js-to-ts-conversion.md\n?? d/README.md\n?? d/boot_dev\n?? d/bundle\n?? d/cleanup\n?? d/dev\n?? d/discourse\n?? d/exec\n?? d/mailhog\n?? d/migrate\n?? d/pitchfork\n?? d/pnpm\n?? d/psql\n?? d/rails\n?? d/rake\n?? d/reset_db\n?? d/rspec\n?? d/shell\n?? d/shell_root\n?? d/shutdown_dev",
+      "head": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "initial_status": "",
+      "tree": "489a5c0b678235dd773e6274bf97f6e8879fee8d"
+    }
+  },
+  "base_commit": "134457dcac997512896e4239835130ae1425d1e4",
+  "branch": "absorption-residual-observer",
+  "card_sha256": "a9630e4b793d24e420266871405734a15a11053d433033dcf74adeac8a9fc005",
+  "condition": "absorption-residual-observer-20261015-134457dc",
+  "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "repair": "off throughout measured runs; app wrapper clears all inherited RH_* controls",
+  "setup_adaptations": [
+    "Use assigned absorption-residual-observer directory, which already existed.",
+    "Use local branch absorption-residual-observer rather than illustrative provenance-residual.",
+    "Dereference input apps symlink when copying so all app inputs reside inside D.",
+    "Replace the unused dereferenced Discourse copy with a local clone to preserve tracked symlinks; verify it is clean before any run. The unused copy stays under staging."
+  ],
+  "shared_card_sha256": "fa08555baf9c7b03e68ffdb0676c02a52912d19d4fa570c44e2a8b2f61894bf2",
+  "started_utc": "2026-10-15T05:54Z",
+  "theory_design_sha256": "cf85e6ee0fd47e5511d02677ad023d07f90d410c6c86a337ec0455cccc6621a0",
+  "timing_claim": false
+}

@@ -1,0 +1,82 @@
+{
+  "card_sha256": "a9d3141a9ca4f4933f4bafc01673719a09618e530a914c11a27456f9abfefd20",
+  "checks": {
+    "cold_complete": false,
+    "edits": {
+      "discourse-boolean": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      },
+      "discourse-return-type": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      },
+      "discourse-withdraw-read": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      },
+      "mastodon-boolean": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      },
+      "mastodon-return-type": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      },
+      "mastodon-withdraw-read": {
+        "complete": false,
+        "pairs": 0,
+        "parent_pairs": 0
+      }
+    },
+    "generality": {
+      "complete": false,
+      "confirmed": false,
+      "error": "[Errno 2] No such file or directory: '$EXPERIMENT/week/warm/runs/r2-fast-six-audit/results.json'"
+    },
+    "total_warm_regression": false,
+    "useful_cost_confirmed": false,
+    "warm_cost_complete": false
+  },
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a",
+  "issues": [],
+  "promotion_blocked": true,
+  "reduced_utc": "2026-10-15T04:30:05.294694+00:00",
+  "scope": "Current-cold-oracle parity with mandatory shadow; inherited codec and diagnostic identity scope. One parent warm pair per edit. Shared audit timings are correctness overhead only.",
+  "stages": {
+    "base-six": {
+      "data": {},
+      "expected_pairs": 6,
+      "pairs": 0,
+      "raw_receipts": [],
+      "receipts": 0
+    },
+    "cold-five": {
+      "data": {},
+      "expected_pairs": 15,
+      "pairs": 0,
+      "raw_receipts": [],
+      "receipts": 0
+    },
+    "fast-five": {
+      "data": {},
+      "expected_pairs": 30,
+      "pairs": 0,
+      "raw_receipts": [],
+      "receipts": 0
+    },
+    "fast-six-audit": {
+      "data": {},
+      "expected_pairs": 6,
+      "pairs": 0,
+      "raw_receipts": [],
+      "receipts": 0
+    }
+  },
+  "verdict": "inconclusive"
+}

@@ -1,0 +1,25 @@
+{
+  "apps": {
+    "discourse": {
+      "app": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/apps/discourse",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "receipt": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/runs/discourse-seed/run.json",
+      "seed": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/caches/discourse-seed",
+      "seed_bytes": 2182638640,
+      "seed_sha256": "61772984379a7b79b016ee1a84285d9d608c5e6ab307200c1ef15a52d1085965"
+    },
+    "mastodon": {
+      "app": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/apps/mastodon",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "receipt": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/runs/mastodon-seed/run.json",
+      "seed": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit/caches/mastodon-seed",
+      "seed_bytes": 497025561,
+      "seed_sha256": "7cf52860a54267521ebaaeeed584389f1867353227f563870fa8a6261764d0d6"
+    }
+  },
+  "binary_sha256": "f7f43a7ad3292ddeea86acfd7b4bb149ffbbd06c4ba3b205fb1238c1ceabfe2c",
+  "complete": true,
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-audit",
+  "reuse": "Same binary, exact app path, unchanged seed bytes; RH_WARM_* instrumentation is excluded from cache flags",
+  "source_receipt": "$EXPERIMENT/week/warm/runs/r2-fast-six-audit"
+}

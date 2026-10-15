@@ -1,0 +1,21 @@
+{
+  "harness_verbatim": true,
+  "preexisting_assertions_unchanged": true,
+  "samples_unchanged": true,
+  "files_unchanged": {
+    "src/wire_ty.rs": true,
+    "src/analyze/sccq.rs": true,
+    "src/analyze/fold.rs": true
+  },
+  "sample_count": 28,
+  "pairs": 784,
+  "triples": 21952,
+  "direct_reader_sites": [
+    1144,
+    1966,
+    4556,
+    4637,
+    4640
+  ],
+  "additional_callers": "params_row also feeds signature publication and public inferred_param_types; this is within the explicitly named params_row intervention."
+}

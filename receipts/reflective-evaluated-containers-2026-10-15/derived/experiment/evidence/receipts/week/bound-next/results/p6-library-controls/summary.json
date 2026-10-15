@@ -1,0 +1,97 @@
+{
+  "condition": "reflective-evaluated-containers-20261015-fe6b169e/p6-library-controls",
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound-next/sources/probe-source/target-laws",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_REFLECT_BOUND": "1",
+    "RH_SCHED": "sccq"
+  },
+  "rows": [
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--lib",
+        "stats_are_per_analyze",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "counts": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "1152"
+        ]
+      ],
+      "exit": 101,
+      "log_sha256": "5e07306ca13919e9d36298e05084641f32419236cf069036e75c187436760af4",
+      "selection": "stats_are_per_analyze"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--lib",
+        "action_controller_runtime_emit_typechecks_hotspots",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "counts": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "1152"
+        ]
+      ],
+      "exit": 101,
+      "log_sha256": "377aa82cd7ab8b3030c0959371f21952ed29c82603c322fd619f269031164f86",
+      "selection": "action_controller_runtime_emit_typechecks_hotspots"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--lib",
+        "rbs_ivar_decls_stamp_empty_array_initializers",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "counts": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "1152"
+        ]
+      ],
+      "exit": 101,
+      "log_sha256": "71328b9f2dcdf930a0ec9317333c5f5f52086fee768a960e54cde3fe86a6fe47",
+      "selection": "rbs_ivar_decls_stamp_empty_array_initializers"
+    }
+  ],
+  "scope": "Focused unchanged-P6 controls for the three candidate flag-on library failures",
+  "source_head": "fe6b169ea935be900aa51e5a2069a360324a69b0",
+  "source_status": "",
+  "timed_measurement": false
+}

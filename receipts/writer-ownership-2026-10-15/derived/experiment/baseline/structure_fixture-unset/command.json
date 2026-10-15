@@ -1,0 +1,34 @@
+{
+  "analyzer_exit": 0,
+  "analyzer_seconds": 0.7630027500000001,
+  "app": "structure_fixture",
+  "binary_sha256": "0f7359e71b0c6917c457ffa813d982641ca899a4531ac9b6d82f682bfc95db67",
+  "command": [
+    "$EXPERIMENT/workshop/bin/roundhouse",
+    "check",
+    "--continue",
+    "."
+  ],
+  "condition": "writer-ownership-baseline-bf56edf9-s3-observe-v1",
+  "cwd": "$EXPERIMENT/workshop/inputs/structure_fixture",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_DECL_DUMP": "$EXPERIMENT/workshop/runs/structure_fixture-unset/declarations.jsonl",
+    "RH_DECL_FIXTURE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "$EXPERIMENT/workshop/runs/structure_fixture-unset/structure.jsonl"
+  },
+  "input_tree_sha256": "e0fdb9e2d3c2836cfcaef5d8e96479d430a419b995844e3a08c545d591065add",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "schedule": "unset",
+  "source_commit": "bf56edf9e74ce2481e43e473de87466aac96283c",
+  "total_seconds": 5.201562708,
+  "verification": false
+}

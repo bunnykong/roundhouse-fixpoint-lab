@@ -1,0 +1,28 @@
+[
+  {
+    "target": "$EXPERIMENT/week/bound-next/sources/probe-source/target-laws",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "clean",
+      "--target-dir",
+      "$EXPERIMENT/week/bound-next/sources/probe-source/target-laws"
+    ],
+    "exit": 0,
+    "files_before": 81971,
+    "files_after": 0
+  },
+  {
+    "target": "$EXPERIMENT/week/bound-next/scratch/provenance-target",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "clean",
+      "--target-dir",
+      "$EXPERIMENT/week/bound-next/scratch/provenance-target"
+    ],
+    "exit": 0,
+    "files_before": 4230,
+    "files_after": 0
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "condition": "pending-value-reason-identity-20261015-a7b6d3f8",
+  "started_utc": "2026-10-15T05:54:13+00:00",
+  "setup_completed_utc": "2026-10-15T05:56:45.416959+00:00",
+  "card_sha256": "329f5d0ac8ade0ab2e6d3d219c09c404f1a050ee3708448f5867f166171a0916",
+  "design_sha256": "cf85e6ee0fd47e5511d02677ad023d07f90d410c6c86a337ec0455cccc6621a0",
+  "source_base": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "branch": "parameter-pending-reader-view",
+  "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "campfire_head": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "reused_value-only_reports_sha256": "a1cb5d251aee5ee49a0d17787bbbb1aa91a9e8a07f93da05788456f564e7333a",
+  "operational_adaptations": [
+    "Use assigned existing parameter-pending-reader-view directory and branch, overriding stale card setup names.",
+    "Copy apps with dereferenced symlinks as registered.",
+    "Root docs/pitfalls.md is absent.",
+    "Local claim replaces shared claims entry to obey write-only-under-D restriction.",
+    "Cow read types require mechanical ownership adaptations in signature publication and src/ide.rs."
+  ],
+  "timing_claim": false
+}

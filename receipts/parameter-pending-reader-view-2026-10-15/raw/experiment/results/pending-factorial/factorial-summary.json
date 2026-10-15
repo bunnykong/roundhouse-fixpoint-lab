@@ -1,0 +1,385 @@
+{
+  "arms": {
+    "00": {
+      "arm": [
+        "0",
+        "0"
+      ],
+      "counts": {
+        "fold2": 52,
+        "fold3": 2106,
+        "pid": 26
+      },
+      "examples": {
+        "fold2": [
+          "Bottom | Nil",
+          "Bottom | Int",
+          "Bottom | Str",
+          "Bottom | Var { var: TyVar(0) }",
+          "Bottom | Untyped { why: Unresolved }"
+        ],
+        "fold3": [
+          "Bottom | Bottom | Nil",
+          "Bottom | Bottom | Int",
+          "Bottom | Bottom | Str",
+          "Bottom | Bottom | Var { var: TyVar(0) }",
+          "Bottom | Bottom | Untyped { why: Unresolved }"
+        ],
+        "pid": [
+          "Nil",
+          "Int",
+          "Str",
+          "Var { var: TyVar(0) }",
+          "Untyped { why: Unresolved }"
+        ]
+      },
+      "no_early_never": true,
+      "seed_ok": false
+    },
+    "01": {
+      "arm": [
+        "0",
+        "1"
+      ],
+      "counts": {
+        "fold2": 46,
+        "fold3": 1656,
+        "pid": 23
+      },
+      "examples": {
+        "fold2": [
+          "Bottom | Nil",
+          "Bottom | Int",
+          "Bottom | Str",
+          "Bottom | Var { var: TyVar(0) }",
+          "Bottom | Array { elem: Int }"
+        ],
+        "fold3": [
+          "Bottom | Bottom | Nil",
+          "Bottom | Bottom | Int",
+          "Bottom | Bottom | Str",
+          "Bottom | Bottom | Var { var: TyVar(0) }",
+          "Bottom | Bottom | Array { elem: Int }"
+        ],
+        "pid": [
+          "Nil",
+          "Int",
+          "Str",
+          "Var { var: TyVar(0) }",
+          "Array { elem: Int }"
+        ]
+      },
+      "no_early_never": true,
+      "seed_ok": false
+    },
+    "10": {
+      "arm": [
+        "1",
+        "0"
+      ],
+      "counts": {
+        "assoc": 276,
+        "fold2": 138,
+        "fold3": 6210,
+        "pid": 3
+      },
+      "examples": {
+        "assoc": [
+          "Nil | Untyped { why: Pending } | Untyped { why: Unresolved }",
+          "Nil | Untyped { why: Pending } | Untyped { why: Gradual }",
+          "Nil | Untyped { why: Pending } | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+          "Int | Untyped { why: Pending } | Untyped { why: Unresolved }",
+          "Int | Untyped { why: Pending } | Untyped { why: Gradual }"
+        ],
+        "fold2": [
+          "Nil | Untyped { why: Unresolved }",
+          "Nil | Untyped { why: Gradual }",
+          "Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+          "Int | Untyped { why: Unresolved }",
+          "Int | Untyped { why: Gradual }"
+        ],
+        "fold3": [
+          "Bottom | Nil | Untyped { why: Unresolved }",
+          "Bottom | Nil | Untyped { why: Gradual }",
+          "Bottom | Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+          "Bottom | Int | Untyped { why: Unresolved }",
+          "Bottom | Int | Untyped { why: Gradual }"
+        ],
+        "pid": [
+          "Untyped { why: Unresolved }",
+          "Untyped { why: Gradual }",
+          "Union { variants: Shared([Int, Untyped { why: Unresolved }]) }"
+        ]
+      },
+      "no_early_never": true,
+      "seed_ok": true
+    },
+    "11": {
+      "arm": [
+        "1",
+        "1"
+      ],
+      "counts": {},
+      "examples": {},
+      "no_early_never": true,
+      "seed_ok": true
+    }
+  },
+  "cells": [
+    {
+      "arm": "A00",
+      "count": 0,
+      "law": "comm",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A00",
+      "count": 0,
+      "law": "idem",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A00",
+      "count": 0,
+      "law": "evidence",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A00",
+      "count": 0,
+      "law": "assoc",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A00",
+      "count": 52,
+      "law": "fold2",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A00",
+      "count": 2106,
+      "law": "fold3",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A00",
+      "count": 26,
+      "law": "pid",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A00",
+      "flag": false,
+      "law": "seed_ok",
+      "matches": true,
+      "predicted": false
+    },
+    {
+      "arm": "A00",
+      "flag": true,
+      "law": "no_early_never",
+      "matches": true,
+      "predicted": true
+    },
+    {
+      "arm": "A10",
+      "count": 0,
+      "law": "comm",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A10",
+      "count": 0,
+      "law": "idem",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A10",
+      "count": 0,
+      "law": "evidence",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A10",
+      "count": 276,
+      "law": "assoc",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A10",
+      "count": 138,
+      "law": "fold2",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A10",
+      "count": 6210,
+      "law": "fold3",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A10",
+      "count": 3,
+      "law": "pid",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A10",
+      "flag": true,
+      "law": "seed_ok",
+      "matches": true,
+      "predicted": true
+    },
+    {
+      "arm": "A10",
+      "flag": true,
+      "law": "no_early_never",
+      "matches": true,
+      "predicted": true
+    },
+    {
+      "arm": "A01",
+      "count": 0,
+      "law": "comm",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A01",
+      "count": 0,
+      "law": "idem",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A01",
+      "count": 0,
+      "law": "evidence",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A01",
+      "count": 0,
+      "law": "assoc",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A01",
+      "count": 46,
+      "law": "fold2",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A01",
+      "count": 1656,
+      "law": "fold3",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A01",
+      "count": 23,
+      "law": "pid",
+      "matches": true,
+      "predicted_nonzero": true
+    },
+    {
+      "arm": "A01",
+      "flag": false,
+      "law": "seed_ok",
+      "matches": true,
+      "predicted": false
+    },
+    {
+      "arm": "A01",
+      "flag": true,
+      "law": "no_early_never",
+      "matches": true,
+      "predicted": true
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "comm",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "idem",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "evidence",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "assoc",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "fold2",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "fold3",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "count": 0,
+      "law": "pid",
+      "matches": true,
+      "predicted_nonzero": false
+    },
+    {
+      "arm": "A11",
+      "flag": true,
+      "law": "seed_ok",
+      "matches": true,
+      "predicted": true
+    },
+    {
+      "arm": "A11",
+      "flag": true,
+      "law": "no_early_never",
+      "matches": true,
+      "predicted": true
+    }
+  ],
+  "condition": "c5-card1b-lineage-factorial-a7b6d3f8-v1-shared-host",
+  "matched_cells": 36,
+  "total_cells": 36
+}

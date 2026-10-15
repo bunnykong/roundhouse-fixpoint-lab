@@ -1,0 +1,30 @@
+{
+  "binary": "$EXPERIMENT/week/warm/build/codec/release/roundhouse",
+  "binary_sha256": "de279304a7c517538ab3d798e94769a016a5e827ea4dc1cd832c2e9689bde8e3",
+  "binary_version": "roundhouse 2026.9.18 (35cef988)",
+  "candidate_provenance_flags": {
+    "RH_SETTLE_REASON": "unresolved"
+  },
+  "candidate_warm_flags": {
+    "RH_WARM_LOSSLESS_CODEC": "1"
+  },
+  "condition": "reason-controls-lossless-u",
+  "f30_runner_sha256": "061d97c7b5a154bd832bcb62209c9ad7d2dad80093b6e0e6bf86372d748a8868",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "host": "macOS-26.3.1-arm64-arm-64bit",
+  "pairs": 1,
+  "ruby": "ruby 4.0.7",
+  "runner_sha256": "4a9b1c805cced10b120e538e846a1d383490d890bcef5c1ab3ee97d40fcba1a6",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+  "timings": "instrumented paired profiles; validation reported separately"
+}

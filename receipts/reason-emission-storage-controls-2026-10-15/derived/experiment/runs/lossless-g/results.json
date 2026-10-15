@@ -1,0 +1,179 @@
+{
+  "cold_identities": {
+    "mastodon-withdraw-read": {
+      "diagnostic_content": "2af428a61c09e95c86be702c72eae2250123d22498918381126d37ccf02cadeb",
+      "diagnostics": {
+        "error": {
+          "incompatible_binop": 10,
+          "ivar_unresolved": 213,
+          "send_dispatch_failed": 527,
+          "unsupported": 722
+        },
+        "note": {
+          "ivar_unresolved": 20,
+          "send_dispatch_failed": 47,
+          "unresolved_type": 67,
+          "unsupported": 43
+        },
+        "warning": {
+          "gradual_untyped": 2677,
+          "missing_preload": 2,
+          "unresolved_type": 1476
+        }
+      },
+      "digest": {
+        "attributes": "a37c9d9b810b8be2",
+        "block_values": "44edea0c5cb70b1b",
+        "constants": "add5ece3236e2ec4",
+        "controller_bindings": "574505146cc62934",
+        "controller_cache": "48093f2208b6a727",
+        "copies": "93553523fa62cefd",
+        "ir": "bcecfbdc116d182e",
+        "params": "effaeb735d22dd07",
+        "returns": "97637ff3ba735b90",
+        "sccq_contexts": "819c8386a27e9ca0",
+        "sccq_dependencies": "be07f44b7d378379",
+        "sccq_entry_contexts": "042a57fb26e95294",
+        "side_table": "1aacc54adfdd59b1"
+      },
+      "entries": {
+        "attributes": 939,
+        "block_values": 1738,
+        "constants": 600,
+        "controller_bindings": 532,
+        "controller_cache": 310,
+        "copies": 391,
+        "ir": 217939,
+        "params": 12635,
+        "returns": 52621,
+        "sccq_contexts": 8837,
+        "sccq_dependencies": 8837,
+        "sccq_entry_contexts": 1469,
+        "side_table": 612
+      },
+      "exit": 1,
+      "summaries": [
+        "0 parse error(s), 1472 error(s), 4155 warning(s), 177 gap-attributed note(s), 51 survey gap(s)"
+      ]
+    }
+  },
+  "condition": "reason-controls-lossless-g",
+  "pairs": [
+    {
+      "app": "mastodon",
+      "cold_peak_rss_mb": 774,
+      "cold_wall_seconds": 9.663353375000042,
+      "edit": "withdraw-read",
+      "order": [
+        "cold",
+        "warm"
+      ],
+      "pair": 1,
+      "parent_same_root_parity": true,
+      "parent_same_root_wall_seconds": null,
+      "parity": true,
+      "published_bytes": 479038784,
+      "ratio": 18.351225228788575,
+      "seed_bytes": 479030425,
+      "seed_sha256": "ab57ee82cf66ce53df8ba957e97f947e81e35e7dd8213e90d0f00ff62f47d30a",
+      "warm_excluding_shadow_seconds": 177.33437425,
+      "warm_peak_rss_mb": 11376,
+      "warm_report": {
+        "cold_analyze_seconds": 7.688646,
+        "cold_digest": {
+          "attributes": "a37c9d9b810b8be2",
+          "block_values": "44edea0c5cb70b1b",
+          "constants": "add5ece3236e2ec4",
+          "controller_bindings": "574505146cc62934",
+          "controller_cache": "48093f2208b6a727",
+          "copies": "93553523fa62cefd",
+          "ir": "bcecfbdc116d182e",
+          "params": "effaeb735d22dd07",
+          "returns": "97637ff3ba735b90",
+          "sccq_contexts": "819c8386a27e9ca0",
+          "sccq_dependencies": "be07f44b7d378379",
+          "sccq_entry_contexts": "042a57fb26e95294",
+          "side_table": "1aacc54adfdd59b1"
+        },
+        "evaluations": {
+          "codec": {
+            "cache_schema": 3,
+            "decoded_ordered_rows": 16,
+            "decoded_reason_leaves": 38880,
+            "decoded_values": 22667,
+            "encoded_ordered_rows": 592256,
+            "encoded_reason_leaves": 6195697,
+            "encoded_values": 39808308,
+            "identity": "rh-warm-native-v1:pending=1,gradual=2,unresolved=4;row=ordered-pairs"
+          },
+          "diagnostic_replayed": 1740,
+          "incompatible_cache": 0,
+          "input_invalidated": 24,
+          "invalidated": 6,
+          "loaded": 60698,
+          "read_invalidated": 22,
+          "recorded": 60701,
+          "replayed": 22597,
+          "typed": 38104,
+          "uncovered": 46,
+          "unused": 38049
+        },
+        "first_difference": null,
+        "ingest_seconds": 0.817286875,
+        "phases": {
+          "schema": 1,
+          "scope": "warm-start-through-stop-exclusive-wall",
+          "scope_counts": {
+            "class_fingerprints": 625094,
+            "fingerprints": 69539,
+            "fresh_typing": 70168,
+            "guards": 60701,
+            "input_fingerprints": 60701,
+            "load_decode": 1,
+            "old_trace_cleanup": 1,
+            "other": 0,
+            "recording": 67249,
+            "replay": 45194,
+            "shadow_clone": 1,
+            "value_fingerprints": 36821135
+          },
+          "seconds": {
+            "class_fingerprints": 3.946348746,
+            "fingerprints": 3.6248922,
+            "fresh_typing": 1.7960824770000001,
+            "guards": 0.532839992,
+            "input_fingerprints": 137.584599299,
+            "load_decode": 1.095465042,
+            "old_trace_cleanup": 0.547313125,
+            "other": 10.493794887,
+            "recording": 1.057067872,
+            "replay": 1.022177894,
+            "shadow_clone": 0.048569917,
+            "value_fingerprints": 13.242843424
+          },
+          "total_seconds": 174.991994875
+        },
+        "shadow": "pass",
+        "shadow_clone_seconds": 0.048570208,
+        "shadow_seconds": 8.108049459,
+        "warm_analyze_seconds": 173.097211917,
+        "warm_digest": {
+          "attributes": "a37c9d9b810b8be2",
+          "block_values": "44edea0c5cb70b1b",
+          "constants": "add5ece3236e2ec4",
+          "controller_bindings": "574505146cc62934",
+          "controller_cache": "48093f2208b6a727",
+          "copies": "93553523fa62cefd",
+          "ir": "bcecfbdc116d182e",
+          "params": "effaeb735d22dd07",
+          "returns": "97637ff3ba735b90",
+          "sccq_contexts": "819c8386a27e9ca0",
+          "sccq_dependencies": "be07f44b7d378379",
+          "sccq_entry_contexts": "042a57fb26e95294",
+          "side_table": "1aacc54adfdd59b1"
+        }
+      },
+      "whole_warm_seconds": 185.721427167
+    }
+  ]
+}

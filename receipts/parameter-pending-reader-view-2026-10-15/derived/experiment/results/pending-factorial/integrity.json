@@ -1,0 +1,52 @@
+{
+  "condition": "pending-value-reason-identity-20261015-a7b6d3f8",
+  "recorded_utc": "2026-10-15T07:01:31.004584+00:00",
+  "head": "e248de81c331a21db5b0d87dcccf45d624cd3132",
+  "base": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "branch": "parameter-pending-reader-view",
+  "commit": "commit e248de81c331a21db5b0d87dcccf45d624cd3132\nAuthor:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nAuthorDate: Thu Oct 15 00:57:32 2026 -0600\nCommit:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nCommitDate: Thu Oct 15 00:57:32 2026 -0600\n\n    Test provenance pending identity and lineage normalization together\n    \n    Add the advance prediction four-arm lineage counting harness, independent value\n    and tag switches, the absorbed parameter reader view, and public row dumps.\n    Adapt borrowed parameter readers and example exporters to the optional view.\n    \n    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+  "card_sha256": "329f5d0ac8ade0ab2e6d3d219c09c404f1a050ee3708448f5867f166171a0916",
+  "harness_verbatim": true,
+  "original_assertions_unchanged": true,
+  "changed_sources": [
+    "examples/producer_reason_sound_types.rs",
+    "examples/parameter_reason_sound_types.rs",
+    "src/analyze/mod.rs",
+    "src/analyze/parameter_conservation.rs",
+    "src/analyze/parameter_conservation/tests.rs",
+    "src/ide.rs",
+    "src/ty.rs"
+  ],
+  "working_tree": "",
+  "source_sha256": {
+    "examples/producer_reason_sound_types.rs": "a5184812e68e0371822c39a3cb653bd2352a6465b6ee8ed205850801d29ee4bd",
+    "examples/parameter_reason_sound_types.rs": "177b88c15e9fc6f094245229e68b3207462219f1129618ec615faf8ab56b7088",
+    "src/analyze/mod.rs": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b",
+    "src/analyze/parameter_conservation.rs": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a",
+    "src/analyze/parameter_conservation/tests.rs": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7",
+    "src/ide.rs": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922",
+    "src/ty.rs": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899"
+  },
+  "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+  "patch_sha256": "e467bf82c316fe357c20fd3e1f4123f420a0bfdf24f3547894a0dd2f6252d938",
+  "scripts_sha256": {
+    "setup.sh": "8538ea174bafb45a2c0b01a8bceaa889af47f85a340435749326e5a2814e421a",
+    "session.sh": "b6deea5b994c6bd6325264ce71ed821cb73580606769ae7d330c4146281eb630",
+    "run-card.sh": "c8e54c9bab05dc9295103f7838e322066ec0f078dda2ef301c9fc0e35a93f8ac",
+    "run-validation.sh": "ae6f767773aa0ba9ecc311c520f7d5c692d16e53d7e54d04334c07563a5fc0d0",
+    "run-control.sh": "df70358bffee12d332d537113d255ff944818ee3d150b4b783f2ae8e0ce5adf4",
+    "clean.sh": "afaca959718216f1ce984f9a39a8091c02df2a9695d591e6b1c6cfb30a3ed7af",
+    "rerun.sh": "62c559a0cf33f0a422f23c143230797fc6d841e4fafc03ab36c033e3a578a26e",
+    "summarize.py": "b0b791bf7977db48d32d6199a640255edd405c719d4e321d7b94d359122f9cbb",
+    "audit.py": "7f0adbd4b1bfc1f087c117de595d1f0bcf6e439d3bf80b2d4862c52ab12b9e04",
+    "report.py": "7236e3c3fab51c9b7e850a27de4c591b278d246968f9cb388dd2e786316cb792",
+    "implement.py": "76d610012d75a4445b19e9f270036ea5bfa90300c45d5431b81283dae22a0fbd"
+  },
+  "probe_sha256": "42a29d21aedeafd48ce89b1287851b2478242b5828e963a0bf3f71c6652d6a9e",
+  "toolchain": {
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "cargo": "cargo 1.98.1 (797e8a9bc 2026-08-05)"
+  },
+  "binary_sha256": "9ffc9e026ccd16e70507c199980e59cf266505ce4fc7bc1e82a1a15d63786511",
+  "timing_claim": false
+}

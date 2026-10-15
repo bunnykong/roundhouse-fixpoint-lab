@@ -1,0 +1,14 @@
+[
+  {
+    "test": "analyze::parameter_conservation::tests::writer_law_parameter_reason_conservation_grouping_and_values",
+    "location": "src/analyze/parameter_conservation/tests.rs:165:17",
+    "assertion_message": "assertion `left == right` failed\n  left: {}\n right: {\"$:Pending\"}",
+    "receipt": "$WORKSPACE/agents/parameter-pending-value-only/week/evidence/results/pending-value-only/s2-parameters.log"
+  },
+  {
+    "test": "analyze::parameter_conservation::tests::writer_law_parameter_reason_conservation_pending_and_legacy",
+    "location": "src/analyze/parameter_conservation/tests.rs:302:9",
+    "assertion_message": "assertion failed: origins(&pending).is_subset(&origins(&known))",
+    "receipt": "$WORKSPACE/agents/parameter-pending-value-only/week/evidence/results/pending-value-only/s2-parameters.log"
+  }
+]

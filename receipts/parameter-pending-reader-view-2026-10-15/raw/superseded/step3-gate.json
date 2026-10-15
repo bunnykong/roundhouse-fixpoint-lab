@@ -1,0 +1,18 @@
+{
+  "condition": "c5-card1-pending-identity-134457dc-v1-shared-host",
+  "H1c_exact_match": false,
+  "observed_failed_tests": [
+    "analyze::parameter_conservation::tests::writer_law_parameter_reason_conservation_grouping_and_values",
+    "analyze::parameter_conservation::tests::writer_law_parameter_reason_conservation_pending_and_legacy"
+  ],
+  "observed_grouping_assertion": "tests.rs:165, triple-origin equality",
+  "predicted_grouping_assertion": "lost native component reason; tests.rs:144, pair-origin equality",
+  "grouping_difference": [
+    "$:Pending"
+  ],
+  "seed_arrival": "passed",
+  "contracts": "4 passed; exit 0",
+  "step3": "not run: exact H1c prerequisite is false; no assertion amendments",
+  "verdict_at_gate": "killed by the literal step-2 fails-anywhere-else criterion",
+  "evidence_loss": "no Gradual or Unresolved loss established by these failures"
+}

@@ -1,0 +1,230 @@
+{
+  "pairs": {
+    "audit--candidate": [
+      {
+        "name": "precision",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "difference_count": 44
+      },
+      {
+        "name": "unset",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "difference_count": 44
+      },
+      {
+        "name": "seed-1",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "difference_count": 45
+      },
+      {
+        "name": "seed-2",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "difference_count": 45
+      },
+      {
+        "name": "unset-repeat",
+        "ordinary_equal": false,
+        "diagnostics_equal": true,
+        "difference_count": 44
+      }
+    ],
+    "s3--audit": [
+      {
+        "name": "precision",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "difference_count": 0
+      },
+      {
+        "name": "unset",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "difference_count": 0
+      },
+      {
+        "name": "seed-1",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "difference_count": 0
+      },
+      {
+        "name": "seed-2",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "difference_count": 0
+      },
+      {
+        "name": "unset-repeat",
+        "ordinary_equal": true,
+        "diagnostics_equal": true,
+        "difference_count": 0
+      }
+    ]
+  },
+  "candidate_counters": [
+    {
+      "name": "precision",
+      "equal_merges": 48978,
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 15820,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 15820,
+      "parameter_seed_initializations": 7611,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 367,
+      "tag_only_changes": 294,
+      "unscoped_inputs": 0
+    },
+    {
+      "name": "unset",
+      "equal_merges": 61469,
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 18868,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 18868,
+      "parameter_seed_initializations": 9190,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 453,
+      "tag_only_changes": 330,
+      "unscoped_inputs": 0
+    },
+    {
+      "name": "seed-1",
+      "equal_merges": 61945,
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 19015,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 19015,
+      "parameter_seed_initializations": 9212,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 468,
+      "tag_only_changes": 372,
+      "unscoped_inputs": 0
+    },
+    {
+      "name": "seed-2",
+      "equal_merges": 61909,
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 18921,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 18921,
+      "parameter_seed_initializations": 9211,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 464,
+      "tag_only_changes": 296,
+      "unscoped_inputs": 0
+    },
+    {
+      "name": "unset-repeat",
+      "equal_merges": 61468,
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 18868,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 18868,
+      "parameter_seed_initializations": 9190,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 453,
+      "tag_only_changes": 330,
+      "unscoped_inputs": 0
+    }
+  ],
+  "candidate_schedules": {
+    "seed-1": {
+      "digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "1eb86805e3879836",
+        "constants": "fec6965e2c5b1d6f",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "28398e27a068cc45",
+        "copies": "1480317c738af0bb",
+        "ir": "05aa0e2dc8c8bc9a",
+        "params": "7d07a57aa2e9e312",
+        "returns": "c3e629b8dc7c93d5",
+        "side_table": "d5a7c29e3c6eeaa0"
+      },
+      "precision": {
+        "bare_untyped": 4162,
+        "bottom_anywhere": 22,
+        "fully_typed": 25350,
+        "missing": 377,
+        "typed": 32505,
+        "untyped_anywhere": 4873,
+        "var_without_untyped": 2282
+      }
+    },
+    "seed-2": {
+      "digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "1eb86805e3879836",
+        "constants": "fec6965e2c5b1d6f",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "28398e27a068cc45",
+        "copies": "1480317c738af0bb",
+        "ir": "dc47f0b707ccafe6",
+        "params": "6a64503ea1dfb995",
+        "returns": "e1df99409a88fcb5",
+        "side_table": "1161682e749d8537"
+      },
+      "precision": {
+        "bare_untyped": 4162,
+        "bottom_anywhere": 22,
+        "fully_typed": 25350,
+        "missing": 377,
+        "typed": 32505,
+        "untyped_anywhere": 4873,
+        "var_without_untyped": 2282
+      }
+    },
+    "unset": {
+      "digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "1eb86805e3879836",
+        "constants": "fec6965e2c5b1d6f",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "9f576188ba06e377",
+        "copies": "1480317c738af0bb",
+        "ir": "0c3fd69fad6e45c1",
+        "params": "31dac75f01ec58c6",
+        "returns": "502df118ecef99e4",
+        "side_table": "deab468870ac3c3a"
+      },
+      "precision": {
+        "bare_untyped": 4164,
+        "bottom_anywhere": 22,
+        "fully_typed": 25346,
+        "missing": 377,
+        "typed": 32505,
+        "untyped_anywhere": 4877,
+        "var_without_untyped": 2282
+      }
+    },
+    "unset-repeat": {
+      "digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "1eb86805e3879836",
+        "constants": "fec6965e2c5b1d6f",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "9f576188ba06e377",
+        "copies": "1480317c738af0bb",
+        "ir": "0c3fd69fad6e45c1",
+        "params": "31dac75f01ec58c6",
+        "returns": "502df118ecef99e4",
+        "side_table": "deab468870ac3c3a"
+      },
+      "precision": {
+        "bare_untyped": 4164,
+        "bottom_anywhere": 22,
+        "fully_typed": 25346,
+        "missing": 377,
+        "typed": 32505,
+        "untyped_anywhere": 4877,
+        "var_without_untyped": 2282
+      }
+    }
+  },
+  "candidate_unset_repeat_equal": true
+}

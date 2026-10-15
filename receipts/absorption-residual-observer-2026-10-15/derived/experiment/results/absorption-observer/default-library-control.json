@@ -1,0 +1,29 @@
+{
+  "base_failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+  ],
+  "base_head": "134457dcac997512896e4239835130ae1425d1e4",
+  "base_library_exit": 101,
+  "base_summary": "1142 passed; 2 failed; 14 ignored",
+  "candidate_exit": 101,
+  "candidate_failures": [
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+  ],
+  "candidate_requested_default_suite": true,
+  "candidate_summary": "1142 passed; 2 failed; 16 ignored",
+  "clean_exits": {
+    "clean-base": "0",
+    "clean-laws": "0",
+    "clean-release": "0"
+  },
+  "condition": "absorption-observer-default-library-control-134457dc-v1-shared-host",
+  "integration_suites_reached": false,
+  "registered_gate": false,
+  "ruby": "3.4.4",
+  "rust": "1.98.1",
+  "same_library_failures": true,
+  "threads": 1,
+  "timing_claim": false
+}

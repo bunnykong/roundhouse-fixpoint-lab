@@ -1,0 +1,126 @@
+{
+  "condition": "reason-emission-storage-controls-20261015-71b09336",
+  "shared_evidence": [
+    "$EXPERIMENT/evidence/setup.json",
+    "$EXPERIMENT/evidence/build.log",
+    "$EXPERIMENT/evidence/storage.log",
+    "$EXPERIMENT/evidence/exits.tsv",
+    "$EXPERIMENT/evidence/binaries-before-storage.sha256",
+    "$EXPERIMENT/evidence/binaries.sha256",
+    "$EXPERIMENT/evidence/implementation.patch",
+    "$EXPERIMENT/evidence/runner.patch",
+    "$EXPERIMENT/evidence/commit.txt",
+    "$EXPERIMENT/evidence/driver.log",
+    "$EXPERIMENT/evidence/audit.json",
+    "$EXPERIMENT/evidence/identity-audit.json",
+    "$EXPERIMENT/evidence/clean.log",
+    "$EXPERIMENT/evidence/glowy-preview.txt",
+    "$EXPERIMENT/evidence/claim-glowy-preview.txt"
+  ],
+  "emission": {
+    "base": [
+      "$EXPERIMENT/evidence/emit-base.jsonl",
+      "$EXPERIMENT/evidence/emit-base.stderr"
+    ],
+    "settle": [
+      "$EXPERIMENT/evidence/emit-settle.jsonl",
+      "$EXPERIMENT/evidence/emit-settle.stderr"
+    ],
+    "scramble": [
+      "$EXPERIMENT/evidence/emit-scramble.jsonl",
+      "$EXPERIMENT/evidence/emit-scramble.stderr"
+    ],
+    "diffs": [
+      "$EXPERIMENT/evidence/diff-settle.txt",
+      "$EXPERIMENT/evidence/diff-scramble.txt",
+      "$EXPERIMENT/evidence/diff-settle-jsonl.txt",
+      "$EXPERIMENT/evidence/diff-scramble-jsonl.txt"
+    ]
+  },
+  "applications": {
+    "legacy-g": [
+      "$EXPERIMENT/week/warm/runs/legacy-g/metadata.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/results.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/summary.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/edits.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/source.patch",
+      "$EXPERIMENT/week/warm/runs/legacy-g/source-files.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-seed/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-seed/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-seed/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-cold/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-cold/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-cold/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-warm/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-warm/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-1-warm/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-correctness/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-correctness/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-g/runs/mastodon-withdraw-read-correctness/stdout.log"
+    ],
+    "legacy-u": [
+      "$EXPERIMENT/week/warm/runs/legacy-u/metadata.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/results.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/summary.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/edits.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/source.patch",
+      "$EXPERIMENT/week/warm/runs/legacy-u/source-files.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-seed/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-seed/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-seed/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-cold/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-cold/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-cold/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-warm/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-warm/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-1-warm/stdout.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-correctness/run.json",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-correctness/stderr.log",
+      "$EXPERIMENT/week/warm/runs/legacy-u/runs/mastodon-withdraw-read-correctness/stdout.log"
+    ],
+    "lossless-g": [
+      "$EXPERIMENT/week/warm/runs/lossless-g/metadata.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/results.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/summary.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/edits.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/source.patch",
+      "$EXPERIMENT/week/warm/runs/lossless-g/source-files.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-seed/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-seed/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-seed/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-cold/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-cold/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-cold/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-warm/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-warm/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-1-warm/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-correctness/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-correctness/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-g/runs/mastodon-withdraw-read-correctness/stdout.log"
+    ],
+    "lossless-u": [
+      "$EXPERIMENT/week/warm/runs/lossless-u/metadata.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/results.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/summary.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/edits.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/source.patch",
+      "$EXPERIMENT/week/warm/runs/lossless-u/source-files.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-seed/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-seed/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-seed/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-cold/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-cold/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-cold/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-warm/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-warm/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-1-warm/stdout.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-correctness/run.json",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-correctness/stderr.log",
+      "$EXPERIMENT/week/warm/runs/lossless-u/runs/mastodon-withdraw-read-correctness/stdout.log"
+    ]
+  }
+}

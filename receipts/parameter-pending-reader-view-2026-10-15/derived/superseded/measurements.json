@@ -1,0 +1,246 @@
+{
+  "condition": "pending-value-only-pending-identity-134457dc-v1-shared-host",
+  "timing_claim": false,
+  "verdict": "killed",
+  "verdict_reason": "Literal H1c mismatch: the grouping test fails at tests.rs:165, not the predicted pair assertion at 144.",
+  "step3_executed": false,
+  "optional_step5_executed": false,
+  "native": {
+    "s0-red": {
+      "exit": 101,
+      "receipt": "week/evidence/results/pending-value-only/s0-red.log"
+    },
+    "s1-control": {
+      "exit": 0,
+      "receipt": "week/evidence/results/pending-value-only/s1-control.log"
+    },
+    "s2-parameters": {
+      "exit": 101,
+      "receipt": "week/evidence/results/pending-value-only/s2-parameters.log"
+    },
+    "s2-contracts": {
+      "exit": 0,
+      "receipt": "week/evidence/results/pending-value-only/s2-contracts.log"
+    }
+  },
+  "precision": {
+    "audit": {
+      "bare_untyped": 4151,
+      "bottom_anywhere": 22,
+      "fully_typed": 25442,
+      "missing": 377,
+      "typed": 32505,
+      "untyped_anywhere": 4816,
+      "var_without_untyped": 2247
+    },
+    "candidate": {
+      "bare_untyped": 4164,
+      "bottom_anywhere": 22,
+      "fully_typed": 25346,
+      "missing": 377,
+      "typed": 32505,
+      "untyped_anywhere": 4877,
+      "var_without_untyped": 2282
+    },
+    "s3": {
+      "bare_untyped": 4151,
+      "bottom_anywhere": 22,
+      "fully_typed": 25442,
+      "missing": 377,
+      "typed": 32505,
+      "untyped_anywhere": 4816,
+      "var_without_untyped": 2247
+    }
+  },
+  "kind_events": {
+    "audit": [
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 72,
+        "lost_Unresolved_kind_events": 234,
+        "name": "precision",
+        "receipt": "week/evidence/results/pending-value-only-campfire/audit/precision/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 80,
+        "lost_Unresolved_kind_events": 269,
+        "name": "unset",
+        "receipt": "week/evidence/results/pending-value-only-campfire/audit/unset/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 92,
+        "lost_Unresolved_kind_events": 297,
+        "name": "seed-1",
+        "receipt": "week/evidence/results/pending-value-only-campfire/audit/seed-1/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 82,
+        "lost_Unresolved_kind_events": 278,
+        "name": "seed-2",
+        "receipt": "week/evidence/results/pending-value-only-campfire/audit/seed-2/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 80,
+        "lost_Unresolved_kind_events": 269,
+        "name": "unset-repeat",
+        "receipt": "week/evidence/results/pending-value-only-campfire/audit/unset-repeat/producer-evidence.json"
+      }
+    ],
+    "candidate": [
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 0,
+        "lost_Unresolved_kind_events": 0,
+        "name": "precision",
+        "receipt": "week/evidence/results/pending-value-only-campfire/candidate/precision/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 0,
+        "lost_Unresolved_kind_events": 0,
+        "name": "unset",
+        "receipt": "week/evidence/results/pending-value-only-campfire/candidate/unset/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 0,
+        "lost_Unresolved_kind_events": 0,
+        "name": "seed-1",
+        "receipt": "week/evidence/results/pending-value-only-campfire/candidate/seed-1/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 0,
+        "lost_Unresolved_kind_events": 0,
+        "name": "seed-2",
+        "receipt": "week/evidence/results/pending-value-only-campfire/candidate/seed-2/producer-evidence.json"
+      },
+      {
+        "Pending_identity_drop_kind_events": 0,
+        "lost_Gradual_kind_events": 0,
+        "lost_Unresolved_kind_events": 0,
+        "name": "unset-repeat",
+        "receipt": "week/evidence/results/pending-value-only-campfire/candidate/unset-repeat/producer-evidence.json"
+      }
+    ]
+  },
+  "digests": {
+    "audit": {
+      "precision": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "seed-1": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "seed-2": {
+        "params": "3e0dec760210154c",
+        "returns": "5fa3b889abe510e6"
+      },
+      "unset": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "unset-repeat": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      }
+    },
+    "candidate": {
+      "precision": {
+        "params": "31dac75f01ec58c6",
+        "returns": "502df118ecef99e4"
+      },
+      "seed-1": {
+        "params": "7d07a57aa2e9e312",
+        "returns": "c3e629b8dc7c93d5"
+      },
+      "seed-2": {
+        "params": "6a64503ea1dfb995",
+        "returns": "e1df99409a88fcb5"
+      },
+      "unset": {
+        "params": "31dac75f01ec58c6",
+        "returns": "502df118ecef99e4"
+      },
+      "unset-repeat": {
+        "params": "31dac75f01ec58c6",
+        "returns": "502df118ecef99e4"
+      }
+    },
+    "s3": {
+      "precision": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "seed-1": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "seed-2": {
+        "params": "3e0dec760210154c",
+        "returns": "5fa3b889abe510e6"
+      },
+      "unset": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      },
+      "unset-repeat": {
+        "params": "3e0dec760210154c",
+        "returns": "09bf64ea87507ad1"
+      }
+    }
+  },
+  "f19": {
+    "audit": {
+      "final": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      },
+      "graph": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      }
+    },
+    "candidate": {
+      "final": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      },
+      "graph": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      }
+    },
+    "s3": {
+      "final": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      },
+      "graph": {
+        "missing_selections": 5,
+        "opaque_selections": 39,
+        "records": 78,
+        "rejected": 0
+      }
+    }
+  },
+  "new_F19_missing_selections": [],
+  "new_F19_violations": [],
+  "source_head": "a7b6d3f8e7908581588662970804fc4d6dc53784"
+}

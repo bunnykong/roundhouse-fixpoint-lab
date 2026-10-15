@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "clean",
+    "--offline",
+    "--locked",
+    "--manifest-path",
+    "$EXPERIMENT/source/Cargo.toml",
+    "--target-dir",
+    "$HOST_PATH"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "     Removed 0 files\n",
+  "note": "Retained binaries reused; no Cargo build target was created. Clean is confined to the review target.",
+  "target_absent": true,
+  "finished_utc": "2026-10-15T07:41:23.472094+00:00"
+}

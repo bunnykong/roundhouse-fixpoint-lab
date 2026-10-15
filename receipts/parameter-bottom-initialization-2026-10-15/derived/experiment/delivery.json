@@ -1,0 +1,115 @@
+{
+  "app_pins": {
+    "campfire": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "discourse": "343b20f97ef5f6bd70826ee0e993ba348b210fd5"
+  },
+  "checks": {
+    "all_targets_cleaned": true,
+    "author_committer_correct": true,
+    "branch_correct": true,
+    "card_unchanged": true,
+    "clean_exits_zero": true,
+    "coauthor_trailer_correct": true,
+    "measured_source_matches_delivery": true,
+    "source_clean": true
+  },
+  "commit_metadata": [
+    "0db5d628937965f0299dc6b9b2a6bc7267a2a8fb",
+    "bunnykong",
+    "268838774+bunnykong@users.noreply.github.com",
+    "bunnykong",
+    "268838774+bunnykong@users.noreply.github.com",
+    "fix: make native parameter initialization order independent",
+    "",
+    "Interpret every Bottom observation as Pending before accumulating a row,",
+    "and run empty allocations through the same canonical join as existing cells.",
+    "Preserve the raw observation in source audits and keep the allocation seed",
+    "separate from an observed ambiguous Var.",
+    "",
+    "Keep the seed-arrival regression unchanged and add native row permutation,",
+    "partition, replay, late-arity and canonical-seed checks.",
+    "",
+    "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+  ],
+  "condition": "parameter-bottom-initialization-20261015-134457dc",
+  "lab_pin": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "measured_source_comparisons": {
+    "week/evidence/results/round2-v1-campfire/condition.json": {
+      "cargo_lock_equal": true,
+      "helper_equal": true,
+      "mismatches": [],
+      "source_files": 501
+    },
+    "week/evidence/results/round2-v1-f19/condition.json": {
+      "cargo_lock_equal": true,
+      "helper_equal": true,
+      "mismatches": [],
+      "source_files": 501
+    },
+    "week/evidence/results/round2-v1-f29/audit/receipt.json": {
+      "cargo_lock_equal": true,
+      "helper_equal": true,
+      "mismatches": [],
+      "source_files": 502
+    },
+    "week/evidence/results/round2-v1-f29/candidate/receipt.json": {
+      "cargo_lock_equal": true,
+      "helper_equal": true,
+      "mismatches": [],
+      "source_files": 502
+    },
+    "week/evidence/results/round2-v1-f29/s3/receipt.json": {
+      "cargo_lock_equal": true,
+      "helper_equal": true,
+      "mismatches": [],
+      "source_files": 502
+    }
+  },
+  "missing_supplied_research workspace_paths": [
+    "$WORKSPACE/docs/pitfalls.md",
+    "$WORKSPACE/tools/cohort_index.py",
+    "$WORKSPACE/tools/test_scrub.py",
+    "$WORKSPACE/tools/test_clojure_artifacts.py",
+    "$WORKSPACE/tools/test_clojure_lane.py",
+    "$WORKSPACE/tools/brief_check.py"
+  ],
+  "p1_source_pin": "134457dcac997512896e4239835130ae1425d1e4",
+  "p1_source_status": "",
+  "receipt_count": 352,
+  "receipt_index_sha256": "614862b8fae614bf1535ec09944a99167a5e6b665eda8050baf4b0b776b6a821",
+  "runner_files_sha256": {
+    "clean.sh": "cd34b2c45ff11ddcd3e3a14da890383a69759ae0897dff8d1ec81b74f3929757",
+    "delivery.py": "3e22858337962bf38d65231b99940f563a164953580328da6ac94b638c7c1bab",
+    "reproduce.sh": "01c714570516049b8fb1f76fbc8f00f793ebbea6bbe74768dc398c841fe85fc8",
+    "run-f29.sh": "686fa093a4b44cc7fc3cbde63124551aed2e10f2a09bc0dd27ebf43a4b8cb8a0",
+    "run-focused.sh": "b307f87b632f90e1c69215c73161fae4cb0e8cfcd90b619d0b2000626ae5a494",
+    "run-local.sh": "49ef2d26bfdaa6d4d2b330bb94ec533cd8d64f86d609f82ab281293c280a6394",
+    "run-suite.sh": "422272318f6a5bf82d4902fbcb59a9492c1cd3cff34994f613f52aff440e56e3",
+    "session.sh": "f4a13976991918aeb3a420c3f8ffa317c4ce91c8ecc47842679f5a1a96a9eee3",
+    "staging/analyze_app.py": "56566b28eaf6de8d510f66f8c15939aef873fee3db7782aee8003f2193e2509b",
+    "staging/analyze_f19.py": "cdc67abfbb8827aa2a1105fd8fabd4162b51ad42c75182f3fe6e7c325ead2aae",
+    "staging/analyze_f29.py": "90218fd2136a4a13937b16b19d7d6d969761c064dd6c4597a66adde2879158fe",
+    "staging/prepare_fixtures.py": "040ea5a994caf8693b08b1fe73e4ed1742e7949253e72f31521932160348c0c7",
+    "staging/reproduce_status.py": "e91bd3038aaa8cb3cb8a67dd9f2e081e83fb131cd4a3d79b701d503cf58dde8f",
+    "summarize.py": "7bc01d830060b319d26a71da1133a8dc537843052a95ee45d368a64f57cba732",
+    "week/evidence/experiments/app_check.py": "574f43f3663dceb4a38597691760c43c54555524011d8ae5740cbb88cc90dcfa",
+    "week/evidence/experiments/f19_check.py": "9545b44884efd8d397d8c290b0d5b0c3dd6acaffe016d21ca80409c15c631f03",
+    "week/sound/adapter/build.py": "954fa232bedcbb3f39a152f84ce0f18bb5657afe146cd879650da8aec83a2c22",
+    "week/sound/adapter/compare.py": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+    "week/sound/adapter/component_gate.py": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+    "week/sound/adapter/docker_session.py": "7e41758ae5de939d9d43c6dc9fcb6682be8918883fcb9cabaad1bd5b5459a7dc",
+    "week/sound/adapter/export.py": "9ae3ed0c8609c20bc2ce14ee31ccd872203a293d2a44b39eafa6feb036e0c28c",
+    "week/sound/adapter/oracle_ext.py": "01928a32b6c803fded3a76274331612c2a883a19bc765b5e085c1d52a7b90514",
+    "week/sound/adapter/test_contract.py": "4bfdf17f9321a462172b4288c9a9e2ca5378ab2cf12e7140872b9f24288400d1",
+    "week/sound/candidate_export.py": "e3af6f81dc5fa9e008c3b5c168750c0d05a8602de8d0d8a14e36297bbb0a1fc4",
+    "week/sound/oracle_ext.py": "01928a32b6c803fded3a76274331612c2a883a19bc765b5e085c1d52a7b90514"
+  },
+  "source_branch": "parameter-bottom-initialization",
+  "source_commit": "0db5d628937965f0299dc6b9b2a6bc7267a2a8fb",
+  "summary_sha256": "40b323016836083cf9af588a5bca0bc0f6a12dd554db982b8b4f09c0e83d9560",
+  "target_paths": {
+    "week/evidence/scratch/provenance-target": false,
+    "week/evidence/sources/probe-source/target-laws": false,
+    "week/evidence/sources/suite-control/target-laws": false
+  }
+}

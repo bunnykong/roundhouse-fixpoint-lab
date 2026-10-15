@@ -1,0 +1,109 @@
+{
+  "arms": {
+    "b1": {
+      "seed-1": [
+        {
+          "key": "Current|session=|Class",
+          "known_equal": true,
+          "other": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          },
+          "reference_both": true,
+          "unset": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Var { var: TyVar(0) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          }
+        },
+        {
+          "key": "Current|session=|Instance",
+          "known_equal": true,
+          "other": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          },
+          "reference_both": true,
+          "unset": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Var { var: TyVar(0) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          }
+        }
+      ],
+      "seed-2": [
+        {
+          "key": "Current|session=|Class",
+          "known_equal": true,
+          "other": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          },
+          "reference_both": true,
+          "unset": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }, Var { var: TyVar(0) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"Session\")), args: Shared([]) }"
+            ],
+            "ref": true
+          }
+        },
+        {
+          "key": "Current|user=|Instance",
+          "known_equal": false,
+          "other": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"User\")), args: Shared([]) }, Untyped { why: Unresolved }]) }"
+            ],
+            "known": [
+              "Class { id: ClassId(Symbol(\"User\")), args: Shared([]) }"
+            ],
+            "ref": true
+          },
+          "reference_both": true,
+          "unset": {
+            "full": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"User\")), args: Shared([]) }, Untyped { why: Unresolved }, Nil]) }"
+            ],
+            "known": [
+              "Union { variants: Shared([Class { id: ClassId(Symbol(\"User\")), args: Shared([]) }, Nil]) }"
+            ],
+            "ref": true
+          }
+        }
+      ],
+      "unset-repeat": []
+    },
+    "b3": {
+      "seed-1": [],
+      "seed-2": [],
+      "unset-repeat": []
+    }
+  },
+  "condition": "rv-parameter-pending-reader-view-replay-e248de81-v1"
+}

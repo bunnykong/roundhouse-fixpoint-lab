@@ -1,0 +1,23 @@
+{
+  "required_gate_exits": {
+    "campfire.exit": 0,
+    "suite.exit": 101,
+    "f29.exit": 1,
+    "f19.exit": 0,
+    "local.exit": 0,
+    "local-contracts": 0,
+    "local-parameters": 0,
+    "local-repair-without-audit": 0,
+    "local-storage-without-audit": 0,
+    "local-returns": 0,
+    "f19-strict-selected-coverage": 1,
+    "f29-P-candidate": 1,
+    "f29-I-candidate": 1,
+    "f29-E-candidate": 1
+  },
+  "passed": false,
+  "red_controls": {
+    "repair-off-negative": 101,
+    "return-controls": 101
+  }
+}

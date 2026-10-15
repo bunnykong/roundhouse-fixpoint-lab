@@ -1,0 +1,40 @@
+{
+  "condition": "pending-factorial-default-control-a7b6d3f8-v1-shared-host",
+  "source_base": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "both_failures_reproduced": true,
+  "scope": "Only the two failed tests; fresh processes, same flags-unset environment, one test thread.",
+  "tests": [
+    {
+      "test": "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+      "baseline_exit": 101,
+      "candidate_default_exit": 101,
+      "candidate": {
+        "location": "src/emit/rust/library.rs:1195:9",
+        "message": "header_key_ok? takes String?, wrap &str:\npub fn set_index(&self, key: &str, value: Option<String>) {\n        self.store_value(&(key), value);\n    }"
+      },
+      "baseline": {
+        "location": "src/emit/rust/library.rs:1195:9",
+        "message": "header_key_ok? takes String?, wrap &str:\npub fn set_index(&self, key: &str, value: Option<String>) {\n        self.store_value(&(key), value);\n    }"
+      },
+      "same_assertion": true,
+      "log": "control-action_controller_runtime_emit_typechecks_hotspots.log",
+      "exit_receipt": "control-action_controller_runtime_emit_typechecks_hotspots.exit"
+    },
+    {
+      "test": "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers",
+      "baseline_exit": 101,
+      "candidate_default_exit": 101,
+      "candidate": {
+        "location": "src/runtime_src.rs:2013:41",
+        "message": "expected Array[String], got Array[Union { variants: Shared([Str, Nil]) }]"
+      },
+      "baseline": {
+        "location": "src/runtime_src.rs:2013:41",
+        "message": "expected Array[String], got Array[Union { variants: Shared([Str, Nil]) }]"
+      },
+      "same_assertion": true,
+      "log": "control-rbs_ivar_decls_stamp_empty_array_initializers.log",
+      "exit_receipt": "control-rbs_ivar_decls_stamp_empty_array_initializers.exit"
+    }
+  ]
+}

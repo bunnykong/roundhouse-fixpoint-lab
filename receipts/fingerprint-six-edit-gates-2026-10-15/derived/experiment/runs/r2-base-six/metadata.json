@@ -1,0 +1,29 @@
+{
+  "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+  "binary_sha256": "8ce7d3b6e1cc4e2f68d8931080144622cf7ce6412d1b8e27afae9911b6fd1fd9",
+  "binary_version": "roundhouse 2026.9.18 (d9ec78c3)",
+  "candidate_warm_flags": {},
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-parent",
+  "extra_correctness_run": false,
+  "f30_runner_sha256": "061d97c7b5a154bd832bcb62209c9ad7d2dad80093b6e0e6bf86372d748a8868",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "host": "macOS-26.3.1-arm64-arm-64bit",
+  "lock_mode": "exclusive per pair; seeds shared",
+  "lock_wait_in_wall": false,
+  "pairs": 1,
+  "prepared_seed_condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-parent-seed",
+  "prepared_seed_reference": "$EXPERIMENT/week/warm/runs/r2-base-seed",
+  "ruby": "ruby 4.0.7",
+  "runner_sha256": "f746cf4250cdfac822aae564167f6a1b3f81c5f317a5e3fcc1145bee744a6878",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "d9ec78c31db361db8818b13153e5ddddee484c57",
+  "timings": "instrumented alternating pairs; validation reported separately"
+}

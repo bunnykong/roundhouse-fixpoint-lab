@@ -1,0 +1,26 @@
+{
+  "initial_driver": "run-matrix.sh",
+  "registered_arm_exits": "legacy-g\t0\nlegacy-u\t0\nlossless-g\t0\nlossless-u\t0\n",
+  "unstarted_supplemental_arm_exits": "legacy-g\t77\nlegacy-u\t77\nlossless-g\t77\nlossless-u\t77\n",
+  "driver_exit": 1,
+  "driver_error": "FileNotFoundError while reducing intentionally unstarted seed1/legacy-g receipts after exit-77 skips",
+  "reason_for_scope_change": "Full four-arm matrix at every schedule would exceed the review budget; replace extra matrix with completed cold/emission controls and two bounded lossless warm probes.",
+  "replacement_driver": "run-registered.sh",
+  "final_independent_verification": {
+    "source_head": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+    "source_status": "",
+    "runner_identical_to_builder": true,
+    "native_test_success": true,
+    "all_original_tables_reproduced": true,
+    "all_flags_correct": true,
+    "all_binary_identities_same": true,
+    "against_builder": {
+      "legacy-g": [],
+      "legacy-u": [],
+      "lossless-g": [],
+      "lossless-u": []
+    }
+  },
+  "compiled_targets_remaining": [],
+  "completed_utc": "2026-10-15T08:19:32.927975+00:00"
+}

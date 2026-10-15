@@ -1,0 +1,52 @@
+{
+  "attempt": {
+    "counts": [
+      740,
+      740
+    ],
+    "left_only": [],
+    "right_only": []
+  },
+  "condition": "structure-success-2-20261015-bf56edf9-off",
+  "declarations_equal": true,
+  "frozen_start_end": [
+    true,
+    true
+  ],
+  "left": "unset",
+  "mutation": {
+    "counts": [
+      678,
+      678
+    ],
+    "left_only": [
+      [
+        "return",
+        "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"require_authentication\\\"]\",\"no-body\"]",
+        "[\"ApplicationController\",\"instance\",\"require_authentication\"]",
+        "write"
+      ],
+      [
+        "return",
+        "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"terminate_current_session\\\"]\",\"no-body\"]",
+        "[\"ApplicationController\",\"instance\",\"terminate_current_session\"]",
+        "write"
+      ]
+    ],
+    "right_only": [
+      [
+        "return",
+        "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"resume_session\\\"]\",\"no-body\"]",
+        "[\"ApplicationController\",\"instance\",\"resume_session\"]",
+        "write"
+      ],
+      [
+        "return",
+        "[\"harvest\",\"[\\\"ApplicationController\\\",\\\"instance\\\",\\\"start_new_session_for\\\"]\",\"no-body\"]",
+        "[\"ApplicationController\",\"instance\",\"start_new_session_for\"]",
+        "write"
+      ]
+    ]
+  },
+  "right": "1"
+}

@@ -1,0 +1,150 @@
+{
+  "condition": "rv-param-init-native-rbs-app-v2-20261015",
+  "scope": "fresh public synthetic app exports; candidate production source unmodified",
+  "binary_sha256": "aafa7c0c00ea3d1ea6d2be9fb751f8b6b50cd05258e08efee478d4f34ca7dfef",
+  "cases": [
+    {
+      "case": "defined-bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "__missing__",
+        "param": "__var__",
+        "source_return": "__missing__"
+      },
+      "native_events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Var { var: TyVar(0) }",
+          "observed": "Bottom",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Var { var: TyVar(0) }",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "case": "eval-bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "__missing__",
+        "param": "__var__",
+        "source_return": "__missing__"
+      },
+      "native_events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Var { var: TyVar(0) }",
+          "observed": "Bottom",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Var { var: TyVar(0) }",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "case": "ivar-bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "__missing__",
+        "param": "__var__",
+        "source_return": "__missing__"
+      },
+      "native_events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Var { var: TyVar(0) }",
+          "observed": "Bottom",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Var { var: TyVar(0) }",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "case": "ivar-union-bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "__missing__",
+        "param": "__var__",
+        "source_return": "__missing__"
+      },
+      "native_events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Var { var: TyVar(0) }",
+          "observed": "Bottom",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Var { var: TyVar(0) }",
+          "output": "Var { var: TyVar(0) }",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "case": "unsorted-array-twice",
+      "exit": 0,
+      "export": {
+        "observe_return": "Array[Integer | String]",
+        "param": "Array[Integer | String]",
+        "source_return": "Array[String | Integer]"
+      },
+      "native_events": [
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+          "observed": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+          "output": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "join",
+          "stored": "Bottom",
+          "observed": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+          "output": "Array { elem: Union { variants: Shared([Str, Int]) } }",
+          "count": 6
+        },
+        {
+          "destination": "ProbeController|observe|Instance|param=0",
+          "phase": "bound",
+          "stored": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+          "observed": "Bottom",
+          "output": "Array { elem: Union { variants: Shared([Int, Str]) } }",
+          "count": 6
+        }
+      ]
+    }
+  ]
+}

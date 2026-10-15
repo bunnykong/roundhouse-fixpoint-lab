@@ -1,0 +1,36 @@
+{
+  "binaries": {
+    "candidate": {
+      "path": "$EXPERIMENT/week/warm/build/fast/release/roundhouse",
+      "sha256": "f7f43a7ad3292ddeea86acfd7b4bb149ffbbd06c4ba3b205fb1238c1ceabfe2c",
+      "version": "roundhouse 2026.9.18 (aba61629)"
+    },
+    "parent": {
+      "path": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "sha256": "8ce7d3b6e1cc4e2f68d8931080144622cf7ce6412d1b8e27afae9911b6fd1fd9",
+      "version": "roundhouse 2026.9.18 (d9ec78c3)"
+    }
+  },
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-cold",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq"
+  },
+  "inputs": {
+    "mastodon": {
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "files": 9868,
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "lock_mode": "exclusive per native command",
+  "lock_wait_in_wall": false,
+  "pairs": 5,
+  "runner_sha256": "506b0a967fa67844cc84abeb018054daf49714d4892ebf431f4c2ca0534176a2"
+}

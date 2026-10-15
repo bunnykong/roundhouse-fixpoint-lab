@@ -1,0 +1,92 @@
+{
+  "arms": {
+    "base": {
+      "binary_cleaned": false,
+      "native_files": 1852,
+      "native_pin": "d9ec78c31db361db8818b13153e5ddddee484c57"
+    },
+    "fast": {
+      "binary_cleaned": false,
+      "native_files": 1853,
+      "native_pin": "1fbfee1a8b1b518028176ca48aa2a912f3d31e23"
+    }
+  },
+  "branch": "fingerprint-six-edit-gates",
+  "checked_utc": "2026-10-15T07:15:21.863039+00:00",
+  "clean_worktree": true,
+  "commits": [
+    "88c5998799489b00f201f56f00a79c3928085cc6",
+    "3ddebba6a66ef5016e0e351f88b5f74d0f1e9308",
+    "1a1a200669776359d2312d283bbf2f88a5eaea08",
+    "5b2f6843fb986c13fe7c7441b1f9c78c82f66dca",
+    "9acd306f643a39af472a52371b06bc769cf22160",
+    "39648a5d6ce2cdebed729fae7b5a6a20b2da432c",
+    "7f449775f7aa3645598c2158be4d5ad1df819e4c",
+    "e4e2bfc517f6249a03f2412582065833ce393498",
+    "4abad16ae616b70f44949e23d8c0c5b00d83c07a",
+    "d55c7a7fc4bfb2d507263be62280c66fb8b65a3f",
+    "aba61629cfcbf5967a8787bd035b7663a1138a42",
+    "3455af8b56e401e2b223e8e7988a190d7ace9124"
+  ],
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a",
+  "head": "88c5998799489b00f201f56f00a79c3928085cc6",
+  "inputs": {
+    "chatwoot": {
+      "files": 9281,
+      "pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "restored_copies": [],
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+    },
+    "discourse": {
+      "files": 26331,
+      "pin": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "restored_copies": [
+        "week/warm/runs/r2-base-seed/apps/discourse",
+        "week/warm/runs/r2-fast-six-audit/apps/discourse"
+      ],
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "mastodon": {
+      "files": 9868,
+      "pin": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "restored_copies": [
+        "week/warm/runs/r2-base-seed/apps/mastodon",
+        "week/warm/runs/r2-cold-five/apps/mastodon",
+        "week/warm/runs/r2-fast-six-audit/apps/mastodon"
+      ],
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "mirrors": {
+    "protocol.md": "a9d3141a9ca4f4933f4bafc01673719a09618e530a914c11a27456f9abfefd20",
+    "protocol.timestamp": "fc6a59f54e4ab5842bdad39d43e3c183001f6ca741d98bec6ca468e9029af2a0",
+    "check_default.py": "632f60fb001342bd1a2ebf87ba7bf6a6f1ff6cf1d08e530a3931d1e413cf2f8b",
+    "cold_campaign.py": "506b0a967fa67844cc84abeb018054daf49714d4892ebf431f4c2ca0534176a2",
+    "continue.sh": "8a1f3236598042f2402c15795ca860ddf2433f7d7c288591d379b23cc74a6fae",
+    "default_suite.sh": "8857ffb54da804b9517c6808b914882bb05fdfc9b90ca2fa625c31813d2cdcec",
+    "launch_cold.py": "fbf1f97067e7debb158a1008328054ceb2b772c888a7ad82b50a9942c5a3ca59",
+    "native_batch.py": "2c650325b3ccb214db56fb5edf322b9796fdcf54c81ae51ff5b7e4d91400c3f2",
+    "prepare_parent.py": "778cefebeb9e157b44dcec6b2ae2146db1aa93a413952607e74eb43bd5e15dfb",
+    "preserve_binaries.py": "89e732a6c228a6831148254f1d1cf4850c1bfe97fa51a03a99da25aeba800be5",
+    "priority_five.sh": "b5e90726a3ca9ca5087140ead6e055b8f98c1331276803f54fa5b9f765d26e60",
+    "replay_pairs.py": "f746cf4250cdfac822aae564167f6a1b3f81c5f317a5e3fcc1145bee744a6878",
+    "require_audits.py": "af8bdf80409aa779e26c99b348e4d96d67db019bc06620b6fe1e0294a7611249",
+    "require_cold.py": "b910adc0571d18eaa330e6331e3a0bd6eaa41a660513d914f7045bd09c09bde2",
+    "resume_costs.sh": "da0ef43ae27d519432d1b29904c34512750cdb887bf102d6db6c227bfc834e2f",
+    "reuse_audit_seed.py": "9735293f783d9f70dea464a8efd3d49b2b446a288fcd9bf172056024051b78ba",
+    "run-costs-sealed.sh": "4c79cc0da7023900f5767469f6857f48f2f28b9bc1248456e3a9cb0bccb99ac5",
+    "run.sh": "4c79cc0da7023900f5767469f6857f48f2f28b9bc1248456e3a9cb0bccb99ac5",
+    "seal_build.py": "52b1e896c403f8d8ff4c72f280932df05c77d474ad74bbb8af9b4bf28eab78e4",
+    "summarize.py": "61e4cbe11573c1e2d58424d89aba00a86ce8094b6da9c4bcf89d4ac101a6b75c",
+    "test_prepared.py": "3eec69519ca955a201d1872b5828d935f3d5bcf6b31d73cea8f6f359d72c9b0d",
+    "verify.py": "bf632bcbc04140afa4f7aceae5759b009f55606339015e3b5dbc09e435f7ce1c"
+  },
+  "advance prediction": {
+    "card_sha256": "a9d3141a9ca4f4933f4bafc01673719a09618e530a914c11a27456f9abfefd20",
+    "criteria_unchanged": true,
+    "first_native_utc": "2026-10-15T04:35:17.909329+00:00",
+    "timestamp": "2026-10-15T04:26:23Z"
+  },
+  "python39_syntax": true,
+  "remotes": []
+}

@@ -1,0 +1,7 @@
+{
+  "condition": "parameter-bottom-initialization-20261015-134457dc",
+  "fact": 46,
+  "scope": "Problems 2\u20133; synthetic RBS and native storage, without a runtime rejection claim.",
+  "text": "On October 15 condition `parameter-bottom-initialization-20261015-134457dc`, compiler `0db5d628` passes the original Bottom/Integer arrival repair and all seven selected parameter tests, but independent review overturns the builder's bounded confirmation: a valid synthetic RBS `() -> (bot | bot)` observation bypasses the bare-Bottom check, normalizes to Bottom and exports `never` in all eight audit-by-schedule cases, while `() -> (bot)` retains Pending. The diagnostic export exposes the Bottom marker; the ordinary RBS printer renders it as `untyped`. Identical replay also reorders a nested union in native storage. The early-never counterexample kills the registered initialization rule without refuting the original two-arrival repair. This is a bounded synthetic RBS/native-storage failure, with no newly demonstrated runtime rejection. F19's five missing selections and F29's 91 accepted/36 rejected observations remain unchanged; producer completion and global order independence remain open.",
+  "verdict": "Builder confirmation overturned: union-of-Bottoms exports early never."
+}

@@ -1,0 +1,20 @@
+{
+  "commit": "f78d995f65816dead93dd615dcba370661c50d1f",
+  "branch": "writer-ownership",
+  "author": {
+    "name": "bunnykong",
+    "email": "268838774+bunnykong@users.noreply.github.com"
+  },
+  "committer": {
+    "name": "bunnykong",
+    "email": "268838774+bunnykong@users.noreply.github.com"
+  },
+  "message": "Expose read-only ownership census sites for provenance diagnostics\n\nReuse the advance prediction ownership and no-stabilize arms from 642217d8.\nDump emit-body/site references, provenance bits and type hashes only\nwhen RH_REASON_SITE_CENSUS is set alongside the census.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+  "files": {
+    "src/analyze/fixpoint_check.rs": "bef27ceb5fd77724fe6c0efd80b184f486f2f981af407e565be518cf8a8e17cc",
+    "src/analyze/harvest_return.rs": "27d829851bddecb48e57a1d3dd9892a8efbea7881e4a261133951c55f1f90b57",
+    "src/analyze/mod.rs": "623589eb8752e74bdebe58e632b569486f9ef8efe073ad416f1358c673b203ee"
+  },
+  "parent": "642217d87f3f02c729d66829b64e182eb48e6539",
+  "status": ""
+}

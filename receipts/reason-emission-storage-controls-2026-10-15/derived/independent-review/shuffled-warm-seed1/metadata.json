@@ -1,0 +1,49 @@
+{
+  "binary_sha256": "658d0abf989e3eea89dd430c1fb03d7e5a42e48a605e239f7832dbc75daaa20e",
+  "condition": "rv-reason-emission-storage-controls-shuffled-lossless-g-seed1",
+  "deviation": "Supplemental seed/warm/cold probe: omit redundant pre-pair warm correctness command; no timing inference.",
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "1"
+  },
+  "input": {
+    "app": "mastodon",
+    "base_condition": "public-corpus-v1",
+    "condition": "warm-public-body-edits-v1",
+    "edited_file_sha256": "18c620d6b3309a84b2fcfa331f856b48bb9604d95560744281e1ec902eb8441a",
+    "edited_tree_sha256": "0bcd67e0a702e60b48126673d939590a8cc23c349d6ab790c95bdb8a29c1d2fd",
+    "end": 886,
+    "file": "app/services/clear_domain_media_service.rb",
+    "input_commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+    "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+    "kind": "withdraw-read",
+    "method": "blocked_domain",
+    "old_body": "domain_block.domain",
+    "original_file_sha256": "f8babeca374f50ab85bb508332c091f4c744de6676767893fc3de34ff542054a",
+    "replacement": "nil",
+    "start": 867
+  },
+  "source_commit": "35cef9881548ecb3c0b9d0c98a7e8441aa51d210",
+  "warm_flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "1",
+    "RH_WARM": "$HOST_PATH",
+    "RH_WARM_LOSSLESS_CODEC": "1",
+    "RH_WARM_SHADOW": "1",
+    "RH_WARM_TIMINGS": "1"
+  }
+}

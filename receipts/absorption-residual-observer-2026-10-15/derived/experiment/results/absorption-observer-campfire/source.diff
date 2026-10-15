@@ -1,0 +1,213 @@
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 54474aac..392355ac 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -48,6 +48,51 @@ mod filter_targets;
+ pub mod graphql;
+ mod harvest_return;
+ pub mod producer_evidence;
++pub(crate) mod absorption_residual {
++    use crate::ty::Ty;
++    use std::collections::BTreeMap;
++    use std::sync::{Mutex, OnceLock};
++    pub const G: u8 = 2;
++    pub const U: u8 = 4;
++    pub const A: u8 = 8;
++    pub fn on() -> bool {
++        static ON: OnceLock<bool> = OnceLock::new();
++        *ON.get_or_init(|| std::env::var("RH_ABSORPTION_RESIDUAL").as_deref() == Ok("1"))
++    }
++    static MAP: Mutex<BTreeMap<String, u8>> = Mutex::new(BTreeMap::new());
++    /// Top-level evidence kinds. A bare `Var` counts as A only when `var_is_evidence`.
++    pub fn kinds(t: &Ty, var_is_evidence: bool) -> u8 {
++        let one = |a: &Ty| match a {
++            Ty::Untyped { why } => why.reporting_bits() & (G | U),
++            Ty::Var { .. } if var_is_evidence => A,
++            _ => 0,
++        };
++        match t {
++            Ty::Union { variants } => variants.iter().fold(0, |k, a| k | one(a)),
++            other => one(other),
++        }
++    }
++    /// Kinds present in the inputs but not visible in the result.
++    pub fn hidden(stored: &Ty, observed: &Ty, result: &Ty, stored_var: bool) -> u8 {
++        (kinds(stored, stored_var) | kinds(observed, true)) & !kinds(result, true)
++    }
++    pub fn record(destination: String, bits: u8) {
++        if bits != 0 {
++            *MAP.lock().unwrap().entry(destination).or_default() |= bits;
++        }
++    }
++    pub fn report(public: bool) -> serde_json::Value {
++        let map = MAP.lock().unwrap();
++        let count = |b: u8| map.values().filter(|v| **v & b != 0).count();
++        let mut out = serde_json::json!({"destinations": map.len(),
++            "by_kind": {"Gradual": count(G), "Unresolved": count(U), "Ambiguous": count(A)}});
++        if public {
++            out["map"] = serde_json::json!(*map);
++        }
++        out
++    }
++}
++
+ mod parameter_conservation;
+ mod fixpoint_bound;
+ mod fixpoint_check;
+@@ -1627,6 +1672,10 @@ impl Analyzer {
+ 
+         self.stamp_inferred_method_signatures(app);
+         self.report_fixpoint_checks(app);
++        if absorption_residual::on() {
++            eprintln!("rh-absorption-residual: {}", absorption_residual::report(
++                std::env::var("RH_PUBLIC_INPUT").as_deref() == Ok("1")));
++        }
+         if detfp::on() {
+             let fp = self.c1_state_fp(app);
+             eprintln!("rh-det: {}", fp.det_line());
+@@ -6416,6 +6465,10 @@ impl Analyzer {
+                             // the helper channel; explicit-receiver and
+                             // own-class channels keep their semantics.
+                             if via_helper_index && !parameter_conservation::on() && matches!(t, Ty::Untyped { .. }) {
++                                if absorption_residual::on() {
++                                    absorption_residual::record(format!("entrance|{:?}", expr.span),
++                                        absorption_residual::kinds(&t, true));
++                                }
+                                 Ty::Var { var: crate::ident::TyVar(0) }
+                             } else {
+                                 t
+@@ -6440,6 +6493,10 @@ impl Analyzer {
+                                             .clone()
+                                             .unwrap_or(Ty::Var { var: crate::ident::TyVar(0) });
+                                         let t = if via_helper_index && !parameter_conservation::on() && matches!(t, Ty::Untyped { .. }) {
++                                            if absorption_residual::on() {
++                                                absorption_residual::record(format!("entrance|{:?}", expr.span),
++                                                    absorption_residual::kinds(&t, true));
++                                            }
+                                             Ty::Var { var: crate::ident::TyVar(0) }
+                                         } else {
+                                             t
+@@ -7615,9 +7672,14 @@ pub(crate) fn unify_param_ty(stored: Ty, observed: Ty) -> Ty {
+     } else {
+         unify_param_ty_raw
+     };
+-    if !producer_evidence::on() { return join(stored, observed); }
++    let residual = absorption_residual::on() && !parameter_conservation::on();
++    if !producer_evidence::on() && !residual { return join(stored, observed); }
+     let result=join(stored.clone(), observed.clone());
+     producer_evidence::parameter_merge(&stored,&observed,&result);
++    if residual {
++        absorption_residual::record(producer_evidence::current_parameter_destination(),
++            absorption_residual::hidden(&stored, &observed, &result, false));
++    }
+     result
+ }
+ fn unify_param_ty_raw(stored: Ty, observed: Ty) -> Ty {
+diff --git a/src/analyze/parameter_conservation/tests.rs b/src/analyze/parameter_conservation/tests.rs
+index 7261551e..f7f9d3e2 100644
+--- a/src/analyze/parameter_conservation/tests.rs
++++ b/src/analyze/parameter_conservation/tests.rs
+@@ -363,3 +363,85 @@ fn writer_law_parameter_reason_conservation_seed_arrival() {
+         "native arrival order chooses known versus Pending priority"
+     );
+ }
++
++#[test]
++#[ignore = "provenance registered protocol: residual cell laws on next's native join (repair off)"]
++fn absorption_residual_cell_laws() {
++    assert!(!on(), "run with RH_PARAMETER_REASON_CONSERVE=0");
++    use crate::analyze::absorption_residual::kinds;
++    type Cell = (Ty, u8);
++    let join = |a: &Cell, b: &Cell| -> Cell {
++        let v = unify_param_ty(a.0.clone(), b.0.clone());
++        let hidden = (kinds(&a.0, true) | kinds(&b.0, true)) & !kinds(&v, true);
++        (v, a.1 | b.1 | hidden)
++    };
++    let eq = |a: &Cell, b: &Cell| crate::wire_ty::storage_types(&[a.0.clone()], &[b.0.clone()]) && a.1 == b.1;
++    let cells: Vec<Cell> = samples().into_iter().map(|t| (t, 0)).collect();
++    let mut checks = 0u64;
++    for a in &cells {
++        for b in &cells {
++            let ab = join(a, b);
++            assert!(eq(&ab, &join(b, a)), "commutativity: a={a:?}; b={b:?}; ab={ab:?}");
++            assert!(eq(&join(&ab, a), &ab), "duplicate replay: a={a:?}; b={b:?}; ab={ab:?}");
++            let input = kinds(&a.0, true) | kinds(&b.0, true);
++            assert_eq!(kinds(&ab.0, true) | ab.1, input, "lost evidence: a={a:?}; b={b:?}; ab={ab:?}");
++            assert_eq!(kinds(&ab.0, true) & ab.1, 0, "residual overlaps visible: a={a:?}; b={b:?}; ab={ab:?}");
++            for c in &cells {
++                let left = join(&ab, c);
++                assert!(eq(&left, &join(a, &join(b, c))), "associativity: a={a:?}; b={b:?}; c={c:?}; left={left:?}");
++                for (x, y, z) in [(a, b, c), (a, c, b), (b, a, c), (b, c, a), (c, a, b), (c, b, a)] {
++                    assert!(eq(&join(&join(x, y), z), &left), "permutation: a={a:?}; b={b:?}; c={c:?}; order={x:?},{y:?},{z:?}");
++                    checks += 1;
++                }
++            }
++        }
++    }
++    println!("provenance-RESIDUAL-LAWS {{\"samples\":{},\"permutation_checks\":{checks}}}", cells.len());
++}
++
++#[test]
++#[ignore = "provenance registered protocol addendum: arrival orders through native row fold and bound"]
++fn absorption_residual_cell_laws_rows() {
++    assert!(!on(), "run with RH_PARAMETER_REASON_CONSERVE=0");
++    let key = (
++        ClassId(Symbol::from("LawOwner")),
++        Symbol::from("call"),
++        MethodReceiver::Instance,
++    );
++    let fold = |obs: &[&Ty]| {
++        let mut rows = HashMap::new();
++        fold_param_observations(
++            &mut rows,
++            obs.iter().map(|t| (key.clone(), vec![(*t).clone()])).collect(),
++        );
++        rows[&key][0].clone()
++    };
++    let same = |a: &Ty, b: &Ty| crate::wire_ty::storage_types(&[a.clone()], &[b.clone()]);
++    let ts = samples();
++    let (mut fold2, mut fold3) = (0u64, 0u64);
++    for a in &ts {
++        for b in &ts {
++            let expected = fold(&[a, b]);
++            for order in [[a, b], [b, a]] {
++                let got = fold(&order);
++                assert!(same(&expected, &got),
++                    "fold2: a={a:?}; b={b:?}; expected={expected:?}; got={got:?}");
++                fold2 += 1;
++            }
++            for c in &ts {
++                let expected = fold(&[a, b, c]);
++                for order in [[a, b, c], [a, c, b], [b, a, c],
++                              [b, c, a], [c, a, b], [c, b, a]] {
++                    let got = fold(&order);
++                    assert!(same(&expected, &got),
++                        "fold3: a={a:?}; b={b:?}; c={c:?}; order={order:?}; expected={expected:?}; got={got:?}");
++                    fold3 += 1;
++                }
++            }
++        }
++    }
++    println!("provenance-RESIDUAL-ROWS {}", json!({
++        "samples": ts.len(), "fold2_order_checks": fold2, "fold3_order_checks": fold3,
++        "storage_counterexamples": 0,
++    }));
++}
+diff --git a/src/analyze/producer_evidence.rs b/src/analyze/producer_evidence.rs
+index cc8ff51c..1b985119 100644
+--- a/src/analyze/producer_evidence.rs
++++ b/src/analyze/producer_evidence.rs
+@@ -242,6 +242,13 @@ pub(super) fn parameter_context(key: &super::ParamKey, position: usize, phase: &
+         .replace((destination(key, position), phase.to_owned())))))
+ }
+ 
++/// Read the same destination identity that the native audit records.
++pub(super) fn current_parameter_destination() -> String {
++    AUDIT.with(|a| a.borrow().parameter_current.as_ref()
++        .map(|(destination, _)| destination.clone())
++        .unwrap_or_else(|| "unmapped".to_owned()))
++}
++
+ pub(super) fn parameter_seed(observed: &Ty, result: &Ty) {
+     if !on() { return; }
+     AUDIT.with(|a| a.borrow_mut().parameter_seed_initializations += 1);

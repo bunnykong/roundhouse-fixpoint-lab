@@ -1,0 +1,26 @@
+{
+  "condition": "rv-param-init-cleanup-20261015",
+  "time_utc": "2026-10-15T06:46:35.367265+00:00",
+  "command": "bash cleanup-review.sh cleanup-v1",
+  "mode": "Owned-artifact cleanup only; no build, test, or analysis was launched. Executed directly after canceling the queued combined replay.",
+  "exits": {
+    "probe-source": 0,
+    "baseline-source": 0,
+    "breaker-source": 0,
+    "native": 0
+  },
+  "targets": {
+    "week/evidence/sources/probe-source/target-laws": {
+      "exists": false
+    },
+    "week/evidence/sources/baseline-source/target-laws": {
+      "exists": false
+    },
+    "week/evidence/sources/breaker-source/target-laws": {
+      "exists": false
+    },
+    "week/evidence/scratch/provenance-target": {
+      "exists": false
+    }
+  }
+}

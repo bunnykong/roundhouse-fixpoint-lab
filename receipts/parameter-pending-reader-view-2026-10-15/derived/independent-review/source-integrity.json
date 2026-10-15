@@ -1,0 +1,75 @@
+{
+  "condition": "rv-parameter-pending-reader-view-replay-e248de81-v1",
+  "base": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "expected_source_commit": "e248de81c331a21db5b0d87dcccf45d624cd3132",
+  "files": [
+    {
+      "file": "examples/producer_reason_sound_types.rs",
+      "reviewer_sha256": "a5184812e68e0371822c39a3cb653bd2352a6465b6ee8ed205850801d29ee4bd",
+      "builder_sha256": "a5184812e68e0371822c39a3cb653bd2352a6465b6ee8ed205850801d29ee4bd",
+      "recorded_sha256": "a5184812e68e0371822c39a3cb653bd2352a6465b6ee8ed205850801d29ee4bd",
+      "precommit_sha256": null
+    },
+    {
+      "file": "examples/parameter_reason_sound_types.rs",
+      "reviewer_sha256": "177b88c15e9fc6f094245229e68b3207462219f1129618ec615faf8ab56b7088",
+      "builder_sha256": "177b88c15e9fc6f094245229e68b3207462219f1129618ec615faf8ab56b7088",
+      "recorded_sha256": "177b88c15e9fc6f094245229e68b3207462219f1129618ec615faf8ab56b7088",
+      "precommit_sha256": null
+    },
+    {
+      "file": "src/analyze/mod.rs",
+      "reviewer_sha256": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b",
+      "builder_sha256": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b",
+      "recorded_sha256": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b",
+      "precommit_sha256": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b"
+    },
+    {
+      "file": "src/analyze/parameter_conservation.rs",
+      "reviewer_sha256": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a",
+      "builder_sha256": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a",
+      "recorded_sha256": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a",
+      "precommit_sha256": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a"
+    },
+    {
+      "file": "src/analyze/parameter_conservation/tests.rs",
+      "reviewer_sha256": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7",
+      "builder_sha256": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7",
+      "recorded_sha256": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7",
+      "precommit_sha256": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7"
+    },
+    {
+      "file": "src/ide.rs",
+      "reviewer_sha256": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922",
+      "builder_sha256": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922",
+      "recorded_sha256": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922",
+      "precommit_sha256": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922"
+    },
+    {
+      "file": "src/ty.rs",
+      "reviewer_sha256": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899",
+      "builder_sha256": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899",
+      "recorded_sha256": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899",
+      "precommit_sha256": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899"
+    }
+  ],
+  "precommit_receipt": {
+    "condition": "pending-value-reason-identity-20261015-a7b6d3f8",
+    "sources": {
+      "src/analyze/mod.rs": "068d910b04910bda861cec3e9dd613c4e6724afe11007e7de7442d23c61ef00b",
+      "src/analyze/parameter_conservation.rs": "325414b7f765027febd363c27b3cbc96a3947d6e658d59f811c956f135e9962a",
+      "src/analyze/parameter_conservation/tests.rs": "dd952f34691f8ea1832a40362c41d2676b99d1bcace150c387e7fd7472a5d3a7",
+      "src/ide.rs": "fd9a97bf99c321625b8020b0b8ba1dcfd03e1dd16d7902a255552596159fb922",
+      "src/ty.rs": "e5580cecdcbdd2eb8c8f62c4948060e3aab77c0d58acd1fc98bd7a5a1f7be899"
+    },
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "cargo": "cargo 1.98.1 (797e8a9bc 2026-08-05)",
+    "ruby_test": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+    "ruby_probe": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+    "scripts_parse": true,
+    "build_log_tail": [
+      "warning: `roundhouse` (lib) generated 3 warnings",
+      "    Finished `release` profile [optimized] target(s) in 3m 06s"
+    ]
+  }
+}

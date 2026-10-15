@@ -1,0 +1,22 @@
+{
+  "command": [
+    "$EXPERIMENT/week/evidence/scratch/provenance-target/debug/examples/producer_reason_sound_types",
+    "$EXPERIMENT/week/evidence/sources/lab/reproductions/pend_census",
+    "$EXPERIMENT/week/evidence/results/round2-v1-f19/s3/pend_census/selection.json"
+  ],
+  "flags": {
+    "PROVENANCE_AUDIT_PATH": "$EXPERIMENT/week/evidence/results/round2-v1-f19/s3/pend_census/audit.json",
+    "NO_COLOR": "1",
+    "RH_BRK_ALLARMS": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_PRINT": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "0",
+    "RH_SCHED": "sccq",
+    "SOUND_MISSING": "1"
+  }
+}

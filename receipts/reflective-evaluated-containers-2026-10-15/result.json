@@ -1,0 +1,7 @@
+{
+  "condition": "reflective-evaluated-containers-20261015-fe6b169e",
+  "fact": 47,
+  "scope": "Problems 1\u20132; synthetic fixtures, with the partition failures retained.",
+  "text": "On October 15 condition `reflective-evaluated-containers-20261015-fe6b169e`, compiler `eda0783b` including repair `f88d76fc` passes 17/17 registered entrance tests and 4,116 batch schedules, but independent review overturns the builder's local confirmation. Immediately invoked closures inside evaluated containers execute reflective writes in Ruby 3.4.4 and 4.0.7 while the native harvest omits the write in eight cases under unset/1/2/repeat. A minimal Array containing `-> { instance_variable_set(:@x, 1) }.call` stores `@x = 1` in Ruby but contributes no native destination. The new evaluated-child state suppresses Lambda bodies even when invoked. The complete entrance claim is killed; the passing covered cases remain. Separate partition controls retain 2,104 partition and 548 duplicate-round differences across 32,928 schedules. Scope is synthetic fixtures and native harvest/storage, without emitted-code equivalence, complete writer coverage, soundness or any-order inference.",
+  "verdict": "Builder local confirmation overturned: invoked closure writes are missed."
+}

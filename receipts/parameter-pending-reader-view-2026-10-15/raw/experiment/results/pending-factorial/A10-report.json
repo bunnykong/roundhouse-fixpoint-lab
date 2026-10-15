@@ -1,0 +1,42 @@
+{
+  "arm": [
+    "1",
+    "0"
+  ],
+  "counts": {
+    "assoc": 276,
+    "fold2": 138,
+    "fold3": 6210,
+    "pid": 3
+  },
+  "examples": {
+    "assoc": [
+      "Nil | Untyped { why: Pending } | Untyped { why: Unresolved }",
+      "Nil | Untyped { why: Pending } | Untyped { why: Gradual }",
+      "Nil | Untyped { why: Pending } | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "Int | Untyped { why: Pending } | Untyped { why: Unresolved }",
+      "Int | Untyped { why: Pending } | Untyped { why: Gradual }"
+    ],
+    "fold2": [
+      "Nil | Untyped { why: Unresolved }",
+      "Nil | Untyped { why: Gradual }",
+      "Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "Int | Untyped { why: Unresolved }",
+      "Int | Untyped { why: Gradual }"
+    ],
+    "fold3": [
+      "Bottom | Nil | Untyped { why: Unresolved }",
+      "Bottom | Nil | Untyped { why: Gradual }",
+      "Bottom | Nil | Union { variants: Shared([Int, Untyped { why: Unresolved }]) }",
+      "Bottom | Int | Untyped { why: Unresolved }",
+      "Bottom | Int | Untyped { why: Gradual }"
+    ],
+    "pid": [
+      "Untyped { why: Unresolved }",
+      "Untyped { why: Gradual }",
+      "Union { variants: Shared([Int, Untyped { why: Unresolved }]) }"
+    ]
+  },
+  "no_early_never": true,
+  "seed_ok": true
+}

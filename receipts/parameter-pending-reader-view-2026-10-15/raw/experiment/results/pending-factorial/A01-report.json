@@ -1,0 +1,36 @@
+{
+  "arm": [
+    "0",
+    "1"
+  ],
+  "counts": {
+    "fold2": 46,
+    "fold3": 1656,
+    "pid": 23
+  },
+  "examples": {
+    "fold2": [
+      "Bottom | Nil",
+      "Bottom | Int",
+      "Bottom | Str",
+      "Bottom | Var { var: TyVar(0) }",
+      "Bottom | Array { elem: Int }"
+    ],
+    "fold3": [
+      "Bottom | Bottom | Nil",
+      "Bottom | Bottom | Int",
+      "Bottom | Bottom | Str",
+      "Bottom | Bottom | Var { var: TyVar(0) }",
+      "Bottom | Bottom | Array { elem: Int }"
+    ],
+    "pid": [
+      "Nil",
+      "Int",
+      "Str",
+      "Var { var: TyVar(0) }",
+      "Array { elem: Int }"
+    ]
+  },
+  "no_early_never": true,
+  "seed_ok": false
+}

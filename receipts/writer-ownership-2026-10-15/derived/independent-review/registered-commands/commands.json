@@ -1,0 +1,337 @@
+[
+  {
+    "name": "baseline-unset--1",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-diff-1",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-diff-2",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-diff-repeat-unset",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-support",
+    "command": [
+      "python3",
+      "-I",
+      "theory/support.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--out",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-digests",
+    "command": [
+      "python3",
+      "-I",
+      "theory/digests.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "a-copyrows",
+    "command": [
+      "python3",
+      "-I",
+      "theory/copyrows.py",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-diff-1",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-diff-2",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-diff-repeat-unset",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-support",
+    "command": [
+      "python3",
+      "-I",
+      "theory/support.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--out",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-digests",
+    "command": [
+      "python3",
+      "-I",
+      "theory/digests.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "b-copyrows",
+    "command": [
+      "python3",
+      "-I",
+      "theory/copyrows.py",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-diff-1",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-diff-2",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-diff-repeat-unset",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-support",
+    "command": [
+      "python3",
+      "-I",
+      "theory/support.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--out",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-digests",
+    "command": [
+      "python3",
+      "-I",
+      "theory/digests.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "both-copyrows",
+    "command": [
+      "python3",
+      "-I",
+      "theory/copyrows.py",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-diff-1",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-diff-2",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-diff-repeat-unset",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-support",
+    "command": [
+      "python3",
+      "-I",
+      "theory/support.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--out",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-digests",
+    "command": [
+      "python3",
+      "-I",
+      "theory/digests.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "off-copyrows",
+    "command": [
+      "python3",
+      "-I",
+      "theory/copyrows.py",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "fixture-diff",
+    "command": [
+      "./diff.sh",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "--json"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "fixture-digests",
+    "command": [
+      "python3",
+      "-I",
+      "theory/digests.py",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH",
+      "$HOST_PATH"
+    ],
+    "exit": 0
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "cold_census": {
+    "bare_untyped": 17306,
+    "missing": 8273,
+    "typed": 209666,
+    "untyped_anywhere": 28793,
+    "untyped_by_provenance": {
+      "gradual": 5381,
+      "pending": 0,
+      "unresolved": 23485
+    }
+  },
+  "cold_settled": 0,
+  "condition": "rv-reason-emission-storage-controls-shuffled-lossless-g-seed1",
+  "diagnostic_content_equal": true,
+  "diagnostics_equal": true,
+  "evaluations": {
+    "codec": {
+      "cache_schema": 3,
+      "decoded_ordered_rows": 12,
+      "decoded_reason_leaves": 60040,
+      "decoded_values": 26601,
+      "encoded_ordered_rows": 689203,
+      "encoded_reason_leaves": 7079841,
+      "encoded_values": 45631757,
+      "identity": "rh-warm-native-v1:pending=1,gradual=2,unresolved=4;row=ordered-pairs"
+    },
+    "diagnostic_replayed": 2202,
+    "incompatible_cache": 0,
+    "input_invalidated": 36,
+    "invalidated": 6,
+    "loaded": 69790,
+    "read_invalidated": 21,
+    "recorded": 69785,
+    "replayed": 25733,
+    "typed": 44052,
+    "uncovered": 57,
+    "unused": 43994
+  },
+  "seed_sha256": "cb0496f9f417aa88d06357ba7ac3b5a569fce3b9ff2b3dc8407ce8564385fc5d",
+  "shadow": true,
+  "shadow_census": {
+    "bare_untyped": 17306,
+    "missing": 8273,
+    "typed": 209666,
+    "untyped_anywhere": 28793,
+    "untyped_by_provenance": {
+      "gradual": 5381,
+      "pending": 0,
+      "unresolved": 23485
+    }
+  },
+  "warm_census": {
+    "bare_untyped": 17306,
+    "missing": 8273,
+    "typed": 209666,
+    "untyped_anywhere": 28793,
+    "untyped_by_provenance": {
+      "gradual": 5381,
+      "pending": 0,
+      "unresolved": 23485
+    }
+  },
+  "warm_cold_census_diff": [],
+  "warm_cold_digest_diff": [],
+  "warm_settled": 0,
+  "warm_shadow_census_diff": []
+}

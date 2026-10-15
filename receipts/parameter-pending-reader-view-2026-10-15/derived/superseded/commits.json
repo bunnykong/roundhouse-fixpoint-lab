@@ -1,0 +1,20 @@
+{
+  "source_head": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+  "branch": "parameter-pending-value-only",
+  "author": {
+    "name": "bunnykong",
+    "email": "268838774+bunnykong@users.noreply.github.com"
+  },
+  "committer": {
+    "name": "bunnykong",
+    "email": "268838774+bunnykong@users.noreply.github.com"
+  },
+  "message": "Use Pending identity for native parameter rows (provenance L2/L3)\n\nInitialize each fresh row by joining its Pending cell with the first observation; remove Pending-only arms beside informative contributions. Add the repair-off native arrival control.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+  "patches": {
+    "patches/0001-pending-identity.patch": "c468b2eeba932e3a568982a6db95cc937005fa9495997938d504efe44c14c18c"
+  },
+  "test_amendment_commit": null,
+  "test_amendment_patch": null,
+  "omission_reason": "Step 3 is conditional on exact H1c; actual first grouping assertion is at 165, not predicted 144.",
+  "working_tree_during_app_build": "?? target-laws/"
+}

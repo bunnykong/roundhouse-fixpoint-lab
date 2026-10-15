@@ -1,0 +1,41 @@
+{
+  "batch": "mastodon-return-type-pair-1",
+  "commands": [
+    {
+      "app": "$EXPERIMENT/week/warm/runs/r2-base-seed/apps/mastodon",
+      "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_SCHED": "sccq"
+      },
+      "out": "$EXPERIMENT/week/warm/runs/r2-base-six/runs/mastodon-return-type-1-cold"
+    },
+    {
+      "app": "$EXPERIMENT/week/warm/runs/r2-base-seed/apps/mastodon",
+      "binary": "$EXPERIMENT/week/warm/build/base/release/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_SCHED": "sccq",
+        "RH_WARM": "$EXPERIMENT/week/warm/runs/r2-base-six/caches/mastodon-scratch",
+        "RH_WARM_SHADOW": "1",
+        "RH_WARM_TIMINGS": "1"
+      },
+      "out": "$EXPERIMENT/week/warm/runs/r2-base-six/runs/mastodon-return-type-1-warm",
+      "restore_dest": "$EXPERIMENT/week/warm/runs/r2-base-six/caches/mastodon-scratch/evaluations.json",
+      "restore_seed": "$EXPERIMENT/week/warm/runs/r2-base-seed/caches/mastodon/evaluations.json",
+      "seed_sha256": "bedb3fd7ba92bc2368404c77e1dc2325a214e97ad540a249c86432d2867436ef"
+    }
+  ],
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-parent",
+  "lock_mode": "exclusive"
+}

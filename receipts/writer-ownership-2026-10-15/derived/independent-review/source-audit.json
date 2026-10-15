@@ -1,0 +1,132 @@
+{
+  "change_after_registered_arm_commit": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "diff",
+      "642217d8",
+      "HEAD",
+      "--stat"
+    ],
+    "exit": 0,
+    "stdout": " src/analyze/fixpoint_check.rs | 64 +++++++++++++++++++++++++++++++++++++++++++\n 1 file changed, 64 insertions(+)\n",
+    "stderr": ""
+  },
+  "arm_code_unchanged": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "diff",
+      "642217d8",
+      "HEAD",
+      "--",
+      "src/analyze/mod.rs",
+      "src/analyze/harvest_return.rs"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "source_clean": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "status",
+      "--porcelain"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "candidate_head": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit": 0,
+    "stdout": "f78d995f65816dead93dd615dcba370661c50d1f\n",
+    "stderr": ""
+  },
+  "source_files_match_committed_receipt": {
+    "src/analyze/fixpoint_check.rs": true,
+    "src/analyze/harvest_return.rs": true,
+    "src/analyze/mod.rs": true
+  },
+  "advance prediction_inputs_still_match": {
+    "$EXPERIMENT/protocol.md": true,
+    "$WORKSPACE/phase2/workshops/ownership-structure/theory/ownership-protocol.md": true,
+    "$WORKSPACE/phase2/workshops/ownership-structure/theory/THEORY.md": true,
+    "$EXPERIMENT/workshop/theory/ownership-protocol.md": true,
+    "$EXPERIMENT/workshop/theory/THEORY.md": true,
+    "$EXPERIMENT/workshop/bin/roundhouse": true,
+    "$EXPERIMENT/workshop/bin/build.json": true,
+    "$EXPERIMENT/workshop/inputs/manifest.json": true,
+    "$EXPERIMENT/workshop/theory/copyrows.py": true,
+    "$EXPERIMENT/workshop/theory/digests.py": true,
+    "$EXPERIMENT/workshop/theory/replay.py": true,
+    "$EXPERIMENT/workshop/theory/run_candidate.py": true,
+    "$EXPERIMENT/workshop/theory/support.py": true,
+    "$EXPERIMENT/workshop/theory/timeline.py": true
+  },
+  "pins": {
+    "campfire": {
+      "source": "$EXPERIMENT/week/lab/corpus/apps/campfire",
+      "source_commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "tree_sha256": "0d3bb5ca7799e141fcd574c18ba84cdbb1dc67effed0ec3680aa939f4f4ee8eb"
+    },
+    "structure_fixture": {
+      "source": "$WORKSPACE/agents/writer-ownership-baseline-tools/source/tools/research/structure_fixture",
+      "source_commit": "bf56edf9e74ce2481e43e473de87466aac96283c",
+      "tree_sha256": "e0fdb9e2d3c2836cfcaef5d8e96479d430a419b995844e3a08c545d591065add"
+    }
+  },
+  "baseline_build": {
+    "source_commit": "bf56edf9e74ce2481e43e473de87466aac96283c",
+    "source_branch": "declaration-access-coverage",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "build",
+      "--release",
+      "--locked",
+      "--offline",
+      "--bin",
+      "roundhouse"
+    ],
+    "prepare_seconds": 2.4470303340349346,
+    "build_seconds": 154.08841724996455,
+    "total_seconds": 156.54481841705274,
+    "binary_sha256": "0f7359e71b0c6917c457ffa813d982641ca899a4531ac9b6d82f682bfc95db67",
+    "rust": "rustc 1.98.1 (48a229cea 2026-09-01)"
+  },
+  "candidate_build": {
+    "source_commit": "f78d995f65816dead93dd615dcba370661c50d1f",
+    "source_branch": "writer-ownership",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "build",
+      "--release",
+      "--locked",
+      "--offline",
+      "--bin",
+      "roundhouse"
+    ],
+    "build_seconds": 150.21105987500002,
+    "exit_code": 0,
+    "environment": {
+      "CARGO_HOME": "$EXPERIMENT/cargo-home",
+      "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+      "CARGO_BUILD_JOBS": "4",
+      "RBENV_VERSION": "4.0.7"
+    },
+    "rust": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "binary_sha256": "c5dd74600113701fb54f0180c9a13ed6eca02c661d3e85861c9712685dd69344"
+  }
+}

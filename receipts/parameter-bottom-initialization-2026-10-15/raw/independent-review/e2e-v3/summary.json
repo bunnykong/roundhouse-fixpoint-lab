@@ -1,0 +1,47 @@
+{
+  "condition": "rv-param-init-native-rbs-app-v3-20261015",
+  "scope": "fresh public synthetic app exports; candidate production source unmodified",
+  "binary_sha256": "aafa7c0c00ea3d1ea6d2be9fb751f8b6b50cd05258e08efee478d4f34ca7dfef",
+  "cases": [
+    {
+      "case": "bare-bottom",
+      "declaration": "bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "untyped",
+        "param": "untyped",
+        "source_return": "__bot__"
+      }
+    },
+    {
+      "case": "union-bottom",
+      "declaration": "bot | bot",
+      "exit": 0,
+      "export": {
+        "observe_return": "__bot__",
+        "param": "__bot__",
+        "source_return": "__bot__ | __bot__"
+      }
+    },
+    {
+      "case": "canonical-array",
+      "declaration": "Array[Integer | String]",
+      "exit": 0,
+      "export": {
+        "observe_return": "Array[Integer | String]",
+        "param": "Array[Integer | String]",
+        "source_return": "Array[Integer | String]"
+      }
+    },
+    {
+      "case": "unsorted-array",
+      "declaration": "Array[String | Integer]",
+      "exit": 0,
+      "export": {
+        "observe_return": "Array[String | Integer]",
+        "param": "Array[String | Integer]",
+        "source_return": "Array[String | Integer]"
+      }
+    }
+  ]
+}

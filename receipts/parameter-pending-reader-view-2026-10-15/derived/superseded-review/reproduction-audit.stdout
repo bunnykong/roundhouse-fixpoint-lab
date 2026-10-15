@@ -1,0 +1,135 @@
+{
+  "condition": "rv-parameter-pending-value-only-replay-a7b6d3f8-v1",
+  "builder_condition": "pending-value-only-pending-identity-134457dc-v1-shared-host",
+  "replay_directory": "replay/reruns/20261015T052957Z",
+  "replay_exit": "0",
+  "tests": {
+    "s0-red": {
+      "exit": "101",
+      "summary": [
+        "FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1157 filtered out"
+      ],
+      "matches_original_summary": true
+    },
+    "s1-control": {
+      "exit": "0",
+      "summary": [
+        "ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1158 filtered out"
+      ],
+      "matches_original_summary": true
+    },
+    "s2-parameters": {
+      "exit": "101",
+      "summary": [
+        "FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 1154 filtered out"
+      ],
+      "matches_original_summary": true
+    },
+    "s2-contracts": {
+      "exit": "0",
+      "summary": [
+        "ok. 4 passed; 0 failed; 0 ignored; 0 measured; 1155 filtered out"
+      ],
+      "matches_original_summary": true
+    }
+  },
+  "s2_assertions_match_original": true,
+  "campfire_matches_decisive_fields": true,
+  "f19_complete_summary_matches": true,
+  "f19": {
+    "s3/final": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    },
+    "s3/graph": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    },
+    "audit/final": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    },
+    "audit/graph": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    },
+    "candidate/final": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    },
+    "candidate/graph": {
+      "records": 78,
+      "rejected": 0,
+      "missing": 5,
+      "opaque": 39
+    }
+  },
+  "pins": {
+    "pending-value-only-campfire": {
+      "matching_fields": [
+        "source_head",
+        "lab_head",
+        "source_files_sha256",
+        "cargo_lock_sha256",
+        "candidate_env",
+        "helper_sha256",
+        "app",
+        "app_tree",
+        "probe_sha256",
+        "ruby"
+      ],
+      "mismatches": [],
+      "source_head": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+      "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+      "app": {
+        "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+        "git_tree": null,
+        "id": "campfire",
+        "path": "corpus/apps/campfire",
+        "repository_url": "https://github.com/basecamp/once-campfire.git",
+        "set": "apps",
+        "tag": null
+      }
+    },
+    "pending-value-only-f19": {
+      "matching_fields": [
+        "source_head",
+        "lab_head",
+        "source_files_sha256",
+        "cargo_lock_sha256",
+        "candidate_env",
+        "helper_sha256",
+        "inputs",
+        "exporter_sha256"
+      ],
+      "mismatches": [],
+      "source_head": "a7b6d3f8e7908581588662970804fc4d6dc53784",
+      "lab_head": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+      "app": null
+    }
+  },
+  "copied_harness_unchanged": {
+    "setup.sh": true,
+    "rerun.sh": true,
+    "staging/native-control.rs": true,
+    "staging/test_failures.py": true,
+    "staging/reduce_card.py": true,
+    "patches/0001-pending-identity.patch": true
+  },
+  "timing_claim": false,
+  "limitations": [
+    "Raw kind-event accounting is internally consistent, but cannot prove a complete writer inventory.",
+    "F19 checks frozen runtime traces, not newly executed application behavior.",
+    "This comparison uses precision, digests, flags, and loss counters; elapsed times are excluded."
+  ]
+}

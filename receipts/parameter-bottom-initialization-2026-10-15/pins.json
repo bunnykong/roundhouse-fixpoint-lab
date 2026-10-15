@@ -1,0 +1,27 @@
+{
+  "compiler_branch": "parameter-bottom-initialization",
+  "compiler_public": "c8feb2f80b0fa999fad0792aace1db3e175b2456",
+  "compiler_public_base": "af9c85bebe805ebe848528a92b6654fd19a4daf2",
+  "compiler_recorded": "0db5d628937965f0299dc6b9b2a6bc7267a2a8fb",
+  "compiler_recorded_base": "134457dcac997512896e4239835130ae1425d1e4",
+  "condition": "parameter-bottom-initialization-20261015-134457dc",
+  "fact": 46,
+  "inputs": {
+    "primary": "Synthetic valid RBS fixtures, hashes in the review receipts"
+  },
+  "lab_input": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d",
+  "original_data_modified": false,
+  "packaging_native_runs": 0,
+  "recorded_condition": "param-init-20261015-134457dc",
+  "reference": "unscored",
+  "report_provenance": {
+    "experiment_report_sha256": "fc5d8c9bc6cc01bbd25005680b3b9529022e1ac37bd5a042df6116df4d3e9657",
+    "public_policy": "Report narratives are summarized in this README, with machine evidence retained; original reports and messages are not committed.",
+    "review_report_sha256": "94e9979c5b1df42295e633feff6bee812b63a448eb42e7bbbd613c7df742ae30"
+  },
+  "ruby_application": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1",
+  "scope": "Problems 2\u20133; synthetic RBS and native storage, without a runtime rejection claim.",
+  "verdict": "Builder confirmation overturned: union-of-Bottoms exports early never."
+}

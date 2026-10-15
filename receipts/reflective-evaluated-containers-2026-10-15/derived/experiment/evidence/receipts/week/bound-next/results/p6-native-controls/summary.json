@@ -1,0 +1,75 @@
+{
+  "condition": "reflective-evaluated-containers-20261015-fe6b169e/p6-native-controls",
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/week/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/week/bound-next/sources/probe-source/target-laws",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_REFLECT_BOUND": "1",
+    "RH_SCHED": "sccq"
+  },
+  "rows": [
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--test",
+        "analyze",
+        "array_to_h_without_a_block_reads_each_element_as_a_pair",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "counts": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "106"
+        ]
+      ],
+      "exit": 101,
+      "log_sha256": "431b720746ba7dceeeb34d92a814018867cef2d89a2bd9b4261cb2a413906101",
+      "selection": "array_to_h_without_a_block_reads_each_element_as_a_pair",
+      "suite": "analyze"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--test",
+        "runtime_src_integration",
+        "every_runtime_method_body_concretely_typed",
+        "--",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "counts": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "6"
+        ]
+      ],
+      "exit": 101,
+      "log_sha256": "d0df242d6e003169b010c8c20eb423e96b55d380967cf3f56c37a3da6534f715",
+      "selection": "every_runtime_method_body_concretely_typed",
+      "suite": "runtime_src_integration"
+    }
+  ],
+  "scope": "Focused unchanged-P6 controls; no whole-suite pass is claimed",
+  "source_head": "fe6b169ea935be900aa51e5a2069a360324a69b0",
+  "timed_measurement": false
+}

@@ -1,0 +1,48 @@
+flock.py: waited 67s for a shared slot of $WORKSPACE/workshop/heavy.lock
+{
+  "condition": "fingerprint-six-edit-gates-20261015-1fbfee1a-audit",
+  "exit": 1,
+  "shadow": "pass",
+  "counters": {
+    "audit_bytes": 27767916587,
+    "audited_guard_rejects": 60698,
+    "class_key_bytes_encoded": 48975,
+    "class_key_bytes_used": 2972684550,
+    "class_key_calls": 60698,
+    "class_key_generation_hits": 60697,
+    "class_key_generations": 1,
+    "context_bytes": 53856617,
+    "expression_bytes": 128739048,
+    "extra_audit_comparisons": 60698,
+    "extra_bytes_encoded": 161442,
+    "extra_bytes_used": 1633201086,
+    "extra_calls": 60698,
+    "extra_generation_hits": 60692,
+    "extra_generations": 6,
+    "final_bytes": 27767916587,
+    "guard_audit_comparisons": 60698,
+    "guard_rejects": 60698,
+    "input_audit_comparisons": 60698,
+    "input_calls": 60698,
+    "metadata_bytes_encoded": 2067967,
+    "metadata_bytes_used": 22974397352,
+    "metadata_calls": 60698,
+    "metadata_generation_hits": 60693,
+    "metadata_generations": 5
+  },
+  "entries": {
+    "attributes": 939,
+    "block_values": 1738,
+    "constants": 600,
+    "controller_bindings": 532,
+    "controller_cache": 310,
+    "copies": 391,
+    "ir": 217940,
+    "params": 12636,
+    "returns": 52621,
+    "sccq_contexts": 8837,
+    "sccq_dependencies": 8837,
+    "sccq_entry_contexts": 1469,
+    "side_table": 612
+  }
+}
