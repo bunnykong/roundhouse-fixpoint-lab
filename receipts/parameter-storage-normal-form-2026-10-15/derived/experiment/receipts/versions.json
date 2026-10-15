@@ -1,0 +1,23 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "cargo +1.98.1 --version\nrustc +1.98.1 --version\nRBENV_VERSION=3.4.4 ruby --version\nRBENV_VERSION=4.0.7 ruby --version\nbash --version"
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "cwd": "$EXPERIMENT",
+  "environment": {
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "TMPDIR": "/var/folders/hw/yz9qtzz54q98r66lswbyf6tw0000gn/T/"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-10-15T13:12:35.411968+00:00",
+  "lock_wrapper": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock"
+  ],
+  "log_sha256": "26ffdc01ffad75ba3c12996391c764158801c9c328686b583e1677690029cb6b",
+  "source_patch_sha256": "e04460c6f84aa7d8f6ef82fe9fdec1a3bf12c2ccd196f868c965cb942ccd1b7e",
+  "started_at": "2026-10-15T13:12:35.247782+00:00"
+}

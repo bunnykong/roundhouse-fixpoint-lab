@@ -1,0 +1,47 @@
+{
+  "birth_utc": "2026-10-15T14:10:32.286461+00:00",
+  "claimed_residual_path_exists": false,
+  "claimed_utc": "2026-10-15T14:20:00Z",
+  "first_build_started_utc": "2026-10-15T14:14:56.300792+00:00",
+  "git_history": {
+    "command": [
+      "git",
+      "log",
+      "--format=%H %aI %cI %s",
+      "--follow",
+      "--",
+      "$EXPERIMENT/protocol.md"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "git_ignore": {
+    "command": [
+      "git",
+      "check-ignore",
+      "-v",
+      "$EXPERIMENT/protocol.md"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ".gitignore:1:.work/\t$EXPERIMENT/protocol.md\n"
+  },
+  "git_tracked": {
+    "command": [
+      "git",
+      "ls-files",
+      "--",
+      "$EXPERIMENT/protocol.md"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "missing_exact_commands": true,
+  "modified_utc": "2026-10-15T14:10:32.288601+00:00",
+  "prebuild_record_matches_current_card": true,
+  "protocol_sha256": "6091f2ceed55330d65254c32e2c1935d1f722938988ae8c217812c0cb80f34e8",
+  "transcript_card_line": 7,
+  "transcript_first_build_line": 59
+}

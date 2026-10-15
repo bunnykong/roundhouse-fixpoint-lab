@@ -1,0 +1,21 @@
+{
+  "condition": "parameter-storage-normal-form-20261015-648d5074-default",
+  "failure_count": 43,
+  "fixture_failures_after_source_check": 41,
+  "fixture_mentions": 39,
+  "fresh_rerun": false,
+  "other_failures": {
+    "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots": "thread 'emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots' (80850639) panicked at src/emit/rust/library.rs:1195:9:\nheader_key_ok? takes String?, wrap &str:\npub fn set_index(&self, key: &str, value: Option<String>) {\n        self.store_value(&(key), value);\n    }\n\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "lsp::tests::code_lens_traces_each_action_over_the_protocol": "thread 'lsp::tests::code_lens_traces_each_action_over_the_protocol' (80852028) panicked at src/lsp.rs:1451:54:\ncalled `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: \"No such file or directory\" }",
+    "lsp::tests::completion_over_the_protocol": "thread 'lsp::tests::completion_over_the_protocol' (80852029) panicked at src/lsp.rs:1195:54:\ncalled `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: \"No such file or directory\" }",
+    "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers": "thread 'runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers' (80852302) panicked at src/runtime_src.rs:2013:41:\nexpected Array[String], got Array[Union { variants: Shared([Str, Nil]) }]\n\n\nfailures:\n    emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots\n    ide::tests::complete_at_offers_members_kwargs_and_ivars\n    ide::tests::def_headers_hover_and_reference\n    ide::tests::gap_report_attributes_ingest_gap_files_as_tool_coverage\n    ide::tests::gap_report_complete_when_every_hop_resolves\n    ide::tests::members_of_enumerates_columns_associations_and_finders\n    ide::tests::query_real_blog_end_to_end\n    ide::tests::references_empty_off_a_variable\n    ide::tests::references_finds_ivar_across_controller_actions\n    ide::tests::references_local_is_body_scoped\n    ide::tests::references_method_is_type_directed\n    ide::tests::related_files_walks_the_render_graph\n    ide::tests::traceroute_composes_route_filters_action_view_layout\n    ide::tests::traceroute_hops_stay_clean_when_the_chain_preloads\n    ide::tests::traceroute_marks_gated_out_filters_and_resolves_routes\n    ide::tests::type_at_reaches_class_body_dsl\n    lower::broad"
+  },
+  "raw_log_checked": "$EXPERIMENT/replays/main/receipts/default-suite.log",
+  "source_verified_fixture_failures": {
+    "lsp::tests::code_lens_traces_each_action_over_the_protocol": "source/src/lsp.rs:1449-1451 reads the same missing fixture",
+    "lsp::tests::completion_over_the_protocol": "source/src/lsp.rs:1193-1195 reads fixtures/real-blog/app/controllers/articles_controller.rb"
+  },
+  "summary_lines": [
+    "test result: FAILED. 1101 passed; 43 failed; 21 ignored; 0 measured; 0 filtered out; finished in 161.40s"
+  ]
+}

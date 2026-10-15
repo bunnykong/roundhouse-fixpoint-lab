@@ -1,0 +1,49 @@
+{
+  "builder_and_review_report_hashes": [
+    {
+      "bytes": 40514,
+      "narrative_omitted": true,
+      "role": "builder",
+      "sha256": "2796707c595f11dfb5e66fce5714a61e5674245e76ec61f460a3f8fcc1a81f8d"
+    }
+  ],
+  "condition": "storage-repair-five-apps-20261015-ec633faf-a5d73fdf",
+  "fact": 55,
+  "inputs": {
+    "campfire": {
+      "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+    },
+    "chatwoot": {
+      "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+    },
+    "discourse": {
+      "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "max_parallel": 1,
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "forem": {
+      "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+    },
+    "mastodon": {
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "original_data_modified": false,
+  "packaging_native_runs": 0,
+  "public_branch": "storage-repair-five-apps",
+  "public_source": "0b3902538f643e1e23a067e4f2e805052743298e",
+  "public_source_base": "a5d73fdf16c13c207d9ecff66de451a058a9ff14",
+  "recorded_condition": "p2-v2-s1-phaseB-ec633faf-a5d73fdf-observers-v1",
+  "recorded_source": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+  "recorded_source_base": "a5d73fdf16c13c207d9ecff66de451a058a9ff14",
+  "reference": "unscored",
+  "ruby_application": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1",
+  "scope": "Five public apps, 286/330 completed cells; one complete Discourse observer setting.",
+  "verdict": "Upheld partial negative scoreboard; broader schedule independence fails."
+}

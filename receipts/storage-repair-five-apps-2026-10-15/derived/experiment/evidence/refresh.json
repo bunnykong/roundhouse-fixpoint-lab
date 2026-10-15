@@ -1,0 +1,73 @@
+[
+  {
+    "command": [
+      "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "$EXPERIMENT/B/analyze.py"
+    ],
+    "ended_utc": "2026-10-15T16:55:54.608517+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/1-analyze.log",
+    "started_utc": "2026-10-15T16:55:36.339400+00:00"
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "$EXPERIMENT/B/check_claims.py"
+    ],
+    "ended_utc": "2026-10-15T16:56:03.929884+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/2-check_claims.log",
+    "started_utc": "2026-10-15T16:55:54.609073+00:00"
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "$EXPERIMENT/B/check_scoreboard.py"
+    ],
+    "ended_utc": "2026-10-15T16:56:03.972613+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/3-check_scoreboard.log",
+    "started_utc": "2026-10-15T16:56:03.930302+00:00"
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "$EXPERIMENT/B/check_integrity.py"
+    ],
+    "ended_utc": "2026-10-15T16:56:10.811073+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/4-check_integrity.log",
+    "started_utc": "2026-10-15T16:56:03.973040+00:00"
+  },
+  {
+    "command": [
+      "glowy",
+      "guide"
+    ],
+    "ended_utc": "2026-10-15T16:56:10.851959+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/5-glowy.log",
+    "started_utc": "2026-10-15T16:56:10.811474+00:00"
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/python@3.12/bin/python3.12",
+      "$EXPERIMENT/B/write_report.py"
+    ],
+    "ended_utc": "2026-10-15T16:56:10.897823+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/6-write_report.log",
+    "started_utc": "2026-10-15T16:56:10.852336+00:00"
+  },
+  {
+    "command": [
+      "glowy",
+      "preview",
+      "$EXPERIMENT/RESULT-B.md"
+    ],
+    "ended_utc": "2026-10-15T16:56:10.976892+00:00",
+    "exit_code": 0,
+    "log": "$EXPERIMENT/B/evidence/refresh-20261015T165536/7-glowy.log",
+    "started_utc": "2026-10-15T16:56:10.898175+00:00"
+  }
+]

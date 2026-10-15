@@ -1,0 +1,28 @@
+{
+  "adapted_function_sha256": "6fe2266372ddfb564cbb36d9c451f3c100411e54166a4c46533f7299626dd54d",
+  "condition": "s1-native-nine-read-only-v1",
+  "counts": {
+    "s1b-main-ownership-off": 69,
+    "s1b-main-ownership-on": 69,
+    "s1b-main-shipping": 5,
+    "s1b-spine-ownership-off": 69,
+    "s1b-spine-ownership-on": 70,
+    "s1b-spine-shipping": 5
+  },
+  "native_nine_tables": [
+    "attributes",
+    "block_values",
+    "constants",
+    "controller_bindings",
+    "controller_cache",
+    "copies",
+    "ir",
+    "params",
+    "returns"
+  ],
+  "native_runs_invoked": 0,
+  "original_guard": "if not isinstance(report.get(\"digest\"), dict) or len(report[\"digest\"]) != 10:",
+  "primary_observer_sha256": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c",
+  "primary_verdicts_preserved": true,
+  "supplemental_guard": "if not isinstance(report.get(\"digest\"), dict) or not (len(report[\"digest\"]) == 10 or set(report[\"digest\"]) == NINE):"
+}

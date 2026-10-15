@@ -1,0 +1,71 @@
+{
+  "builder_target_exists": false,
+  "candidate_hashes": {
+    "$EXPERIMENT/kit/roundhouse": "03bb88fb6232b30ecfd76a9b92ec52a3d27d9ebba758cc69bd3332d0998187e4",
+    "$EXPERIMENT/receipts/recover-original-layout/roundhouse": "f6c9bd8f0abcbb6e63ccb75d55f04f5ac1392d5b2fbf45c32bbcabb633bfa2c5",
+    "$REVIEW/kit/roundhouse": "03bb88fb6232b30ecfd76a9b92ec52a3d27d9ebba758cc69bd3332d0998187e4"
+  },
+  "current_observer_sha256": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c",
+  "historical_binary": {
+    "build_receipt": "replays/main/receipts/build.json",
+    "path": "$EXPERIMENT/source/target/release/roundhouse",
+    "sha256": "cd72ed016f6e46a5c5ffe6cf87d8bb1262cfb87f1dc7fb72beca80a87efa053b",
+    "size": 29949776
+  },
+  "historical_cleanup": {
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "clean"
+    ],
+    "condition": "parameter-storage-normal-form-20261015-648d5074",
+    "cwd": "$EXPERIMENT/source",
+    "environment": {
+      "CARGO_BUILD_JOBS": "4",
+      "CARGO_HOME": "$EXPERIMENT/cargo-home",
+      "CARGO_NET_OFFLINE": "true",
+      "TMPDIR": "$EXPERIMENT/tmp"
+    },
+    "exit_code": 0,
+    "finished_at": "2026-10-15T13:21:47.888674+00:00",
+    "lock_wrapper": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock"
+    ],
+    "log_sha256": "132df21f904cf64fba96af4d0d3b68ce691aaef1efec059e11d3dbb0e1510905",
+    "source_patch_sha256": "e04460c6f84aa7d8f6ef82fe9fdec1a3bf12c2ccd196f868c965cb942ccd1b7e",
+    "started_at": "2026-10-15T13:21:38.172290+00:00"
+  },
+  "historical_hash_found_in_candidates": false,
+  "historical_path_exists": false,
+  "input_file_count": 733,
+  "input_mismatches": [],
+  "original_target_exists": false,
+  "source_commit": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "d00c5c54eaae996c8c21746480b6e994cb7d1ec9\n"
+  },
+  "source_file_count": 2320,
+  "source_mismatches": [],
+  "source_status": {
+    "command": [
+      "git",
+      "-C",
+      "$EXPERIMENT/source",
+      "status",
+      "--porcelain"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  }
+}

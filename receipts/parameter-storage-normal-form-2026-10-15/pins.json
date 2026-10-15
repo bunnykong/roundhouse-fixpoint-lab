@@ -1,0 +1,61 @@
+{
+  "builder_and_review_report_hashes": [
+    {
+      "bytes": 13113,
+      "narrative_omitted": true,
+      "role": "builder",
+      "sha256": "da6a5f6aec0f461044795aae1b7127d82540e3e425efd17099eea2394a91a246"
+    },
+    {
+      "bytes": 10312,
+      "narrative_omitted": true,
+      "role": "review",
+      "sha256": "43ea78e7fafea2b1dc0b3648bb5a8ea4e03af34c20bb248de976172edd99ce6d"
+    },
+    {
+      "bytes": 579,
+      "narrative_omitted": true,
+      "role": "review-final",
+      "sha256": "67e914c67438130764d01f0c062e33afdfb2ed035be45896b3a40513c4bc0f0f"
+    }
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "fact": 52,
+  "inputs": {
+    "campfire": {
+      "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+    },
+    "chatwoot": {
+      "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+    },
+    "discourse": {
+      "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "max_parallel": 1,
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "forem": {
+      "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+    },
+    "mastodon": {
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "original_data_modified": false,
+  "packaging_native_runs": 0,
+  "public_branch": "parameter-storage-normal-form",
+  "public_source": "9863326b96bc22d2210476a0454ed382bd827af8",
+  "public_source_base": "ff36c138afce581bc77c22a2d3c475ab8d3a3e23",
+  "recorded_condition": "c5-card4-normal-form-648d5074-v1-shared-host",
+  "recorded_source": "d00c5c54eaae996c8c21746480b6e994cb7d1ec9",
+  "recorded_source_base": "648d50744b889a7ef50660eafe6086e7c063f9a2",
+  "reference": "unscored",
+  "ruby_application": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1",
+  "scope": "Campfire and finite native samples on a shared host; reasons remain schedule-dependent.",
+  "verdict": "Confirmed within the registered finite samples and Campfire observer settings."
+}

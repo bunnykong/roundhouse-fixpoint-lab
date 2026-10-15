@@ -1,0 +1,37 @@
+{
+  "condition": "cached-observers-20261015-source-rebuild",
+  "targets": [
+    {
+      "command": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--target-dir",
+        "$EXPERIMENT/target"
+      ],
+      "exit_code": 0,
+      "name": "owned",
+      "seconds": 0.20612862496636808,
+      "target_exists_after": false
+    },
+    {
+      "command": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--target-dir",
+        "$EXPERIMENT/source/target"
+      ],
+      "exit_code": 0,
+      "name": "original-layout",
+      "seconds": 0.20750608295202255,
+      "target_exists_after": false
+    }
+  ]
+}

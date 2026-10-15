@@ -1,0 +1,74 @@
+{
+  "app": "mastodon",
+  "binary": "$EXPERIMENT/bin/roundhouse",
+  "cache_key": "15a93be8b029cb565bfbc08344954158e20b982f44ae696448d94b89e1a94202",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/15/15a93be8b029cb565bfbc08344954158e20b982f44ae696448d94b89e1a94202/attempts/20261015T143058-256b7c1744",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/declarations.jsonl",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/census.jsonl",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/structure.jsonl"
+  },
+  "input": "$EXPERIMENT/inputs/mastodon",
+  "input_pin": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+  "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+  "key": {
+    "binary_sha256": "c5dd74600113701fb54f0180c9a13ed6eca02c661d3e85861c9712685dd69344",
+    "input_manifest_sha256": "c7826eef72b9ef5baf181df6893d86f3372298a9380330ec13f04ef8c441852d",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/declarations.jsonl",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/census.jsonl",
+      "RH_SCHED": "sccq",
+      "RH_SHUFFLE": "1",
+      "RH_SPLICED_WRITER_OWNERSHIP": "1",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/structure.jsonl"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "1",
+    "schema": 1
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "1-v0-a0",
+    "schedule": "1",
+    "verification": false
+  },
+  "started_utc": "2026-10-15T14:30:58.326644+00:00",
+  "tool_sha256": "a0a8ffe7f969584346c69d11791b8a25a8c3ec81380fb04d2323ec1381d53d76",
+  "wrapped_command": [
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/430cfd4917bbfe0b4a5a969b715fb802e88d2190d028ad54bee5a2826021e0a8/request.json"
+  ]
+}

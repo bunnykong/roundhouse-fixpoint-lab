@@ -1,0 +1,7 @@
+{
+  "condition": "cached-observers-20261015-source-rebuild",
+  "fact": 54,
+  "scope": "Available executables and cached observations; historical binary unavailable; light review is sampled.",
+  "text": "On October 15 condition `cached-observers-20261015-source-rebuild`, one tool runs the analyzer under 16 observer settings (four schedules × verification × audit), caches each cell by binary digest, complete input manifest, effective flags and schedule, and checks named claims. The recorded available executables reproduce the observations: all four checks pass, 17 fresh comparisons agree and 41 cached cells cost zero analyzer runs. The strict historical-reproduction verdict remains **inconclusive**, upheld by independent review, because the original executable was not retained; a rebuild from the same source passes every check. The independent light review covers two Campfire settings, their cache hits and one fresh repeat, rather than the full matrix. Value digests ignore reasons; verification re-types every body but compares values only and can hide reason-only differences; audit changes reason bits. Every schedule-independence claim therefore names its observer. The public tool retains its tests, public pins and portable example paths; this is measurement capability, not an analyzer repair.",
+  "verdict": "Inconclusive historical recovery; available-source rebuild and tool checks pass."
+}

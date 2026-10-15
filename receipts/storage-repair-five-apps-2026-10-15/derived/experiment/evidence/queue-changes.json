@@ -1,0 +1,140 @@
+{
+  "action": "Stopped queued invocations with SIGINT (two signals), exit 130; keep active first spine on v1a1 cell to completion/timeout. Requeue identical cells in matched order.",
+  "after_first_cell": {
+    "action": "Stopped remaining original spine-on Discourse matrix after preserving completed unset-v1-a1. The replacement driver runs identical cells in matched order.",
+    "captures": [
+      {
+        "launch_receipt": "$WORKSPACE/phase2/observers/cache/capture/744105ba6c93c6dbea9d930ebfbf1932a1b10606ec28225177731c6220dea820/launch.json",
+        "raw_artifacts": {
+          "launch.json": 4311,
+          "request.json": 1510
+        },
+        "setting": {
+          "audit": true,
+          "name": "unset-v0-a1",
+          "schedule": "unset",
+          "verification": false
+        },
+        "status": "interrupted; no completed observation"
+      }
+    ],
+    "exit_code": 130,
+    "session": 62985,
+    "time_utc": "2026-10-15T15:59:43.880244+00:00"
+  },
+  "receipts": [
+    {
+      "binary": "$EXPERIMENT/B/main-roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/706507f35ac87d374a831fc146d97064c7f1de4f17bc7f728523d92af17d3565/declarations.jsonl",
+        "RH_ERRGATE": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FIXPOINT_VERIFY": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_PARAMETER_REASON_CONSERVE": "1",
+        "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+        "RH_PRECISION_CENSUS": "1",
+        "RH_PROVENANCE_AUDIT": "1",
+        "RH_PROVENANCE_LIFT": "1",
+        "RH_PROVENANCE_PIDENT": "1",
+        "RH_PROVENANCE_READER_VIEW": "1",
+        "RH_PUBLIC_INPUT": "1",
+        "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/706507f35ac87d374a831fc146d97064c7f1de4f17bc7f728523d92af17d3565/census.jsonl",
+        "RH_SCHED": "sccq",
+        "RH_SKIP_RETURN_STABILIZE": "1",
+        "RH_SPLICED_WRITER_OWNERSHIP": "1",
+        "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/706507f35ac87d374a831fc146d97064c7f1de4f17bc7f728523d92af17d3565/structure.jsonl"
+      },
+      "launch_receipt": "$WORKSPACE/phase2/observers/cache/capture/706507f35ac87d374a831fc146d97064c7f1de4f17bc7f728523d92af17d3565/launch.json",
+      "native_stdout_or_stderr": false,
+      "setting": {
+        "audit": true,
+        "name": "unset-v1-a1",
+        "schedule": "unset",
+        "verification": true
+      },
+      "status": "interrupted while waiting for Discourse serial lock; no analyzer launch"
+    },
+    {
+      "binary": "$EXPERIMENT/bin/roundhouse",
+      "flags": {
+        "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/c1f21ab48d00a23251ed9e25bbdadafe505f0e93d3cc6225e9def083362b944f/declarations.jsonl",
+        "RH_ERRGATE": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FIXPOINT_VERIFY": "1",
+        "RH_PRECISION_CENSUS": "1",
+        "RH_PROVENANCE_AUDIT": "1",
+        "RH_PUBLIC_INPUT": "1",
+        "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/c1f21ab48d00a23251ed9e25bbdadafe505f0e93d3cc6225e9def083362b944f/census.jsonl",
+        "RH_SCHED": "rounds",
+        "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/c1f21ab48d00a23251ed9e25bbdadafe505f0e93d3cc6225e9def083362b944f/structure.jsonl"
+      },
+      "launch_receipt": "$WORKSPACE/phase2/observers/cache/capture/c1f21ab48d00a23251ed9e25bbdadafe505f0e93d3cc6225e9def083362b944f/launch.json",
+      "native_stdout_or_stderr": false,
+      "setting": {
+        "audit": true,
+        "name": "unset-v1-a1",
+        "schedule": "unset",
+        "verification": true
+      },
+      "status": "interrupted while waiting for Discourse serial lock; no analyzer launch"
+    },
+    {
+      "binary": "$EXPERIMENT/bin/roundhouse",
+      "flags": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/5a9febbdca2d1ac7d1a2a5e13a06e4c8bb029ad681a4185023f5b1f879a3b92a/declarations.jsonl",
+        "RH_ERRGATE": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FIXPOINT_VERIFY": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_PARAMETER_REASON_CONSERVE": "1",
+        "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+        "RH_PRECISION_CENSUS": "1",
+        "RH_PROVENANCE_AUDIT": "1",
+        "RH_PROVENANCE_LIFT": "1",
+        "RH_PROVENANCE_PIDENT": "1",
+        "RH_PROVENANCE_READER_VIEW": "1",
+        "RH_PUBLIC_INPUT": "1",
+        "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/5a9febbdca2d1ac7d1a2a5e13a06e4c8bb029ad681a4185023f5b1f879a3b92a/census.jsonl",
+        "RH_SCHED": "sccq",
+        "RH_SKIP_RETURN_STABILIZE": "0",
+        "RH_SPLICED_WRITER_OWNERSHIP": "0",
+        "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/5a9febbdca2d1ac7d1a2a5e13a06e4c8bb029ad681a4185023f5b1f879a3b92a/structure.jsonl"
+      },
+      "launch_receipt": "$WORKSPACE/phase2/observers/cache/capture/5a9febbdca2d1ac7d1a2a5e13a06e4c8bb029ad681a4185023f5b1f879a3b92a/launch.json",
+      "native_stdout_or_stderr": false,
+      "setting": {
+        "audit": true,
+        "name": "unset-v1-a1",
+        "schedule": "unset",
+        "verification": true
+      },
+      "status": "interrupted while waiting for Discourse serial lock; no analyzer launch"
+    }
+  ],
+  "second_reorder": {
+    "exit_code": 0,
+    "new_driver_receipt": "$EXPERIMENT/B/evidence/discourse-driver.json",
+    "old_driver_receipt": "$EXPERIMENT/B/evidence/discourse-driver-previous-20261015T164411.json",
+    "reason": "V0A0 completed all four schedules for both ownership settings on spine and main. Stop original order before audit-on spine cells and resume V1A0 ownership-off first. The old driver calls any signal interruption outer-budget; this event is a deliberate priority reorder.",
+    "session": 3946,
+    "time_utc": "2026-10-15T16:44:11.795408+00:00"
+  },
+  "sessions": [
+    86342,
+    52953,
+    56307
+  ],
+  "time_utc": "2026-10-15T15:55:36.910565+00:00"
+}

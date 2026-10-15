@@ -1,0 +1,19 @@
+{
+  "build_stamp": "648d5074",
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "condition": "cached-observers-20261015-source-rebuild",
+  "explanation": "historical binary was built before its source commit, at parent HEAD; restore its build stamp without modifying source",
+  "started_utc": "2026-10-15T14:24:05.014771+00:00"
+}

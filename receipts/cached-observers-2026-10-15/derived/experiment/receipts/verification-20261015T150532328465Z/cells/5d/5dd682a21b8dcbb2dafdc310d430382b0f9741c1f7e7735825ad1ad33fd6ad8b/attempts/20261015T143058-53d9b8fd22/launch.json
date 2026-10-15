@@ -1,0 +1,72 @@
+{
+  "app": "chatwoot",
+  "binary": "$EXPERIMENT/bin/roundhouse",
+  "cache_key": "5dd682a21b8dcbb2dafdc310d430382b0f9741c1f7e7735825ad1ad33fd6ad8b",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/5d/5dd682a21b8dcbb2dafdc310d430382b0f9741c1f7e7735825ad1ad33fd6ad8b/attempts/20261015T143058-53d9b8fd22",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/declarations.jsonl",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/census.jsonl",
+    "RH_SCHED": "sccq",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/structure.jsonl"
+  },
+  "input": "$EXPERIMENT/inputs/chatwoot",
+  "input_pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+  "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+  "key": {
+    "binary_sha256": "c5dd74600113701fb54f0180c9a13ed6eca02c661d3e85861c9712685dd69344",
+    "input_manifest_sha256": "a9a2c48f8752fda01212b82793ec76b4415d0fe121b8b266b24987d0fe8eda37",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/declarations.jsonl",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/census.jsonl",
+      "RH_SCHED": "sccq",
+      "RH_SPLICED_WRITER_OWNERSHIP": "1",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/structure.jsonl"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "repeat",
+    "schema": 1
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "repeat-v0-a0",
+    "schedule": "repeat",
+    "verification": false
+  },
+  "started_utc": "2026-10-15T14:30:58.662287+00:00",
+  "tool_sha256": "a0a8ffe7f969584346c69d11791b8a25a8c3ec81380fb04d2323ec1381d53d76",
+  "wrapped_command": [
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/10b500b97adee439269cdf558a886591117cc38c828cf7cfc04aa60ce9f6ef15/request.json"
+  ]
+}

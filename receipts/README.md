@@ -101,3 +101,17 @@ Saved reducers check retained evidence; publication added no native analyzer run
 | [fingerprint-six-edit-gates](fingerprint-six-edit-gates-2026-10-15/README.md) | Inconclusive: six audits pass; candidate cost replication is absent; review upheld. | [F48](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f48) |
 | [absorption-residual-observer](absorption-residual-observer-2026-10-15/README.md) | Killed observer coverage; review upheld and added a production residual-order witness. | [F49](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f49) |
 | [reason-emission-storage-controls](reason-emission-storage-controls-2026-10-15/README.md) | Emission/census confirmations bounded; settlement comparison killed but causality untested; review upheld. | [F50](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f50) |
+
+## October 15 evening references
+
+These separately pinned, unscored conditions retain confirmations, kills and incomplete observations.
+
+| Fact | Measurement | Receipt |
+| --- | --- | --- |
+| [F51](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f51) | ownership pending composition | [receipt](ownership-pending-composition-2026-10-15/README.md) |
+| [F52](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f52) | parameter storage normal form | [receipt](parameter-storage-normal-form-2026-10-15/README.md) |
+| [F53](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f53) | ownership generalization | [receipt](ownership-generalization-2026-10-15/README.md) |
+| [F54](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f54) | cached observers | [receipt](cached-observers-2026-10-15/README.md) |
+| [F55](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f55) | storage repair five apps | [receipt](storage-repair-five-apps-2026-10-15/README.md) |
+
+The [cached observer tool](../tools/observers/README.md) includes public pins, example paths and its original tests.

@@ -1,0 +1,26 @@
+{
+  "build_environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target"
+  },
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "condition": "cached-observers-20261015-source-rebuild",
+  "cwd": "$EXPERIMENT/source",
+  "elapsed_seconds": 105.36716004193295,
+  "exit_code": 0,
+  "started_utc": "2026-10-15T14:14:56.300792+00:00"
+}

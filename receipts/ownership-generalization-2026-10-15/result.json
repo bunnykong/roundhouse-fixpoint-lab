@@ -1,0 +1,7 @@
+{
+  "condition": "ownership-generalization-20261015-f78d995f",
+  "fact": 53,
+  "scope": "Three public apps, four schedules and 12 matched pairs; mechanism only.",
+  "text": "On October 15 condition `ownership-generalization-20261015-f78d995f`, declared writer ownership is **killed as an attribution-only repair** on Forem `cd665002`, Chatwoot `9f920b54` and Mastodon `163f96ce`: all 12 matched baseline/ownership pairs change value digests, excluding the copy-state digest from the value gate. Independent review upholds the kill and reproduces all 24 native runs. The ownership variant skips the return copy and its alias-registration path, suppressing contribution paths rather than only changing who receives credit. These observations do not isolate which skipped effect causes each changed type. The result establishes no runtime unsoundness and includes no row-by-row classification or follow-up design claim.",
+  "verdict": "Killed: all 12 matched pairs change values."
+}

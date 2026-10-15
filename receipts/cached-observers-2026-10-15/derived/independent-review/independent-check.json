@@ -1,0 +1,198 @@
+{
+  "all_raw_artifact_hashes_checked": true,
+  "cells": [
+    {
+      "all_rows_match_historical": true,
+      "all_ten_raw_digests_match_historical": true,
+      "audit": "off",
+      "native_exit": 0,
+      "receipt": "$REVIEW/cache/objects/8d/8d2908c4dc49dc39b2271ddd6a6c812acb579c577eeea001c4b135f2710a2ee1/attempts/20261015T151806-816b051dd2/result.json",
+      "row_count": 4808,
+      "schedule": "1",
+      "verification": "off"
+    },
+    {
+      "all_rows_match_historical": true,
+      "all_ten_raw_digests_match_historical": true,
+      "audit": "off",
+      "native_exit": 0,
+      "receipt": "$REVIEW/cache/objects/b6/b683281a3b23f239eb74ac307537ef6aeec817c0e0ee35f5eee7a05a7dead408/attempts/20261015T151803-6cc9dda055/result.json",
+      "row_count": 4808,
+      "schedule": "unset",
+      "verification": "off"
+    }
+  ],
+  "commands": "$REVIEW/receipts/replay-20261015T151803Z/commands.json",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "exact_delta": [
+    {
+      "identity": {
+        "emit_body": {
+          "declaration": "Opengraph::Fetch#Instance::request",
+          "kind": "Seq",
+          "occurrence": 0,
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 1170,
+            "file": 20,
+            "start": 742
+          }
+        },
+        "site": {
+          "path": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 792,
+            "file": 20,
+            "start": 789
+          }
+        }
+      },
+      "left": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 6
+      },
+      "right": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 2
+      }
+    },
+    {
+      "identity": {
+        "emit_body": {
+          "declaration": "Opengraph::Fetch#Instance::request",
+          "kind": "Seq",
+          "occurrence": 0,
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 1170,
+            "file": 20,
+            "start": 742
+          }
+        },
+        "site": {
+          "path": [
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 802,
+            "file": 20,
+            "start": 799
+          }
+        }
+      },
+      "left": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 6
+      },
+      "right": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 2
+      }
+    },
+    {
+      "identity": {
+        "emit_body": {
+          "declaration": "Opengraph::Fetch#Instance::request",
+          "kind": "Seq",
+          "occurrence": 0,
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 1170,
+            "file": 20,
+            "start": 742
+          }
+        },
+        "site": {
+          "path": [
+            0,
+            1,
+            0,
+            3,
+            3,
+            0,
+            0
+          ],
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 833,
+            "file": 20,
+            "start": 830
+          }
+        }
+      },
+      "left": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 6
+      },
+      "right": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 2
+      }
+    },
+    {
+      "identity": {
+        "emit_body": {
+          "declaration": "Opengraph::Fetch#Instance::request",
+          "kind": "Seq",
+          "occurrence": 0,
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 1170,
+            "file": 20,
+            "start": 742
+          }
+        },
+        "site": {
+          "path": [
+            0,
+            1,
+            0,
+            4,
+            0,
+            1,
+            1
+          ],
+          "source": "./app/models/opengraph/fetch.rb",
+          "span": {
+            "end": 907,
+            "file": 20,
+            "start": 904
+          }
+        }
+      },
+      "left": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 6
+      },
+      "right": {
+        "type_hash": "fcb3c854b89ee33e",
+        "untyped_kinds": 2
+      }
+    }
+  ],
+  "fresh_observations_match": true,
+  "fresh_setting": "1-v0-a0",
+  "historical_condition": "parameter-storage-normal-form-20261015-648d5074",
+  "missing_identities": 0,
+  "native_attempts_by_step": {
+    "baseline": 2,
+    "claims": 0,
+    "claims-after-fresh": 0,
+    "fresh": 1,
+    "warm": 0
+  },
+  "no_other_schedules_rerun": true,
+  "type_hash_differences": 0
+}

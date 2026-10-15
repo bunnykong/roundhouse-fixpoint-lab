@@ -1,0 +1,207 @@
+{
+  "claims": [
+    {
+      "apps": [
+        "campfire"
+      ],
+      "expected": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "1eb86805e3879836",
+        "constants": "fec6965e2c5b1d6f",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "38d835f4e97c9fc2",
+        "copies": "dde611b1c4e15a4d",
+        "ir": "6559eeefe75fb4d9",
+        "params": "f2371f5b9ae5d8a1",
+        "returns": "8d67b8f6feca22c8",
+        "side_table": "d8300040c6a26ce8"
+      },
+      "field": "value_digests",
+      "kind": "equals",
+      "name": "check1-recorded-composition-values",
+      "settings": [
+        "unset-v1-a1",
+        "1-v1-a1",
+        "2-v1-a1",
+        "repeat-v1-a1"
+      ]
+    },
+    {
+      "apps": [
+        "campfire"
+      ],
+      "baseline": "unset-v0-a0",
+      "expected": {
+        "changes": [
+          {
+            "identity": {
+              "emit_body": {
+                "declaration": "Opengraph::Fetch#Instance::request",
+                "kind": "Seq",
+                "occurrence": 0,
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 1170,
+                  "file": 20,
+                  "start": 742
+                }
+              },
+              "site": {
+                "path": [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0
+                ],
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 792,
+                  "file": 20,
+                  "start": 789
+                }
+              }
+            },
+            "left": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 6
+            },
+            "right": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 2
+            }
+          },
+          {
+            "identity": {
+              "emit_body": {
+                "declaration": "Opengraph::Fetch#Instance::request",
+                "kind": "Seq",
+                "occurrence": 0,
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 1170,
+                  "file": 20,
+                  "start": 742
+                }
+              },
+              "site": {
+                "path": [
+                  0,
+                  1,
+                  0,
+                  2,
+                  0
+                ],
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 802,
+                  "file": 20,
+                  "start": 799
+                }
+              }
+            },
+            "left": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 6
+            },
+            "right": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 2
+            }
+          },
+          {
+            "identity": {
+              "emit_body": {
+                "declaration": "Opengraph::Fetch#Instance::request",
+                "kind": "Seq",
+                "occurrence": 0,
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 1170,
+                  "file": 20,
+                  "start": 742
+                }
+              },
+              "site": {
+                "path": [
+                  0,
+                  1,
+                  0,
+                  3,
+                  3,
+                  0,
+                  0
+                ],
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 833,
+                  "file": 20,
+                  "start": 830
+                }
+              }
+            },
+            "left": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 6
+            },
+            "right": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 2
+            }
+          },
+          {
+            "identity": {
+              "emit_body": {
+                "declaration": "Opengraph::Fetch#Instance::request",
+                "kind": "Seq",
+                "occurrence": 0,
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 1170,
+                  "file": 20,
+                  "start": 742
+                }
+              },
+              "site": {
+                "path": [
+                  0,
+                  1,
+                  0,
+                  4,
+                  0,
+                  1,
+                  1
+                ],
+                "source": "./app/models/opengraph/fetch.rb",
+                "span": {
+                  "end": 907,
+                  "file": 20,
+                  "start": 904
+                }
+              }
+            },
+            "left": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 6
+            },
+            "right": {
+              "type_hash": "fcb3c854b89ee33e",
+              "untyped_kinds": 2
+            }
+          }
+        ],
+        "left_only": [],
+        "right_only": []
+      },
+      "field": "reason_rows",
+      "kind": "reason_delta",
+      "name": "check2-exact-four-reason-rows",
+      "settings": [
+        "1-v0-a0"
+      ]
+    }
+  ],
+  "condition": "cached-observers-20261015-source-rebuild",
+  "source_receipt": "agents/parameter-storage-normal-form/replays/main/receipts/summary.json",
+  "source_sha256": "46a9a52eb8086e50f710bebf06c1cda1a30cf7c2b1ebc77e33134983a3000200"
+}

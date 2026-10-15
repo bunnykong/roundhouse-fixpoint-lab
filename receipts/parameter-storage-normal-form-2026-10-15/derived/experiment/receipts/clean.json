@@ -1,0 +1,25 @@
+{
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "clean"
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "cwd": "$EXPERIMENT/source",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "TMPDIR": "$EXPERIMENT/tmp"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-10-15T13:09:42.784290+00:00",
+  "lock_wrapper": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock"
+  ],
+  "log_sha256": "e7b53904326250771aad3c39e0505a7c5f13f53c1362a4b07fea5588ec61c8b6",
+  "source_patch_sha256": "e04460c6f84aa7d8f6ef82fe9fdec1a3bf12c2ccd196f868c965cb942ccd1b7e",
+  "started_at": "2026-10-15T13:09:42.550892+00:00"
+}

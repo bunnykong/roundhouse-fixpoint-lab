@@ -1,0 +1,7 @@
+{
+  "condition": "ownership-pending-composition-20261015-e248de81",
+  "fact": 51,
+  "scope": "Campfire only; 36 native law samples; no runtime value-loss claim.",
+  "text": "On October 15 condition `ownership-pending-composition-20261015-e248de81`, composing declared writer ownership (F44) with Pending as an identity (F45) keeps all ten Campfire `90b33002` value digests equal across unset/1/2/independent-repeat with verification and audit on. The composition is nevertheless **killed by its storage-law gate**: stored Array and Hash contents arrive unnormalized, yielding 177 idempotence failures among 1,296 pairs and six Pending-identity failures among 36 samples, exit 101. Independent review upholds the kill and reproduces the counts under every requested schedule. It also shows that audit and verification can each change observed reasons. F45 already records these counts; this is the composition experiment itself. Scope is Campfire and the finite native law samples; exact-storage inequality establishes neither runtime value loss nor reason-level schedule independence.",
+  "verdict": "Killed: value equality passes, storage laws fail."
+}

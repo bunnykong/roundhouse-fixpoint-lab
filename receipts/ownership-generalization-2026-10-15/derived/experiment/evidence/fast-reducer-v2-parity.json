@@ -1,0 +1,32 @@
+{
+  "ended_utc": "2026-10-15T12:26:04.391677+00:00",
+  "fast_module_sha256": "14e794ead86934b4402ca7f2b88541428a3aaaf675f1036d3cfdba5f39a64af7",
+  "original_module_sha256": "d4b8ee9073b740406bd2daf794327c8ad90c5a60c927257f7268c13ca990a262",
+  "runs": {
+    "a/unset": {
+      "checks": {
+        "compact_equal": true,
+        "focus.jsonl": true,
+        "structure-focus.jsonl": true
+      },
+      "source": "$EXPERIMENT/runs/a/forem/unset"
+    },
+    "baseline/1": {
+      "checks": {
+        "compact_equal": true,
+        "focus.jsonl": true,
+        "structure-focus.jsonl": true
+      },
+      "source": "$EXPERIMENT/runs/baseline/forem/1"
+    },
+    "baseline/unset": {
+      "checks": {
+        "compact_equal": true,
+        "focus.jsonl": true,
+        "structure-focus.jsonl": true
+      },
+      "source": "$EXPERIMENT/runs/baseline/forem/unset"
+    }
+  },
+  "started_utc": "2026-10-15T12:24:53.709932+00:00"
+}

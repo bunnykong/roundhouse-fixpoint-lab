@@ -1,0 +1,111 @@
+{
+  "H1": "killed",
+  "H2": "killed",
+  "apps": {
+    "forem": {
+      "candidate_all_spliced_identity_equal": true,
+      "candidate_paired_spliced_identity_equal": true,
+      "complete": true,
+      "matched_value_changes": {
+        "1": {
+          "controller_cache": [
+            "17249b50486c058d",
+            "0faf069b52d93c13"
+          ],
+          "ir": [
+            "ee02e83e52ad29c8",
+            "bd2a38c63c42ade4"
+          ],
+          "returns": [
+            "af1aa32e0da79356",
+            "3ef77ed1f8f0987e"
+          ]
+        },
+        "2": {
+          "controller_cache": [
+            "26129619cce344fe",
+            "4ff7009506d2bc83"
+          ],
+          "ir": [
+            "d905e06d8d9b9193",
+            "8de45751a787493b"
+          ],
+          "returns": [
+            "d85e72413a2e4084",
+            "dc4fa7d48526008e"
+          ]
+        },
+        "repeat-unset": {
+          "controller_cache": [
+            "ee5c8b7922290c39",
+            "cc25425cb12e36d9"
+          ],
+          "ir": [
+            "9f305480ee42ac06",
+            "9fcdaf0398e40b1a"
+          ],
+          "returns": [
+            "9dcb81382f7a0509",
+            "78989995a69cc9a1"
+          ]
+        },
+        "unset": {
+          "controller_cache": [
+            "ee5c8b7922290c39",
+            "cc25425cb12e36d9"
+          ],
+          "ir": [
+            "9f305480ee42ac06",
+            "9fcdaf0398e40b1a"
+          ],
+          "returns": [
+            "9dcb81382f7a0509",
+            "78989995a69cc9a1"
+          ]
+        }
+      },
+      "paired_targets": 24,
+      "receipt": "$EXPERIMENT/evidence/forem-interim/audit/forem.json",
+      "removed_route_counts": {
+        "1": 57,
+        "2": 57,
+        "repeat-unset": 57,
+        "unset": 57
+      },
+      "spliced_targets": 160
+    }
+  },
+  "census_comparator_parity": "$EXPERIMENT/evidence/forem-interim/f31-comparator-parity.json",
+  "condition": "ownership-generalization-20261015-f78d995f",
+  "ended_utc": "2026-10-15T12:49:07.801809+00:00",
+  "incomplete": [],
+  "kills": [
+    {
+      "app": "forem",
+      "details": "$EXPERIMENT/evidence/forem-interim/audit/forem.json",
+      "gate": "changed value digest",
+      "schedule": "unset"
+    },
+    {
+      "app": "forem",
+      "details": "$EXPERIMENT/evidence/forem-interim/audit/forem.json",
+      "gate": "changed value digest",
+      "schedule": "1"
+    },
+    {
+      "app": "forem",
+      "details": "$EXPERIMENT/evidence/forem-interim/audit/forem.json",
+      "gate": "changed value digest",
+      "schedule": "2"
+    },
+    {
+      "app": "forem",
+      "details": "$EXPERIMENT/evidence/forem-interim/audit/forem.json",
+      "gate": "changed value digest",
+      "schedule": "repeat-unset"
+    }
+  ],
+  "protocol_sha256": "41dcd7afcde56210a2237a9e0b943d5a11afaea90847364462c7f52f9e830be9",
+  "started_utc": "2026-10-15T12:48:36.882316+00:00",
+  "verdict": "killed"
+}

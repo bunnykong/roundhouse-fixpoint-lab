@@ -86,3 +86,10 @@ The [oracle](oracle/README.md) distinguishes witnessed soundness from proofs; th
 
 Roundhouse credit and derivative-source attribution are in [NOTICE](NOTICE). The license is [Apache-2.0](LICENSE).
 The public applications and Mathlib dependencies are fetched separately under their respective licenses.
+
+## October 15 evening observations
+
+The [five evening references](receipts/README.md#october-15-evening-references) cover the killed storage composition,
+its bounded normal-form repair, negative ownership generalization, explicit observers and the partial five-app grid.
+The [cached observer tool](tools/observers/README.md) retains its fourteen tests and public pins.
+These are research references; they close no whole-program inference or replay frontier.

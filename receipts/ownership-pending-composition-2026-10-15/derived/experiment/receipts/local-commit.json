@@ -1,0 +1,13 @@
+{
+  "branch": "ownership-pending-composition",
+  "commit": "648d50744b889a7ef50660eafe6086e7c063f9a2",
+  "files": [
+    "src/analyze/fixpoint_check.rs",
+    "src/analyze/handoff.rs",
+    "src/analyze/harvest_return.rs",
+    "src/analyze/mod.rs",
+    "src/analyze/parameter_conservation/tests.rs",
+    "src/analyze/sccq.rs"
+  ],
+  "metadata": "commit 648d50744b889a7ef50660eafe6086e7c063f9a2\nAuthor:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nAuthorDate: Thu Oct 15 06:26:22 2026 -0600\nCommit:     bunnykong <268838774+bunnykong@users.noreply.github.com>\nCommitDate: Thu Oct 15 06:26:22 2026 -0600\n\n    Experiment: compose declared ownership and pending identity\n    \n    Port the gated spliced-copy ownership and return-stabilization controls onto\n    provenance's two-level pending identity and reader view. Adapt the read-only census\n    to existing declaration owners and spans. Add isolated annotation merging\n    and reason-aware scheduler fingerprint diagnostics.\n    \n    Append native Bottom regression, extended storage-law census and annotation\n    contracts, preserving the original tests and the observed counterexamples.\n    \n    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n"
+}

@@ -1,0 +1,42 @@
+{
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse",
+    "--example",
+    "producer_reason_sound_types"
+  ],
+  "condition": "ownership-pending-composition-20261015-e248de81",
+  "cwd": "$EXPERIMENT/source",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "4.0.7"
+  },
+  "protocol_sha256": "aac23381912998691e6825a2515e9c2a637fd88904346641dc4c326a956bfcd1",
+  "source_diff_sha256": "2d46c4faa52f85aa96768fc52655d9d20af233689d1c87270bea5dcc951162df",
+  "source_head": "e248de81c331a21db5b0d87dcccf45d624cd3132",
+  "started_utc": "2026-10-15T12:07:54.987810+00:00",
+  "wrapped_command": [
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse",
+    "--example",
+    "producer_reason_sound_types"
+  ]
+}

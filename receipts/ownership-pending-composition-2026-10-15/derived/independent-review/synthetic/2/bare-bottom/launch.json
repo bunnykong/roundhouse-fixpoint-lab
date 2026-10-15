@@ -1,0 +1,52 @@
+{
+  "command": [
+    "$REVIEW/bin/producer_reason_sound_types",
+    "$REVIEW/synthetic/bare-bottom",
+    "$REVIEW/selection.json"
+  ],
+  "condition": "ownership-pending-composition-20261015-e248de81",
+  "cwd": "$REVIEW",
+  "driver_sha256": "7c794101fd8d0e0967cea7f16ff799ed2cf54819672447d5637caa019ecee801",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$REVIEW/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$REVIEW/target",
+    "PROVENANCE_AUDIT_PATH": "$REVIEW/receipts/synthetic/2/bare-bottom/audit.json",
+    "RBENV_VERSION": "4.0.7",
+    "RH_BRK_ALLARMS": "1",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PROVENANCE_AUDIT": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "2",
+    "RH_SKIP_RETURN_STABILIZE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "SOUND_MISSING": "1",
+    "TMPDIR": "$REVIEW/tmp"
+  },
+  "protocol_sha256": "aac23381912998691e6825a2515e9c2a637fd88904346641dc4c326a956bfcd1",
+  "source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_head": "648d50744b889a7ef50660eafe6086e7c063f9a2",
+  "started_utc": "2026-10-15T12:43:43.800389+00:00",
+  "wrapped_command": [
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "$REVIEW/bin/producer_reason_sound_types",
+    "$REVIEW/synthetic/bare-bottom",
+    "$REVIEW/selection.json"
+  ]
+}

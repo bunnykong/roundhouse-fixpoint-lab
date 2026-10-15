@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "primary_shipping_verdict_stays_invalid": true,
+    "shipping_has_no_invented_side_table": true,
+    "shipping_nine_matches_phaseA_census": true,
+    "shipping_nine_matches_phaseA_values": true,
+    "unchanged_full_ten_reduction": true,
+    "unsupported_successful_writes_stays_null": true
+  },
+  "condition": "s1-native-nine-read-only-v1",
+  "full_field_equality": {
+    "diagnostics": true,
+    "exit_code": true,
+    "law_violation_counts": true,
+    "loops": true,
+    "reason_census": true,
+    "reason_rows": true,
+    "successful_writes": true,
+    "value_digests": true,
+    "verify": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "claims": [
+    {
+      "against": "ownership-control",
+      "apps": [
+        "forem",
+        "chatwoot",
+        "mastodon"
+      ],
+      "expected_by_setting": {
+        "chatwoot/1-v0-a0": [
+          "controller_cache",
+          "copies",
+          "side_table"
+        ],
+        "chatwoot/2-v0-a0": [
+          "controller_cache",
+          "copies",
+          "side_table"
+        ],
+        "chatwoot/repeat-v0-a0": [
+          "controller_cache",
+          "copies",
+          "side_table"
+        ],
+        "chatwoot/unset-v0-a0": [
+          "controller_cache",
+          "copies",
+          "side_table"
+        ],
+        "forem/1-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns"
+        ],
+        "forem/2-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns"
+        ],
+        "forem/repeat-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns"
+        ],
+        "forem/unset-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns"
+        ],
+        "mastodon/1-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "params",
+          "returns",
+          "side_table"
+        ],
+        "mastodon/2-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "params",
+          "returns",
+          "side_table"
+        ],
+        "mastodon/repeat-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns",
+          "side_table"
+        ],
+        "mastodon/unset-v0-a0": [
+          "controller_cache",
+          "copies",
+          "ir",
+          "returns",
+          "side_table"
+        ]
+      },
+      "field": "value_digests",
+      "kind": "changed_keys",
+      "name": "check3-exact-changed-value-tables",
+      "settings": [
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    }
+  ]
+}

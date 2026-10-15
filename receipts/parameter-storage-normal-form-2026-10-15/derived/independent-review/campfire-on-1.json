@@ -1,0 +1,39 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "bash",
+    "$REVIEW/probe",
+    "campfire",
+    "RH_PARAMETER_REASON_CONSERVE=1",
+    "RH_PROVENANCE_PIDENT=1",
+    "RH_PROVENANCE_LIFT=1",
+    "RH_PROVENANCE_READER_VIEW=1",
+    "RH_SPLICED_WRITER_OWNERSHIP=1",
+    "RH_SKIP_RETURN_STABILIZE=1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM=1",
+    "RH_SHUFFLE=1",
+    "RH_FIXPOINT_VERIFY=1",
+    "RH_PROVENANCE_AUDIT=1"
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "cwd": "$REVIEW/campfire/on/1",
+  "environment": {
+    "APPS": "$REVIEW/apps",
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$REVIEW/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "PROBE_BASE": "0",
+    "RBENV_VERSION": "4.0.7",
+    "RH_BIN": "$REVIEW/source/target/release/roundhouse",
+    "TMPDIR": "$REVIEW/tmp"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-10-15T13:33:54.861236+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "report_sha256": "ecf05ff07e2f092a922b52d467bb68dde21924a56f119fb184b3499d7c64747a",
+  "reviewer": "rv-parameter-storage-normal-form",
+  "source_commit": "d00c5c54eaae996c8c21746480b6e994cb7d1ec9",
+  "started_at": "2026-10-15T13:33:52.901554+00:00"
+}

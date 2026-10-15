@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "condition": "cached-observers-20261015-source-rebuild",
+  "cwd": "$EXPERIMENT/source",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "ROUNDHOUSE_COMMIT": "648d5074",
+    "TMPDIR": "$EXPERIMENT/tmp"
+  },
+  "purpose": "attempt exact historical byte recovery with original generated-target layout and precommit version stamp; no tracked source changes",
+  "started_utc": "2026-10-15T14:43:53.171414+00:00",
+  "target_previously_absent": true
+}

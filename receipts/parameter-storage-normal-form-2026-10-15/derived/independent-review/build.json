@@ -1,0 +1,29 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "cwd": "$REVIEW/source",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$REVIEW/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "TMPDIR": "$REVIEW/tmp"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-10-15T13:33:49.980712+00:00",
+  "log_sha256": "7076e725ad9d9d17e8198de7979e30ba8ae50118b5de724acfc8b2348408d243",
+  "reviewer": "rv-parameter-storage-normal-form",
+  "source_commit": "d00c5c54eaae996c8c21746480b6e994cb7d1ec9",
+  "started_at": "2026-10-15T13:32:11.589371+00:00"
+}

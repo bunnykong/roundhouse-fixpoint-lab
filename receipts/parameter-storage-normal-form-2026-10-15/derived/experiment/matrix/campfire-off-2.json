@@ -1,0 +1,43 @@
+{
+  "command": [
+    "env",
+    "RH_BIN=$EXPERIMENT/source/target/release/roundhouse",
+    "APPS=$EXPERIMENT/apps",
+    "PROBE_BASE=0",
+    "RBENV_VERSION=4.0.7",
+    "bash",
+    "-c",
+    "bash \"$1\" campfire \"${@:2}\" > report.json",
+    "bash",
+    "$EXPERIMENT/probe",
+    "RH_FIXPOINT_VERIFY=0",
+    "RH_PROVENANCE_AUDIT=0",
+    "RH_REASON_SITE_CENSUS=$EXPERIMENT/replays/main/campfire/off/2/census.jsonl",
+    "RH_PARAMETER_REASON_CONSERVE=1",
+    "RH_PROVENANCE_PIDENT=1",
+    "RH_PROVENANCE_LIFT=1",
+    "RH_PROVENANCE_READER_VIEW=1",
+    "RH_SPLICED_WRITER_OWNERSHIP=1",
+    "RH_SKIP_RETURN_STABILIZE=1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM=1",
+    "RH_SHUFFLE=2"
+  ],
+  "condition": "parameter-storage-normal-form-20261015-648d5074",
+  "cwd": "$EXPERIMENT/replays/main/campfire/off/2",
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "TMPDIR": "$EXPERIMENT/tmp"
+  },
+  "exit_code": 0,
+  "finished_at": "2026-10-15T13:16:35.500561+00:00",
+  "lock_wrapper": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock"
+  ],
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_patch_sha256": "e04460c6f84aa7d8f6ef82fe9fdec1a3bf12c2ccd196f868c965cb942ccd1b7e",
+  "started_at": "2026-10-15T13:16:34.789685+00:00"
+}

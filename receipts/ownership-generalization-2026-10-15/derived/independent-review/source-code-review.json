@@ -1,0 +1,13 @@
+{
+  "compiler": "$EXPERIMENT/source",
+  "conclusions": [
+    "Only RH_SPLICED_WRITER_OWNERSHIP activates A; the only conditional site skips both the value copy and alias registration.",
+    "Structural type hashes canonicalize union variants and record field order and ignore allocation IDs.",
+    "Return-table keys and values are ordered through a BTreeMap; copies is a separate category.",
+    "Digest differences establish failure of the declared preservation criterion, not runtime unsoundness or semantic inequality of every changed type."
+  ],
+  "copy_intervention": "src/analyze/mod.rs:5324",
+  "digest_hash": "src/analyze/fixpoint_check.rs:174",
+  "return_table": "src/analyze/fixpoint_check.rs:503",
+  "skips_alias_registration_at": "src/analyze/mod.rs:5341"
+}

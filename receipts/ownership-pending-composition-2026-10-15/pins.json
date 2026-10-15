@@ -1,0 +1,61 @@
+{
+  "builder_and_review_report_hashes": [
+    {
+      "bytes": 11052,
+      "narrative_omitted": true,
+      "role": "builder",
+      "sha256": "c39dfe3dd699e91b4257c16d74a7696714a520166aa4fb908f514c36369f633f"
+    },
+    {
+      "bytes": 9969,
+      "narrative_omitted": true,
+      "role": "review",
+      "sha256": "118b97027e1b741e6a087cf5cd224a13323e6c8d2ab2113862f901eb3f838620"
+    },
+    {
+      "bytes": 578,
+      "narrative_omitted": true,
+      "role": "review-final",
+      "sha256": "7239c95f694708285d7bbab94c7bd627e660e95d6abce490d4cb1670facfb0b6"
+    }
+  ],
+  "condition": "ownership-pending-composition-20261015-e248de81",
+  "fact": 51,
+  "inputs": {
+    "campfire": {
+      "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+    },
+    "chatwoot": {
+      "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+    },
+    "discourse": {
+      "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "max_parallel": 1,
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "forem": {
+      "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+    },
+    "mastodon": {
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "original_data_modified": false,
+  "packaging_native_runs": 0,
+  "public_branch": "ownership-pending-composition",
+  "public_source": "ff36c138afce581bc77c22a2d3c475ab8d3a3e23",
+  "public_source_base": "2e51b2aa047a9544c4b4b05396da8856fc6237e5",
+  "recorded_condition": "c4c5-compose-20261015-e248de81",
+  "recorded_source": "648d50744b889a7ef50660eafe6086e7c063f9a2",
+  "recorded_source_base": "e248de81c331a21db5b0d87dcccf45d624cd3132",
+  "reference": "unscored",
+  "ruby_application": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1",
+  "scope": "Campfire only; 36 native law samples; no runtime value-loss claim.",
+  "verdict": "Killed: value equality passes, storage laws fail."
+}

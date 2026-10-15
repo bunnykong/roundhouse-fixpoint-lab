@@ -1,0 +1,59 @@
+{
+  "apps": {
+    "campfire": {
+      "paired_targets": 9,
+      "pooled": {
+        "rest": 2,
+        "spliced": 24
+      },
+      "receipt": "$EXPERIMENT/evidence/census-replay/origin-census/campfire.json",
+      "spliced_sets_equal": true,
+      "spliced_targets": 32
+    },
+    "chatwoot": {
+      "paired_targets": 32,
+      "pooled": {
+        "rest": 26,
+        "spliced": 88
+      },
+      "receipt": "$EXPERIMENT/evidence/census-replay/origin-census/chatwoot.json",
+      "spliced_sets_equal": true,
+      "spliced_targets": 268
+    },
+    "discourse": {
+      "paired_targets": 20,
+      "pooled": {
+        "rest": 148,
+        "spliced": 36
+      },
+      "receipt": "$EXPERIMENT/evidence/census-replay/origin-census/discourse.json",
+      "spliced_sets_equal": true,
+      "spliced_targets": 101
+    },
+    "forem": {
+      "paired_targets": 24,
+      "pooled": {
+        "rest": 4,
+        "spliced": 60
+      },
+      "receipt": "$EXPERIMENT/evidence/census-replay/origin-census/forem.json",
+      "spliced_sets_equal": true,
+      "spliced_targets": 160
+    },
+    "mastodon": {
+      "paired_targets": 98,
+      "pooled": {
+        "rest": 32,
+        "spliced": 90
+      },
+      "receipt": "$EXPERIMENT/evidence/census-replay/origin-census/mastodon.json",
+      "spliced_sets_equal": true,
+      "spliced_targets": 659
+    }
+  },
+  "condition": "structure-tools-38403140-s3-public-lab-v1-verify-off",
+  "ended_utc": "2026-10-15T13:24:50.377312+00:00",
+  "posthoc": true,
+  "reason": "registered controller-concerns path filter misses spliced helper modules",
+  "started_utc": "2026-10-15T13:24:13.641062+00:00"
+}

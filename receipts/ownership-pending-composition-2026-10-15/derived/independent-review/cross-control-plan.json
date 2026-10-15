@@ -1,0 +1,14 @@
+{
+  "comparison": "Original c4ab: change only RH_FIXPOINT_VERIFY from 1 to 0; retain RH_PROVENANCE_AUDIT=1.",
+  "condition": "ownership-pending-composition-audit-only-review-20261015-e248de81",
+  "interpretation": "Restored flips support verification as the masking intervention even with audit on. Invariant sites show the audit flag can also mask them. Neither outcome changes the original card law gate.",
+  "question": "Does audit-on also hide the seven historical flips when verification is off?",
+  "registered_utc": "2026-10-15T12:46:35.236532+00:00",
+  "schedules": [
+    "unset",
+    "1",
+    "2",
+    "repeat-unset"
+  ],
+  "source_commit": "648d50744b889a7ef50660eafe6086e7c063f9a2"
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-15T13:11:54.959886+00:00",
+  "clean_exit": 0,
+  "complete_restart": "replays/main/",
+  "completed_native": [
+    "n0-storage_normal_form",
+    "n0-storage_extended_laws",
+    "n0-provenance_lineage_factorial"
+  ],
+  "failure": "macOS Bash 3.2: empty X[@] with set -u stopped the driver before schedule tests",
+  "fix": "Remove set -u from runner. No source, card or test criteria changed.",
+  "preserved": "matrix.log and receipts/"
+}

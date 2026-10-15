@@ -1,0 +1,203 @@
+{
+  "app": "chatwoot",
+  "artifacts": {
+    "census.jsonl": {
+      "bytes": 24110459,
+      "sha256": "352c0e7d2ad553542dcda751083f47d06630e3fa16e146cc7cf592bc1cabc98c"
+    },
+    "declaration-header.json": {
+      "bytes": 3656,
+      "sha256": "207b51ebc0d77911d66abe59e8211bf461ab3d8ec8415db58d456e62fdb998f0"
+    },
+    "declarations.jsonl": {
+      "bytes": 4718355903,
+      "sha256": "fc1cc2be703ce3f431be9a75467ef9fdac88c3851f69b3ee189c7e6b3e8f6eb2"
+    },
+    "launch.json": {
+      "bytes": 3738,
+      "sha256": "8d15e7daec949184ed1faca0d9a9bbc46c8917942b67041682cb2a078cb66802"
+    },
+    "launcher.log": {
+      "bytes": 112,
+      "sha256": "da5e2412f3c7ea3f16f2656e41659de01d7acb20d9da4b8f1381806567cbb867"
+    },
+    "metrics.json": {
+      "bytes": 266,
+      "sha256": "183d20455ac164bf4049ed3cb44bf6d23d983fb9ff612053c9a875195a1cffe1"
+    },
+    "reason-rows.json": {
+      "bytes": 28036921,
+      "sha256": "536482e7e02ff5a68ee9da6d867ddc49442f0401e64dae5676545edd1f6febf2"
+    },
+    "report.json": {
+      "bytes": 5510,
+      "sha256": "6cd59e4523b708b0abbbec5c7dac55a801f6caff7cad8a392b2056b0757557bb"
+    },
+    "request.json": {
+      "bytes": 1235,
+      "sha256": "494d61e3822aef3b8e0be667f5e7844869717b0a59aaecf43fa3e7d0140062d5"
+    },
+    "stderr.log": {
+      "bytes": 1471600,
+      "sha256": "8729680d1806a05e1098f8c3404d55af295fe8baedb1e26788339cb3e3c5b51a"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "structure-header.json": {
+      "bytes": 2780,
+      "sha256": "6828b2c76be9b30c53ead09dd4cc2e03ee2086bb39ecd79cdb72c9e8eed91949"
+    },
+    "structure.jsonl": {
+      "bytes": 880053517,
+      "sha256": "bc9d88268ee3232b9ce1f511d4878483f717005f0a1b65d79eb57e9ca152ab4e"
+    },
+    "successful-writes.json": {
+      "bytes": 3187046,
+      "sha256": "642a44f15bda119fbca352bf32c217de96c0de78413bb4990fd23c20f3afc373"
+    }
+  },
+  "binary": "$EXPERIMENT/bin/roundhouse",
+  "cache_key": "22dd444d5a1045a3ec19f023c1e0166131c42053817ac694e3e87fbab4771861",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/22/22dd444d5a1045a3ec19f023c1e0166131c42053817ac694e3e87fbab4771861/attempts/20261015T142405-4d44b34ade",
+  "ended_utc": "2026-10-15T14:31:52.671884+00:00",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/declarations.jsonl",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/census.jsonl",
+    "RH_SCHED": "sccq",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/structure.jsonl"
+  },
+  "input": "$EXPERIMENT/inputs/chatwoot",
+  "input_pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+  "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+  "key": {
+    "binary_sha256": "c5dd74600113701fb54f0180c9a13ed6eca02c661d3e85861c9712685dd69344",
+    "input_manifest_sha256": "a9a2c48f8752fda01212b82793ec76b4415d0fe121b8b266b24987d0fe8eda37",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/declarations.jsonl",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/census.jsonl",
+      "RH_SCHED": "sccq",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/structure.jsonl"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "unset",
+    "schema": 1
+  },
+  "launcher_exit_code": 0,
+  "metrics": {
+    "cpu_seconds": 96.59921800000001,
+    "cpu_system_seconds": 4.422633,
+    "cpu_user_seconds": 92.176585,
+    "ended_utc": "2026-10-15T14:31:52.661874+00:00",
+    "exit_code": 1,
+    "peak_rss_bytes": 12162334720,
+    "timed_out": false,
+    "wall_seconds": 98.5879605000373
+  },
+  "observations": {
+    "diagnostics": {
+      "error/incompatible_binop": 9,
+      "error/ivar_unresolved": 127,
+      "error/send_dispatch_failed": 75,
+      "error/unsupported": 679,
+      "warning/gradual_untyped": 2105,
+      "warning/missing_preload": 2,
+      "warning/unresolved_type": 1523
+    },
+    "exit_code": 1,
+    "law_violation_counts": null,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 2
+      },
+      "production": {
+        "end": "settled",
+        "round": 4
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 1
+      }
+    },
+    "reason_census": {
+      "bare_untyped": 17385,
+      "missing": 1573,
+      "typed": 151528,
+      "untyped_anywhere": 29917,
+      "untyped_by_provenance": {
+        "gradual": 6134,
+        "pending": 0,
+        "unresolved": 24059
+      }
+    },
+    "reason_rows": {
+      "count": 29917,
+      "file": "reason-rows.json",
+      "sha256": "536482e7e02ff5a68ee9da6d867ddc49442f0401e64dae5676545edd1f6febf2"
+    },
+    "successful_writes": {
+      "count": 7622,
+      "file": "successful-writes.json",
+      "sha256": "642a44f15bda119fbca352bf32c217de96c0de78413bb4990fd23c20f3afc373"
+    },
+    "value_digests": {
+      "attributes": "f6afb2dc21fda6e9",
+      "block_values": "b762b4aedb935a79",
+      "constants": "b6ebd518cd1fecff",
+      "controller_bindings": "b4358d5bc8ae0733",
+      "controller_cache": "72ff355ce79fac0c",
+      "copies": "34f2626cb1543a0b",
+      "ir": "443fcc9d914f5cbf",
+      "params": "d41a6a861523ef13",
+      "returns": "d4654926c2f74fa7",
+      "side_table": "5fecaeaa58ac7ac2"
+    },
+    "verify": null
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "unset-v0-a0",
+    "schedule": "unset",
+    "verification": false
+  },
+  "started_utc": "2026-10-15T14:24:05.798825+00:00",
+  "tool_sha256": "613054be1290e118ef30495a0f899d284faec6c8bd39e863a0b9e0d9fc71e14a",
+  "total_seconds": 466.8674195409985,
+  "valid": true,
+  "wrapped_command": [
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "/opt/homebrew/opt/python@3.12/bin/python3.12",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/4684db77d10e8608a897c8454f29f337048ba072df619e1fdfc0e6b7bf35f558/request.json"
+  ]
+}
