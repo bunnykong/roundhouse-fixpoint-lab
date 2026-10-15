@@ -1,0 +1,368 @@
+{
+  "by_table": {
+    "attributes": {},
+    "block_values": {},
+    "constants": {},
+    "controller_bindings": {},
+    "controller_cache": {
+      "4": 2,
+      "6": 30
+    },
+    "copies": {},
+    "ir": {
+      "2": 6,
+      "2/5": 75,
+      "3b": 110,
+      "3b/5": 71,
+      "4": 179,
+      "5": 17,
+      "6": 45
+    },
+    "params": {
+      "2/5": 38,
+      "3b": 12,
+      "3b/5": 11,
+      "4": 35,
+      "5": 3
+    },
+    "returns": {
+      "2": 4,
+      "2/5": 3,
+      "3b": 13,
+      "3b/5": 1,
+      "4": 14,
+      "5": 4,
+      "6": 4
+    },
+    "side_table": {
+      "2": 17,
+      "2/5": 13,
+      "4": 13,
+      "5": 37
+    }
+  },
+  "condition": "schedule-row-attribution-20261015-ea3ec744",
+  "interventions": {
+    "E": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 2,
+        "ir": 458,
+        "params": 99,
+        "returns": 39,
+        "side_table": 80
+      },
+      "condition": "schedule-row-literal-history-v1",
+      "mechanism": "6",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 678,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 30,
+        "ir": 45,
+        "returns": 4
+      },
+      "removed_original_variance": 79,
+      "total_varying_rows": 678,
+      "unset_repeat_differing_rows": 0,
+      "variant": "E"
+    },
+    "H": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 32,
+        "ir": 393,
+        "params": 87,
+        "returns": 34,
+        "side_table": 80
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 626,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 110,
+        "params": 12,
+        "returns": 9
+      },
+      "removed_original_variance": 131,
+      "total_varying_rows": 626,
+      "unset_repeat_differing_rows": 0,
+      "variant": "H"
+    },
+    "HQ": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 30,
+        "ir": 44,
+        "returns": 3,
+        "side_table": 8
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "3b/2/5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 85,
+      "removed_by_absence_ids": [
+        "ch-0707",
+        "ch-0711"
+      ],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 459,
+        "params": 99,
+        "returns": 40,
+        "side_table": 72
+      },
+      "removed_original_variance": 672,
+      "total_varying_rows": 85,
+      "unset_repeat_differing_rows": 0,
+      "variant": "HQ"
+    },
+    "J": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 30,
+        "ir": 584,
+        "params": 101,
+        "returns": 66,
+        "side_table": 69
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2",
+      "new_varying_rows": 200,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 650,
+      "removed_by_absence_ids": [
+        "ch-0591",
+        "ch-0592",
+        "ch-0593",
+        "ch-0594",
+        "ch-0595"
+      ],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 71,
+        "params": 10,
+        "returns": 7,
+        "side_table": 17
+      },
+      "removed_original_variance": 107,
+      "total_varying_rows": 850,
+      "unset_repeat_differing_rows": 0,
+      "variant": "J"
+    },
+    "JP": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 30,
+        "ir": 450,
+        "params": 70,
+        "returns": 53,
+        "side_table": 64
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2/4",
+      "new_varying_rows": 161,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 506,
+      "removed_by_absence_ids": [
+        "ch-0591",
+        "ch-0592",
+        "ch-0593",
+        "ch-0594",
+        "ch-0595"
+      ],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 174,
+        "params": 35,
+        "returns": 12,
+        "side_table": 28
+      },
+      "removed_original_variance": 251,
+      "total_varying_rows": 667,
+      "unset_repeat_differing_rows": 0,
+      "variant": "JP"
+    },
+    "P": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 30,
+        "ir": 349,
+        "params": 68,
+        "returns": 30,
+        "side_table": 71
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "4",
+      "new_varying_rows": 34,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 514,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 179,
+        "params": 35,
+        "returns": 14,
+        "side_table": 13
+      },
+      "removed_original_variance": 243,
+      "total_varying_rows": 548,
+      "unset_repeat_differing_rows": 0,
+      "variant": "P"
+    },
+    "Q": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 30,
+        "ir": 225,
+        "params": 23,
+        "returns": 16,
+        "side_table": 9
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "2/5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 303,
+      "removed_by_absence_ids": [
+        "ch-0707"
+      ],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 278,
+        "params": 76,
+        "returns": 27,
+        "side_table": 71
+      },
+      "removed_original_variance": 454,
+      "total_varying_rows": 303,
+      "unset_repeat_differing_rows": 0,
+      "variant": "Q"
+    },
+    "R": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 32,
+        "ir": 501,
+        "params": 101,
+        "returns": 34,
+        "side_table": 84
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "5",
+      "new_varying_rows": 32,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 720,
+      "removed_by_absence_ids": [
+        "ch-0707"
+      ],
+      "removed_by_table": {
+        "ir": 22,
+        "params": 3,
+        "returns": 10,
+        "side_table": 2
+      },
+      "removed_original_variance": 37,
+      "total_varying_rows": 752,
+      "unset_repeat_differing_rows": 0,
+      "variant": "R"
+    },
+    "RH": {
+      "app": "chatwoot",
+      "by_table": {
+        "controller_cache": 32,
+        "ir": 320,
+        "params": 78,
+        "returns": 21,
+        "side_table": 83
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b/5",
+      "new_varying_rows": 32,
+      "nonsettled_loops": {},
+      "original_rows": 757,
+      "remaining_original": 502,
+      "removed_by_absence_ids": [
+        "ch-0707",
+        "ch-0711"
+      ],
+      "removed_by_table": {
+        "ir": 203,
+        "params": 26,
+        "returns": 23,
+        "side_table": 3
+      },
+      "removed_original_variance": 255,
+      "total_varying_rows": 534,
+      "unset_repeat_differing_rows": 0,
+      "variant": "RH"
+    }
+  },
+  "pairwise_intersection": {
+    "E+H": 0,
+    "E+HQ": 2,
+    "E+J": 0,
+    "E+JP": 0,
+    "E+P": 0,
+    "E+Q": 2,
+    "E+R": 2,
+    "E+RH": 2,
+    "H+HQ": 131,
+    "H+J": 0,
+    "H+JP": 0,
+    "H+P": 0,
+    "H+Q": 0,
+    "H+R": 0,
+    "H+RH": 131,
+    "HQ+J": 107,
+    "HQ+JP": 251,
+    "HQ+P": 243,
+    "HQ+Q": 454,
+    "HQ+R": 37,
+    "HQ+RH": 255,
+    "J+JP": 103,
+    "J+P": 83,
+    "J+Q": 107,
+    "J+R": 5,
+    "J+RH": 5,
+    "JP+P": 231,
+    "JP+Q": 251,
+    "JP+R": 5,
+    "JP+RH": 5,
+    "P+Q": 243,
+    "P+R": 0,
+    "P+RH": 0,
+    "Q+R": 37,
+    "Q+RH": 37,
+    "R+RH": 37
+  },
+  "primary_mediators": {
+    "2": 27,
+    "2/5": 129,
+    "3b": 135,
+    "3b/5": 83,
+    "4": 243,
+    "5": 61,
+    "6": 79
+  },
+  "rows": 757,
+  "statuses": {
+    "intervention-sensitive": 472,
+    "local-witness": 73,
+    "mixed-intervention": 212
+  },
+  "unlocalized_ids": []
+}

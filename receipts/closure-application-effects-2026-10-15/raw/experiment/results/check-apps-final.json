@@ -1,0 +1,421 @@
+{
+ "apps": [
+  "campfire",
+  "forem",
+  "chatwoot",
+  "mastodon",
+  "discourse"
+ ],
+ "failures": [],
+ "predictions": {
+  "campfire": {
+   "observed": 0,
+   "observed_not_predicted": [],
+   "predicted": 0,
+   "predicted_not_observed": []
+  },
+  "chatwoot": {
+   "observed": 0,
+   "observed_not_predicted": [],
+   "predicted": 0,
+   "predicted_not_observed": []
+  },
+  "discourse": {
+   "observed": 19,
+   "observed_not_predicted": [
+    [
+     "migrations/importer/lib/migrations/importer/name_finder/category_name_finder.rb",
+     27,
+     "E",
+     null
+    ]
+   ],
+   "predicted": 18,
+   "predicted_not_observed": []
+  },
+  "forem": {
+   "observed": 0,
+   "observed_not_predicted": [],
+   "predicted": 0,
+   "predicted_not_observed": []
+  },
+  "mastodon": {
+   "observed": 3,
+   "observed_not_predicted": [],
+   "predicted": 3,
+   "predicted_not_observed": []
+  }
+ },
+ "problems": [],
+ "rows": [
+  {
+   "E_census": {
+    "mode": "entrances",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 15684,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "E_vs_S": [],
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 15684,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_E": [],
+   "I_vs_S": [],
+   "N": [],
+   "app": "campfire",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "E_census": {
+    "mode": "entrances",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 10773,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "E_vs_S": [],
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 10773,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_E": [],
+   "I_vs_S": [],
+   "N": [],
+   "app": "campfire",
+   "setting": "1-v0-a0"
+  },
+  {
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 99632,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_S": [],
+   "N": [],
+   "app": "forem",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 74787,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_S": [],
+   "N": [],
+   "app": "forem",
+   "setting": "1-v0-a0"
+  },
+  {
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 121716,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_S": [],
+   "N": [],
+   "app": "chatwoot",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 89412,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "I_vs_S": [],
+   "N": [],
+   "app": "chatwoot",
+   "setting": "1-v0-a0"
+  },
+  {
+   "E_census": {
+    "mode": "entrances",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 238416,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+   },
+   "E_vs_S": [],
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 3,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 3,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 25,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 238421,
+    "walks_changed_vs_entrances": 23,
+    "walks_changed_vs_legacy": 23
+   },
+   "I_vs_E": [
+    "value_digests"
+   ],
+   "I_vs_S": [
+    "value_digests"
+   ],
+   "N": [],
+   "app": "mastodon",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 3,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 3,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 20,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 195632,
+    "walks_changed_vs_entrances": 16,
+    "walks_changed_vs_legacy": 16
+   },
+   "I_vs_S": [
+    "value_digests"
+   ],
+   "N": [],
+   "app": "mastodon",
+   "setting": "1-v0-a0"
+  },
+  {
+   "E_census": {
+    "mode": "entrances",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 7,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 127,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 357443,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 102
+   },
+   "E_vs_S": [
+    "value_digests",
+    "reason_census"
+   ],
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 12,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 12,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 7,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 3386,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 357443,
+    "walks_changed_vs_entrances": 1688,
+    "walks_changed_vs_legacy": 1790
+   },
+   "I_vs_E": [
+    "value_digests",
+    "diagnostics",
+    "reason_census"
+   ],
+   "I_vs_S": [
+    "value_digests",
+    "diagnostics",
+    "reason_census"
+   ],
+   "N": [],
+   "app": "discourse",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "E_census": {
+    "mode": "entrances",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 0,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 7,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 111,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 272614,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 92
+   },
+   "E_vs_S": [
+    "value_digests",
+    "reason_census"
+   ],
+   "I_census": {
+    "mode": "apply",
+    "sites_applied": 12,
+    "sites_applied_by_consumer": {
+     "argument": 0,
+     "block": 12,
+     "local": 0,
+     "receiver": 0
+    },
+    "sites_entrance": 7,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 2728,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 274937,
+    "walks_changed_vs_entrances": 1352,
+    "walks_changed_vs_legacy": 1450
+   },
+   "I_vs_E": [
+    "value_digests",
+    "diagnostics",
+    "reason_census"
+   ],
+   "I_vs_S": [
+    "value_digests",
+    "diagnostics",
+    "reason_census"
+   ],
+   "N": [],
+   "app": "discourse",
+   "setting": "1-v0-a0"
+  }
+ ],
+ "status": "pass"
+}

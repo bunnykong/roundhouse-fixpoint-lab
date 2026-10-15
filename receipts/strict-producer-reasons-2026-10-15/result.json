@@ -1,0 +1,8 @@
+{
+  "classification": "unscored reference",
+  "condition": "strict-producer-reasons-20261015-ea3ec744",
+  "fact": 56,
+  "native_runs_during_publication": 0,
+  "text": "On October 15 condition `strict-producer-reasons-20261015-ea3ec744`, Pending-strict producers plus reason-aware change checks pass all 207 mandatory Campfire `90b33002` records on compiler `2233e2e7`; independent review upholds the bounded confirmation and the separate generalization failure. The verdict script was corrected and frozen before any run. An `attr_accessor` stub is labeled Unresolved before its matching definition is harvested; callers retain that stale label when change checks compare values alone. Producers instead emit Pending until inputs settle, and change checks compare reasons too. The audit identifies 41 relevant producer sites: 14 stubs, 24 transfers and three strip/re-mint rules; eight bare-Var cases remain deferred. With verification off and audit separately off/on, complete Campfire reason rows agree across unset/1/2/independent-repeat. Forem passes its registered generalization checks; Chatwoot and Mastodon fail value parity, and Discourse is incomplete with an observed failure. Chatwoot's unset control/candidate `ir` digests are `b49a2d63d056da93`/`0e1b938af3af3593`, and `params` are `d7ede1c7606c79af`/`5c3afa7cfbcc6023`, under both off/off and on/on observers. These research-scheduler results do not prove a universal producer law, runtime soundness or general schedule independence; the recursive-slot availability limitation remains.",
+  "verdict": "Bounded Campfire confirmation; larger-app generalization fails."
+}

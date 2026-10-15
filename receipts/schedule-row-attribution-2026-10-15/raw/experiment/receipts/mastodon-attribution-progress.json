@@ -1,0 +1,84 @@
+{
+  "app": "mastodon",
+  "rows": 2915,
+  "primary_sources": {
+    "2/5": 1233,
+    "2": 794,
+    "3b": 214,
+    "5": 603,
+    "unlocalized": 34,
+    "4": 15,
+    "6": 22
+  },
+  "statuses": {
+    "mixed-intervention": 1172,
+    "intervention-sensitive": 1359,
+    "family-inference": 95,
+    "unlocalized": 34,
+    "dependency-path": 9,
+    "local-witness": 246
+  },
+  "by_table": {
+    "attributes": {},
+    "block_values": {},
+    "constants": {},
+    "controller_bindings": {},
+    "controller_cache": {
+      "2/5": 31,
+      "2": 15,
+      "3b": 2,
+      "5": 9
+    },
+    "copies": {},
+    "ir": {
+      "2": 601,
+      "2/5": 818,
+      "5": 394,
+      "3b": 52,
+      "unlocalized": 26,
+      "4": 7,
+      "6": 22
+    },
+    "params": {
+      "2": 50,
+      "2/5": 135,
+      "5": 30,
+      "3b": 11,
+      "unlocalized": 7,
+      "4": 3
+    },
+    "returns": {
+      "2/5": 211,
+      "5": 112,
+      "3b": 149,
+      "2": 93,
+      "unlocalized": 1
+    },
+    "side_table": {
+      "5": 58,
+      "2": 35,
+      "2/5": 38,
+      "4": 5
+    }
+  },
+  "unlocalized_roots": {
+    "ActivityPub::Activity::Create#process_quote": 2,
+    "ActivityPub::InboxesController#safe_prefetched_embed": 1,
+    "ActivityPub::Parser::StatusParser#url": 3,
+    "ActivityPub::ProcessAccountService#mismatching_origin?": 2,
+    "ActivityPub::ProcessAccountService#url": 4,
+    "ActivityPub::ProcessFeaturedCollectionService#url": 3,
+    "ActivityPub::ProcessStatusUpdateService#handle_explicit_update!": 1,
+    "ActivityPub::ProcessStatusUpdateService#handle_implicit_update!": 1,
+    "ActivityPub::ProcessStatusUpdateService#update_quote!": 5,
+    "ActivityPub::ProcessStatusUpdateService#update_quote_approval!": 3,
+    "FormattingHelper#linkify": 1,
+    "JsonLdHelper#safe_prefetched_embed": 2,
+    "ActivityPub::Activity::Create#unsupported_uri_scheme?": 1,
+    "ActivityPub::Parser::StatusParser#unsupported_uri_scheme?": 1,
+    "ActivityPub::ProcessAccountService#unsupported_uri_scheme?": 1,
+    "ActivityPub::ProcessFeaturedCollectionService#unsupported_uri_scheme?": 1,
+    "ActivityPub::ProcessStatusUpdateService#unsupported_uri_scheme?": 1,
+    "Api::V1::Admin::ReportsController#set_reports": 1
+  }
+}

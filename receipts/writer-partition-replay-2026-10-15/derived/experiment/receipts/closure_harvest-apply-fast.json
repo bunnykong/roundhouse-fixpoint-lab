@@ -1,0 +1,76 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/fast-target/debug/deps/roundhouse-30724050982be240": "03b0eacf18e55c22fe4cf364b668e3911adaec954aec6ade4c2759c88342724b"
+  },
+  "census_summary": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "plain_bound": 0,
+        "plain_reflective_native": 0,
+        "reflective_bound": 0,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_partition_partition_census",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/closure_harvest-apply",
+  "diagnostic_elapsed_seconds": 118.2214668339584,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_PROFILE_TEST_DEBUG": "0",
+    "CARGO_PROFILE_TEST_OPT_LEVEL": "1",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/fast-target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_SCHED": "sccq",
+    "RH_SKIP_RETURN_STABILIZE": "0",
+    "RH_SPLICED_WRITER_OWNERSHIP": "0",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [],
+  "log_sha256": "0f4a3610c783a7a5fc7802af70536ca803896af1ffcde7999abb49e91a67f0a7",
+  "metrics": [],
+  "source_diff_sha256": "d1d5e79624c71dfa380f76723c6f938b95311ad46bd54f25ac600d3858af9970",
+  "source_pin": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "source_status": "M src/analyze/fixpoint_bound.rs\n M src/analyze/writer_laws.rs\n?? src/analyze/fixpoint_bound/",
+  "started": "2026-10-15T20:14:16.340876+00:00",
+  "tag": "fast",
+  "test_results": [
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1268 filtered out; finished in 13.84s"
+  ],
+  "timing_claim": false,
+  "variant": "closure_harvest-apply"
+}

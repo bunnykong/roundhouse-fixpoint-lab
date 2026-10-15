@@ -1,0 +1,38 @@
+{
+  "binary_sha256": "98f8c8bf0edb3ea214b5bcf29c2b6e2583bd3d1e4d6cf31f29f5b6f784a13baf",
+  "command": [
+    "$EXPERIMENT/bin/f47-original-laws",
+    "writer_law_bound_partitions",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-historical-stack-review-v1",
+  "elapsed_seconds": 196.32469679205678,
+  "exit": 101,
+  "explicitly_unset": [
+    "RUST_MIN_STACK"
+  ],
+  "flags": {
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_REFLECT_BOUND": "1",
+    "RH_SCHED": "sccq"
+  },
+  "historical_condition": "reflective-evaluated-containers-20261015-fe6b169e",
+  "log_sha256": "74f3d9f3577ddc390a155d5f7c4588df63604089868771814b3330fd50ae9ec8",
+  "metrics": [
+    {
+      "duplicate_round_differences": 548,
+      "finite_membership_checks": 418656,
+      "partition_differences": 2104,
+      "partition_round_schedules": 32928
+    }
+  ],
+  "parent_input_condition": "writer-partition-replay-20261015-four-pins",
+  "pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0"
+}

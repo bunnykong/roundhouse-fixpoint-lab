@@ -1,0 +1,47 @@
+{
+  "classification": {
+    "Improvement": 6,
+    "Other": 969,
+    "Regression": 1683
+  },
+  "condition": "ownership-runtime-values-20261015-f78d995f",
+  "distinct_keys": 949,
+  "families": {
+    "Forem render/redirect": 213,
+    "JSON-LD return": 4,
+    "Mastodon embeds (source inference; supplemented)": 1,
+    "Mastodon suspension": 360,
+    "log_action": 744,
+    "pundit_user": 156
+  },
+  "input_sha256": {
+    "$EXPERIMENT/receipts/rows.jsonl": "e1046e23726541e3f1b3b43fd4332b2c2ebc57b69fef25ebb01a4d7c5e24e3ed",
+    "$EXPERIMENT/receipts/runtime-witnesses-v3.json": "85adeb35bb9a53eab200e9e624203e9173ea4689cee6dd42dd1cf4e5851dd93a"
+  },
+  "parts": {
+    "SOUND_W/mastodon/controller_cache": 356,
+    "SOUND_W/mastodon/ir": 356,
+    "SOUND_W/mastodon/returns": 188,
+    "UNSOUND_W/forem/controller_cache": 95,
+    "UNSOUND_W/forem/ir": 95,
+    "UNSOUND_W/forem/returns": 23,
+    "UNSOUND_W/mastodon/controller_cache": 144,
+    "UNSOUND_W/mastodon/ir": 144,
+    "UNSOUND_W/mastodon/returns": 77
+  },
+  "relations": {
+    "EQ": 764,
+    "NARROW": 1564,
+    "STRUCT": 328,
+    "WIDEN": 2
+  },
+  "replay_matches_after_scrubbing_object_addresses": true,
+  "replayed_observations": 35,
+  "rows": 2658,
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "source_method_hashes_checked": 32,
+  "verdicts_checked_by_admission": {
+    "SOUND_W": 900,
+    "UNSOUND_W": 578
+  }
+}

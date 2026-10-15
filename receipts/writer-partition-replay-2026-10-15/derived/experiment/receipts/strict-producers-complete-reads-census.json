@@ -1,0 +1,75 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/target/debug/deps/roundhouse-be70eb8e2562538a": "cc1c79f02ecf27e0a4c8cbb93806e7e63d1c8ddad07c0fb92bb82c73b457ad81"
+  },
+  "census_summary": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 19056,
+        "plain_bound": 0,
+        "plain_reflective_native": 19056,
+        "reflective_bound": 19056,
+        "replay_plain": 548,
+        "replay_reflective": 0
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_partition_partition_census",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/strict-producers-complete-reads",
+  "diagnostic_elapsed_seconds": 97.71102104196325,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PROVENANCE_CONGRUENT": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_PROVENANCE_STRICT_STUBS": "1",
+    "RH_PROVENANCE_STRICT_XFER": "1",
+    "RH_SCHED": "sccq",
+    "RH_SKIP_RETURN_STABILIZE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [],
+  "log_sha256": "98df8f361fbde8220167e5c9d7272abcbc9f29629b83206fb4f773718bef89bc",
+  "metrics": [],
+  "source_diff_sha256": "38436ff34c80680441bbc48d53fad4e0245312600985cfb46297a275829f9637",
+  "source_pin": "2233e2e7e639b9f66ecda41fac34475b2d0f2559",
+  "source_status": "M src/analyze/fixpoint_bound.rs\n M src/analyze/mod.rs\n?? src/analyze/fixpoint_bound/\n?? src/analyze/writer_laws.rs",
+  "started": "2026-10-15T20:03:06.117192+00:00",
+  "tag": "census",
+  "test_results": [
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1262 filtered out; finished in 64.41s"
+  ],
+  "timing_claim": false,
+  "variant": "strict-producers-complete-reads"
+}

@@ -1,0 +1,8 @@
+{
+  "classification": "unscored reference",
+  "condition": "closure-application-effects-20261015-ea3ec744",
+  "fact": 57,
+  "native_runs_during_publication": 0,
+  "text": "On October 15 condition `closure-application-effects-20261015-ea3ec744`, compiler `fdc00ee9` with implementation `a59defd6` confirms the syntactic closure-application rule on its synthetic fixtures and all five pinned apps. The first independent review upheld an inconclusive verdict; the final review upholds confirmation after exactly two missing Discourse controls completed, with the checker and 36 earlier receipts unchanged. The consumer of a closure value determines whether to harvest its body: Proc calls, block/argument positions and local bindings select its may-apply traversal; storing it in an Array, Hash, splat or ivar, returning it or inspecting it does not itself apply it. The 66 fixtures plus 21 twins confirm 87 runtime predictions; the base fixtures run on CRuby 4.0.7 and 3.4.4, and twins on 4.0.7. All 38 required app cells pass the registered checks, and the reflective traversal/bound repairs are restored. Static scanning predicts new invoked-closure writes only on Mastodon (three) and Discourse (twelve); Discourse also has one report-only entrance-site miss outside the scan scope. Application through container flow, branches and `curry` remains outside the syntactic rule; one ineligible fixture is excluded only from the declared harvest gates. The flags-off suite retains 41 matched-baseline failures, and the flags-on suite is unrun. This bounded confirmation is not general Ruby soundness or app schedule independence.",
+  "verdict": "Bounded confirmation after two missing controls completed."
+}

@@ -93,3 +93,15 @@ The [five evening references](receipts/README.md#october-15-evening-references) 
 its bounded normal-form repair, negative ownership generalization, explicit observers and the partial five-app grid.
 The [cached observer tool](tools/observers/README.md) retains its fourteen tests and public pins.
 These are research references; they close no whole-program inference or replay frontier.
+
+## October 15 later evening results
+
+Six separately conditioned, unscored references preserve bounded confirmations, failed generalization,
+negative storage laws and finite runtime counterexamples. The source snapshots remain uncompiled public ports.
+
+- [F56: strict producer reasons](receipts/strict-producer-reasons-2026-10-15/README.md).
+- [F57: closure application effects](receipts/closure-application-effects-2026-10-15/README.md).
+- [F58: declared contributor join](receipts/declared-contributor-join-2026-10-15/README.md).
+- [F59: schedule row attribution](receipts/schedule-row-attribution-2026-10-15/README.md).
+- [F60: writer partition replay](receipts/writer-partition-replay-2026-10-15/README.md).
+- [F61: ownership runtime values](receipts/ownership-runtime-values-2026-10-15/README.md).

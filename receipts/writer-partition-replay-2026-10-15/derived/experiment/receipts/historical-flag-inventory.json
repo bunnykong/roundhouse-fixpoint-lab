@@ -1,0 +1,64 @@
+{
+  "closure_harvest-apply": {
+    "pin": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+    "reflect_bound_flag_occurrences": []
+  },
+  "f47": {
+    "pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0",
+    "reflect_bound_flag_occurrences": [
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8419,
+        "text": "            if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") {"
+      },
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8439,
+        "text": "            if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") {"
+      },
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8524,
+        "text": "                if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") {"
+      },
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8543,
+        "text": "            if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") =>"
+      },
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8550,
+        "text": "            if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") =>"
+      },
+      {
+        "file": "src/analyze/mod.rs",
+        "line": 8558,
+        "text": "            if std::env::var(\"RH_REFLECT_BOUND\").as_deref() == Ok(\"1\") =>"
+      },
+      {
+        "file": "src/analyze/fixpoint_bound/writer_law_tests.rs",
+        "line": 219,
+        "text": "#[ignore = \"requires RH_REFLECT_BOUND=1; exercised explicitly in both flag variants\"]"
+      },
+      {
+        "file": "src/analyze/fixpoint_bound/writer_law_partitions.rs",
+        "line": 187,
+        "text": "#[ignore = \"requires RH_REFLECT_BOUND=1; exercised explicitly in both flag variants\"]"
+      },
+      {
+        "file": "src/analyze/fixpoint_bound/writer_law_tagged.rs",
+        "line": 74,
+        "text": "#[ignore = \"requires RH_REFLECT_BOUND=1; exercised explicitly in both flag variants\"]"
+      }
+    ]
+  },
+  "spine": {
+    "pin": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+    "reflect_bound_flag_occurrences": []
+  },
+  "strict-producers-complete-reads": {
+    "pin": "2233e2e7e639b9f66ecda41fac34475b2d0f2559",
+    "reflect_bound_flag_occurrences": []
+  }
+}

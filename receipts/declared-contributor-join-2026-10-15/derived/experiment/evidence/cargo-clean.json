@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "env",
+    "CARGO_HOME=$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR=$EXPERIMENT/target",
+    "CARGO_BUILD_JOBS=4",
+    "cargo",
+    "+1.98.1",
+    "clean",
+    "--manifest-path",
+    "$EXPERIMENT/repo/Cargo.toml"
+  ],
+  "condition": "declared-contributor-join-20261015-ea3ec744",
+  "exit_code": 0,
+  "log_sha256": "6b3d37aa44938b6cc521364bef56686466e5f07d968d1b52b205ed8ea3b13c02"
+}

@@ -1,0 +1,395 @@
+{
+  "app": "mastodon",
+  "by_table": {
+    "controller_cache": 60,
+    "ir": 1607,
+    "params": 217,
+    "returns": 453,
+    "side_table": 164
+  },
+  "checks": {
+    "1": {
+      "binary_sha256": "c07bcddec5068782d271b523f99c512cac238996c06190935ab313cf3307639d",
+      "cell": "$EXPERIMENT/receipts/cache/objects/8d/8dbc15ee95c22b28d61225b632cd27e0c6dab874403c653b4bbd9088312a953c/attempts/20261015T181729-2f79c48718/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 506,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2681,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1414
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "8b947bd6dad71ff1",
+        "copies": "889720b1695ad996",
+        "ir": "c568ac48c42e9f09",
+        "params": "3462cfadb586968f",
+        "returns": "4c596091078ee34b",
+        "side_table": "ba7a756d42a9b8fb"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/8d/8dbc15ee95c22b28d61225b632cd27e0c6dab874403c653b4bbd9088312a953c/attempts/20261015T181729-2f79c48718",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "2": {
+      "binary_sha256": "c07bcddec5068782d271b523f99c512cac238996c06190935ab313cf3307639d",
+      "cell": "$EXPERIMENT/receipts/cache/objects/28/28b1d2d1cba838becd56d0790ee482aec7d9b0dc4d091af3d2f3ba2c6ce4e88a/attempts/20261015T181916-2325342205/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 505,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2674,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1418
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "1de69ad58b8293a1",
+        "copies": "889720b1695ad996",
+        "ir": "00cc27885f234252",
+        "params": "0ac96de400f79bad",
+        "returns": "7f57945c76c548d2",
+        "side_table": "6c80e47b22525398"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/28/28b1d2d1cba838becd56d0790ee482aec7d9b0dc4d091af3d2f3ba2c6ce4e88a/attempts/20261015T181916-2325342205",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "repeat": {
+      "binary_sha256": "c07bcddec5068782d271b523f99c512cac238996c06190935ab313cf3307639d",
+      "cell": "$EXPERIMENT/receipts/cache/objects/92/9286f56e206e6072cfc3876bf4de44201f5c06765a5902263a7ca1d3e85a5d7d/attempts/20261015T182131-63252f363e/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 506,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2676,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1417
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "f86bfe35a0c86f44",
+        "copies": "889720b1695ad996",
+        "ir": "1659a0e463cd0f13",
+        "params": "7e3d92cf7225b636",
+        "returns": "c2a80a46dc3be02b",
+        "side_table": "bb1e02b17a06aac6"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/92/9286f56e206e6072cfc3876bf4de44201f5c06765a5902263a7ca1d3e85a5d7d/attempts/20261015T182131-63252f363e",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "unset": {
+      "binary_sha256": "c07bcddec5068782d271b523f99c512cac238996c06190935ab313cf3307639d",
+      "cell": "$EXPERIMENT/receipts/cache/objects/1d/1d45aca5c69be57401fd62b935a216ed609b1a1f3b3c9f332f2e99003a572fe1/attempts/20261015T181445-5be1e80bae/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 506,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2676,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1417
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "f86bfe35a0c86f44",
+        "copies": "889720b1695ad996",
+        "ir": "1659a0e463cd0f13",
+        "params": "7e3d92cf7225b636",
+        "returns": "c2a80a46dc3be02b",
+        "side_table": "bb1e02b17a06aac6"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/1d/1d45aca5c69be57401fd62b935a216ed609b1a1f3b3c9f332f2e99003a572fe1/attempts/20261015T181445-5be1e80bae",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    }
+  },
+  "condition": "schedule-row-diagnostic-interventions-v1",
+  "new_varying_rows": 604,
+  "original_rows": 2915,
+  "remaining_original": 1897,
+  "removed_by_table": {
+    "controller_cache": 9,
+    "ir": 763,
+    "params": 51,
+    "returns": 176,
+    "side_table": 19
+  },
+  "removed_original_variance": 1018,
+  "total_varying_rows": 2501,
+  "unset_repeat_differing_rows": 0,
+  "variant": "JP"
+}

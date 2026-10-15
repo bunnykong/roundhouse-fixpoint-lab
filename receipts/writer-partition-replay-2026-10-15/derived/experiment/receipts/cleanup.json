@@ -1,0 +1,34 @@
+{
+  "targets": [
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--offline",
+        "--target-dir",
+        "$EXPERIMENT/target"
+      ],
+      "cwd": "$EXPERIMENT/sources/f47",
+      "exit": 0,
+      "log_sha256": "888555ddb23d4ca77c38aa6e7a559a812c133083f3362165e56448b3e07ade85",
+      "remaining_files": 0,
+      "target": "$EXPERIMENT/target"
+    },
+    {
+      "command": [
+        "cargo",
+        "+1.98.1",
+        "clean",
+        "--offline",
+        "--target-dir",
+        "$EXPERIMENT/fast-target"
+      ],
+      "cwd": "$EXPERIMENT/sources/f47",
+      "exit": 0,
+      "log_sha256": "8d3f5f8a9c84fb57d8e3a7325487116a880bc042c046b13f4508c5619d6a9e55",
+      "remaining_files": 0,
+      "target": "$EXPERIMENT/fast-target"
+    }
+  ]
+}

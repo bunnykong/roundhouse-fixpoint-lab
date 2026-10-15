@@ -1,0 +1,62 @@
+{
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "diagnostic_elapsed_seconds": 0.24075799994170666,
+  "expected_negative_counters_reproduced": false,
+  "manifest_sha256": "c709b6073da111c4aab8032f60196fa7abb80e57e8b6000198da28ea5032dcc6",
+  "mode": "traces",
+  "nonempty_trace_batches_per_arm": 32,
+  "results": {
+    "closure_harvest-apply": {
+      "binary_sha256": "03b0eacf18e55c22fe4cf364b668e3911adaec954aec6ade4c2759c88342724b",
+      "command": [
+        "$EXPERIMENT/kit/closure_harvest-apply-laws",
+        "writer_partition_partition_trace",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "8bd1500ed3589163bf16abf0552714218a60161e2a33787f4d091de7ded7430c",
+      "summary": []
+    },
+    "f47": {
+      "binary_sha256": "75e1fe5352ca53830e20317d332a17a7d541704f44ef6a6660c25d1d757727fe",
+      "command": [
+        "$EXPERIMENT/kit/f47-laws",
+        "writer_partition_partition_trace",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "59e143c4beb9092c675ff44604156ffad1aaf2c236d24010085328775856bd4e",
+      "summary": []
+    },
+    "spine": {
+      "binary_sha256": "c0081f3072b75a2e5aaa2caa49c3282cff9bf97e84808cc9f885d38abf834c92",
+      "command": [
+        "$EXPERIMENT/kit/spine-laws",
+        "writer_partition_partition_trace",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "635fb8c25a43ac6a36805cecc2b03d4a122490159c9282653ff99e35446f9c69",
+      "summary": []
+    },
+    "strict-producers-complete-reads": {
+      "binary_sha256": "712d7ff21385a9712baf2648ca96fc89591e25cff78bb55d6068f31ca22f73be",
+      "command": [
+        "$EXPERIMENT/kit/strict-producers-complete-reads-laws",
+        "writer_partition_partition_trace",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "fb10f44aeed1be25541137df74ed29e8ff811f9eb2d5cd5cb54ae9ed2271c13b",
+      "summary": []
+    }
+  },
+  "run_path": "$EXPERIMENT/kit/runs/20261015T201856Z-89006",
+  "runner_sha256": "3685a04a2da5accdc0642b70db206be4de7fd43f5f22d4910e5932fc2043a1b1",
+  "timing_claim": false,
+  "wrapper_sha256": "c0c5cd3d9167e87967946626c3043657aaaee9742a8c5f2bd0ba33915b1a1c9e"
+}

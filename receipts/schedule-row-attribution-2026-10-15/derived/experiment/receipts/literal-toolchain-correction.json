@@ -1,0 +1,12 @@
+{
+  "build_working_directory": "$EXPERIMENT/source-literal-probes",
+  "incorrect_metadata_field": {
+    "rust": "rustc 1.95.0 (59807616e 2026-04-14)"
+  },
+  "original_pin_file": "$EXPERIMENT/receipts/literal-probe-pins.json",
+  "original_pin_file_sha256": "bf0fe445e7a1b94ff7557ee055ca364ad1e7b643d04c10d8ee2dc5bc1f5ec8ae",
+  "reason": "The original metadata command ran at the agent directory, outside the checkout toolchain override. cargo build ran inside source-literal-probes; the frozen checkout selects Rust 1.98.1. Original pin file and binary remain unchanged.",
+  "rust_toolchain_sha256": "598697556c16c3916694e111fbd2871cbe3484a67bb39bd72038164341ed5977",
+  "rust_toolchain_toml": "[toolchain]\n# Last known-good compiler before the Rust 1.99 / LLVM 23 WASM stack regression.\n# Upgrade deliberately, with the native suite and browser WASM gates.\nchannel = \"1.98.1\"\nprofile = \"minimal\"\ncomponents = [\"rustfmt\", \"clippy\"]\n",
+  "rustc_at_build_working_directory": "rustc 1.98.1 (48a229cea 2026-09-01)"
+}

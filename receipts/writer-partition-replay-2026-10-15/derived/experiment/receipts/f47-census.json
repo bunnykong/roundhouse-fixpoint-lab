@@ -1,0 +1,66 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/target/debug/deps/roundhouse-be70eb8e2562538a": "64f414353835f78d3ffd606d662c0174b3fb4a2c449c2318c4924097c394f5b2"
+  },
+  "census_summary": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "plain_bound": 0,
+        "plain_reflective_native": 0,
+        "reflective_bound": 0,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_partition_partition_census",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/f47",
+  "diagnostic_elapsed_seconds": 150.21060849993955,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_REFLECT_BOUND": "1",
+    "RH_SCHED": "sccq",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [],
+  "log_sha256": "3a84b5ddf3febfc64c214d0a6f25a99adebd56cef16902476af173c828c22f39",
+  "metrics": [],
+  "source_diff_sha256": "e25c8771aa8006e927c7b335f18c5b74a7905e1f9d90474be910f606eaca40b9",
+  "source_pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0",
+  "source_status": "M src/analyze/fixpoint_bound/writer_law_partitions.rs",
+  "started": "2026-10-15T19:58:56.522873+00:00",
+  "tag": "census",
+  "test_results": [
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1165 filtered out; finished in 119.91s"
+  ],
+  "timing_claim": false,
+  "variant": "f47"
+}

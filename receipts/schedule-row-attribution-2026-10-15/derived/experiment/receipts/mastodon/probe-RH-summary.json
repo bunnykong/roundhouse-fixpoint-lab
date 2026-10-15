@@ -1,0 +1,395 @@
+{
+  "app": "mastodon",
+  "by_table": {
+    "controller_cache": 400,
+    "ir": 1921,
+    "params": 225,
+    "returns": 325,
+    "side_table": 136
+  },
+  "checks": {
+    "1": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/2b/2bd9e8cbee40686371697cdf213c0dae84e7b7f9cc7500c5dbe99a5dda0dba6a/attempts/20261015T183640-0581c6095d/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 514,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2691,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1410
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "1fadf8f587951492",
+        "copies": "889720b1695ad996",
+        "ir": "5a1b197f24be5772",
+        "params": "89bd32abfe6266f7",
+        "returns": "c71065e2294acdff",
+        "side_table": "f4b3e77e274adca1"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/2b/2bd9e8cbee40686371697cdf213c0dae84e7b7f9cc7500c5dbe99a5dda0dba6a/attempts/20261015T183640-0581c6095d",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "2": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/8f/8f43a0beed225f29592a2a926cc8b49708742539e5b8631d3e640c504817cb85/attempts/20261015T183810-b47db0d1f3/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 514,
+        "error/unsupported": 765,
+        "warning/gradual_untyped": 2684,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1410
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "7c240371eb7f24d1",
+        "copies": "889720b1695ad996",
+        "ir": "fe7e7abf1bdd90f4",
+        "params": "d6a46be876910f31",
+        "returns": "e58dcb2624c719d0",
+        "side_table": "ce2d8772a727b097"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/8f/8f43a0beed225f29592a2a926cc8b49708742539e5b8631d3e640c504817cb85/attempts/20261015T183810-b47db0d1f3",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "repeat": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/ea/ea28d0f5c9ac9b6cf402b18a5d5196327fe12aa9523ad7b96496153ca986d179/attempts/20261015T183908-19c7f2b423/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 506,
+        "error/unsupported": 766,
+        "warning/gradual_untyped": 2684,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1414
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "ff469ac6c3706ae2",
+        "copies": "889720b1695ad996",
+        "ir": "db49c58c067896a0",
+        "params": "de1fa48b378c1bd0",
+        "returns": "bc636bb18fc33ba0",
+        "side_table": "6af19a86780aa0da"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/ea/ea28d0f5c9ac9b6cf402b18a5d5196327fe12aa9523ad7b96496153ca986d179/attempts/20261015T183908-19c7f2b423",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "unset": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/70/7051ffe4bff4a10a35b08cde518937b0a6f5123186026793989436f0a59c9946/attempts/20261015T183536-42805980e3/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 166,
+        "error/send_dispatch_failed": 506,
+        "error/unsupported": 766,
+        "warning/gradual_untyped": 2684,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 168,
+        "warning/unresolved_type": 1414
+      },
+      "digests": {
+        "attributes": "a00a1e916d3bdb99",
+        "block_values": "ad888b6d85f35c1d",
+        "constants": "60b16a38b799dd04",
+        "controller_bindings": "816425046ecb2dd2",
+        "controller_cache": "ff469ac6c3706ae2",
+        "copies": "889720b1695ad996",
+        "ir": "db49c58c067896a0",
+        "params": "de1fa48b378c1bd0",
+        "returns": "bc636bb18fc33ba0",
+        "side_table": "6af19a86780aa0da"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/70/7051ffe4bff4a10a35b08cde518937b0a6f5123186026793989436f0a59c9946/attempts/20261015T183536-42805980e3",
+      "input_tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 1
+        },
+        "production": {
+          "end": "settled",
+          "round": 3
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 1,
+            "params": 0,
+            "returns": 1,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    }
+  },
+  "condition": "schedule-row-return-memory-v1",
+  "new_varying_rows": 1230,
+  "original_rows": 2915,
+  "remaining_original": 1777,
+  "removed_by_table": {
+    "controller_cache": 15,
+    "ir": 737,
+    "params": 51,
+    "returns": 332,
+    "side_table": 3
+  },
+  "removed_original_variance": 1138,
+  "total_varying_rows": 3007,
+  "unset_repeat_differing_rows": 0,
+  "variant": "RH"
+}

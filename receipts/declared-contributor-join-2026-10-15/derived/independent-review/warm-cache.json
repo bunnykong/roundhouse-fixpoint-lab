@@ -1,0 +1,33 @@
+{
+  "command": [
+    "python3",
+    "-I",
+    "-B",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "campfire",
+    "--settings",
+    "unset-v0-a0",
+    "--jobs",
+    "1",
+    "--cache-root",
+    "$REVIEW/cache",
+    "--label",
+    "rv-contributor-join-dd391a63-join",
+    "--flags",
+    "$EXPERIMENT/contributor-protocol/profiles/contributor-join-join.json",
+    "--lock-wrapper",
+    "$WORKSPACE/workshop/flock.py",
+    "--lock-file",
+    "$WORKSPACE/workshop/heavy.lock"
+  ],
+  "condition": "declared-contributor-join-20261015-ea3ec744",
+  "cwd": "$REVIEW",
+  "ended_utc": "2026-10-15T18:10:58.151860+00:00",
+  "exit_code": 0,
+  "started_utc": "2026-10-15T18:10:57.908301+00:00",
+  "wall_seconds": 0.243572958977893
+}

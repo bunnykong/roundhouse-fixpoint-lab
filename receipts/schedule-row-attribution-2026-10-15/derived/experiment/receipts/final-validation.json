@@ -1,0 +1,215 @@
+{
+  "apps": {
+    "campfire": {
+      "native_parity": true,
+      "raw_dump_hashes": true,
+      "rows": 0
+    },
+    "chatwoot": {
+      "alias_parity": true,
+      "catalog_coverage": true,
+      "join_replay": true,
+      "native_parity": true,
+      "probes": {
+        "E": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "H": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "HQ": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "J": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "JP": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "P": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "Q": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "R": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "RH": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        }
+      },
+      "raw_dump_hashes": true,
+      "rows": 757,
+      "statuses": {
+        "intervention-sensitive": 472,
+        "local-witness": 73,
+        "mixed-intervention": 212
+      }
+    },
+    "forem": {
+      "alias_parity": true,
+      "catalog_coverage": true,
+      "join_replay": true,
+      "native_parity": true,
+      "probes": {
+        "H": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "HQ": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "J": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "JP": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "P": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "Q": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "R": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "RH": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        }
+      },
+      "raw_dump_hashes": true,
+      "rows": 72,
+      "statuses": {
+        "intervention-sensitive": 58,
+        "local-witness": 6,
+        "mixed-intervention": 8
+      }
+    },
+    "mastodon": {
+      "alias_parity": true,
+      "catalog_coverage": true,
+      "join_replay": true,
+      "native_parity": true,
+      "probes": {
+        "E": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "H": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "HQ": {
+          "four_valid_cells": true,
+          "not_settled": true,
+          "repeat_equal": true
+        },
+        "J": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "JP": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "P": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "Q": {
+          "four_valid_cells": true,
+          "not_settled": true,
+          "repeat_equal": true
+        },
+        "R": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        },
+        "RH": {
+          "four_valid_cells": true,
+          "not_settled": false,
+          "repeat_equal": true
+        }
+      },
+      "raw_dump_hashes": true,
+      "rows": 2915,
+      "statuses": {
+        "family-inference": 7,
+        "family-inference-capped": 1,
+        "intervention-sensitive": 1359,
+        "local-witness": 247,
+        "mixed-intervention": 8,
+        "mixed-intervention-capped": 1293
+      }
+    }
+  },
+  "card_targets": 172,
+  "condition": "schedule-row-final-receipt-reconciliation",
+  "controls": {
+    "schedule-row-probe-C/campfire/unset-v1-a1": true,
+    "schedule-row-probe-C/chatwoot/unset-v1-a1": true,
+    "schedule-row-probe-C/forem/unset-v1-a1": true,
+    "schedule-row-probe-C/mastodon/unset-v1-a1": true,
+    "schedule-row-probe-EC/campfire/1-v1-a1": true,
+    "schedule-row-probe-EC/campfire/unset-v1-a1": true,
+    "schedule-row-probe-EC/chatwoot/1-v1-a1": true,
+    "schedule-row-probe-EC/chatwoot/unset-v1-a1": true,
+    "schedule-row-probe-EC/mastodon/1-v1-a1": true,
+    "schedule-row-probe-EC/mastodon/unset-v1-a1": true,
+    "schedule-row-probe-RC/campfire/unset-v1-a1": true,
+    "schedule-row-probe-RC/chatwoot/unset-v1-a1": true,
+    "schedule-row-probe-RC/forem/unset-v1-a1": true,
+    "schedule-row-probe-RC/mastodon/unset-v1-a1": true
+  },
+  "issue964_native_and_witness_receipts": true,
+  "pins": {
+    "literal-probe": true,
+    "probe": true,
+    "return-probe": true,
+    "spine_and_row_observer": true,
+    "trace": true
+  },
+  "status": "PASS",
+  "trace_parity": true
+}

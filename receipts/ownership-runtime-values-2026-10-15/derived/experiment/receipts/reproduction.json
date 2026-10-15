@@ -1,0 +1,109 @@
+{
+  "deep": {
+    "classification_matches": true,
+    "commands": [
+      [
+        "python3",
+        "$EXPERIMENT/rows.py",
+        "forem",
+        "--out-root",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "forem",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/rows.py",
+        "chatwoot",
+        "--out-root",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "chatwoot",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/rows.py",
+        "mastodon",
+        "--out-root",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "mastodon",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/finish.py",
+        "$EXPERIMENT/replays/20261015T154426-711800Z"
+      ],
+      [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "$HOST_PATH",
+        "$EXPERIMENT/witnesses/ownership.rb"
+      ]
+    ],
+    "condition": "ownership-runtime-values-20261015-f78d995f",
+    "deep_extraction": true,
+    "elapsed_seconds": 135.87996233301237,
+    "hashes_checked": 56,
+    "output": "$EXPERIMENT/replays/20261015T154426-711800Z",
+    "runtime_observations": 35
+  },
+  "initial_capture_failure": {
+    "cause": "Shared-lock wait diagnostic was combined with Ruby JSON on stderr; separating stderr fixed capture. Classification reconstruction passed before that parse error.",
+    "directory": "$EXPERIMENT/replays/20261015T154127-870153Z"
+  },
+  "quick": {
+    "classification_matches": true,
+    "commands": [
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "forem",
+        "$EXPERIMENT/replays/20261015T154217-300836Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "chatwoot",
+        "$EXPERIMENT/replays/20261015T154217-300836Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/classify.py",
+        "mastodon",
+        "$EXPERIMENT/replays/20261015T154217-300836Z"
+      ],
+      [
+        "python3",
+        "$EXPERIMENT/finish.py",
+        "$EXPERIMENT/replays/20261015T154217-300836Z"
+      ],
+      [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "$HOST_PATH",
+        "$EXPERIMENT/witnesses/ownership.rb"
+      ]
+    ],
+    "condition": "ownership-runtime-values-20261015-f78d995f",
+    "deep_extraction": false,
+    "elapsed_seconds": 34.73812287498731,
+    "hashes_checked": 56,
+    "output": "$EXPERIMENT/replays/20261015T154217-300836Z",
+    "runtime_observations": 35
+  }
+}

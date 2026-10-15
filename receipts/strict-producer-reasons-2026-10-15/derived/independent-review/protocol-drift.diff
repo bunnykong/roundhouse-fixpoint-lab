@@ -1,0 +1,11 @@
+--- recorded-protocol-v2
++++ current-protocol-v2
+@@ -34,7 +34,7 @@
+    - One command runs any subset of the 16 observer settings on any app, spreading runs across the lock slots. The 16 are four schedules (unset, 1, 2, and an unset repeat), verification on or off, and audit on or off.
+    - It caches results by binary digest, app pin, flags and schedule, so baseline runs happen once.
+    - Each claim runs the observer settings it names, plus one cross-check. The full matrix runs only on the spine.
+-3. **A card check before every build.** An prior classifier breaker spends at most 15 minutes, with no heavy runs. For each observer setting the card names, it asks: does the fix change this setting's output by design, or must it hold? A mis-specified card stops here. Theorists run the same questions (`workshop/card-check.md`) over their own card before returning it, because both theorist cards failed their first check on October 15.
++3. **A card check before every build.** An prior classifier breaker spends at most 15 minutes, with no heavy runs. For each observer setting the card names, it asks: does the fix change this setting's output by design, or must it hold? A mis-specified card stops here. Theorists run the same questions (`workshop/card-check.md`) over their own card before returning it, because both theorist cards failed their first check on October 15. Checks converge slowly, since each round finds finer defects. After two failed checks, or after one whose defects are all in the verdict machinery (scripts, parsers, validators) rather than in the hypotheses, variants or predictions, I may send the card to build with the check's fixes as binding notes, applied, tested and committed before any variant runs.
+ 4. **Campfire first.** The other four apps run only after a card passes on Campfire.
+ 5. **Tiered breaking.**
+    - A builder's kill gets a light check: is the counterexample real and reproducible?

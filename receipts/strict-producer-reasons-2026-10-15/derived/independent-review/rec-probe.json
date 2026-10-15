@@ -1,0 +1,64 @@
+[
+  {
+    "audit": 0,
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "$REVIEW/bin/roundhouse-breaker-native",
+      "breaker_strict_producer_known_return_availability",
+      "--ignored",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "condition": "strict-producer-return-availability-review-v1",
+    "exit": 0,
+    "observed": {
+      "card_expected_bits_when_value_exists": 4,
+      "empty_registry_value_exists": false,
+      "registry_value_exists": true,
+      "result_bits": 4,
+      "xfer": false
+    },
+    "rh_flags": {
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_PROVENANCE_STRICT_XFER": "0"
+    },
+    "schedule": "unset",
+    "verification": 0,
+    "xfer": "0"
+  },
+  {
+    "audit": 0,
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "$REVIEW/bin/roundhouse-breaker-native",
+      "breaker_strict_producer_known_return_availability",
+      "--ignored",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "condition": "strict-producer-return-availability-review-v1",
+    "exit": 101,
+    "observed": {
+      "card_expected_bits_when_value_exists": 4,
+      "empty_registry_value_exists": false,
+      "registry_value_exists": true,
+      "result_bits": 1,
+      "xfer": true
+    },
+    "rh_flags": {
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_PROVENANCE_STRICT_XFER": "1"
+    },
+    "schedule": "unset",
+    "verification": 0,
+    "xfer": "1"
+  }
+]

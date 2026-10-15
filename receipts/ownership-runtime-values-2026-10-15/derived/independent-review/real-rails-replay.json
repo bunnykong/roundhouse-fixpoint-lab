@@ -1,0 +1,116 @@
+{
+  "condition": "ownership-framework-witnesses-20261015",
+  "framework_methods": {
+    "collector_response": [
+      "$WORKSPACE/$PUBLIC_GEMS/gems/actionpack-8.1.3/lib/action_controller/metal/mime_responds.rb",
+      284
+    ],
+    "render": [
+      "$WORKSPACE/$PUBLIC_GEMS/gems/actionpack-8.1.3/lib/action_controller/metal/instrumentation.rb",
+      28
+    ],
+    "render_to_body": [
+      "$WORKSPACE/$PUBLIC_GEMS/gems/actionpack-8.1.3/lib/action_controller/metal/renderers.rb",
+      154
+    ],
+    "respond_to": [
+      "$WORKSPACE/$PUBLIC_GEMS/gems/actionpack-8.1.3/lib/action_controller/metal/mime_responds.rb",
+      211
+    ]
+  },
+  "observations": [
+    {
+      "content_type": "text/html",
+      "http_status": 410,
+      "label": "permanent HTML; real render, renderer, Collector and response",
+      "ruby_class": "ActiveSupport::SafeBuffer",
+      "value": "<html><body>Gone\n</body></html>\n"
+    },
+    {
+      "content_type": "text/html",
+      "http_status": 403,
+      "label": "temporary HTML; real render, renderer, Collector and response",
+      "ruby_class": "ActiveSupport::SafeBuffer",
+      "value": "<html><body>Forbidden\n</body></html>\n"
+    },
+    {
+      "content_type": "application/json",
+      "http_status": 410,
+      "label": "ActivityPub API permanent JSON; actual API override and actual JSON renderer",
+      "ruby_class": "String",
+      "value": "{\"error\":\"Gone\"}"
+    },
+    {
+      "content_type": "application/json",
+      "http_status": 404,
+      "label": "Embeds show hidden status; actual API override and actual JSON renderer",
+      "ruby_class": "String",
+      "value": "{\"error\":\"Not Found\"}"
+    }
+  ],
+  "rails": "8.1.3",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "scope": "Real Rails renderer, Collector, response and JSON encoder; account/status doubles; local error templates",
+  "sources": [
+    {
+      "line": 32,
+      "method": "gone",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/error_responses.rb",
+      "sha256": "800fdeb100f4e33d506d3890d84e5b2de88268d4dc277634be6e5f35005e0fcf"
+    },
+    {
+      "line": 28,
+      "method": "forbidden",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/error_responses.rb",
+      "sha256": "800fdeb100f4e33d506d3890d84e5b2de88268d4dc277634be6e5f35005e0fcf"
+    },
+    {
+      "line": 44,
+      "method": "not_found",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/error_responses.rb",
+      "sha256": "800fdeb100f4e33d506d3890d84e5b2de88268d4dc277634be6e5f35005e0fcf"
+    },
+    {
+      "line": 62,
+      "method": "respond_with_error",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/error_responses.rb",
+      "sha256": "800fdeb100f4e33d506d3890d84e5b2de88268d4dc277634be6e5f35005e0fcf"
+    },
+    {
+      "line": 52,
+      "method": "permanent_unavailability_response",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/account_owned_concern.rb",
+      "sha256": "71a868a1f1af348a22153a4b20adfbd6db62fd35836acf716ce9dd36c6ec9993"
+    },
+    {
+      "line": 57,
+      "method": "temporary_suspension_response",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/account_owned_concern.rb",
+      "sha256": "71a868a1f1af348a22153a4b20adfbd6db62fd35836acf716ce9dd36c6ec9993"
+    },
+    {
+      "line": 40,
+      "method": "check_account_suspension",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/account_owned_concern.rb",
+      "sha256": "71a868a1f1af348a22153a4b20adfbd6db62fd35836acf716ce9dd36c6ec9993"
+    },
+    {
+      "line": 48,
+      "method": "skip_temporary_suspension_response?",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/concerns/account_owned_concern.rb",
+      "sha256": "71a868a1f1af348a22153a4b20adfbd6db62fd35836acf716ce9dd36c6ec9993"
+    },
+    {
+      "line": 100,
+      "method": "respond_with_error",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/api/base_controller.rb",
+      "sha256": "7e0b4786ed6375a5ac6a01b93fc69fa8b1824cbf4319c3fca70d3ee6d2261da1"
+    },
+    {
+      "line": 8,
+      "method": "show",
+      "path": "$EXPERIMENT/inputs/mastodon/app/controllers/api/web/embeds_controller.rb",
+      "sha256": "b351dddc046d7acb863750b1ad33404041cf4e0c967d4332de9a278485c77b2d"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "updated_utc": "2026-10-15T18:06:59.428964+00:00",
+  "started_utc": "2026-10-15T15:40:57+00:00",
+  "budget_deadline_utc": "2026-10-15T18:10:57+00:00",
+  "runner_session": 4095,
+  "runner_pid_observed": 80389,
+  "source_commit": "2233e2e7e639b9f66ecda41fac34475b2d0f2559",
+  "reducer_commit": "8468b1309647ae7e83e4f3276d8d31d3727eb0b3",
+  "reducer_sha256": "01f7ce4ed342ac2666657c969d6607511891c7a166da08b8a028f962a8bf7d52",
+  "campfire": "CONFIRMED, 207 mandatory passes and 73 report-spec passes",
+  "general_known_failures": [
+    "chatwoot stable/unset V0+V1 ir/params parity",
+    "mastodon stable/unset V0+V1 controller_cache/ir/params parity"
+  ],
+  "forem": "passes generalization",
+  "pending": "none; three Discourse SK settings unavailable after queued interruption",
+  "cargo_clean": "completed and retained native kit validated afterwards",
+  "kits": "Campfire repro validation-2 36.28s; Chatwoot counterexample validation-1 47.38s; both exit 0",
+  "finish": [
+    "record Discourse counterexample if any",
+    "rerun tools/extract_evidence.py read-only",
+    "run glowy guide then tools/write_result.py",
+    "mark CLAIM.md done",
+    "glowy preview RESULT.md and fix layout",
+    "run tools/final_integrity.py after final report/preview",
+    "final <=10 lines, names source commit, end glowy -p absolute RESULT.md command"
+  ],
+  "qualification": "Context-free multiassign Rec fallback passes empty registry; material implementation deviation recorded in RESULT. Source and verdict MUST NOT change.",
+  "runner_exited": true,
+  "runner_exit_code": 130,
+  "general_verdict": "GENERALIZATION FAILS",
+  "completed_cells": 135
+}

@@ -1,0 +1,14 @@
+{
+  "classification": "Report per-original-row removal of variance and new variance. Sensitivity supports a retained-history mechanism only together with passive timeline showing old != incoming retained. No uniqueness or soundness inferred from row elimination.",
+  "condition": "schedule-row-return-memory-v1",
+  "parent_plan": "probe-plan.json",
+  "purpose": "Separate historical return retention from premature existence stubs and from join-law failure. Diagnostic intervention, not candidate repair.",
+  "recorded_utc": "2026-10-15T17:31:33.246895+00:00",
+  "self_check": "Digests, diagnostics, reason counts and loop counts change by design. Original binary and inputs immutable. Invalid/timeout/repeat drift => no sensitivity result for that variant/app; otherwise row partitions are total.",
+  "settings": "Campfire four v1a1 schedules before Forem, Chatwoot and Mastodon four v1a1 schedules. C is the new binary with both flags off, checked against native spine at unset on each app.",
+  "variants": {
+    "H": "Bypass only harvest informative_keep; all return handoff accumulation unchanged.",
+    "R": "Reference return handoffs publish current harvested value instead of joining previous return. Fold parameter and site slots unchanged.",
+    "RH": "Both H and R."
+  }
+}

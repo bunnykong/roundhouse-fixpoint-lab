@@ -115,3 +115,15 @@ These separately pinned, unscored conditions retain confirmations, kills and inc
 | [F55](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f55) | storage repair five apps | [receipt](storage-repair-five-apps-2026-10-15/README.md) |
 
 The [cached observer tool](../tools/observers/README.md) includes public pins, example paths and its original tests.
+
+## October 15 later evening results
+
+Six separately conditioned, unscored references preserve bounded confirmations, failed generalization,
+negative storage laws and finite runtime counterexamples. The source snapshots remain uncompiled public ports.
+
+- [F56: strict producer reasons](strict-producer-reasons-2026-10-15/README.md).
+- [F57: closure application effects](closure-application-effects-2026-10-15/README.md).
+- [F58: declared contributor join](declared-contributor-join-2026-10-15/README.md).
+- [F59: schedule row attribution](schedule-row-attribution-2026-10-15/README.md).
+- [F60: writer partition replay](writer-partition-replay-2026-10-15/README.md).
+- [F61: ownership runtime values](ownership-runtime-values-2026-10-15/README.md).

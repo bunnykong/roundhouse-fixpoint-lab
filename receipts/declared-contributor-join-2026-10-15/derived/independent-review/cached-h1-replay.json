@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python3",
+    "-I",
+    "-B",
+    "$EXPERIMENT/contributor-protocol/verdict.py",
+    "campfire",
+    "--cache-root",
+    "$WORKSPACE/phase2/observers/cache",
+    "--label",
+    "C=contributor-join-dd391a63-control",
+    "--label",
+    "J=contributor-join-dd391a63-join",
+    "--native",
+    "$EXPERIMENT/native",
+    "--defaults",
+    "$EXPERIMENT/evidence/defaults",
+    "--out",
+    "$REVIEW/evidence/replayed-H1.json"
+  ],
+  "condition": "declared-contributor-join-20261015-ea3ec744",
+  "cwd": "$REVIEW",
+  "ended_utc": "2026-10-15T18:09:20.195954+00:00",
+  "exit_code": 0,
+  "started_utc": "2026-10-15T18:09:05.635339+00:00",
+  "wall_seconds": 14.560471666045487
+}

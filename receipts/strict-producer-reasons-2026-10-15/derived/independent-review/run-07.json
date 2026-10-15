@@ -1,0 +1,24 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--cache-root",
+    "$REVIEW/cache",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "campfire",
+    "--settings",
+    "1-v0-a0",
+    "--flags",
+    "$EXPERIMENT/strict-producer-protocol/profiles/SK.json",
+    "--label",
+    "rv-SK",
+    "--jobs",
+    "1",
+    "--fresh"
+  ],
+  "exit": 0
+}

@@ -1,0 +1,125 @@
+{
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "diagnostic_elapsed_seconds": 53.06234066700563,
+  "expected_negative_counters_reproduced": true,
+  "manifest_sha256": "c709b6073da111c4aab8032f60196fa7abb80e57e8b6000198da28ea5032dcc6",
+  "mode": "complete-census",
+  "results": {
+    "closure_harvest-apply": {
+      "binary_sha256": "03b0eacf18e55c22fe4cf364b668e3911adaec954aec6ade4c2759c88342724b",
+      "command": [
+        "$EXPERIMENT/kit/closure_harvest-apply-laws",
+        "writer_partition_partition_census",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "d1022b014ed663e92c4d0fbd66ab3d4be77bff7e713ee8f9f9c987880e1f49de",
+      "summary": [
+        {
+          "counts": {
+            "membership_plain": 0,
+            "membership_reflective": 0,
+            "partition_plain": 2104,
+            "partition_reflective": 2104,
+            "plain_bound": 0,
+            "plain_reflective_native": 0,
+            "reflective_bound": 0,
+            "replay_plain": 548,
+            "replay_reflective": 548
+          },
+          "membership_checks": 418656,
+          "schedules": 32928
+        }
+      ]
+    },
+    "f47": {
+      "binary_sha256": "75e1fe5352ca53830e20317d332a17a7d541704f44ef6a6660c25d1d757727fe",
+      "command": [
+        "$EXPERIMENT/kit/f47-laws",
+        "writer_partition_partition_census",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "b2b8ac9744ce108dae8032c97cf4ca959b6c3cf28a1e555ad99731e6192fef59",
+      "summary": [
+        {
+          "counts": {
+            "membership_plain": 0,
+            "membership_reflective": 0,
+            "partition_plain": 2104,
+            "partition_reflective": 2104,
+            "plain_bound": 0,
+            "plain_reflective_native": 0,
+            "reflective_bound": 0,
+            "replay_plain": 548,
+            "replay_reflective": 548
+          },
+          "membership_checks": 418656,
+          "schedules": 32928
+        }
+      ]
+    },
+    "spine": {
+      "binary_sha256": "c0081f3072b75a2e5aaa2caa49c3282cff9bf97e84808cc9f885d38abf834c92",
+      "command": [
+        "$EXPERIMENT/kit/spine-laws",
+        "writer_partition_partition_census",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "19c80a8089766b6870b62799cb260d185a33c023161751aec41f5a51e3b20325",
+      "summary": [
+        {
+          "counts": {
+            "membership_plain": 0,
+            "membership_reflective": 0,
+            "partition_plain": 2104,
+            "partition_reflective": 19056,
+            "plain_bound": 0,
+            "plain_reflective_native": 19056,
+            "reflective_bound": 19056,
+            "replay_plain": 548,
+            "replay_reflective": 0
+          },
+          "membership_checks": 418656,
+          "schedules": 32928
+        }
+      ]
+    },
+    "strict-producers-complete-reads": {
+      "binary_sha256": "712d7ff21385a9712baf2648ca96fc89591e25cff78bb55d6068f31ca22f73be",
+      "command": [
+        "$EXPERIMENT/kit/strict-producers-complete-reads-laws",
+        "writer_partition_partition_census",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "log_sha256": "c44a5a8bac78c3cda869fcadf100f73c6294f1bbd514485ae1eecf8e3d60daf7",
+      "summary": [
+        {
+          "counts": {
+            "membership_plain": 0,
+            "membership_reflective": 0,
+            "partition_plain": 2104,
+            "partition_reflective": 19056,
+            "plain_bound": 0,
+            "plain_reflective_native": 19056,
+            "reflective_bound": 19056,
+            "replay_plain": 548,
+            "replay_reflective": 0
+          },
+          "membership_checks": 418656,
+          "schedules": 32928
+        }
+      ]
+    }
+  },
+  "run_path": "$EXPERIMENT/kit/runs/20261015T201741Z-86813",
+  "runner_sha256": "3685a04a2da5accdc0642b70db206be4de7fd43f5f22d4910e5932fc2043a1b1",
+  "timing_claim": false,
+  "wrapper_sha256": "c0c5cd3d9167e87967946626c3043657aaaee9742a8c5f2bd0ba33915b1a1c9e"
+}

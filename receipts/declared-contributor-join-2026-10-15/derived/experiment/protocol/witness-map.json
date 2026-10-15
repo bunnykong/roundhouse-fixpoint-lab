@@ -1,0 +1,288 @@
+{
+  "condition": "ownership-ruby-boundary-witnesses-20261015",
+  "rule": "a witness constrains every returns row whose key fully matches key_regex; the row admits the witness when its resolved type admits ruby_class (untyped and Var admit everything)",
+  "source": "$EXPERIMENT/receipts/runtime-witnesses-v3.json",
+  "source_sha256": "85adeb35bb9a53eab200e9e624203e9173ea4689cee6dd42dd1cf4e5851dd93a",
+  "witnesses": [
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#create_draft",
+      "kind": "path",
+      "label": "forem/ListingsController#create_draft/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#create_listing",
+      "kind": "path",
+      "label": "forem/ListingsController#create_listing/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#first_publish",
+      "kind": "path",
+      "label": "forem/ListingsController#first_publish/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#create_draft",
+      "kind": "path",
+      "label": "forem/ListingsController#create_draft/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#create_listing",
+      "kind": "path",
+      "label": "forem/ListingsController#create_listing/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "ListingsController#first_publish",
+      "kind": "path",
+      "label": "forem/ListingsController#first_publish/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#create_draft",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#create_draft/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#create_listing",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#create_listing/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#first_publish",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#first_publish/save=true",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#create_draft",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#create_draft/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#create_listing",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#create_listing/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "forem",
+      "key_regex": "Api::V0::ListingsController#first_publish",
+      "kind": "path",
+      "label": "forem/Api::V0::ListingsController#first_publish/save=false",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/Collection/0",
+      "part": "returns",
+      "ruby_class": "Array"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/CollectionPage/1",
+      "part": "returns",
+      "ruby_class": "Array"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/OrderedCollection/2",
+      "part": "returns",
+      "ruby_class": "Array"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/OrderedCollectionPage/3",
+      "part": "returns",
+      "ruby_class": "Array"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/Collection/4",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#collection_page_items",
+      "kind": "path",
+      "label": "mastodon/collection_page_items/Unknown/5",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#first_lang_string",
+      "kind": "path",
+      "label": "mastodon/first_lang_string/language-map-integer",
+      "part": "returns",
+      "ruby_class": "Integer"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#first_lang_string",
+      "kind": "path",
+      "label": "mastodon/first_lang_string/string-branch",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#first_of_value",
+      "kind": "path",
+      "label": "mastodon/first_of_value/empty-array",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#url_to_href",
+      "kind": "path",
+      "label": "mastodon/url_to_href/empty-array-find",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#url_to_href",
+      "kind": "path",
+      "label": "mastodon/url_to_href/string-array",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(ActivityPub::InboxesController|JsonLdHelper)#url_to_href",
+      "kind": "path",
+      "label": "mastodon/url_to_href/link-without-href",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(Auth::SessionsController|ActionView::Base|Auth::TwoFactorAuthenticationConcern)#webauthn_enabled\\?",
+      "kind": "boundary",
+      "label": "mastodon/webauthn_enabled?/unset-ivar",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(Auth::SessionsController|ActionView::Base|Auth::TwoFactorAuthenticationConcern)#webauthn_enabled\\?",
+      "kind": "path",
+      "label": "mastodon/webauthn_enabled?/set-true",
+      "part": "returns",
+      "ruby_class": "TrueClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "(Auth::SessionsController|ActionView::Base|Auth::TwoFactorAuthenticationConcern)#webauthn_enabled\\?",
+      "kind": "path",
+      "label": "mastodon/webauthn_enabled?/set-false",
+      "part": "returns",
+      "ruby_class": "FalseClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#permanent_unavailability_response",
+      "kind": "path",
+      "label": "mastodon/permanent_unavailability_response/html",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#temporary_suspension_response",
+      "kind": "path",
+      "label": "mastodon/temporary_suspension_response/html",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#check_account_suspension",
+      "kind": "path",
+      "label": "mastodon/check_account_suspension/permanent",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#check_account_suspension",
+      "kind": "path",
+      "label": "mastodon/check_account_suspension/temporary",
+      "part": "returns",
+      "ruby_class": "String"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#check_account_suspension",
+      "kind": "path",
+      "label": "mastodon/check_account_suspension/active",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#pundit_user",
+      "kind": "path",
+      "label": "mastodon/pundit_user/no-current-user",
+      "part": "returns",
+      "ruby_class": "NilClass"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#pundit_user",
+      "kind": "path",
+      "label": "mastodon/pundit_user/account",
+      "part": "returns",
+      "ruby_class": "Account"
+    },
+    {
+      "app": "mastodon",
+      "key_regex": "[A-Za-z0-9_:]+#log_action",
+      "kind": "path",
+      "label": "mastodon/log_action/create-contract",
+      "part": "returns",
+      "ruby_class": "Admin::ActionLog"
+    }
+  ]
+}

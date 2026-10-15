@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "bash",
+      "$EXPERIMENT/kit/probe",
+      "campfire",
+      "RH_FIXPOINT_VERIFY=1",
+      "RH_PROVENANCE_AUDIT=1"
+    ],
+    "environment": {
+      "APPS": "$EXPERIMENT/kit/apps",
+      "HOME": "$HOST_PATH",
+      "LC_ALL": "C",
+      "PATH": "$PUBLIC_TOOLCHAIN_PATH",
+      "PROBE_BASE": "1",
+      "RBENV_VERSION": "4.0.7",
+      "RH_BIN": "$EXPERIMENT/bin/roundhouse",
+      "RH_ERRGATE": "1",
+      "RH_PRECISION_CENSUS": "1",
+      "RH_PUBLIC_INPUT": "1",
+      "RH_REASON_SITE_CENSUS": "$EXPERIMENT/evidence/defaults/on/unset/census.jsonl"
+    },
+    "exit_code": 0,
+    "finished": "2026-10-15T17:50:26.301006+00:00",
+    "observer": "shipping-rounds-unset-v1-a1",
+    "started": "2026-10-15T17:50:09.091567+00:00"
+  },
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "bash",
+      "$EXPERIMENT/kit/probe",
+      "campfire",
+      "RH_FIXPOINT_VERIFY=0",
+      "RH_PROVENANCE_AUDIT=0"
+    ],
+    "environment": {
+      "APPS": "$EXPERIMENT/kit/apps",
+      "HOME": "$HOST_PATH",
+      "LC_ALL": "C",
+      "PATH": "$PUBLIC_TOOLCHAIN_PATH",
+      "PROBE_BASE": "1",
+      "RBENV_VERSION": "4.0.7",
+      "RH_BIN": "$EXPERIMENT/bin/roundhouse",
+      "RH_ERRGATE": "1",
+      "RH_PRECISION_CENSUS": "1",
+      "RH_PUBLIC_INPUT": "1",
+      "RH_REASON_SITE_CENSUS": "$EXPERIMENT/evidence/defaults/off/unset/census.jsonl"
+    },
+    "exit_code": 0,
+    "finished": "2026-10-15T17:50:32.980209+00:00",
+    "observer": "shipping-rounds-unset-v0-a0",
+    "started": "2026-10-15T17:50:26.301865+00:00"
+  }
+]

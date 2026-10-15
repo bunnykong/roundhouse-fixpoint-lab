@@ -1,0 +1,125 @@
+{
+  "all_f47_closure_failure_rows_identical": true,
+  "all_plain_failure_vectors_identical": true,
+  "all_spine_s3_failure_rows_identical": true,
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "control_closure_entrances_equals_closure_apply_all_rows": true,
+  "control_closure_legacy_equals_spine_all_rows": true,
+  "diagnostic_control_condition": "writer-partition-harvest-mode-review-v1",
+  "independent_unbounded_union_model": {
+    "bare_nodes": "n + m + depth + 4",
+    "classes": {
+      "both": 2400,
+      "depth_only": 2304,
+      "node_only": 14352
+    },
+    "every_observed_measure_matches_formula": true,
+    "failing_triples": 397,
+    "hash_nodes": "n + m + depth + 7",
+    "predicted_bound_failures": 19056,
+    "predicted_keys_equal_observed_keys": true,
+    "schedules_per_triple": 48
+  },
+  "primary_spine_equals_optimized_kit_all_rows": true,
+  "source_run": "kit/runs/20261015T203413Z-10362",
+  "variants": {
+    "closure_harvest-apply": {
+      "logged_failure_rows": 2104,
+      "recounted_failures": {
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "summary": {
+        "counts": {
+          "membership_plain": 0,
+          "membership_reflective": 0,
+          "partition_plain": 2104,
+          "partition_reflective": 2104,
+          "plain_bound": 0,
+          "plain_reflective_native": 0,
+          "reflective_bound": 0,
+          "replay_plain": 548,
+          "replay_reflective": 548
+        },
+        "membership_checks": 418656,
+        "schedules": 32928
+      }
+    },
+    "f47": {
+      "logged_failure_rows": 2104,
+      "recounted_failures": {
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "summary": {
+        "counts": {
+          "membership_plain": 0,
+          "membership_reflective": 0,
+          "partition_plain": 2104,
+          "partition_reflective": 2104,
+          "plain_bound": 0,
+          "plain_reflective_native": 0,
+          "reflective_bound": 0,
+          "replay_plain": 548,
+          "replay_reflective": 548
+        },
+        "membership_checks": 418656,
+        "schedules": 32928
+      }
+    },
+    "spine": {
+      "logged_failure_rows": 19056,
+      "recounted_failures": {
+        "partition_plain": 2104,
+        "partition_reflective": 19056,
+        "plain_reflective_native": 19056,
+        "reflective_bound": 19056,
+        "replay_plain": 548
+      },
+      "summary": {
+        "counts": {
+          "membership_plain": 0,
+          "membership_reflective": 0,
+          "partition_plain": 2104,
+          "partition_reflective": 19056,
+          "plain_bound": 0,
+          "plain_reflective_native": 19056,
+          "reflective_bound": 19056,
+          "replay_plain": 548,
+          "replay_reflective": 0
+        },
+        "membership_checks": 418656,
+        "schedules": 32928
+      }
+    },
+    "strict-producers-complete-reads": {
+      "logged_failure_rows": 19056,
+      "recounted_failures": {
+        "partition_plain": 2104,
+        "partition_reflective": 19056,
+        "plain_reflective_native": 19056,
+        "reflective_bound": 19056,
+        "replay_plain": 548
+      },
+      "summary": {
+        "counts": {
+          "membership_plain": 0,
+          "membership_reflective": 0,
+          "partition_plain": 2104,
+          "partition_reflective": 19056,
+          "plain_bound": 0,
+          "plain_reflective_native": 19056,
+          "reflective_bound": 19056,
+          "replay_plain": 548,
+          "replay_reflective": 0
+        },
+        "membership_checks": 418656,
+        "schedules": 32928
+      }
+    }
+  }
+}

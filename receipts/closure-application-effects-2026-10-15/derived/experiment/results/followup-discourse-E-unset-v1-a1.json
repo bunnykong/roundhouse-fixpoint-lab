@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "discourse",
+    "--settings",
+    "unset-v1-a1",
+    "--flags",
+    "$EXPERIMENT/B/profiles/ownership-off.json",
+    "--label",
+    "closure-application-E",
+    "--jobs",
+    "1",
+    "--flag",
+    "RH_CLOSURE_ENTRANCES=1",
+    "--flag",
+    "RH_CLOSURE_SITES=1",
+    "--fresh"
+  ],
+  "ended_at": "2026-10-15T19:34:17.629769+00:00",
+  "exit": 0,
+  "locking": "obs.py wraps every analyzer with workshop/flock.py --shared workshop/heavy.lock; Discourse max_parallel=1",
+  "log": "$EXPERIMENT/results/followup-discourse-E-unset-v1-a1.log",
+  "seconds": 1128.1220782919554,
+  "started_at": "2026-10-15T19:15:29.496200+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "classification": "unscored reference",
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "fact": 60,
+  "native_runs_during_publication": 0,
+  "text": "On October 15 condition `writer-partition-replay-20261015-four-pins`, F47's 2,104 plain-writer partition differences and 548 duplicate-round differences are identical across rebuilt F47 `eda0783b`, spine `ea3ec744`, strict-producer build `2233e2e7` and closure-application build `fdc00ee9`; independent review upholds the counts and source explanation. Each pin checks 32,928 round schedules per writer form, with 16,464 second-round replay comparisons. The spine and strict-producer build lack the reflective container-traversal and touched-destination repairs; their reflective path bypasses the bound, exceeding it in 19,056 schedules. The closure-application build restores the reflective bound and F47's reflective failure vectors. The missing touched-destination update causes the bound failure; the separate container traversal is not exercised by these direct-write fixtures. Every form retains all 418,656 sampled membership checks, which is not a universal soundness proof. Original law exits remain 101; census-wrapper success means negative counts reproduced. The fresh condition sets a 32 MiB stack; independent replay with F47's original unset stack setting gives the same counts. These synthetic results establish unchanged storage-law failures, not application accuracy or performance.",
+  "verdict": "Upheld unchanged negative partition/replay counts."
+}

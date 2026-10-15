@@ -1,0 +1,50 @@
+{
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "rows": [
+    {
+      "method": "mode",
+      "value": "advanced",
+      "runtime_class": "String",
+      "expected_class": "String"
+    },
+    {
+      "method": "c",
+      "value": {
+        "mode": "advanced",
+        "lang": 7
+      },
+      "runtime_class": "Hash",
+      "expected_class": "Hash"
+    },
+    {
+      "method": "d",
+      "value": 17,
+      "runtime_class": "Integer",
+      "expected_class": "Integer"
+    },
+    {
+      "method": "e",
+      "value": 7,
+      "runtime_class": "Integer",
+      "expected_class": "Integer"
+    },
+    {
+      "method": "mode-fallback",
+      "value": "basic",
+      "runtime_class": "Symbol",
+      "expected_class": "Symbol"
+    },
+    {
+      "method": "d-fallback",
+      "value": "en",
+      "runtime_class": "Symbol",
+      "expected_class": "Symbol"
+    },
+    {
+      "method": "e-fallback",
+      "value": "en",
+      "runtime_class": "String",
+      "expected_class": "String"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "condition": "s6-spine-ea3ec744-own1-v1a1",
+  "apps": {
+    "forem": {
+      "rows": 72,
+      "by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 10
+      },
+      "native_parent_counts": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "params": 13,
+        "returns": 2,
+        "side_table": 10
+      },
+      "raw_dump_sha256": {
+        "unset": "192b8b24ff594aa9ab4ce165340f07b22ae756c4864b2f37315eb0f4f6fda29d",
+        "1": "15a3e580431b7efcf217d7ac05bb1b61bef92bf1c01c7f604516f9b9f168ff6d",
+        "2": "75893c642bd40ff001e99a7beea5fa414cf8cde10b045d6972a6d1d670748462",
+        "repeat": "8c54f29f0098a727bf2263e82de7fbbce9944ee4c5bee2f37d17609f64e6e560"
+      },
+      "duplicate_keys": 0,
+      "missing_catalog_rows": 0,
+      "spurious_catalog_rows": 0,
+      "primary": {
+        "4": 51,
+        "2": 11,
+        "2/5": 8,
+        "5": 2
+      },
+      "statuses": {
+        "intervention-sensitive": 58,
+        "mixed-intervention": 8,
+        "local-witness": 6
+      },
+      "probes": {
+        "H": {
+          "removed": 0,
+          "denominator": 72,
+          "share_percent": 0.0,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "HQ": {
+          "removed": 70,
+          "denominator": 72,
+          "share_percent": 97.2,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "J": {
+          "removed": 9,
+          "denominator": 72,
+          "share_percent": 12.5,
+          "new_varying_rows": 74,
+          "absence_only": []
+        },
+        "JP": {
+          "removed": 51,
+          "denominator": 72,
+          "share_percent": 70.8,
+          "new_varying_rows": 26,
+          "absence_only": []
+        },
+        "P": {
+          "removed": 51,
+          "denominator": 72,
+          "share_percent": 70.8,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "Q": {
+          "removed": 70,
+          "denominator": 72,
+          "share_percent": 97.2,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "R": {
+          "removed": 0,
+          "denominator": 72,
+          "share_percent": 0.0,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "RH": {
+          "removed": 0,
+          "denominator": 72,
+          "share_percent": 0.0,
+          "new_varying_rows": 0,
+          "absence_only": []
+        }
+      },
+      "intersections": {
+        "H+HQ": 0,
+        "H+J": 0,
+        "H+JP": 0,
+        "H+P": 0,
+        "H+Q": 0,
+        "H+R": 0,
+        "H+RH": 0,
+        "HQ+J": 9,
+        "HQ+JP": 51,
+        "HQ+P": 51,
+        "HQ+Q": 70,
+        "HQ+R": 0,
+        "HQ+RH": 0,
+        "J+JP": 0,
+        "J+P": 0,
+        "J+Q": 9,
+        "J+R": 0,
+        "J+RH": 0,
+        "JP+P": 51,
+        "JP+Q": 51,
+        "JP+R": 0,
+        "JP+RH": 0,
+        "P+Q": 51,
+        "P+R": 0,
+        "P+RH": 0,
+        "Q+R": 0,
+        "Q+RH": 0,
+        "R+RH": 0
+      },
+      "isolated_union": 60,
+      "isolated_sum": 60
+    },
+    "chatwoot": {
+      "rows": 757,
+      "by_table": {
+        "controller_cache": 32,
+        "ir": 503,
+        "params": 99,
+        "returns": 43,
+        "side_table": 80
+      },
+      "native_parent_counts": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 3,
+        "copies": 0,
+        "params": 76,
+        "returns": 43,
+        "side_table": 80
+      },
+      "raw_dump_sha256": {
+        "unset": "d26b37b8d3bd3c96b5a72ef7b94729097e612c560614cb4bbe03b917c7fce353",
+        "1": "27496b8dfd819510f80c10720f89fe2f7622c879b3b4ca3a5e0908f149ce23e6",
+        "2": "08f9756d25789a9ba86c429ed378558ce0d353cf4d75457ad6e24dd830e8a31d",
+        "repeat": "5ee7bd48ba378dbb8fa0ada651f88ecb234b6495db96802a4f797952b9602af0"
+      },
+      "duplicate_keys": 0,
+      "missing_catalog_rows": 0,
+      "spurious_catalog_rows": 0,
+      "primary": {
+        "4": 243,
+        "6": 79,
+        "3b": 135,
+        "2/5": 129,
+        "2": 27,
+        "5": 61,
+        "3b/5": 83
+      },
+      "statuses": {
+        "intervention-sensitive": 472,
+        "local-witness": 73,
+        "mixed-intervention": 212
+      },
+      "probes": {
+        "E": {
+          "removed": 79,
+          "denominator": 757,
+          "share_percent": 10.4,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "H": {
+          "removed": 131,
+          "denominator": 757,
+          "share_percent": 17.3,
+          "new_varying_rows": 0,
+          "absence_only": []
+        },
+        "HQ": {
+          "removed": 672,
+          "denominator": 757,
+          "share_percent": 88.8,
+          "new_varying_rows": 0,
+          "absence_only": [
+            "ch-0707",
+            "ch-0711"
+          ]
+        },
+        "J": {
+          "removed": 107,
+          "denominator": 757,
+          "share_percent": 14.1,
+          "new_varying_rows": 200,
+          "absence_only": [
+            "ch-0591",
+            "ch-0592",
+            "ch-0593",
+            "ch-0594",
+            "ch-0595"
+          ]
+        },
+        "JP": {
+          "removed": 251,
+          "denominator": 757,
+          "share_percent": 33.2,
+          "new_varying_rows": 161,
+          "absence_only": [
+            "ch-0591",
+            "ch-0592",
+            "ch-0593",
+            "ch-0594",
+            "ch-0595"
+          ]
+        },
+        "P": {
+          "removed": 243,
+          "denominator": 757,
+          "share_percent": 32.1,
+          "new_varying_rows": 34,
+          "absence_only": []
+        },
+        "Q": {
+          "removed": 454,
+          "denominator": 757,
+          "share_percent": 60.0,
+          "new_varying_rows": 0,
+          "absence_only": [
+            "ch-0707"
+          ]
+        },
+        "R": {
+          "removed": 37,
+          "denominator": 757,
+          "share_percent": 4.9,
+          "new_varying_rows": 32,
+          "absence_only": [
+            "ch-0707"
+          ]
+        },
+        "RH": {
+          "removed": 255,
+          "denominator": 757,
+          "share_percent": 33.7,
+          "new_varying_rows": 32,
+          "absence_only": [
+            "ch-0707",
+            "ch-0711"
+          ]
+        }
+      },
+      "intersections": {
+        "E+H": 0,
+        "E+HQ": 2,
+        "E+J": 0,
+        "E+JP": 0,
+        "E+P": 0,
+        "E+Q": 2,
+        "E+R": 2,
+        "E+RH": 2,
+        "H+HQ": 131,
+        "H+J": 0,
+        "H+JP": 0,
+        "H+P": 0,
+        "H+Q": 0,
+        "H+R": 0,
+        "H+RH": 131,
+        "HQ+J": 107,
+        "HQ+JP": 251,
+        "HQ+P": 243,
+        "HQ+Q": 454,
+        "HQ+R": 37,
+        "HQ+RH": 255,
+        "J+JP": 103,
+        "J+P": 83,
+        "J+Q": 107,
+        "J+R": 5,
+        "J+RH": 5,
+        "JP+P": 231,
+        "JP+Q": 251,
+        "JP+R": 5,
+        "JP+RH": 5,
+        "P+Q": 243,
+        "P+R": 0,
+        "P+RH": 0,
+        "Q+R": 37,
+        "Q+RH": 37,
+        "R+RH": 37
+      },
+      "isolated_union": 507,
+      "isolated_sum": 597
+    },
+    "mastodon": {
+      "rows": 2915,
+      "by_table": {
+        "controller_cache": 57,
+        "ir": 1920,
+        "params": 236,
+        "returns": 566,
+        "side_table": 136
+      },
+      "native_parent_counts": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 2,
+        "copies": 0,
+        "params": 224,
+        "returns": 566,
+        "side_table": 136
+      },
+      "raw_dump_sha256": {
+        "unset": "c2fa35a0451f365b08b87da574e4b9a7a1610170e482223301f7c5e767624bb1",
+        "1": "75df500bf448f5cdb5e33f639cf56e0f81389fd35c0ee68594be1120d8971427",
+        "2": "6082dec7b201095936d093be46d7d446ca86f1e0268d9cecc4a80e5b834022e0",
+        "repeat": "ed68bddbf2b2d09eae7819b9d85c11507685b9039ec2a83b04744eb3f2eecee1"
+      },
+      "duplicate_keys": 0,
+      "missing_catalog_rows": 0,
+      "spurious_catalog_rows": 0,
+      "primary": {
+        "2/5": 1173,
+        "2": 777,
+        "3b": 196,
+        "5": 603,
+        "3b/2/5": 121,
+        "3b/5": 8,
+        "4": 15,
+        "6": 22
+      },
+      "statuses": {
+        "mixed-intervention-capped": 1293,
+        "intervention-sensitive": 1359,
+        "mixed-intervention": 8,
+        "local-witness": 247,
+        "family-inference": 7,
+        "family-inference-capped": 1
+      },
+      "probes": {
+        "E": {
+          "removed": 22,
+          "denominator": 2915,
+          "share_percent": 0.8,
+          "new_varying_rows": 6,
+          "absence_only": []
+        },
+        "H": {
+          "removed": 191,
+          "denominator": 2915,
+          "share_percent": 6.6,
+          "new_varying_rows": 0,
+          "absence_only": [
+            "ma-1987"
+          ]
+        },
+        "HQ": {
+          "removed": 2865,
+          "denominator": 2915,
+          "share_percent": 98.3,
+          "new_varying_rows": 44,
+          "absence_only": [
+            "ma-1987",
+            "ma-1989",
+            "ma-2114",
+            "ma-2119",
+            "ma-2124",
+            "ma-2129",
+            "ma-2184",
+            "ma-2190"
+          ]
+        },
+        "J": {
+          "removed": 760,
+          "denominator": 2915,
+          "share_percent": 26.1,
+          "new_varying_rows": 596,
+          "absence_only": []
+        },
+        "JP": {
+          "removed": 1018,
+          "denominator": 2915,
+          "share_percent": 34.9,
+          "new_varying_rows": 604,
+          "absence_only": []
+        },
+        "P": {
+          "removed": 15,
+          "denominator": 2915,
+          "share_percent": 0.5,
+          "new_varying_rows": 5,
+          "absence_only": []
+        },
+        "Q": {
+          "removed": 2200,
+          "denominator": 2915,
+          "share_percent": 75.5,
+          "new_varying_rows": 122,
+          "absence_only": []
+        },
+        "R": {
+          "removed": 1037,
+          "denominator": 2915,
+          "share_percent": 35.6,
+          "new_varying_rows": 1171,
+          "absence_only": []
+        },
+        "RH": {
+          "removed": 1138,
+          "denominator": 2915,
+          "share_percent": 39.0,
+          "new_varying_rows": 1230,
+          "absence_only": [
+            "ma-1987"
+          ]
+        }
+      },
+      "intersections": {
+        "E+H": 0,
+        "E+HQ": 4,
+        "E+J": 0,
+        "E+JP": 2,
+        "E+P": 2,
+        "E+Q": 4,
+        "E+R": 0,
+        "E+RH": 0,
+        "H+HQ": 191,
+        "H+J": 0,
+        "H+JP": 0,
+        "H+P": 0,
+        "H+Q": 17,
+        "H+R": 3,
+        "H+RH": 170,
+        "HQ+J": 759,
+        "HQ+JP": 1015,
+        "HQ+P": 13,
+        "HQ+Q": 2197,
+        "HQ+R": 1034,
+        "HQ+RH": 1138,
+        "J+JP": 630,
+        "J+P": 8,
+        "J+Q": 464,
+        "J+R": 476,
+        "J+RH": 479,
+        "JP+P": 14,
+        "JP+Q": 747,
+        "JP+R": 834,
+        "JP+RH": 834,
+        "P+Q": 5,
+        "P+R": 8,
+        "P+RH": 8,
+        "Q+R": 711,
+        "Q+RH": 677,
+        "R+RH": 956
+      },
+      "isolated_union": 1536,
+      "isolated_sum": 2025
+    }
+  }
+}

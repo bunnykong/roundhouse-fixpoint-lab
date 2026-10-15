@@ -1,0 +1,143 @@
+{
+ "apps": [
+  "discourse"
+ ],
+ "failures": [],
+ "predictions": {
+  "discourse": {
+   "observed": 0,
+   "observed_not_predicted": [],
+   "predicted": 18,
+   "predicted_not_observed": [
+    [
+     "app/controllers/application_controller.rb",
+     941,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/application_controller.rb",
+     947,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/sitemap_controller.rb",
+     23,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/sitemap_controller.rb",
+     37,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/sitemap_controller.rb",
+     52,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/sitemap_controller.rb",
+     53,
+     "I",
+     "block"
+    ],
+    [
+     "app/controllers/sitemap_controller.rb",
+     54,
+     "I",
+     "block"
+    ],
+    [
+     "app/models/global_setting.rb",
+     38,
+     "E",
+     null
+    ],
+    [
+     "app/models/global_setting.rb",
+     39,
+     "E",
+     null
+    ],
+    [
+     "app/models/locale_site_setting.rb",
+     57,
+     "E",
+     null
+    ],
+    [
+     "lib/final_destination/resolver.rb",
+     55,
+     "I",
+     "block"
+    ],
+    [
+     "lib/final_destination/resolver.rb",
+     57,
+     "I",
+     "block"
+    ],
+    [
+     "lib/final_destination/resolver.rb",
+     59,
+     "I",
+     "block"
+    ],
+    [
+     "lib/mini_scheduler_long_running_job_logger.rb",
+     73,
+     "I",
+     "block"
+    ],
+    [
+     "lib/onebox/engine/google_maps_onebox.rb",
+     113,
+     "E",
+     null
+    ],
+    [
+     "lib/s3_inventory.rb",
+     251,
+     "E",
+     null
+    ],
+    [
+     "lib/s3_inventory.rb",
+     36,
+     "E",
+     null
+    ],
+    [
+     "lib/sidekiq_long_running_job_logger.rb",
+     48,
+     "I",
+     "block"
+    ]
+   ]
+  }
+ },
+ "problems": [
+  "E discourse/unset-v1-a1: required valid cell missing",
+  "E discourse/1-v0-a0: required valid cell missing",
+  "I discourse/unset-v1-a1: required valid cell missing",
+  "I discourse/1-v0-a0: required valid cell missing",
+  "I discourse/repeat-v1-a1: required valid cell missing"
+ ],
+ "rows": [
+  {
+   "N": [],
+   "app": "discourse",
+   "setting": "unset-v1-a1"
+  },
+  {
+   "N": [],
+   "app": "discourse",
+   "setting": "1-v0-a0"
+  }
+ ],
+ "status": "unavailable"
+}

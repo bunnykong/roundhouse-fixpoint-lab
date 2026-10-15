@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "birth_utc": "2026-10-15T16:19:09.075953+00:00",
+      "mtime_utc": "2026-10-15T16:19:09.076148+00:00",
+      "path": "$EXPERIMENT/protocol.md",
+      "sha256": "812824026da77136df2a2384675ff56119a89d8b70fc8f7b194d29a0959f3244",
+      "size": 33994
+    },
+    {
+      "birth_utc": "2026-10-15T16:17:13.590330+00:00",
+      "mtime_utc": "2026-10-15T16:17:13.590566+00:00",
+      "path": "$WORKSPACE/phase2/closure_harvest-closures/protocol.md",
+      "sha256": "812824026da77136df2a2384675ff56119a89d8b70fc8f7b194d29a0959f3244",
+      "size": 33994
+    },
+    {
+      "birth_utc": "2026-10-15T16:19:09.077436+00:00",
+      "mtime_utc": "2026-10-15T16:29:04.885767+00:00",
+      "path": "$EXPERIMENT/PROMPT.md",
+      "sha256": "2be496c83d2a0de473894931db103484f0b710997c71f7f1379b79e77a40c153",
+      "size": 3305
+    },
+    {
+      "birth_utc": "2026-10-15T16:37:06.417031+00:00",
+      "mtime_utc": "2026-10-15T19:03:25.942710+00:00",
+      "path": "$EXPERIMENT/RESULT.md",
+      "sha256": "dff4cb86d4d50a7722710f54ef7f7f8b35baba2a501600091a1ab45c2482b86e",
+      "size": 15044
+    },
+    {
+      "birth_utc": "2026-10-15T16:32:20.367858+00:00",
+      "mtime_utc": "2026-10-15T16:39:14.306352+00:00",
+      "path": "$EXPERIMENT/results/tools-frozen.json",
+      "sha256": "90591842ab11546b497becbacc3764694752801a12932b6dd749f6fe46a697af",
+      "size": 1029
+    },
+    {
+      "birth_utc": "2026-10-15T17:49:39.310685+00:00",
+      "mtime_utc": "2026-10-15T17:49:39.310914+00:00",
+      "path": "$EXPERIMENT/results/commit-timeline.json",
+      "sha256": "69057cf4e82d0e2941830e237a6a2b754337ef5f5ae001460d7da63f8c86ff33",
+      "size": 1147
+    },
+    {
+      "birth_utc": "2026-10-15T16:39:26.963727+00:00",
+      "mtime_utc": "2026-10-15T16:40:00.166378+00:00",
+      "path": "$EXPERIMENT/results/stage1.json",
+      "sha256": "b1514a3d2282b0dd1b8ff282a18703223f9c4184ace9b722348c5d9c3d1d8727",
+      "size": 13990
+    },
+    {
+      "birth_utc": "2026-10-15T19:00:26.696324+00:00",
+      "mtime_utc": "2026-10-15T19:00:26.696493+00:00",
+      "path": "$EXPERIMENT/results/check-apps.json",
+      "sha256": "abeb6bda55e8a58fab23780ded63a9bd7b8e5211552cb8a74aae66d5e109bb5b",
+      "size": 8121
+    },
+    {
+      "birth_utc": "2026-10-15T19:01:09.868580+00:00",
+      "mtime_utc": "2026-10-15T19:01:09.868649+00:00",
+      "path": "$EXPERIMENT/results/verdict.json",
+      "sha256": "c0a4593f5dfe90dfa15b50cf446e23c791adcf5276cb1ecbe5cdac56466644ea",
+      "size": 498
+    },
+    {
+      "birth_utc": "2026-10-15T19:03:25.942551+00:00",
+      "mtime_utc": "2026-10-15T19:03:25.942588+00:00",
+      "path": "$EXPERIMENT/results/task-time-final.json",
+      "sha256": "49929045c98f2d06e0b2f54af3883d67c1f681ff0668db472cf79a03d6ccf30d",
+      "size": 201
+    }
+  ],
+  "git": [
+    {
+      "command": [
+        "git",
+        "-C",
+        "$EXPERIMENT/repo",
+        "log",
+        "-4",
+        "--format=%H %aI %cI %s"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "fdc00ee929073df085ce15776cb12daac1e4b59f 2026-10-15T10:39:14-06:00 2026-10-15T10:39:14-06:00 Reject site counts when no harvest walk occurred\na59defd65b66dbee49b3210e485ae8171ce3a164 2026-10-15T10:36:37-06:00 2026-10-15T10:36:37-06:00 Add consumer-directed closure write harvesting behind research condition flags\n49cf86ece7582f30e4282ae69476b770969006f1 2026-10-15T10:32:20-06:00 2026-10-15T10:32:20-06:00 Fix research condition receipt completeness and census validation before native variants\nea3ec7441d95926ae7febbe028279cf2e6b8680e 2026-10-15T08:26:28-06:00 2026-10-15T08:26:28-06:00 Merge current Roundhouse main into the research spine\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "$WORKSPACE",
+        "log",
+        "--all",
+        "--format=%H %aI %cI %s",
+        "--",
+        "$PUBLIC_PROTOCOLS/closure_harvest-closures/protocol.md",
+        "$PUBLIC_EXPERIMENTS/closure-application-effects/protocol.md"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "$HOST_PATH",
+        "log",
+        "--all",
+        "--format=%H %aI %cI %s",
+        "--",
+        "$PUBLIC_PROTOCOLS/closure_harvest-closures/protocol.md",
+        "$PUBLIC_EXPERIMENTS/closure-application-effects/protocol.md"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "$HOST_PATH",
+        "check-ignore",
+        "-v",
+        "$PUBLIC_PROTOCOLS/closure_harvest-closures/protocol.md",
+        "$PUBLIC_EXPERIMENTS/closure-application-effects/protocol.md"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ".gitignore:1:.work/\t$PUBLIC_PROTOCOLS/closure_harvest-closures/protocol.md\n.gitignore:1:.work/\t$PUBLIC_EXPERIMENTS/closure-application-effects/protocol.md\n"
+    }
+  ],
+  "observed_at": "2026-10-15T19:05:52.744838+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/target/debug/deps/roundhouse-be70eb8e2562538a": "dc6747186458df38a91032302b9898f2b80aecb021a775522000f15c6db3e406"
+  },
+  "census_summary": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "plain_bound": 0,
+        "plain_reflective_native": 0,
+        "reflective_bound": 0,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_partition_partition_census",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/closure_harvest-apply",
+  "diagnostic_elapsed_seconds": 164.88995066599455,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_SCHED": "sccq",
+    "RH_SKIP_RETURN_STABILIZE": "0",
+    "RH_SPLICED_WRITER_OWNERSHIP": "0",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [],
+  "log_sha256": "24d404ecf4d3b6e8b047cb127ee277ab9aee71f82b98d9beb31d06a069e00258",
+  "metrics": [],
+  "source_diff_sha256": "d1d5e79624c71dfa380f76723c6f938b95311ad46bd54f25ac600d3858af9970",
+  "source_pin": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "source_status": "M src/analyze/fixpoint_bound.rs\n M src/analyze/writer_laws.rs\n?? src/analyze/fixpoint_bound/",
+  "started": "2026-10-15T20:04:43.923119+00:00",
+  "tag": "census",
+  "test_results": [
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1268 filtered out; finished in 127.97s"
+  ],
+  "timing_claim": false,
+  "variant": "closure_harvest-apply"
+}

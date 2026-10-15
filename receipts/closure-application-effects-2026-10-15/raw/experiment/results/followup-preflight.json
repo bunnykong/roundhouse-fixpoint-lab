@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-15T19:15:18.972880+00:00",
+  "source_commit": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "checks": {
+    "tool:check_s4.py": true,
+    "tool:compare_fixture_receipts.py": true,
+    "tool:emit_identity.py": true,
+    "tool:gen_fixtures.py": true,
+    "tool:gen_twins.py": true,
+    "tool:observe_rbs.py": true,
+    "tool:s4lib.py": true,
+    "tool:scan_apps.rb": true,
+    "tool:test_checkers.py": true,
+    "tool:witness.rb": true,
+    "pin:candidate": true,
+    "pin:spine": true,
+    "pin:card": true,
+    "pin:source_card": true,
+    "pin:profile": true,
+    "pin:apps": true,
+    "pin:observer": true,
+    "git_clean": true
+  },
+  "scope": [
+    "discourse/E/unset-v1-a1",
+    "discourse/E/1-v0-a0"
+  ],
+  "observer_locking": "obs.py invokes workshop/flock.py --shared workshop/heavy.lock, plus global Discourse max_parallel=1 lock",
+  "fresh": "Explicitly retry the two interrupted cells, retaining earlier attempts; inference keys are unchanged."
+}

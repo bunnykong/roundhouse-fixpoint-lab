@@ -1,0 +1,258 @@
+{
+  "by_table": {
+    "attributes": {},
+    "block_values": {},
+    "constants": {},
+    "controller_bindings": {},
+    "controller_cache": {},
+    "copies": {},
+    "ir": {
+      "2": 7,
+      "2/5": 4,
+      "4": 36
+    },
+    "params": {
+      "2/5": 2,
+      "4": 11
+    },
+    "returns": {
+      "4": 2
+    },
+    "side_table": {
+      "2": 4,
+      "2/5": 2,
+      "4": 2,
+      "5": 2
+    }
+  },
+  "condition": "schedule-row-attribution-20261015-ea3ec744",
+  "interventions": {
+    "H": {
+      "app": "forem",
+      "by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 10
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 72,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {},
+      "removed_original_variance": 0,
+      "total_varying_rows": 72,
+      "unset_repeat_differing_rows": 0,
+      "variant": "H"
+    },
+    "HQ": {
+      "app": "forem",
+      "by_table": {
+        "side_table": 2
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "3b/2/5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 2,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 8
+      },
+      "removed_original_variance": 70,
+      "total_varying_rows": 2,
+      "unset_repeat_differing_rows": 0,
+      "variant": "HQ"
+    },
+    "J": {
+      "app": "forem",
+      "by_table": {
+        "ir": 90,
+        "params": 19,
+        "returns": 20,
+        "side_table": 8
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2",
+      "new_varying_rows": 74,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 63,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 7,
+        "side_table": 2
+      },
+      "removed_original_variance": 9,
+      "total_varying_rows": 137,
+      "unset_repeat_differing_rows": 0,
+      "variant": "J"
+    },
+    "JP": {
+      "app": "forem",
+      "by_table": {
+        "ir": 26,
+        "params": 2,
+        "returns": 11,
+        "side_table": 8
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2/4",
+      "new_varying_rows": 26,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 21,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 36,
+        "params": 11,
+        "returns": 2,
+        "side_table": 2
+      },
+      "removed_original_variance": 51,
+      "total_varying_rows": 47,
+      "unset_repeat_differing_rows": 0,
+      "variant": "JP"
+    },
+    "P": {
+      "app": "forem",
+      "by_table": {
+        "ir": 11,
+        "params": 2,
+        "side_table": 8
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "4",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 21,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 36,
+        "params": 11,
+        "returns": 2,
+        "side_table": 2
+      },
+      "removed_original_variance": 51,
+      "total_varying_rows": 21,
+      "unset_repeat_differing_rows": 0,
+      "variant": "P"
+    },
+    "Q": {
+      "app": "forem",
+      "by_table": {
+        "side_table": 2
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "2/5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 2,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 8
+      },
+      "removed_original_variance": 70,
+      "total_varying_rows": 2,
+      "unset_repeat_differing_rows": 0,
+      "variant": "Q"
+    },
+    "R": {
+      "app": "forem",
+      "by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 10
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 72,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {},
+      "removed_original_variance": 0,
+      "total_varying_rows": 72,
+      "unset_repeat_differing_rows": 0,
+      "variant": "R"
+    },
+    "RH": {
+      "app": "forem",
+      "by_table": {
+        "ir": 47,
+        "params": 13,
+        "returns": 2,
+        "side_table": 10
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b/5",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 72,
+      "remaining_original": 72,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {},
+      "removed_original_variance": 0,
+      "total_varying_rows": 72,
+      "unset_repeat_differing_rows": 0,
+      "variant": "RH"
+    }
+  },
+  "pairwise_intersection": {
+    "H+HQ": 0,
+    "H+J": 0,
+    "H+JP": 0,
+    "H+P": 0,
+    "H+Q": 0,
+    "H+R": 0,
+    "H+RH": 0,
+    "HQ+J": 9,
+    "HQ+JP": 51,
+    "HQ+P": 51,
+    "HQ+Q": 70,
+    "HQ+R": 0,
+    "HQ+RH": 0,
+    "J+JP": 0,
+    "J+P": 0,
+    "J+Q": 9,
+    "J+R": 0,
+    "J+RH": 0,
+    "JP+P": 51,
+    "JP+Q": 51,
+    "JP+R": 0,
+    "JP+RH": 0,
+    "P+Q": 51,
+    "P+R": 0,
+    "P+RH": 0,
+    "Q+R": 0,
+    "Q+RH": 0,
+    "R+RH": 0
+  },
+  "primary_mediators": {
+    "2": 11,
+    "2/5": 8,
+    "4": 51,
+    "5": 2
+  },
+  "rows": 72,
+  "statuses": {
+    "intervention-sensitive": 58,
+    "local-witness": 6,
+    "mixed-intervention": 8
+  },
+  "unlocalized_ids": []
+}

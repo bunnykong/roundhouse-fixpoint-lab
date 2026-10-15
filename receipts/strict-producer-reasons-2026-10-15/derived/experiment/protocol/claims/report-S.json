@@ -1,0 +1,90 @@
+{
+  "claims": [
+    {
+      "apps": [
+        "campfire"
+      ],
+      "baseline": "unset-v0-a1",
+      "expected": {
+        "changes": [],
+        "left_only": [],
+        "right_only": []
+      },
+      "field": "reason_rows",
+      "kind": "reason_delta",
+      "name": "R-v0a1-delta",
+      "settings": [
+        "1-v0-a1",
+        "2-v0-a1",
+        "repeat-v0-a1"
+      ]
+    },
+    {
+      "apps": [
+        "campfire"
+      ],
+      "baseline": "unset-v0-a0",
+      "expected": {
+        "changes": [],
+        "left_only": [],
+        "right_only": []
+      },
+      "field": "reason_rows",
+      "kind": "reason_delta",
+      "name": "R-v0a0-delta",
+      "settings": [
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    },
+    {
+      "against": "strict-producer-C",
+      "apps": [
+        "campfire"
+      ],
+      "expected": [],
+      "field": "value_digests",
+      "kind": "changed_keys",
+      "name": "R-xa-digest-parity",
+      "settings": [
+        "unset-v0-a1",
+        "1-v0-a1",
+        "2-v0-a1",
+        "repeat-v0-a1"
+      ]
+    },
+    {
+      "against": "strict-producer-C",
+      "apps": [
+        "campfire"
+      ],
+      "expected": [],
+      "field": "value_digests",
+      "kind": "changed_keys",
+      "name": "R-v0a0-value_digests-parity",
+      "settings": [
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    },
+    {
+      "against": "strict-producer-C",
+      "apps": [
+        "campfire"
+      ],
+      "expected": [],
+      "field": "diagnostics",
+      "kind": "changed_keys",
+      "name": "R-v0a0-diagnostics-parity",
+      "settings": [
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    }
+  ]
+}

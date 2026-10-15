@@ -1,0 +1,422 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "exit": 0,
+        "result_lines": [
+          "test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 1258 filtered out; finished in 0.56s"
+        ]
+      },
+      "name": "unit",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "witness-4.0.7",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "witness-3.4.4",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "witness-twins-4.0.7",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "spine-S-fixtures",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-S-fixtures",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-E-fixtures",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-I-fixtures",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "compare-S-fixtures",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "spine-S-twins",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-S-twins",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-E-twins",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "cand-I-twins",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "compare-S-twins",
+      "status": "pass"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "cargo",
+        "+1.98.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--lib",
+        "closure_application",
+        "--",
+        "--include-ignored",
+        "--test-threads=1",
+        "--nocapture"
+      ],
+      "exit": 0,
+      "name": "unit",
+      "ruby": "3.4.4",
+      "seconds": 9.510208999970928
+    },
+    {
+      "argv": [
+        "ruby",
+        "$EXPERIMENT/tools/witness.rb",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures"
+      ],
+      "exit": 0,
+      "name": "witness-4.0.7",
+      "ruby": "4.0.7",
+      "seconds": 0.1094540839549154
+    },
+    {
+      "argv": [
+        "ruby",
+        "$EXPERIMENT/tools/witness.rb",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures"
+      ],
+      "exit": 0,
+      "name": "witness-3.4.4",
+      "ruby": "3.4.4",
+      "seconds": 0.10442087496630847
+    },
+    {
+      "argv": [
+        "ruby",
+        "$EXPERIMENT/tools/witness.rb",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures-twins"
+      ],
+      "exit": 0,
+      "name": "witness-twins-4.0.7",
+      "ruby": "4.0.7",
+      "seconds": 0.10352104110643268
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures",
+        "--variant",
+        "S",
+        "--label",
+        "spine-S-fixtures",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "fixtures",
+        "--exclude",
+        "X3"
+      ],
+      "exit": 0,
+      "name": "spine-S-fixtures",
+      "ruby": null,
+      "seconds": 3.298975000041537
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures",
+        "--variant",
+        "S",
+        "--label",
+        "cand-S-fixtures",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "fixtures",
+        "--exclude",
+        "X3"
+      ],
+      "exit": 0,
+      "name": "cand-S-fixtures",
+      "ruby": null,
+      "seconds": 3.690175791969523
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures",
+        "--variant",
+        "E",
+        "--label",
+        "cand-E-fixtures",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "fixtures",
+        "--exclude",
+        "X3",
+        "--flag",
+        "RH_CLOSURE_ENTRANCES=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1"
+      ],
+      "exit": 0,
+      "name": "cand-E-fixtures",
+      "ruby": null,
+      "seconds": 3.182900292100385
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures",
+        "--variant",
+        "I",
+        "--label",
+        "cand-I-fixtures",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "fixtures",
+        "--exclude",
+        "X3",
+        "--flag",
+        "RH_CLOSURE_APPLY=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1"
+      ],
+      "exit": 0,
+      "name": "cand-I-fixtures",
+      "ruby": null,
+      "seconds": 3.2041261250851676
+    },
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/compare_fixture_receipts.py",
+        "$EXPERIMENT/results/spine-S-fixtures.json",
+        "$EXPERIMENT/results/cand-S-fixtures.json"
+      ],
+      "exit": 0,
+      "name": "compare-S-fixtures",
+      "ruby": null,
+      "seconds": 0.035422541899606586
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures-twins",
+        "--variant",
+        "S",
+        "--label",
+        "spine-S-twins",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "twins",
+        "--exclude",
+        ""
+      ],
+      "exit": 0,
+      "name": "spine-S-twins",
+      "ruby": null,
+      "seconds": 2.622707083937712
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures-twins",
+        "--variant",
+        "S",
+        "--label",
+        "cand-S-twins",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "twins",
+        "--exclude",
+        ""
+      ],
+      "exit": 0,
+      "name": "cand-S-twins",
+      "ruby": null,
+      "seconds": 2.498370209010318
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures-twins",
+        "--variant",
+        "E",
+        "--label",
+        "cand-E-twins",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "twins",
+        "--exclude",
+        "",
+        "--flag",
+        "RH_CLOSURE_ENTRANCES=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1"
+      ],
+      "exit": 0,
+      "name": "cand-E-twins",
+      "ruby": null,
+      "seconds": 2.2865117500768974
+    },
+    {
+      "argv": [
+        "python3",
+        "$WORKSPACE/workshop/flock.py",
+        "$WORKSPACE/workshop/heavy.lock",
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/observe_rbs.py",
+        "--bin",
+        "$EXPERIMENT/bin/roundhouse",
+        "--fixtures",
+        "$WORKSPACE/phase2/closure_harvest-closures/fixtures-twins",
+        "--variant",
+        "I",
+        "--label",
+        "cand-I-twins",
+        "--out",
+        "$EXPERIMENT/results",
+        "--expect-sites",
+        "$WORKSPACE/phase2/closure_harvest-closures/results/scan-fixtures.json",
+        "--scan-name",
+        "twins",
+        "--exclude",
+        "",
+        "--flag",
+        "RH_CLOSURE_APPLY=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1"
+      ],
+      "exit": 0,
+      "name": "cand-I-twins",
+      "ruby": null,
+      "seconds": 2.5032965830760077
+    },
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "$EXPERIMENT/tools/compare_fixture_receipts.py",
+        "$EXPERIMENT/results/spine-S-twins.json",
+        "$EXPERIMENT/results/cand-S-twins.json"
+      ],
+      "exit": 0,
+      "name": "compare-S-twins",
+      "ruby": null,
+      "seconds": 0.026541084051132202
+    }
+  ],
+  "condition": "closure-application-effects-20261015-ea3ec744",
+  "finished_at": "2026-10-15T16:40:00.166203+00:00",
+  "started_at": "2026-10-15T16:39:26.963487+00:00",
+  "status": "pass"
+}

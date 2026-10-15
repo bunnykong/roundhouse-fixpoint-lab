@@ -1,0 +1,24 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--cache-root",
+    "$REVIEW/cache",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "campfire",
+    "--settings",
+    "unset-v0-a0,1-v0-a0,2-v0-a0,repeat-v0-a0,unset-v1-a1,1-v1-a1,2-v1-a1,repeat-v1-a1,unset-v0-a1,1-v0-a1,2-v0-a1,repeat-v0-a1",
+    "--flags",
+    "$EXPERIMENT/strict-producer-protocol/profiles/S1.json",
+    "--label",
+    "rv-S1",
+    "--jobs",
+    "1",
+    "--fresh"
+  ],
+  "exit": 0
+}

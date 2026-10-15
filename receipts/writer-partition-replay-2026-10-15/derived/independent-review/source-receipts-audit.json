@@ -1,0 +1,39 @@
+{
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "current_source_manifests": {
+    "closure_harvest-apply": {
+      "matched_files": 553,
+      "pin": "fdc00ee929073df085ce15776cb12daac1e4b59f"
+    },
+    "f47": {
+      "matched_files": 507,
+      "pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0"
+    },
+    "spine": {
+      "matched_files": 548,
+      "pin": "ea3ec7441d95926ae7febbe028279cf2e6b8680e"
+    },
+    "strict-producers-complete-reads": {
+      "matched_files": 550,
+      "pin": "2233e2e7e639b9f66ecda41fac34475b2d0f2559"
+    }
+  },
+  "historical_f47": {
+    "condition": "reflective-evaluated-containers-20261015-fe6b169e",
+    "frozen_tree": "eda0783b22c8b23b05e2552e357515dc72f2d1e0",
+    "historical_receipt_sha256": "b92bbc73df789f1da7ac52d2646211561b4d64c31899298ee27068c21a45205a",
+    "inference_flags_match": true,
+    "matched_archive_members": [
+      "week/bound-next/results/partitions-on.json"
+    ],
+    "original_archive": "$EXPERIMENT/evidence/receipts.tar.gz",
+    "ruby_fixtures_matched": 3,
+    "runtime_flag_differences": {
+      "RUST_MIN_STACK": {
+        "fresh": "33554432",
+        "historical": null
+      }
+    },
+    "rust_files_matched": 503
+  }
+}

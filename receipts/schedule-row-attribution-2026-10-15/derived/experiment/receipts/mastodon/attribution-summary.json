@@ -1,0 +1,431 @@
+{
+  "by_table": {
+    "attributes": {},
+    "block_values": {},
+    "constants": {},
+    "controller_bindings": {},
+    "controller_cache": {
+      "2": 15,
+      "2/5": 31,
+      "3b": 2,
+      "5": 9
+    },
+    "copies": {},
+    "ir": {
+      "2": 588,
+      "2/5": 808,
+      "3b": 36,
+      "3b/2/5": 57,
+      "3b/5": 8,
+      "4": 7,
+      "5": 394,
+      "6": 22
+    },
+    "params": {
+      "2": 49,
+      "2/5": 132,
+      "3b": 8,
+      "3b/2/5": 14,
+      "4": 3,
+      "5": 30
+    },
+    "returns": {
+      "2": 90,
+      "2/5": 164,
+      "3b": 150,
+      "3b/2/5": 50,
+      "5": 112
+    },
+    "side_table": {
+      "2": 35,
+      "2/5": 38,
+      "4": 5,
+      "5": 58
+    }
+  },
+  "condition": "schedule-row-attribution-20261015-ea3ec744",
+  "interventions": {
+    "E": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 57,
+        "ir": 1906,
+        "params": 234,
+        "returns": 566,
+        "side_table": 136
+      },
+      "condition": "schedule-row-literal-history-v1",
+      "mechanism": "6",
+      "new_varying_rows": 6,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 2893,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 20,
+        "params": 2
+      },
+      "removed_original_variance": 22,
+      "total_varying_rows": 2899,
+      "unset_repeat_differing_rows": 0,
+      "variant": "E"
+    },
+    "H": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 55,
+        "ir": 1884,
+        "params": 228,
+        "returns": 421,
+        "side_table": 136
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b",
+      "new_varying_rows": 0,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 2724,
+      "removed_by_absence_ids": [
+        "ma-1987"
+      ],
+      "removed_by_table": {
+        "controller_cache": 2,
+        "ir": 36,
+        "params": 8,
+        "returns": 145
+      },
+      "removed_original_variance": 191,
+      "total_varying_rows": 2724,
+      "unset_repeat_differing_rows": 0,
+      "variant": "H"
+    },
+    "HQ": {
+      "app": "mastodon",
+      "by_table": {
+        "ir": 48,
+        "params": 6,
+        "returns": 2,
+        "side_table": 38
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "3b/2/5",
+      "new_varying_rows": 44,
+      "nonsettled_loops": {
+        "1": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "2": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "repeat": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "unset": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        }
+      },
+      "original_rows": 2915,
+      "remaining_original": 50,
+      "removed_by_absence_ids": [
+        "ma-1987",
+        "ma-1989",
+        "ma-2114",
+        "ma-2119",
+        "ma-2124",
+        "ma-2129",
+        "ma-2184",
+        "ma-2190"
+      ],
+      "removed_by_table": {
+        "controller_cache": 57,
+        "ir": 1904,
+        "params": 233,
+        "returns": 565,
+        "side_table": 106
+      },
+      "removed_original_variance": 2865,
+      "total_varying_rows": 94,
+      "unset_repeat_differing_rows": 0,
+      "variant": "HQ"
+    },
+    "J": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 43,
+        "ir": 1786,
+        "params": 208,
+        "returns": 557,
+        "side_table": 157
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2",
+      "new_varying_rows": 596,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 2155,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 15,
+        "ir": 594,
+        "params": 49,
+        "returns": 80,
+        "side_table": 22
+      },
+      "removed_original_variance": 760,
+      "total_varying_rows": 2751,
+      "unset_repeat_differing_rows": 0,
+      "variant": "J"
+    },
+    "JP": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 60,
+        "ir": 1607,
+        "params": 217,
+        "returns": 453,
+        "side_table": 164
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "2/4",
+      "new_varying_rows": 604,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 1897,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 9,
+        "ir": 763,
+        "params": 51,
+        "returns": 176,
+        "side_table": 19
+      },
+      "removed_original_variance": 1018,
+      "total_varying_rows": 2501,
+      "unset_repeat_differing_rows": 0,
+      "variant": "JP"
+    },
+    "P": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 57,
+        "ir": 1913,
+        "params": 238,
+        "returns": 566,
+        "side_table": 131
+      },
+      "condition": "schedule-row-diagnostic-interventions-v1",
+      "mechanism": "4",
+      "new_varying_rows": 5,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 2900,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "ir": 7,
+        "params": 3,
+        "side_table": 5
+      },
+      "removed_original_variance": 15,
+      "total_varying_rows": 2905,
+      "unset_repeat_differing_rows": 0,
+      "variant": "P"
+    },
+    "Q": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 23,
+        "ir": 423,
+        "params": 51,
+        "returns": 301,
+        "side_table": 39
+      },
+      "condition": "schedule-row-diagnostic-all-fold-memory-v1",
+      "mechanism": "2/5",
+      "new_varying_rows": 122,
+      "nonsettled_loops": {
+        "1": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "2": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "repeat": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        },
+        "unset": {
+          "absorb": {
+            "end": "ran_to_cap"
+          },
+          "production": {
+            "end": "ran_to_cap"
+          }
+        }
+      },
+      "original_rows": 2915,
+      "remaining_original": 715,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 35,
+        "ir": 1553,
+        "params": 192,
+        "returns": 314,
+        "side_table": 106
+      },
+      "removed_original_variance": 2200,
+      "total_varying_rows": 837,
+      "unset_repeat_differing_rows": 0,
+      "variant": "Q"
+    },
+    "R": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 393,
+        "ir": 1885,
+        "params": 218,
+        "returns": 419,
+        "side_table": 134
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "5",
+      "new_varying_rows": 1171,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 1878,
+      "removed_by_absence_ids": [],
+      "removed_by_table": {
+        "controller_cache": 22,
+        "ir": 761,
+        "params": 57,
+        "returns": 192,
+        "side_table": 5
+      },
+      "removed_original_variance": 1037,
+      "total_varying_rows": 3049,
+      "unset_repeat_differing_rows": 0,
+      "variant": "R"
+    },
+    "RH": {
+      "app": "mastodon",
+      "by_table": {
+        "controller_cache": 400,
+        "ir": 1921,
+        "params": 225,
+        "returns": 325,
+        "side_table": 136
+      },
+      "condition": "schedule-row-return-memory-v1",
+      "mechanism": "3b/5",
+      "new_varying_rows": 1230,
+      "nonsettled_loops": {},
+      "original_rows": 2915,
+      "remaining_original": 1777,
+      "removed_by_absence_ids": [
+        "ma-1987"
+      ],
+      "removed_by_table": {
+        "controller_cache": 15,
+        "ir": 737,
+        "params": 51,
+        "returns": 332,
+        "side_table": 3
+      },
+      "removed_original_variance": 1138,
+      "total_varying_rows": 3007,
+      "unset_repeat_differing_rows": 0,
+      "variant": "RH"
+    }
+  },
+  "pairwise_intersection": {
+    "E+H": 0,
+    "E+HQ": 4,
+    "E+J": 0,
+    "E+JP": 2,
+    "E+P": 2,
+    "E+Q": 4,
+    "E+R": 0,
+    "E+RH": 0,
+    "H+HQ": 191,
+    "H+J": 0,
+    "H+JP": 0,
+    "H+P": 0,
+    "H+Q": 17,
+    "H+R": 3,
+    "H+RH": 170,
+    "HQ+J": 759,
+    "HQ+JP": 1015,
+    "HQ+P": 13,
+    "HQ+Q": 2197,
+    "HQ+R": 1034,
+    "HQ+RH": 1138,
+    "J+JP": 630,
+    "J+P": 8,
+    "J+Q": 464,
+    "J+R": 476,
+    "J+RH": 479,
+    "JP+P": 14,
+    "JP+Q": 747,
+    "JP+R": 834,
+    "JP+RH": 834,
+    "P+Q": 5,
+    "P+R": 8,
+    "P+RH": 8,
+    "Q+R": 711,
+    "Q+RH": 677,
+    "R+RH": 956
+  },
+  "primary_mediators": {
+    "2": 777,
+    "2/5": 1173,
+    "3b": 196,
+    "3b/2/5": 121,
+    "3b/5": 8,
+    "4": 15,
+    "5": 603,
+    "6": 22
+  },
+  "rows": 2915,
+  "statuses": {
+    "family-inference": 7,
+    "family-inference-capped": 1,
+    "intervention-sensitive": 1359,
+    "local-witness": 247,
+    "mixed-intervention": 8,
+    "mixed-intervention-capped": 1293
+  },
+  "unlocalized_ids": []
+}

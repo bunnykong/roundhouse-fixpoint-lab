@@ -1,0 +1,189 @@
+{
+  "apps": {
+    "chatwoot": {
+      "missing": [],
+      "problems": [
+        "SK value parity unset-v0-a0",
+        "SK value parity unset-v1-a1",
+        "SK value parity repeat-v0-a0",
+        "SK value parity repeat-v1-a1"
+      ],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 204,
+          "R": 36,
+          "T": 146
+        },
+        "C/2": {
+          "M": 135,
+          "R": 27,
+          "T": 114
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "S/1": {
+          "M": 204,
+          "R": 36,
+          "T": 146
+        },
+        "S/2": {
+          "M": 135,
+          "R": 27,
+          "T": 114
+        },
+        "S/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 204,
+          "R": 62,
+          "T": 146
+        },
+        "SK/2": {
+          "M": 135,
+          "R": 29,
+          "T": 114
+        },
+        "SK/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "fail"
+    },
+    "discourse": {
+      "missing": [
+        "C/1",
+        "SK/1",
+        "C/2",
+        "SK/2",
+        "C/repeat",
+        "SK/repeat",
+        "SK invariant strict-producer-SK/discourse/unset-v0-a0",
+        "SK invariant strict-producer-SK/discourse/1-v0-a0",
+        "SK invariant strict-producer-SK/discourse/2-v0-a0",
+        "SK invariant strict-producer-SK/discourse/repeat-v0-a0",
+        "SK invariant strict-producer-SK/discourse/unset-v1-a1",
+        "no stable or matched pair"
+      ],
+      "problems": [],
+      "report_missing": [],
+      "rows": {
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": false
+      },
+      "status": "unavailable"
+    },
+    "forem": {
+      "missing": [],
+      "problems": [],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "C/2": {
+          "M": 20,
+          "R": 0,
+          "T": 0
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "S/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "S/2": {
+          "M": 20,
+          "R": 9,
+          "T": 0
+        },
+        "S/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "SK/2": {
+          "M": 20,
+          "R": 0,
+          "T": 0
+        },
+        "SK/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "matched/1": true,
+        "matched/2": true,
+        "matched/repeat": true,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "pass"
+    },
+    "mastodon": {
+      "missing": [
+        "C/1",
+        "SK/1",
+        "C/2",
+        "SK/2",
+        "C/repeat",
+        "SK/repeat",
+        "SK invariant strict-producer-SK/mastodon/unset-v0-a0",
+        "SK invariant strict-producer-SK/mastodon/1-v0-a0",
+        "SK invariant strict-producer-SK/mastodon/2-v0-a0",
+        "SK invariant strict-producer-SK/mastodon/repeat-v0-a0",
+        "SK invariant strict-producer-SK/mastodon/unset-v1-a1",
+        "SK invariant strict-producer-SK/mastodon/1-v1-a1",
+        "SK invariant strict-producer-SK/mastodon/2-v1-a1",
+        "SK invariant strict-producer-SK/mastodon/repeat-v1-a1",
+        "no stable or matched pair"
+      ],
+      "problems": [],
+      "report_missing": [
+        "S/1",
+        "S/2",
+        "S/repeat"
+      ],
+      "rows": {
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": false
+      },
+      "status": "unavailable"
+    }
+  },
+  "verdict": "GENERALIZATION FAILS"
+}

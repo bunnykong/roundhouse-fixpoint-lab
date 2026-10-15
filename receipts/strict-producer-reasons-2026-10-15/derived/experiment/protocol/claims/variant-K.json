@@ -1,0 +1,67 @@
+{
+  "claims": [
+    {
+      "against": "strict-producer-C",
+      "apps": [
+        "campfire"
+      ],
+      "expected": [],
+      "field": "value_digests",
+      "kind": "changed_keys",
+      "name": "H5e-value_digests-parity",
+      "settings": [
+        "unset-v1-a1",
+        "1-v1-a1",
+        "2-v1-a1",
+        "repeat-v1-a1",
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    },
+    {
+      "against": "strict-producer-C",
+      "apps": [
+        "campfire"
+      ],
+      "expected": [],
+      "field": "diagnostics",
+      "kind": "changed_keys",
+      "name": "H5e-diagnostics-parity",
+      "settings": [
+        "unset-v1-a1",
+        "1-v1-a1",
+        "2-v1-a1",
+        "repeat-v1-a1",
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0"
+      ]
+    },
+    {
+      "apps": [
+        "campfire"
+      ],
+      "expected": 0,
+      "field": "reason_census.untyped_by_provenance.pending",
+      "kind": "equals",
+      "name": "INV-pending-zero",
+      "settings": [
+        "unset-v0-a0",
+        "1-v0-a0",
+        "2-v0-a0",
+        "repeat-v0-a0",
+        "unset-v1-a1",
+        "1-v1-a1",
+        "2-v1-a1",
+        "repeat-v1-a1",
+        "unset-v0-a1",
+        "1-v0-a1",
+        "2-v0-a1",
+        "repeat-v0-a1"
+      ]
+    }
+  ]
+}

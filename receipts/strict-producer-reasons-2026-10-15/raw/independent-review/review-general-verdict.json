@@ -1,0 +1,236 @@
+{
+  "apps": {
+    "chatwoot": {
+      "missing": [],
+      "problems": [
+        "SK value parity unset-v0-a0",
+        "SK value parity unset-v1-a1",
+        "SK value parity repeat-v0-a0",
+        "SK value parity repeat-v1-a1"
+      ],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 204,
+          "R": 36,
+          "T": 146
+        },
+        "C/2": {
+          "M": 135,
+          "R": 27,
+          "T": 114
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "S/1": {
+          "M": 204,
+          "R": 36,
+          "T": 146
+        },
+        "S/2": {
+          "M": 135,
+          "R": 27,
+          "T": 114
+        },
+        "S/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 204,
+          "R": 62,
+          "T": 146
+        },
+        "SK/2": {
+          "M": 135,
+          "R": 29,
+          "T": 114
+        },
+        "SK/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "fail"
+    },
+    "discourse": {
+      "missing": [
+        "SK/2",
+        "SK/repeat",
+        "parity unset-v1-a1",
+        "parity repeat-v0-a0",
+        "SK invariant review-SK/discourse/2-v0-a0",
+        "SK invariant review-SK/discourse/repeat-v0-a0",
+        "SK invariant review-SK/discourse/unset-v1-a1"
+      ],
+      "problems": [
+        "SK value parity unset-v0-a0"
+      ],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 3325,
+          "R": 185,
+          "T": 2041
+        },
+        "C/2": {
+          "M": 2453,
+          "R": 173,
+          "T": 1928
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 3279,
+          "R": 422,
+          "T": 1943
+        },
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "fail"
+    },
+    "forem": {
+      "missing": [],
+      "problems": [],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "C/2": {
+          "M": 20,
+          "R": 0,
+          "T": 0
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "S/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "S/2": {
+          "M": 20,
+          "R": 9,
+          "T": 0
+        },
+        "S/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 38,
+          "R": 11,
+          "T": 2
+        },
+        "SK/2": {
+          "M": 20,
+          "R": 0,
+          "T": 0
+        },
+        "SK/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "matched/1": true,
+        "matched/2": true,
+        "matched/repeat": true,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "pass"
+    },
+    "mastodon": {
+      "missing": [],
+      "problems": [
+        "SK value parity unset-v0-a0",
+        "SK value parity unset-v1-a1",
+        "SK value parity repeat-v0-a0",
+        "SK value parity repeat-v1-a1"
+      ],
+      "report_missing": [],
+      "rows": {
+        "C/1": {
+          "M": 804,
+          "R": 31,
+          "T": 890
+        },
+        "C/2": {
+          "M": 293,
+          "R": 141,
+          "T": 276
+        },
+        "C/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "S/1": {
+          "M": 804,
+          "R": 41,
+          "T": 890
+        },
+        "S/2": {
+          "M": 293,
+          "R": 151,
+          "T": 276
+        },
+        "S/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "SK/1": {
+          "M": 804,
+          "R": 25,
+          "T": 890
+        },
+        "SK/2": {
+          "M": 293,
+          "R": 137,
+          "T": 276
+        },
+        "SK/repeat": {
+          "M": 0,
+          "R": 0,
+          "T": 0
+        },
+        "matched/1": false,
+        "matched/2": false,
+        "matched/repeat": false,
+        "stable/1": false,
+        "stable/2": false,
+        "stable/repeat": true
+      },
+      "status": "fail"
+    }
+  },
+  "verdict": "GENERALIZATION FAILS"
+}

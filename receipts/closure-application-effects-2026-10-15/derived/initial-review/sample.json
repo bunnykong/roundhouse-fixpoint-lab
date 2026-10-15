@@ -1,0 +1,125 @@
+{
+  "builder_comparison": {
+    "closure_census_differences": {},
+    "compared_fields": [
+      "value_digests",
+      "reason_census",
+      "reason_rows",
+      "successful_writes",
+      "law_violation_counts",
+      "diagnostics",
+      "loops",
+      "verify",
+      "exit_code"
+    ],
+    "differences": {},
+    "key_differences_except_dump_paths": {},
+    "unavailable_in_both": [
+      "successful_writes"
+    ]
+  },
+  "condition": "closure-application-effects-20261015-ea3ec744",
+  "original_receipt": "$EXPERIMENT/results/app-receipts/I/campfire/unset-v1-a1/result.json",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "$WORKSPACE/phase2/observers/obs.py",
+        "run",
+        "--bin",
+        "$REVIEW/kit/roundhouse",
+        "--app",
+        "campfire",
+        "--settings",
+        "unset-v1-a1",
+        "--flags",
+        "$EXPERIMENT/B/profiles/ownership-off.json",
+        "--flag",
+        "RH_CLOSURE_APPLY=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1",
+        "--label",
+        "rv-closure_harvest-I",
+        "--cache-root",
+        "$REVIEW/observer-cache",
+        "--jobs",
+        "1",
+        "--timeout",
+        "120"
+      ],
+      "exit": 0,
+      "invocation": {
+        "analyzer_runs": 0,
+        "app": "campfire",
+        "cache_hits": 1,
+        "elapsed_seconds": 0.15163424995262176,
+        "ended_utc": "2026-10-15T19:07:43.660690+00:00",
+        "fresh": false,
+        "settings": [
+          "unset-v1-a1"
+        ]
+      },
+      "reference": {
+        "analyzer_runs": 0,
+        "cache_hit": true,
+        "cache_key": "782549bc144b324057c8628a9516934bbcb0dc759f30904ff8e07dff0207f2bb",
+        "fresh_match": null,
+        "result": "$REVIEW/observer-cache/objects/78/782549bc144b324057c8628a9516934bbcb0dc759f30904ff8e07dff0207f2bb/baseline.json",
+        "valid": true
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "$WORKSPACE/phase2/observers/obs.py",
+        "run",
+        "--bin",
+        "$REVIEW/kit/roundhouse",
+        "--app",
+        "campfire",
+        "--settings",
+        "unset-v1-a1",
+        "--flags",
+        "$EXPERIMENT/B/profiles/ownership-off.json",
+        "--flag",
+        "RH_CLOSURE_APPLY=1",
+        "--flag",
+        "RH_CLOSURE_SITES=1",
+        "--label",
+        "rv-closure_harvest-I",
+        "--cache-root",
+        "$REVIEW/observer-cache",
+        "--jobs",
+        "1",
+        "--timeout",
+        "120",
+        "--fresh"
+      ],
+      "exit": 0,
+      "invocation": {
+        "analyzer_runs": 1,
+        "app": "campfire",
+        "cache_hits": 0,
+        "elapsed_seconds": 4.894200708949938,
+        "ended_utc": "2026-10-15T19:07:48.605902+00:00",
+        "fresh": true,
+        "settings": [
+          "unset-v1-a1"
+        ]
+      },
+      "reference": {
+        "analyzer_runs": 1,
+        "cache_hit": false,
+        "cache_key": "782549bc144b324057c8628a9516934bbcb0dc759f30904ff8e07dff0207f2bb",
+        "fresh_differences": {},
+        "fresh_match": true,
+        "result": "$REVIEW/observer-cache/objects/78/782549bc144b324057c8628a9516934bbcb0dc759f30904ff8e07dff0207f2bb/attempts/20261015T190743-a32af0acba/result.json",
+        "valid": true
+      }
+    }
+  ],
+  "setting": "unset-v1-a1",
+  "variant": "I"
+}

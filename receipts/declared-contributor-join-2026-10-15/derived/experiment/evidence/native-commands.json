@@ -1,0 +1,51 @@
+[
+  {
+    "cargo_build_jobs": 4,
+    "cargo_target_dir": "$EXPERIMENT/target",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "cargo",
+      "+1.98.1",
+      "test",
+      "--locked",
+      "--offline",
+      "--lib",
+      "declared_contributor_join_laws",
+      "--",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:46:14.647392+00:00",
+    "name": "contributor-join-laws",
+    "ruby": "3.4.4",
+    "started": "2026-10-15T17:45:14.733140+00:00"
+  },
+  {
+    "cargo_build_jobs": 4,
+    "cargo_target_dir": "$EXPERIMENT/target",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "--exclusive",
+      "$WORKSPACE/workshop/full-test-suite.lock",
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "cargo",
+      "+1.98.1",
+      "test",
+      "--locked",
+      "--offline",
+      "--lib",
+      "--",
+      "--test-threads=4"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:49:38.513573+00:00",
+    "name": "lib-suite",
+    "ruby": "3.4.4",
+    "started": "2026-10-15T17:46:14.647588+00:00"
+  }
+]

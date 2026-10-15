@@ -1,0 +1,331 @@
+{
+  "card_inventory_is_scope_not_a_new_census": true,
+  "files": {
+    "src/analyze/body/mod.rs": [
+      {
+        "line": 677,
+        "text": "let unknown = subject_ty.map(crate::analyze::strict_producers::unresolved_from).unwrap_or_else(Ty::unresolved);"
+      },
+      {
+        "line": 1211,
+        "text": "rescued = Some(c.ty.as_ref().map(crate::analyze::strict_producers::unresolved_from).unwrap_or_else(Ty::unresolved));"
+      },
+      {
+        "line": 3337,
+        "text": "Some(t) if crate::analyze::strict_producers::xfer_on() && crate::analyze::strict_producers::only_pending(t) => Some(Ty::pending_untyped()),"
+      },
+      {
+        "line": 3338,
+        "text": "Some(t @ Ty::Untyped { .. }) => Some(crate::analyze::strict_producers::unresolved_from(t)),"
+      },
+      {
+        "line": 3340,
+        "text": "Some(Ty::Rec { slot }) => Some(if crate::analyze::strict_producers::xfer_on()"
+      }
+    ],
+    "src/analyze/body/pagy.rs": [
+      {
+        "line": 40,
+        "text": "Some(t) if crate::analyze::strict_producers::xfer_on() && crate::analyze::strict_producers::only_pending(t) => Some(Ty::pending_untyped()),"
+      }
+    ],
+    "src/analyze/body/send.rs": [
+      {
+        "line": 413,
+        "text": "|| recv_ty.is_some_and(|t| crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 414,
+        "text": "&& crate::analyze::strict_producers::only_pending(t)) {"
+      },
+      {
+        "line": 417,
+        "text": "recv_ty.map(crate::analyze::strict_producers::unresolved_from).unwrap_or_else(Ty::unresolved));"
+      },
+      {
+        "line": 1314,
+        "text": "if crate::analyze::strict_producers::xfer_on() && crate::analyze::strict_producers::only_pending(t) {"
+      },
+      {
+        "line": 1366,
+        "text": "if crate::analyze::strict_producers::xfer_on() && crate::analyze::strict_producers::only_pending(t) {"
+      },
+      {
+        "line": 2505,
+        "text": "return crate::analyze::strict_producers::unresolved_from(recv_ty);"
+      },
+      {
+        "line": 2530,
+        "text": "return crate::analyze::strict_producers::unresolved_from(&r);"
+      },
+      {
+        "line": 2747,
+        "text": "Some(t) if crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 2748,
+        "text": "&& crate::analyze::strict_producers::only_pending(t) => Ty::pending_untyped(),"
+      },
+      {
+        "line": 2749,
+        "text": "Some(t @ Ty::Untyped { .. }) => crate::analyze::strict_producers::unresolved_from(t),"
+      },
+      {
+        "line": 2756,
+        "text": "Some(t) if crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 2757,
+        "text": "&& crate::analyze::strict_producers::only_pending(t) => Ty::pending_untyped(),"
+      },
+      {
+        "line": 2758,
+        "text": "Some(t @ Ty::Untyped { .. }) => crate::analyze::strict_producers::unresolved_from(t),"
+      },
+      {
+        "line": 2766,
+        "text": "Some(t) if crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 2767,
+        "text": "&& crate::analyze::strict_producers::only_pending(t) => Ty::pending_untyped(),"
+      },
+      {
+        "line": 2768,
+        "text": "Some(t @ Ty::Untyped { .. }) => crate::analyze::strict_producers::unresolved_from(t),"
+      },
+      {
+        "line": 2891,
+        "text": "t if crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 2892,
+        "text": "&& crate::analyze::strict_producers::only_pending(t) => Ty::pending_untyped(),"
+      },
+      {
+        "line": 2893,
+        "text": "Ty::Hash { value, .. } if matches!(&**value, Ty::Untyped { .. }) => crate::analyze::strict_producers::unresolved_from(value),"
+      },
+      {
+        "line": 2895,
+        "text": "t @ (Ty::Untyped { .. } | Ty::Var { .. }) => crate::analyze::strict_producers::unresolved_from(t),"
+      },
+      {
+        "line": 2978,
+        "text": "if method.as_str() == \"model\" && crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 2979,
+        "text": "&& crate::analyze::strict_producers::only_pending(elem) { return Ty::pending_untyped(); }"
+      },
+      {
+        "line": 2999,
+        "text": "_ => crate::analyze::strict_producers::unresolved_from(elem),"
+      },
+      {
+        "line": 3145,
+        "text": "t => crate::analyze::strict_producers::unresolved_from(t),"
+      }
+    ],
+    "src/analyze/body/strict_producer_tests.rs": [
+      {
+        "line": 3,
+        "text": "use crate::analyze::{handoff, harvest_return, strict_producers as strict};"
+      }
+    ],
+    "src/analyze/class_configuration.rs": [
+      {
+        "line": 196,
+        "text": ".unwrap_or_else(super::strict_producers::stub).into(),"
+      },
+      {
+        "line": 202,
+        "text": "ret: std::sync::Arc::new(method.body.ty.clone().unwrap_or_else(super::strict_producers::stub)),"
+      }
+    ],
+    "src/analyze/dirty_retype.rs": [
+      {
+        "line": 44,
+        "text": "if !before.get(name).is_some_and(|old| super::strict_producers::same(old, ty)) {"
+      },
+      {
+        "line": 88,
+        "text": "if !super::strict_producers::same_row(prev.params.get(key), Some(tys)) {"
+      }
+    ],
+    "src/analyze/fold.rs": [
+      {
+        "line": 326,
+        "text": "if super::strict_producers::congruent_on() {"
+      }
+    ],
+    "src/analyze/handoff.rs": [
+      {
+        "line": 261,
+        "text": "if super::strict_producers::xfer_on() && super::strict_producers::is_p(&new)"
+      },
+      {
+        "line": 262,
+        "text": "&& !super::strict_producers::is_p(&old) { return old; }"
+      },
+      {
+        "line": 263,
+        "text": "let pending_unknowns = super::strict_producers::stripped_pending(&[&old, &new]);"
+      },
+      {
+        "line": 292,
+        "text": "if super::strict_producers::xfer_on() && super::strict_producers::is_p(&old) { return new; }"
+      }
+    ],
+    "src/analyze/harvest_return.rs": [
+      {
+        "line": 55,
+        "text": "return Some(if super::strict_producers::stripped_pending(&[existing, new]) {"
+      },
+      {
+        "line": 141,
+        "text": "if super::strict_producers::xfer_on() && super::strict_producers::is_p(existing)"
+      },
+      {
+        "line": 142,
+        "text": "&& matches!(&new, Ty::Untyped { .. }) && !super::strict_producers::is_p(&new) {"
+      },
+      {
+        "line": 201,
+        "text": "Some(existing) if super::strict_producers::stubs_on() && super::strict_producers::is_p(existing) => {"
+      }
+    ],
+    "src/analyze/indifferent.rs": [
+      {
+        "line": 124,
+        "text": "t @ (Ty::Untyped { .. } | Ty::Nil) => Some(of(super::strict_producers::unresolved_from(t))),"
+      },
+      {
+        "line": 163,
+        "text": ".then(|| of(super::strict_producers::unresolved_from(ty)))"
+      }
+    ],
+    "src/analyze/mod.rs": [
+      {
+        "line": 50,
+        "text": "pub(crate) mod strict_producers;"
+      },
+      {
+        "line": 1318,
+        "text": "if strict_producers::stubs_on() {"
+      },
+      {
+        "line": 1829,
+        "text": "if !(handoff::settle_on() || fold::on() || strict_producers::stubs_on() || strict_producers::xfer_on()) {"
+      },
+      {
+        "line": 1857,
+        "text": "if strict_producers::stubs_on() || strict_producers::xfer_on() {"
+      },
+      {
+        "line": 1858,
+        "text": "crate::lower::for_each_emit_body_mut(app, &mut |e| rewrite(e));"
+      },
+      {
+        "line": 2687,
+        "text": "if strict_producers::stubs_on() {"
+      },
+      {
+        "line": 2699,
+        "text": "let seed = if strict_producers::stubs_on() && own_assignments.contains_key(&name) {"
+      },
+      {
+        "line": 5056,
+        "text": "|| self.inferred_params.iter().any(|(k, v)| !strict_producers::same_row(Some(v), prev.params.get(k))) {"
+      },
+      {
+        "line": 5061,
+        "text": "Some(methods) if strict_producers::same_table(methods, &cls.instance_methods) => {}"
+      },
+      {
+        "line": 5065,
+        "text": "Some(methods) if strict_producers::same_table(methods, &cls.class_methods) => {}"
+      },
+      {
+        "line": 5183,
+        "text": "if table.get(&key.1).is_some_and(strict_producers::is_p) {"
+      },
+      {
+        "line": 5663,
+        "text": "cls.instance_methods.entry(name.clone()).or_insert_with(strict_producers::stub);"
+      },
+      {
+        "line": 5980,
+        "text": "&& !(strict_producers::stubs_on() && strict_producers::is_p(t))) {"
+      }
+    ],
+    "src/analyze/render.rs": [
+      {
+        "line": 349,
+        "text": "let elem_ty = coll.collection_elem().unwrap_or_else(|| super::strict_producers::unresolved_from(&coll));"
+      }
+    ],
+    "src/analyze/sccq.rs": [
+      {
+        "line": 348,
+        "text": "if super::strict_producers::congruent_on() || *REASONS.get_or_init(|| std::env::var(\"RH_REASON_STATE_CHECK\").as_deref() == Ok(\"1\")) {"
+      },
+      {
+        "line": 1601,
+        "text": "if !super::strict_producers::same_row(row.as_ref(), self.inferred_params.get(&k)) {"
+      },
+      {
+        "line": 1704,
+        "text": "if !super::strict_producers::same_row(row.as_ref(), old) {"
+      },
+      {
+        "line": 1724,
+        "text": "if !super::strict_producers::same_row(row.as_ref(), self.inferred_params.get(&k)) {"
+      },
+      {
+        "line": 2249,
+        "text": "k == l && super::strict_producers::same_types(a, b))) {"
+      },
+      {
+        "line": 2355,
+        "text": "if !super::strict_producers::same_row(prev.sig.params.get(k), Some(v)) {"
+      }
+    ],
+    "src/analyze/test_module.rs": [
+      {
+        "line": 29,
+        "text": ".or_insert_with(|| method.signature.clone().unwrap_or_else(super::strict_producers::stub));"
+      }
+    ],
+    "src/lower/mod.rs": [
+      {
+        "line": 1532,
+        "text": "pub(crate) fn for_each_emit_body_mut(app: &mut crate::App, f: &mut impl FnMut(&mut crate::expr::Expr)) {"
+      }
+    ],
+    "src/ty.rs": [
+      {
+        "line": 557,
+        "text": "let pending = crate::analyze::strict_producers::xfer_on()"
+      },
+      {
+        "line": 558,
+        "text": "&& !variants.is_empty() && variants.iter().all(crate::analyze::strict_producers::only_pending);"
+      },
+      {
+        "line": 589,
+        "text": "if crate::analyze::strict_producers::xfer_on() {"
+      },
+      {
+        "line": 590,
+        "text": "let is_p = crate::analyze::strict_producers::is_p;"
+      }
+    ]
+  },
+  "qualification": {
+    "file": "src/analyze/body/mod.rs",
+    "line": 3340,
+    "reason": "context-free helper passes an empty class registry to fold::value_of; body typing first attempts an actual-registry unfold"
+  },
+  "source_commit": "2233e2e7e639b9f66ecda41fac34475b2d0f2559"
+}

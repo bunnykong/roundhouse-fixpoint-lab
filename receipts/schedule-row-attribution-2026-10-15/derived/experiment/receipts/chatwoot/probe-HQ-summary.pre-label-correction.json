@@ -1,0 +1,394 @@
+{
+  "app": "chatwoot",
+  "by_table": {
+    "controller_cache": 30,
+    "ir": 44,
+    "returns": 3,
+    "side_table": 8
+  },
+  "checks": {
+    "1": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/e4/e42a9a6649bc084431bd7a08e23b9a327db7d68b00b7bc20cff8740850dc08e3/attempts/20261015T181059-42c76b499c/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 58,
+        "error/send_dispatch_failed": 81,
+        "error/unsupported": 971,
+        "warning/gradual_untyped": 2083,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 112,
+        "warning/unresolved_type": 2105
+      },
+      "digests": {
+        "attributes": "e41b7154c98b0d62",
+        "block_values": "3a62493c58059af3",
+        "constants": "75ff890af4e01f1c",
+        "controller_bindings": "e5cb08ce35ad6832",
+        "controller_cache": "42e2a51194b5bfb4",
+        "copies": "02b93de23fc573cb",
+        "ir": "3526ac73a5c46ff4",
+        "params": "7f15fa91a7f83580",
+        "returns": "6f5e1eac64bd9714",
+        "side_table": "0442db90e55b9326"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/e4/e42a9a6649bc084431bd7a08e23b9a327db7d68b00b7bc20cff8740850dc08e3/attempts/20261015T181059-42c76b499c",
+      "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 1,
+            "returns": 0,
+            "side_table": 24,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "2": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/5f/5fe3c53e6e217802431786331fb27865082fb22bb86a4c07ac613084a1107f66/attempts/20261015T181438-ded4e92f61/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 58,
+        "error/send_dispatch_failed": 81,
+        "error/unsupported": 971,
+        "warning/gradual_untyped": 2083,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 112,
+        "warning/unresolved_type": 2105
+      },
+      "digests": {
+        "attributes": "e41b7154c98b0d62",
+        "block_values": "3a62493c58059af3",
+        "constants": "75ff890af4e01f1c",
+        "controller_bindings": "e5cb08ce35ad6832",
+        "controller_cache": "d86f88439024630c",
+        "copies": "02b93de23fc573cb",
+        "ir": "ec6baf0a5a459732",
+        "params": "7f15fa91a7f83580",
+        "returns": "969eb031d6c71ac8",
+        "side_table": "cc774e1fdb3f9324"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/5f/5fe3c53e6e217802431786331fb27865082fb22bb86a4c07ac613084a1107f66/attempts/20261015T181438-ded4e92f61",
+      "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 1,
+            "returns": 0,
+            "side_table": 9,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "repeat": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/62/62b78ee23c62752d0a2bead8975abd1fd8ca466eecd0f7d02c7404d191701f8b/attempts/20261015T181627-df977ab236/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 58,
+        "error/send_dispatch_failed": 81,
+        "error/unsupported": 971,
+        "warning/gradual_untyped": 2083,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 112,
+        "warning/unresolved_type": 2105
+      },
+      "digests": {
+        "attributes": "e41b7154c98b0d62",
+        "block_values": "3a62493c58059af3",
+        "constants": "75ff890af4e01f1c",
+        "controller_bindings": "e5cb08ce35ad6832",
+        "controller_cache": "d86f88439024630c",
+        "copies": "02b93de23fc573cb",
+        "ir": "9af00b521f93c2b2",
+        "params": "7f15fa91a7f83580",
+        "returns": "969eb031d6c71ac8",
+        "side_table": "7677c69c8be28df6"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/62/62b78ee23c62752d0a2bead8975abd1fd8ca466eecd0f7d02c7404d191701f8b/attempts/20261015T181627-df977ab236",
+      "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 1,
+            "returns": 0,
+            "side_table": 13,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    },
+    "unset": {
+      "binary_sha256": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+      "cell": "$EXPERIMENT/receipts/cache/objects/03/035d712a26330858aa60b7b0eade97b156ac20bd9b3ee6f0616b1f52491ec2a9/attempts/20261015T180858-1a75b61ccc/result.json",
+      "coverage": true,
+      "diagnostics": {
+        "error/incompatible_binop": 9,
+        "error/ivar_unresolved": 58,
+        "error/send_dispatch_failed": 81,
+        "error/unsupported": 971,
+        "warning/gradual_untyped": 2083,
+        "warning/missing_preload": 2,
+        "warning/unconsumed_initializer": 112,
+        "warning/unresolved_type": 2105
+      },
+      "digests": {
+        "attributes": "e41b7154c98b0d62",
+        "block_values": "3a62493c58059af3",
+        "constants": "75ff890af4e01f1c",
+        "controller_bindings": "e5cb08ce35ad6832",
+        "controller_cache": "d86f88439024630c",
+        "copies": "02b93de23fc573cb",
+        "ir": "9af00b521f93c2b2",
+        "params": "7f15fa91a7f83580",
+        "returns": "969eb031d6c71ac8",
+        "side_table": "7677c69c8be28df6"
+      },
+      "directory": "$EXPERIMENT/receipts/cache/objects/03/035d712a26330858aa60b7b0eade97b156ac20bd9b3ee6f0616b1f52491ec2a9/attempts/20261015T180858-1a75b61ccc",
+      "input_tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "loops": {
+        "absorb": {
+          "end": "settled",
+          "round": 2
+        },
+        "production": {
+          "end": "settled",
+          "round": 4
+        },
+        "views_and_tests": {
+          "end": "settled",
+          "round": 1
+        }
+      },
+      "verify": [
+        {
+          "loop": "production",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 1,
+            "returns": 0,
+            "side_table": 13,
+            "view_seeds": 0
+          }
+        },
+        {
+          "loop": "views_and_tests",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        {
+          "loop": "absorb",
+          "moved": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0,
+            "view_seeds": 0
+          }
+        }
+      ]
+    }
+  },
+  "condition": "schedule-row-return-memory-v1",
+  "new_varying_rows": 0,
+  "original_rows": 757,
+  "remaining_original": 85,
+  "removed_by_table": {
+    "controller_cache": 2,
+    "ir": 459,
+    "params": 99,
+    "returns": 40,
+    "side_table": 72
+  },
+  "removed_original_variance": 672,
+  "total_varying_rows": 85,
+  "unset_repeat_differing_rows": 0,
+  "variant": "HQ"
+}

@@ -1,0 +1,82 @@
+{
+  "closure_harvest-apply": {
+    "constants": [
+      "const MAX_DEPTH: usize = 16;",
+      "const MAX_NODES: usize = 512;"
+    ],
+    "extract_line": 8806,
+    "functions": {
+      "bound": {
+        "line": 52,
+        "sha256": "7586fb22ac8495376f600bf6d53e6c242a314929354e91dbf7b40febbe9cd737",
+        "source": "pub(super) fn bound(ty: Ty) -> Ty {\n    let mut budget = MAX_NODES;\n    if fits(&ty, MAX_DEPTH, &mut budget) {\n        super::fixpoint_check::note_bound(false);\n        return ty;\n    }\n    super::fixpoint_check::note_bound(true);\n    super::det::note_cap(\"bound.firings\");\n    let mut limit = measure(&ty).0.min(MAX_DEPTH);\n    loop {\n        let cut = cut(&ty, limit);\n        if measure(&cut).1 <= MAX_NODES {\n            return cut;\n        }\n        // A union with more leaf variants than the node bound has no nesting\n        // left to cut.\n        if limit == 0 {\n            return Ty::unresolved();\n        }\n        limit -= 1;\n    }\n}\n\n"
+      },
+      "join_ivar_slot": {
+        "line": 3636,
+        "sha256": "4b3c44e71ff66331d3a4e3220355af5fb9b6c7379e55cac8622effcb96005f03",
+        "source": "pub(crate) fn join_ivar_slot(a: Ty, b: Ty) -> Ty {\n    drop_pending_arms(union_of(a, b))\n}\n\n"
+      }
+    },
+    "pin": "fdc00ee929073df085ce15776cb12daac1e4b59f"
+  },
+  "f47": {
+    "constants": [
+      "const MAX_DEPTH: usize = 16;",
+      "const MAX_NODES: usize = 512;"
+    ],
+    "extract_line": 8332,
+    "functions": {
+      "bound": {
+        "line": 65,
+        "sha256": "7586fb22ac8495376f600bf6d53e6c242a314929354e91dbf7b40febbe9cd737",
+        "source": "pub(super) fn bound(ty: Ty) -> Ty {\n    let mut budget = MAX_NODES;\n    if fits(&ty, MAX_DEPTH, &mut budget) {\n        super::fixpoint_check::note_bound(false);\n        return ty;\n    }\n    super::fixpoint_check::note_bound(true);\n    super::det::note_cap(\"bound.firings\");\n    let mut limit = measure(&ty).0.min(MAX_DEPTH);\n    loop {\n        let cut = cut(&ty, limit);\n        if measure(&cut).1 <= MAX_NODES {\n            return cut;\n        }\n        // A union with more leaf variants than the node bound has no nesting\n        // left to cut.\n        if limit == 0 {\n            return Ty::unresolved();\n        }\n        limit -= 1;\n    }\n}\n\n"
+      },
+      "join_ivar_slot": {
+        "line": 3188,
+        "sha256": "4b3c44e71ff66331d3a4e3220355af5fb9b6c7379e55cac8622effcb96005f03",
+        "source": "pub(crate) fn join_ivar_slot(a: Ty, b: Ty) -> Ty {\n    drop_pending_arms(union_of(a, b))\n}\n\n"
+      }
+    },
+    "pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0"
+  },
+  "spine": {
+    "constants": [
+      "const MAX_DEPTH: usize = 16;",
+      "const MAX_NODES: usize = 512;"
+    ],
+    "extract_line": 8799,
+    "functions": {
+      "bound": {
+        "line": 52,
+        "sha256": "7586fb22ac8495376f600bf6d53e6c242a314929354e91dbf7b40febbe9cd737",
+        "source": "pub(super) fn bound(ty: Ty) -> Ty {\n    let mut budget = MAX_NODES;\n    if fits(&ty, MAX_DEPTH, &mut budget) {\n        super::fixpoint_check::note_bound(false);\n        return ty;\n    }\n    super::fixpoint_check::note_bound(true);\n    super::det::note_cap(\"bound.firings\");\n    let mut limit = measure(&ty).0.min(MAX_DEPTH);\n    loop {\n        let cut = cut(&ty, limit);\n        if measure(&cut).1 <= MAX_NODES {\n            return cut;\n        }\n        // A union with more leaf variants than the node bound has no nesting\n        // left to cut.\n        if limit == 0 {\n            return Ty::unresolved();\n        }\n        limit -= 1;\n    }\n}\n\n"
+      },
+      "join_ivar_slot": {
+        "line": 3636,
+        "sha256": "4b3c44e71ff66331d3a4e3220355af5fb9b6c7379e55cac8622effcb96005f03",
+        "source": "pub(crate) fn join_ivar_slot(a: Ty, b: Ty) -> Ty {\n    drop_pending_arms(union_of(a, b))\n}\n\n"
+      }
+    },
+    "pin": "ea3ec7441d95926ae7febbe028279cf2e6b8680e"
+  },
+  "strict-producers-complete-reads": {
+    "constants": [
+      "const MAX_DEPTH: usize = 16;",
+      "const MAX_NODES: usize = 512;"
+    ],
+    "extract_line": 8851,
+    "functions": {
+      "bound": {
+        "line": 52,
+        "sha256": "7586fb22ac8495376f600bf6d53e6c242a314929354e91dbf7b40febbe9cd737",
+        "source": "pub(super) fn bound(ty: Ty) -> Ty {\n    let mut budget = MAX_NODES;\n    if fits(&ty, MAX_DEPTH, &mut budget) {\n        super::fixpoint_check::note_bound(false);\n        return ty;\n    }\n    super::fixpoint_check::note_bound(true);\n    super::det::note_cap(\"bound.firings\");\n    let mut limit = measure(&ty).0.min(MAX_DEPTH);\n    loop {\n        let cut = cut(&ty, limit);\n        if measure(&cut).1 <= MAX_NODES {\n            return cut;\n        }\n        // A union with more leaf variants than the node bound has no nesting\n        // left to cut.\n        if limit == 0 {\n            return Ty::unresolved();\n        }\n        limit -= 1;\n    }\n}\n\n"
+      },
+      "join_ivar_slot": {
+        "line": 3643,
+        "sha256": "4b3c44e71ff66331d3a4e3220355af5fb9b6c7379e55cac8622effcb96005f03",
+        "source": "pub(crate) fn join_ivar_slot(a: Ty, b: Ty) -> Ty {\n    drop_pending_arms(union_of(a, b))\n}\n\n"
+      }
+    },
+    "pin": "2233e2e7e639b9f66ecda41fac34475b2d0f2559"
+  }
+}

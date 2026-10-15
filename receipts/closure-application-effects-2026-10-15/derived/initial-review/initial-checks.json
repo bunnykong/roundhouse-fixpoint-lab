@@ -1,0 +1,42 @@
+[
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "56df4c",
+      "exit_code": 0,
+      "original_token_count": 10,
+      "output": "Kit input and binary hashes verified.\n",
+      "wall_time_seconds": 1.375e-06
+    }
+  },
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "678888",
+      "exit_code": 0,
+      "original_token_count": 36,
+      "output": "Captured app-gate replay: unavailable\n  E discourse/unset-v1-a1: required valid cell missing\n  E discourse/1-v0-a0: required valid cell missing\n",
+      "wall_time_seconds": 1.584e-06
+    }
+  },
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "bc36af",
+      "exit_code": 1,
+      "original_token_count": 301,
+      "output": "test_checkers (unittest.loader._FailedTest.test_checkers) ... ERROR\n\n======================================================================\nERROR: test_checkers (unittest.loader._FailedTest.test_checkers)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_checkers\nTraceback (most recent call last):\n  File \"$PUBLIC_TOOLCHAIN_PATH\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"$PUBLIC_TOOLCHAIN_PATH\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"$REVIEW/kit/tools/test_checkers.py\", line 18, in <module>\n    FR = next(p for p in TOOLS.parents if (p / \"phase2/closure_harvest-closures\").is_dir())\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nStopIteration\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+      "wall_time_seconds": 1.75e-06
+    }
+  },
+  {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "1d0b3b",
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": "",
+      "wall_time_seconds": 0.977718167
+    }
+  }
+]

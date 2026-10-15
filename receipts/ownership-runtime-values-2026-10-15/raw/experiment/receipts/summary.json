@@ -1,0 +1,135 @@
+{
+  "condition": "declared-ownership-20261015-f78d995f",
+  "probe_condition": "s2-classify-values-20261015-f78d995f",
+  "unit": "changed logical storage row in one matched schedule pair; cache and IR counted separately",
+  "counts": {
+    "Improvement": 6,
+    "Regression": 1683,
+    "Other": 969
+  },
+  "row_observations": 2658,
+  "unique_storage_keys": 949,
+  "apps": {
+    "forem": {
+      "app": "forem",
+      "counts": {
+        "Regression": 213,
+        "Other": 3
+      },
+      "pairs": {
+        "unset": {
+          "Regression": 54
+        },
+        "1": {
+          "Regression": 54
+        },
+        "2": {
+          "Regression": 51,
+          "Other": 3
+        },
+        "repeat": {
+          "Regression": 54
+        }
+      },
+      "parts": {
+        "controller_cache": {
+          "Regression": 95,
+          "Other": 1
+        },
+        "ir": {
+          "Regression": 95,
+          "Other": 1
+        },
+        "returns": {
+          "Regression": 23,
+          "Other": 1
+        }
+      },
+      "unique_keys": 54
+    },
+    "chatwoot": {
+      "app": "chatwoot",
+      "counts": {
+        "Other": 36
+      },
+      "pairs": {
+        "unset": {
+          "Other": 9
+        },
+        "1": {
+          "Other": 9
+        },
+        "2": {
+          "Other": 9
+        },
+        "repeat": {
+          "Other": 9
+        }
+      },
+      "parts": {
+        "controller_cache": {
+          "Other": 28
+        },
+        "side_table": {
+          "Other": 8
+        }
+      },
+      "unique_keys": 9
+    },
+    "mastodon": {
+      "app": "mastodon",
+      "counts": {
+        "Regression": 1470,
+        "Other": 930,
+        "Improvement": 6
+      },
+      "pairs": {
+        "unset": {
+          "Regression": 330,
+          "Other": 83
+        },
+        "1": {
+          "Regression": 476,
+          "Other": 399,
+          "Improvement": 6
+        },
+        "2": {
+          "Regression": 334,
+          "Other": 365
+        },
+        "repeat": {
+          "Regression": 330,
+          "Other": 83
+        }
+      },
+      "parts": {
+        "controller_cache": {
+          "Regression": 531,
+          "Other": 533,
+          "Improvement": 3
+        },
+        "ir": {
+          "Regression": 603,
+          "Other": 47,
+          "Improvement": 3
+        },
+        "params": {
+          "Regression": 10,
+          "Other": 7
+        },
+        "returns": {
+          "Regression": 322,
+          "Other": 20
+        },
+        "side_table": {
+          "Regression": 4,
+          "Other": 323
+        }
+      },
+      "unique_keys": 886
+    }
+  },
+  "unexpanded_reference_occurrences": [],
+  "all_24_probe_digests_match_retained": true,
+  "all_12_changed_value_populations_accounted": true
+}

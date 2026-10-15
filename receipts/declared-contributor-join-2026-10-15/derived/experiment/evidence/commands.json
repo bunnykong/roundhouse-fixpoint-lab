@@ -1,0 +1,138 @@
+[
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "$EXPERIMENT/scripts/run_defaults.py"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:50:32.985257+00:00",
+    "name": "default-probes",
+    "started": "2026-10-15T17:50:09.047962+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  },
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "-I",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "run",
+      "--bin",
+      "$EXPERIMENT/bin/roundhouse",
+      "--app",
+      "campfire",
+      "--settings",
+      "unset-v0-a0,1-v0-a0,2-v0-a0,repeat-v0-a0,unset-v1-a1,1-v1-a1,2-v1-a1,repeat-v1-a1",
+      "--jobs",
+      "2",
+      "--timeout",
+      "1800",
+      "--label",
+      "contributor-join-dd391a63-control",
+      "--flags",
+      "$EXPERIMENT/contributor-protocol/profiles/contributor-join-control.json"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:51:34.070653+00:00",
+    "name": "campfire-control",
+    "started": "2026-10-15T17:50:32.986242+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  },
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "-I",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "run",
+      "--bin",
+      "$EXPERIMENT/bin/roundhouse",
+      "--app",
+      "campfire",
+      "--settings",
+      "unset-v0-a0,1-v0-a0,2-v0-a0,repeat-v0-a0,unset-v1-a1,1-v1-a1,2-v1-a1,repeat-v1-a1",
+      "--jobs",
+      "2",
+      "--timeout",
+      "1800",
+      "--label",
+      "contributor-join-dd391a63-join",
+      "--flags",
+      "$EXPERIMENT/contributor-protocol/profiles/contributor-join-join.json"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:52:26.414774+00:00",
+    "name": "campfire-join",
+    "started": "2026-10-15T17:51:34.071476+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  },
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "-I",
+      "$EXPERIMENT/contributor-protocol/verdict.py",
+      "pregate",
+      "--label",
+      "C=contributor-join-dd391a63-control",
+      "--label",
+      "J=contributor-join-dd391a63-join",
+      "--out",
+      "$EXPERIMENT/evidence/pregate.json"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:52:26.503740+00:00",
+    "name": "verdict-pregate",
+    "started": "2026-10-15T17:52:26.416035+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  },
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "-I",
+      "$EXPERIMENT/contributor-protocol/verdict.py",
+      "campfire",
+      "--label",
+      "C=contributor-join-dd391a63-control",
+      "--label",
+      "J=contributor-join-dd391a63-join",
+      "--native",
+      "$EXPERIMENT/native",
+      "--defaults",
+      "$EXPERIMENT/evidence/defaults",
+      "--out",
+      "$EXPERIMENT/evidence/H1.json"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:52:37.533384+00:00",
+    "name": "verdict-campfire",
+    "started": "2026-10-15T17:52:26.504680+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  },
+  {
+    "binary_sha256": "dd391a63fc98ccedfb49837d91d08417307fa03fa0473ccf1265e2d463768280",
+    "candidate_commit": "12a4b9163aed0cf4860a0ef455b04803db222654",
+    "command": [
+      "python3",
+      "-I",
+      "$EXPERIMENT/contributor-protocol/verdict.py",
+      "rollup",
+      "--campfire",
+      "$EXPERIMENT/evidence/H1.json",
+      "--out",
+      "$EXPERIMENT/evidence/rollup.json"
+    ],
+    "exit_code": 0,
+    "finished": "2026-10-15T17:52:37.587101+00:00",
+    "name": "verdict-rollup",
+    "started": "2026-10-15T17:52:37.534282+00:00",
+    "verdict_commit": "74e211cea989ade56c320d9d1aa95af1f0990a65"
+  }
+]

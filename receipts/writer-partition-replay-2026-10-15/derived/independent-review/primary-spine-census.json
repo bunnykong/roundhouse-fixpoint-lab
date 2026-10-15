@@ -1,0 +1,57 @@
+{
+  "binary_sha256": "b6e633a7dc47d81c6a38ab9050f5b73fd14d88bcbb45ab7e4132919f775df0cc",
+  "command": [
+    "$EXPERIMENT/bin/spine-census-laws",
+    "writer_partition_partition_census",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "elapsed_seconds": 75.99331545794848,
+  "exit": 0,
+  "flags": {
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "log_sha256": "8d5b26949a9ef0e1ec1319507ff1ac95693fe897c8e8adb2b267fbbf1c3ab0ca",
+  "metrics": [],
+  "recorded_build_flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_SCHED": "sccq",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "source_pin": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+  "started": "2026-10-15T20:37:48.732829+00:00",
+  "summaries": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 19056,
+        "plain_bound": 0,
+        "plain_reflective_native": 19056,
+        "reflective_bound": 19056,
+        "replay_plain": 548,
+        "replay_reflective": 0
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ]
+}

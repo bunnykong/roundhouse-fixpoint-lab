@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "breaker_strict_producer_known_return_availability",
+    "--",
+    "--ignored",
+    "--nocapture",
+    "--test-threads=1"
+  ],
+  "exit": 101,
+  "rh_flags": {
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_PROVENANCE_STRICT_XFER": "1"
+  }
+}

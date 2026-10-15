@@ -1,0 +1,33 @@
+{
+  "condition": "p2-v2-s4-closures-card1-ea3ec744-observers-v1",
+  "verdict": "CONFIRMED",
+  "recorded_at": "2026-10-15T19:37:06.051031+00:00",
+  "commit": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "stages": {
+    "synthetic": "pass",
+    "campfire": "pass",
+    "forem": "pass",
+    "chatwoot": "pass",
+    "mastodon": "pass",
+    "discourse": "pass"
+  },
+  "final_checker": "check-apps-final.json",
+  "checker_exit": 0,
+  "original_cells_unchanged": 36,
+  "new_cells": 2,
+  "prior_verdict": "RESULT-first.md",
+  "prediction_miss": {
+    "observed": 19,
+    "observed_not_predicted": [
+      [
+        "migrations/importer/lib/migrations/importer/name_finder/category_name_finder.rb",
+        27,
+        "E",
+        null
+      ]
+    ],
+    "predicted": 18,
+    "predicted_not_observed": []
+  },
+  "report_only_suite_on": "Not run; follow-up restricted by user to exactly two Discourse E cells."
+}

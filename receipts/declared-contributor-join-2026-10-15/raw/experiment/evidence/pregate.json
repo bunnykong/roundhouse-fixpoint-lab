@@ -1,0 +1,26 @@
+{
+ "checks": [
+  {
+   "check": "PG-race",
+   "detail": {
+    "other_nine_equal": true,
+    "returns_differs_at_2": true
+   },
+   "mandatory": true,
+   "scope": "campfire/v0-a0",
+   "status": "pass"
+  },
+  {
+   "check": "PG-race",
+   "detail": {
+    "other_nine_equal": true,
+    "returns_differs_at_2": true
+   },
+   "mandatory": true,
+   "scope": "campfire/v1-a1",
+   "status": "pass"
+  }
+ ],
+ "condition": "s2-declared-join-20261015-ea3ec744",
+ "verdict": "PRE-GATE PASS"
+}

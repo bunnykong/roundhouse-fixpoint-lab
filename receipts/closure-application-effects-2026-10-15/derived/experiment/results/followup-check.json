@@ -1,0 +1,181 @@
+{
+  "added_cells": [
+    [
+      "E",
+      "discourse/1-v0-a0"
+    ],
+    [
+      "E",
+      "discourse/unset-v1-a1"
+    ]
+  ],
+  "argv": [
+    "python3",
+    "-B",
+    "-I",
+    "$EXPERIMENT/tools/check_closures.py",
+    "--cache",
+    "$WORKSPACE/phase2/observers/cache",
+    "--apps",
+    "campfire,forem,chatwoot,mastodon,discourse",
+    "--spine",
+    "closure-application-spine",
+    "--S",
+    "closure-application-S",
+    "--E",
+    "closure-application-E",
+    "--I",
+    "closure-application-I",
+    "--scan",
+    "$WORKSPACE/phase2/closure_harvest-closures/results/scan-apps.json",
+    "--out",
+    "$EXPERIMENT/results/check-apps-final.json"
+  ],
+  "checker_commit": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "ended_at": "2026-10-15T19:36:47.297411+00:00",
+  "exit": 0,
+  "new_evidence": {
+    "discourse/1-v0-a0": {
+      "cache_key": "320e0509352e24458edbf91eed2381b040530423c15c9735afcc9e6ed0615f07",
+      "census": {
+        "mode": "entrances",
+        "sites_applied": 0,
+        "sites_applied_by_consumer": {
+          "argument": 0,
+          "block": 0,
+          "local": 0,
+          "receiver": 0
+        },
+        "sites_entrance": 7,
+        "slots_changed_bound_only": 0,
+        "slots_changed_new_write": 111,
+        "slots_changed_unexplained": 0,
+        "slots_changed_vs_entrances_unexplained": 0,
+        "walks": 272614,
+        "walks_changed_vs_entrances": 0,
+        "walks_changed_vs_legacy": 92
+      },
+      "inference_environment": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_CLOSURE_ENTRANCES": "1",
+        "RH_CLOSURE_SITES": "1",
+        "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/1d9fe1c2b0cf3378fd86febfeacc3462846792cc63c0eaa207eb5afd9cb54cb4/declarations.jsonl",
+        "RH_ERRGATE": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FIXPOINT_VERIFY": "0",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_PARAMETER_REASON_CONSERVE": "1",
+        "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+        "RH_PRECISION_CENSUS": "1",
+        "RH_PROVENANCE_AUDIT": "0",
+        "RH_PROVENANCE_LIFT": "1",
+        "RH_PROVENANCE_PIDENT": "1",
+        "RH_PROVENANCE_READER_VIEW": "1",
+        "RH_PUBLIC_INPUT": "1",
+        "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/1d9fe1c2b0cf3378fd86febfeacc3462846792cc63c0eaa207eb5afd9cb54cb4/census.jsonl",
+        "RH_SCHED": "sccq",
+        "RH_SHUFFLE": "1",
+        "RH_SKIP_RETURN_STABILIZE": "0",
+        "RH_SPLICED_WRITER_OWNERSHIP": "0",
+        "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/1d9fe1c2b0cf3378fd86febfeacc3462846792cc63c0eaa207eb5afd9cb54cb4/structure.jsonl"
+      },
+      "input_pin": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "metrics": {
+        "cpu_seconds": 124.028679,
+        "cpu_system_seconds": 17.023748,
+        "cpu_user_seconds": 107.004931,
+        "ended_utc": "2026-10-15T19:36:32.948671+00:00",
+        "exit_code": 1,
+        "peak_rss_bytes": 2139963392,
+        "timed_out": false,
+        "wall_seconds": 127.77849499997683
+      },
+      "reference": {
+        "analyzer_runs": 1,
+        "cache_hit": false,
+        "cache_key": "320e0509352e24458edbf91eed2381b040530423c15c9735afcc9e6ed0615f07",
+        "fresh_differences": {},
+        "fresh_match": null,
+        "result": "$WORKSPACE/phase2/observers/cache/objects/32/320e0509352e24458edbf91eed2381b040530423c15c9735afcc9e6ed0615f07/attempts/20261015T193425-31c84f9346/result.json",
+        "valid": true
+      }
+    },
+    "discourse/unset-v1-a1": {
+      "cache_key": "3368e2b9456c316a0a80dd4d1136cad6655a18e5a5a221eed9fca4457d8e41ca",
+      "census": {
+        "mode": "entrances",
+        "sites_applied": 0,
+        "sites_applied_by_consumer": {
+          "argument": 0,
+          "block": 0,
+          "local": 0,
+          "receiver": 0
+        },
+        "sites_entrance": 7,
+        "slots_changed_bound_only": 0,
+        "slots_changed_new_write": 127,
+        "slots_changed_unexplained": 0,
+        "slots_changed_vs_entrances_unexplained": 0,
+        "walks": 357443,
+        "walks_changed_vs_entrances": 0,
+        "walks_changed_vs_legacy": 102
+      },
+      "inference_environment": {
+        "RH_BRK_ALLARMS": "1",
+        "RH_CLOSURE_ENTRANCES": "1",
+        "RH_CLOSURE_SITES": "1",
+        "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/ba29dd31df04d60083c01cf1414c7e620d65debf8911071f6c30ea75ff74a32c/declarations.jsonl",
+        "RH_ERRGATE": "1",
+        "RH_FIXPOINT_DIGEST": "1",
+        "RH_FIXPOINT_STATS": "1",
+        "RH_FIXPOINT_VERIFY": "1",
+        "RH_FOLD": "1",
+        "RH_FOLD_JOIN": "1",
+        "RH_FOLD_SLOTS": "1",
+        "RH_FOLD_TAIL": "1",
+        "RH_PARAMETER_REASON_CONSERVE": "1",
+        "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+        "RH_PRECISION_CENSUS": "1",
+        "RH_PROVENANCE_AUDIT": "1",
+        "RH_PROVENANCE_LIFT": "1",
+        "RH_PROVENANCE_PIDENT": "1",
+        "RH_PROVENANCE_READER_VIEW": "1",
+        "RH_PUBLIC_INPUT": "1",
+        "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/ba29dd31df04d60083c01cf1414c7e620d65debf8911071f6c30ea75ff74a32c/census.jsonl",
+        "RH_SCHED": "sccq",
+        "RH_SKIP_RETURN_STABILIZE": "0",
+        "RH_SPLICED_WRITER_OWNERSHIP": "0",
+        "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/ba29dd31df04d60083c01cf1414c7e620d65debf8911071f6c30ea75ff74a32c/structure.jsonl"
+      },
+      "input_pin": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "input_tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07",
+      "metrics": {
+        "cpu_seconds": 1080.339718,
+        "cpu_system_seconds": 76.524655,
+        "cpu_user_seconds": 1003.815063,
+        "ended_utc": "2026-10-15T19:34:00.385569+00:00",
+        "exit_code": 1,
+        "peak_rss_bytes": 7429881856,
+        "timed_out": false,
+        "wall_seconds": 1107.0892929160036
+      },
+      "reference": {
+        "analyzer_runs": 1,
+        "cache_hit": false,
+        "cache_key": "3368e2b9456c316a0a80dd4d1136cad6655a18e5a5a221eed9fca4457d8e41ca",
+        "fresh_differences": {},
+        "fresh_match": null,
+        "result": "$WORKSPACE/phase2/observers/cache/objects/33/3368e2b9456c316a0a80dd4d1136cad6655a18e5a5a221eed9fca4457d8e41ca/attempts/20261015T191533-bcbf50db8b/result.json",
+        "valid": true
+      }
+    }
+  },
+  "original_cells_unchanged": 36,
+  "seconds": 5.039349417085759,
+  "started_at": "2026-10-15T19:36:42.257348+00:00"
+}

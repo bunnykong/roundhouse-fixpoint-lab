@@ -1,0 +1,320 @@
+{
+  "apps": {
+    "fixtures": {
+      "E_new_E_writes": 1,
+      "E_sites": 1,
+      "I_new_E_writes": 1,
+      "I_new_I_writes": 35,
+      "I_sites": 35,
+      "files": 66,
+      "legacy_writes": 19
+    },
+    "twins": {
+      "E_sites": 0,
+      "I_new_I_writes": 1,
+      "I_sites": 1,
+      "files": 21,
+      "legacy_writes": 20
+    }
+  },
+  "prism": "1.8.1",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "sites": [
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b1_array_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "ivar_write",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b1_p_array_call_plain.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b2_hash_key_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b3_hash_value_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b4_nested_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_b5_positional_splat_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_b6_keyword_splat_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 []",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b7_array_brackets.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b8_ivar_rhs_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "ivar_write",
+      "line": 3,
+      "path": "fixtures/app/models/closure_b8_p_ivar_rhs_call_plain.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": null,
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_c3_array_reflection.rb",
+      "tag": "E",
+      "variant": "E"
+    },
+    {
+      "consumer": "A2 block of instance_exec",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i10_instance_exec_implicit.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of instance_eval",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i11_instance_eval_implicit.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of instance_exec",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i12_instance_exec_self.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of run_yield",
+      "kind": "ivar_write",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i13_p_yield_into_block_plain.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of run_yield",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i13_yield_into_block.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of run_block",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i14_block_param_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A3 argument",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i15_lambda_argument.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A3 keyword argument",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i16_lambda_keyword_argument.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of each",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i17_iterator_block.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i18_nested_invocation.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 &literal to run_yield",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "fixtures/app/models/closure_i19_block_pass_lambda.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i1_dot_paren.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A4 local",
+      "kind": "instance_variable_set",
+      "line": 4,
+      "path": "fixtures/app/models/closure_i20_local_then_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of tap",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i21_ivar_rhs_tap.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 yield",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i2_proc_yield.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 ===",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i3_case_equality.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i4_lambda_ctor_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i5_proc_ctor_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A1 call",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i6_proc_new_call.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of tap",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i7_tap_block.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of then",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i8_then_block.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of yield_self",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_i9_yield_self_block.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A3 argument",
+      "kind": "instance_variable_set",
+      "line": 7,
+      "path": "fixtures/app/models/closure_m1_argument_stored_in_array.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A4 local",
+      "kind": "instance_variable_set",
+      "line": 4,
+      "path": "fixtures/app/models/closure_m2_local_returned.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A2 block of new",
+      "kind": "instance_variable_set",
+      "line": 3,
+      "path": "fixtures/app/models/closure_m3_hash_default_proc.rb",
+      "tag": "I",
+      "variant": "I"
+    },
+    {
+      "consumer": "A3 keyword argument",
+      "kind": "instance_variable_set",
+      "line": 6,
+      "path": "twins/app/models/closure_t16_lambda_keyword_argument.rb",
+      "tag": "I",
+      "variant": "I"
+    }
+  ]
+}

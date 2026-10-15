@@ -1,0 +1,53 @@
+{
+  "counts": {
+    "deferred_bare_variable_inputs": 8,
+    "strip_and_remint": 3,
+    "stubs": 14,
+    "transfers": 24
+  },
+  "line_reference_pin": "d00c5c54",
+  "source_sha256": "e6c7d46938b231e90dac69e9e748898274e6f4355472ec501114ce10b6c90298",
+  "source_tables": {
+    "strip-and-remint": [
+      "| `handoff.rs:278-280` | A nil-only core after stripping gives `Nil \\| U`, whatever the stripped reasons | research condition |",
+      "| `harvest_return.rs:27-28`, used at `:55` | Stabilize's `gradual_nil` gives `Nil \\| U` | research condition |",
+      "| `ty.rs:557-559` | `strip_unknown` turns an all-unknown union into `G` | research condition |"
+    ],
+    "stubs": [
+      "| `mod.rs:8985`, `:8989` | `register_attr_accessors` reader and writer stubs; the four-row source | S1 |",
+      "| `mod.rs:709`, `:710` | `declared_attr_names` reader and writer stubs, same family | S1 |",
+      "| `mod.rs:8943`, `:8965` | `{a}=` writer stubs | S1 |",
+      "| `data.rs:82` | Data member reader, which a block method may override | S1 |",
+      "| `mod.rs:5313` | Spliced concern stub (`RH_SPLICED_WRITER_OWNERSHIP`), typed later by the includer | S1 |",
+      "| `mod.rs:2395` | `attr_accessor` ivar seed `U`, until flow reseeding | S1 |",
+      "| `class_configuration.rs:196`, `:202` | Reader param or return `U` while the body is still untyped | S1 |",
+      "| `test_module.rs:29` | Helper signature `U` before it is stamped | S1 |",
+      "| `mod.rs:5626-5631` | `register_method_return`: a body typed `None` or `Var` gives `U` | Var |"
+    ],
+    "transfers": [
+      "| `send.rs:408-413` | Block params of an untyped receiver are bound `U`, even from `untyped(P)` | research condition |",
+      "| `send.rs:1306`, `:2407-2413` | `to_h` / `to_a` on an untyped receiver give `Hash[U,U]` / `Array[U]` | research condition |",
+      "| `send.rs:2199`, `:2407-2413` | The same conversions on a `Var` receiver | Var |",
+      "| `send.rs:2186-2187` | A union whose only non-nil variants are `Var` dispatches to `U` | Var |",
+      "| `send.rs:2353-2357` | Dynamic `send` on a non-class receiver gives `U` | research condition |",
+      "| `send.rs:2380-2382` | An untyped method return in a dynamic union becomes `U`, relabeling P and G | research condition |",
+      "| `send.rs:1699` | `Time.use_zone` with a `Var` block gives `U` | Var |",
+      "| `send.rs:1771-1772` | `Timeout.timeout` with a `Var` block gives `U` | Var |",
+      "| `send.rs:1840-1841` | A declared `method_missing` returning `Var` gives `U` | Var |",
+      "| `send.rs:2817-2819` | `relation.model` with a non-class element gives `U` | research condition |",
+      "| `send.rs:2949-2952` | `Array#sum` with a non-numeric element gives `U` | research condition |",
+      "| `send.rs:3299-3302` | A Jbuilder value from a `Var` argument gives `U` | Var |",
+      "| `send.rs:3728` | The module-protocol block closure maps a `Var` block to `U` | Var |",
+      "| `send.rs:2598`, `:2605`, `:2613` | `Date` `>>`/`<<`, `+`, `-` with an untyped argument give `U` | research condition |",
+      "| `body/mod.rs:2886` | Destructuring an untyped value gives `U` for every target | research condition |",
+      "| `body/mod.rs:2888` | Destructuring an unexpanded fold reference gives `U` | research condition |",
+      "| `body/mod.rs:591` | A hash-pattern rest on a non-Hash subject gives `Hash[U,U]` | research condition |",
+      "| `body/mod.rs:1027` | A rescue list with a non-class entry gives `U` | research condition |",
+      "| `render.rs:349` | A render collection with an unknown element gives `U` | research condition |",
+      "| `body/pagy.rs:40` (spine only) | A pagy scope that is unknown, untyped or `Var` gives `U` | research condition |",
+      "| `indifferent.rs:124` (spine only) | An indifferent hash built from untyped gets `U` values | research condition |",
+      "| `send.rs:2866-2869` (spine only) | `indexed_pluck` on an untyped or `Var` element gives `U` | research condition |"
+    ]
+  },
+  "table_note": "Some rows name multiple sites or a family; Date arithmetic names three. Deferred variable-input cases are explicitly marked in the source tables."
+}

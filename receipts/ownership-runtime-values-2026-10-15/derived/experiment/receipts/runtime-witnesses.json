@@ -1,0 +1,245 @@
+{
+  "collaborators": [
+    "Forem model persistence/credits/transaction/clock doubles",
+    "render_to_body returns a String; response/location accessors and URL/status normalization doubles",
+    "Pinned Rails 6.1.4.1 render and redirect_to bodies execute unchanged",
+    "Mastodon collection_page_items executes unchanged with literal Hash inputs"
+  ],
+  "condition": "ownership-ruby-boundary-witnesses-20261015",
+  "observations": [
+    {
+      "label": "forem/ListingsController#create_draft/save=true",
+      "ruby_class": "String",
+      "value": "<html><body>You are being <a href=\"/listings/dashboard\">redirected</a>.</body></html>"
+    },
+    {
+      "label": "forem/ListingsController#create_listing/save=true",
+      "ruby_class": "String",
+      "value": "<html><body>You are being <a href=\"/listings\">redirected</a>.</body></html>"
+    },
+    {
+      "label": "forem/ListingsController#first_publish/save=true",
+      "ruby_class": "String",
+      "value": "<html><body>You are being <a href=\"/listings\">redirected</a>.</body></html>"
+    },
+    {
+      "label": "forem/ListingsController#create_draft/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/ListingsController#create_listing/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/ListingsController#first_publish/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#create_draft/save=true",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#create_listing/save=true",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#first_publish/save=true",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#create_draft/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#create_listing/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "forem/Api::V0::ListingsController#first_publish/save=false",
+      "ruby_class": "String",
+      "value": "<rendered public fixture>"
+    },
+    {
+      "label": "mastodon/collection_page_items/Collection/0",
+      "ruby_class": "Array",
+      "value": [
+        "item-a"
+      ]
+    },
+    {
+      "label": "mastodon/collection_page_items/CollectionPage/1",
+      "ruby_class": "Array",
+      "value": [
+        {
+          "id": "item-b"
+        }
+      ]
+    },
+    {
+      "label": "mastodon/collection_page_items/OrderedCollection/2",
+      "ruby_class": "Array",
+      "value": [
+        "item-c"
+      ]
+    },
+    {
+      "label": "mastodon/collection_page_items/OrderedCollectionPage/3",
+      "ruby_class": "Array",
+      "value": [
+        {
+          "id": "item-d"
+        }
+      ]
+    },
+    {
+      "label": "mastodon/collection_page_items/Collection/4",
+      "ruby_class": "NilClass",
+      "value": null
+    },
+    {
+      "label": "mastodon/collection_page_items/Unknown/5",
+      "ruby_class": "NilClass",
+      "value": null
+    }
+  ],
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "scope": "Unmodified selected Ruby methods; finite boundary doubles; no full Rails boot or coverage claim",
+  "sources": [
+    {
+      "end": 2752,
+      "line": 95,
+      "method": "create_draft",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/concerns/listings_toolkit.rb",
+      "sha256": "e21c58318716ad22ba30953417cc7c9702866d7a2a014887cfd07ad36d4b7fe6",
+      "start": 2442
+    },
+    {
+      "end": 3839,
+      "line": 107,
+      "method": "create_listing",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/concerns/listings_toolkit.rb",
+      "sha256": "e21c58318716ad22ba30953417cc7c9702866d7a2a014887cfd07ad36d4b7fe6",
+      "start": 2756
+    },
+    {
+      "end": 5491,
+      "line": 194,
+      "method": "first_publish",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/concerns/listings_toolkit.rb",
+      "sha256": "e21c58318716ad22ba30953417cc7c9702866d7a2a014887cfd07ad36d4b7fe6",
+      "start": 5130
+    },
+    {
+      "end": 1195,
+      "line": 23,
+      "method": "render",
+      "path": "$EXPERIMENT/witnesses/rails-6.1.4.1/rendering.rb",
+      "sha256": "705a85e356ab8d8a0277f3fe32aa8d396949a19f2f44d9d7b059f04049a45bd0",
+      "start": 876
+    },
+    {
+      "end": 3732,
+      "line": 58,
+      "method": "redirect_to",
+      "path": "$EXPERIMENT/witnesses/rails-6.1.4.1/redirecting.rb",
+      "sha256": "04a64e857f0c6c98fc27f7ef42e3a0eb78a13485c6ac8772c9f90ac4db214eb4",
+      "start": 3216
+    },
+    {
+      "end": 3429,
+      "line": 104,
+      "method": "process_successful_draft",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/listings_controller.rb",
+      "sha256": "4e63623531763df52ff730b88cdaa39d7b050458c60a34148da0a4902362f965",
+      "start": 3357
+    },
+    {
+      "end": 3485,
+      "line": 108,
+      "method": "process_unsuccessful_draft",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/listings_controller.rb",
+      "sha256": "4e63623531763df52ff730b88cdaa39d7b050458c60a34148da0a4902362f965",
+      "start": 3433
+    },
+    {
+      "end": 3556,
+      "line": 112,
+      "method": "process_successful_creation",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/listings_controller.rb",
+      "sha256": "4e63623531763df52ff730b88cdaa39d7b050458c60a34148da0a4902362f965",
+      "start": 3489
+    },
+    {
+      "end": 3615,
+      "line": 116,
+      "method": "process_unsuccessful_creation",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/listings_controller.rb",
+      "sha256": "4e63623531763df52ff730b88cdaa39d7b050458c60a34148da0a4902362f965",
+      "start": 3560
+    },
+    {
+      "end": 3353,
+      "line": 100,
+      "method": "process_no_credit_left",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/listings_controller.rb",
+      "sha256": "4e63623531763df52ff730b88cdaa39d7b050458c60a34148da0a4902362f965",
+      "start": 3252
+    },
+    {
+      "end": 2537,
+      "line": 66,
+      "method": "process_successful_draft",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/api/v0/listings_controller.rb",
+      "sha256": "8c51db3e53b26e59711df88efa4bc2dd5ea6f6be9d59d01c92e234fbc3f78758",
+      "start": 2459
+    },
+    {
+      "end": 2665,
+      "line": 70,
+      "method": "process_unsuccessful_draft",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/api/v0/listings_controller.rb",
+      "sha256": "8c51db3e53b26e59711df88efa4bc2dd5ea6f6be9d59d01c92e234fbc3f78758",
+      "start": 2545
+    },
+    {
+      "end": 2754,
+      "line": 74,
+      "method": "process_successful_creation",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/api/v0/listings_controller.rb",
+      "sha256": "8c51db3e53b26e59711df88efa4bc2dd5ea6f6be9d59d01c92e234fbc3f78758",
+      "start": 2673
+    },
+    {
+      "end": 2885,
+      "line": 78,
+      "method": "process_unsuccessful_creation",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/api/v0/listings_controller.rb",
+      "sha256": "8c51db3e53b26e59711df88efa4bc2dd5ea6f6be9d59d01c92e234fbc3f78758",
+      "start": 2762
+    },
+    {
+      "end": 2451,
+      "line": 61,
+      "method": "process_no_credit_left",
+      "path": "$EXPERIMENT/inputs/forem/app/controllers/api/v0/listings_controller.rb",
+      "sha256": "8c51db3e53b26e59711df88efa4bc2dd5ea6f6be9d59d01c92e234fbc3f78758",
+      "start": 2294
+    },
+    {
+      "end": 11382,
+      "line": 300,
+      "method": "collection_page_items",
+      "path": "$EXPERIMENT/inputs/mastodon/app/helpers/json_ld_helper.rb",
+      "sha256": "b007ac30fe67a49e0ac0ee7b7b1fbcc03449b785ff8eb8fdc381f0d1f3bdc1cc",
+      "start": 11150
+    }
+  ]
+}

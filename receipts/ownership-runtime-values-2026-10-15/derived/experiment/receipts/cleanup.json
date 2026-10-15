@@ -1,0 +1,19 @@
+{
+  "binary_after": "205da46954f4d1d41cc41fcfa0a3f45b35934563a4624f06370bcefb5eb2ba91",
+  "binary_before": "205da46954f4d1d41cc41fcfa0a3f45b35934563a4624f06370bcefb5eb2ba91",
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "clean",
+    "--manifest-path",
+    "$EXPERIMENT/source/Cargo.toml",
+    "--target-dir",
+    "$EXPERIMENT/target"
+  ],
+  "elapsed_seconds": 0.25708985328674316,
+  "exit_code": 0,
+  "owned_target_exists": false
+}

@@ -1,0 +1,68 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/fast-target/debug/deps/roundhouse-30724050982be240": "75e1fe5352ca53830e20317d332a17a7d541704f44ef6a6660c25d1d757727fe"
+  },
+  "census_summary": [
+    {
+      "counts": {
+        "membership_plain": 0,
+        "membership_reflective": 0,
+        "partition_plain": 2104,
+        "partition_reflective": 2104,
+        "plain_bound": 0,
+        "plain_reflective_native": 0,
+        "reflective_bound": 0,
+        "replay_plain": 548,
+        "replay_reflective": 548
+      },
+      "membership_checks": 418656,
+      "schedules": 32928
+    }
+  ],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_partition_partition_census",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/f47",
+  "diagnostic_elapsed_seconds": 142.554320833995,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_PROFILE_TEST_DEBUG": "0",
+    "CARGO_PROFILE_TEST_OPT_LEVEL": "1",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/fast-target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_REFLECT_BOUND": "1",
+    "RH_SCHED": "sccq",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [],
+  "log_sha256": "e400041ef144ad8ec5b2ed682841e86fb24b8b7321aaecfaf7cb7ab00f9b5b77",
+  "metrics": [],
+  "source_diff_sha256": "e25c8771aa8006e927c7b335f18c5b74a7905e1f9d90474be910f606eaca40b9",
+  "source_pin": "eda0783b22c8b23b05e2552e357515dc72f2d1e0",
+  "source_status": "M src/analyze/fixpoint_bound/writer_law_partitions.rs",
+  "started": "2026-10-15T20:07:52.086811+00:00",
+  "tag": "fast",
+  "test_results": [
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1165 filtered out; finished in 12.68s"
+  ],
+  "timing_claim": false,
+  "variant": "f47"
+}

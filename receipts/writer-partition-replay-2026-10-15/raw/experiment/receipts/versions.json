@@ -1,0 +1,30 @@
+{
+  "rustc": {
+    "command": [
+      "rustc",
+      "+1.98.1",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "rustc 1.98.1 (48a229cea 2026-09-01)"
+  },
+  "cargo": {
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "cargo 1.98.1 (797e8a9bc 2026-08-05)"
+  },
+  "ruby": {
+    "command": [
+      "rbenv",
+      "exec",
+      "ruby",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]"
+  }
+}

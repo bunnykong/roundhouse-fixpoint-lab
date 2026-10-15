@@ -1,0 +1,71 @@
+{
+  "binary_sha256": {
+    "$EXPERIMENT/target/debug/deps/roundhouse-be70eb8e2562538a": "3efe05b66d14379abaf5e102b561a436c0490c26da6cfabebf4805b210e257bf"
+  },
+  "census_summary": [],
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "writer_law_bound_partitions",
+    "--",
+    "--nocapture",
+    "--test-threads=1",
+    "--include-ignored"
+  ],
+  "condition": "writer-partition-replay-20261015-four-pins",
+  "cwd": "$EXPERIMENT/sources/closure_harvest-apply",
+  "diagnostic_elapsed_seconds": 181.3747482500039,
+  "exit": 101,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RH_BRK_ALLARMS": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_SCHED": "sccq",
+    "RH_SKIP_RETURN_STABILIZE": "0",
+    "RH_SPLICED_WRITER_OWNERSHIP": "0",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "law_records": [
+    "WRITER-LAW extract_ivar_assignments/body-harvest-partitions | duplicate-round-replay | FAIL | 16464 checks | 513 nodes | (Tuple[254 variants; first=Int; last=Int]; Tuple[255 variants; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+    "WRITER-LAW extract_ivar_assignments/body-harvest-partitions | finite-value-inclusion | PASS | 418656 checks",
+    "WRITER-LAW extract_ivar_assignments/body-harvest-partitions | partition-vs-complete/plain | FAIL | 32928 checks | 513 nodes | (Tuple[254 variants; first=Int; last=Int]; Tuple[255 variants; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+    "WRITER-LAW extract_ivar_assignments/body-harvest-partitions | partition-vs-complete/reflective | FAIL | 32928 checks | 513 nodes | (Tuple[254 variants; first=Int; last=Int]; Tuple[255 variants; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+    "WRITER-LAW extract_ivar_assignments/body-harvest-partitions | plain-reflective-storage | PASS | 32928 checks"
+  ],
+  "log_sha256": "4ab00a182918aac9dcca377e5c4cb5e51daee1143acd51d9493259a961bdde77",
+  "metrics": [
+    {
+      "duplicate_round_differences": 548,
+      "finite_membership_checks": 418656,
+      "partition_differences": 2104,
+      "partition_round_schedules": 32928
+    }
+  ],
+  "source_diff_sha256": "d1d5e79624c71dfa380f76723c6f938b95311ad46bd54f25ac600d3858af9970",
+  "source_pin": "fdc00ee929073df085ce15776cb12daac1e4b59f",
+  "source_status": "M src/analyze/fixpoint_bound.rs\n M src/analyze/writer_laws.rs\n?? src/analyze/fixpoint_bound/",
+  "started": "2026-10-15T19:55:54.939098+00:00",
+  "tag": "original",
+  "test_results": [
+    "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1266 filtered out; finished in 147.11s"
+  ],
+  "timing_claim": false,
+  "variant": "closure_harvest-apply"
+}

@@ -1,0 +1,196 @@
+{
+  "controls": {
+    "schedule-row-probe-C/campfire/unset": true,
+    "schedule-row-probe-C/chatwoot/unset": true,
+    "schedule-row-probe-C/forem/unset": true,
+    "schedule-row-probe-C/mastodon/unset": true,
+    "schedule-row-probe-EC/campfire/1": true,
+    "schedule-row-probe-EC/campfire/unset": true,
+    "schedule-row-probe-EC/chatwoot/1": true,
+    "schedule-row-probe-EC/chatwoot/unset": true,
+    "schedule-row-probe-EC/mastodon/1": true,
+    "schedule-row-probe-EC/mastodon/unset": true,
+    "schedule-row-probe-RC/campfire/unset": true,
+    "schedule-row-probe-RC/chatwoot/unset": true,
+    "schedule-row-probe-RC/forem/unset": true,
+    "schedule-row-probe-RC/mastodon/unset": true
+  },
+  "issue964": {
+    "fixture_tree_sha256": "3cfc27d13a6438eb5a2637ffe898b5ac58e5a648d77cae45be2e1df787904f4c",
+    "matches_original_fixture": true
+  },
+  "mastodon_capped_primary_rows": 1294,
+  "pins": {
+    "literal-probe": "27e08cb26eaa7d7b7bc796a846ffecaf7a9e444ff88ac7c94d8be9bf2dd55bbf",
+    "probe": "c07bcddec5068782d271b523f99c512cac238996c06190935ab313cf3307639d",
+    "return-probe": "9c21c91f52735a7397f63444a05768491860732c8dba92edf929bc8e72d1f288",
+    "row": "5b70e305fef9f968670bbdf9e40b404d72dbcac99e30f9c4b47a6042f91a78f1",
+    "row-patch": "a1fcd20a6272b2f26b5c7ad2400c7a88a727f18f2cc1815476626e4aa77d30ee",
+    "spine": "ec633faffdbae21acb5aa28e66628daba2dbc4dfb679a72a4ffda9742839ae03",
+    "trace": "1652208a00eaa3ac55d7b591d614a0eaa51607eb816201569b03af2b282f83cb"
+  },
+  "probe_cells": {
+    "chatwoot/E": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/H": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/HQ": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/J": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/JP": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/P": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/Q": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/R": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "chatwoot/RH": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/H": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/HQ": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/J": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/JP": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/P": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/Q": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/R": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "forem/RH": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/E": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/H": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/HQ": {
+      "capped": true,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/J": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/JP": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/P": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/Q": {
+      "capped": true,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/R": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    },
+    "mastodon/RH": {
+      "capped": false,
+      "repeat_equal": true,
+      "valid_schedules": 4
+    }
+  },
+  "profiles": {
+    "E": {
+      "RH_ROW_LITERAL_FRESH": "1"
+    },
+    "H": {
+      "RH_ROW_NO_KEEP": "1"
+    },
+    "HQ": {
+      "RH_FOLD_JOIN": "0",
+      "RH_ROW_NO_KEEP": "1"
+    },
+    "J": {
+      "RH_ROW_JOIN": "1"
+    },
+    "JP": {
+      "RH_ROW_JOIN": "1",
+      "RH_ROW_STUB": "1"
+    },
+    "P": {
+      "RH_ROW_STUB": "1"
+    },
+    "Q": {
+      "RH_FOLD_JOIN": "0"
+    },
+    "R": {
+      "RH_ROW_RET_LATEST": "1"
+    },
+    "RH": {
+      "RH_ROW_NO_KEEP": "1",
+      "RH_ROW_RET_LATEST": "1"
+    }
+  }
+}
