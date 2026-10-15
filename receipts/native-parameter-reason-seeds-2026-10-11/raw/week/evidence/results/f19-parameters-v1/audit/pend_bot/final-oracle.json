@@ -1,0 +1,93 @@
+{
+  "accepted": 19,
+  "coverage": {
+    "missing": [
+      "trees_controller_add_one_ret",
+      "trees_controller_render_label_ret",
+      "trees_controller_shout_ret",
+      "trees_controller_triple_ret",
+      "trees_controller_twice_ret"
+    ],
+    "missing_observations": [
+      {
+        "alias": "trees_controller_render_label_ret",
+        "record_line": 2,
+        "slot": "TreesController#render_label:return"
+      },
+      {
+        "alias": "trees_controller_shout_ret",
+        "record_line": 3,
+        "slot": "TreesController#shout:return"
+      },
+      {
+        "alias": "trees_controller_triple_ret",
+        "record_line": 4,
+        "slot": "TreesController#triple:return"
+      },
+      {
+        "alias": "trees_controller_add_one_ret",
+        "record_line": 12,
+        "slot": "TreesController#add_one:return"
+      },
+      {
+        "alias": "trees_controller_add_one_ret",
+        "record_line": 13,
+        "slot": "TreesController#add_one:return"
+      },
+      {
+        "alias": "trees_controller_twice_ret",
+        "record_line": 14,
+        "slot": "TreesController#twice:return"
+      }
+    ],
+    "opaque": [
+      "settings_limit_ret",
+      "trees_controller_add_one_ret",
+      "trees_controller_bump_ret",
+      "trees_controller_ping_ret",
+      "trees_controller_pong_ret",
+      "trees_controller_render_label_ret",
+      "trees_controller_settings_limit_ret",
+      "trees_controller_shout_ret",
+      "trees_controller_triple_ret",
+      "trees_controller_twice_ret"
+    ],
+    "selected_slots": 11,
+    "tags": {
+      "Gradual": [],
+      "Pending": [],
+      "Unresolved": [
+        "settings_limit_ret",
+        "trees_controller_bump_ret",
+        "trees_controller_ping_ret",
+        "trees_controller_pong_ret",
+        "trees_controller_settings_limit_ret"
+      ],
+      "Var": []
+    },
+    "unsupported": []
+  },
+  "legacy_membership_only": true,
+  "records": 19,
+  "slots": {
+    "Settings#limit:return": 3,
+    "TreesController#add_one:return": 2,
+    "TreesController#bump:return": 2,
+    "TreesController#limit_text:return": 1,
+    "TreesController#ping:return": 2,
+    "TreesController#pong:return": 2,
+    "TreesController#render_label:return": 1,
+    "TreesController#settings_limit:return": 3,
+    "TreesController#shout:return": 1,
+    "TreesController#triple:return": 1,
+    "TreesController#twice:return": 1
+  },
+  "strict_selected_gate": false,
+  "tightness": {
+    "exercised": 11,
+    "meaning": "candidate over-approximations; finite samples cannot prove exactness",
+    "total": 11,
+    "unexercised": []
+  },
+  "violations": []
+}

@@ -1,0 +1,29 @@
+{
+  "added_test_sha256": "16670366c78c9a211d0c950fe5a0e899bb1ee7d1531789cf5899f1d21c7909e5",
+  "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+  "condition": "native-parameter-reason-seeds-native-seed-arrival-breaker-v1-shared-host",
+  "default_exit": 101,
+  "f29_ordinary_native_shape_equal": {
+    "audit--candidate": true,
+    "s3--audit": true
+  },
+  "flags": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_PROVENANCE_AUDIT": "1",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_SCHED": "sccq"
+  },
+  "gate_exit": 101,
+  "native_src_files_unchanged": 500,
+  "only_changed_file": "src/analyze/parameter_conservation/tests.rs",
+  "prototype_commit": "f29ad7fc8bd2e3ea424b28e288c997553a7ac8a2",
+  "reference_head": "f29ad7fc8bd2e3ea424b28e288c997553a7ac8a2",
+  "source_patch_sha256": "617a79e2e54bb6f4c2c685074a508d61be8e34b0645164cc25bae66d90b765eb",
+  "test_module_cfg_test": true,
+  "test_sha256": "d532074747831eebe33a673ef1be011a652a37067d1ecbb4223024b052199397",
+  "timing_claim": false
+}

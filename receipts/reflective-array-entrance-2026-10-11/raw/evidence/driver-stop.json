@@ -1,0 +1,10 @@
+{
+  "command": [
+    "bash",
+    "run_after.sh"
+  ],
+  "deliberate": true,
+  "observed_exit": 42,
+  "raw_cargo_exits": "Preserved separately in results/*.json; exit 42 is only the outer driver stop.",
+  "reason": "Uncovered native reflective Array entrance verified; stop before broader integration."
+}

@@ -1,0 +1,45 @@
+{
+  "accepted": 20,
+  "coverage": {
+    "missing": [],
+    "missing_observations": [],
+    "opaque": [
+      "trees_controller_even_count_ret",
+      "trees_controller_odd_count_ret",
+      "trees_controller_walk_tree_ret",
+      "walker_scale_ret",
+      "walker_walk_ret"
+    ],
+    "selected_slots": 5,
+    "tags": {
+      "Gradual": [],
+      "Pending": [],
+      "Unresolved": [
+        "trees_controller_even_count_ret",
+        "trees_controller_odd_count_ret",
+        "trees_controller_walk_tree_ret",
+        "walker_scale_ret",
+        "walker_walk_ret"
+      ],
+      "Var": []
+    },
+    "unsupported": []
+  },
+  "legacy_membership_only": true,
+  "records": 20,
+  "slots": {
+    "TreesController#even_count:return": 5,
+    "TreesController#odd_count:return": 4,
+    "TreesController#walk_tree:return": 1,
+    "Walker#scale:return": 5,
+    "Walker#walk:return": 5
+  },
+  "strict_selected_gate": true,
+  "tightness": {
+    "exercised": 13,
+    "meaning": "candidate over-approximations; finite samples cannot prove exactness",
+    "total": 13,
+    "unexercised": []
+  },
+  "violations": []
+}

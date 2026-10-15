@@ -1,0 +1,286 @@
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 1faa347c..54474aac 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -48,6 +48,7 @@ mod filter_targets;
+ pub mod graphql;
+ mod harvest_return;
+ pub mod producer_evidence;
++mod parameter_conservation;
+ mod fixpoint_bound;
+ mod fixpoint_check;
+ mod precision;
+@@ -5840,7 +5841,10 @@ impl Analyzer {
+         defined: &BTreeSet<ParamKey>,
+     ) -> Option<(ParamKey, Vec<Ty>)> {
+         let key = self.resolve_param_key(class_id, method, recv, defined)?;
++        let sources = kw_tys.sources.clone();
++        let positional = !kw_tys.group;
+         let arg_tys = Self::place_keyword_args(params_by_method.get(&key), arg_tys, kw_tys);
++        producer_evidence::parameter_destination(&key, &sources, positional, &arg_tys);
+         Some((key, arg_tys))
+     }
+ 
+@@ -6393,9 +6397,9 @@ impl Analyzer {
+                     }
+                     _ => SiteRecv::Instance,
+                 };
+-                if producer_evidence::on() {
+-                    producer_evidence::parameter_call(self_class, &recv_classes, method, &format!("{site_recv:?}"), expr.span, args);
+-                }
++                let sources = producer_evidence::parameter_call(
++                    self_class, &recv_classes, method, &format!("{site_recv:?}"), expr.span, args,
++                );
+                 if !recv_classes.is_empty() {
+                     let arg_tys: Vec<Ty> = args
+                         .iter()
+@@ -6411,7 +6415,7 @@ impl Analyzer {
+                             // the typed sites' information. Scoped to
+                             // the helper channel; explicit-receiver and
+                             // own-class channels keep their semantics.
+-                            if via_helper_index && matches!(t, Ty::Untyped { .. }) {
++                            if via_helper_index && !parameter_conservation::on() && matches!(t, Ty::Untyped { .. }) {
+                                 Ty::Var { var: crate::ident::TyVar(0) }
+                             } else {
+                                 t
+@@ -6435,7 +6439,7 @@ impl Analyzer {
+                                             .ty
+                                             .clone()
+                                             .unwrap_or(Ty::Var { var: crate::ident::TyVar(0) });
+-                                        let t = if via_helper_index && matches!(t, Ty::Untyped { .. }) {
++                                        let t = if via_helper_index && !parameter_conservation::on() && matches!(t, Ty::Untyped { .. }) {
+                                             Ty::Var { var: crate::ident::TyVar(0) }
+                                         } else {
+                                             t
+@@ -6490,7 +6494,7 @@ impl Analyzer {
+                         args.last().map(|a| &*a.node),
+                         Some(ExprNode::ForwardKeywords | ExprNode::ForwardKeywordsWithPairs { .. })
+                     );
+-                    let kw_tys = SiteKeywords { group, keys, splat, anonymous_forward };
++                    let kw_tys = SiteKeywords { group, keys, splat, anonymous_forward, sources };
+                     // `Klass.new(a, b)` hands its arguments to
+                     // `initialize` — that is all `Class#new` does with
+                     // them — so the site is evidence for the
+@@ -7533,12 +7537,22 @@ pub(crate) fn fold_param_observations(
+     let mut touched: BTreeSet<ParamKey> = BTreeSet::new();
+     for (key, tys) in observations {
+         let entry = rows.entry(key.clone()).or_default();
++        let previous_len = entry.len();
+         if entry.len() < tys.len() {
+             entry.resize(tys.len(), Ty::Var { var: crate::ident::TyVar(0) });
+         }
+-        for (slot, observed) in entry.iter_mut().zip(tys.into_iter()) {
++        for (position, (slot, observed)) in entry.iter_mut().zip(tys.into_iter()).enumerate() {
++            let _audit = producer_evidence::parameter_context(&key, position, "join");
+             let old = det::descent_on().then(|| slot.clone());
+-            let next = unify_param_ty(std::mem::replace(slot, Ty::Bottom), observed);
++            let next = if parameter_conservation::on() && position >= previous_len {
++                // This Var was just allocated by resize, never observed from Ruby.
++                // Discharge only that empty seed, not a caller's ambiguous Var.
++                let next = parameter_conservation::initialize(observed.clone());
++                producer_evidence::parameter_seed(&observed, &next);
++                next
++            } else {
++                unify_param_ty(std::mem::replace(slot, Ty::Bottom), observed)
++            };
+             det::note("params.unify", old.as_ref(), &next);
+             *slot = next;
+         }
+@@ -7546,9 +7560,14 @@ pub(crate) fn fold_param_observations(
+     }
+     for key in touched {
+         if let Some(row) = rows.get_mut(&key) {
+-            for slot in row.iter_mut() {
++            for (position, slot) in row.iter_mut().enumerate() {
++                let _audit = producer_evidence::parameter_context(&key, position, "bound");
++                let before = producer_evidence::on().then(|| slot.clone());
+                 let old = det::descent_on().then(|| slot.clone());
+                 let next = fixpoint_bound::bound(std::mem::replace(slot, Ty::Bottom));
++                if let Some(before) = before {
++                    producer_evidence::parameter_merge(&before, &Ty::Bottom, &next);
++                }
+                 det::note("params.bound", old.as_ref(), &next);
+                 *slot = next;
+             }
+@@ -7591,8 +7610,13 @@ pub(crate) fn fold_param_observations(
+ /// arm, merging them must keep gradual (gradual wins), or the result
+ /// depends on the grouping again and the join stops being associative.
+ pub(crate) fn unify_param_ty(stored: Ty, observed: Ty) -> Ty {
+-    if !producer_evidence::on() { return unify_param_ty_raw(stored, observed); }
+-    let result=unify_param_ty_raw(stored.clone(), observed.clone());
++    let join = if parameter_conservation::on() {
++        parameter_conservation::join
++    } else {
++        unify_param_ty_raw
++    };
++    if !producer_evidence::on() { return join(stored, observed); }
++    let result=join(stored.clone(), observed.clone());
+     producer_evidence::parameter_merge(&stored,&observed,&result);
+     result
+ }
+@@ -7923,6 +7947,8 @@ type SendSite = (ClassId, Symbol, Vec<Ty>, SiteKeywords, SiteRecv);
+ /// A call's trailing keyword arguments as `collect_send_sites` saw them.
+ #[derive(Clone, Debug)]
+ struct SiteKeywords {
++    /// Raw source writer candidates for audit only; never affects routing.
++    sources: Vec<String>,
+     /// The last argument is the keyword group (`k: v` or `**splat`).
+     group: bool,
+     /// Its `key: value` pairs, by name; empty when any key is not a
+diff --git a/src/analyze/producer_evidence.rs b/src/analyze/producer_evidence.rs
+index dcd152b0..cc8ff51c 100644
+--- a/src/analyze/producer_evidence.rs
++++ b/src/analyze/producer_evidence.rs
+@@ -31,6 +31,13 @@ struct Ledger {
+     parameter_merges: u64,
+     parameter_type_origin_losses: u64,
+     parameter_losses_by_kind: BTreeMap<String, u64>,
++    parameter_current: Option<(String, String)>,
++    parameter_destinations: BTreeMap<String, BTreeMap<String, BTreeSet<String>>>,
++    parameter_events: BTreeMap<String, u64>,
++    parameter_output_origin_losses: u64,
++    parameter_repair_merges: u64,
++    parameter_seed_initializations: u64,
++    parameter_unmapped_merges: u64,
+ }
+ thread_local! { static AUDIT: RefCell<Ledger> = RefCell::new(Ledger::default()); }
+ 
+@@ -150,10 +157,11 @@ pub(super) fn parameter_call(
+     side: &str,
+     span: Span,
+     args: &[crate::expr::Expr],
+-) {
++) -> Vec<String> {
+     if !on() {
+-        return;
++        return Vec::new();
+     }
++    let mut sources = Vec::new();
+     for (position, arg) in args.iter().enumerate() {
+         let previous = AUDIT.with(|a| {
+             let mut a = a.borrow_mut();
+@@ -182,12 +190,67 @@ pub(super) fn parameter_call(
+                 .or_default()
+                 .extend(targets.iter().map(|s| (*s).to_owned()));
+             a.writers.entry(id.clone()).or_default();
++            sources.push(id.clone());
+             a.current.replace(id)
+         });
+         input(arg.ty.as_ref());
+         AUDIT.with(|a| a.borrow_mut().current = previous);
+     }
++    sources
++}
++
++fn destination(key: &super::ParamKey, position: usize) -> String {
++    format!("{}|{}|{:?}|param={position}", key.0.0.as_str(), key.1.as_str(), key.2)
++}
++
++fn native(t: &Ty) -> String {
++    // Debug includes the complete native reason set, unlike serde and Display.
++    format!("{t:?}")
++}
++
++pub(super) fn parameter_destination(
++    key: &super::ParamKey, sources: &[String], positional: bool, args: &[Ty],
++) {
++    if !on() { return; }
++    AUDIT.with(|a| {
++        let mut a = a.borrow_mut();
++        for (position, ty) in args.iter().enumerate() {
++            let candidates = if positional {
++                sources.get(position).cloned().into_iter().collect::<Vec<_>>()
++            } else {
++                // Keyword placement and splats can combine producers. Preserve
++                // the entire candidate set rather than invent one exact source.
++                sources.to_vec()
++            };
++            a.parameter_destinations.entry(destination(key, position)).or_default()
++                .entry(native(ty)).or_default().extend(candidates);
++        }
++    });
+ }
++
++pub(super) struct ParameterGuard(Option<Option<(String, String)>>);
++impl Drop for ParameterGuard {
++    fn drop(&mut self) {
++        if let Some(previous) = self.0.take() {
++            AUDIT.with(|a| a.borrow_mut().parameter_current = previous);
++        }
++    }
++}
++pub(super) fn parameter_context(key: &super::ParamKey, position: usize, phase: &str) -> ParameterGuard {
++    if !on() { return ParameterGuard(None); }
++    AUDIT.with(|a| ParameterGuard(Some(a.borrow_mut().parameter_current
++        .replace((destination(key, position), phase.to_owned())))))
++}
++
++pub(super) fn parameter_seed(observed: &Ty, result: &Ty) {
++    if !on() { return; }
++    AUDIT.with(|a| a.borrow_mut().parameter_seed_initializations += 1);
++    // The old allocation Var is an explicitly empty table seed, not a raw
++    // caller contribution. Its discharge is counted separately and justified
++    // by allocation metadata. Check the actual observed contribution normally.
++    parameter_merge(&Ty::Bottom, observed, result);
++}
++
+ pub(super) fn parameter_merge(stored: &Ty, observed: &Ty, result: &Ty) {
+     if !on() {
+         return;
+@@ -203,14 +266,35 @@ pub(super) fn parameter_merge(stored: &Ty, observed: &Ty, result: &Ty) {
+         .cloned()
+         .collect::<BTreeSet<_>>();
+     let after = kinds(result);
++    let paths = |t: &Ty| origins(t).into_iter()
++        .map(|path| path.replace("/arm", ""))
++        .collect::<BTreeSet<_>>();
++    let input_paths = paths(stored).union(&paths(observed)).cloned().collect::<BTreeSet<_>>();
++    let output_paths = paths(result);
++    let lost_paths = input_paths.difference(&output_paths).cloned().collect::<Vec<_>>();
+     AUDIT.with(|a| {
+         let mut a = a.borrow_mut();
+-        a.parameter_merges += 1;
++        let (target, phase) = a.parameter_current.clone()
++            .unwrap_or(("<unscoped-native-join>".into(), "join".into()));
++        if phase == "join" {
++            a.parameter_merges += 1;
++            if super::parameter_conservation::on() { a.parameter_repair_merges += 1; }
++        }
+         let lost = before.difference(&after).cloned().collect::<Vec<_>>();
+         a.parameter_type_origin_losses += lost.len() as u64;
+-        for kind in lost {
+-            *a.parameter_losses_by_kind.entry(kind).or_default() += 1;
++        for kind in &lost {
++            *a.parameter_losses_by_kind.entry(kind.clone()).or_default() += 1;
+         }
++        a.parameter_output_origin_losses += lost_paths.len() as u64;
++        let sources = a.parameter_destinations.get(&target)
++            .and_then(|shapes| shapes.get(&native(observed))).cloned().unwrap_or_default();
++        if phase == "join" && sources.is_empty() { a.parameter_unmapped_merges += 1; }
++        let event = json!({"destination":target,"phase":phase,
++            "observed_source_candidates":sources,"source_mapping":"post-placement native shape; keyword candidates may be overinclusive",
++            "stored":native(stored),"observed":native(observed),"output":native(result),
++            "input_origins":input_paths,"output_origins":output_paths,
++            "lost_origins":lost_paths,"lost_kinds":lost,"removal_justification":null});
++        *a.parameter_events.entry(event.to_string()).or_default() += 1;
+     });
+ }
+ 
+@@ -258,6 +342,17 @@ pub fn snapshot() -> Value {
+             "writers":a.writers,"parameter_routes":a.parameter_routes,"input_shapes":a.shapes,"visits":a.visits,"unscoped_inputs":a.unscoped_inputs,
+             "equal_merges":a.equal_merges,"tag_only_changes":a.tag_only_changes,"parameter_merges":a.parameter_merges,
+             "parameter_type_origin_losses":a.parameter_type_origin_losses,"parameter_losses_by_kind":a.parameter_losses_by_kind,
++            "parameter_repair_merges":a.parameter_repair_merges,
++            "parameter_seed_initializations":a.parameter_seed_initializations,
++            "parameter_seed_justification":"only a cell newly allocated by row resize is empty; observed Vars remain ambiguous; observed Bottom cannot complete the writer universe",
++            "parameter_output_origin_losses":a.parameter_output_origin_losses,
++            "parameter_unmapped_merges":a.parameter_unmapped_merges,
++            "parameter_destinations":a.parameter_destinations,
++            "parameter_native_events":a.parameter_events.iter().map(|(event,count)| {
++                let mut event: Value = serde_json::from_str(event).unwrap();
++                event["count"] = json!(count);
++                event
++            }).collect::<Vec<_>>(),
+             "complete_writer_inventory":false,"scheduler_dependencies_migrated":false})
+     })
+ }

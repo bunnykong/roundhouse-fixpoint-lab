@@ -1,0 +1,32 @@
+[
+  {
+    "name": "adapter",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "clean",
+      "--manifest-path",
+      "$EXPERIMENT/week/sound/adapter/Cargo.toml",
+      "--target-dir",
+      "$EXPERIMENT/week/sound/adapter/target"
+    ],
+    "exit": 0,
+    "log": "$EXPERIMENT/evidence/calibration/cargo-clean-adapter.log",
+    "target_exists": false
+  },
+  {
+    "name": "pristine-exporter",
+    "command": [
+      "cargo",
+      "+1.98.1",
+      "clean",
+      "--manifest-path",
+      "$EXPERIMENT/week/sound/sound-source/Cargo.toml",
+      "--target-dir",
+      "$EXPERIMENT/week/sound/sound-source/target"
+    ],
+    "exit": 0,
+    "log": "$EXPERIMENT/evidence/calibration/cargo-clean-pristine-exporter.log",
+    "target_exists": false
+  }
+]

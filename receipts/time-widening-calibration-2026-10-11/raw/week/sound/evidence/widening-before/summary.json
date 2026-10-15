@@ -1,0 +1,193 @@
+{
+  "adapter_sha": "48c652873a88d8bc291df1d606ad1464f9168ae3",
+  "added_var_paths": {},
+  "changes": [
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1032",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1105",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1153",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1232",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1368",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1504",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1583",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1899",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    }
+  ],
+  "condition": "soundness-f29-concrete-widening-v1",
+  "kind": "synthetic export control",
+  "results": [
+    {
+      "after_rejected": 0,
+      "before_rejected": 7,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-before/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-before/P.json",
+        "--require-membership"
+      ],
+      "gate_exit": 0,
+      "new_opaque_aliases": 0,
+      "new_var_paths": 0,
+      "observed": 24,
+      "selected": 28,
+      "setting": "P"
+    },
+    {
+      "after_rejected": 0,
+      "before_rejected": 21,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-before/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-before/E.json",
+        "--require-membership"
+      ],
+      "gate_exit": 0,
+      "new_opaque_aliases": 0,
+      "new_var_paths": 0,
+      "observed": 25,
+      "selected": 28,
+      "setting": "E"
+    },
+    {
+      "after_rejected": 2,
+      "before_rejected": 8,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-before/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-before/I.json",
+        "--require-membership"
+      ],
+      "gate_exit": 1,
+      "new_opaque_aliases": 0,
+      "new_var_paths": 0,
+      "observed": 25,
+      "selected": 28,
+      "setting": "I"
+    }
+  ],
+  "script_sha256": "32bf662a313e05184e787e819e6d878f7c5056ce1931b3a61fe205d60b59f821",
+  "seconds": 0.252476416,
+  "source_receipt": "sound-traces-20261010-c210f226"
+}

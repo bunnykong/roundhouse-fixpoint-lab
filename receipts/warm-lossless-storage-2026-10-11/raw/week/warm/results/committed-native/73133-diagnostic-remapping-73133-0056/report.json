@@ -1,0 +1,48 @@
+{
+  "digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_cache": "b7eab3b1c454d6c0",
+    "ir": "375584bac763a25c",
+    "returns": "8b8f60904de08591",
+    "sccq_contexts": "9c42ec37d20cbe1b",
+    "sccq_dependencies": "8f9f3bcddc794bee",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "entries": {
+    "block_values": 274,
+    "controller_cache": 2,
+    "ir": 17,
+    "returns": 2479,
+    "sccq_contexts": 2,
+    "sccq_dependencies": 2,
+    "sccq_entry_contexts": 3
+  },
+  "loops": {
+    "absorb": {
+      "end": "settled",
+      "round": 1
+    },
+    "production": {
+      "end": "settled",
+      "round": 1
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 0
+    }
+  },
+  "schema": 1,
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-diagnostic-remapping/app/controllers/bench_controller.rb:4:1: error[incompatible_binop]: `+` with incompatible operand types: Integer + String",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-diagnostic-remapping/app/views/bench/index.html.erb:1:5: error[ivar_unresolved]: @answer has no known type"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_cache": 2,
+    "ir": 17,
+    "returns": 2479,
+    "sccq_contexts": 2,
+    "sccq_dependencies": 2,
+    "sccq_entry_contexts": 3
+  }
+}

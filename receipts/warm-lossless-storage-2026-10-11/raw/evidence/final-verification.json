@@ -1,0 +1,41 @@
+{
+  "condition": "warm-lossless-storage-20261011-lossless-storage-v1",
+  "verdict": "confirmed-bounded",
+  "immutable_receipts_verified": 2048,
+  "corrected_helper": {
+    "reduce.py": {
+      "before": "d96f884f84d2b8681c3b7333a820e0221e14c87368dca74e6161069c61dcec89",
+      "after": "302809d10a5f6915f44f6f4914b12f8943a300fe0e01c22aea498c87b3f328d6"
+    }
+  },
+  "current_helper_sha256": {
+    "deadline_run.py": "3a26b5315cbb99f544c5a530e4a22d12f8dd36e4007f434dd01984992e310f04",
+    "reduce.py": "302809d10a5f6915f44f6f4914b12f8943a300fe0e01c22aea498c87b3f328d6",
+    "seal.py": "58db35316ec09daa560aff8124aec8697c672f2bba3371fe46009015648da4ca",
+    "verify_final.py": "bdd56e67107170e78a6f47a3fbc166647023efa14765ec378f5b12c617c149c9"
+  },
+  "final_receipt_sha256": {
+    "summary.json": "7e134998657ee23d0973e5d504820330834ed5467d25b02d24fcaeb837a786e3",
+    "seal.json": "4a6a7be1e1e3bdc127d4c04988a393ce830cd2eec25fd80887ee0691f639d1e2",
+    "reduction.log": "e525eda2f83aa6a203dfe2c97a2754d8a2f4f74134456bbfe436c6ba172e92d3",
+    "reduction.exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "reduction-final.log": "31cdcf91214c72e1065ff74b9d6c39b0c74c60e81e217c424553401ec9699304",
+    "reduction-final.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "reduction-correction.json": "112f058c8758d4f7f8d9f2fa54ad672fa88ce6b97fbcd66cbc5964786aa07588",
+    "cleanup.json": "533767848f39855a80a46c3fa09e29bf8c068140782b01b579e9c16942162fbb",
+    "clean-base.log": "ccdf75645a316a41600aa7bf7bc7dfcf17dce46d8b36ec05fa67a82eb3391f5c",
+    "clean-codec.log": "a089a8e0e846279db0669b52829e79b6c1c1d17b43c35abb35d24f1124b83b5f",
+    "clean-base.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "clean-codec.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "candidate-process.json": "edbd870e01ca4d8bfe646a5e43790d4c3488aa860550dacae04c948d3110624e",
+    "candidate-profile.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "postprocess-process.json": "0a079774abf79640edefb4c421142691be60699e4b828be0aafa446634e09231",
+    "postprocess-driver.log": "410203b5b6bc47e99056a659dc7fd602bb47da1aeaebd302969de45486eb0cd2",
+    "final-status.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontier-status.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "committed_source_unchanged": true,
+  "binaries_match_profile_metadata": true,
+  "targets_removed": true,
+  "raw_failed_analysis_retained": true
+}

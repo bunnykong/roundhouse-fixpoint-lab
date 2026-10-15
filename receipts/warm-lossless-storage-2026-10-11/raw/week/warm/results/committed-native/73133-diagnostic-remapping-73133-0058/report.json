@@ -1,0 +1,58 @@
+{
+  "cold_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_cache": "b7eab3b1c454d6c0",
+    "ir": "375584bac763a25c",
+    "returns": "8b8f60904de08591",
+    "sccq_contexts": "9c42ec37d20cbe1b",
+    "sccq_dependencies": "8f9f3bcddc794bee",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "evaluations": {
+    "codec": {
+      "cache_schema": 3,
+      "decoded_ordered_rows": 0,
+      "decoded_reason_leaves": 0,
+      "decoded_values": 0,
+      "encoded_ordered_rows": 3,
+      "encoded_reason_leaves": 0,
+      "encoded_values": 23,
+      "identity": "rh-warm-native-v1:pending=1,gradual=2,unresolved=4;row=ordered-pairs"
+    },
+    "diagnostic_replayed": 0,
+    "incompatible_cache": 0,
+    "input_invalidated": 0,
+    "invalidated": 0,
+    "loaded": 0,
+    "read_invalidated": 0,
+    "recorded": 4,
+    "replayed": 0,
+    "typed": 4,
+    "uncovered": 0,
+    "unused": 0
+  },
+  "first_difference": null,
+  "shadow": "pass",
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-diagnostic-remapping/app/controllers/bench_controller.rb:4:1: error[incompatible_binop]: `+` with incompatible operand types: Integer + String",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-diagnostic-remapping/app/views/bench/index.html.erb:1:5: error[ivar_unresolved]: @answer has no known type"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_cache": 2,
+    "ir": 17,
+    "returns": 2479,
+    "sccq_contexts": 2,
+    "sccq_dependencies": 2,
+    "sccq_entry_contexts": 3
+  },
+  "warm_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_cache": "b7eab3b1c454d6c0",
+    "ir": "375584bac763a25c",
+    "returns": "8b8f60904de08591",
+    "sccq_contexts": "9c42ec37d20cbe1b",
+    "sccq_dependencies": "8f9f3bcddc794bee",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "ablation": {
+    "coincident_new_opacity": 0,
+    "dependent_new_acceptances": 0,
+    "scope": "derived analysis grammar; newly opaque rendered nodes replaced with never"
+  },
+  "acceptance_with_new_opacity": [],
+  "coincident_new_opacity": [],
+  "component_added": {},
+  "component_gate_passed": true,
+  "condition": "native-parameter-reason-seeds-parameter-f29-f29-parameters-v1-shared-host",
+  "graph_scope": {
+    "audit": "final-only",
+    "candidate": "final-only",
+    "s3": "final-only"
+  },
+  "native_audits": {
+    "audit": {
+      "parameter_losses_by_kind": {
+        "Gradual": 8932,
+        "LegacyAmbiguousVar": 843888,
+        "Unresolved": 126093
+      },
+      "parameter_merges": 5871964,
+      "parameter_output_origin_losses": 1170134,
+      "parameter_repair_merges": 0,
+      "parameter_seed_initializations": 0,
+      "parameter_type_origin_losses": 978913,
+      "parameter_unmapped_merges": 65905
+    },
+    "candidate": {
+      "parameter_losses_by_kind": {},
+      "parameter_merges": 5668335,
+      "parameter_output_origin_losses": 0,
+      "parameter_repair_merges": 5668335,
+      "parameter_seed_initializations": 296734,
+      "parameter_type_origin_losses": 0,
+      "parameter_unmapped_merges": 67716
+    }
+  },
+  "newly_accepted": [],
+  "newly_rejected": [],
+  "runtime": "saved P/E/I traces; fresh native exports; no new Docker session",
+  "selected_coverage_unchanged": true,
+  "selection_count": 28,
+  "settings": [
+    {
+      "audit_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "audit_exit": 1,
+      "audit_membership": {
+        "accepted": 17,
+        "missing_observations": 0,
+        "rejected": 7
+      },
+      "candidate_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "candidate_exit": 1,
+      "candidate_membership": {
+        "accepted": 17,
+        "missing_observations": 0,
+        "rejected": 7
+      },
+      "observed_slots": 24,
+      "records": 24,
+      "selected": 28,
+      "setting": "P",
+      "unmapped_records": 0
+    },
+    {
+      "audit_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "audit_exit": 1,
+      "audit_membership": {
+        "accepted": 54,
+        "missing_observations": 0,
+        "rejected": 21
+      },
+      "candidate_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "candidate_exit": 1,
+      "candidate_membership": {
+        "accepted": 54,
+        "missing_observations": 0,
+        "rejected": 21
+      },
+      "observed_slots": 25,
+      "records": 75,
+      "selected": 28,
+      "setting": "E",
+      "unmapped_records": 0
+    },
+    {
+      "audit_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "audit_exit": 1,
+      "audit_membership": {
+        "accepted": 20,
+        "missing_observations": 0,
+        "rejected": 8
+      },
+      "candidate_components": {
+        "includes_gradual": true,
+        "new_unknown_aliases": 0,
+        "new_unknown_paths": 0,
+        "passed": true,
+        "path_scheme": "constructor-union-paths-v1",
+        "stage": "final"
+      },
+      "candidate_exit": 1,
+      "candidate_membership": {
+        "accepted": 20,
+        "missing_observations": 0,
+        "rejected": 8
+      },
+      "observed_slots": 25,
+      "records": 28,
+      "selected": 28,
+      "setting": "I",
+      "unmapped_records": 0
+    }
+  ],
+  "timing_claim": false,
+  "totals": {
+    "audit": {
+      "accepted": 91,
+      "missing_observations": 0,
+      "rejected": 36
+    },
+    "candidate": {
+      "accepted": 91,
+      "missing_observations": 0,
+      "rejected": 36
+    }
+  }
+}

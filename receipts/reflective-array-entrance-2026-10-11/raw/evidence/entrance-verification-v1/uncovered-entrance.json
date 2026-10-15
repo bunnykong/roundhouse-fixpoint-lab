@@ -1,0 +1,34 @@
+{
+  "native_on": [
+    {
+      "entrance": "Array.elements[0]",
+      "reflective_calls": 1,
+      "stored_destinations": [],
+      "successful_destination": "x",
+      "touched": [],
+      "typed_rhs": "Some(Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Int } } } } } } } } } } } } } } } } })"
+    }
+  ],
+  "synthetic_off": [
+    {
+      "eligible_direct_storage": "Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Int } } } } } } } } } } } } } } } } }",
+      "entrance": "Array.elements[0]",
+      "input_depth": 17,
+      "required_destination": "x",
+      "stored_destinations": [],
+      "successful_destination": "x",
+      "touched": []
+    }
+  ],
+  "synthetic_on": [
+    {
+      "eligible_direct_storage": "Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Int } } } } } } } } } } } } } } } } }",
+      "entrance": "Array.elements[0]",
+      "input_depth": 17,
+      "required_destination": "x",
+      "stored_destinations": [],
+      "successful_destination": "x",
+      "touched": []
+    }
+  ]
+}

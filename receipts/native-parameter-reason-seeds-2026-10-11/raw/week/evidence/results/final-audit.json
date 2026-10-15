@@ -1,0 +1,113 @@
+{
+  "absent_supplied_research workspace_checks": [
+    "$WORKSPACE/docs/pitfalls.md",
+    "$WORKSPACE/tools/cohort_index.py",
+    "$WORKSPACE/tools/test_scrub.py",
+    "$WORKSPACE/tools/test_clojure_artifacts.py",
+    "$WORKSPACE/tools/test_clojure_lane.py",
+    "$WORKSPACE/tools/test_brief_check.py",
+    "$WORKSPACE/tools/brief_check.py",
+    "$WORKSPACE/briefs/seeds"
+  ],
+  "branch": "native-parameter-reason-seeds",
+  "candidate_patch_sha256": "75fd58afe1fa801a223914d922a498ae92afe7a647596ba8c44ec79ce455543b",
+  "cargo_lock_sha256": "206b0c494651b039351ec2a3e6232041e87e4f36232a111ea6086d4a8e8a5981",
+  "delivery_files": [
+    "src/analyze/mod.rs",
+    "src/analyze/producer_evidence.rs",
+    "src/analyze/parameter_conservation.rs",
+    "src/analyze/parameter_conservation/tests.rs",
+    "examples/parameter_reason_sound_types.rs"
+  ],
+  "delivery_sha256": {
+    "examples/parameter_reason_sound_types.rs": "68348512d6498b9f3c6d9a9f64a1194ee5470366f6d8a8a51b7d160028870e57",
+    "src/analyze/mod.rs": "cccab060e47cb26fe2ec3a98344e4638f1f24345e1e167c8bd64646bb2b6c56a",
+    "src/analyze/parameter_conservation.rs": "a3cabaca763e2f56a80add443c37f7f29e45c0aee0de820c1231ed64bcc7f0fb",
+    "src/analyze/parameter_conservation/tests.rs": "3ef470229ec703c9a5063202cf11bfab6d98f983fe75068a458ed657a774f3c4",
+    "src/analyze/producer_evidence.rs": "c47365147f04aef78dcfda1d6720e53c069d9acad1e9c937c22bd743a19f5a5f"
+  },
+  "helper_sha256": {
+    "finish-locked.sh": "8b45d7e436136d4a96c7811b56cafc3ff5b38d5a45822f37d83599121adf9874",
+    "reproduce.sh": "a1df3e2c21b13b7d040a969e658d5045eff7dc973dae2abc5c127039bb33c896",
+    "run-f29.sh": "b03dbf496768df8592627acaff6501330f2aae107d3ae31b7bf13b5d3f75e13b",
+    "run-local.sh": "a4bf6bca46d72cc3783a0dc9c3105e9efadbbaec5ad6ff60e2ff150c7d8645c6",
+    "run-suite.sh": "2c8dd75e93edd57c273e570edbbf0b75f99649b5e70ef23c7d25b99d43152e46",
+    "session.sh": "b744eccf4a4a246815add0d0263c0587e2c709a1040446aa52f918931af270ed",
+    "staging/analyze_app.py": "b219e0f95581c00048df759b461451580ddaa6c545d1286102d6215c913b84b8",
+    "staging/analyze_f19.py": "014edf99fd0733d8a82a4b05d694b10d6717d26734e6dedf61314524d538a389",
+    "staging/analyze_f29.py": "d3c5613c39c960754a43c9798eb2c16e9f756d1079510a615c833236d0535a78",
+    "staging/receipt_index.py": "02e2b6f4f1404195131045eb9bc98cdc68e036372a258526bc8c743d6252bec8",
+    "staging/reproduce_status.py": "e91bd3038aaa8cb3cb8a67dd9f2e081e83fb131cd4a3d79b701d503cf58dde8f",
+    "week/evidence/experiments/app_check.py": "0262cf97ad4861aba57fea2a88232ab680eee280e310cec85706882cd0f9436a",
+    "week/evidence/experiments/f19_check.py": "b88686d282ecea49be912320600c64678e774f88757b69add13c3d4ea91fa0b6",
+    "week/sound/adapter/compare.py": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+    "week/sound/candidate_export.py": "e3af6f81dc5fa9e008c3b5c168750c0d05a8602de8d0d8a14e36297bbb0a1fc4"
+  },
+  "input_pins": {
+    "campfire": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+    "discourse": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+    "lab": "76cdb1ea24b0c4c88af4c42c78f567d759b7731d"
+  },
+  "measured_source_matches": {
+    "campfire-parameters-v1": {
+      "mismatches": [],
+      "src_files": 501
+    },
+    "f19-parameters-v1": {
+      "mismatches": [],
+      "src_files": 501
+    },
+    "f29-audit": {
+      "mismatches": [],
+      "source_files": 502
+    },
+    "f29-candidate": {
+      "mismatches": [],
+      "source_files": 502
+    },
+    "f29-s3": {
+      "mismatches": [],
+      "source_files": 502
+    }
+  },
+  "suite": {
+    "control-action_controller_runtime_emit_typechecks_hotspots": {
+      "cargo_summaries": [
+        "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1152 filtered out; finished in 0.03s"
+      ],
+      "exit": 101,
+      "failed_tests": []
+    },
+    "control-rbs_ivar_decls_stamp_empty_array_initializers": {
+      "cargo_summaries": [
+        "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1152 filtered out; finished in 0.01s"
+      ],
+      "exit": 101,
+      "failed_tests": []
+    },
+    "default": {
+      "cargo_summaries": [
+        "test result: FAILED. 1142 passed; 2 failed; 13 ignored; 0 measured; 0 filtered out; finished in 290.89s"
+      ],
+      "exit": 101,
+      "failed_tests": [
+        "emit::rust::library::value_union_emit_tests::action_controller_runtime_emit_typechecks_hotspots",
+        "runtime_src::tests::rbs_ivar_decls_stamp_empty_array_initializers"
+      ]
+    },
+    "fixtures": {
+      "cargo_summaries": [],
+      "exit": 0,
+      "failed_tests": []
+    }
+  },
+  "tested_parent": "d83849d3f7750b0121390f0c89a52ec81ad84b6e",
+  "timing_claim": false,
+  "toolchains": {
+    "cargo": "cargo 1.98.1 (797e8a9bc 2026-08-05)",
+    "python": "Python 3.9.6",
+    "ruby_app": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+    "ruby_laws": "ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [arm64-darwin25]",
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)"
+  }
+}

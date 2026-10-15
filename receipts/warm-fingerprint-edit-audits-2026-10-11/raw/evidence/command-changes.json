@@ -1,0 +1,67 @@
+[
+  {
+    "command": "Common setup",
+    "change": "Set WEEK to the assigned D/week; clone exact local candidate, parent, lab and three app pins; remove remotes.",
+    "reason": "User write boundary and retained inputs are read-only."
+  },
+  {
+    "command": "Pinned dependencies",
+    "change": "Copy warm-fingerprint-components offline Cargo cache locally; CARGO_NET_OFFLINE=true.",
+    "reason": "The same Rubydex dependency pin needs SSH credentials when fetched; no lockfile or pin changes."
+  },
+  {
+    "command": "warm_build/warm_check/warm_trial",
+    "change": "Supply named wrappers around the copied build, integration-test and trial commands.",
+    "reason": "The updated brief names warm_* helpers but the copied session exposes build/warm_tests/trial."
+  },
+  {
+    "command": "Timing lock",
+    "change": "Acquire exclusive workshop lock for each native command, inside a controller using native_check.py; measure after lock acquisition.",
+    "reason": "User says exclusive timings kept short; avoid an exclusive lock across the multi-hour campaign or nesting locks."
+  },
+  {
+    "command": "Deadline and condition",
+    "change": "Replace expired warm-fingerprint-components deadline with 15:25 UTC; use new warm-fingerprint-edit-audits-20261011 labels.",
+    "reason": "October 11 assignment starts at 12:16 UTC and ends within about 3.5 hours."
+  },
+  {
+    "command": "Same-path parent",
+    "change": "Retain the copied fresh same-path parent check and all identity fields; require parent when a reference or sealed parent is supplied.",
+    "reason": "Scheduler identities contain absolute app roots. Base does not have a parent reference."
+  },
+  {
+    "command": "Audit acceptance",
+    "change": "Retain complete nonzero input/hash, extra and guard audit counters, including seeds and correctness replays.",
+    "reason": "Naming an audit flag and process exit 0 alone cannot establish coverage."
+  },
+  {
+    "command": "Separate cold frontier campaign",
+    "change": "Use the pinned F30 check collector with explicit RH_FIXPOINT_VERIFY=0, five alternating parent/candidate pairs on each of Mastodon, Discourse and Chatwoot.",
+    "reason": "tools/research/probe is absent from the selected warm source pin; the native digest and complete diagnostic collector are available. Same app path, all identity fields and nonempty inventories remain required."
+  },
+  {
+    "command": "Deadline while queued",
+    "change": "Bound each native lock-wrapper process group by PROFILE_STOP_UTC, including lock waits; stop its descendants on timeout. Reproduction uses a fresh label with the dated deadline cleared.",
+    "reason": "The original F30 deadline runs after lock acquisition and otherwise cannot bound the outer queue wait. Native measurement walls still exclude the lock queue."
+  },
+  {
+    "command": "Per-edit duplicate correctness run",
+    "change": "Add --skip-extra-correctness for base-six, fast-six-audit and fast-five; retain one cold/warm pair per base/audit edit and all five alternating fast pairs. Every retained pair independently requires mandatory shadow, separate cold, fresh same-path parent when referenced, diagnostics and nonempty inventories.",
+    "reason": "The supplied runner adds a duplicate warm correctness command before every edit. This is beyond warm fingerprint edit audits confirm criteria; omit six redundant warm executions per condition to honor the 3.5-hour deadline. Edit/pair counts and every specified parity comparison remain required."
+  },
+  {
+    "command": "Audit before parent warm profiles",
+    "change": "Use --parent-binary/--parent-source to hash-check the sealed pristine d9ec parent and run fresh same-path cold checks without requiring a completed parent warm profile. Audit all six edits first, then collect an audit-off one-pair profile on all six before the parent six-edit profiles and five-pair replication.",
+    "reason": "About 75 minutes of elapsed setup/host queue leaves too little room for the supplied order. This prioritizes the central all-edit parity and total-warm-regression evidence. No saved identity is fabricated or used across roots; all confirm comparisons remain live and complete. Five-pair useful-cost and three-app cold gates remain separate and will be marked incomplete if the deadline intervenes."
+  },
+  {
+    "command": "Fresh-label reproduction receipts",
+    "change": "Clear the resume-controls flag and pass the new labeled build seal through WARM_EDIT_AUDITS_BUILD_ARTIFACTS; make the full reducer inconclusive when the broader cold campaign is missing.",
+    "reason": "Reproduction must run native controls and compare the binaries it has just rebuilt. A missing required cold packet cannot become an overall confirmed verdict. The in-progress audit controller retains its original helper snapshot."
+  },
+  {
+    "command": "Final process inventory",
+    "change": "Record process inventory as unavailable when the sandbox denies ps; continue the restored-input, helper and receipt checks. Resume only the analysis batch after successful cargo cleanup so the original cleanup receipts remain intact.",
+    "reason": "The final shared-lock batch reached cleanup and input-tree checks, then ps raised PermissionError. Native controller exit and process-group deadline termination are recorded, but an independent host process scan cannot be claimed."
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "cold_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_cache": "ceab9438cc12a8e4",
+    "ir": "12907ad6216d8069",
+    "params": "8ebd99c3bd58afe0",
+    "returns": "7def7c60583fdbd6",
+    "sccq_contexts": "0ba9856f333b9ae9",
+    "sccq_dependencies": "c85d4f9d0d396604",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "evaluations": {
+    "codec": {
+      "cache_schema": 3,
+      "decoded_ordered_rows": 0,
+      "decoded_reason_leaves": 0,
+      "decoded_values": 0,
+      "encoded_ordered_rows": 11,
+      "encoded_reason_leaves": 25,
+      "encoded_values": 64,
+      "identity": "rh-warm-native-v1:pending=1,gradual=2,unresolved=4;row=ordered-pairs"
+    },
+    "diagnostic_replayed": 0,
+    "incompatible_cache": 0,
+    "input_invalidated": 0,
+    "invalidated": 0,
+    "loaded": 0,
+    "read_invalidated": 0,
+    "recorded": 8,
+    "replayed": 0,
+    "typed": 8,
+    "uncovered": 0,
+    "unused": 0
+  },
+  "first_difference": null,
+  "shadow": "pass",
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-add/app/controllers/bench_controller.rb:3:11: warning[gradual_untyped]: method call resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-add/app/controllers/bench_controller.rb:3:1: warning[gradual_untyped]: expression resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-add/app/views/bench/index.html.erb:1:5: warning[gradual_untyped]: ivar read resolves to RBS `untyped` (gradual escape)"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_cache": 2,
+    "ir": 18,
+    "params": 4,
+    "returns": 2479,
+    "sccq_contexts": 2,
+    "sccq_dependencies": 2,
+    "sccq_entry_contexts": 3
+  },
+  "warm_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_cache": "ceab9438cc12a8e4",
+    "ir": "12907ad6216d8069",
+    "params": "8ebd99c3bd58afe0",
+    "returns": "7def7c60583fdbd6",
+    "sccq_contexts": "0ba9856f333b9ae9",
+    "sccq_dependencies": "c85d4f9d0d396604",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  }
+}

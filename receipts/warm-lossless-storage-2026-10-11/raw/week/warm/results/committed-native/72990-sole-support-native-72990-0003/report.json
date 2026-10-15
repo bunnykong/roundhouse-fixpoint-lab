@@ -1,0 +1,70 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          [
+            "untyped",
+            "Unresolved"
+          ]
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Int"
+    ],
+    "Chain.instance.link0": [
+      "Int"
+    ],
+    "Chain.instance.link1": [
+      "Int"
+    ]
+  },
+  "spans": [
+    {
+      "end": 52,
+      "file": 2,
+      "start": 22,
+      "type": {
+        "kind": "int"
+      }
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        [
+          "untyped",
+          "Unresolved"
+        ]
+      ]
+    ],
+    "Chain.instance.link0": {
+      "kind": "int"
+    },
+    "Chain.instance.link1": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        [
+          "untyped",
+          "Unresolved"
+        ]
+      ]
+    ]
+  }
+}

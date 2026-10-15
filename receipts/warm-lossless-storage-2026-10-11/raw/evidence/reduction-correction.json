@@ -1,0 +1,10 @@
+{
+  "raw_failed_receipt": "evidence/reduction.log",
+  "raw_exit": 1,
+  "failure": "The broad-suite failure parser captured headings with a greedy dot under DOTALL, merging the separate failure blocks",
+  "minimal_fix": "Restrict the heading capture to non-newline characters",
+  "native_receipts_changed": false,
+  "source_commit_changed": false,
+  "rerun_receipts": "evidence/reduction-final.log and evidence/summary.json",
+  "seal_note": "The original seal retains the pre-correction analysis-helper hash; a final verification records the corrected helper and checks immutable receipts"
+}

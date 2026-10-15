@@ -73,3 +73,16 @@ Shared `support.py` handles clean environments, input verification, source build
 | [Reusing byte-identical warm fingerprint components](warm-fingerprint-components-2026-10-11/README.md) | Confirmed for the bounded Mastodon boolean edit. | October 11; pinned unscored reference |
 | [Reflective ivar writes reach the complete-body bound](reflective-writer-bound-2026-10-11/README.md) | Confirmed for the narrow reflective writer repair. | October 11; pinned unscored reference |
 | [Native replay storage and cycle support withdrawal](replay-storage-support-2026-10-11/README.md) | Checks confirmed; current storage killed against native fidelity. | October 11; pinned unscored reference |
+
+## Results for the October 14 research week
+
+Measured October 11 in separate continuations; these are bounded unscored references.
+
+| Fact | Receipt | Verdict |
+| --- | --- | --- |
+| [F38](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f38) | [Native parameter reasons expose an arrival-dependent seed rule](native-parameter-reason-seeds-2026-10-11/README.md) | Killed by native seed arrival priority. |
+| [F39](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f39) | [Lossless native storage through a versioned warm codec](warm-lossless-storage-2026-10-11/README.md) | Confirmed for bounded storage gates. |
+| [F40](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f40) | [Closing declaration misses while retaining partial access coverage](declaration-access-coverage-2026-10-11/README.md) | Inconclusive; fixture mappings repaired, raw coverage partial. |
+| [F41](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f41) | [A Time-inclusive widening calibrates the component gate](time-widening-calibration-2026-10-11/README.md) | Confirmed for bounded checker calibration. |
+| [F42](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f42) | [Fingerprint edit audits stop after the three Mastodon comparisons](warm-fingerprint-edit-audits-2026-10-11/README.md) | Inconclusive; three edited comparisons and cost gates incomplete. |
+| [F43](https://github.com/bunnykong/roundhouse/blob/fixpoint-research/docs/research/facts.md#f43) | [A reflective write in an Array escapes the harvest walker](reflective-array-entrance-2026-10-11/README.md) | Killed by an uncovered reflective Array entrance. |

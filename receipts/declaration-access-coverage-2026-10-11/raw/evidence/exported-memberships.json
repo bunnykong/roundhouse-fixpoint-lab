@@ -1,0 +1,109 @@
+{
+  "campfire": {
+    "access_facts": 172804,
+    "condition": "declaration-access-coverage-20261011-v4-campfire; S3; verification off; unset",
+    "matches_native_missing_set_and_count": true,
+    "missing_by_kind_operation": [
+      {
+        "count": 68,
+        "kind": "attribute",
+        "operation": "read"
+      },
+      {
+        "count": 565,
+        "kind": "constant",
+        "operation": "read"
+      },
+      {
+        "count": 3856,
+        "kind": "context",
+        "operation": "read"
+      },
+      {
+        "count": 4922,
+        "kind": "context",
+        "operation": "write"
+      },
+      {
+        "count": 4,
+        "kind": "controller-cache",
+        "operation": "read"
+      },
+      {
+        "count": 7,
+        "kind": "expression",
+        "operation": "write"
+      },
+      {
+        "count": 6,
+        "kind": "fold-parameter",
+        "operation": "read"
+      },
+      {
+        "count": 4,
+        "kind": "fold-parameter",
+        "operation": "write"
+      },
+      {
+        "count": 156,
+        "kind": "ivar",
+        "operation": "read"
+      },
+      {
+        "count": 23,
+        "kind": "ivar",
+        "operation": "write"
+      },
+      {
+        "count": 22,
+        "kind": "narrowing",
+        "operation": "read"
+      },
+      {
+        "count": 15,
+        "kind": "narrowing",
+        "operation": "write"
+      },
+      {
+        "count": 772,
+        "kind": "parameter",
+        "operation": "read"
+      },
+      {
+        "count": 5182,
+        "kind": "parameter",
+        "operation": "write"
+      },
+      {
+        "count": 2251,
+        "kind": "registry",
+        "operation": "read"
+      },
+      {
+        "count": 21357,
+        "kind": "return",
+        "operation": "read"
+      },
+      {
+        "count": 125,
+        "kind": "return",
+        "operation": "write"
+      },
+      {
+        "count": 2,
+        "kind": "typed-constant",
+        "operation": "read"
+      }
+    ],
+    "receipt": "$EXPERIMENT/week/structure/runs/declaration-access-coverage-20261011-v4-campfire/campfire/observe/unset/declarations.jsonl",
+    "reconstructed_missing": 39337
+  },
+  "structure_fixture": {
+    "access_facts": 801,
+    "condition": "declaration-access-coverage-20261011-v4-structure_fixture; S3; verification off; unset",
+    "matches_native_missing_set_and_count": true,
+    "missing_by_kind_operation": [],
+    "receipt": "$EXPERIMENT/week/structure/runs/declaration-access-coverage-20261011-v4-structure_fixture/structure_fixture/observe/unset/declarations.jsonl",
+    "reconstructed_missing": 0
+  }
+}

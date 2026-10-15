@@ -1,0 +1,77 @@
+{
+  "commands": [
+    {
+      "name": "python-compile-final",
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "$EXPERIMENT/capture_pri4_provenance.py",
+        "$EXPERIMENT/capture_provenance.py",
+        "$EXPERIMENT/week/sound/scripts/fixture_check.py",
+        "$EXPERIMENT/week/sound/scripts/opacity_control.py",
+        "$EXPERIMENT/week/sound/scripts/test_component_gate.py",
+        "$EXPERIMENT/week/sound/scripts/test_widening_time.py",
+        "$EXPERIMENT/week/sound/scripts/verify_move1.py",
+        "$EXPERIMENT/week/sound/scripts/verify_calibration.py",
+        "$EXPERIMENT/week/sound/adapter/build.py",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "$EXPERIMENT/week/sound/adapter/component_gate.py",
+        "$EXPERIMENT/week/sound/adapter/docker_session.py",
+        "$EXPERIMENT/week/sound/adapter/export.py",
+        "$EXPERIMENT/week/sound/adapter/oracle_ext.py",
+        "$EXPERIMENT/week/sound/adapter/test_contract.py"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "shell-syntax-final",
+      "command": [
+        "/bin/bash",
+        "-n",
+        "$EXPERIMENT/setup.sh",
+        "$EXPERIMENT/run_checks.sh"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "code-whitespace-final",
+      "command": [
+        "git",
+        "-C",
+        "$EXPERIMENT",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".gitignore",
+        "setup.sh",
+        "run_checks.sh",
+        "capture_pri4_provenance.py",
+        "week/sound/lab",
+        "week/sound/scripts/opacity_control.py",
+        "week/sound/scripts/test_widening_time.py",
+        "week/sound/scripts/verify_calibration.py"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "provenance-final",
+      "command": [
+        "python3",
+        "-B",
+        "$EXPERIMENT/capture_pri4_provenance.py",
+        "--baseline",
+        "$EXPERIMENT/evidence/calibration/provenance-before.json",
+        "--output",
+        "$EXPERIMENT/evidence/calibration/provenance-final.json"
+      ],
+      "exit": 0
+    }
+  ],
+  "checks": {
+    "delivered_code_matches_pre_run_hashes": true,
+    "tested_control_script_matches_delivered_code": true
+  },
+  "patch_sha256": "bc9c253c1ca606461df1df0ad8c44c94f81c78b019cdbd0253179e1cc6a62d41"
+}

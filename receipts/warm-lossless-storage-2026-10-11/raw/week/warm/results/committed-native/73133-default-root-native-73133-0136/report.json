@@ -1,0 +1,86 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Int",
+      "Nil"
+    ],
+    "Chain.instance.link0": [
+      "Int",
+      "Nil"
+    ],
+    "Chain.instance.link1": [
+      "Int",
+      "Nil"
+    ]
+  },
+  "spans": [
+    {
+      "end": 69,
+      "file": 2,
+      "start": 35,
+      "type": [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      ]
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    ],
+    "Chain.instance.link0": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    ],
+    "Chain.instance.link1": [
+      "union",
+      [
+        {
+          "kind": "int"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    ]
+  }
+}

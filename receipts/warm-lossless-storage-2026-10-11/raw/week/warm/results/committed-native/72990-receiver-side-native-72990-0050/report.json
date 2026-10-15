@@ -1,0 +1,110 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": [
+        "array",
+        [
+          "union",
+          [
+            {
+              "kind": "str"
+            },
+            [
+              "untyped",
+              "Unresolved"
+            ]
+          ]
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "end": 78,
+      "file": 4,
+      "kind": {
+        "expr_kind": "method call",
+        "kind": "gradual_untyped"
+      },
+      "line_col": [
+        3,
+        12
+      ],
+      "path": "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-receiver-side/app/controllers/bench_controller.rb",
+      "start": 67
+    }
+  ],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Str"
+    ],
+    "Chain.class.link0": [],
+    "Chain.class.link1": [],
+    "Chain.instance.link0": [
+      "Str"
+    ],
+    "Chain.instance.link1": [
+      "Str"
+    ]
+  },
+  "spans": [
+    {
+      "end": 32,
+      "file": 2,
+      "start": 27,
+      "type": [
+        "untyped",
+        "Unresolved"
+      ]
+    },
+    {
+      "end": 119,
+      "file": 2,
+      "start": 72,
+      "type": {
+        "kind": "str"
+      }
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": [
+      "array",
+      [
+        "union",
+        [
+          {
+            "kind": "str"
+          },
+          [
+            "untyped",
+            "Unresolved"
+          ]
+        ]
+      ]
+    ],
+    "Chain.class.link0": [
+      "untyped",
+      "Unresolved"
+    ],
+    "Chain.class.link1": [
+      "untyped",
+      "Unresolved"
+    ],
+    "Chain.instance.link0": {
+      "kind": "str"
+    },
+    "Chain.instance.link1": [
+      "union",
+      [
+        {
+          "kind": "str"
+        },
+        [
+          "untyped",
+          "Unresolved"
+        ]
+      ]
+    ]
+  }
+}

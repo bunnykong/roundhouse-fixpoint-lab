@@ -1,0 +1,302 @@
+[
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/scripts/opacity_control.py",
+      "--variant",
+      "concrete-widening-time",
+      "--untimed",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/concrete-widening-time"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/scripts/opacity_control.py",
+      "--variant",
+      "concrete-widening",
+      "--untimed",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/concrete-widening"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/scripts/opacity_control.py",
+      "--variant",
+      "value-erasure",
+      "--untimed",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/value-erasure"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/P-main.json",
+      "--require-membership"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/E-main.json",
+      "--require-membership"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/I-main.json",
+      "--require-membership"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/P-s3.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 1,
+    "expected_exit": 1
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/E-s3.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 1,
+    "expected_exit": 1
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+      "--export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/I-s3.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 1,
+    "expected_exit": 1
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/P-reordered-main.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/E-reordered-main.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-main",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/I-reordered-main.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/main"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-widening-time",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/P-reordered-widening-time.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/concrete-widening-time/synthetic-concrete-widening-time"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-widening-time",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/E-reordered-widening-time.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/concrete-widening-time/synthetic-concrete-widening-time"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  },
+  {
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "$EXPERIMENT/week/sound/adapter/compare.py",
+      "--lab",
+      "$EXPERIMENT/week/sound/lab",
+      "--trace",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+      "--export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/reordered-widening-time",
+      "--slots",
+      "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+      "--output",
+      "$EXPERIMENT/evidence/calibration/test-receipts/I-reordered-widening-time.json",
+      "--require-membership",
+      "--baseline-export",
+      "$EXPERIMENT/evidence/calibration/test-receipts/concrete-widening-time/synthetic-concrete-widening-time"
+    ],
+    "exit": 0,
+    "expected_exit": 0
+  }
+]

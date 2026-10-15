@@ -1,0 +1,211 @@
+{
+  "adapter_sha": "48c652873a88d8bc291df1d606ad1464f9168ae3",
+  "adapter_sha_role": "unchanged compiler/exporter base, not modified checker identity",
+  "added_var_paths": {},
+  "changes": [
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1032",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1105",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1153",
+      "before": {
+        "kind": "int"
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1232",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1368",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1504",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1583",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    },
+    {
+      "alias": "jobs_base_jobinstrumenter_initialize_data_1899",
+      "before": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          }
+        ]
+      },
+      "path": "type.value"
+    }
+  ],
+  "checker_sha256": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+  "component_gate_sha256": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+  "condition": "soundness-f29-concrete-widening-v1",
+  "kind": "synthetic export control",
+  "results": [
+    {
+      "after_rejected": 0,
+      "before_rejected": 7,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/P.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-after/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-after/P.json",
+        "--require-membership"
+      ],
+      "gate_exit": 0,
+      "missing_selected": 0,
+      "new_opaque_aliases": 0,
+      "new_unknown_components": {},
+      "new_unknown_paths": 0,
+      "new_var_paths": 0,
+      "observations": 24,
+      "observed": 24,
+      "selected": 28,
+      "setting": "P",
+      "unmapped": 0
+    },
+    {
+      "after_rejected": 0,
+      "before_rejected": 21,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/E.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-after/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-after/E.json",
+        "--require-membership"
+      ],
+      "gate_exit": 0,
+      "missing_selected": 0,
+      "new_opaque_aliases": 0,
+      "new_unknown_components": {},
+      "new_unknown_paths": 0,
+      "new_var_paths": 0,
+      "observations": 75,
+      "observed": 25,
+      "selected": 28,
+      "setting": "E",
+      "unmapped": 0
+    },
+    {
+      "after_rejected": 2,
+      "before_rejected": 8,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "$EXPERIMENT/week/sound/adapter/compare.py",
+        "--lab",
+        "$EXPERIMENT/week/sound/lab",
+        "--trace",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/traces/I.jsonl",
+        "--export",
+        "$EXPERIMENT/week/sound/evidence/widening-after/synthetic-concrete-widening",
+        "--slots",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/slots.json",
+        "--baseline-export",
+        "$EXPERIMENT/week/sound/lab/receipts/discourse-trace-2026-10-10/exports/s3",
+        "--output",
+        "$EXPERIMENT/week/sound/evidence/widening-after/I.json",
+        "--require-membership"
+      ],
+      "gate_exit": 1,
+      "missing_selected": 0,
+      "new_opaque_aliases": 0,
+      "new_unknown_components": {},
+      "new_unknown_paths": 0,
+      "new_var_paths": 0,
+      "observations": 28,
+      "observed": 25,
+      "selected": 28,
+      "setting": "I",
+      "unmapped": 0
+    }
+  ],
+  "script_sha256": "c04722afe1e7500193746164613e66597dccb75690008bc61a51fe2fb610b080",
+  "seconds": 0.250139084,
+  "source_receipt": "sound-traces-20261010-c210f226"
+}

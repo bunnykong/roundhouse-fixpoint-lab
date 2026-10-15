@@ -1,0 +1,112 @@
+{
+  "complete": false,
+  "condition": "observer-only, S3; frozen before typing; accesses through final signature stamping",
+  "counts": {
+    "accesses": 6018,
+    "ambiguous_expression_sites": 0,
+    "attempted_writers": 10,
+    "distinct_accesses": 801,
+    "missing_memberships": 0,
+    "missing_source_memberships": 0,
+    "missing_target_memberships": 0,
+    "potential_writers": 6907,
+    "routing_guard_failures": 0,
+    "snapshot_only_facts": 5,
+    "successful_writers": 10,
+    "uninstrumented_accesses": null,
+    "uninstrumented_channels": 9,
+    "unmapped_expression_sites": 0,
+    "unmapped_harvest_identities": 0
+  },
+  "declaration_end": "feb7c17468ac7e5d",
+  "declaration_start": "feb7c17468ac7e5d",
+  "gate_counts": {
+    "controller-round:concrete": 6,
+    "controller-sccq:concrete": 2,
+    "decision:keep": 33,
+    "insert:concrete": 38,
+    "insert:reference": 5,
+    "insert:untyped": 1,
+    "register:concrete": 30,
+    "register:reference": 5,
+    "register:untyped": 1,
+    "register:var": 6,
+    "storage:set": 17
+  },
+  "guard": "exact harvest pairs; syntax-derived lexical/expression/parameter target guards; remaining channels retain conservative domains",
+  "guarded_edges": 180563435,
+  "input_digest": "2e8f5f084303c7ad",
+  "ledger_bytes": 83746366,
+  "raw_hook_counts": {
+    "C05": {
+      "read": 68,
+      "write": 54
+    },
+    "C09": {
+      "read": 104,
+      "write": 104
+    },
+    "C11": {
+      "read": 4,
+      "write": 12
+    },
+    "C17": {
+      "read": 4
+    },
+    "C18": {
+      "read": 52,
+      "write": 622
+    },
+    "C19": {
+      "read": 9,
+      "write": 8
+    },
+    "C20": {
+      "write": 1687
+    },
+    "C22": {
+      "read": 18,
+      "write": 12
+    }
+  },
+  "raw_hook_scope": "selected native entrances in all nine previous gap groups; partial, through final signature stamping",
+  "raw_inventory_exhausted": false,
+  "representation": "factorized exact relation; materialized members when at most one million edges",
+  "schema": "rh-declaration-shadow-v1",
+  "scope": "fixture-expanded-envelope",
+  "slots": {
+    "closure-parameter": 5,
+    "closure-result": 2,
+    "constant": 6,
+    "context": 528415,
+    "controller": 2,
+    "controller-cache": 3,
+    "copy-marker": 834,
+    "expression": 74,
+    "fold-parameter": 3865,
+    "ivar": 9,
+    "ivar-projection": 5,
+    "local": 12,
+    "narrowing": 2008,
+    "native-signature": 2483,
+    "parameter": 3865,
+    "position": 14280,
+    "registry": 278,
+    "return": 524400,
+    "typed-constant": 4,
+    "verdict": 834
+  },
+  "start_equals_end": true,
+  "target_guard_rules": 9362,
+  "uninstrumented": [
+    "C05 scheduler snapshot/key probes remain unaudited",
+    "C09 reflective/transitive projection helpers remain unaudited",
+    "C11 temporary controller layers and scheduler fingerprints remain unaudited",
+    "C17 binding-map reads and every closure refinement entrance remain unaudited",
+    "C18 post-expansion/settlement stamps and generic read sites remain unaudited",
+    "C19 signature consumption through lowering remains outside this audit",
+    "C20 block-verdict scheduler metadata reads remain unaudited",
+    "C21 relation-verdict scheduler metadata reads remain unaudited",
+    "C22 copied-surface eligibility reads remain partially audited"
+  ]
+}

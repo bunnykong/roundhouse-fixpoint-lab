@@ -1,0 +1,65 @@
+{
+  "cold_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "f8a0f691c0be60d9",
+    "controller_cache": "c21d846d3458ce6c",
+    "ir": "644d2d2ea1d2f815",
+    "params": "8132b5c184b5c7ab",
+    "returns": "c31d492516bb096c",
+    "sccq_contexts": "2ac247a02178f802",
+    "sccq_dependencies": "8daa1d4995efd88a",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "evaluations": {
+    "codec": {
+      "cache_schema": 3,
+      "decoded_ordered_rows": 0,
+      "decoded_reason_leaves": 0,
+      "decoded_values": 9,
+      "encoded_ordered_rows": 18,
+      "encoded_reason_leaves": 2,
+      "encoded_values": 141,
+      "identity": "rh-warm-native-v1:pending=1,gradual=2,unresolved=4;row=ordered-pairs"
+    },
+    "diagnostic_replayed": 0,
+    "incompatible_cache": 0,
+    "input_invalidated": 0,
+    "invalidated": 2,
+    "loaded": 13,
+    "read_invalidated": 2,
+    "recorded": 13,
+    "replayed": 9,
+    "typed": 4,
+    "uncovered": 2,
+    "unused": 0
+  },
+  "first_difference": null,
+  "shadow": "pass",
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-distinct-arms/app/controllers/bench_controller.rb:3:11: warning[gradual_untyped]: method call resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-distinct-arms/app/controllers/bench_controller.rb:3:1: warning[gradual_untyped]: expression resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/73133-distinct-arms/app/views/bench/index.html.erb:1:5: warning[gradual_untyped]: ivar read resolves to RBS `untyped` (gradual escape)"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_bindings": 1,
+    "controller_cache": 2,
+    "ir": 19,
+    "params": 2,
+    "returns": 2480,
+    "sccq_contexts": 3,
+    "sccq_dependencies": 3,
+    "sccq_entry_contexts": 3
+  },
+  "warm_digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "f8a0f691c0be60d9",
+    "controller_cache": "c21d846d3458ce6c",
+    "ir": "644d2d2ea1d2f815",
+    "params": "8132b5c184b5c7ab",
+    "returns": "c31d492516bb096c",
+    "sccq_contexts": "2ac247a02178f802",
+    "sccq_dependencies": "8daa1d4995efd88a",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  }
+}

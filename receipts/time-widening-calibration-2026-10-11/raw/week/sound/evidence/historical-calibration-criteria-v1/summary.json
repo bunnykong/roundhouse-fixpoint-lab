@@ -1,0 +1,455 @@
+{
+  "checker_sha256": "4e3c3e03705efaf13f79132f3e8f51cec7f28bb8ee7eec8fbf5f74a636e5e4d5",
+  "checks": {
+    "component_guard_allows_concrete_widening": true,
+    "component_guard_rejects_erasure": true,
+    "concrete_widening_membership_passes": false,
+    "control_exits": false,
+    "erased_components": true,
+    "fixed_control_coverage": true,
+    "saved_main": true,
+    "saved_observed": true,
+    "saved_s3": true
+  },
+  "component_gate_sha256": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+  "condition": "component-opacity-gate-f29-20261011-v1",
+  "controls": {
+    "erasure-after": {
+      "accepted": 127,
+      "condition": "soundness-f29-value-erasure-v1",
+      "gate_exits": [
+        1,
+        1,
+        1
+      ],
+      "missing": 0,
+      "new_var_paths": {
+        "jobs_base_jobinstrumenter_initialize_data_1032": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1105": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1153": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1232": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1368": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1504": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1583": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1899": [
+          "type.value"
+        ]
+      },
+      "observations": 127,
+      "observed": 27,
+      "receipt": "$EXPERIMENT/week/sound/evidence/erasure-after/summary.json",
+      "rejected": 0,
+      "rows": [
+        {
+          "accepted": 24,
+          "component_gate_passed": false,
+          "missing": 0,
+          "new_components": {
+            "jobs_base_jobinstrumenter_initialize_data_1032": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1105": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1153": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1232": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1368": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1504": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1583": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1899": {
+              "var": [
+                "type.value"
+              ]
+            }
+          },
+          "observations": 24,
+          "rejected": 0,
+          "setting": "P",
+          "violations": []
+        },
+        {
+          "accepted": 75,
+          "component_gate_passed": false,
+          "missing": 0,
+          "new_components": {
+            "jobs_base_jobinstrumenter_initialize_data_1032": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1105": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1153": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1232": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1368": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1504": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1583": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1899": {
+              "var": [
+                "type.value"
+              ]
+            }
+          },
+          "observations": 75,
+          "rejected": 0,
+          "setting": "E",
+          "violations": []
+        },
+        {
+          "accepted": 28,
+          "component_gate_passed": false,
+          "missing": 0,
+          "new_components": {
+            "jobs_base_jobinstrumenter_initialize_data_1032": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1105": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1153": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1232": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1368": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1504": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1583": {
+              "var": [
+                "type.value"
+              ]
+            },
+            "jobs_base_jobinstrumenter_initialize_data_1899": {
+              "var": [
+                "type.value"
+              ]
+            }
+          },
+          "observations": 28,
+          "rejected": 0,
+          "setting": "I",
+          "violations": []
+        }
+      ],
+      "seconds": 0.246368042,
+      "selected": 28,
+      "synthetic": true
+    },
+    "erasure-before": {
+      "accepted": 127,
+      "condition": "soundness-f29-value-erasure-v1",
+      "gate_exits": [
+        0,
+        0,
+        0
+      ],
+      "missing": 0,
+      "new_var_paths": {
+        "jobs_base_jobinstrumenter_initialize_data_1032": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1105": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1153": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1232": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1368": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1504": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1583": [
+          "type.value"
+        ],
+        "jobs_base_jobinstrumenter_initialize_data_1899": [
+          "type.value"
+        ]
+      },
+      "observations": 127,
+      "observed": 27,
+      "receipt": "$EXPERIMENT/week/sound/evidence/erasure-before/summary.json",
+      "rejected": 0,
+      "rows": [
+        {
+          "accepted": 24,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 24,
+          "rejected": 0,
+          "setting": "P",
+          "violations": []
+        },
+        {
+          "accepted": 75,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 75,
+          "rejected": 0,
+          "setting": "E",
+          "violations": []
+        },
+        {
+          "accepted": 28,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 28,
+          "rejected": 0,
+          "setting": "I",
+          "violations": []
+        }
+      ],
+      "seconds": 0.24080454099999998,
+      "selected": 28,
+      "synthetic": true
+    },
+    "widening-after": {
+      "accepted": 125,
+      "condition": "soundness-f29-concrete-widening-v1",
+      "gate_exits": [
+        0,
+        0,
+        1
+      ],
+      "missing": 0,
+      "new_var_paths": {},
+      "observations": 127,
+      "observed": 27,
+      "receipt": "$EXPERIMENT/week/sound/evidence/widening-after/summary.json",
+      "rejected": 2,
+      "rows": [
+        {
+          "accepted": 24,
+          "component_gate_passed": true,
+          "missing": 0,
+          "new_components": {},
+          "observations": 24,
+          "rejected": 0,
+          "setting": "P",
+          "violations": []
+        },
+        {
+          "accepted": 75,
+          "component_gate_passed": true,
+          "missing": 0,
+          "new_components": {},
+          "observations": 75,
+          "rejected": 0,
+          "setting": "E",
+          "violations": []
+        },
+        {
+          "accepted": 26,
+          "component_gate_passed": true,
+          "missing": 0,
+          "new_components": {},
+          "observations": 28,
+          "rejected": 2,
+          "setting": "I",
+          "violations": [
+            {
+              "actual": "Time",
+              "expected": "Integer | String | nil",
+              "path": "$[\"@timestamp\"]",
+              "reason": "no union arm matches",
+              "record_line": 13,
+              "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1583:1588:@data"
+            },
+            {
+              "actual": "Time",
+              "expected": "Integer | String | nil",
+              "path": "$[\"@timestamp\"]",
+              "reason": "no union arm matches",
+              "record_line": 14,
+              "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1899:1904:@data"
+            }
+          ]
+        }
+      ],
+      "seconds": 0.250139084,
+      "selected": 28,
+      "synthetic": true
+    },
+    "widening-before": {
+      "accepted": 125,
+      "condition": "soundness-f29-concrete-widening-v1",
+      "gate_exits": [
+        0,
+        0,
+        1
+      ],
+      "missing": 0,
+      "new_var_paths": {},
+      "observations": 127,
+      "observed": 27,
+      "receipt": "$EXPERIMENT/week/sound/evidence/widening-before/summary.json",
+      "rejected": 2,
+      "rows": [
+        {
+          "accepted": 24,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 24,
+          "rejected": 0,
+          "setting": "P",
+          "violations": []
+        },
+        {
+          "accepted": 75,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 75,
+          "rejected": 0,
+          "setting": "E",
+          "violations": []
+        },
+        {
+          "accepted": 26,
+          "component_gate_passed": null,
+          "missing": 0,
+          "new_components": {},
+          "observations": 28,
+          "rejected": 2,
+          "setting": "I",
+          "violations": [
+            {
+              "actual": "Time",
+              "expected": "Integer | String | nil",
+              "path": "$[\"@timestamp\"]",
+              "reason": "no union arm matches",
+              "record_line": 13,
+              "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1583:1588:@data"
+            },
+            {
+              "actual": "Time",
+              "expected": "Integer | String | nil",
+              "path": "$[\"@timestamp\"]",
+              "reason": "no union arm matches",
+              "record_line": 14,
+              "slot": "Jobs::Base::JobInstrumenter#initialize:app/jobs/base.rb:1899:1904:@data"
+            }
+          ]
+        }
+      ],
+      "seconds": 0.252476416,
+      "selected": 28,
+      "synthetic": true
+    }
+  },
+  "missing": 0,
+  "no_slot": 0,
+  "observations": 127,
+  "observed": 27,
+  "original_decisions_unchanged": true,
+  "original_gate_exits": {
+    "main": [
+      0,
+      0,
+      0
+    ],
+    "s3": [
+      1,
+      1,
+      1
+    ]
+  },
+  "original_totals": {
+    "main": {
+      "accepted": 127,
+      "rejected": 0
+    },
+    "s3": {
+      "accepted": 91,
+      "rejected": 36
+    }
+  },
+  "runner_sha256": "7191c3c027a30582cf3189d6d5c704d4a0f123015ac729e8823b8ba6b21a22ef",
+  "selected": 28,
+  "source_condition": "sound-traces-20261010-c210f226"
+}

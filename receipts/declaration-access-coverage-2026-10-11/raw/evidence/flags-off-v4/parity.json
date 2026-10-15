@@ -1,0 +1,33 @@
+{
+  "apps": {
+    "campfire": {
+      "diagnostic_sha256": {
+        "base": "47fbf84d6effb217957dc9a8ff6c236888dd4f9e744e0e3b62ed5f53c5ffe421",
+        "candidate": "47fbf84d6effb217957dc9a8ff6c236888dd4f9e744e0e3b62ed5f53c5ffe421"
+      },
+      "same_binary_diagnostic_sha256": {
+        "observer_off": "41db3fff4574a26cc6d892dc923ee662d27eeaf7e2e20a38ab1be3330f43d593",
+        "observer_on": "41db3fff4574a26cc6d892dc923ee662d27eeaf7e2e20a38ab1be3330f43d593"
+      },
+      "same_binary_s3_diagnostics_match": true,
+      "same_binary_s3_values_match": true,
+      "same_diagnostic_bytes": true,
+      "same_values": true
+    },
+    "structure_fixture": {
+      "diagnostic_sha256": {
+        "base": "63bd39e45eba7b17d9af4f844850b40164f3079609639c3741c4c3cf6807cced",
+        "candidate": "63bd39e45eba7b17d9af4f844850b40164f3079609639c3741c4c3cf6807cced"
+      },
+      "same_binary_diagnostic_sha256": {
+        "observer_off": "63bd39e45eba7b17d9af4f844850b40164f3079609639c3741c4c3cf6807cced",
+        "observer_on": "63bd39e45eba7b17d9af4f844850b40164f3079609639c3741c4c3cf6807cced"
+      },
+      "same_binary_s3_diagnostics_match": true,
+      "same_binary_s3_values_match": true,
+      "same_diagnostic_bytes": true,
+      "same_values": true
+    }
+  },
+  "condition": "PROBE_BASE=1 base/candidate; S3 candidate observer on/off; verification off; two pinned inputs"
+}

@@ -1,0 +1,58 @@
+{
+  "digest": {
+    "block_values": "471fd2dc2c966234",
+    "controller_bindings": "0ef0ed9aef831b9e",
+    "controller_cache": "f9ce8b76cd943ca2",
+    "ir": "41e6e2cab7e3c63e",
+    "params": "8132b5c184b5c7ab",
+    "returns": "ac4b5af7f7b134ee",
+    "sccq_contexts": "aadbdd601330e7bf",
+    "sccq_dependencies": "cf885ad784788688",
+    "sccq_entry_contexts": "b7d93004327d7250"
+  },
+  "entries": {
+    "block_values": 274,
+    "controller_bindings": 2,
+    "controller_cache": 2,
+    "ir": 36,
+    "params": 2,
+    "returns": 2485,
+    "sccq_contexts": 4,
+    "sccq_dependencies": 4,
+    "sccq_entry_contexts": 3
+  },
+  "loops": {
+    "absorb": {
+      "end": "settled",
+      "round": 1
+    },
+    "production": {
+      "end": "settled",
+      "round": 2
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 0
+    }
+  },
+  "schema": 1,
+  "test_diagnostics": [
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/controllers/bench_controller.rb:3:11: warning[gradual_untyped]: method call resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/controllers/bench_controller.rb:3:1: warning[gradual_untyped]: expression resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/controllers/bench_controller.rb:6:11: warning[gradual_untyped]: method call resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/controllers/bench_controller.rb:6:1: warning[gradual_untyped]: expression resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/views/bench/index.html.erb:1:5: warning[gradual_untyped]: ivar read resolves to RBS `untyped` (gradual escape)",
+    "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72990-controller-context/app/views/bench/other.html.erb:1:5: warning[gradual_untyped]: ivar read resolves to RBS `untyped` (gradual escape)"
+  ],
+  "test_entries": {
+    "block_values": 274,
+    "controller_bindings": 2,
+    "controller_cache": 2,
+    "ir": 36,
+    "params": 2,
+    "returns": 2485,
+    "sccq_contexts": 4,
+    "sccq_dependencies": 4,
+    "sccq_entry_contexts": 3
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "all_have_final_access_witness": false,
+  "candidate_receipt": "$EXPERIMENT/week/structure/runs/declaration-access-coverage-20261011-v4-structure_fixture/structure_fixture/observe/unset/declarations.jsonl",
+  "condition": "declaration-access-coverage-20261011-v4-structure_fixture; S3; verification off; unset",
+  "members": [
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\",\"limit\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "closure-parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"limit\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Current lambda enters the stack before its parameters; remap only the matching lambda owner/path."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\",\"options\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "closure-parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"options\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Current lambda enters the stack before its parameters; remap only the matching lambda owner/path."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\",\"other\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "closure-parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"other\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Current lambda enters the stack before its parameters; remap only the matching lambda owner/path."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\",\"rest\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "closure-parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\"]",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"rest\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Current lambda enters the stack before its parameters; remap only the matching lambda owner/path."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"item\"]",
+          "read",
+          "inline"
+        ],
+        [
+          "access",
+          "closure-parameter",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/1/1\"]",
+          "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1\",\"item\"]",
+          "read",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "closure-parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0/1/0\"]",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"closure_values\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"702\\\\\\\",\\\\\\\"716\\\\\\\"]\\\"]\",\"body/1/0/0/0\",\"item\"]",
+        "read",
+        "inline"
+      ],
+      "reason": "Current lambda enters the stack before its parameters; remap only the matching lambda owner/path."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "[\"[\\\"StructureController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/0/0\"]",
+          "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "[\"[\\\"StructureController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/0/0\"]",
+        "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "[\"[\\\"StructureController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/2\"]",
+          "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "[\"[\\\"StructureController\\\",\\\"instance\\\",\\\"show\\\"]\",\"body/2\"]",
+        "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [],
+      "prior": [
+        "missing",
+        "parameter",
+        "[\"[\\\"method\\\",\\\"[\\\\\\\"StructureProbe\\\\\\\",\\\\\\\"instance\\\\\\\",\\\\\\\"exercise\\\\\\\"]\\\",\\\"[\\\\\\\"$EXPERIMENT/week/structure/candidate/tools/research/structure_fixture/app/services/structure_probe.rb\\\\\\\",\\\\\\\"879\\\\\\\",\\\\\\\"887\\\\\\\"]\\\"]\",\"body/0\"]",
+        "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+          "read",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+        "read",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+          "read",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+        "read",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+          "read",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+        "read",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-bound",
+          "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-bound",
+        "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-join",
+          "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-join",
+        "[\"StructureController\",\"instance\",\"render\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-join",
+          "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-join",
+        "[\"StructureProbe\",\"instance\",\"concern_value\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "parameter",
+          "phase:parameter-join",
+          "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+          "write",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "parameter",
+        "phase:parameter-join",
+        "[\"StructureProbe\",\"instance\",\"new\",\"index:0\"]",
+        "write",
+        "inline"
+      ],
+      "reason": "Positional fallback width comes from pretyping call syntax; formal names retain precedence."
+    },
+    {
+      "matching_final_accesses": [
+        [
+          "access",
+          "registry",
+          "[\"[\\\"StructureProbe\\\",\\\"constant\\\",\\\"COPY\\\"]\",\"value\"]",
+          "[\"StructureProbe::PAYLOAD\"]",
+          "read",
+          "inline"
+        ]
+      ],
+      "prior": [
+        "missing",
+        "registry",
+        "[\"[\\\"StructureProbe\\\",\\\"constant\\\",\\\"COPY\\\"]\",\"value\"]",
+        "[\"StructureProbe::PAYLOAD\"]",
+        "read",
+        "inline"
+      ],
+      "reason": "Value constants predeclare their full registry lookup names."
+    }
+  ],
+  "prior_missing_count": 18,
+  "prior_receipt": "$EXPERIMENT/week/structure/runs/declaration-fixture-v2/structure_fixture/observe/unset/declarations.jsonl"
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Minimal adaptations of the October 11 launch brief; inputs were not edited",
+  "changes": [
+    {
+      "brief": "WEEK=$RESULTS/week-20261014, with D later rebound to WEEK/warm",
+      "executed": "D remains the requested agent root; WEEK=$D/week; WARM_DIR=$WEEK/warm; condition dates use 20261011",
+      "reason": "The user's isolated directory and October 11 start override the example location and date"
+    },
+    {
+      "brief": "Shared preparation includes a fast clone and all five apps",
+      "executed": "Independent codec/base/lab/Mastodon clones only; copied the corrected warm fingerprint components runner, without its compiler optimization",
+      "reason": "warm lossless storage uses only these inputs; warm fingerprint edit audits has separate workspaces"
+    },
+    {
+      "brief": "Rebuild cleaned targets with locked dependencies",
+      "executed": "Copied the pinned replay storage support dependency cache into WEEK/cargo-home; added --offline and CARGO_NET_OFFLINE=true",
+      "reason": "Keep dependency pins and avoid dependency fetching during the isolated run"
+    },
+    {
+      "brief": "Cargo runs from the example results directory with --manifest-path",
+      "executed": "Set RUST_MIN_STACK=33554432 explicitly, as in the pinned repository's .cargo/config.toml",
+      "reason": "Cargo does not discover that checkout's local configuration from the outer working directory"
+    },
+    {
+      "brief": "warm_check codec warm_provenance_invalidation uses --test warm_check",
+      "executed": "cargo test --lib warm_provenance_invalidation -- --nocapture --test-threads=1",
+      "reason": "The control calls private production Evaluation machinery and lives in library tests; the integration selector would select zero tests"
+    },
+    {
+      "brief": "Subprocess tests clear inherited RH_ variables",
+      "executed": "Explicitly pass RH_WARM_LOSSLESS_CODEC=1 to every candidate CLI/native worker; cross-schema controls explicitly choose 0 or 1",
+      "reason": "Candidate tests must exercise the real selected codec rather than silently run the baseline"
+    },
+    {
+      "brief": "Library controls use Ruby 3.4.4; CLI profiles use 4.0.7",
+      "executed": "The broad default suite uses Ruby 3.4.4; dedicated warm/native checks and profiles use 4.0.7",
+      "reason": "Follow the brief's existing toolchain distinction without changing fixtures or expected results"
+    },
+    {
+      "brief": "Use shared mode for untimed checks",
+      "executed": "Final focused selectors acquire one shared lock for the whole batch",
+      "reason": "Avoid repeated waits between short selectors while preserving shared-slot and exclusive measurement coordination"
+    }
+  ],
+  "implementation_failure_retained": {
+    "receipt": "evidence/codec-build-initial.log",
+    "error": "E0605: an existing fixpoint reporter cast Provenance to an integer",
+    "fix": "Use reporting_bits() for the complete reason set; singleton census bits remain 1, 2, 4",
+    "classification": "Implementation repair, not a launch-command defect"
+  },
+  "operational_notes": [
+    "The conversation was cut off by a network drop. The resumed turn checked retained files, sessions and receipts before continuing.",
+    "Several lock waits were long; their duration is not included in native profile walls.",
+    "Two read/preview commands used the clone rather than the agent root as their working directory and were immediately retried there. No build, test or source was affected.",
+    "Preview native checks predate the final commit and include source-format/fingerprint follow-ups. Final committed receipts are the canonical gates."
+  ]
+}

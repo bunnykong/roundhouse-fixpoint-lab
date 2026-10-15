@@ -1,0 +1,72 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": {
+        "kind": "int"
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "end": 65,
+      "file": 4,
+      "kind": {
+        "kind": "incompatible_binop",
+        "lhs_ty": {
+          "kind": "int"
+        },
+        "op": "+",
+        "rhs_ty": {
+          "kind": "str"
+        }
+      },
+      "line_col": [
+        3,
+        1
+      ],
+      "path": "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72947-diagnostic-remapping/app/controllers/bench_controller.rb",
+      "start": 56
+    },
+    {
+      "end": 11,
+      "file": 6,
+      "kind": {
+        "kind": "ivar_unresolved",
+        "name": "answer"
+      },
+      "line_col": [
+        1,
+        5
+      ],
+      "path": "$EXPERIMENT/week/warm/trials/codec/.warm-tests/72947-diagnostic-remapping/app/views/bench/index.html.erb",
+      "start": 4
+    }
+  ],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Int"
+    ],
+    "Chain.instance.link0": [
+      "Int"
+    ]
+  },
+  "spans": [
+    {
+      "end": 23,
+      "file": 2,
+      "start": 22,
+      "type": {
+        "kind": "int"
+      }
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": {
+      "kind": "int"
+    },
+    "Chain.instance.link0": {
+      "kind": "int"
+    }
+  }
+}

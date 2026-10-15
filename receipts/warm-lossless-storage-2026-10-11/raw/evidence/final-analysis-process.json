@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "bash",
+    "$EXPERIMENT/final_analysis.sh",
+    "--inside-lock"
+  ],
+  "deadline": "2026-10-11T15:07:00+00:00",
+  "exit": 0,
+  "timed_out": false,
+  "finished_utc": "2026-10-11T14:31:57.106691+00:00"
+}

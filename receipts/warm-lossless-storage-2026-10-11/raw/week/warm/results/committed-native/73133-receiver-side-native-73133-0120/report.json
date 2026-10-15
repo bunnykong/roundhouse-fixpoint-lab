@@ -1,0 +1,103 @@
+{
+  "actions": [
+    {
+      "name": "index",
+      "type": [
+        "array",
+        [
+          "union",
+          [
+            {
+              "kind": "int"
+            },
+            {
+              "kind": "str"
+            },
+            [
+              "untyped",
+              "Unresolved"
+            ]
+          ]
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "known_atoms": {
+    "BenchController.instance.index": [
+      "Int",
+      "Str"
+    ],
+    "Chain.class.link0": [
+      "Int"
+    ],
+    "Chain.class.link1": [
+      "Int"
+    ],
+    "Chain.instance.link0": [
+      "Str"
+    ],
+    "Chain.instance.link1": [
+      "Str"
+    ]
+  },
+  "spans": [
+    {
+      "end": 57,
+      "file": 2,
+      "start": 27,
+      "type": {
+        "kind": "int"
+      }
+    },
+    {
+      "end": 169,
+      "file": 2,
+      "start": 122,
+      "type": {
+        "kind": "str"
+      }
+    }
+  ],
+  "types": {
+    "BenchController.instance.index": [
+      "array",
+      [
+        "union",
+        [
+          {
+            "kind": "int"
+          },
+          {
+            "kind": "str"
+          },
+          [
+            "untyped",
+            "Unresolved"
+          ]
+        ]
+      ]
+    ],
+    "Chain.class.link0": {
+      "kind": "int"
+    },
+    "Chain.class.link1": {
+      "kind": "int"
+    },
+    "Chain.instance.link0": {
+      "kind": "str"
+    },
+    "Chain.instance.link1": [
+      "union",
+      [
+        {
+          "kind": "str"
+        },
+        [
+          "untyped",
+          "Unresolved"
+        ]
+      ]
+    ]
+  }
+}

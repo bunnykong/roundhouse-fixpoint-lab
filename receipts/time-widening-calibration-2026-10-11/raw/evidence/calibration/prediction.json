@@ -1,0 +1,23 @@
+{
+  "agent": "time-widening-calibration",
+  "registered_utc": "2026-10-11T12:19:47Z",
+  "source_condition": "sound-traces-20261010-c210f226",
+  "new_condition": "time-widening-calibration-f29-concrete-widening-time-20261011-v1",
+  "prediction": {
+    "time_inclusive_membership": [127, 0],
+    "time_inclusive_checker_exits_P_E_I": [0, 0, 0],
+    "selected": 28,
+    "observed_reads": 27,
+    "missing_types": 0,
+    "unmapped_observations": 0,
+    "new_opaque_components": 0,
+    "historical_widening_membership": [125, 2],
+    "historical_widening_checker_exits_P_E_I": [0, 0, 1],
+    "erasure_checker_exits_P_E_I": [1, 1, 1],
+    "erased_value_paths": 8,
+    "union_reordering_component_gate": "pass",
+    "unchanged_main_membership": [127, 0],
+    "unchanged_s3_membership": [91, 36]
+  },
+  "scope": "Saved replay and synthetic checker calibration; no compiler repair or fresh Ruby execution."
+}

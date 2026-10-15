@@ -1,0 +1,457 @@
+{
+  "additional_opacity_vs_plain": 0,
+  "condition": "reflective-array-entrance-reflective-bound-next38403140-20261011-v1-shared-host",
+  "covered_boundary_samples": 75,
+  "cut_policy_sha256": "fef0c620d6c49afe4a63b8a78c0fe5acd5da65c6305c048b176a03f2b9479585",
+  "cut_policy_unchanged": true,
+  "existing_plain_bound_opacity": 4,
+  "finite_shapes": 3328,
+  "guard_sha256": "0aa32ee8f5775400b276eb21246872660eda12c011573bcd1e8239a36c82570f",
+  "integration_and_exports": "stopped before F19/F29/app/export/emission/prepared-suite campaigns",
+  "kill_criterion": "an uncovered reflective entrance",
+  "metrics": {
+    "gate-entrances-on": [
+      {
+        "eligible_entrances": 450,
+        "finite_membership_checks": 19968,
+        "no_witness_samples": 15
+      },
+      {
+        "ineligible_controls": 8
+      },
+      {
+        "environment_entrances": 24,
+        "projection_controls": 1
+      },
+      {
+        "native_reason_canaries": 3
+      }
+    ],
+    "gate-membership": [
+      {
+        "membership_canaries": 6
+      }
+    ],
+    "gate-partitions": [
+      {
+        "duplicate_round_differences": 548,
+        "finite_membership_checks": 418656,
+        "partition_differences": 2104,
+        "partition_round_schedules": 32928
+      }
+    ]
+  },
+  "native_reason_occurrences": 44,
+  "native_reason_scope": "Relative to the same unchanged plain bound; no full producer conservation claim.",
+  "native_uncovered_entrance": {
+    "entrance": "Array.elements[0]",
+    "reflective_calls": 1,
+    "stored_destinations": [],
+    "successful_destination": "x",
+    "touched": [],
+    "typed_rhs": "Some(Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Array { elem: Int } } } } } } } } } } } } } } } } })"
+  },
+  "partition_status": "Separately expected-red; native relative storage and finite membership pass.",
+  "reason": "The narrow touched-destination return cannot cover reflective writes in Array elements that the body harvest walker never visits.",
+  "receipts": {
+    "gate-array-off": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": []
+    },
+    "gate-batch-off": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 0,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ],
+      "exit": 0,
+      "properties": [
+        {
+          "checks": 4116,
+          "law": "permutation-and-duplicate",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "extract_ivar_assignments/bound-once"
+        }
+      ]
+    },
+    "gate-batch-on": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 0,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ],
+      "exit": 0,
+      "properties": [
+        {
+          "checks": 4116,
+          "law": "permutation-and-duplicate",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "extract_ivar_assignments/bound-once"
+        }
+      ]
+    },
+    "gate-boundary": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 0,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ],
+      "exit": 0,
+      "properties": [
+        {
+          "checks": 77,
+          "law": "idempotence",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "fixpoint_bound/boundary-universe"
+        },
+        {
+          "checks": 1,
+          "law": "pending",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "fixpoint_bound/boundary-universe"
+        },
+        {
+          "checks": 73,
+          "law": "within-limit-identity",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "fixpoint_bound/boundary-universe"
+        }
+      ]
+    },
+    "gate-entrances-on": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 2,
+          "filtered": 1147,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 4
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 19968,
+          "law": "finite-value-inclusion",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "reflective-entrances/complete-boundary"
+        },
+        {
+          "checks": 450,
+          "law": "plain-reflective-storage",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "reflective-entrances/complete-boundary"
+        }
+      ]
+    },
+    "gate-membership": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 0,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ],
+      "exit": 0,
+      "properties": []
+    },
+    "gate-pairwise-off": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 4116,
+          "law": "once-vs-per-pair",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 514,
+          "writer": "bound/join_ivar_slot"
+        },
+        {
+          "checks": 4116,
+          "law": "permutation/once",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "bound/join_ivar_slot"
+        },
+        {
+          "checks": 4116,
+          "law": "regrouping/per-pair",
+          "result": "FAIL",
+          "witness": "(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 514,
+          "writer": "bound/join_ivar_slot"
+        }
+      ]
+    },
+    "gate-pairwise-on": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 4116,
+          "law": "once-vs-per-pair",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 514,
+          "writer": "bound/join_ivar_slot"
+        },
+        {
+          "checks": 4116,
+          "law": "permutation/once",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "bound/join_ivar_slot"
+        },
+        {
+          "checks": 4116,
+          "law": "regrouping/per-pair",
+          "result": "FAIL",
+          "witness": "(Array[Int]; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 514,
+          "writer": "bound/join_ivar_slot"
+        }
+      ]
+    },
+    "gate-parameter": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 4116,
+          "law": "once-vs-per-pair",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]; Int) => Union[Int, Untyped { why: Unresolved }] != Int",
+          "witness_nodes": 513,
+          "writer": "bound/unify_param_ty"
+        },
+        {
+          "checks": 4116,
+          "law": "permutation/once",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "bound/unify_param_ty"
+        },
+        {
+          "checks": 4116,
+          "law": "regrouping/per-pair",
+          "result": "FAIL",
+          "witness": "(Int; Tuple[254 arms; first=Int; last=Int]; Tuple[256 arms; first=Str; last=Str]) => Union[Int, Untyped { why: Unresolved }] != Int",
+          "witness_nodes": 513,
+          "writer": "bound/unify_param_ty"
+        }
+      ]
+    },
+    "gate-partitions": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 16464,
+          "law": "duplicate-round-replay",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[255 arms; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 513,
+          "writer": "extract_ivar_assignments/body-harvest-partitions"
+        },
+        {
+          "checks": 418656,
+          "law": "finite-value-inclusion",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "extract_ivar_assignments/body-harvest-partitions"
+        },
+        {
+          "checks": 32928,
+          "law": "partition-vs-complete/plain",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[255 arms; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 513,
+          "writer": "extract_ivar_assignments/body-harvest-partitions"
+        },
+        {
+          "checks": 32928,
+          "law": "partition-vs-complete/reflective",
+          "result": "FAIL",
+          "witness": "(Tuple[254 arms; first=Int; last=Int]; Tuple[255 arms; first=Str; last=Str]; Array[Int]) => Untyped { why: Unresolved } != Union[Array[Int], Untyped { why: Unresolved }]",
+          "witness_nodes": 513,
+          "writer": "extract_ivar_assignments/body-harvest-partitions"
+        },
+        {
+          "checks": 32928,
+          "law": "plain-reflective-storage",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "extract_ivar_assignments/body-harvest-partitions"
+        }
+      ]
+    },
+    "gate-reflect-off": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 1,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 0
+        }
+      ],
+      "exit": 101,
+      "properties": [
+        {
+          "checks": 75,
+          "law": "bounded-storage",
+          "result": "FAIL",
+          "witness": "(Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]]) => Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Int]]]]]]]]]]]]]]]]] != Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Array[Untyped { why: Unresolved }]]]]]]]]]]]]]]]]",
+          "witness_nodes": 18,
+          "writer": "harvest_ivar_set/bound-coverage"
+        }
+      ]
+    },
+    "reflect-on": {
+      "binary_sha256": {
+        "target-laws/debug/deps/roundhouse-be70eb8e2562538a": "8848e42db80ceb22aa108830227bf88fca64d3ee35d75c5e041214cc61058bec"
+      },
+      "counts": [
+        {
+          "failed": 0,
+          "filtered": 1152,
+          "ignored": 0,
+          "measured": 0,
+          "passed": 1
+        }
+      ],
+      "exit": 0,
+      "properties": [
+        {
+          "checks": 75,
+          "law": "bounded-storage",
+          "result": "PASS",
+          "witness": null,
+          "witness_nodes": null,
+          "writer": "harvest_ivar_set/bound-coverage"
+        }
+      ]
+    }
+  },
+  "runtime_witness": {
+    "array_depth": 17,
+    "condition": "reflective-array-entrance-native-array-entrance-20261011-v1",
+    "leaf_class": "Integer",
+    "leaf_value": 1,
+    "ruby": "4.0.7",
+    "stored": true,
+    "successful_destination": "x"
+  },
+  "scoped_destination_return": "passes for the covered entrances",
+  "stop_rule": "User instruction 4: stop if the priority is framed wrongly; no visitor expansion was forced into this port.",
+  "timed_measurement": false,
+  "verdict": "killed"
+}

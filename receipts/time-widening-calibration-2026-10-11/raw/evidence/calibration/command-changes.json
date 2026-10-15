@@ -1,0 +1,58 @@
+[
+  {
+    "change": "Run October 11, with WEEK under the user-assigned time-widening-calibration directory.",
+    "from": "phase2/results/week-20261014",
+    "to": "agents/time-widening-calibration/week",
+    "reason": "The user's assignment overrides the brief's calendar and output root."
+  },
+  {
+    "change": "Clone component-opacity-gate-soundness-gate into the existing task directory and create time-widening-calibration locally.",
+    "reason": "Independent Git metadata and copies preserve all pre-run inputs; push URLs are disabled."
+  },
+  {
+    "change": "Use SOUND for the brief's move-local D; keep D as the user's task root.",
+    "reason": "Avoid shadowing the write-boundary variable."
+  },
+  {
+    "change": "Recreate ignored lab and pristine exporter clones at their original pins; replace the copied absolute lab symlink with ../lab.",
+    "reason": "The copied helper must read its own frozen clone, not the original component-opacity-gate workspace."
+  },
+  {
+    "change": "Do not clone five app checkouts or copy Cargo caches.",
+    "reason": "This priority only replays frozen observations and synthetic exports; no native app analysis or build is required."
+  },
+  {
+    "change": "Run opacity controls under the exclusive wrapper.",
+    "from": "heavy python3 -B .../opacity_control.py",
+    "to": "timed python3 -B .../opacity_control.py",
+    "reason": "The helper records seconds; the user's timing requirement requires exclusive access."
+  },
+  {
+    "change": "Make the shared wrapper's --shared mode explicit.",
+    "reason": "Use the brief's common-setup mode even if HEAVY_LOCK_MODE is inherited."
+  },
+  {
+    "change": "Add --untimed for the new tests' internal helper calls.",
+    "reason": "Shared-lock membership/coverage tests omit helper timing; the three measurement commands retain timing under exclusive access."
+  },
+  {
+    "change": "Keep inherited top-level component-opacity-gate drivers and verify_move1.py as history; use run_checks.sh and verify_calibration.py for this priority.",
+    "reason": "Old drivers hard-code the prior root/output labels, and the old verifier intentionally remains red for its invalid positive control."
+  },
+  {
+    "change": "Create task-local tmp directories for the adapter contract tests.",
+    "reason": "Those tests require lab.parent/tmp; all temporary writes remain under the task directory."
+  },
+  {
+    "change": "Record the absent docs/pitfalls.md without inventing a substitute.",
+    "reason": "The inherited research workspace path does not exist in this Analyzer frontier checkout."
+  },
+  {
+    "change": "Use focused checker, adapter, Python 3.9 and shell checks; do not invoke missing cohort/lane tools.",
+    "reason": "This independent Analyzer calibration repository has no research workspace tools/ or .venv; no lane/run record or brief source was changed."
+  },
+  {
+    "change": "A read-only ps diagnostic was unavailable (operation not permitted).",
+    "reason": "Lock waits are reported by flock.py; no claim is made about the competing workload."
+  }
+]
