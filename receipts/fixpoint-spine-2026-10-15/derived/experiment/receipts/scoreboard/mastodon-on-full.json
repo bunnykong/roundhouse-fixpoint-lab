@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "mastodon",
+    "--label",
+    "fixpoint-spine-research-on",
+    "--flags",
+    "$EXPERIMENT/profiles/research-on.json",
+    "--jobs",
+    "3",
+    "--timeout",
+    "2400",
+    "--matrix",
+    "full"
+  ],
+  "elapsed_seconds": 357.801719125011,
+  "exit": 0,
+  "name": "mastodon-on-full",
+  "started": "2026-10-15T21:09:38.063944+00:00"
+}

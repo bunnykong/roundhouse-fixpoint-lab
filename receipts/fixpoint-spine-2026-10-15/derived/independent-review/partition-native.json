@@ -1,0 +1,84 @@
+[
+  {
+    "binary_sha256": "265d8aae23c0194eea06fd4c784ce2af32b82b513934c3d9f3ecfaebc75a50ae",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "$HOST_PATH",
+      "writer_law_bound_partitions",
+      "--ignored",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "exit": 101,
+    "expected_exit": 101,
+    "flags": {
+      "RBENV_VERSION": "3.4.4",
+      "RH_BRK_ALLARMS": "1",
+      "RH_CLOSURE_APPLY": "1",
+      "RH_CLOSURE_SITES": "1",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PARAMETER_REASON_CONSERVE": "1",
+      "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+      "RH_PROVENANCE_LIFT": "1",
+      "RH_PROVENANCE_PIDENT": "1",
+      "RH_PROVENANCE_READER_VIEW": "1",
+      "RH_SCHED": "sccq",
+      "RH_SKIP_RETURN_STABILIZE": "0",
+      "RH_SPLICED_WRITER_OWNERSHIP": "0",
+      "RUST_MIN_STACK": "33554432",
+      "WRITER_PARTITION_TRACE_SPEC": "$HOST_PATH"
+    },
+    "log_sha256": "0288ba5793d1e1d25f045940c6ac517c8f768c8f793bcfc974160ef463cb1be7",
+    "name": "original",
+    "test_summary": [
+      "test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 1270 filtered out; finished in 13.81s"
+    ],
+    "trace_rows": 0
+  },
+  {
+    "binary_sha256": "265d8aae23c0194eea06fd4c784ce2af32b82b513934c3d9f3ecfaebc75a50ae",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "$HOST_PATH",
+      "writer_partition_partition_trace",
+      "--ignored",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "exit": 0,
+    "expected_exit": 0,
+    "flags": {
+      "RBENV_VERSION": "3.4.4",
+      "RH_BRK_ALLARMS": "1",
+      "RH_CLOSURE_APPLY": "1",
+      "RH_CLOSURE_SITES": "1",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PARAMETER_REASON_CONSERVE": "1",
+      "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+      "RH_PROVENANCE_LIFT": "1",
+      "RH_PROVENANCE_PIDENT": "1",
+      "RH_PROVENANCE_READER_VIEW": "1",
+      "RH_SCHED": "sccq",
+      "RH_SKIP_RETURN_STABILIZE": "0",
+      "RH_SPLICED_WRITER_OWNERSHIP": "0",
+      "RUST_MIN_STACK": "33554432",
+      "WRITER_PARTITION_TRACE_SPEC": "$HOST_PATH"
+    },
+    "log_sha256": "0b056e7115e02333b048d270f0fd9354dbb0d580e1e8e372be6ed757f0cf6523",
+    "name": "traces",
+    "test_summary": [
+      "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1270 filtered out; finished in 0.02s"
+    ],
+    "trace_rows": 32
+  }
+]

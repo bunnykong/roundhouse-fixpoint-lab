@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "chatwoot",
+    "--label",
+    "fixpoint-spine-research-off",
+    "--flags",
+    "$EXPERIMENT/profiles/research-off.json",
+    "--jobs",
+    "3",
+    "--timeout",
+    "2400",
+    "--matrix",
+    "full"
+  ],
+  "elapsed_seconds": 438.5210823750822,
+  "exit": 0,
+  "name": "chatwoot-off-full",
+  "started": "2026-10-15T21:02:19.537254+00:00"
+}

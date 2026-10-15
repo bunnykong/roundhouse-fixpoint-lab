@@ -1,0 +1,135 @@
+[
+  {
+    "claimed_default": 1,
+    "flag": "RH_PARAMETER_REASON_CONSERVE",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PARAMETER_REASON_CONSERVE\").as_deref() != Ok(\"0\"))",
+        "line": 9
+      }
+    ],
+    "source": "src/analyze/parameter_conservation.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PROVENANCE_PIDENT",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PROVENANCE_PIDENT\").as_deref() != Ok(\"0\"))",
+        "line": 14
+      }
+    ],
+    "source": "src/analyze/parameter_conservation.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PROVENANCE_LIFT",
+    "occurrences": [
+      {
+        "code": "let lift = *LIFT.get_or_init(|| std::env::var(\"RH_PROVENANCE_LIFT\").as_deref() != Ok(\"0\"));",
+        "line": 191
+      }
+    ],
+    "source": "src/ty.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PARAMETER_STORAGE_NORMAL_FORM",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PARAMETER_STORAGE_NORMAL_FORM\").as_deref() != Ok(\"0\"))",
+        "line": 35
+      }
+    ],
+    "source": "src/analyze/parameter_conservation.rs"
+  },
+  {
+    "claimed_default": 0,
+    "flag": "RH_PROVENANCE_READER_VIEW",
+    "occurrences": [
+      {
+        "code": "if *VIEW.get_or_init(|| std::env::var(\"RH_PROVENANCE_READER_VIEW\").as_deref() == Ok(\"1\")) {",
+        "line": 8039
+      }
+    ],
+    "source": "src/analyze/mod.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PROVENANCE_STRICT_STUBS",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PROVENANCE_STRICT_STUBS\").as_deref() != Ok(\"0\"))",
+        "line": 6
+      }
+    ],
+    "source": "src/analyze/strict_producers.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PROVENANCE_STRICT_XFER",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PROVENANCE_STRICT_XFER\").as_deref() != Ok(\"0\"))",
+        "line": 10
+      }
+    ],
+    "source": "src/analyze/strict_producers.rs"
+  },
+  {
+    "claimed_default": 1,
+    "flag": "RH_PROVENANCE_CONGRUENT",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_PROVENANCE_CONGRUENT\").as_deref() != Ok(\"0\"))",
+        "line": 14
+      }
+    ],
+    "source": "src/analyze/strict_producers.rs"
+  },
+  {
+    "claimed_default": 0,
+    "flag": "RH_SPLICED_WRITER_OWNERSHIP",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_SPLICED_WRITER_OWNERSHIP\").is_ok_and(|v| v == \"1\"))",
+        "line": 108
+      }
+    ],
+    "source": "src/analyze/mod.rs"
+  },
+  {
+    "claimed_default": 0,
+    "flag": "RH_SKIP_RETURN_STABILIZE",
+    "occurrences": [
+      {
+        "code": "*ON.get_or_init(|| std::env::var(\"RH_SKIP_RETURN_STABILIZE\").is_ok_and(|v| v == \"1\"))",
+        "line": 24
+      }
+    ],
+    "source": "src/analyze/harvest_return.rs"
+  },
+  {
+    "claimed_default": 0,
+    "flag": "RH_CLOSURE_SITES",
+    "occurrences": [
+      {
+        "code": "&& std::env::var(\"RH_CLOSURE_SITES\").as_deref() == Ok(\"1\");",
+        "line": 79
+      }
+    ],
+    "source": "src/analyze/closure_census.rs"
+  },
+  {
+    "claimed_default": 1,
+    "evidence": "ClosureHarvestMode::parse(None, None) selects Apply; tested in copied kit closure_harvest-default-mode.log",
+    "flag": "RH_CLOSURE_APPLY",
+    "source": "src/analyze/mod.rs:8871"
+  },
+  {
+    "claimed_default": 0,
+    "evidence": "Entrances selected only for Some(\"1\") when Apply is not explicitly 1",
+    "flag": "RH_CLOSURE_ENTRANCES",
+    "source": "src/analyze/mod.rs:8871"
+  }
+]

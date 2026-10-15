@@ -1,0 +1,107 @@
+{
+  "binaries": {
+    "roundhouse": {
+      "sha256": "fb93bd1b1883778a255588e20be4dfae4bb14d5745523d8abd2fa46064ee264d"
+    },
+    "roundhouse-tests": {
+      "sha256": "b386b92a2a7f6a99d178e30750700dc409e665fa83896195cdc1219515f926d0"
+    },
+    "roundhouse-tests-fast": {
+      "sha256": "265d8aae23c0194eea06fd4c784ce2af32b82b513934c3d9f3ecfaebc75a50ae"
+    }
+  },
+  "cargo-test-lib-serialized": {
+    "actual_log_sha256": "e3d0b5426c8a3ca619e78bca2a00d705db4c87a78cd22c92283e2b88d95ace54",
+    "claimed_log_sha256": "e3d0b5426c8a3ca619e78bca2a00d705db4c87a78cd22c92283e2b88d95ace54",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "--exclusive",
+      "$WORKSPACE/workshop/full-test-suite.lock",
+      "cargo",
+      "+1.98.1",
+      "test",
+      "--locked",
+      "--offline",
+      "--lib",
+      "--",
+      "--test-threads=4"
+    ],
+    "exit": 0,
+    "matches": true,
+    "receipt": "$EXPERIMENT/receipts/native/cargo-test-lib-serialized.json",
+    "summary": [
+      "ok. 1245 passed; 0 failed; 26 ignored; 0 measured; 0 filtered out; finished in 174.88s"
+    ]
+  },
+  "cargo-test-lib-with-fixture": {
+    "actual_log_sha256": "e1644dae1ae53a183bd808113c13a90073112a2f8fa2e2f1b70c115516a3793c",
+    "claimed_log_sha256": "e1644dae1ae53a183bd808113c13a90073112a2f8fa2e2f1b70c115516a3793c",
+    "command": [
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "python3",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/full-test-suite.lock",
+      "cargo",
+      "+1.98.1",
+      "test",
+      "--locked",
+      "--offline",
+      "--lib",
+      "--",
+      "--test-threads=4"
+    ],
+    "exit": 0,
+    "matches": true,
+    "receipt": "$EXPERIMENT/receipts/native/cargo-test-lib-with-fixture.json",
+    "summary": [
+      "ok. 1245 passed; 0 failed; 26 ignored; 0 measured; 0 filtered out; finished in 189.73s"
+    ]
+  },
+  "fixpoint_bound/writer_law_partitions.rs": {
+    "destination": "$EXPERIMENT/repo/src/analyze/fixpoint_bound/writer_law_partitions.rs",
+    "destination_hash_matches": true,
+    "equal_after_declared_annotations": true,
+    "source": "$EXPERIMENT/sources/closure_harvest-apply/src/analyze/fixpoint_bound/writer_law_partitions.rs",
+    "source_hash_matches": true
+  },
+  "fixpoint_bound/writer_law_tests.rs": {
+    "destination": "$EXPERIMENT/repo/src/analyze/fixpoint_bound/writer_law_tests.rs",
+    "destination_hash_matches": true,
+    "equal_after_declared_annotations": true,
+    "source": "$EXPERIMENT/sources/closure_harvest-apply/src/analyze/fixpoint_bound/writer_law_tests.rs",
+    "source_hash_matches": true
+  },
+  "kit_binaries_equal": {
+    "native": true,
+    "release": true
+  },
+  "library_fixture": {
+    "destination": "$EXPERIMENT/repo/fixtures/real-blog",
+    "files": 127,
+    "matches_retained_manifest": true,
+    "source": "$EXPERIMENT/repo/fixtures/real-blog",
+    "source_equals_destination": true,
+    "tree_sha256": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442"
+  },
+  "source_status": "",
+  "writer_laws.rs": {
+    "destination": "$EXPERIMENT/repo/src/analyze/writer_laws.rs",
+    "destination_hash_matches": true,
+    "equal_after_declared_annotations": true,
+    "source": "$EXPERIMENT/sources/closure_harvest-apply/src/analyze/writer_laws.rs",
+    "source_hash_matches": true
+  },
+  "writer_partition_rows": {
+    "fresh_log": "$HOST_PATH",
+    "fresh_rows": 2104,
+    "original_log": "$EXPERIMENT/receipts/closure_harvest-apply-fast.log",
+    "recorded_rows": 2104,
+    "same_rows": true
+  }
+}

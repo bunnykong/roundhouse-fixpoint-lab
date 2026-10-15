@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "campfire",
+    "--label",
+    "fixpoint-spine-research-on",
+    "--flags",
+    "$EXPERIMENT/profiles/research-on.json",
+    "--jobs",
+    "3",
+    "--timeout",
+    "2400",
+    "--matrix",
+    "full"
+  ],
+  "elapsed_seconds": 45.048224375001155,
+  "exit": 0,
+  "name": "campfire-on-full",
+  "started": "2026-10-15T20:38:53.117958+00:00"
+}

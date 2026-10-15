@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "discourse",
+    "--label",
+    "fixpoint-spine-research-on",
+    "--flags",
+    "$EXPERIMENT/profiles/research-on.json",
+    "--jobs",
+    "1",
+    "--timeout",
+    "2400",
+    "--settings",
+    "1-v0-a0"
+  ],
+  "elapsed_seconds": 298.4605607499834,
+  "exit": 0,
+  "name": "discourse-on-1-v0-a0",
+  "started": "2026-10-15T20:46:33.591805+00:00"
+}

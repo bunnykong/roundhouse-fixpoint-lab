@@ -105,3 +105,8 @@ negative storage laws and finite runtime counterexamples. The source snapshots r
 - [F59: schedule row attribution](receipts/schedule-row-attribution-2026-10-15/README.md).
 - [F60: writer partition replay](receipts/writer-partition-replay-2026-10-15/README.md).
 - [F61: ownership runtime values](receipts/ownership-runtime-values-2026-10-15/README.md).
+
+## October 15 integrated repair result
+
+[F62: fixpoint spine](receipts/fixpoint-spine-2026-10-15/README.md) combines the measured repairs.
+Campfire reason rows agree; partition failures and larger-app value equalities remain.

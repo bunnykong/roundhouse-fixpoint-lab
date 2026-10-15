@@ -1,0 +1,31 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/full-test-suite.lock",
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "--",
+    "--test-threads=4"
+  ],
+  "elapsed_seconds": 1485.2370147500187,
+  "exit": 0,
+  "fixture_sha256": "58e2ea9baf70ad1bc3fceff171b0fc442093618e63f1cee053e750646d915442",
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "log_sha256": "e1644dae1ae53a183bd808113c13a90073112a2f8fa2e2f1b70c115516a3793c",
+  "started": "2026-10-15T20:56:12.052791+00:00"
+}

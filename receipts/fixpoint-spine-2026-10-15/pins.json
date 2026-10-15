@@ -1,0 +1,149 @@
+{
+  "compiler": {
+    "base": "0b3902538f643e1e23a067e4f2e805052743298e",
+    "branch": "fixpoint-spine",
+    "commit": "14ee6a88c63f36a2b4ed7f8dae31ecd4e4dd3d58",
+    "recorded_base": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+    "recorded_commit": "369d963d1866d404dc6976ed2b77e6a934a131f6",
+    "repository": "https://github.com/bunnykong/roundhouse"
+  },
+  "corpus_base": "4b1cabfbaa7c2598f324f42988f995add483ba00",
+  "flags": [
+    {
+      "default": 1,
+      "effect": "Conserve parameter evidence",
+      "fact": "F44",
+      "name": "RH_PARAMETER_REASON_CONSERVE"
+    },
+    {
+      "default": 1,
+      "effect": "Use Pending as a reason identity",
+      "fact": "F45",
+      "name": "RH_PROVENANCE_PIDENT"
+    },
+    {
+      "default": 1,
+      "effect": "Lift nested Pending evidence",
+      "fact": "F45",
+      "name": "RH_PROVENANCE_LIFT"
+    },
+    {
+      "default": 1,
+      "effect": "Normalize parameter storage",
+      "fact": "F52",
+      "name": "RH_PARAMETER_STORAGE_NORMAL_FORM"
+    },
+    {
+      "default": 0,
+      "effect": "Expose the raw parameter reader view",
+      "fact": "F45",
+      "name": "RH_PROVENANCE_READER_VIEW"
+    },
+    {
+      "default": 1,
+      "effect": "Keep unfinished stubs Pending",
+      "fact": "F56",
+      "name": "RH_PROVENANCE_STRICT_STUBS"
+    },
+    {
+      "default": 1,
+      "effect": "Keep unfinished transfers Pending",
+      "fact": "F56",
+      "name": "RH_PROVENANCE_STRICT_XFER"
+    },
+    {
+      "default": 1,
+      "effect": "Compare values and reasons for changes",
+      "fact": "F56",
+      "name": "RH_PROVENANCE_CONGRUENT"
+    },
+    {
+      "default": 1,
+      "effect": "Harvest applied closures; repair reflection",
+      "fact": "F57",
+      "name": "RH_CLOSURE_APPLY"
+    },
+    {
+      "default": 0,
+      "effect": "Use evaluated entrances without the closure rule",
+      "fact": "F57",
+      "name": "RH_CLOSURE_ENTRANCES"
+    },
+    {
+      "default": 0,
+      "effect": "Report closure entrance sites",
+      "fact": "F57",
+      "name": "RH_CLOSURE_SITES"
+    },
+    {
+      "default": 0,
+      "effect": "Use declared writer ownership",
+      "fact": "F44",
+      "name": "RH_SPLICED_WRITER_OWNERSHIP"
+    },
+    {
+      "default": 0,
+      "effect": "Disable the #521 return stabilizer",
+      "fact": "F44",
+      "name": "RH_SKIP_RETURN_STABILIZE"
+    }
+  ],
+  "lab_base": "0730e7f3402b1f37d15c875570b072c760248363",
+  "public_inputs": {
+    "applications": {
+      "campfire": {
+        "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+        "path": "corpus/apps/campfire",
+        "repository_url": "https://github.com/basecamp/once-campfire.git",
+        "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+      },
+      "chatwoot": {
+        "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+        "path": "corpus/apps/chatwoot",
+        "repository_url": "https://github.com/chatwoot/chatwoot.git",
+        "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+      },
+      "discourse": {
+        "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+        "max_parallel": 1,
+        "path": "corpus/apps/discourse",
+        "repository_url": "https://github.com/discourse/discourse.git",
+        "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+      },
+      "forem": {
+        "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+        "path": "corpus/apps/forem",
+        "repository_url": "https://github.com/forem/forem.git",
+        "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+      },
+      "mastodon": {
+        "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+        "path": "corpus/apps/mastodon",
+        "repository_url": "https://github.com/mastodon/mastodon.git",
+        "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+      }
+    },
+    "condition": "cached-observers-20261015-source-rebuild",
+    "main": {
+      "commit": "a5d73fdf16c13c207d9ecff66de451a058a9ff14",
+      "repository": "https://github.com/rubys/roundhouse.git"
+    },
+    "normalized_composition": {
+      "branch": "parameter-storage-normal-form",
+      "commit": "9863326b96bc22d2210476a0454ed382bd827af8",
+      "repository": "https://github.com/bunnykong/roundhouse.git"
+    },
+    "ownership": {
+      "branch": "ownership-generalization",
+      "commit": "1d510b0b50578d83ac962854655a88f5b7611f22",
+      "repository": "https://github.com/bunnykong/roundhouse.git"
+    },
+    "python": "3.9+",
+    "ruby": "4.0.7",
+    "rust": "1.98.1"
+  },
+  "release_binary_sha256": "fb93bd1b1883778a255588e20be4dfae4bb14d5745523d8abd2fa46064ee264d",
+  "ruby_app": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1"
+}

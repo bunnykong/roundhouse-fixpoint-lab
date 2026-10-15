@@ -1,0 +1,36 @@
+{
+  "off": {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "fixpoint-spine-research-off",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 260,
+    "grid_agrees": true,
+    "passed": 692,
+    "unavailable": 68,
+    "verdict_file": "$WORKSPACE/phase2/observers/cache/labels/fixpoint-spine-research-off/claims-7d54f112.json",
+    "verdict_sha256": "019291f66ecac7bc4d4ef89d32b88427344279b107d3fdf447b28eaf8afe8e87"
+  },
+  "on": {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "fixpoint-spine-research-on",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 256,
+    "grid_agrees": true,
+    "passed": 696,
+    "unavailable": 68,
+    "verdict_file": "$WORKSPACE/phase2/observers/cache/labels/fixpoint-spine-research-on/claims-eeee1bb6.json",
+    "verdict_sha256": "bb20ef90c996530bdf5fd1c9d586607d1239f90ec489f7cff0c0f70ece51c3ca"
+  }
+}

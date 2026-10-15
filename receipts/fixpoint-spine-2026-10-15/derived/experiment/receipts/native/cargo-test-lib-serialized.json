@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--exclusive",
+    "$WORKSPACE/workshop/full-test-suite.lock",
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "--",
+    "--test-threads=4"
+  ],
+  "elapsed_seconds": 403.558724542032,
+  "exit": 0,
+  "flags": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "log_sha256": "e3d0b5426c8a3ca619e78bca2a00d705db4c87a78cd22c92283e2b88d95ace54",
+  "reason": "Earlier driver used the shared default on the suite lock; retain the required exclusive-lock run explicitly.",
+  "started": "2026-10-15T21:20:58.674076+00:00"
+}

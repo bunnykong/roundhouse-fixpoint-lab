@@ -1,0 +1,87 @@
+{
+  "app": "campfire",
+  "audit": 0,
+  "condition": "p2-v3-spine2-SK-Apply-ea3ec744-observers-v1",
+  "delta": {
+    "changes": [
+      {
+        "identity": {
+          "emit_body": {
+            "declaration": "RestrictedHTTP::PrivateNetworkGuard#Class::resolve",
+            "kind": "BoolOp",
+            "occurrence": 0,
+            "source": "./lib/restricted_http/private_network_guard.rb",
+            "span": {
+              "end": 1089,
+              "file": 64,
+              "start": 966
+            }
+          },
+          "site": {
+            "path": [
+              0,
+              0,
+              1
+            ],
+            "source": "./lib/restricted_http/private_network_guard.rb",
+            "span": {
+              "end": 1003,
+              "file": 64,
+              "start": 995
+            }
+          }
+        },
+        "left": {
+          "type_hash": "6512fe4114bba623",
+          "untyped_kinds": 4
+        },
+        "right": {
+          "type_hash": "6512fe4114bba623",
+          "untyped_kinds": 2
+        }
+      },
+      {
+        "identity": {
+          "emit_body": {
+            "declaration": "RestrictedHTTP::PrivateNetworkGuard#Class::resolve",
+            "kind": "BoolOp",
+            "occurrence": 0,
+            "source": "./lib/restricted_http/private_network_guard.rb",
+            "span": {
+              "end": 1089,
+              "file": 64,
+              "start": 966
+            }
+          },
+          "site": {
+            "path": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "source": "./lib/restricted_http/private_network_guard.rb",
+            "span": {
+              "end": 1086,
+              "file": 64,
+              "start": 1078
+            }
+          }
+        },
+        "left": {
+          "type_hash": "6512fe4114bba623",
+          "untyped_kinds": 4
+        },
+        "right": {
+          "type_hash": "6512fe4114bba623",
+          "untyped_kinds": 2
+        }
+      }
+    ],
+    "left_only": [],
+    "right_only": []
+  },
+  "ownership": "on",
+  "setting": "1-v0-a0",
+  "verification": 0
+}

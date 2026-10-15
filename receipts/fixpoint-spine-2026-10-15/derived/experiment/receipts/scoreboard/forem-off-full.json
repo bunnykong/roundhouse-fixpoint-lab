@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "forem",
+    "--label",
+    "fixpoint-spine-research-off",
+    "--flags",
+    "$EXPERIMENT/profiles/research-off.json",
+    "--jobs",
+    "3",
+    "--timeout",
+    "2400",
+    "--matrix",
+    "full"
+  ],
+  "elapsed_seconds": 444.6690326250391,
+  "exit": 0,
+  "name": "forem-off-full",
+  "started": "2026-10-15T20:46:53.402073+00:00"
+}
