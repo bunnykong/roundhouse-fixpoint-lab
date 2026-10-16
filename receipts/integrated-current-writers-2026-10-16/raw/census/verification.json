@@ -1,0 +1,47 @@
+{
+  "condition": "quick-probe-v1 / observers-v1-20261015 / F61 / V0A0",
+  "narrowed_rows": 6233,
+  "sampled_rows": 135,
+  "sample_verdicts": {
+    "SOUND": 75,
+    "UNSOUND": 54,
+    "INHERITED_UNSOUND": 6
+  },
+  "targeted_stabilizing_losses": [
+    "C1431",
+    "C1432"
+  ],
+  "unique_files_hashed": 766,
+  "native_dumps_hashed": 12,
+  "checks": [
+    "exact reported row coverage",
+    "nested-position drop coverage",
+    "seeded sample reproduction",
+    "all 135 sampled verdicts",
+    "runtime membership and source hashes",
+    "pinned app manifests and full input tree hashes",
+    "exact finite-population interval endpoints",
+    "all eight stabilizing-loss memberships",
+    "every sample loss assigned to one cause family",
+    "RESULT at most 50 lines"
+  ],
+  "input_trees": {
+    "chatwoot": {
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007",
+      "files": 9281,
+      "pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d"
+    },
+    "mastodon": {
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7",
+      "files": 9868,
+      "pin": "163f96cee4dea23365bff9b433871e68d20d9ee7"
+    },
+    "forem": {
+      "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b",
+      "files": 4785,
+      "pin": "cd665002c660cacfc6d267c5de81206cea7bf9a3"
+    }
+  },
+  "python": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "rows_tsv_sha256": "b39bdb46b46d2c37ba0e6d9546a49e7f45c102aaa902477a14cb5e4a7259167b"
+}

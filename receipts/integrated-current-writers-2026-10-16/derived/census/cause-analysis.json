@@ -1,0 +1,147 @@
+{
+  "attribution": "Observed source-level failure families plus matching transfer code. No analyzer run, flag ablation or claim that an individual candidate flag introduced the defect.",
+  "candidate": "f9a7e6200de045eba94cb860a940c4a6110c7fd5",
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61 / V0A0 unset",
+  "groups": {
+    "array contents lost after mutation": {
+      "argument": "Append results, later loop receivers and propagated array contents omit values inserted by Ruby. The array send transfer returns Array of the receiver element type without joining the argument. The subsequent sequence refinement only handles direct Array bindings; it does not retroactively repair the send result or supply loop-carried values.",
+      "code": [
+        {
+          "first_line": 3122,
+          "last_line": 3129,
+          "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/body/send.rs",
+          "sha256": "bc7a1a0847c5dfff2e9ceb46ab3809d1fe3210c11ef0613fd4d09cc437c26fd4",
+          "source": "        // `<<` mutates in place and returns self (the array). `concat` /\n        // `push` / `unshift` / `prepend` / `append` likewise return the\n        // modified array.\n        \"+\" | \"-\" | \"&\" | \"|\" | \"<<\" | \"concat\" | \"push\" | \"unshift\" | \"prepend\"\n        | \"append\" => {\n            Ty::Array { elem: std::sync::Arc::new(elem.clone()) }\n        }\n        // Array `*` with an Int is array repetition (preserves Array[elem]);"
+        },
+        {
+          "first_line": 2825,
+          "last_line": 2852,
+          "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/body/mod.rs",
+          "sha256": "c3baebf5adf38380234f283a32eecbaa0fd5f148e7565cef45651393734e20e2",
+          "source": "                    for (is_ivar, name, elem) in pushes {\n                        let bindings = if is_ivar {\n                            &mut local_ctx.ivar_bindings\n                        } else {\n                            &mut local_ctx.local_bindings\n                        };\n                        if let Some(Ty::Array { elem: cur }) = bindings.get(&name) {\n                            let new_elem = if matches!(**cur, Ty::Var { .. }) {\n                                elem\n                            } else {\n                                union_of((**cur).clone(), elem)\n                            };\n                            let refined = Ty::Array { elem: std::sync::Arc::new(new_elem) };\n                            bindings.insert(name.clone(), refined.clone());\n                            // Retro-stamp the seed literal so decl-site\n                            // emitters agree with the refined uses: the\n                            // binding refinement alone left Go declaring\n                            // `[]interface{}{}` while a later `.join`\n                            // (typed off the refined binding) emitted\n                            // `strings.Join` over it. Each subsequent\n                            // push re-stamps with the widened union.\n                            if let Some(&si) = array_seed_idx.get(&(is_ivar, name)) {\n                                let seed = &mut exprs[si];\n                                if let ExprNode::Assign { value, .. } = &mut *seed.node {\n                                    value.ty = Some(refined.clone());\n                                }\n                                seed.ty = Some(refined);\n                            }"
+        }
+      ],
+      "counts": {
+        "chatwoot": 13,
+        "forem": 11,
+        "mastodon": 11
+      },
+      "rows": [
+        "C134",
+        "C646",
+        "C649",
+        "C664",
+        "C761",
+        "C1007",
+        "C1204",
+        "C1286",
+        "C1297",
+        "C1337",
+        "C1440",
+        "C1972",
+        "C2040",
+        "M664",
+        "M703",
+        "M707",
+        "M745",
+        "M951",
+        "M1289",
+        "M1299",
+        "M1683",
+        "M2148",
+        "M2150",
+        "M2152",
+        "F002",
+        "F008",
+        "F127",
+        "F140",
+        "F148",
+        "F182",
+        "F183",
+        "F226",
+        "F285",
+        "F287",
+        "F557"
+      ]
+    },
+    "caller or writer contribution omitted": {
+      "argument": "C2428 loses permitted String flags, C2311 loses create-action results in a shared view, M586 loses the featured URL job keyword, M2013 loses a controller-cast Boolean, and M2643 loses the Symbol class argument from the Collection render route. Each source producer is executed in the receipt or identified by its complete source path. The integrated candidate omits that producer contribution; no individual flag is isolated.",
+      "code": [],
+      "counts": {
+        "chatwoot": 2,
+        "forem": 0,
+        "mastodon": 3
+      },
+      "rows": [
+        "C2311",
+        "C2428",
+        "M586",
+        "M2013",
+        "M2643"
+      ]
+    },
+    "hash contents lost after update or merge": {
+      "argument": "Inserted keys, values and aliases are absent from downstream hash types. The hash-index refinement explicitly preserves the old key type, so an empty seed with Bottom keys stays empty-only. Hash#merge returns the receiver key/value types without joining its argument.",
+      "code": [
+        {
+          "first_line": 2755,
+          "last_line": 2784,
+          "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/body/mod.rs",
+          "sha256": "c3baebf5adf38380234f283a32eecbaa0fd5f148e7565cef45651393734e20e2",
+          "source": "                    for (is_ivar, name, rhs) in hash_writes {\n                        let bindings = if is_ivar {\n                            &mut local_ctx.ivar_bindings\n                        } else {\n                            &mut local_ctx.local_bindings\n                        };\n                        if let Some(Ty::Hash { key, value }) = bindings.get(&name) {\n                            // A Var value is the empty-literal\n                            // placeholder — replace it; otherwise\n                            // union the observed element in.\n                            let new_value = if matches!(**value, Ty::Var { .. }) {\n                                rhs\n                            } else {\n                                union_of((**value).clone(), rhs)\n                            };\n                            // Key stays as-is: the observed index\n                            // expressions mix `:src` (Sym) with a block\n                            // param (Untyped), and unioning those buys\n                            // nothing — every target renders Ruby hash\n                            // keys as strings regardless.\n                            let refined = Ty::Hash {\n                                key: key.clone(),\n                                value: std::sync::Arc::new(new_value),\n                            };\n                            bindings.insert(name.clone(), refined.clone());\n                            // Retro-stamp the `{}` seed, same as the\n                            // array case below. This is the gap the\n                            // array fix (b79e7fd5) called out as still\n                            // latent for hashes: without it the seed\n                            // keeps `Hash[Var, Var]`, and Go's empty-"
+        },
+        {
+          "first_line": 3334,
+          "last_line": 3337,
+          "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/body/send.rs",
+          "sha256": "bc7a1a0847c5dfff2e9ceb46ab3809d1fe3210c11ef0613fd4d09cc437c26fd4",
+          "source": "        \"merge\" => Ty::Hash {\n            key: std::sync::Arc::new(key.clone()),\n            value: std::sync::Arc::new(value.clone()),\n        },"
+        }
+      ],
+      "counts": {
+        "chatwoot": 6,
+        "forem": 2,
+        "mastodon": 6
+      },
+      "rows": [
+        "C1141",
+        "C1176",
+        "C1246",
+        "C1829",
+        "C2079",
+        "C2449",
+        "M246",
+        "M355",
+        "M1172",
+        "M1332",
+        "M1904",
+        "M2307",
+        "F218",
+        "F219"
+      ]
+    }
+  },
+  "integrated_rule_context": [
+    {
+      "line": 437,
+      "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/fold.rs",
+      "sha256": "2314dbf7df4b95d90ae9c9a5b6b35902658fb527efc41ca99bca2889dcf1d0b9"
+    },
+    {
+      "line": 413,
+      "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/fold.rs",
+      "sha256": "2314dbf7df4b95d90ae9c9a5b6b35902658fb527efc41ca99bca2889dcf1d0b9"
+    },
+    {
+      "line": 142,
+      "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/handoff.rs",
+      "sha256": "718b570065ac9738ecac72fda76b9cf04807f71cd811a65084b4233323b1ddfa"
+    },
+    {
+      "line": 75,
+      "path": "$WORKSPACE/$EXPERIMENT/repo/src/analyze/current_harvest.rs",
+      "sha256": "aeef383d716d755aa8c3974d2b1fdb8272bb3c63e6dcdc40f51febf8ecc07ce5"
+    }
+  ],
+  "sample_only": true
+}

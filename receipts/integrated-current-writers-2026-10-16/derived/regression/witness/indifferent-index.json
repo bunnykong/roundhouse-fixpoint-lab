@@ -1,0 +1,49 @@
+{
+  "boundary": "CRuby 4.0.7; actual ActiveSupport HashWithIndifferentAccess; exact Mastodon initialize and verify_actor! methods installed unchanged; empty JSON document takes the first missing-signature return; TracePoint observes the original index argument",
+  "observations": [
+    {
+      "ancestors": [
+        "String",
+        "ActiveSupport::ToJsonWithActiveSupportEncoder",
+        "Comparable",
+        "Object",
+        "ActiveSupport::ToJsonWithActiveSupportEncoder",
+        "ActiveSupport::Tryable",
+        "JSON::GeneratorMethods",
+        "Kernel",
+        "BasicObject"
+      ],
+      "implementation": "ActiveSupport::HashWithIndifferentAccess",
+      "implementation_line": 184,
+      "implementation_path": "$PRIOR_CLASSIFIER/mastodon-gems/gems/activesupport-8.1.3/lib/active_support/hash_with_indifferent_access.rb",
+      "inspect": "\"signature\"",
+      "key": "ActiveSupport::HashWithIndifferentAccess#[][0]",
+      "label": "missing_signature_lookup",
+      "receiver_class": "ActiveSupport::HashWithIndifferentAccess",
+      "rows": [],
+      "ruby_class": "String",
+      "type": {
+        "kind": "str"
+      }
+    }
+  ],
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "sources": [
+    {
+      "end": 260,
+      "line": 9,
+      "method": "initialize",
+      "path": "examples/apps/mastodon/app/lib/activitypub/linked_data_signature.rb",
+      "sha256": "b4469ad47af654a75028c94194279314894dfa30b4402f68f3b277a50ba9d1d5",
+      "start": 193
+    },
+    {
+      "end": 1321,
+      "line": 13,
+      "method": "verify_actor!",
+      "path": "examples/apps/mastodon/app/lib/activitypub/linked_data_signature.rb",
+      "sha256": "b4469ad47af654a75028c94194279314894dfa30b4402f68f3b277a50ba9d1d5",
+      "start": 264
+    }
+  ]
+}

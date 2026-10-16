@@ -1,0 +1,109 @@
+{
+  "binary_sha256": "a1dd6897acf9daa2219e4464050b41fa61b26c336478af8b205d22d51a9a401f",
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "equal_counts": {
+    "campfire": {
+      "candidate": 10,
+      "control": 10
+    },
+    "chatwoot": {
+      "candidate": 10,
+      "control": 5
+    },
+    "forem": {
+      "candidate": 9,
+      "control": 6
+    },
+    "mastodon": {
+      "candidate": 5,
+      "control": 5
+    }
+  },
+  "exact_report_census_rows": 6233,
+  "gate_checks": 300,
+  "gate_evidence": "retained-gate-replay.log; --deep replay of saved native dumps against saved runtime receipts, not 300 new Ruby runs",
+  "gate_passed": 300,
+  "patch_sha256": "e941a8d35af96c522241670fa44eb1b188c708ce6fbdfc943ccf9587965f2427",
+  "pending": [
+    {
+      "cell": "campfire/1-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/5f/5f67c6df809784634fb244f7f80bd53a9ef3a257cc2fffd635856c900cc527f8/baseline.json"
+    },
+    {
+      "cell": "campfire/2-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/25/25783deaac7fded4b9fc25c4a1fb871d410e5666a5acc1766f8a4fb56c7365d0/baseline.json"
+    },
+    {
+      "cell": "campfire/repeat-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/39/39c0ba0c54998d9a8bdddbd5b6672f41b31034c4e6eae57206a164e21f8c6bfd/baseline.json"
+    },
+    {
+      "cell": "campfire/unset-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/f2/f2f6be8577d2e219b519151b90524f51e5114b542d60111b7d620170033ee5b6/baseline.json"
+    },
+    {
+      "cell": "chatwoot/1-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/14/140eb250eb02b0d39c68bd4b993ed022333d763351dadc8ece800b90cdaeafc5/attempts/20261016T175436-92333726af/result.json"
+    },
+    {
+      "cell": "chatwoot/2-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/f0/f0c85609282bdee0b8cbf9b26134cdb02a9a5b5a800fe46d69cf2c24c3ff40b3/attempts/20261016T175436-40b678002f/result.json"
+    },
+    {
+      "cell": "chatwoot/repeat-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/44/44cca1469820dffe94de6e8322cf83203f72b1ab81fde6a6b713a97595f9ae18/attempts/20261016T175436-4838eb094c/result.json"
+    },
+    {
+      "cell": "chatwoot/unset-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/8e/8eefa5de95d292ff97884ecb3fa0bfbcb261854e99f310dade83339795c64e79/attempts/20261016T175436-72ddc4abd2/result.json"
+    },
+    {
+      "cell": "forem/1-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/provenance/c56ac6d7988a69790602b511723885038635ac34d8f905f2608c801ee45ebbd8/attempts/20261016T175334-5bcdda37c3/result.json"
+    },
+    {
+      "cell": "forem/2-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/99/99fd7e46b417d7418a4697478e067c2ba378106eaf1b70b9d57ea47c265d35ec/attempts/20261016T175334-a1379fe44b/result.json"
+    },
+    {
+      "cell": "forem/repeat-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/82/825c4da3e2f0354ca0a310eb906ec907bb26ddf3bd703ce45715c01f04fe9a3d/attempts/20261016T175334-217694a4d7/result.json"
+    },
+    {
+      "cell": "forem/unset-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/7e/7e0dd359a95381b93fc84b8a1c814520e4f446d4305e906b2d0ad7475e10133d/attempts/20261016T175334-ba53358087/result.json"
+    },
+    {
+      "cell": "mastodon/1-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/d3/d36b2740779e8ff9335f11c6cc83815ba248ed4685ba7175466f9bce4764d821/attempts/20261016T175543-c477ea8941/result.json"
+    },
+    {
+      "cell": "mastodon/2-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/a9/a9666493037f721fc01bd44f3cae996bc5ee14d67e744bcf53a7c3b4847cb404/attempts/20261016T175543-427e702994/result.json"
+    },
+    {
+      "cell": "mastodon/repeat-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/35/3522ca8918c34243d736bd743d2037cc7b950521b7158cc66613b631d6e89c10/attempts/20261016T175543-be83cb3cbd/result.json"
+    },
+    {
+      "cell": "mastodon/unset-v0-a0",
+      "completion_and_settlement_pending": 0,
+      "receipt": "$WORKSPACE/phase2/observers/cache/objects/8d/8dcd8cf1d90827830cb87192b70d105c2bcebc98b344572317e2ef943870eb7b/attempts/20261016T175543-eb7ca16773/result.json"
+    }
+  ]
+}

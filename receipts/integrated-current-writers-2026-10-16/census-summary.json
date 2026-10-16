@@ -1,0 +1,289 @@
+{
+  "apps": {
+    "chatwoot": {
+      "narrowed": 2625,
+      "reason_counts": {
+        "Gradual": 7,
+        "Unresolved": 146,
+        "concrete": 207,
+        "nil": 15,
+        "raw Var": 2364
+      },
+      "sample_families": {
+        "array mutation omitted": 9,
+        "array mutation propagation": 2,
+        "hash mutation across calls": 2,
+        "hash mutation omitted": 4,
+        "nested array mutation omitted": 2,
+        "request writer omitted": 1,
+        "view input from alternate action": 1
+      },
+      "strata": {
+        "concrete_nil": {
+          "complete": true,
+          "families": {
+            "array mutation omitted": 9,
+            "hash mutation across calls": 2,
+            "hash mutation omitted": 2,
+            "nested array mutation omitted": 2,
+            "request writer omitted": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              58,
+              121
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.2636363636363636,
+              0.55
+            ]
+          },
+          "loss_rate": 0.4,
+          "population": 220,
+          "sample": 40,
+          "verdicts": {
+            "SOUND": 24,
+            "UNSOUND": 16
+          },
+          "wilson_95": [
+            0.2634832568429192,
+            0.5540410633965381
+          ]
+        },
+        "unknown": {
+          "complete": true,
+          "families": {
+            "array mutation propagation": 2,
+            "hash mutation omitted": 2,
+            "view input from alternate action": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              286,
+              1480
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.11891891891891893,
+              0.6153846153846154
+            ]
+          },
+          "loss_rate": 0.3333333333333333,
+          "population": 2405,
+          "sample": 15,
+          "verdicts": {
+            "SOUND": 10,
+            "UNSOUND": 5
+          },
+          "wilson_95": [
+            0.1517632443971473,
+            0.5828645226148023
+          ]
+        }
+      }
+    },
+    "forem": {
+      "narrowed": 734,
+      "reason_counts": {
+        "Unresolved": 85,
+        "concrete": 93,
+        "nil": 2,
+        "raw Var": 569
+      },
+      "sample_families": {
+        "array mutation omitted": 7,
+        "array mutation propagation": 3,
+        "hash mutation omitted": 2,
+        "loop mutation omitted": 1
+      },
+      "strata": {
+        "concrete_nil": {
+          "complete": true,
+          "families": {
+            "array mutation omitted": 7,
+            "array mutation propagation": 2,
+            "hash mutation omitted": 1,
+            "loop mutation omitted": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              22,
+              50
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.23157894736842105,
+              0.5263157894736842
+            ]
+          },
+          "loss_rate": 0.36666666666666664,
+          "population": 95,
+          "sample": 30,
+          "verdicts": {
+            "INHERITED_UNSOUND": 4,
+            "SOUND": 15,
+            "UNSOUND": 11
+          },
+          "wilson_95": [
+            0.21873920806100708,
+            0.5448643634520511
+          ]
+        },
+        "unknown": {
+          "complete": true,
+          "families": {
+            "array mutation propagation": 1,
+            "hash mutation omitted": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              17,
+              353
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.026604068857589983,
+              0.5524256651017214
+            ]
+          },
+          "loss_rate": 0.2,
+          "population": 639,
+          "sample": 10,
+          "verdicts": {
+            "SOUND": 8,
+            "UNSOUND": 2
+          },
+          "wilson_95": [
+            0.05668215145437519,
+            0.5098375284633583
+          ]
+        }
+      }
+    },
+    "mastodon": {
+      "narrowed": 2874,
+      "reason_counts": {
+        "Gradual": 18,
+        "Unresolved": 115,
+        "concrete": 227,
+        "nil": 49,
+        "raw Var": 2622
+      },
+      "sample_families": {
+        "array mutation omitted": 9,
+        "array mutation propagation": 2,
+        "hash merge result omitted": 1,
+        "hash mutation omitted": 1,
+        "hash mutation propagation": 4,
+        "keyword writer omitted": 1,
+        "receiver route omitted": 1,
+        "request conversion omitted": 1
+      },
+      "strata": {
+        "concrete_nil": {
+          "complete": true,
+          "families": {
+            "array mutation omitted": 9,
+            "array mutation propagation": 2,
+            "hash mutation omitted": 1,
+            "hash mutation propagation": 3,
+            "receiver route omitted": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              88,
+              174
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.3562753036437247,
+              0.7044534412955465
+            ]
+          },
+          "loss_rate": 0.5333333333333333,
+          "population": 247,
+          "sample": 30,
+          "verdicts": {
+            "INHERITED_UNSOUND": 2,
+            "SOUND": 12,
+            "UNSOUND": 16
+          },
+          "wilson_95": [
+            0.36142299619873297,
+            0.6976761109230025
+          ]
+        },
+        "unknown": {
+          "complete": true,
+          "families": {
+            "hash merge result omitted": 1,
+            "hash mutation propagation": 1,
+            "keyword writer omitted": 1,
+            "request conversion omitted": 1
+          },
+          "finite_population_95": {
+            "confidence": 0.95,
+            "count": [
+              321,
+              1936
+            ],
+            "method": "equal-tailed exact hypergeometric inversion",
+            "rate": [
+              0.12219261515036163,
+              0.7369623144271031
+            ]
+          },
+          "loss_rate": 0.4,
+          "population": 2627,
+          "sample": 10,
+          "verdicts": {
+            "SOUND": 6,
+            "UNSOUND": 4
+          },
+          "wilson_95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ]
+        }
+      }
+    }
+  },
+  "broad_sample_families": {
+    "chatwoot": {
+      "array": 13,
+      "hash": 6,
+      "missing_callers_writers": 2
+    },
+    "forem": {
+      "array": 11,
+      "hash": 2,
+      "missing_callers_writers": 0
+    },
+    "mastodon": {
+      "array": 11,
+      "hash": 6,
+      "missing_callers_writers": 3
+    }
+  },
+  "condition": "integrated-current-writers-20261016-four-apps-v0a0",
+  "sample_verdicts": {
+    "INHERITED_UNSOUND": 6,
+    "SOUND": 75,
+    "UNSOUND": 54
+  },
+  "sampled_rows": 135,
+  "scope": "Stratified row estimates, not unique bugs or a pooled population rate. Exact marginal 95% intervals invert hypergeometric tails without replacement. The light review reproduced arithmetic/selection and four counterexamples, not every sample adjudication.",
+  "setting": "unset-v0-a0",
+  "targeted_losses_outside_rates": [
+    "C1431",
+    "C1432"
+  ],
+  "total_narrowed": 6233,
+  "unadjudicated": 6096
+}

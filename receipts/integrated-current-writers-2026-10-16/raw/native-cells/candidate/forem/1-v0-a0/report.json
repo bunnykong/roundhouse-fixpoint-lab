@@ -1,0 +1,145 @@
+{
+  "bound": {
+    "calls": 371010,
+    "cuts": 0
+  },
+  "census": {
+    "bare_untyped": 22750,
+    "missing": 1895,
+    "typed": 160805,
+    "untyped_anywhere": 30352,
+    "untyped_by_provenance": {
+      "gradual": 3228,
+      "pending": 0,
+      "unresolved": 27243
+    }
+  },
+  "digest": {
+    "attributes": "cd739d7e9681ce1c",
+    "block_values": "de59a1ac66bfa545",
+    "constants": "51c2057f3c9dff46",
+    "controller_bindings": "ead511122d8f4903",
+    "controller_cache": "e67a73b9173f95f6",
+    "copies": "ae741fa3ea79fa38",
+    "ir": "e09ce1f9fdfdf9c6",
+    "params": "a042f956c1adbf15",
+    "returns": "a851683a60afc272",
+    "side_table": "07053733a92bbc9b"
+  },
+  "entries": {
+    "attributes": 835,
+    "block_values": 1229,
+    "constants": 509,
+    "controller_bindings": 276,
+    "controller_cache": 152,
+    "copies": 30,
+    "ir": 162700,
+    "params": 11703,
+    "returns": 34668,
+    "side_table": 253
+  },
+  "fold": {
+    "accumulations_skipped": 0,
+    "expansion": {
+      "back_edges": 0,
+      "budget_cuts": 0,
+      "tail_edges": 661
+    },
+    "methods_in_reference_mode": 161,
+    "side_table_nodes": 715,
+    "slots": {
+      "narrow": 38,
+      "param": 199,
+      "position": 16,
+      "ret": 132
+    }
+  },
+  "harvest_untie_cut": 6,
+  "loops": {
+    "absorb": {
+      "end": "settled",
+      "round": 8
+    },
+    "production": {
+      "end": "settled",
+      "round": 3
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 1
+    }
+  },
+  "precision": {
+    "bare_untyped": 22750,
+    "bottom_anywhere": 1532,
+    "fully_typed": 130453,
+    "missing": 1895,
+    "typed": 160805,
+    "untyped_anywhere": 30352,
+    "var_without_untyped": 0
+  },
+  "s4": {
+    "mode": "apply",
+    "sites_applied": 0,
+    "sites_applied_by_consumer": {
+      "argument": 0,
+      "block": 0,
+      "local": 0,
+      "receiver": 0
+    },
+    "sites_entrance": 0,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 0,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 188982,
+    "walks_changed_vs_entrances": 0,
+    "walks_changed_vs_legacy": 0
+  },
+  "schema": 1,
+  "structure": {
+    "end": {
+      "digest": "aea225658b3f2b93",
+      "reference_mode": {
+        "digest": "7113e0a330ddd64c",
+        "n": 161
+      },
+      "routing": {
+        "digest": "4b7dbfbf4e23bdc0",
+        "n": 116443
+      },
+      "universe": {
+        "digest": "6b70889e650eb681",
+        "n": 180713
+      },
+      "writers": {
+        "digest": "3dd07dc522240c25",
+        "n": 19299,
+        "slots": 11026
+      }
+    },
+    "schema": 2,
+    "scope": "observed-cumulative-equations",
+    "start": {
+      "digest": "0fb5c7a3a25b9e36",
+      "reference_mode": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "routing": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "universe": {
+        "digest": "f5b27ead14f3f3d0",
+        "n": 167726
+      },
+      "writers": {
+        "digest": "ab5621e10071393c",
+        "n": 6771,
+        "slots": 6464
+      }
+    },
+    "unchanged": false
+  }
+}

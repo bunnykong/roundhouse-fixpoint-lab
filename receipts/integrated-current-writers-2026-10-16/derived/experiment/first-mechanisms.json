@@ -1,0 +1,113 @@
+{
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "evidence": [
+    "producer-proof.json",
+    "measurement.json",
+    "metrics.json",
+    "forem-binding-residue.json",
+    "predecessor-replay-cause.json",
+    "chatwoot-cap-source3.json"
+  ],
+  "label": "integrated-current-writers-f9a7e620",
+  "mechanisms": {
+    "campfire": {
+      "confidence": "high",
+      "mechanism": "none observed in the ten tables",
+      "named_residue": "canonical_host remains Unresolved in all schedules"
+    },
+    "chatwoot": {
+      "confidence": "high",
+      "mechanism": "none observed in the ten tables after provenance replay closes",
+      "observed": "All 72 current body nodes match. Its return is Hash[Symbol,Integer|String]|Unresolved in all schedules.",
+      "producer": "Captain::BaseTaskService#make_api_call"
+    },
+    "forem": {
+      "confidence": "high for the retained cache entry and non-retraction rule; causal attribution not ablated",
+      "mechanism": "clean-only controller refinement cache retains a historical nil after a current unknown or absent refinement",
+      "observed": "All 57 sampled current body nodes, including img_of_size and update, match across schedules; only the binding map varies.",
+      "observed_binding": {
+        "1-v0-a0": null,
+        "2-v0-a0": "Nil",
+        "repeat-v0-a0": "Nil",
+        "unset-v0-a0": "Nil"
+      },
+      "producer": "Api::V0::ArticlesController#update: @article",
+      "source_rule": [
+        "repo/src/analyze/mod.rs:3671",
+        "repo/src/analyze/mod.rs:4039"
+      ]
+    },
+    "mastodon": {
+      "candidate_seed": "intersect_variant introduces Hash from a raw unknown; head_split preserves an unknown on both branches of a reference read",
+      "confidence": "high for the observed feedback forms; medium for the reference-sensitive seeding explanation, not causally ablated",
+      "mechanism": "self-supporting Hash alternative in the fetch_collection_page parameter/narrowing loop",
+      "observed": "Hash[Unresolved,Unresolved]|Unresolved|nil in unset/1/repeat, versus Unresolved|nil in shuffle 2. The incoming argument and guarded return differ at two body nodes.",
+      "producer": "JsonLdHelper#fetch_collection_page: collection_or_uri.is_a?(Hash)",
+      "source_rule": [
+        "repo/src/analyze/body/narrowing.rs:550",
+        "repo/src/analyze/body/narrowing.rs:649"
+      ]
+    }
+  },
+  "repairs": {
+    "hwia": {
+      "candidate_admitted": 4,
+      "candidate_checked": 4,
+      "cause": "body builtin methods are absent from the initial ClassInfo catalog; frozen top routing missed HWIA#[]",
+      "flag": "RH_HWIA_ROUTES=1",
+      "receipt": "witness/indifferent-index.json"
+    },
+    "reference_returns": {
+      "flag": "RH_CUR_REFRET=1",
+      "stores": [
+        "handoff::join_reference_rets prev_rets",
+        "handoff::join_ret_one prev_rets"
+      ]
+    },
+    "replay": {
+      "all_replays_closed": true,
+      "cap12_cause": "slow propagation, including late top-route additions/retractions on predecessor. After source/return repairs only a provenance tail remains in shuffled orders.",
+      "chatwoot_iterations": [
+        11,
+        15,
+        15,
+        11
+      ],
+      "default_cap": 12,
+      "flags": [
+        "RH_REPLAY_CLOSED_READS=1",
+        "RH_REPLAY_CAP=24"
+      ],
+      "pending_cause": "registry-free destructuring treats a return reference as missing and recreated Pending for library ivar readers; unavailable reference reads now honor completion",
+      "predecessor_control_parity": "predecessor-trace-parity.json",
+      "tail": [
+        "Whatsapp::PopulateTemplateParametersService#build_media_type_parameter",
+        "Whatsapp::PopulateTemplateParametersService#build_media_parameter",
+        "Whatsapp::TemplateProcessorService#build_media_header_params"
+      ],
+      "tested_cap": 24,
+      "trace_before_cap_raise": "chatwoot-cap-source3.json"
+    },
+    "unknown_at_source": {
+      "absent_arguments": "Bottom; opaque keyword arguments remain real unknowns",
+      "canonical_unknown_changed_values": 0,
+      "cells": 16,
+      "flag": "RH_UNK_AT_SOURCE=1"
+    }
+  },
+  "source": "f9a7e6200de045eba94cb860a940c4a6110c7fd5",
+  "varying": {
+    "campfire": {},
+    "chatwoot": {},
+    "forem": {
+      "controller_bindings": 1
+    },
+    "mastodon": {
+      "controller_cache": 7,
+      "ir": 67,
+      "params": 7,
+      "returns": 47,
+      "side_table": 10
+    }
+  }
+}

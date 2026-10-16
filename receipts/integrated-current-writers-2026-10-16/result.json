@@ -1,0 +1,9 @@
+{
+  "condition": "integrated-current-writers-20261016-four-apps-v0a0",
+  "fact": 72,
+  "native_analyzers_during_publication": 0,
+  "public_rust_compiled": false,
+  "review": "UPHELD",
+  "text": "On `integrated-current-writers-20261016-four-apps-v0a0`, the integrated rule makes Campfire/Forem/Chatwoot/Mastodon 10/9/10/5 value tables schedule-equal across unset/1/2/repeat at V0A0, versus spine v3’s 10/6/5/5. It is unsound: Chatwoot loses witnessed values in 16/40 sampled concrete/nil drops (40%; exact 95% interval 26.4–55.0%) and 5/15 unknown drops (33.3%; 11.9–61.5%). Forem and Mastodon also lose sampled values. Two newly equal Chatwoot rows lose values. Array appends, loop-carried values and hash updates/merges dominate sampled losses; current transfers omit their additions. The rule uses current writers, source Unresolved, waiting Pending inputs then completion, conservative unknown-receiver routing, F70 stub completion and current harvested returns. Its saved 300-check regression gate passes; settlement has zero Pending. Light review upholds these scoped results. Most narrowed rows remain unaudited; rates describe rows within each stratum. Verification/audit are off; Discourse was not run.",
+  "verdict": "Unsound schedule-equality gain; container mutation dominates the sampled losses."
+}

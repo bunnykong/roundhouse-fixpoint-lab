@@ -1,0 +1,307 @@
+{
+  "checks": [
+    {
+      "binary_sha256": "a1dd6897acf9daa2219e4464050b41fa61b26c336478af8b205d22d51a9a401f",
+      "cached_receipt": "$WORKSPACE/phase2/observers/cache/objects/8e/8eefa5de95d292ff97884ecb3fa0bfbcb261854e99f310dade83339795c64e79/attempts/20261016T175436-72ddc4abd2/result.json",
+      "canonical_unknown": [
+        {
+          "changed_values": 0
+        }
+      ],
+      "completion": [
+        {
+          "all_consumers_dirty": true,
+          "closed": true,
+          "completed": {
+            "attribute": 0,
+            "call-writer": 2995,
+            "constant": 2,
+            "controller": 146,
+            "controller-cache": 75,
+            "controller-cache-ir": 2078,
+            "engine-constant": 0,
+            "engine-context": 10943,
+            "engine-ir": 1765,
+            "engine-ivar": 1599,
+            "engine-parameter": 565,
+            "engine-site": 3749,
+            "engine-writer": 2059,
+            "engine-writer-site": 2166,
+            "ir": 8220,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 576,
+            "parameter-writer": 32,
+            "reference-only-parameter": 0,
+            "return": 330,
+            "return-writer": 476,
+            "side-table": 22,
+            "view": 446
+          },
+          "phase": "completion-round",
+          "retype_iterations": 11,
+          "retype_limit": 24,
+          "round": 1,
+          "total": 38244
+        },
+        {
+          "closed": true,
+          "pending": {
+            "attribute": 0,
+            "call-writer": 0,
+            "constant": 0,
+            "controller": 0,
+            "controller-cache": 0,
+            "controller-cache-ir": 0,
+            "ir": 0,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 0,
+            "parameter-writer": 0,
+            "return": 0,
+            "return-writer": 0,
+            "side-table": 0,
+            "view": 0
+          },
+          "phase": "completion-finished",
+          "rounds": 1,
+          "total": 0
+        },
+        {
+          "pending": {
+            "attribute": 0,
+            "call-writer": 0,
+            "constant": 0,
+            "controller": 0,
+            "controller-cache": 0,
+            "controller-cache-ir": 0,
+            "exported-parameter": 0,
+            "ir": 0,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 0,
+            "parameter-writer": 0,
+            "return": 0,
+            "return-writer": 0,
+            "side-table": 0,
+            "view": 0
+          },
+          "phase": "settlement-safety-net",
+          "total": 0
+        }
+      ],
+      "diagnostics": {
+        "error/incompatible_binop": 5,
+        "error/unsupported": 949,
+        "warning/gradual_untyped": 7062,
+        "warning/unconsumed_initializer": 112
+      },
+      "dumps": {
+        "census.jsonl": {
+          "byte_identical": true,
+          "cached": "b3cb0207ab8fc54de5d656df741ad715ff6b13508f1a664e014de484c5bbf9bd",
+          "fresh": "b3cb0207ab8fc54de5d656df741ad715ff6b13508f1a664e014de484c5bbf9bd"
+        },
+        "contributor-values.jsonl": {
+          "byte_identical": false,
+          "cached": "f81cc543de3663475cb773148b8e571f57955c0cda318076591ed50703331180",
+          "debug_rec_id_only_differences": 0,
+          "fresh": "a299bbe7250e673e4a3084ec8dcc0c798d6644f54fa6b73c00cdd987446bc828",
+          "parsed_fingerprint_identical": true,
+          "parsed_rows_identical_after_normalizing_debug_rec_ids": true,
+          "rows": 254601,
+          "semantic_row_differences": 0
+        },
+        "declarations.jsonl": {
+          "availability": "not emitted in either capture",
+          "byte_identical": null
+        },
+        "structure.jsonl": {
+          "availability": "not emitted in either capture",
+          "byte_identical": null
+        }
+      },
+      "fields_compared": [
+        "value_digests",
+        "reason_census",
+        "reason_rows",
+        "successful_writes",
+        "law_violation_counts",
+        "diagnostics",
+        "loops",
+        "verify",
+        "exit_code"
+      ],
+      "fresh_receipt": "$HOST_PATH",
+      "input_manifest_sha256": "a9a2c48f8752fda01212b82793ec76b4415d0fe121b8b266b24987d0fe8eda37",
+      "input_pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "observation_differences": {},
+      "runtime": {
+        "platform": "darwin",
+        "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+        "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+      },
+      "same_binary_input_runtime_profile": true,
+      "setting": "unset-v0-a0",
+      "unavailable_fields": [
+        "successful_writes",
+        "law_violation_counts",
+        "verify"
+      ],
+      "wall_seconds": 30.439180374960415
+    },
+    {
+      "binary_sha256": "a1dd6897acf9daa2219e4464050b41fa61b26c336478af8b205d22d51a9a401f",
+      "cached_receipt": "$WORKSPACE/phase2/observers/cache/objects/44/44cca1469820dffe94de6e8322cf83203f72b1ab81fde6a6b713a97595f9ae18/attempts/20261016T175436-4838eb094c/result.json",
+      "canonical_unknown": [
+        {
+          "changed_values": 0
+        }
+      ],
+      "completion": [
+        {
+          "all_consumers_dirty": true,
+          "closed": true,
+          "completed": {
+            "attribute": 0,
+            "call-writer": 2995,
+            "constant": 2,
+            "controller": 146,
+            "controller-cache": 75,
+            "controller-cache-ir": 2078,
+            "engine-constant": 0,
+            "engine-context": 10943,
+            "engine-ir": 1765,
+            "engine-ivar": 1599,
+            "engine-parameter": 565,
+            "engine-site": 3749,
+            "engine-writer": 2059,
+            "engine-writer-site": 2166,
+            "ir": 8220,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 576,
+            "parameter-writer": 32,
+            "reference-only-parameter": 0,
+            "return": 330,
+            "return-writer": 476,
+            "side-table": 22,
+            "view": 446
+          },
+          "phase": "completion-round",
+          "retype_iterations": 11,
+          "retype_limit": 24,
+          "round": 1,
+          "total": 38244
+        },
+        {
+          "closed": true,
+          "pending": {
+            "attribute": 0,
+            "call-writer": 0,
+            "constant": 0,
+            "controller": 0,
+            "controller-cache": 0,
+            "controller-cache-ir": 0,
+            "ir": 0,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 0,
+            "parameter-writer": 0,
+            "return": 0,
+            "return-writer": 0,
+            "side-table": 0,
+            "view": 0
+          },
+          "phase": "completion-finished",
+          "rounds": 1,
+          "total": 0
+        },
+        {
+          "pending": {
+            "attribute": 0,
+            "call-writer": 0,
+            "constant": 0,
+            "controller": 0,
+            "controller-cache": 0,
+            "controller-cache-ir": 0,
+            "exported-parameter": 0,
+            "ir": 0,
+            "ivar": 0,
+            "local": 0,
+            "parameter": 0,
+            "parameter-writer": 0,
+            "return": 0,
+            "return-writer": 0,
+            "side-table": 0,
+            "view": 0
+          },
+          "phase": "settlement-safety-net",
+          "total": 0
+        }
+      ],
+      "diagnostics": {
+        "error/incompatible_binop": 5,
+        "error/unsupported": 949,
+        "warning/gradual_untyped": 7062,
+        "warning/unconsumed_initializer": 112
+      },
+      "dumps": {
+        "census.jsonl": {
+          "byte_identical": true,
+          "cached": "b3cb0207ab8fc54de5d656df741ad715ff6b13508f1a664e014de484c5bbf9bd",
+          "fresh": "b3cb0207ab8fc54de5d656df741ad715ff6b13508f1a664e014de484c5bbf9bd"
+        },
+        "contributor-values.jsonl": {
+          "byte_identical": false,
+          "cached": "15c6366c7550be6441d2061d1235a0055a9e4c25425c40ed652271f6a3a7094d",
+          "debug_rec_id_only_differences": 583,
+          "fresh": "477df4845f2280a2841d72da23dbaad4ef823672b32d60a830aa52dc3ef8613f",
+          "parsed_fingerprint_identical": true,
+          "parsed_rows_identical_after_normalizing_debug_rec_ids": true,
+          "rows": 254601,
+          "semantic_row_differences": 0
+        },
+        "declarations.jsonl": {
+          "availability": "not emitted in either capture",
+          "byte_identical": null
+        },
+        "structure.jsonl": {
+          "availability": "not emitted in either capture",
+          "byte_identical": null
+        }
+      },
+      "fields_compared": [
+        "value_digests",
+        "reason_census",
+        "reason_rows",
+        "successful_writes",
+        "law_violation_counts",
+        "diagnostics",
+        "loops",
+        "verify",
+        "exit_code"
+      ],
+      "fresh_receipt": "$HOST_PATH",
+      "input_manifest_sha256": "a9a2c48f8752fda01212b82793ec76b4415d0fe121b8b266b24987d0fe8eda37",
+      "input_pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "observation_differences": {},
+      "runtime": {
+        "platform": "darwin",
+        "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+        "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+      },
+      "same_binary_input_runtime_profile": true,
+      "setting": "repeat-v0-a0",
+      "unavailable_fields": [
+        "successful_writes",
+        "law_violation_counts",
+        "verify"
+      ],
+      "wall_seconds": 30.22190862498246
+    }
+  ],
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "label": "integrated-current-writers-f9a7e620",
+  "passed": true
+}

@@ -1,0 +1,371 @@
+{
+  "seed_prefix": "ast-whole3-census-20261016",
+  "apps": {
+    "chatwoot": {
+      "narrowed": 2625,
+      "reason_counts": {
+        "raw Var": 2364,
+        "Unresolved": 146,
+        "concrete": 207,
+        "nil": 15,
+        "Gradual": 7
+      },
+      "strata": {
+        "concrete_nil": {
+          "seed": "ast-whole3-census-20261016/chatwoot/concrete_nil",
+          "population": 220,
+          "sample": 40,
+          "verdicts": {
+            "UNSOUND": 16,
+            "SOUND": 24
+          },
+          "loss_rate": 0.4,
+          "finite_population_95_count": [
+            58,
+            121
+          ],
+          "selected_ids": [
+            "C1007",
+            "C1131",
+            "C1141",
+            "C1144",
+            "C1177",
+            "C1204",
+            "C1246",
+            "C1337",
+            "C134",
+            "C1354",
+            "C1428",
+            "C1430",
+            "C1438",
+            "C1440",
+            "C1462",
+            "C1465",
+            "C1600",
+            "C1772",
+            "C1829",
+            "C1834",
+            "C1969",
+            "C1972",
+            "C1973",
+            "C2032",
+            "C2040",
+            "C2072",
+            "C2081",
+            "C234",
+            "C2428",
+            "C2449",
+            "C549",
+            "C608",
+            "C646",
+            "C649",
+            "C658",
+            "C661",
+            "C664",
+            "C742",
+            "C743",
+            "C761"
+          ],
+          "families": {
+            "array mutation omitted": 9,
+            "nested array mutation omitted": 2,
+            "hash mutation omitted": 2,
+            "hash mutation across calls": 2,
+            "request writer omitted": 1
+          },
+          "matches": true
+        },
+        "unknown": {
+          "seed": "ast-whole3-census-20261016/chatwoot/unknown",
+          "population": 2405,
+          "sample": 15,
+          "verdicts": {
+            "SOUND": 10,
+            "UNSOUND": 5
+          },
+          "loss_rate": 0.3333333333333333,
+          "finite_population_95_count": [
+            286,
+            1480
+          ],
+          "selected_ids": [
+            "C1039",
+            "C1176",
+            "C125",
+            "C1286",
+            "C1297",
+            "C1574",
+            "C1740",
+            "C203",
+            "C2044",
+            "C2079",
+            "C2170",
+            "C2209",
+            "C2311",
+            "C2572",
+            "C2610"
+          ],
+          "families": {
+            "hash mutation omitted": 2,
+            "array mutation propagation": 2,
+            "view input from alternate action": 1
+          },
+          "matches": true
+        }
+      },
+      "sample_families": {
+        "array mutation omitted": 9,
+        "nested array mutation omitted": 2,
+        "hash mutation omitted": 4,
+        "array mutation propagation": 2,
+        "hash mutation across calls": 2,
+        "view input from alternate action": 1,
+        "request writer omitted": 1
+      },
+      "broad_families": {
+        "array": 13,
+        "hash": 6,
+        "missing_callers_writers": 2
+      }
+    },
+    "mastodon": {
+      "narrowed": 2874,
+      "reason_counts": {
+        "raw Var": 2622,
+        "concrete": 227,
+        "Unresolved": 115,
+        "nil": 49,
+        "Gradual": 18
+      },
+      "strata": {
+        "concrete_nil": {
+          "seed": "ast-whole3-census-20261016/mastodon/concrete_nil",
+          "population": 247,
+          "sample": 30,
+          "verdicts": {
+            "UNSOUND": 16,
+            "SOUND": 12,
+            "INHERITED_UNSOUND": 2
+          },
+          "loss_rate": 0.5333333333333333,
+          "finite_population_95_count": [
+            88,
+            174
+          ],
+          "selected_ids": [
+            "M1224",
+            "M1255",
+            "M1289",
+            "M1293",
+            "M1299",
+            "M1332",
+            "M1360",
+            "M1361",
+            "M1683",
+            "M1904",
+            "M2047",
+            "M2050",
+            "M2148",
+            "M2150",
+            "M2152",
+            "M2307",
+            "M2329",
+            "M246",
+            "M2564",
+            "M2643",
+            "M551",
+            "M553",
+            "M664",
+            "M675",
+            "M703",
+            "M707",
+            "M745",
+            "M805",
+            "M895",
+            "M951"
+          ],
+          "families": {
+            "hash mutation propagation": 3,
+            "array mutation omitted": 9,
+            "array mutation propagation": 2,
+            "hash mutation omitted": 1,
+            "receiver route omitted": 1
+          },
+          "matches": true
+        },
+        "unknown": {
+          "seed": "ast-whole3-census-20261016/mastodon/unknown",
+          "population": 2627,
+          "sample": 10,
+          "verdicts": {
+            "SOUND": 6,
+            "UNSOUND": 4
+          },
+          "loss_rate": 0.4,
+          "finite_population_95_count": [
+            321,
+            1936
+          ],
+          "selected_ids": [
+            "M080",
+            "M1100",
+            "M1172",
+            "M1592",
+            "M1790",
+            "M2013",
+            "M2355",
+            "M2618",
+            "M355",
+            "M586"
+          ],
+          "families": {
+            "hash mutation propagation": 1,
+            "keyword writer omitted": 1,
+            "hash merge result omitted": 1,
+            "request conversion omitted": 1
+          },
+          "matches": true
+        }
+      },
+      "sample_families": {
+        "hash mutation propagation": 4,
+        "keyword writer omitted": 1,
+        "array mutation omitted": 9,
+        "array mutation propagation": 2,
+        "hash merge result omitted": 1,
+        "hash mutation omitted": 1,
+        "request conversion omitted": 1,
+        "receiver route omitted": 1
+      },
+      "broad_families": {
+        "array": 11,
+        "hash": 6,
+        "missing_callers_writers": 3
+      }
+    },
+    "forem": {
+      "narrowed": 734,
+      "reason_counts": {
+        "raw Var": 569,
+        "concrete": 93,
+        "nil": 2,
+        "Unresolved": 85
+      },
+      "strata": {
+        "concrete_nil": {
+          "seed": "ast-whole3-census-20261016/forem/concrete_nil",
+          "population": 95,
+          "sample": 30,
+          "verdicts": {
+            "SOUND": 15,
+            "UNSOUND": 11,
+            "INHERITED_UNSOUND": 4
+          },
+          "loss_rate": 0.36666666666666664,
+          "finite_population_95_count": [
+            22,
+            50
+          ],
+          "selected_ids": [
+            "F004",
+            "F008",
+            "F061",
+            "F067",
+            "F127",
+            "F137",
+            "F140",
+            "F148",
+            "F180",
+            "F182",
+            "F183",
+            "F218",
+            "F224",
+            "F226",
+            "F228",
+            "F240",
+            "F272",
+            "F282",
+            "F283",
+            "F285",
+            "F287",
+            "F553",
+            "F556",
+            "F557",
+            "F558",
+            "F560",
+            "F589",
+            "F590",
+            "F592",
+            "F634"
+          ],
+          "families": {
+            "array mutation omitted": 7,
+            "loop mutation omitted": 1,
+            "array mutation propagation": 2,
+            "hash mutation omitted": 1
+          },
+          "matches": true
+        },
+        "unknown": {
+          "seed": "ast-whole3-census-20261016/forem/unknown",
+          "population": 639,
+          "sample": 10,
+          "verdicts": {
+            "UNSOUND": 2,
+            "SOUND": 8
+          },
+          "loss_rate": 0.2,
+          "finite_population_95_count": [
+            17,
+            353
+          ],
+          "selected_ids": [
+            "F002",
+            "F021",
+            "F219",
+            "F243",
+            "F257",
+            "F299",
+            "F315",
+            "F496",
+            "F693",
+            "F705"
+          ],
+          "families": {
+            "array mutation propagation": 1,
+            "hash mutation omitted": 1
+          },
+          "matches": true
+        }
+      },
+      "sample_families": {
+        "array mutation propagation": 3,
+        "array mutation omitted": 7,
+        "loop mutation omitted": 1,
+        "hash mutation omitted": 2
+      },
+      "broad_families": {
+        "array": 11,
+        "hash": 2,
+        "missing_callers_writers": 0
+      }
+    }
+  },
+  "input_sha256": {
+    "rows.tsv": "b39bdb46b46d2c37ba0e6d9546a49e7f45c102aaa902477a14cb5e4a7259167b",
+    "summary.json": "502eed750689c1833257edb4b46e2acb6cd05fe6840e101b765dd67cdae9dd03"
+  },
+  "rows": 6233,
+  "sampled_rows": 135,
+  "sample_verdicts": {
+    "SOUND": 75,
+    "UNSOUND": 54,
+    "INHERITED_UNSOUND": 6
+  },
+  "targeted_outside_sample": [
+    "C1431",
+    "C1432"
+  ],
+  "unadjudicated": 6096,
+  "passed": true
+}

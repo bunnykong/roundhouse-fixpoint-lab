@@ -1,0 +1,255 @@
+{
+  "app": "campfire",
+  "artifacts": {
+    "census.jsonl": {
+      "bytes": 3406302,
+      "sha256": "3c1baadeaa7fae8fc68b5a83b2f78de6ab5cf8d70d232d8391b00391abdbbbbc"
+    },
+    "contributor-values.jsonl": {
+      "bytes": 31724759,
+      "sha256": "f0d3a88b5d42c6992b400bf710ff1f45a68e75d784f616c44a40da34550561ef"
+    },
+    "launch.json": {
+      "bytes": 5782,
+      "sha256": "ae404cad0c2f1024f52640fea8b74ee96ae95bfadc8c611f3a85c396ea612e9e"
+    },
+    "launcher.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "metrics.json": {
+      "bytes": 256,
+      "sha256": "82157ebd03f9837eef7531d867cc0d6d3bc60025377a1ed6744b294c3d8131ce"
+    },
+    "reason-rows.json": {
+      "bytes": 2827912,
+      "sha256": "caf66a3d040a9b7a6373612c115af6e6fdce3788901cadfa91ae4836a69352a2"
+    },
+    "report.json": {
+      "bytes": 3078,
+      "sha256": "22f4dddf86d360bddfd63c055fa4c0520195d5399a6c1682d759081600715c6a"
+    },
+    "request.json": {
+      "bytes": 2220,
+      "sha256": "d6c9c03822966f7492c04ca0dc83eeb46e1825e6c3cd9604f16893aa8c92fa79"
+    },
+    "schedule-row-views.json": {
+      "bytes": 14416,
+      "sha256": "a0a7c30494d1411b95bbee3d8a57331e0f6c66c2017a656a8fbda35a17d3e9e9"
+    },
+    "stderr.log": {
+      "bytes": 4493669,
+      "sha256": "87ce22101d232db0cfec15aba59c0fb892a7feceaab00913156d852ecc90f195"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "binary": "$WORKSPACE/$EXPERIMENT/bin-quick/roundhouse-f9a7e620",
+  "cache_key": "39c0ba0c54998d9a8bdddbd5b6672f41b31034c4e6eae57206a164e21f8c6bfd",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/39/39c0ba0c54998d9a8bdddbd5b6672f41b31034c4e6eae57206a164e21f8c6bfd/attempts/20261016T175204-f74830a2f8",
+  "ended_utc": "2026-10-16T17:52:18.169411+00:00",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_CANONICAL_UNKNOWN": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_COMPLETE_RERUN": "1",
+    "RH_CONTRIBUTOR_VALUES": "1",
+    "RH_CURRENT_CALL_ROWS": "1",
+    "RH_CUR_HK": "1",
+    "RH_CUR_REFRET": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/declarations.jsonl",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_HWIA_ROUTES": "1",
+    "RH_OWN_RETURNS": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PARAMETER_VIEWS": "1",
+    "RH_PENDING_INPUT_SEEDS": "1",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_PROVENANCE_CONGRUENT": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_PROVENANCE_STRICT_STUBS": "1",
+    "RH_PROVENANCE_STRICT_XFER": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/census.jsonl",
+    "RH_REPLAY_CAP": "24",
+    "RH_REPLAY_CLOSED_READS": "1",
+    "RH_REPLAY_TRACE": "1",
+    "RH_RESPONSE_RETURNS": "1",
+    "RH_ROUTE_STRICT": "1",
+    "RH_ROUTE_TOP": "1",
+    "RH_SCHED": "sccq",
+    "RH_SITE_RETRACT": "1",
+    "RH_SKIP_RETURN_STABILIZE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RH_STRICT_STUB_COMPLETE": "1",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/structure.jsonl",
+    "RH_UNK_AT_SOURCE": "1",
+    "RH_VIEW_KEEP": "known",
+    "RH_WRITERS": "1"
+  },
+  "input": "examples/apps/campfire",
+  "input_pin": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+  "input_tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+  "key": {
+    "binary_sha256": "a1dd6897acf9daa2219e4464050b41fa61b26c336478af8b205d22d51a9a401f",
+    "input_manifest_sha256": "6d3f25566a39cba69b5f9645524e13a055758fcbe1a44ab5244ff5d251d96f18",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_CANONICAL_UNKNOWN": "1",
+      "RH_CLOSURE_APPLY": "1",
+      "RH_CLOSURE_SITES": "1",
+      "RH_COMPLETE_RERUN": "1",
+      "RH_CONTRIBUTOR_VALUES": "1",
+      "RH_CURRENT_CALL_ROWS": "1",
+      "RH_CUR_HK": "1",
+      "RH_CUR_REFRET": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/declarations.jsonl",
+      "RH_ERRGATE": "1",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_HWIA_ROUTES": "1",
+      "RH_OWN_RETURNS": "1",
+      "RH_PARAMETER_REASON_CONSERVE": "1",
+      "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+      "RH_PARAMETER_VIEWS": "1",
+      "RH_PENDING_INPUT_SEEDS": "1",
+      "RH_PRECISION_CENSUS": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_PROVENANCE_CONGRUENT": "1",
+      "RH_PROVENANCE_LIFT": "1",
+      "RH_PROVENANCE_PIDENT": "1",
+      "RH_PROVENANCE_READER_VIEW": "1",
+      "RH_PROVENANCE_STRICT_STUBS": "1",
+      "RH_PROVENANCE_STRICT_XFER": "1",
+      "RH_PUBLIC_INPUT": "1",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/census.jsonl",
+      "RH_REPLAY_CAP": "24",
+      "RH_REPLAY_CLOSED_READS": "1",
+      "RH_REPLAY_TRACE": "1",
+      "RH_RESPONSE_RETURNS": "1",
+      "RH_ROUTE_STRICT": "1",
+      "RH_ROUTE_TOP": "1",
+      "RH_SCHED": "sccq",
+      "RH_SITE_RETRACT": "1",
+      "RH_SKIP_RETURN_STABILIZE": "1",
+      "RH_SPLICED_WRITER_OWNERSHIP": "1",
+      "RH_STRICT_STUB_COMPLETE": "1",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/structure.jsonl",
+      "RH_UNK_AT_SOURCE": "1",
+      "RH_VIEW_KEEP": "known",
+      "RH_WRITERS": "1"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "repeat",
+    "schema": 1
+  },
+  "launcher_exit_code": 0,
+  "metrics": {
+    "cpu_seconds": 11.539354,
+    "cpu_system_seconds": 7.967124,
+    "cpu_user_seconds": 3.57223,
+    "ended_utc": "2026-10-16T17:52:18.142234+00:00",
+    "exit_code": 0,
+    "peak_rss_bytes": 397099008,
+    "timed_out": false,
+    "wall_seconds": 13.486780500039458
+  },
+  "observations": {
+    "diagnostics": {
+      "warning/gradual_untyped": 491,
+      "warning/missing_preload": 1,
+      "warning/unconsumed_initializer": 6
+    },
+    "exit_code": 0,
+    "law_violation_counts": null,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 11
+      },
+      "production": {
+        "end": "settled",
+        "round": 3
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 4
+      }
+    },
+    "reason_census": {
+      "bare_untyped": 6124,
+      "missing": 377,
+      "typed": 32543,
+      "untyped_anywhere": 7335,
+      "untyped_by_provenance": {
+        "gradual": 618,
+        "pending": 0,
+        "unresolved": 6733
+      }
+    },
+    "reason_rows": {
+      "count": 7335,
+      "file": "reason-rows.json",
+      "sha256": "caf66a3d040a9b7a6373612c115af6e6fdce3788901cadfa91ae4836a69352a2"
+    },
+    "successful_writes": null,
+    "value_digests": {
+      "attributes": "ff1a2c7ec4ed0303",
+      "block_values": "efcd139ef65573b6",
+      "constants": "4791140b9514d135",
+      "controller_bindings": "e52feec6bb6768a6",
+      "controller_cache": "e0dc8c95fd5b7d11",
+      "copies": "dde611b1c4e15a4d",
+      "ir": "d197b2c80a37247f",
+      "params": "25e301800b073d24",
+      "returns": "ba78d3aa573b5bad",
+      "side_table": "2c4d67b89ac2b595"
+    },
+    "verify": null
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "repeat-v0-a0",
+    "schedule": "repeat",
+    "verification": false
+  },
+  "started_utc": "2026-10-16T17:52:04.565967+00:00",
+  "tool_sha256": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c",
+  "total_seconds": 13.603299000067636,
+  "valid": true,
+  "wrapped_command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/6fa5b98c784317542c9a7371b92d4839d39e7389ad7eabbd402386be57391e15/request.json"
+  ]
+}
