@@ -1,0 +1,9 @@
+{
+  "condition": "history-free-current-values-20261016-four-apps",
+  "fact": 71,
+  "native_analyzers_during_publication": 0,
+  "public_rust_compiled": false,
+  "review": "WEAKENED",
+  "text": "On `history-free-current-values-20261016-four-apps`, current writer contributions make all ten Forem value tables schedule-equal (six before) across unset/1/2/repeat at V0A0 and V1A1. The candidate is unsound: audited unset-V0A0 rows lose CRuby 4.0.7 values—Campfire 1, Forem 6, Chatwoot 44, Mastodon 10. It combines parameter views, real unknowns kept, current call-site rows/site values, F70 stub completion and canonical unknown spelling. Campfire stays at ten equal tables; Chatwoot rises from five to six; Mastodon stays at five, with varying IR rows falling from 1,920 to 269. Two traced losses omit arguments when the receiver is unknown: preview transformation arrays and includes options. Routing follow-ups restore those two witnesses but leave another audited failure and bring back order dependence; this cause is not shown to dominate all losses. V0A0 disables verification/audit; V1A1 enables both. Many narrowings remain unaudited. Discourse was not run; soundness and order independence are not achieved together.",
+  "verdict": "Schedule equality improves; runtime admission fails. Exact narrowing identity, dominant cause and complete routing repair are rejected."
+}

@@ -1,0 +1,228 @@
+{
+  "app": "campfire",
+  "artifacts": {
+    "census.jsonl": {
+      "bytes": 2506114,
+      "sha256": "07e9bc6f42e58693176a676a679a8a021f86c03c9da17826e1202d64c9c7f3c5"
+    },
+    "contributor-values.jsonl": {
+      "bytes": 31338721,
+      "sha256": "33634002e16ccfff2accb48a298a90dc1ee8fc928347c7c3b0c9bdd78e5a71f4"
+    },
+    "launch.json": {
+      "bytes": 5002,
+      "sha256": "20ba119e611b81bff69e298f45a27f3a03a6eb2d059bc66e7d54e1c0e7ab94fc"
+    },
+    "launcher.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "metrics.json": {
+      "bytes": 255,
+      "sha256": "df8a27b74e4a07a7496dd745c96a2c2d1be5664d4f1affd20934a8b1b7cdb686"
+    },
+    "reason-rows.json": {
+      "bytes": 2075340,
+      "sha256": "43d81ca83d91bd91024858907a93490dcdf7ef31ad4dd27f0bf7cbecb1282930"
+    },
+    "report.json": {
+      "bytes": 5909,
+      "sha256": "c11c59e930e68d1bb6dea23448fc9ff2c75d93791ce815de7875fb6118ae1133"
+    },
+    "request.json": {
+      "bytes": 1845,
+      "sha256": "595a1929f010cf98d0e2b116cf1b712a28f6e18fbf9998b1896fd17c4bd9b100"
+    },
+    "schedule-row-views.json": {
+      "bytes": 10938,
+      "sha256": "11c8802325c1fe1b1da5462453d8def98b5bc7951736b2159e3a2c75fceea143"
+    },
+    "stderr.log": {
+      "bytes": 4441705,
+      "sha256": "824f098de6a79234e80a6abc4e74a0a826c6bd356c3633220dea5d7683260452"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "binary": "$WORKSPACE/$EXPERIMENT/bin-quick/roundhouse-09181f25",
+  "cache_key": "4ae306d6b11b205730ed629937c72dfaabc250e6826b1e304249ffb7543987cf",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/4a/4ae306d6b11b205730ed629937c72dfaabc250e6826b1e304249ffb7543987cf/attempts/20261016T084156-a7a3abc7a4",
+  "ended_utc": "2026-10-16T08:42:06.347182+00:00",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_CANONICAL_UNKNOWN": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_CONTRIBUTOR_VALUES": "1",
+    "RH_CURRENT_CALL_ROWS": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/declarations.jsonl",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PARAMETER_VIEWS": "1",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_PROVENANCE_CONGRUENT": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_PROVENANCE_STRICT_STUBS": "1",
+    "RH_PROVENANCE_STRICT_XFER": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/census.jsonl",
+    "RH_RESPONSE_RETURNS": "1",
+    "RH_SCHED": "sccq",
+    "RH_SKIP_RETURN_STABILIZE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RH_STRICT_STUB_COMPLETE": "1",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/structure.jsonl",
+    "RH_VIEW_KEEP": "known"
+  },
+  "input": "examples/apps/campfire",
+  "input_pin": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+  "input_tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+  "key": {
+    "binary_sha256": "39f3e3a48bb3ad268110486812ce3e31fbe6e45aeb522aa486d91393ef43a219",
+    "input_manifest_sha256": "6d3f25566a39cba69b5f9645524e13a055758fcbe1a44ab5244ff5d251d96f18",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_CANONICAL_UNKNOWN": "1",
+      "RH_CLOSURE_APPLY": "1",
+      "RH_CLOSURE_SITES": "1",
+      "RH_CONTRIBUTOR_VALUES": "1",
+      "RH_CURRENT_CALL_ROWS": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/declarations.jsonl",
+      "RH_ERRGATE": "1",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PARAMETER_REASON_CONSERVE": "1",
+      "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+      "RH_PARAMETER_VIEWS": "1",
+      "RH_PRECISION_CENSUS": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_PROVENANCE_CONGRUENT": "1",
+      "RH_PROVENANCE_LIFT": "1",
+      "RH_PROVENANCE_PIDENT": "1",
+      "RH_PROVENANCE_READER_VIEW": "1",
+      "RH_PROVENANCE_STRICT_STUBS": "1",
+      "RH_PROVENANCE_STRICT_XFER": "1",
+      "RH_PUBLIC_INPUT": "1",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/census.jsonl",
+      "RH_RESPONSE_RETURNS": "1",
+      "RH_SCHED": "sccq",
+      "RH_SKIP_RETURN_STABILIZE": "1",
+      "RH_SPLICED_WRITER_OWNERSHIP": "1",
+      "RH_STRICT_STUB_COMPLETE": "1",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/structure.jsonl",
+      "RH_VIEW_KEEP": "known"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "unset",
+    "schema": 1
+  },
+  "launcher_exit_code": 0,
+  "metrics": {
+    "cpu_seconds": 7.747989,
+    "cpu_system_seconds": 6.591453,
+    "cpu_user_seconds": 1.156536,
+    "ended_utc": "2026-10-16T08:42:06.338791+00:00",
+    "exit_code": 0,
+    "peak_rss_bytes": 192626688,
+    "timed_out": false,
+    "wall_seconds": 9.915039165993221
+  },
+  "observations": {
+    "diagnostics": {
+      "warning/gradual_untyped": 272,
+      "warning/missing_preload": 1,
+      "warning/unconsumed_initializer": 6,
+      "warning/unresolved_type": 139
+    },
+    "exit_code": 0,
+    "law_violation_counts": null,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 1
+      },
+      "production": {
+        "end": "settled",
+        "round": 3
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 4
+      }
+    },
+    "reason_census": {
+      "bare_untyped": 4302,
+      "missing": 377,
+      "typed": 32543,
+      "untyped_anywhere": 5369,
+      "untyped_by_provenance": {
+        "gradual": 647,
+        "pending": 0,
+        "unresolved": 4742
+      }
+    },
+    "reason_rows": {
+      "count": 5369,
+      "file": "reason-rows.json",
+      "sha256": "43d81ca83d91bd91024858907a93490dcdf7ef31ad4dd27f0bf7cbecb1282930"
+    },
+    "successful_writes": null,
+    "value_digests": {
+      "attributes": "ff1a2c7ec4ed0303",
+      "block_values": "efcd139ef65573b6",
+      "constants": "4791140b9514d135",
+      "controller_bindings": "274761f9c12890a8",
+      "controller_cache": "bbfe4a349a890ac5",
+      "copies": "dde611b1c4e15a4d",
+      "ir": "895353123e35c9eb",
+      "params": "4a1d9f58d7c32bda",
+      "returns": "42382715c2ec67cf",
+      "side_table": "f7cb9a126c3d8c42"
+    },
+    "verify": null
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "unset-v0-a0",
+    "schedule": "unset",
+    "verification": false
+  },
+  "started_utc": "2026-10-16T08:41:56.317279+00:00",
+  "tool_sha256": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c",
+  "total_seconds": 10.029808291001245,
+  "valid": true,
+  "wrapped_command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/0661fcda8e724b10d39e7adb0089d41501e63cb1cafa6a8a9ce8ee4a63b54a0d/request.json"
+  ]
+}

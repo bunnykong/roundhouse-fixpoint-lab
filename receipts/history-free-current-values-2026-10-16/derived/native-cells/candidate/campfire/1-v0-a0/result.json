@@ -1,0 +1,230 @@
+{
+  "app": "campfire",
+  "artifacts": {
+    "census.jsonl": {
+      "bytes": 2506114,
+      "sha256": "07e9bc6f42e58693176a676a679a8a021f86c03c9da17826e1202d64c9c7f3c5"
+    },
+    "contributor-values.jsonl": {
+      "bytes": 31338674,
+      "sha256": "b68b9ef45fabf3a88bc9bea2fe68139972708dfa264667d866764221bf94144c"
+    },
+    "launch.json": {
+      "bytes": 5038,
+      "sha256": "12837eddf59781f8e3518e4ae1ba0ccf102fae566c627db92e4231bedcfce8ac"
+    },
+    "launcher.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "metrics.json": {
+      "bytes": 256,
+      "sha256": "5bc0bda3acfa833ab54f85fe79b88303bec4695dd362dd1bcf585ccfb8fd1cfd"
+    },
+    "reason-rows.json": {
+      "bytes": 2075340,
+      "sha256": "43d81ca83d91bd91024858907a93490dcdf7ef31ad4dd27f0bf7cbecb1282930"
+    },
+    "report.json": {
+      "bytes": 5907,
+      "sha256": "2a3084a616a25cac5d25f4d2c4d4e0f28c584f3c7758145dc29c3958dbf01c84"
+    },
+    "request.json": {
+      "bytes": 1868,
+      "sha256": "6f068c0aea4a211d9eaceb6fbef69c595ead8e129fbccf889b406201f3aa9758"
+    },
+    "schedule-row-views.json": {
+      "bytes": 10938,
+      "sha256": "11c8802325c1fe1b1da5462453d8def98b5bc7951736b2159e3a2c75fceea143"
+    },
+    "stderr.log": {
+      "bytes": 4441695,
+      "sha256": "79c7d11817c46103d3cb002e7bed662e9136fef9b63f55dd64ea820ef5bba9b2"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "binary": "$WORKSPACE/$EXPERIMENT/bin-quick/roundhouse-09181f25",
+  "cache_key": "f4ce427bd3b73cac9d7ad36fa5c51588c7b3eeffdae8e630ce6d5d4742f512dc",
+  "condition": "cached-observers-20261015-source-rebuild",
+  "directory": "$WORKSPACE/phase2/observers/cache/objects/f4/f4ce427bd3b73cac9d7ad36fa5c51588c7b3eeffdae8e630ce6d5d4742f512dc/attempts/20261016T084156-cc7cc7149f",
+  "ended_utc": "2026-10-16T08:42:06.504671+00:00",
+  "inference_environment": {
+    "RH_BRK_ALLARMS": "1",
+    "RH_CANONICAL_UNKNOWN": "1",
+    "RH_CLOSURE_APPLY": "1",
+    "RH_CLOSURE_SITES": "1",
+    "RH_CONTRIBUTOR_VALUES": "1",
+    "RH_CURRENT_CALL_ROWS": "1",
+    "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/declarations.jsonl",
+    "RH_ERRGATE": "1",
+    "RH_FIXPOINT_DIGEST": "1",
+    "RH_FIXPOINT_STATS": "1",
+    "RH_FIXPOINT_VERIFY": "0",
+    "RH_FOLD": "1",
+    "RH_FOLD_JOIN": "1",
+    "RH_FOLD_SLOTS": "1",
+    "RH_FOLD_TAIL": "1",
+    "RH_PARAMETER_REASON_CONSERVE": "1",
+    "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+    "RH_PARAMETER_VIEWS": "1",
+    "RH_PRECISION_CENSUS": "1",
+    "RH_PROVENANCE_AUDIT": "0",
+    "RH_PROVENANCE_CONGRUENT": "1",
+    "RH_PROVENANCE_LIFT": "1",
+    "RH_PROVENANCE_PIDENT": "1",
+    "RH_PROVENANCE_READER_VIEW": "1",
+    "RH_PROVENANCE_STRICT_STUBS": "1",
+    "RH_PROVENANCE_STRICT_XFER": "1",
+    "RH_PUBLIC_INPUT": "1",
+    "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/census.jsonl",
+    "RH_RESPONSE_RETURNS": "1",
+    "RH_SCHED": "sccq",
+    "RH_SHUFFLE": "1",
+    "RH_SKIP_RETURN_STABILIZE": "1",
+    "RH_SPLICED_WRITER_OWNERSHIP": "1",
+    "RH_STRICT_STUB_COMPLETE": "1",
+    "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/structure.jsonl",
+    "RH_VIEW_KEEP": "known"
+  },
+  "input": "examples/apps/campfire",
+  "input_pin": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+  "input_tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08",
+  "key": {
+    "binary_sha256": "39f3e3a48bb3ad268110486812ce3e31fbe6e45aeb522aa486d91393ef43a219",
+    "input_manifest_sha256": "6d3f25566a39cba69b5f9645524e13a055758fcbe1a44ab5244ff5d251d96f18",
+    "rh_flags": {
+      "RH_BRK_ALLARMS": "1",
+      "RH_CANONICAL_UNKNOWN": "1",
+      "RH_CLOSURE_APPLY": "1",
+      "RH_CLOSURE_SITES": "1",
+      "RH_CONTRIBUTOR_VALUES": "1",
+      "RH_CURRENT_CALL_ROWS": "1",
+      "RH_DECL_DUMP": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/declarations.jsonl",
+      "RH_ERRGATE": "1",
+      "RH_FIXPOINT_DIGEST": "1",
+      "RH_FIXPOINT_STATS": "1",
+      "RH_FIXPOINT_VERIFY": "0",
+      "RH_FOLD": "1",
+      "RH_FOLD_JOIN": "1",
+      "RH_FOLD_SLOTS": "1",
+      "RH_FOLD_TAIL": "1",
+      "RH_PARAMETER_REASON_CONSERVE": "1",
+      "RH_PARAMETER_STORAGE_NORMAL_FORM": "1",
+      "RH_PARAMETER_VIEWS": "1",
+      "RH_PRECISION_CENSUS": "1",
+      "RH_PROVENANCE_AUDIT": "0",
+      "RH_PROVENANCE_CONGRUENT": "1",
+      "RH_PROVENANCE_LIFT": "1",
+      "RH_PROVENANCE_PIDENT": "1",
+      "RH_PROVENANCE_READER_VIEW": "1",
+      "RH_PROVENANCE_STRICT_STUBS": "1",
+      "RH_PROVENANCE_STRICT_XFER": "1",
+      "RH_PUBLIC_INPUT": "1",
+      "RH_REASON_SITE_CENSUS": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/census.jsonl",
+      "RH_RESPONSE_RETURNS": "1",
+      "RH_SCHED": "sccq",
+      "RH_SHUFFLE": "1",
+      "RH_SKIP_RETURN_STABILIZE": "1",
+      "RH_SPLICED_WRITER_OWNERSHIP": "1",
+      "RH_STRICT_STUB_COMPLETE": "1",
+      "RH_STRUCT_DUMP": "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/structure.jsonl",
+      "RH_VIEW_KEEP": "known"
+    },
+    "runtime": {
+      "platform": "darwin",
+      "ruby_sha256": "b13e04d6ebd51e92059e0e6325d2e1eb492814de4ad253804e9a34ee8a14d09c",
+      "ruby_version": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]"
+    },
+    "schedule": "1",
+    "schema": 1
+  },
+  "launcher_exit_code": 0,
+  "metrics": {
+    "cpu_seconds": 7.824358,
+    "cpu_system_seconds": 6.650043,
+    "cpu_user_seconds": 1.174315,
+    "ended_utc": "2026-10-16T08:42:06.485752+00:00",
+    "exit_code": 0,
+    "peak_rss_bytes": 194134016,
+    "timed_out": false,
+    "wall_seconds": 10.049360791919753
+  },
+  "observations": {
+    "diagnostics": {
+      "warning/gradual_untyped": 272,
+      "warning/missing_preload": 1,
+      "warning/unconsumed_initializer": 6,
+      "warning/unresolved_type": 139
+    },
+    "exit_code": 0,
+    "law_violation_counts": null,
+    "loops": {
+      "absorb": {
+        "end": "settled",
+        "round": 1
+      },
+      "production": {
+        "end": "settled",
+        "round": 3
+      },
+      "views_and_tests": {
+        "end": "settled",
+        "round": 4
+      }
+    },
+    "reason_census": {
+      "bare_untyped": 4302,
+      "missing": 377,
+      "typed": 32543,
+      "untyped_anywhere": 5369,
+      "untyped_by_provenance": {
+        "gradual": 647,
+        "pending": 0,
+        "unresolved": 4742
+      }
+    },
+    "reason_rows": {
+      "count": 5369,
+      "file": "reason-rows.json",
+      "sha256": "43d81ca83d91bd91024858907a93490dcdf7ef31ad4dd27f0bf7cbecb1282930"
+    },
+    "successful_writes": null,
+    "value_digests": {
+      "attributes": "ff1a2c7ec4ed0303",
+      "block_values": "efcd139ef65573b6",
+      "constants": "4791140b9514d135",
+      "controller_bindings": "274761f9c12890a8",
+      "controller_cache": "bbfe4a349a890ac5",
+      "copies": "dde611b1c4e15a4d",
+      "ir": "895353123e35c9eb",
+      "params": "4a1d9f58d7c32bda",
+      "returns": "42382715c2ec67cf",
+      "side_table": "f7cb9a126c3d8c42"
+    },
+    "verify": null
+  },
+  "schema": 1,
+  "setting": {
+    "audit": false,
+    "name": "1-v0-a0",
+    "schedule": "1",
+    "verification": false
+  },
+  "started_utc": "2026-10-16T08:41:56.318762+00:00",
+  "tool_sha256": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c",
+  "total_seconds": 10.18580862507224,
+  "valid": true,
+  "wrapped_command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--shared",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "_cell",
+    "$WORKSPACE/phase2/observers/cache/capture/910d5fce18e12eb35d4155523a52c97b51424438a67e29ba8189b2a09363adcb/request.json"
+  ]
+}

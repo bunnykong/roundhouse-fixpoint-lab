@@ -1,0 +1,91 @@
+{
+  "gems": {
+    "did_you_mean": {
+      "path": "$HOST_PATH",
+      "version": "2.0.0"
+    },
+    "digest": {
+      "path": "$HOST_PATH",
+      "version": "3.2.1"
+    },
+    "error_highlight": {
+      "path": "$HOST_PATH",
+      "version": "0.7.2"
+    },
+    "json": {
+      "path": "$HOST_PATH",
+      "version": "2.18.0"
+    },
+    "prism": {
+      "path": "$HOST_PATH",
+      "version": "1.8.1"
+    },
+    "syntax_suggest": {
+      "path": "$HOST_PATH",
+      "version": "2.0.3"
+    }
+  },
+  "observations": [
+    {
+      "ancestors": [
+        "Hash",
+        "JSON::Ext::Generator::GeneratorMethods::Hash",
+        "Enumerable",
+        "Object",
+        "JSON::Ext::Generator::GeneratorMethods::Object",
+        "Kernel",
+        "BasicObject"
+      ],
+      "boundary": "unchanged source argument; caller reachability in source-proofs.json",
+      "expression": "format: :webp, resize_to_limit: [ Message::THUMBNAIL_MAX_WIDTH, Message::THUMBNAIL_MAX_HEIGHT ]",
+      "inspect": "{format: :webp, resize_to_limit: [1200, 800]}",
+      "label": "attachment_presentation.rb:33:preview[0]",
+      "line": 33,
+      "rows": [
+        "A001"
+      ],
+      "ruby_class": "Hash",
+      "source": "examples/apps/campfire/app/helpers/messages/attachment_presentation.rb",
+      "type": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "elem": {
+                "kind": "int"
+              },
+              "kind": "array"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "sources": [
+    {
+      "constants": [
+        1200,
+        800
+      ],
+      "path": "examples/apps/campfire/app/models/message/attachment.rb",
+      "sha256": "e4b3b4276f304e98d2bec22287c8af4eb0383a67bbbac16809600413b4539904"
+    },
+    {
+      "argument": "format: :webp, resize_to_limit: [ Message::THUMBNAIL_MAX_WIDTH, Message::THUMBNAIL_MAX_HEIGHT ]",
+      "call": "message.attachment.preview(format: :webp, resize_to_limit: [ Message::THUMBNAIL_MAX_WIDTH, Message::THUMBNAIL_MAX_HEIGHT ])",
+      "end": 951,
+      "line": 33,
+      "path": "examples/apps/campfire/app/helpers/messages/attachment_presentation.rb",
+      "sha256": "7dc62251330052320c75db09fa8f5a81b8046e49d4d52a3282bc0779cab7ae9a",
+      "start": 856
+    }
+  ]
+}

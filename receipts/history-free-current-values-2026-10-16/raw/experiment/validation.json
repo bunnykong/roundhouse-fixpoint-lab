@@ -1,0 +1,302 @@
+{
+  "condition": "quick-probe-v1 / observers-v1-20261015 / unset,1,2,repeat V0A0",
+  "control": "spine3-control",
+  "prior_candidate": "qt-cand1-b4b3ae9f",
+  "candidate": "qt-canon-09181f25",
+  "overrides": {
+    "RH_S6_PARAM_VIEWS": "1",
+    "RH_VIEW_KEEP": "known",
+    "RH_ROW_CURRENT": "1",
+    "RH_S3D_COMPLETE": "1",
+    "RH_CANON_VAR": "1"
+  },
+  "apps": {
+    "campfire": {
+      "equal_tables": [
+        "attributes",
+        "block_values",
+        "constants",
+        "controller_bindings",
+        "controller_cache",
+        "copies",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "varying_rows_prior": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0,
+        "side_table": 0
+      },
+      "varying_rows_canon": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0,
+        "side_table": 0
+      },
+      "f61_prior": {
+        "incomparable": 0,
+        "missing": 18,
+        "narrowed": 1,
+        "unchanged": 45775,
+        "widened": 261
+      },
+      "f61_canon": {
+        "incomparable": 0,
+        "missing": 18,
+        "narrowed": 1,
+        "unchanged": 45775,
+        "widened": 261
+      },
+      "same_narrowing_identities": true,
+      "same_narrowing_type_kinds": true,
+      "same_diagnostics": {
+        "unset-v0-a0": true,
+        "1-v0-a0": true,
+        "2-v0-a0": true,
+        "repeat-v0-a0": true
+      },
+      "new_unclassified_reasons": {},
+      "direct_cand1_f61": {
+        "incomparable": 0,
+        "missing": 0,
+        "narrowed": 0,
+        "unchanged": 46049,
+        "widened": 0
+      }
+    },
+    "forem": {
+      "equal_tables": [
+        "attributes",
+        "block_values",
+        "constants",
+        "controller_bindings",
+        "controller_cache",
+        "copies",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "varying_rows_prior": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 6,
+        "params": 0,
+        "returns": 0,
+        "side_table": 0
+      },
+      "varying_rows_canon": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 0,
+        "params": 0,
+        "returns": 0,
+        "side_table": 0
+      },
+      "f61_prior": {
+        "incomparable": 27,
+        "missing": 53,
+        "narrowed": 105,
+        "unchanged": 227820,
+        "widened": 1210
+      },
+      "f61_canon": {
+        "incomparable": 27,
+        "missing": 59,
+        "narrowed": 105,
+        "unchanged": 227814,
+        "widened": 1210
+      },
+      "same_narrowing_identities": true,
+      "same_narrowing_type_kinds": true,
+      "same_diagnostics": {
+        "unset-v0-a0": true,
+        "1-v0-a0": true,
+        "2-v0-a0": true,
+        "repeat-v0-a0": true
+      },
+      "new_unclassified_reasons": {
+        "changed fingerprint has no serialized type": 6
+      },
+      "direct_cand1_f61": {
+        "incomparable": 0,
+        "missing": 19,
+        "narrowed": 0,
+        "unchanged": 229188,
+        "widened": 0
+      }
+    },
+    "chatwoot": {
+      "equal_tables": [
+        "attributes",
+        "block_values",
+        "constants",
+        "controller_bindings",
+        "controller_cache",
+        "copies"
+      ],
+      "varying_rows_prior": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 200,
+        "params": 25,
+        "returns": 28,
+        "side_table": 14
+      },
+      "varying_rows_canon": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 0,
+        "copies": 0,
+        "ir": 138,
+        "params": 17,
+        "returns": 24,
+        "side_table": 3
+      },
+      "f61_prior": {
+        "incomparable": 33,
+        "missing": 863,
+        "narrowed": 199,
+        "unchanged": 234955,
+        "widened": 9687
+      },
+      "f61_canon": {
+        "incomparable": 33,
+        "missing": 873,
+        "narrowed": 199,
+        "unchanged": 234945,
+        "widened": 9687
+      },
+      "same_narrowing_identities": true,
+      "same_narrowing_type_kinds": true,
+      "same_diagnostics": {
+        "unset-v0-a0": true,
+        "1-v0-a0": true,
+        "2-v0-a0": true,
+        "repeat-v0-a0": true
+      },
+      "new_unclassified_reasons": {
+        "changed fingerprint has no serialized type": 10
+      },
+      "direct_cand1_f61": {
+        "incomparable": 0,
+        "missing": 10,
+        "narrowed": 0,
+        "unchanged": 244972,
+        "widened": 0
+      }
+    },
+    "mastodon": {
+      "equal_tables": [
+        "attributes",
+        "block_values",
+        "constants",
+        "controller_bindings",
+        "copies"
+      ],
+      "varying_rows_prior": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 9,
+        "copies": 0,
+        "ir": 439,
+        "params": 74,
+        "returns": 101,
+        "side_table": 38
+      },
+      "varying_rows_canon": {
+        "attributes": 0,
+        "block_values": 0,
+        "constants": 0,
+        "controller_bindings": 0,
+        "controller_cache": 9,
+        "copies": 0,
+        "ir": 269,
+        "params": 41,
+        "returns": 90,
+        "side_table": 37
+      },
+      "f61_prior": {
+        "incomparable": 4,
+        "missing": 337,
+        "narrowed": 269,
+        "unchanged": 317540,
+        "widened": 6571
+      },
+      "f61_canon": {
+        "incomparable": 4,
+        "missing": 340,
+        "narrowed": 269,
+        "unchanged": 317537,
+        "widened": 6571
+      },
+      "same_narrowing_identities": true,
+      "same_narrowing_type_kinds": true,
+      "same_diagnostics": {
+        "unset-v0-a0": true,
+        "1-v0-a0": true,
+        "2-v0-a0": true,
+        "repeat-v0-a0": true
+      },
+      "new_unclassified_reasons": {
+        "changed fingerprint has no serialized type": 3
+      },
+      "direct_cand1_f61": {
+        "incomparable": 0,
+        "missing": 11,
+        "narrowed": 0,
+        "unchanged": 324516,
+        "widened": 0
+      }
+    }
+  },
+  "native-test": {
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  },
+  "cargo-test-lib": {
+    "passed": 1258,
+    "failed": 0,
+    "ignored": 37
+  },
+  "cargo-test-lib-canon": {
+    "passed": 1258,
+    "failed": 0,
+    "ignored": 37
+  },
+  "commit": "09181f25d8c7ac989277d5a4f928814810aae34d",
+  "author_email": "268838774+bunnykong@users.noreply.github.com",
+  "committer_email": "268838774+bunnykong@users.noreply.github.com"
+}

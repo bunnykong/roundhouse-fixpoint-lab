@@ -131,3 +131,7 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 
 [F70: strict stub completion](receipts/strict-stub-completion-2026-10-16/README.md).
 [Reusable quick-test checker](tools/probe/README.md).
+
+## October 16 history-free current values
+
+[F71: equality gains with runtime value loss](receipts/history-free-current-values-2026-10-16/README.md).

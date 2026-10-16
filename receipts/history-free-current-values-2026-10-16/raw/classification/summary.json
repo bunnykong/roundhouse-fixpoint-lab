@@ -1,0 +1,144 @@
+{
+  "campfire": {
+    "total_narrowed": 1,
+    "verdicts": {
+      "UNSOUND": 1
+    },
+    "mandatory": {
+      "UNSOUND": 1
+    },
+    "random": {},
+    "concrete_nil": {
+      "UNSOUND": 1
+    },
+    "new_losses": 1,
+    "loss_verdicts": {
+      "UNSOUND": 1
+    },
+    "reason_combinations": {
+      "concrete": 1
+    },
+    "rules": {
+      "row-current + sites": 1
+    }
+  },
+  "forem": {
+    "total_narrowed": 105,
+    "verdicts": {
+      "REASON_ONLY": 68,
+      "SOUND": 31,
+      "UNSOUND": 6
+    },
+    "mandatory": {
+      "SOUND": 19,
+      "UNSOUND": 2
+    },
+    "random": {
+      "SOUND": 19,
+      "UNSOUND": 1
+    },
+    "concrete_nil": {
+      "UNSOUND": 1
+    },
+    "new_losses": 6,
+    "loss_verdicts": {
+      "REASON_ONLY": 68,
+      "SOUND": 31,
+      "UNSOUND": 6
+    },
+    "reason_combinations": {
+      "raw Var": 34,
+      "Unresolved": 67,
+      "concrete": 1,
+      "Unresolved,raw Var": 3
+    },
+    "rules": {
+      "row-current/sites (not isolated)": 5,
+      "keep": 1
+    }
+  },
+  "chatwoot": {
+    "total_narrowed": 202,
+    "verdicts": {
+      "SOUND": 14,
+      "UNSOUND": 45,
+      "REASON_ONLY": 143
+    },
+    "mandatory": {
+      "UNSOUND": 45,
+      "SOUND": 12
+    },
+    "random": {
+      "SOUND": 10
+    },
+    "concrete_nil": {
+      "UNSOUND": 45,
+      "SOUND": 2
+    },
+    "new_losses": 44,
+    "loss_verdicts": {
+      "SOUND": 15,
+      "UNSOUND": 44,
+      "REASON_ONLY": 143
+    },
+    "reason_combinations": {
+      "Gradual": 5,
+      "concrete,nil": 15,
+      "raw Var": 105,
+      "Unresolved": 34,
+      "Unresolved,raw Var": 11,
+      "Gradual,concrete": 2,
+      "concrete,nil,raw Var": 1,
+      "concrete": 24,
+      "concrete,raw Var": 1,
+      "nil": 1,
+      "Gradual,concrete,nil": 2,
+      "Gradual,concrete,raw Var": 1
+    },
+    "rules": {
+      "row-current/sites (not isolated)": 44,
+      "pre-existing": 1
+    }
+  },
+  "mastodon": {
+    "total_narrowed": 272,
+    "verdicts": {
+      "REASON_ONLY": 237,
+      "SOUND": 25,
+      "UNSOUND": 10
+    },
+    "mandatory": {
+      "SOUND": 25,
+      "UNSOUND": 10
+    },
+    "random": {
+      "SOUND": 9,
+      "UNSOUND": 1
+    },
+    "concrete_nil": {
+      "SOUND": 16,
+      "UNSOUND": 9
+    },
+    "new_losses": 10,
+    "loss_verdicts": {
+      "REASON_ONLY": 237,
+      "SOUND": 25,
+      "UNSOUND": 10
+    },
+    "reason_combinations": {
+      "raw Var": 123,
+      "Unresolved": 97,
+      "nil": 10,
+      "Gradual": 2,
+      "Unresolved,raw Var": 25,
+      "concrete": 10,
+      "nil,raw Var": 3,
+      "Unresolved,concrete": 1,
+      "Gradual,concrete": 1
+    },
+    "rules": {
+      "row-current/sites (not isolated)": 8,
+      "keep": 2
+    }
+  }
+}

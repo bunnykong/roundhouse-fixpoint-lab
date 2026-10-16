@@ -1,0 +1,50 @@
+{
+  "checker_condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "compiler": {
+    "base": "e6e974a63707363f725df032ceb8b3500539df84",
+    "branch": "history-free-current-values",
+    "commit": "4a80f31d27c624039a58e81f275fdc8664d21c93",
+    "recorded_base": "de7589e46891a4b21e4b9ace345108e372297f0d",
+    "recorded_source": "09181f25d8c7ac989277d5a4f928814810aae34d",
+    "repository": "https://github.com/bunnykong/roundhouse"
+  },
+  "corpus_base": "70217cddd6cc68f1a79c33f3424ca06d0e75b7c1",
+  "lab_base": "7a70d6c0cab671c9fe3a4bb956708c6bb343bf92",
+  "measured_binary_sha256": "39f3e3a48bb3ad268110486812ce3e31fbe6e45aeb522aa486d91393ef43a219",
+  "public_inputs": {
+    "campfire": {
+      "commit": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "path": "corpus/apps/campfire",
+      "repository_url": "https://github.com/basecamp/once-campfire.git",
+      "tree_sha256": "ea7fbe9177156869b49b8c15c43aabcb3f95be82948c7fa733abe552b157ee08"
+    },
+    "chatwoot": {
+      "commit": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "path": "corpus/apps/chatwoot",
+      "repository_url": "https://github.com/chatwoot/chatwoot.git",
+      "tree_sha256": "51b07c3b42d4ce7a2b35812ffb50270908a7017d22782aaf697447627e5e4007"
+    },
+    "discourse": {
+      "commit": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "max_parallel": 1,
+      "path": "corpus/apps/discourse",
+      "repository_url": "https://github.com/discourse/discourse.git",
+      "tree_sha256": "a567febb961d9a95967c0168a0dfc6a202562a64afd292632670369999ab7e07"
+    },
+    "forem": {
+      "commit": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "path": "corpus/apps/forem",
+      "repository_url": "https://github.com/forem/forem.git",
+      "tree_sha256": "3f8b0a29aa2c2739ba355d15f82e4551d1c9fcfb1316d5e71bd601293fec152b"
+    },
+    "mastodon": {
+      "commit": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "path": "corpus/apps/mastodon",
+      "repository_url": "https://github.com/mastodon/mastodon.git",
+      "tree_sha256": "56bbdec49cd7824261cb6b897004b59c45049652ec4f292b2fed08fc4a2f59c7"
+    }
+  },
+  "ruby_app": "4.0.7",
+  "ruby_library": "3.4.4",
+  "rust": "1.98.1"
+}

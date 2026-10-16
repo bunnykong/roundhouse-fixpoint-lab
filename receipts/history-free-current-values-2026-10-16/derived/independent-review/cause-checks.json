@@ -1,0 +1,180 @@
+{
+  "apps": {
+    "campfire": {
+      "all_ten_digests_match_canon": true,
+      "lost_call_span": [
+        79,
+        829,
+        952
+      ],
+      "receiver_states": {
+        "Some(Untyped { why: Unresolved })": 4,
+        "Some(Var { var: TyVar(0) })": 2
+      },
+      "retained_arguments": [
+        "[Hash { key: Sym, value: Union { variants: Shared([Sym, Array { elem: Int }]) } }]"
+      ],
+      "routed_writer_spans": [
+        {
+          "args": [
+            "[Hash { key: Sym, value: Sym }]"
+          ],
+          "span": [
+            "13",
+            "737",
+            "770"
+          ]
+        },
+        {
+          "args": [
+            "[Hash { key: Sym, value: Sym }]"
+          ],
+          "span": [
+            "306",
+            "490",
+            "538"
+          ]
+        }
+      ],
+      "standard_observation_differences": {},
+      "trace_binary": "$WORKSPACE/$CAUSE/bin-quick/roundhouse-09181f25-d4a1118",
+      "trace_binary_sha256": "63893507de648aba98efee942e11841d03550f2173bc7beeb75fe6101831f1cd",
+      "trace_capture": "$WORKSPACE/phase2/observers/cache/objects/5d/5df3c12a89c977b2436425d7368120fe07f73ba5761a0cc5e9998e1bd7403065/attempts/20261016T091721-54f8c956fe",
+      "trace_file": "$WORKSPACE/$CAUSE/campfire-cause-trace.txt",
+      "trace_sha256": "1d45a8c02aa162ca29a151ad7c193ff367dd9738e58b40403257d7e2425c902a"
+    },
+    "forem": {
+      "all_ten_digests_match_canon": true,
+      "lost_call_span": [
+        19,
+        3430,
+        3493
+      ],
+      "receiver_states": {
+        "Some(Untyped { why: Unresolved })": 1,
+        "Some(Var { var: TyVar(0) })": 1
+      },
+      "retained_arguments": [
+        "[Hash { key: Sym, value: Array { elem: Sym } }]"
+      ],
+      "routed_writer_spans": [
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "753",
+            "186",
+            "278"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "753",
+            "186",
+            "232"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "753",
+            "531",
+            "623"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "753",
+            "531",
+            "577"
+          ]
+        },
+        {
+          "args": [
+            "[Hash { key: Sym, value: Sym }]"
+          ],
+          "span": [
+            "807",
+            "477",
+            "533"
+          ]
+        },
+        {
+          "args": [
+            "[Hash { key: Sym, value: Sym }]"
+          ],
+          "span": [
+            "829",
+            "1441",
+            "1473"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "897",
+            "11117",
+            "11222"
+          ]
+        },
+        {
+          "args": [
+            "[Sym, Sym]"
+          ],
+          "span": [
+            "19",
+            "3317",
+            "3346"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "311",
+            "465",
+            "488"
+          ]
+        },
+        {
+          "args": [
+            "[Sym]"
+          ],
+          "span": [
+            "423",
+            "1488",
+            "1522"
+          ]
+        }
+      ],
+      "standard_observation_differences": {},
+      "trace_binary": "$WORKSPACE/$CAUSE/bin-quick/roundhouse-09181f25-d4a1118",
+      "trace_binary_sha256": "63893507de648aba98efee942e11841d03550f2173bc7beeb75fe6101831f1cd",
+      "trace_capture": "$WORKSPACE/phase2/observers/cache/objects/d3/d3e00088d21e85d5ed4255603623a3632d449019702992aaadcb59f929a7ac3c/attempts/20261016T091724-aa89bd4e0b",
+      "trace_file": "$WORKSPACE/$CAUSE/forem-cause-trace.txt",
+      "trace_sha256": "6a59a0e9e5dea7be2d1cbc476afa576d242c4c23bddad453ea27bd8289a7c434"
+    }
+  },
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "setting": "unset-v0-a0",
+  "source_hashes": {
+    "$WORKSPACE/$CAUSE/CAUSE.md": "d28e069ec05ee1d4aa3165bd46c75365cf991211fac452298dd1b5e88a8bdbf0",
+    "$WORKSPACE/$CAUSE/repo/src/analyze/mod.rs": "f3878e857f0bdf921faba2c88f9ea1f3e9ef72d001b5421a24b3b9b46f468e53",
+    "$WORKSPACE/$CAUSE/repo/src/analyze/writers.rs": "d535f892a09e9a6432607e0af1344b60675b3903b6cac5b152db94967843ecd1",
+    "$WORKSPACE/$EXPERIMENT/repo/src/analyze/canonical_unknown.rs": "9889937fa7d7e4886e1d523f48bd1cefb2ac2acd1d6317735224c3538d0c58e6",
+    "$WORKSPACE/$EXPERIMENT/repo/src/analyze/fold.rs": "aa0bce6a7dfaefaee1866e35481757e8dcc1eba8a22fc72d086dc7fd384827cd",
+    "$WORKSPACE/$EXPERIMENT/repo/src/analyze/mod.rs": "6c08f83628092c0641884a362fa87b2d57b6be9b1ca0ca1253bd02edae938fb5"
+  }
+}
