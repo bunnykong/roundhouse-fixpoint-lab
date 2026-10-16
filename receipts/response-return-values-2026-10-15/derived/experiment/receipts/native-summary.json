@@ -1,0 +1,110 @@
+{
+  "condition": "response-return-values-20261015-stabilization-off",
+  "emission": {
+    "binary_sha256": {
+      "off": "8772885266ecc4039707c5fc964842336410661f5cbc74f85cee863b0cb020cd",
+      "on": "8772885266ecc4039707c5fc964842336410661f5cbc74f85cee863b0cb020cd"
+    },
+    "identical_pairs": 128,
+    "pairs": 156,
+    "variants": {
+      "off": {},
+      "on": {
+        "RH_RESPONSE_RETURNS": "1"
+      }
+    },
+    "void_positive_controls": 13
+  },
+  "observer": "native defaults; ambient research flags cleared; response flag only",
+  "suite": {
+    "inventory_tests": 6266,
+    "new_failures": [
+      "analyze::if_branches_union_merge"
+    ],
+    "resolved_failures": [],
+    "selection": {
+      "excluded": {
+        "data_factory_constants": "pre-existing E0308 at tests/data_factory_constants.rs:94 on the untouched spine"
+      },
+      "selected_test_targets": 851,
+      "test_targets": 852
+    },
+    "variants": {
+      "off": {
+        "binaries": 860,
+        "complete": true,
+        "completed": true,
+        "exit_code": 101,
+        "failed": [
+          "emit_and_run::a_variant_is_processed_once_its_record_exists_and_a_preview_resolves_its_name",
+          "emit_and_run::markly_flag_constants_resolve_and_render_through_the_real_gem",
+          "error_reporter_surface::native_rails_answers",
+          "fold_recursive_returns::the_cut_shapes_settle_by_reference_without_the_cut",
+          "graphql_ruby::a_belongs_to_is_proven_only_by_not_null_and_a_foreign_key",
+          "graphql_ruby::a_field_with_nothing_behind_it_is_a_dispatch_failure",
+          "graphql_ruby::a_mutation_resolves_with_its_arguments",
+          "graphql_ruby::a_non_null_field_on_a_nullable_column_warns",
+          "graphql_ruby::a_search_object_resolver_carries_its_scope",
+          "graphql_ruby::a_type_method_body_is_checked",
+          "graphql_ruby::field_arguments_type_the_method_parameters",
+          "graphql_ruby::the_object_type_flows_from_the_root",
+          "helper_param_inference::untyped_view_args_are_no_evidence_not_absorption",
+          "inference_on_spinel_blog_runtime::untyped_subexpressions_baseline",
+          "param_rows_by_side::recursive_methods_of_one_name_keep_separate_parameter_slots",
+          "rh_verify::local_verify_cli_preserves_plans_failures_and_scope",
+          "rich_text_embeds_runs::an_embedded_blob_renders_through_the_apps_blob_partial",
+          "source_file_path::an_active_record_model_body_is_anchored_too",
+          "source_file_path::native_ruby_answers_from_another_cwd",
+          "test_module_source_typing::forwarded_keyword_hash_does_not_replace_positional_or_named_observations",
+          "test_paths::configured_symlink_root_is_rejected",
+          "test_paths::filesystem_and_map_vfs_select_the_same_configured_tests",
+          "vips_loader_policy::find_load_hides_blocked_loaders_on_emitted_ruby",
+          "workflow_yaml_parses::shared_debug_roundhouse_reaches_campfire_consumers_via_roundhouse_bin"
+        ],
+        "ignored": 358,
+        "passed": 5884,
+        "problems": [],
+        "research_flags": {}
+      },
+      "on": {
+        "binaries": 860,
+        "complete": true,
+        "completed": true,
+        "exit_code": 101,
+        "failed": [
+          "analyze::if_branches_union_merge",
+          "emit_and_run::a_variant_is_processed_once_its_record_exists_and_a_preview_resolves_its_name",
+          "emit_and_run::markly_flag_constants_resolve_and_render_through_the_real_gem",
+          "error_reporter_surface::native_rails_answers",
+          "fold_recursive_returns::the_cut_shapes_settle_by_reference_without_the_cut",
+          "graphql_ruby::a_belongs_to_is_proven_only_by_not_null_and_a_foreign_key",
+          "graphql_ruby::a_field_with_nothing_behind_it_is_a_dispatch_failure",
+          "graphql_ruby::a_mutation_resolves_with_its_arguments",
+          "graphql_ruby::a_non_null_field_on_a_nullable_column_warns",
+          "graphql_ruby::a_search_object_resolver_carries_its_scope",
+          "graphql_ruby::a_type_method_body_is_checked",
+          "graphql_ruby::field_arguments_type_the_method_parameters",
+          "graphql_ruby::the_object_type_flows_from_the_root",
+          "helper_param_inference::untyped_view_args_are_no_evidence_not_absorption",
+          "inference_on_spinel_blog_runtime::untyped_subexpressions_baseline",
+          "param_rows_by_side::recursive_methods_of_one_name_keep_separate_parameter_slots",
+          "rh_verify::local_verify_cli_preserves_plans_failures_and_scope",
+          "rich_text_embeds_runs::an_embedded_blob_renders_through_the_apps_blob_partial",
+          "source_file_path::an_active_record_model_body_is_anchored_too",
+          "source_file_path::native_ruby_answers_from_another_cwd",
+          "test_module_source_typing::forwarded_keyword_hash_does_not_replace_positional_or_named_observations",
+          "test_paths::configured_symlink_root_is_rejected",
+          "test_paths::filesystem_and_map_vfs_select_the_same_configured_tests",
+          "vips_loader_policy::find_load_hides_blocked_loaders_on_emitted_ruby",
+          "workflow_yaml_parses::shared_debug_roundhouse_reaches_campfire_consumers_via_roundhouse_bin"
+        ],
+        "ignored": 358,
+        "passed": 5883,
+        "problems": [],
+        "research_flags": {
+          "RH_RESPONSE_RETURNS": "1"
+        }
+      }
+    }
+  }
+}

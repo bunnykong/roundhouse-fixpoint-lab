@@ -1,0 +1,147 @@
+{
+  "condition": "response-return-values-20261015-stabilization-on",
+  "rails": {
+    "forem": "6.1.4.1",
+    "mastodon": "8.1.3"
+  },
+  "rule": "Each listed key must be present in every required cell of the witness's variants; its resolved type must admit every listed Ruby class (untyped admits all; var and unresolved rec admit all in the primary reading). Keys are exact; no patterns.",
+  "witnesses": [
+    {
+      "app": "forem",
+      "basis": "recorded",
+      "classes": [
+        "String"
+      ],
+      "id": "F-spliced",
+      "keys": [
+        "ListingsController#create_draft",
+        "ListingsController#create_listing",
+        "ListingsController#first_publish",
+        "Api::V0::ListingsController#create_draft",
+        "Api::V0::ListingsController#create_listing",
+        "Api::V0::ListingsController#first_publish"
+      ],
+      "role": "render-family",
+      "source": "agents/ownership-runtime-values/receipts/runtime-witnesses-v3.json (12 observations, Rails 6.1.4.1 render and redirect_to bodies)"
+    },
+    {
+      "app": "forem",
+      "basis": "derived",
+      "classes": [
+        "String"
+      ],
+      "id": "F-process",
+      "keys": [
+        "ListingsController#process_after_unpublish",
+        "ListingsController#process_after_update",
+        "ListingsController#process_no_credit_left",
+        "ListingsController#process_successful_creation",
+        "ListingsController#process_successful_draft",
+        "ListingsController#process_unsuccessful_creation",
+        "ListingsController#process_unsuccessful_draft",
+        "ListingsController#process_unsuccessful_update",
+        "Api::V0::ListingsController#process_after_unpublish",
+        "Api::V0::ListingsController#process_after_update",
+        "Api::V0::ListingsController#process_no_credit_left",
+        "Api::V0::ListingsController#process_successful_creation",
+        "Api::V0::ListingsController#process_successful_draft",
+        "Api::V0::ListingsController#process_unsuccessful_creation",
+        "Api::V0::ListingsController#process_unsuccessful_draft"
+      ],
+      "role": "render-family",
+      "source": "each body's last expression is redirect_to or render (listings_controller.rb:100-141, api/v0/listings_controller.rb:61-89); Rails 6.1.4.1 returns String from both (examples/response-return-witnesses/witness/out-6.1.4.1.json)"
+    },
+    {
+      "app": "mastodon",
+      "basis": "recorded",
+      "classes": [
+        "String"
+      ],
+      "id": "M-suspension",
+      "keys": [
+        "AccountsController#permanent_unavailability_response",
+        "AccountsController#temporary_suspension_response",
+        "ActivityPub::BaseController#permanent_unavailability_response",
+        "ActivityPub::BaseController#temporary_suspension_response",
+        "ActivityPub::FeaturedCollectionsController#permanent_unavailability_response",
+        "ActivityPub::FeaturedCollectionsController#temporary_suspension_response",
+        "CollectionItemsController#permanent_unavailability_response",
+        "CollectionItemsController#temporary_suspension_response",
+        "CollectionsController#permanent_unavailability_response",
+        "CollectionsController#temporary_suspension_response",
+        "FollowerAccountsController#permanent_unavailability_response",
+        "FollowerAccountsController#temporary_suspension_response",
+        "FollowingAccountsController#permanent_unavailability_response",
+        "FollowingAccountsController#temporary_suspension_response",
+        "StatusesController#permanent_unavailability_response",
+        "StatusesController#temporary_suspension_response",
+        "WrapstodonController#permanent_unavailability_response",
+        "WrapstodonController#temporary_suspension_response",
+        "AccountControllerConcern#permanent_unavailability_response",
+        "AccountControllerConcern#temporary_suspension_response",
+        "AccountOwnedConcern#permanent_unavailability_response",
+        "AccountOwnedConcern#temporary_suspension_response"
+      ],
+      "role": "render-family",
+      "source": "runtime-witnesses-v3.json permanent_unavailability_response/html, temporary_suspension_response/html (Rails 8.1.3)"
+    },
+    {
+      "app": "mastodon",
+      "basis": "derived",
+      "classes": [
+        "String"
+      ],
+      "id": "M-errors",
+      "keys": [
+        "ApplicationController#bad_request",
+        "ApplicationController#forbidden",
+        "ApplicationController#gone",
+        "ApplicationController#not_found",
+        "ApplicationController#respond_with_error",
+        "ErrorResponses#bad_request",
+        "ErrorResponses#forbidden",
+        "ErrorResponses#gone",
+        "ErrorResponses#not_found",
+        "ErrorResponses#respond_with_error",
+        "Api::BaseController#respond_with_error"
+      ],
+      "role": "render-family",
+      "source": "error_responses.rb:24-67 (respond_with_error -> respond_to -> render), api/base_controller.rb:100 (render json); recorded path gone/forbidden -> respond_with_error returned String; Rails 8.1.3 respond_to and render return String (out-8.1.3.json)"
+    },
+    {
+      "app": "mastodon",
+      "basis": "derived",
+      "classes": [
+        "TrueClass"
+      ],
+      "id": "M-webfinger",
+      "keys": [
+        "WellKnown::WebfingerController#bad_request",
+        "WellKnown::WebfingerController#gone",
+        "WellKnown::WebfingerController#not_found"
+      ],
+      "role": "render-family",
+      "source": "well_known/webfinger_controller.rb:32-46 (head 410/400/404 last); Rails 8.1.3 head returns true (out-8.1.3.json)"
+    },
+    {
+      "app": "mastodon",
+      "basis": "recorded",
+      "classes_by_regex": {
+        "[A-Za-z0-9_:]+#log_action": [
+          "Admin::ActionLog"
+        ],
+        "[A-Za-z0-9_:]+#pundit_user": [
+          "NilClass",
+          "Account"
+        ]
+      },
+      "id": "M-customization",
+      "key_regex": [
+        "[A-Za-z0-9_:]+#log_action",
+        "[A-Za-z0-9_:]+#pundit_user"
+      ],
+      "role": "customization",
+      "source": "runtime-witnesses-v3.json log_action/create-contract, pundit_user/no-current-user, pundit_user/account"
+    }
+  ]
+}

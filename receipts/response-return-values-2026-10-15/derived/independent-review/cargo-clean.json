@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "clean",
+    "--manifest-path",
+    "$REVIEW/src/Cargo.toml",
+    "--target-dir",
+    "$REVIEW/target"
+  ],
+  "elapsed_seconds": 0.2794401249848306,
+  "exit_code": 0,
+  "remaining_target_files": 0
+}

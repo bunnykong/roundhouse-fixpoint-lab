@@ -1,0 +1,25 @@
+{
+ "condition": "s7-response-returns-v2-20261015-ea3ec744",
+ "utc": "2026-10-16T00:04:18.794021+00:00",
+ "kit_unchanged": true,
+ "manifest_sha256": "729180c8e72adc04582f90a968e8d0741b5eb75c9bc45f2f4a7ec11b95d3a4e0",
+ "archive_sha256": "f042247bce77ec6ecd98e3cc10434cf47407b6a1d7f4c91998be88b4d07122ff",
+ "retained_binary_sha256": "8772885266ecc4039707c5fc964842336410661f5cbc74f85cee863b0cb020cd",
+ "replays": {
+  "verdict-campfire/verdict.json": {
+   "json_equal": true,
+   "verdicts": {
+    "primary": "CONFIRMED"
+   }
+  },
+  "verdict/verdict.json": {
+   "json_equal": true,
+   "verdicts": {
+    "primary": "CONFIRMED",
+    "h5": "UNBLOCKED",
+    "discourse": "CONFIRMED"
+   }
+  }
+ },
+ "cargo_clean": "Removed 6726 files, 18.9GiB total"
+}

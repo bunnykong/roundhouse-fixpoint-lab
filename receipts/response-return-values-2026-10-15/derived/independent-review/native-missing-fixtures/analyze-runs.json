@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline",
+      "-j",
+      "4",
+      "--test",
+      "analyze",
+      "--no-fail-fast"
+    ],
+    "exit_code": 101,
+    "flags": {},
+    "seconds": 138.50577783293556,
+    "variant": "off"
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline",
+      "-j",
+      "4",
+      "--test",
+      "analyze",
+      "--no-fail-fast"
+    ],
+    "exit_code": 101,
+    "flags": {
+      "RH_RESPONSE_RETURNS": "1"
+    },
+    "seconds": 0.7411452919477597,
+    "variant": "on"
+  }
+]

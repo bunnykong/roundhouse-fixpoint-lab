@@ -110,3 +110,8 @@ negative storage laws and finite runtime counterexamples. The source snapshots r
 
 [F62: fixpoint spine](receipts/fixpoint-spine-2026-10-15/README.md) combines the measured repairs.
 Campfire reason rows agree; partition failures and larger-app value equalities remain.
+
+## October 16 response and return results
+
+[F63: response return values](receipts/response-return-values-2026-10-15/README.md) confirms its stabilization-off witnesses.
+[F64: latest writer returns](receipts/latest-writer-returns-2026-10-15/README.md) remains inconclusive with reproduced descents.

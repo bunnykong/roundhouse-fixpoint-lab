@@ -1,0 +1,322 @@
+{
+  "condition": "response-return-values-20261015-stabilization-off",
+  "inputs": [
+    {
+      "app": "campfire",
+      "current_manifest_matches_receipts": true,
+      "files": 733,
+      "pin": "90b330024dec3e757c79b6a7e6568f93da8e3148",
+      "tree_matches_configured_pin": true
+    },
+    {
+      "app": "chatwoot",
+      "current_manifest_matches_receipts": true,
+      "files": 9281,
+      "pin": "9f920b549c14491a4e587687a3eed5d21c6ccc7d",
+      "tree_matches_configured_pin": true
+    },
+    {
+      "app": "discourse",
+      "current_manifest_matches_receipts": true,
+      "files": 26331,
+      "pin": "343b20f97ef5f6bd70826ee0e993ba348b210fd5",
+      "tree_matches_configured_pin": true
+    },
+    {
+      "app": "forem",
+      "current_manifest_matches_receipts": true,
+      "files": 4785,
+      "pin": "cd665002c660cacfc6d267c5de81206cea7bf9a3",
+      "tree_matches_configured_pin": true
+    },
+    {
+      "app": "mastodon",
+      "current_manifest_matches_receipts": true,
+      "files": 9868,
+      "pin": "163f96cee4dea23365bff9b433871e68d20d9ee7",
+      "tree_matches_configured_pin": true
+    }
+  ],
+  "schedule_comparisons": [
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "T"
+    },
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "T"
+    },
+    {
+      "app": "campfire",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "T"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "diagnostics",
+        "loops",
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "diagnostics",
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "CA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "diagnostics",
+        "loops",
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "1-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "changed_fields": [
+        "diagnostics",
+        "reason_census",
+        "reason_rows",
+        "value_digests"
+      ],
+      "left": "unset-v0-a0",
+      "right": "2-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "TA"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "chatwoot",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "C"
+    },
+    {
+      "app": "forem",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "T"
+    },
+    {
+      "app": "chatwoot",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "T"
+    },
+    {
+      "app": "mastodon",
+      "changed_digests": [],
+      "changed_fields": [],
+      "left": "unset-v0-a0",
+      "right": "repeat-v0-a0",
+      "variant": "T"
+    }
+  ]
+}

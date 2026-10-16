@@ -1,0 +1,22 @@
+{
+ "condition": "s7-response-returns-20261015-ea3ec744",
+ "base": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+ "inventory_build_exit": 101,
+ "cause": "E0308 Option<Cow<[Ty]>> versus Option<&[Ty]> at data_factory_constants.rs:94",
+ "source_checks": [
+  {
+   "path": "tests/data_factory_constants.rs",
+   "identical_to_ea3ec744": true,
+   "sha256": "da8d02e538bc2d73cb9d73155179f3756d0c1d6e84827528da5ac4a63305e0b2"
+  },
+  {
+   "path": "src/analyze/mod.rs",
+   "identical_to_ea3ec744": true,
+   "sha256": "0c17e3e2ff4f5046488668f02d8c53cbf89e234759a7e719a04ad03fd3b442b8"
+  }
+ ],
+ "off_suite_ran": false,
+ "on_suite_ran": false,
+ "pristine_focused_check_exit": 101,
+ "pristine_log": "receipts/pristine-base-check.log"
+}

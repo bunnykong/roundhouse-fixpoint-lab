@@ -1,0 +1,60 @@
+{
+  "all_row_audit": {
+    "common_rows": 5370451,
+    "condition": "response-return-values-20261015-stabilization-off",
+    "hidden": [
+      {
+        "base": "C",
+        "cell": "discourse/unset-v0-a0",
+        "changes": {
+          "controller_cache:NIL_DROPPED": 242,
+          "controller_cache:WIDEN": 2
+        },
+        "treat": "T"
+      }
+    ],
+    "non_nil_losses": 0,
+    "pairs": 23,
+    "structural_rows": 0
+  },
+  "cargo_clean": {
+    "command": [
+      "python3",
+      "-B",
+      "$WORKSPACE/workshop/flock.py",
+      "$WORKSPACE/workshop/heavy.lock",
+      "cargo",
+      "clean",
+      "--manifest-path",
+      "$REVIEW/src/Cargo.toml",
+      "--target-dir",
+      "$REVIEW/target"
+    ],
+    "elapsed_seconds": 0.2794401249848306,
+    "exit_code": 0,
+    "remaining_target_files": 0
+  },
+  "cells_integrity_checked": 69,
+  "completed_utc": "2026-10-16T00:30:42.341777+00:00",
+  "condition": "response-return-values-20261015-stabilization-off",
+  "extra_fresh_comparisons": 4,
+  "fresh_sample_cells": 14,
+  "native_analyze": {
+    "off": {
+      "failed": 0,
+      "passed": 122
+    },
+    "on": {
+      "failed": 1,
+      "failure": "if_branches_union_merge",
+      "passed": 121
+    }
+  },
+  "recorded_verdicts": {
+    "discourse": "CONFIRMED",
+    "h5": "UNBLOCKED",
+    "primary": "CONFIRMED"
+  },
+  "report_sha256": "915a21449d7e37b564ac4ae5a06e50a22f64fe123f56aa18cb74191c3cd6813f",
+  "verdict": "UPHELD"
+}

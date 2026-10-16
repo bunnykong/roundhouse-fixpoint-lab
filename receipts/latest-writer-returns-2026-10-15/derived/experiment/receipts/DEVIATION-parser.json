@@ -1,0 +1,33 @@
+{
+  "frozen_scripts_unchanged": true,
+  "phase": "after C discovery, before manifest freeze/K",
+  "reason": "Unanchored whole-stderr error-identity regex has quadratic failure behavior on the 11,854,700-byte producer-audit JSON line. Selector interrupted with exit 130. Frozen collector has same adapter.",
+  "selection_proof": {
+    "1-v1-a1": {
+      "digest": "083ddfe28359e4f5ed69cfaec4eb291d0304803f952dbde4f4c2379c477de7c0",
+      "native_return_digest": "112cb7c069369199",
+      "receipt": "$EXPERIMENT/receipts/cache/objects/18/18abd9441b887aa6d2c52c4078e145d7c3766336771a3e2f2e32b431d40550a5/attempts/20261015T223025-25ff0a4130/result.json",
+      "rows": 8822
+    },
+    "2-v1-a1": {
+      "digest": "083ddfe28359e4f5ed69cfaec4eb291d0304803f952dbde4f4c2379c477de7c0",
+      "native_return_digest": "112cb7c069369199",
+      "receipt": "$EXPERIMENT/receipts/cache/objects/65/6512bc022ffd7ec412510f8bf1c8799b273a79f290cc4c7bb955365d68bff0e6/attempts/20261015T223030-368836e936/result.json",
+      "rows": 8822
+    },
+    "repeat-v1-a1": {
+      "digest": "083ddfe28359e4f5ed69cfaec4eb291d0304803f952dbde4f4c2379c477de7c0",
+      "native_return_digest": "112cb7c069369199",
+      "receipt": "$EXPERIMENT/receipts/cache/objects/5e/5e2fe8e9953ae70c5cc7b4f73cebe1b735e1785636cb2332dcd0900c6f28fbb7/attempts/20261015T223035-074f938d25/result.json",
+      "rows": 8822
+    },
+    "unset-v1-a1": {
+      "digest": "083ddfe28359e4f5ed69cfaec4eb291d0304803f952dbde4f4c2379c477de7c0",
+      "native_return_digest": "112cb7c069369199",
+      "receipt": "$EXPERIMENT/receipts/cache/objects/8f/8f2946bb5529faeb362ee64b0fef750e21b67f7443820c1e4f5e37f74ba670b7/attempts/20261015T223019-c4d6eec3d3/result.json",
+      "rows": 8822
+    }
+  },
+  "utc": "2026-10-15T22:34:06.421908+00:00",
+  "verdict_contract": "Any supplemental extractor was not frozen before C; checker_frozen_before_arms must be false for its evidence bundle. All other criteria retained."
+}

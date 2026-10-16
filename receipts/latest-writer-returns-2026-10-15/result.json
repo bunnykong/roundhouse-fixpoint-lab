@@ -1,0 +1,7 @@
+{
+  "condition": "latest-writer-returns-20261015-campfire",
+  "fact": 64,
+  "native_runs_during_publication": 0,
+  "text": "On condition `latest-writer-returns-20261015-campfire`, each declared writer gets one cell pre-declared Pending; updates replace its latest result and join through the storage normalizer. Campfire's #521 circular-configuration fixture and #964 case pass with the history stabilizer off. At unset order with verification and audit on, two fresh runs reproduce 14 descents each. The verdict remains inconclusive: a frozen collector stalled on an 11.8 MB audit line, and the replacement extractor was written after measurements began. Whole-registry coverage is also unfulfilled; larger apps were not run. Independent light review upholds this verdict.",
+  "verdict": "inconclusive"
+}
