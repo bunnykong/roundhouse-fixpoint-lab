@@ -1,0 +1,20 @@
+{
+  "candidate_commit": "4cd2f8f64da860213facecc89b45a31c5dd6b2e6",
+  "checker_commit": "94e1058d78c749c5c808f9e5d2b00895f04067be",
+  "commit_identity_receipt": "4cd2f8f64da860213facecc89b45a31c5dd6b2e6\t268838774+bunnykong@users.noreply.github.com\t268838774+bunnykong@users.noreply.github.com\tDefer premature producers until a fixpoint stratum boundary\n\nAdd independent provenance-preserving duplicate coalescing, complete ten-table component dumps, boundary replay, native producer witnesses, and per-stratum counters. The required 17 native processes pass. The default suite is queued on the shared suite lock; its completion follows this unscored source checkpoint as recorded in the builder receipts.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\u0000\n94e1058d78c749c5c808f9e5d2b00895f04067be\t268838774+bunnykong@users.noreply.github.com\t268838774+bunnykong@users.noreply.github.com\tCorrect deferral-protocol comparisons and complete-evidence gates before variants\n\nPreserve legal provenance coalescing, include varying rows, validate N invariants, enforce complete dumps and unavailable precedence, and regress all check probes.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n\u0000\n",
+  "external_observer_unchanged": true,
+  "frozen_scripts_unchanged": true,
+  "git_clean": true,
+  "kit_scripts_unchanged": true,
+  "patch_unchanged": true,
+  "sha256": {
+    "bin/roundhouse": "2020740201a133d648956498f2444064aeb756f398a2a6ce26b2d3719e68c60a",
+    "candidate.patch": "73af9f75fe72ab405e13c7b429655585a9ec396c276382437507011dd1c8d7ea",
+    "deferred_unresolved/SHA256SUMS": "756195c006148027e16b241c91996dd4f27a848cb88e9996e766ebe9df6b35e6",
+    "deferred_unresolved/native_hash.py": "a940276c7a56e22d7aff3f574ad262ac4a8dd3fea6d18fbbee7cd6f4000660cd",
+    "deferred_unresolved/row_model.py": "73ba87e99c8096d8f232f116e698425b74e4353a4ab16eb4b8a002a01adc4089",
+    "deferred_unresolved/verdict.py": "21af18016f612f6e58e5969234577d4e712e30c72ccd06554edb6ab468f746e0"
+  },
+  "source_matches_pre_candidate_freeze": true,
+  "utc": "2026-10-16T01:20:43.908066+00:00"
+}

@@ -1,0 +1,143 @@
+{
+  "app": "mastodon",
+  "by_span": [
+    {
+      "path": "1",
+      "probes": [
+        "added_tags"
+      ],
+      "span": [
+        558,
+        601
+      ],
+      "what": "added_tags = @current_tags - @previous_tags"
+    },
+    {
+      "path": "1/0",
+      "probes": [
+        "added_tags"
+      ],
+      "span": [
+        571,
+        601
+      ],
+      "what": "@current_tags - @previous_tags"
+    },
+    {
+      "path": "1/0/0",
+      "probes": [
+        "current_tags"
+      ],
+      "span": [
+        571,
+        584
+      ],
+      "what": "@current_tags"
+    },
+    {
+      "path": "2/0/0",
+      "probes": [
+        "added_tags"
+      ],
+      "span": [
+        614,
+        624
+      ],
+      "what": "added_tags"
+    },
+    {
+      "path": "2/2/0/1",
+      "probes": [
+        "where_kwargs"
+      ],
+      "span": [
+        667,
+        695
+      ],
+      "what": "tag_id: added_tags.map(&:id)"
+    },
+    {
+      "path": "2/2/0/1/1",
+      "probes": [
+        "ids"
+      ],
+      "span": [
+        675,
+        695
+      ],
+      "what": "added_tags.map(&:id)"
+    },
+    {
+      "path": "2/2/0/1/1/0",
+      "probes": [
+        "added_tags"
+      ],
+      "span": [
+        675,
+        685
+      ],
+      "what": "added_tags"
+    },
+    {
+      "path": "2/2/0/1/1/1",
+      "probes": [
+        "id_block"
+      ],
+      "span": [
+        691,
+        694
+      ],
+      "what": "&:id block"
+    },
+    {
+      "path": "2/2/0/1/1/1/0",
+      "probes": [
+        "id_value"
+      ],
+      "span": [
+        691,
+        694
+      ],
+      "what": ":id block value"
+    },
+    {
+      "path": "2/2/0/1/1/1/0/0",
+      "probes": [
+        "tag_elem"
+      ],
+      "span": [
+        691,
+        694
+      ],
+      "what": ":id block receiver"
+    },
+    {
+      "path": "3/0",
+      "probes": [
+        "removed_tags"
+      ],
+      "span": [
+        814,
+        844
+      ],
+      "what": "@previous_tags - @current_tags"
+    },
+    {
+      "path": "3/0/1",
+      "probes": [
+        "current_tags"
+      ],
+      "span": [
+        831,
+        844
+      ],
+      "what": "@current_tags"
+    }
+  ],
+  "declarations": [
+    "ProcessHashtagsService#update_featured_tags!"
+  ],
+  "note": "Spans are byte offsets in the pinned source; 'path' is the IR key's occurrence path after ':occurrence:0:'. The return value is not mapped: it depends on the stubbed find_each.",
+  "source": "app/services/process_hashtags_service.rb",
+  "witness": "featured_tags.json"
+}

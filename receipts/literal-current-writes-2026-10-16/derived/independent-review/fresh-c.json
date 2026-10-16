@@ -1,0 +1,37 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "chatwoot",
+    "--settings",
+    "unset-v1-a1",
+    "--flags",
+    "$LITERAL_PROTOCOL/card/profiles/c-on.json",
+    "--label",
+    "breaker-c",
+    "--cache-root",
+    "$REVIEW/receipts/cache",
+    "--jobs",
+    "1",
+    "--timeout",
+    "600",
+    "--fresh"
+  ],
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "elapsed_seconds": 63.33691708405968,
+  "exit_code": 0,
+  "log": "receipts/fresh-c.log",
+  "observer": {
+    "app": "chatwoot",
+    "audit": true,
+    "ownership": "on",
+    "schedule": "unset",
+    "verification": true
+  },
+  "started_utc": "2026-10-16T00:54:56.040132+00:00"
+}

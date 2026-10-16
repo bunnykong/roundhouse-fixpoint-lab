@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "$LITERAL_PROTOCOL/card",
+    "-p",
+    "test_verdict.py"
+  ],
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "elapsed_seconds": 2.1799640000099316,
+  "exit_code": 0,
+  "log": "receipts/verdict-tests.log",
+  "mode": "verdict machinery only",
+  "started_utc": "2026-10-16T00:54:28.020987+00:00"
+}

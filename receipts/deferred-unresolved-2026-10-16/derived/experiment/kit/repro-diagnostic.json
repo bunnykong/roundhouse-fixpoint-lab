@@ -1,0 +1,101 @@
+{
+  "KDSN_census": {
+    "descents": {
+      "arm_loss": 6,
+      "late_unresolved": 1,
+      "other": 1,
+      "placeholder_flip": 0,
+      "premature_unresolved": 1,
+      "reference_switch": 0,
+      "shape_refinement": 0
+    },
+    "events": [
+      "{\"current\": {\"args\": [], \"id\": \"Session\", \"kind\": \"class\"}, \"family\": \"other\", \"superseded\": {\"kind\": \"union\", \"variants\": [{\"args\": [], \"id\": \"User\", \"kind\": \"class\"}, {\"kind\": \"nil\"}]}, \"writer\": \"[\\\"Current\\\",\\\"session=\\\",true,\\\"<synthetic>\\\",1024,1056,\\\"Current\\\",\\\"Current\\\"]\"}",
+      "{\"current\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"family\": \"arm_loss\", \"superseded\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"writer\": \"[\\\"SetCurrentRequest\\\",\\\"default_url_options\\\",false,\\\"$EXPERIMENT/kit/campfire/app/controllers/concerns/set_current_request.rb\\\",170,250,\\\"ApplicationController\\\",\\\"ApplicationController\\\"]\"}",
+      "{\"current\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"family\": \"arm_loss\", \"superseded\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"writer\": \"[\\\"SetCurrentRequest\\\",\\\"default_url_options\\\",false,\\\"$EXPERIMENT/kit/campfire/app/controllers/concerns/set_current_request.rb\\\",170,250,\\\"ApplicationController\\\",\\\"SetCurrentRequest\\\"]\"}",
+      "{\"current\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"union\", \"variants\": [{\"args\": [], \"id\": \"User\", \"kind\": \"class\"}, {\"kind\": \"nil\"}]}]}, \"family\": \"arm_loss\", \"superseded\": {\"kind\": \"union\", \"variants\": [{\"args\": [], \"id\": \"User\", \"kind\": \"class\"}, {\"kind\": \"nil\"}]}, \"writer\": \"[\\\"Current\\\",\\\"session=\\\",false,\\\"$EXPERIMENT/kit/campfire/app/models/current.rb\\\",188,262,\\\"Current\\\",\\\"Current\\\"]\"}",
+      "{\"current\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}, \"family\": \"arm_loss\", \"superseded\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}, {\"kind\": \"untyped\", \"reasons\": [\"Unresolved\"]}]}, \"writer\": \"[\\\"RoomsHelper\\\",\\\"room_display_name\\\",false,\\\"$EXPERIMENT/kit/campfire/app/helpers/rooms_helper.rb\\\",1971,2106,\\\"RoomsHelper\\\",\\\"RoomsHelper\\\"]\"}",
+      "{\"current\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"str\"}, {\"kind\": \"var\"}]}}, \"family\": \"arm_loss\", \"superseded\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"int\"}, {\"kind\": \"str\"}]}}, \"writer\": \"[\\\"RoomsHelper\\\",\\\"composer_data_options\\\",false,\\\"$EXPERIMENT/kit/campfire/app/helpers/rooms_helper.rb\\\",2166,2396,\\\"RoomsHelper\\\",\\\"RoomsHelper\\\"]\"}",
+      "{\"current\": {\"kind\": \"untyped\", \"reasons\": [\"Unresolved\"]}, \"family\": \"late_unresolved\", \"superseded\": {\"args\": [], \"id\": \"Message\", \"kind\": \"class\"}, \"writer\": \"[\\\"MessageTest\\\",\\\"create_new_message_in\\\",false,\\\"$EXPERIMENT/kit/campfire/test/models/message_test.rb\\\",1445,1531,\\\"MessageTest\\\",\\\"MessageTest\\\"]\"}",
+      "{\"current\": {\"args\": [], \"id\": \"Message\", \"kind\": \"class\"}, \"family\": \"premature_unresolved\", \"superseded\": {\"kind\": \"untyped\", \"reasons\": [\"Unresolved\"]}, \"writer\": \"[\\\"MessageTest\\\",\\\"create_new_message_in\\\",false,\\\"$EXPERIMENT/kit/campfire/test/models/message_test.rb\\\",1445,1531,\\\"MessageTest\\\",\\\"MessageTest\\\"]\"}",
+      "{\"current\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}, \"family\": \"arm_loss\", \"superseded\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}, {\"kind\": \"untyped\", \"reasons\": [\"Unresolved\"]}, {\"kind\": \"var\"}]}, \"writer\": \"[\\\"RoomsHelper\\\",\\\"room_display_name\\\",false,\\\"$EXPERIMENT/kit/campfire/app/helpers/rooms_helper.rb\\\",1971,2106,\\\"RoomsHelper\\\",\\\"RoomsHelper\\\"]\"}"
+    ],
+    "n_events": 2,
+    "n_signatures": [
+      "{\"current\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"family\": \"arm_loss\", \"superseded\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"writer\": \"[\\\"SetCurrentRequest\\\",\\\"default_url_options\\\",false,\\\"$EXPERIMENT/kit/campfire/app/controllers/concerns/set_current_request.rb\\\",170,250,\\\"ApplicationController\\\",\\\"ApplicationController\\\"]\"}",
+      "{\"current\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"family\": \"arm_loss\", \"superseded\": {\"key\": {\"kind\": \"sym\"}, \"kind\": \"hash\", \"value\": {\"kind\": \"union\", \"variants\": [{\"kind\": \"nil\"}, {\"kind\": \"str\"}]}}, \"writer\": \"[\\\"SetCurrentRequest\\\",\\\"default_url_options\\\",false,\\\"$EXPERIMENT/kit/campfire/app/controllers/concerns/set_current_request.rb\\\",170,250,\\\"ApplicationController\\\",\\\"SetCurrentRequest\\\"]\"}"
+    ]
+  },
+  "cells": {
+    "C": {
+      "diagnostics": {
+        "warning/gradual_untyped": 234,
+        "warning/missing_preload": 1,
+        "warning/unconsumed_initializer": 6,
+        "warning/unresolved_type": 156
+      },
+      "directory": "$EXPERIMENT/kit/runs/cache/objects/56/56b43cfd5bf8a85d78bae1a66c20bddea6283f5e2108767f13aace966dc1041c/attempts/20261016T010810-22fa832074",
+      "value_digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "efcd139ef65573b6",
+        "constants": "4791140b9514d135",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "e573e06aaef10a84",
+        "copies": "dde611b1c4e15a4d",
+        "ir": "bfee77bd9f413a89",
+        "params": "191bd8ba3c2d9172",
+        "returns": "112cb7c069369199",
+        "side_table": "f8bcd1b8f56b0fdd"
+      }
+    },
+    "DS": {
+      "diagnostics": {
+        "warning/gradual_untyped": 234,
+        "warning/missing_preload": 1,
+        "warning/unconsumed_initializer": 6,
+        "warning/unresolved_type": 156
+      },
+      "directory": "$EXPERIMENT/kit/runs/cache/objects/57/575869682c95b3ef9ad091adf00de351349629a7d85f7a9342fb5008efccc17e/attempts/20261016T010819-d93af4c226",
+      "value_digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "efcd139ef65573b6",
+        "constants": "4791140b9514d135",
+        "controller_bindings": "274761f9c12890a8",
+        "controller_cache": "e573e06aaef10a84",
+        "copies": "dde611b1c4e15a4d",
+        "ir": "496a491a2aba2d04",
+        "params": "549d571ecaa71a40",
+        "returns": "112cb7c069369199",
+        "side_table": "49fc675023dc0c60"
+      }
+    },
+    "KDSN": {
+      "diagnostics": {
+        "warning/gradual_untyped": 285,
+        "warning/missing_preload": 1,
+        "warning/unconsumed_initializer": 6,
+        "warning/unresolved_type": 147
+      },
+      "directory": "$EXPERIMENT/kit/runs/cache/objects/bf/bf49faf66fa78112ca7ce46d43b21db294ecf8daaeee8200b5a77547356da452/attempts/20261016T010831-df85a60710",
+      "value_digests": {
+        "attributes": "ff1a2c7ec4ed0303",
+        "block_values": "efcd139ef65573b6",
+        "constants": "4791140b9514d135",
+        "controller_bindings": "9ed1cf04c2c419af",
+        "controller_cache": "1192fd2e6e3fb83c",
+        "copies": "89adfb08d9a79d99",
+        "ir": "4fb93f364f5e2f0e",
+        "params": "0c10ce5bba05a610",
+        "returns": "625dd1d723ffd251",
+        "side_table": "49fc675023dc0c60"
+      }
+    }
+  },
+  "census_matches_retained": true,
+  "census_source": "unchanged deferred_unresolved/verdict.py ObsStore.census (research condition modules hash-checked)",
+  "condition": "deferred-unresolved-copied-input-unset-v1-a1",
+  "runner_exit": 1,
+  "runner_failure": "Frozen boundary parser rejects view_seeds; original assertion retained.",
+  "scripts_changed": false,
+  "utc": "2026-10-16T01:14:06.530407+00:00"
+}

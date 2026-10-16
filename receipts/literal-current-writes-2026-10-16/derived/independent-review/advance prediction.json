@@ -1,0 +1,241 @@
+{
+  "binary_matches_provenance": true,
+  "binary_sha256": "b2ab97b09a4928c53beaa7dab04bc87f7e47cc31504cfedfb1e528d998fc9260",
+  "builder_target_exists": false,
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "file_times": {
+    "protocol.md": {
+      "birthtime_utc": "2026-10-15T22:43:52.433188+00:00",
+      "mtime_utc": "2026-10-15T22:58:54.899013+00:00"
+    },
+    "receipts/frozen.sha256": {
+      "birthtime_utc": "2026-10-15T23:00:10.409600+00:00",
+      "mtime_utc": "2026-10-15T23:00:10.409812+00:00"
+    },
+    "receipts/native-purity-pinned.log": {
+      "birthtime_utc": "2026-10-15T23:01:13.066065+00:00",
+      "mtime_utc": "2026-10-15T23:02:32.439566+00:00"
+    },
+    "receipts/native-purity.log": {
+      "birthtime_utc": "2026-10-15T23:00:10.474836+00:00",
+      "mtime_utc": "2026-10-15T23:02:13.392168+00:00"
+    },
+    "receipts/verdict-heatmap-counterexample.json": {
+      "birthtime_utc": "2026-10-16T00:00:49.045243+00:00",
+      "mtime_utc": "2026-10-16T00:00:49.045361+00:00"
+    }
+  },
+  "files": [
+    {
+      "committed": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "listed": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "path": "$LITERAL_PROTOCOL/protocol.md",
+      "sha256": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "unchanged": true
+    },
+    {
+      "committed": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "listed": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "path": "$EXPERIMENT/protocol.md",
+      "sha256": "38c3029655f5f4bad515f78ed1af936b8d62cb899e0ae911d914e3285fc05934",
+      "unchanged": true
+    },
+    {
+      "committed": "daf8cdade554018a9c77e880c980b96718ce39db04306cdb273cf3e5cc033dcd",
+      "listed": "daf8cdade554018a9c77e880c980b96718ce39db04306cdb273cf3e5cc033dcd",
+      "path": "$EXPERIMENT/literal_rows.py",
+      "sha256": "daf8cdade554018a9c77e880c980b96718ce39db04306cdb273cf3e5cc033dcd",
+      "unchanged": true
+    },
+    {
+      "committed": "62e25f3a8866cc9cf1005560f908dd7bf0d6f6c140b1f439c0ca223a0231dbc4",
+      "listed": "62e25f3a8866cc9cf1005560f908dd7bf0d6f6c140b1f439c0ca223a0231dbc4",
+      "path": "$EXPERIMENT/prepare.py",
+      "sha256": "62e25f3a8866cc9cf1005560f908dd7bf0d6f6c140b1f439c0ca223a0231dbc4",
+      "unchanged": true
+    },
+    {
+      "committed": "d8cbdc58618a458a5e0c94fdd75cb78af20215a610974bcee142ea8223ff3026",
+      "listed": "d8cbdc58618a458a5e0c94fdd75cb78af20215a610974bcee142ea8223ff3026",
+      "path": "$EXPERIMENT/test_literal_rows.py",
+      "sha256": "d8cbdc58618a458a5e0c94fdd75cb78af20215a610974bcee142ea8223ff3026",
+      "unchanged": true
+    },
+    {
+      "committed": "18eae5774d27ebd0c42937cebbab58d5d80974d6c6f969e7d79ea53d83a9918d",
+      "listed": "18eae5774d27ebd0c42937cebbab58d5d80974d6c6f969e7d79ea53d83a9918d",
+      "path": "$EXPERIMENT/repo/src/analyze/body/literal_transfer_purity.rs",
+      "sha256": "18eae5774d27ebd0c42937cebbab58d5d80974d6c6f969e7d79ea53d83a9918d",
+      "unchanged": true
+    },
+    {
+      "committed": "5d37298d11ffde1c85ab3cc6b4c3a1a0fd674af77f5fa5deeab83a1da1f975df",
+      "listed": "5d37298d11ffde1c85ab3cc6b4c3a1a0fd674af77f5fa5deeab83a1da1f975df",
+      "path": "$LITERAL_PROTOCOL/card/freeze_keys.py",
+      "sha256": "5d37298d11ffde1c85ab3cc6b4c3a1a0fd674af77f5fa5deeab83a1da1f975df",
+      "unchanged": true
+    },
+    {
+      "committed": "4dafdfeebafe5e1d3d001985057fb6805d3975ae2cf1a76c3745944f59147f36",
+      "listed": "4dafdfeebafe5e1d3d001985057fb6805d3975ae2cf1a76c3745944f59147f36",
+      "path": "$LITERAL_PROTOCOL/card/retro_check.py",
+      "sha256": "4dafdfeebafe5e1d3d001985057fb6805d3975ae2cf1a76c3745944f59147f36",
+      "unchanged": true
+    },
+    {
+      "committed": "5d320f67678320aee74b2b46c5c4a8ba74bf54f6fe6c1c2b3a4a38027768c1ff",
+      "listed": "5d320f67678320aee74b2b46c5c4a8ba74bf54f6fe6c1c2b3a4a38027768c1ff",
+      "path": "$LITERAL_PROTOCOL/card/share.py",
+      "sha256": "5d320f67678320aee74b2b46c5c4a8ba74bf54f6fe6c1c2b3a4a38027768c1ff",
+      "unchanged": true
+    },
+    {
+      "committed": "dd53fe9a94d3506b306279e7308d6afa9a7e1b58009b229d1d25e39f263965a7",
+      "listed": "dd53fe9a94d3506b306279e7308d6afa9a7e1b58009b229d1d25e39f263965a7",
+      "path": "$LITERAL_PROTOCOL/card/test_verdict.py",
+      "sha256": "dd53fe9a94d3506b306279e7308d6afa9a7e1b58009b229d1d25e39f263965a7",
+      "unchanged": true
+    },
+    {
+      "committed": "c2d63323917065172102e6616565c9b1f8d9ab90764cd89c6ec581cbd364b014",
+      "listed": "c2d63323917065172102e6616565c9b1f8d9ab90764cd89c6ec581cbd364b014",
+      "path": "$LITERAL_PROTOCOL/card/v1v2.py",
+      "sha256": "c2d63323917065172102e6616565c9b1f8d9ab90764cd89c6ec581cbd364b014",
+      "unchanged": true
+    },
+    {
+      "committed": "91b79436ff9e76fe8f148cb8433bd339c6dd9f5f43df3c456b582b96424f636d",
+      "listed": "91b79436ff9e76fe8f148cb8433bd339c6dd9f5f43df3c456b582b96424f636d",
+      "path": "$LITERAL_PROTOCOL/card/verdict.py",
+      "sha256": "91b79436ff9e76fe8f148cb8433bd339c6dd9f5f43df3c456b582b96424f636d",
+      "unchanged": true
+    },
+    {
+      "committed": "af369c342c9de707c32529a63e359dc4d61bd9682be50c305b756861664f2cd7",
+      "listed": "af369c342c9de707c32529a63e359dc4d61bd9682be50c305b756861664f2cd7",
+      "path": "$LITERAL_PROTOCOL/card/schedule-row-literal-keys.json",
+      "sha256": "af369c342c9de707c32529a63e359dc4d61bd9682be50c305b756861664f2cd7",
+      "unchanged": true
+    },
+    {
+      "committed": "40dde4064f868e15f554d90af57289230cade3ee9c0eb72ac8f79e55439802f4",
+      "listed": "40dde4064f868e15f554d90af57289230cade3ee9c0eb72ac8f79e55439802f4",
+      "path": "$LITERAL_PROTOCOL/card/share.json",
+      "sha256": "40dde4064f868e15f554d90af57289230cade3ee9c0eb72ac8f79e55439802f4",
+      "unchanged": true
+    },
+    {
+      "committed": "fbd7c769a4e97fb28dbf425cf91950d15873a89bee3b223385306a83433b3866",
+      "listed": "fbd7c769a4e97fb28dbf425cf91950d15873a89bee3b223385306a83433b3866",
+      "path": "$LITERAL_PROTOCOL/card/v1v2.json",
+      "sha256": "fbd7c769a4e97fb28dbf425cf91950d15873a89bee3b223385306a83433b3866",
+      "unchanged": true
+    },
+    {
+      "committed": "6021ffc5dbf71e9f8f8b2de12c66ec64e69690f3f67d72fa5f08cb4423a97853",
+      "listed": "6021ffc5dbf71e9f8f8b2de12c66ec64e69690f3f67d72fa5f08cb4423a97853",
+      "path": "$LITERAL_PROTOCOL/card/witness/featured_tags.json",
+      "sha256": "6021ffc5dbf71e9f8f8b2de12c66ec64e69690f3f67d72fa5f08cb4423a97853",
+      "unchanged": true
+    },
+    {
+      "committed": "ff069657e0e0fb440e87fecdd76118375c161a91ab495e71fe3a978e5d67570a",
+      "listed": "ff069657e0e0fb440e87fecdd76118375c161a91ab495e71fe3a978e5d67570a",
+      "path": "$LITERAL_PROTOCOL/card/witness/featured_tags.rb",
+      "sha256": "ff069657e0e0fb440e87fecdd76118375c161a91ab495e71fe3a978e5d67570a",
+      "unchanged": true
+    },
+    {
+      "committed": "faf90a49720698a2d06a130cc59650c2e3ae0f9fbb96e3ee5be7f80b8f2e767b",
+      "listed": "faf90a49720698a2d06a130cc59650c2e3ae0f9fbb96e3ee5be7f80b8f2e767b",
+      "path": "$LITERAL_PROTOCOL/card/witness/featured_tags_map.json",
+      "sha256": "faf90a49720698a2d06a130cc59650c2e3ae0f9fbb96e3ee5be7f80b8f2e767b",
+      "unchanged": true
+    },
+    {
+      "committed": "9da65da9a7ddaa9c69ddc095dc7e80731ddbe35c3eb5b080e7f2e0b7bb1fae82",
+      "listed": "9da65da9a7ddaa9c69ddc095dc7e80731ddbe35c3eb5b080e7f2e0b7bb1fae82",
+      "path": "$LITERAL_PROTOCOL/card/witness/webhook_map.json",
+      "sha256": "9da65da9a7ddaa9c69ddc095dc7e80731ddbe35c3eb5b080e7f2e0b7bb1fae82",
+      "unchanged": true
+    },
+    {
+      "committed": "b134b7860d0a38d3a01939c814f288166516044d0309cd5b7157339f4693a4fb",
+      "listed": "b134b7860d0a38d3a01939c814f288166516044d0309cd5b7157339f4693a4fb",
+      "path": "$LITERAL_PROTOCOL/card/witness/webhook_secrets.json",
+      "sha256": "b134b7860d0a38d3a01939c814f288166516044d0309cd5b7157339f4693a4fb",
+      "unchanged": true
+    },
+    {
+      "committed": "40bd1603361a73a04637513dad9f07fc4b756fa09bf939bb4dc00935cebf64dc",
+      "listed": "40bd1603361a73a04637513dad9f07fc4b756fa09bf939bb4dc00935cebf64dc",
+      "path": "$LITERAL_PROTOCOL/card/witness/webhook_secrets.rb",
+      "sha256": "40bd1603361a73a04637513dad9f07fc4b756fa09bf939bb4dc00935cebf64dc",
+      "unchanged": true
+    },
+    {
+      "committed": "150bd4664198961822982c4219fc8dcb78e5a3a1483141ea92ad552b4ea9f83a",
+      "listed": "150bd4664198961822982c4219fc8dcb78e5a3a1483141ea92ad552b4ea9f83a",
+      "path": "$LITERAL_PROTOCOL/card/profiles/c-off.json",
+      "sha256": "150bd4664198961822982c4219fc8dcb78e5a3a1483141ea92ad552b4ea9f83a",
+      "unchanged": true
+    },
+    {
+      "committed": "62c15ea9dd0285f968761c6a53e6a9b3b9c3001d9299655cdcaa3cffce4377e2",
+      "listed": "62c15ea9dd0285f968761c6a53e6a9b3b9c3001d9299655cdcaa3cffce4377e2",
+      "path": "$LITERAL_PROTOCOL/card/profiles/c-on.json",
+      "sha256": "62c15ea9dd0285f968761c6a53e6a9b3b9c3001d9299655cdcaa3cffce4377e2",
+      "unchanged": true
+    },
+    {
+      "committed": "3cd2f4c808070d2ecc9716759bd0ec150d556d27d1a0aa4bee40521e9e747c7b",
+      "listed": "3cd2f4c808070d2ecc9716759bd0ec150d556d27d1a0aa4bee40521e9e747c7b",
+      "path": "$LITERAL_PROTOCOL/card/profiles/l-off.json",
+      "sha256": "3cd2f4c808070d2ecc9716759bd0ec150d556d27d1a0aa4bee40521e9e747c7b",
+      "unchanged": true
+    },
+    {
+      "committed": "cc3894db11bc515351ba0fec0208374bb1269ea421d30573416244af6d7ecc73",
+      "listed": "cc3894db11bc515351ba0fec0208374bb1269ea421d30573416244af6d7ecc73",
+      "path": "$LITERAL_PROTOCOL/card/profiles/l-on.json",
+      "sha256": "cc3894db11bc515351ba0fec0208374bb1269ea421d30573416244af6d7ecc73",
+      "unchanged": true
+    },
+    {
+      "committed": "6e9a465637b0afe3837dab9a39c857d1de260f5f85ca0e812710cc2974498730",
+      "listed": "6e9a465637b0afe3837dab9a39c857d1de260f5f85ca0e812710cc2974498730",
+      "path": "$LITERAL_PROTOCOL/card/claims/campfire-off.json",
+      "sha256": "6e9a465637b0afe3837dab9a39c857d1de260f5f85ca0e812710cc2974498730",
+      "unchanged": true
+    },
+    {
+      "committed": "98dd30f10c537d0cfeca92172494b4229cdefdb90fb090be37bc42728c6fbdba",
+      "listed": "98dd30f10c537d0cfeca92172494b4229cdefdb90fb090be37bc42728c6fbdba",
+      "path": "$LITERAL_PROTOCOL/card/claims/campfire-on.json",
+      "sha256": "98dd30f10c537d0cfeca92172494b4229cdefdb90fb090be37bc42728c6fbdba",
+      "unchanged": true
+    }
+  ],
+  "first_app_started_utc": "2026-10-15T23:04:58.401789+00:00",
+  "freeze_commit": "75848c338517ffd83da33d1c8e2d3ef8a4aeea29",
+  "freeze_commit_utc": "2026-10-15T17:00:09-06:00",
+  "observer": "provenance; schedule/verification/audit not applicable",
+  "observer_matches_provenance": true,
+  "source_status": "",
+  "tracked_history": "75848c338517ffd83da33d1c8e2d3ef8a4aeea29 2026-10-15T17:00:09-06:00 Research literal-transfer: separate literal expectations from inferred stamps\n",
+  "witness_commit_utc": "2026-10-15T18:00:48-06:00",
+  "witness_files": {
+    "heatmap.json": {
+      "committed": "0ba2f710ca9a8fe4b79eb230bb45f0917f1f8eec44b6ee93f130c8c7f7877d88",
+      "sha256": "0ba2f710ca9a8fe4b79eb230bb45f0917f1f8eec44b6ee93f130c8c7f7877d88"
+    },
+    "heatmap.rb": {
+      "committed": "f1d76c543b0b71e609e766788ea6da7e264462be7ab2ded679730a4105ed60c9",
+      "sha256": "f1d76c543b0b71e609e766788ea6da7e264462be7ab2ded679730a4105ed60c9"
+    },
+    "heatmap_map.json": {
+      "committed": "788d09a17503e0417a58212e34cfbf308514da03f96953fa333226ea1e4c4915",
+      "sha256": "788d09a17503e0417a58212e34cfbf308514da03f96953fa333226ea1e4c4915"
+    }
+  }
+}

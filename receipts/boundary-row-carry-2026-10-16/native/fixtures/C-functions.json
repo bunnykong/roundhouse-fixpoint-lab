@@ -1,0 +1,157 @@
+[
+  {
+    "call": null,
+    "debug": "Fn { params: Shared([]), block: None, ret: Untyped { why: Unresolved }, effects: EffectSet { effects: {} } }",
+    "decisions": "0",
+    "diagnostic": null,
+    "hash": 15997846385365913155,
+    "key": "{\"declaration\":\"Room::MessagePusher#push\",\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":289,\"file\":27,\"start\":149}}:occurrence:0:1",
+    "native_ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "untyped",
+        "reasons": [
+          "Unresolved"
+        ]
+      }
+    },
+    "node": "Lambda",
+    "note": 8556445246977061536,
+    "part": "ir",
+    "path": [
+      1
+    ],
+    "root": "{\"declaration\":\"Room::MessagePusher#push\",\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":289,\"file\":27,\"start\":149}}:occurrence:0",
+    "source": 0,
+    "span": {
+      "end": 0,
+      "file": 0,
+      "start": 0
+    },
+    "ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "untyped"
+      }
+    }
+  },
+  {
+    "call": null,
+    "debug": "Fn { params: Shared([]), block: None, ret: Int, effects: EffectSet { effects: {} } }",
+    "decisions": "0",
+    "diagnostic": null,
+    "hash": 9541495119904691917,
+    "key": "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0:0",
+    "native_ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "int"
+      }
+    },
+    "node": "Lambda",
+    "note": 8556445246977061536,
+    "part": "ir",
+    "path": [
+      0
+    ],
+    "root": "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0",
+    "source": 322,
+    "span": {
+      "end": 1823,
+      "file": 322,
+      "start": 1803
+    },
+    "ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "int"
+      }
+    }
+  },
+  {
+    "call": null,
+    "debug": "Fn { params: Shared([]), block: None, ret: Union { variants: Shared([Class { id: ClassId(Symbol(\"Net::HTTPResponse\")), args: Shared([]) }, Untyped { why: Unresolved }]) }, effects: EffectSet { effects: {} } }",
+    "decisions": "0",
+    "diagnostic": null,
+    "hash": 14727370861982336930,
+    "key": "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0:1",
+    "native_ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Net::HTTPResponse",
+            "kind": "class"
+          },
+          {
+            "kind": "untyped",
+            "reasons": [
+              "Unresolved"
+            ]
+          }
+        ]
+      }
+    },
+    "node": "Lambda",
+    "note": 8556445246977061536,
+    "part": "ir",
+    "path": [
+      1
+    ],
+    "root": "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0",
+    "source": 0,
+    "span": {
+      "end": 0,
+      "file": 0,
+      "start": 0
+    },
+    "ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Net::HTTPResponse",
+            "kind": "class"
+          },
+          {
+            "kind": "untyped"
+          }
+        ]
+      }
+    }
+  }
+]

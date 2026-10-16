@@ -1,0 +1,28 @@
+{
+  "condition": "boundary-row-carry-20261016-campfire",
+  "doc_stage": "not run; interrupted while queued on shared suite lock after more than 25 minutes",
+  "excluded": {
+    "data_factory_constants": "user authorized existing research-spine E0308"
+  },
+  "executed_integration_targets": 0,
+  "library": {
+    "failed": 2,
+    "failures": [
+      "analyze::current_returns::tests::current_return_replace_no_route_removal",
+      "analyze::current_returns::tests::current_return_replace_predeclared_slot_reads_pending"
+    ],
+    "ignored": 29,
+    "passed": 1255,
+    "status": "failed"
+  },
+  "logs": [
+    "suite.log",
+    "suite-doc.log",
+    "suite-launch.log"
+  ],
+  "reason": "The default library run had already failed. The separate optional doc stage was stopped to avoid further lock waiting and permit final cargo clean. Its failure/interruption logs are retained; it is not reported as passed.",
+  "runner_exit": 130,
+  "selected_integration_targets": 851,
+  "separately_saved_default_cargo_exit": null,
+  "utc": "2026-10-16T03:43:51.516140+00:00"
+}

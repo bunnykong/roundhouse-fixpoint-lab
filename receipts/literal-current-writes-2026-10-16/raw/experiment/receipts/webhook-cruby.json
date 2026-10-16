@@ -1,0 +1,229 @@
+{
+  "witness": "chatwoot-webhook-channel-meta-app-secrets",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "source": "app/controllers/concerns/meta_token_verify_concern.rb",
+  "source_sha256": "1331fdafe09d3435809fdd927f66ffd4ac9dc06c134c663a13dc096cce5e57c3",
+  "declarations": [
+    "Webhooks::InstagramController#channel_meta_app_secrets",
+    "Webhooks::WhatsappController#channel_meta_app_secrets"
+  ],
+  "probes": {
+    "return_value": [
+      {
+        "class": "Array",
+        "elems": []
+      },
+      {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      }
+    ],
+    "literal_at_exit": [
+      {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      },
+      {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "NilClass",
+            "ancestors": [
+              "NilClass",
+              "JSON::Ext::Generator::GeneratorMethods::NilClass",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          },
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      },
+      {
+        "class": "Array",
+        "elems": []
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case": "nil channel",
+      "return_value": {
+        "class": "Array",
+        "elems": []
+      },
+      "literal_at_exit": null
+    },
+    {
+      "case": "app_secret and provider_config",
+      "return_value": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      },
+      "literal_at_exit": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "nil app_secret",
+      "return_value": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      },
+      "literal_at_exit": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "NilClass",
+            "ancestors": [
+              "NilClass",
+              "JSON::Ext::Generator::GeneratorMethods::NilClass",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          },
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "provider_config only",
+      "return_value": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      },
+      "literal_at_exit": {
+        "class": "Array",
+        "elems": [
+          {
+            "class": "String",
+            "ancestors": [
+              "String",
+              "JSON::Ext::Generator::GeneratorMethods::String",
+              "Comparable",
+              "Object",
+              "JSON::Ext::Generator::GeneratorMethods::Object",
+              "Kernel",
+              "BasicObject"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "neither",
+      "return_value": {
+        "class": "Array",
+        "elems": []
+      },
+      "literal_at_exit": {
+        "class": "Array",
+        "elems": []
+      }
+    }
+  ]
+}

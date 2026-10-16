@@ -115,3 +115,9 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 
 [F63: response return values](receipts/response-return-values-2026-10-15/README.md) confirms its stabilization-off witnesses.
 [F64: latest writer returns](receipts/latest-writer-returns-2026-10-15/README.md) remains inconclusive with reproduced descents.
+
+## October 16 negative and inconclusive results
+
+[F65: literal current writes](receipts/literal-current-writes-2026-10-16/README.md).
+[F66: deferred unresolved](receipts/deferred-unresolved-2026-10-16/README.md).
+[F67: boundary row carry](receipts/boundary-row-carry-2026-10-16/README.md).

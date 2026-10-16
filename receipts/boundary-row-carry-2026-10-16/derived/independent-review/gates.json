@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "python3",
+      "$BOUNDARY_PROTOCOL/regressions.py"
+    ],
+    "exit": 0,
+    "name": "evidence-regressions"
+  },
+  {
+    "command": [
+      "python3",
+      "$BOUNDARY_PROTOCOL/verdict.py",
+      "selftest"
+    ],
+    "exit": 0,
+    "name": "reducer-selftest"
+  }
+]

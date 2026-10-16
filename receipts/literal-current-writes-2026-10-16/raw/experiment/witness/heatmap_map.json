@@ -1,0 +1,15 @@
+{
+  "witness": "heatmap.json",
+  "app": "chatwoot",
+  "declarations": [
+    "Api::V2::Accounts::HeatmapHelper#group_traffic_data",
+    "Api::V2::Accounts::ReportsController#group_traffic_data"
+  ],
+  "source": "app/helpers/api/v2/accounts/heatmap_helper.rb",
+  "note": "ReportsController includes HeatmapHelper (reports_controller.rb:3). All spans are the same verbatim method. Only exact non-synthetic values are mapped; no synthetic block-object claim is fabricated.",
+  "by_span": [
+    {"span": [1092, 1823], "probes": ["outer_block_result"], "what": "outer each block body returns result_arr << row"},
+    {"span": [1806, 1823], "probes": ["outer_block_result"], "what": "result_arr << row returns result_arr"},
+    {"span": [1806, 1816], "probes": ["result_arr_before_push"], "what": "receiver result_arr immediately before <<"}
+  ]
+}

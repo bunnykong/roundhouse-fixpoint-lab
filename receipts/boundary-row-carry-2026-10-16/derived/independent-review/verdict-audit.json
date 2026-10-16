@@ -1,0 +1,106 @@
+{
+  "actual_non_PG_count": 451,
+  "condition": "boundary-row-carry-20261016-campfire",
+  "expected_count": 451,
+  "expected_records_type": "<class 'set'>",
+  "mandatory_by_check": {
+    "EV-boundary-schema": {
+      "pass": 44
+    },
+    "EV-complete-provenance": {
+      "pass": 44
+    },
+    "EV-metadata-compare": {
+      "pass": 44
+    },
+    "H6b-layered": {
+      "pass": 4
+    },
+    "H6b-no-new-variance": {
+      "pass": 8
+    },
+    "H6c-restoration": {
+      "fail": 32
+    },
+    "H6d-layered": {
+      "fail": 12
+    },
+    "H6d-settlement-bound": {
+      "fail": 32
+    },
+    "H6e-reason-deltas": {
+      "pass": 24
+    },
+    "H6f-campfire-closure": {
+      "pass": 8
+    },
+    "H6f-layered": {
+      "pass": 4
+    },
+    "H6g-boundary_carry-boundary": {
+      "pass": 2
+    },
+    "H6g-ndedup": {
+      "pass": 2
+    },
+    "H6g-ndedup-provenance": {
+      "pass": 2
+    },
+    "H6g-sites": {
+      "pass": 3
+    },
+    "H6g-strict-producer-protocol-harness": {
+      "pass": 6
+    },
+    "H6g-strict-producer-protocol-laws": {
+      "pass": 4
+    },
+    "H6h-campfire-direction": {
+      "fail": 32
+    },
+    "H6h-named-equality": {
+      "fail": 32
+    },
+    "H6k-event-subset": {
+      "fail": 12
+    },
+    "H6k-zero-families": {
+      "fail": 12
+    },
+    "INV": {
+      "pass": 44
+    },
+    "INV-boundary_carry": {
+      "fail": 44
+    },
+    "PG1-pinned-digests": {
+      "pass": 16
+    },
+    "PG2-row-dump-integrity": {
+      "pass": 16
+    },
+    "PG3-pinned-invariants": {
+      "pass": 16
+    },
+    "PG5-campfire-closed": {
+      "pass": 4
+    },
+    "PG6-schedule-row-baseline": {
+      "pass": 6
+    }
+  },
+  "mandatory_counts": {
+    "fail": 208,
+    "pass": 301,
+    "unavailable": 0
+  },
+  "missing_mandatory_records": [],
+  "pregate_counts": {
+    "pass": 58
+  },
+  "recorded_replay": "KILLED",
+  "recorded_verdict": "KILLED",
+  "remaining_failed_records_ignoring_INV_boundary_carry": 164,
+  "unexpected_mandatory_records": [],
+  "verdict_ignoring_INV_boundary_carry": "KILLED"
+}

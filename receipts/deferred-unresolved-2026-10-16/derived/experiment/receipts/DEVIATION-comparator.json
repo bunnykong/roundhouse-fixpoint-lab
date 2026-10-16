@@ -1,0 +1,163 @@
+{
+  "actual_unknown_rows": [
+    {
+      "both_typed_roots_validate": true,
+      "candidate": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "block": null,
+          "effects": {
+            "effects": []
+          },
+          "kind": "fn",
+          "params": [],
+          "ret": {
+            "kind": "untyped",
+            "reasons": [
+              "Gradual"
+            ]
+          }
+        }
+      },
+      "control": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "block": null,
+          "effects": {
+            "effects": []
+          },
+          "kind": "fn",
+          "params": [],
+          "ret": {
+            "kind": "untyped",
+            "reasons": [
+              "Unresolved"
+            ]
+          }
+        }
+      },
+      "frozen_relation": "unknown",
+      "identity": [
+        "ir",
+        "{\"declaration\":\"Room::MessagePusher#push\",\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":289,\"file\":27,\"start\":149}}:occurrence:0:1"
+      ],
+      "missing_provenance": false
+    },
+    {
+      "both_typed_roots_validate": true,
+      "candidate": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "block": null,
+          "effects": {
+            "effects": []
+          },
+          "kind": "fn",
+          "params": [],
+          "ret": {
+            "kind": "union",
+            "variants": [
+              {
+                "args": [],
+                "id": "Net::HTTPResponse",
+                "kind": "class"
+              },
+              {
+                "kind": "untyped",
+                "reasons": [
+                  "Gradual"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "control": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "block": null,
+          "effects": {
+            "effects": []
+          },
+          "kind": "fn",
+          "params": [],
+          "ret": {
+            "kind": "union",
+            "variants": [
+              {
+                "args": [],
+                "id": "Net::HTTPResponse",
+                "kind": "class"
+              },
+              {
+                "kind": "untyped",
+                "reasons": [
+                  "Unresolved"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "frozen_relation": "unknown",
+      "identity": [
+        "ir",
+        "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0:1"
+      ],
+      "missing_provenance": false
+    }
+  ],
+  "condition": "deferred-unresolved-20261016-campfire",
+  "criterion_changes": false,
+  "deviation": "The frozen relation helper labels valid changed Record metadata as unknown because it re-applies typed-root validation recursively to the row/fields metadata maps.",
+  "discovered_after_application_runs": true,
+  "effect": "Unavailable mandatory records retain precedence; report the unchanged formal verdict as INCONCLUSIVE, alongside well-formed observed failures.",
+  "row_model_sha256": "73ba87e99c8096d8f232f116e698425b74e4353a4ab16eb4b8a002a01adc4089",
+  "scripts_changed": false,
+  "synthetic_valid_roots": {
+    "candidate": {
+      "kind": "record",
+      "row": {
+        "fields": {
+          "x": {
+            "kind": "int"
+          }
+        },
+        "rest": null
+      }
+    },
+    "card_required_relation": "removal",
+    "control": {
+      "kind": "record",
+      "row": {
+        "fields": {
+          "x": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "int"
+              },
+              {
+                "kind": "untyped",
+                "reasons": [
+                  "Unresolved"
+                ]
+              }
+            ]
+          }
+        },
+        "rest": null
+      }
+    },
+    "frozen_relation": "unknown"
+  },
+  "utc": "2026-10-16T00:47:02.070549+00:00"
+}

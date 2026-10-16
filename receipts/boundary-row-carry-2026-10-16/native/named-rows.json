@@ -1,0 +1,72 @@
+[
+  {
+    "id": [
+      "ir",
+      "{\"declaration\":\"Room::MessagePusher#push\",\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":289,\"file\":27,\"start\":149}}:occurrence:0:1"
+    ],
+    "ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "untyped",
+        "reasons": [
+          "Unresolved"
+        ]
+      }
+    }
+  },
+  {
+    "id": [
+      "ir",
+      "{\"declaration\":null,\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":2013,\"file\":322,\"start\":1782}}:occurrence:0:1"
+    ],
+    "ty": {
+      "block": null,
+      "effects": {
+        "effects": []
+      },
+      "kind": "fn",
+      "params": [],
+      "ret": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Net::HTTPResponse",
+            "kind": "class"
+          },
+          {
+            "kind": "untyped",
+            "reasons": [
+              "Unresolved"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": [
+      "returns",
+      "ActionView::Base#message_attachment_presentation"
+    ],
+    "ty": {
+      "kind": "union",
+      "variants": [
+        {
+          "kind": "nil"
+        },
+        {
+          "kind": "untyped",
+          "reasons": [
+            "Unresolved"
+          ]
+        }
+      ]
+    }
+  }
+]

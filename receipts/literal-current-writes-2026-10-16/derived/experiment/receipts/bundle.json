@@ -1,0 +1,50 @@
+{
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "frozen": {
+    "list": "$EXPERIMENT/receipts/frozen.sha256",
+    "root": "$WORKSPACE"
+  },
+  "keys": "$LITERAL_PROTOCOL/card/schedule-row-literal-keys.json",
+  "labels": {
+    "C_off": "$EXPERIMENT/receipts/cache/labels/literal-c-off/label.json",
+    "C_on": "$EXPERIMENT/receipts/cache/labels/literal-c-on/label.json",
+    "L_off": "$EXPERIMENT/receipts/cache/labels/literal-l-off/label.json",
+    "L_on": "$EXPERIMENT/receipts/cache/labels/literal-l-on/label.json",
+    "ref_off": "$WORKSPACE/phase2/observers/cache/labels/fixpoint-spine-research-off/label.json",
+    "ref_on": "$WORKSPACE/phase2/observers/cache/labels/fixpoint-spine-research-on/label.json"
+  },
+  "native": {
+    "purity": "$EXPERIMENT/receipts/native-purity.json",
+    "suite_off": "$EXPERIMENT/receipts/library-card/suite-off.log",
+    "suite_on": "$EXPERIMENT/receipts/library-card/suite-on.log"
+  },
+  "rows": {
+    "chatwoot": {
+      "v0-a0": {
+        "file": "$EXPERIMENT/receipts/rows/chatwoot/v0-a0/rows.jsonl",
+        "reconciled": "$EXPERIMENT/receipts/rows/chatwoot/v0-a0/reconciled.json"
+      },
+      "v1-a1": {
+        "file": "$EXPERIMENT/receipts/rows/chatwoot/v1-a1/rows.jsonl",
+        "reconciled": "$EXPERIMENT/receipts/rows/chatwoot/v1-a1/reconciled.json"
+      }
+    },
+    "forem": {
+      "v1-a1": {
+        "file": "$EXPERIMENT/receipts/rows/forem/v1-a1/rows.jsonl",
+        "reconciled": "$EXPERIMENT/receipts/rows/forem/v1-a1/reconciled.json"
+      }
+    },
+    "mastodon": {
+      "v1-a1": {
+        "file": "$EXPERIMENT/receipts/rows/mastodon/v1-a1/rows.jsonl",
+        "reconciled": "$EXPERIMENT/receipts/rows/mastodon/v1-a1/reconciled.json"
+      }
+    }
+  },
+  "witness_maps": [
+    "$LITERAL_PROTOCOL/card/witness/webhook_map.json",
+    "$LITERAL_PROTOCOL/card/witness/featured_tags_map.json",
+    "$EXPERIMENT/witness/heatmap_map.json"
+  ]
+}

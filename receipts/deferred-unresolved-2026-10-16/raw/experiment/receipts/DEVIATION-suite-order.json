@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-16T00:28:11.619457+00:00",
+  "deviation": "Research source checkpoint and release build precede completion of the default suite.",
+  "reason": "The shared suite lock prevented Cargo from starting for about 23 minutes; preserving the 2.5-hour budget requires proceeding with the already-passing native card gates.",
+  "scope": "Local unscored research checkpoint; no upstream action.",
+  "suite_retained": true,
+  "excluded_targets": [
+    "data_factory_constants"
+  ],
+  "scripts_changed_after_application_runs": false,
+  "criterion_changes": false,
+  "resume": "After release build, rerun driver.py suite under both locks and run card observer cells from the retained release binary."
+}

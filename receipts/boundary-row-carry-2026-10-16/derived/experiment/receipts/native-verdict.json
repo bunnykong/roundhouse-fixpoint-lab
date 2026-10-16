@@ -1,0 +1,282 @@
+{
+  "checks": [
+    {
+      "check": "H6g-sites",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "0",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-sites",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "stub",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-sites",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "all",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-ndedup",
+      "detail": null,
+      "family": "AN",
+      "mandatory": true,
+      "scope": "0",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-ndedup",
+      "detail": null,
+      "family": "AN",
+      "mandatory": true,
+      "scope": "1",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-ndedup-provenance",
+      "detail": {
+        "flat_arms": 2,
+        "hash_value_arms": 2,
+        "idempotent": true,
+        "mixed_provenance_preserved": true
+      },
+      "family": "AN",
+      "mandatory": true,
+      "scope": "a0",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-ndedup-provenance",
+      "detail": {
+        "flat_arms": 2,
+        "hash_value_arms": 2,
+        "idempotent": true,
+        "mixed_provenance_preserved": true
+      },
+      "family": "AN",
+      "mandatory": true,
+      "scope": "a1",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "000",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "100",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "010",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "110",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "001",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-harness",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "111",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-laws",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "0/storage_extended_laws",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-laws",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "0/provenance_lineage_factorial",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-laws",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "1/storage_extended_laws",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-strict-producer-protocol-laws",
+      "detail": null,
+      "family": "A",
+      "mandatory": true,
+      "scope": "1/provenance_lineage_factorial",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-boundary_carry-boundary",
+      "detail": {
+        "absent_in_set": true,
+        "alias_retracted": true,
+        "boundary_rows_lost": 0,
+        "boundary_rows_reinserted": 0,
+        "carry_mode": false,
+        "concrete_reference_survives": true,
+        "derived_not_answered": true,
+        "helper_preserved": true,
+        "mixed_preserved": true,
+        "negative_answer_unresolved": true,
+        "negative_size": 0,
+        "parameter_restored": true,
+        "retractions": 0,
+        "selected_tests": [
+          "boundary_carry_boundary"
+        ],
+        "settled_pending": 0,
+        "stratum2_answers_outside_set": 0
+      },
+      "family": "A",
+      "mandatory": true,
+      "scope": "carry-0",
+      "status": "pass"
+    },
+    {
+      "check": "H6g-boundary_carry-boundary",
+      "detail": {
+        "absent_in_set": true,
+        "alias_retracted": true,
+        "boundary_rows_lost": 0,
+        "boundary_rows_reinserted": 0,
+        "carry_mode": true,
+        "concrete_reference_survives": true,
+        "derived_not_answered": true,
+        "helper_preserved": true,
+        "mixed_preserved": true,
+        "negative_answer_unresolved": true,
+        "negative_size": 4,
+        "parameter_restored": true,
+        "retractions": 2,
+        "selected_tests": [
+          "boundary_carry_boundary"
+        ],
+        "settled_pending": 0,
+        "stratum2_answers_outside_set": 0
+      },
+      "family": "A",
+      "mandatory": true,
+      "scope": "carry-1",
+      "status": "pass"
+    }
+  ],
+  "processes": [
+    {
+      "exit": 0,
+      "name": "sites-0"
+    },
+    {
+      "exit": 0,
+      "name": "sites-stub"
+    },
+    {
+      "exit": 0,
+      "name": "sites-all"
+    },
+    {
+      "exit": 0,
+      "name": "ndedup-0"
+    },
+    {
+      "exit": 0,
+      "name": "ndedup-1"
+    },
+    {
+      "exit": 0,
+      "name": "ndedup-1-a0"
+    },
+    {
+      "exit": 0,
+      "name": "ndedup-1-a1"
+    },
+    {
+      "exit": 0,
+      "name": "harness-000"
+    },
+    {
+      "exit": 0,
+      "name": "harness-100"
+    },
+    {
+      "exit": 0,
+      "name": "harness-010"
+    },
+    {
+      "exit": 0,
+      "name": "harness-110"
+    },
+    {
+      "exit": 0,
+      "name": "harness-001"
+    },
+    {
+      "exit": 0,
+      "name": "harness-111"
+    },
+    {
+      "exit": 0,
+      "name": "laws-x0-storage_extended_laws"
+    },
+    {
+      "exit": 0,
+      "name": "laws-x0-provenance_lineage_factorial"
+    },
+    {
+      "exit": 0,
+      "name": "laws-x1-storage_extended_laws"
+    },
+    {
+      "exit": 0,
+      "name": "laws-x1-provenance_lineage_factorial"
+    },
+    {
+      "exit": 0,
+      "name": "boundary_carry-boundary-0"
+    },
+    {
+      "exit": 0,
+      "name": "boundary_carry-boundary-1"
+    }
+  ]
+}

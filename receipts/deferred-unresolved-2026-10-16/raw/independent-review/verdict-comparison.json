@@ -1,0 +1,56 @@
+{
+  "check_counts": [
+    {
+      "check": "EV-complete-provenance",
+      "count": 44,
+      "status": "unavailable"
+    },
+    {
+      "check": "H6c-restoration",
+      "count": 32,
+      "status": "unavailable"
+    },
+    {
+      "check": "H6d-settlement-bound",
+      "count": 32,
+      "status": "fail"
+    },
+    {
+      "check": "H6h-campfire-direction",
+      "count": 32,
+      "status": "unavailable"
+    },
+    {
+      "check": "H6k-combined-descents",
+      "count": 6,
+      "status": "fail"
+    },
+    {
+      "check": "H6k-dedup-descents",
+      "count": 6,
+      "status": "fail"
+    },
+    {
+      "check": "H6k-strictness-descents",
+      "count": 6,
+      "status": "fail"
+    }
+  ],
+  "condition": "c6b-premature-unknowns-53d8b458-v1-shared-host",
+  "different_sample_count": 32,
+  "exact_json_match": false,
+  "family_verdicts": {
+    "A": "INCONCLUSIVE (unavailable mandatory evidence)",
+    "AN": "INCONCLUSIVE (unavailable mandatory evidence)",
+    "N": "KILLED"
+  },
+  "mandatory_counts": {
+    "fail": 50,
+    "pass": 239,
+    "unavailable": 108
+  },
+  "observer_scope": "All card-prescribed Campfire settings, read from retained cells; no analyzer matrix rerun.",
+  "only_h6h_diagnostic_samples_differ": true,
+  "record_count": 515,
+  "verdict": "INCONCLUSIVE (unavailable mandatory evidence)"
+}

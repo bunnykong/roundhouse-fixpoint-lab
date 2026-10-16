@@ -1,0 +1,73 @@
+{
+  "C": {
+    "elem": {
+      "elem": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "str"
+          },
+          {
+            "kind": "var",
+            "var": 0
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "kind": "array"
+    },
+    "kind": "array"
+  },
+  "C_admits_runtime_probe": true,
+  "C_print": "Array[Array[untyped]]",
+  "L": {
+    "elem": {
+      "elem": {
+        "kind": "str"
+      },
+      "kind": "array"
+    },
+    "kind": "array"
+  },
+  "L_admits_runtime_probe": false,
+  "L_print": "Array[Array[str]]",
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "declaration": "Api::V2::Accounts::HeatmapHelper#group_traffic_data",
+  "key": "{\"declaration\":\"Api::V2::Accounts::HeatmapHelper#group_traffic_data\",\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/helpers/api/v2/accounts/heatmap_helper.rb\",\"span\":{\"end\":2141,\"file\":744,\"start\":289}}:occurrence:0:3/1/0/3",
+  "observer": "ownership on; V1A1 and V0A0; unset/1/2/repeat (72 rejecting row/schedule checks in full witness report)",
+  "part": "ir",
+  "ruby": "ruby 4.0.7 (2026-09-15 revision 229531a6cf) +PRISM [arm64-darwin25]",
+  "runtime_event": {
+    "case": "sparse",
+    "event": "outer each block return",
+    "line": 44,
+    "value": [
+      [
+        "Start of the hour",
+        "2026-10-15",
+        "2026-10-16"
+      ],
+      [
+        "00:00",
+        1,
+        null
+      ],
+      [
+        "01:00",
+        null,
+        4
+      ]
+    ]
+  },
+  "selected_observer": "ownership on; unset V1A1",
+  "snippet": "result_arr << row",
+  "source": "app/helpers/api/v2/accounts/heatmap_helper.rb:43",
+  "source_sha256": "1dbca1411cf6ec0c6babc7364edf336ae821a60c3b74780a691d32e9ebf13a69",
+  "span": {
+    "end": 1823,
+    "file": 744,
+    "start": 1806
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "command": [
+    "rbenv",
+    "exec",
+    "ruby",
+    "$EXPERIMENT/witness/heatmap.rb",
+    "examples/apps/chatwoot",
+    "$REVIEW/receipts/heatmap-fresh.json"
+  ],
+  "executed_lines": {
+    "12": 3,
+    "15": 3,
+    "19": 3,
+    "26": 9,
+    "28": 4,
+    "33": 10,
+    "36": 4,
+    "37": 8,
+    "43": 4,
+    "56": 3
+  },
+  "exit_code": 0,
+  "identical_witness_json": true,
+  "observer": {
+    "audit": null,
+    "mode": "CRuby runtime witness",
+    "schedule": null,
+    "verification": null
+  },
+  "returns": {
+    "complete": [
+      [
+        "Start of the hour",
+        "2026-10-15",
+        "2026-10-16"
+      ],
+      [
+        "00:00",
+        0,
+        2
+      ],
+      [
+        "01:00",
+        3,
+        4
+      ]
+    ],
+    "empty": [
+      [
+        "Start of the hour"
+      ]
+    ],
+    "sparse": [
+      [
+        "Start of the hour",
+        "2026-10-15",
+        "2026-10-16"
+      ],
+      [
+        "00:00",
+        1,
+        null
+      ],
+      [
+        "01:00",
+        null,
+        4
+      ]
+    ]
+  },
+  "source_sha256": "1dbca1411cf6ec0c6babc7364edf336ae821a60c3b74780a691d32e9ebf13a69",
+  "utc": "2026-10-16T00:55:35.438629+00:00"
+}

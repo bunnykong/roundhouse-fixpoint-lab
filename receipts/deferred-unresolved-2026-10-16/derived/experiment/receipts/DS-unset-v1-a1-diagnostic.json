@@ -1,0 +1,349 @@
+{
+  "app": "campfire",
+  "baseline": "C",
+  "c6": {
+    "boundary_restored": 0,
+    "defer": "all",
+    "ndedup": false,
+    "rclosure_kept_pending": 0,
+    "settled_pending": 75,
+    "stratify": true,
+    "stratum1_pending_minted": 2149,
+    "stratum2_ran": true,
+    "stratum2_unresolved": 238
+  },
+  "candidate": "DS",
+  "census": {
+    "bare_untyped": 4102,
+    "missing": 377,
+    "typed": 32543,
+    "untyped_anywhere": 4817,
+    "untyped_by_provenance": {
+      "gradual": 726,
+      "pending": 0,
+      "unresolved": 4103
+    }
+  },
+  "classification": {
+    "note_only": 0,
+    "removals": 20,
+    "unknown": 2,
+    "violations": 80
+  },
+  "condition": "deferred-unresolved-20261016-campfire",
+  "differing_rows": 102,
+  "formal_verdict": false,
+  "sample": [
+    {
+      "candidate": {
+        "decisions": null,
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "untyped",
+          "reasons": [
+            "Pending"
+          ]
+        }
+      },
+      "control": null,
+      "identity": [
+        "side_table",
+        "Some(Param { class: ClassId(Symbol(\"Current\")), method: Symbol(\"request=\"), side: Class, index: 0 })"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": null,
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "rec",
+          "slot": "Some(Param { class: ClassId(Symbol(\"Current\")), method: Symbol(\"request=\"), side: Class, index: 0 })"
+        }
+      },
+      "control": null,
+      "identity": [
+        "side_table",
+        "Some(Param { class: ClassId(Symbol(\"Current\")), method: Symbol(\"request=\"), side: Instance, index: 0 })"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": "512",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "untyped",
+          "reasons": [
+            "Gradual"
+          ]
+        }
+      },
+      "control": {
+        "decisions": "512",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "untyped",
+          "reasons": [
+            "Unresolved"
+          ]
+        }
+      },
+      "identity": [
+        "ir",
+        "{\"declaration\":\"Room::MessagePusher#push\",\"kind\":\"Send\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":289,\"file\":27,\"start\":149}}:occurrence:0:1/0/1"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Gradual"
+              ]
+            },
+            {
+              "kind": "var"
+            }
+          ]
+        }
+      },
+      "control": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Unresolved"
+              ]
+            },
+            {
+              "kind": "var"
+            }
+          ]
+        }
+      },
+      "identity": [
+        "ir",
+        "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":10217,\"file\":292,\"start\":9698}}:occurrence:0:3/0"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Net::HTTPResponse",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Gradual"
+              ]
+            }
+          ]
+        }
+      },
+      "control": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Net::HTTPResponse",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Unresolved"
+              ]
+            }
+          ]
+        }
+      },
+      "identity": [
+        "ir",
+        "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":1037,\"file\":322,\"start\":841}}:occurrence:0:2/1/0/0"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": null,
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Gradual"
+              ]
+            }
+          ]
+        }
+      },
+      "control": {
+        "decisions": null,
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Unresolved"
+              ]
+            }
+          ]
+        }
+      },
+      "identity": [
+        "returns",
+        "ActionView::Base#message_attachment_presentation"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": "512",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Gradual"
+              ]
+            },
+            {
+              "kind": "var"
+            }
+          ]
+        }
+      },
+      "control": {
+        "decisions": "512",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Unresolved"
+              ]
+            },
+            {
+              "kind": "var"
+            }
+          ]
+        }
+      },
+      "identity": [
+        "ir",
+        "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":5455,\"file\":292,\"start\":5006}}:occurrence:0:2"
+      ]
+    },
+    {
+      "candidate": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Gradual"
+              ]
+            }
+          ]
+        }
+      },
+      "control": {
+        "decisions": "0",
+        "diagnostic": null,
+        "names": null,
+        "ty": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "nil"
+            },
+            {
+              "kind": "untyped",
+              "reasons": [
+                "Unresolved"
+              ]
+            }
+          ]
+        }
+      },
+      "identity": [
+        "ir",
+        "{\"declaration\":\"Opengraph::Metadata.valid_image_content_type\",\"kind\":\"BeginRescue\",\"source\":\"$HOST_PATH\",\"span\":{\"end\":1845,\"file\":22,\"start\":1490}}:occurrence:0:0/1/0/0"
+      ]
+    }
+  ],
+  "setting": "unset-v1-a1"
+}

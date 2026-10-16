@@ -1,0 +1,7 @@
+{
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "fact": 65,
+  "native_runs_during_publication": 0,
+  "text": "On condition `literal-current-writes-20261015-chatwoot`, typing empty literals from their declarations and current writes, without an old stamp, is killed on Chatwoot. It rejects heatmap Integer and nil values that the control admits; CRuby reproduces both. The writer set missed nested element writes. Independent light review reproduces the counterexample. This rejects the tested repair, not all literal feedback.",
+  "verdict": "killed"
+}

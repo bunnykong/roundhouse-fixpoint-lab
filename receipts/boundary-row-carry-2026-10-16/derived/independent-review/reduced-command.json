@@ -1,0 +1,29 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$BOUNDARY_PROTOCOL/verdict.py",
+    "run",
+    "--cache-root",
+    "$EXPERIMENTc/cache",
+    "--native",
+    "$EXPERIMENTc/native",
+    "--condition",
+    "boundary-row-carry-20261016-campfire",
+    "--scope",
+    "campfire",
+    "--out",
+    "$REVIEWc/receipts/reduced-campfire.json"
+  ],
+  "condition": "boundary-row-carry-20261016-campfire",
+  "cwd": "$REVIEWc",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": "$REVIEWc/tmp"
+  },
+  "exit": 1,
+  "receipt_written_after_completion": true,
+  "stdout_stderr": "receipts/reduced-campfire.log"
+}

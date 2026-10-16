@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "-B",
+    "$EXPERIMENT/kit/run.py"
+  ],
+  "condition": "literal-current-writes-20261015-chatwoot",
+  "elapsed_seconds": 1.0044734170660377,
+  "exit_code": 1,
+  "log": "receipts/kit.log",
+  "mode": "fresh native/runtime; retained application observations",
+  "started_utc": "2026-10-16T00:54:27.015925+00:00"
+}

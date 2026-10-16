@@ -1,0 +1,128 @@
+{
+  "app": "chatwoot",
+  "by_span": [
+    {
+      "probes": [
+        "return_value"
+      ],
+      "span": [
+        1586,
+        1794
+      ],
+      "what": "method body, ends in secrets.compact_blank.uniq"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1619,
+        1631
+      ],
+      "what": "secrets = []"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1629,
+        1631
+      ],
+      "what": "[]"
+    },
+    {
+      "probes": [
+        "literal_at_exit",
+        "nil"
+      ],
+      "span": [
+        1636,
+        1701
+      ],
+      "what": "secrets << channel.app_secret if channel.respond_to?(:app_secret)"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1636,
+        1665
+      ],
+      "what": "secrets << channel.app_secret"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1636,
+        1643
+      ],
+      "what": "secrets"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1706,
+        1763
+      ],
+      "what": "secrets.concat(provider_config_meta_app_secrets(channel))"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1706,
+        1713
+      ],
+      "what": "secrets"
+    },
+    {
+      "probes": [
+        "return_value"
+      ],
+      "span": [
+        1768,
+        1794
+      ],
+      "what": "secrets.compact_blank.uniq"
+    },
+    {
+      "probes": [
+        "return_value"
+      ],
+      "span": [
+        1768,
+        1789
+      ],
+      "what": "secrets.compact_blank"
+    },
+    {
+      "probes": [
+        "literal_at_exit"
+      ],
+      "span": [
+        1768,
+        1775
+      ],
+      "what": "secrets"
+    }
+  ],
+  "declarations": [
+    "Webhooks::InstagramController#channel_meta_app_secrets",
+    "Webhooks::WhatsappController#channel_meta_app_secrets"
+  ],
+  "note": "Spans are byte offsets in the pinned source (sha256 1331fdaf...), for ir and controller_cache rows of both copies. Probe 'nil' is Ruby's value of a modifier-if whose condition is false.",
+  "returns": {
+    "probes": [
+      "return_value"
+    ]
+  },
+  "source": "app/controllers/concerns/meta_token_verify_concern.rb",
+  "witness": "webhook_secrets.json"
+}
