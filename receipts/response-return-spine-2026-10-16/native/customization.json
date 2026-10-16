@@ -1,0 +1,628 @@
+{
+  "keys": [
+    "AccountableConcern#log_action",
+    "ActivityPub::FeatureAuthorizationsController#pundit_user",
+    "ActivityPub::FeaturedCollectionsController#pundit_user",
+    "ActivityPub::LikesController#pundit_user",
+    "ActivityPub::QuoteAuthorizationsController#pundit_user",
+    "ActivityPub::RepliesController#pundit_user",
+    "ActivityPub::SharesController#pundit_user",
+    "Admin::BaseAction#log_action",
+    "Admin::BaseAction#pundit_user",
+    "Admin::BaseController#log_action",
+    "Admin::BaseController#pundit_user",
+    "Api::V1::Accounts::EndorsementsController#pundit_user",
+    "Api::V1::Accounts::NotesController#pundit_user",
+    "Api::V1::Admin::AccountActionsController#pundit_user",
+    "Api::V1::Admin::AccountsController#log_action",
+    "Api::V1::Admin::AccountsController#pundit_user",
+    "Api::V1::Admin::CanonicalEmailBlocksController#log_action",
+    "Api::V1::Admin::CanonicalEmailBlocksController#pundit_user",
+    "Api::V1::Admin::DimensionsController#pundit_user",
+    "Api::V1::Admin::DomainAllowsController#log_action",
+    "Api::V1::Admin::DomainAllowsController#pundit_user",
+    "Api::V1::Admin::DomainBlocksController#log_action",
+    "Api::V1::Admin::DomainBlocksController#pundit_user",
+    "Api::V1::Admin::EmailDomainBlocksController#log_action",
+    "Api::V1::Admin::EmailDomainBlocksController#pundit_user",
+    "Api::V1::Admin::IpBlocksController#log_action",
+    "Api::V1::Admin::IpBlocksController#pundit_user",
+    "Api::V1::Admin::MeasuresController#pundit_user",
+    "Api::V1::Admin::ReportsController#log_action",
+    "Api::V1::Admin::ReportsController#pundit_user",
+    "Api::V1::Admin::RetentionController#pundit_user",
+    "Api::V1::Admin::TagsController#pundit_user",
+    "Api::V1::Admin::Trends::Links::PreviewCardProvidersController#pundit_user",
+    "Api::V1::Admin::Trends::LinksController#pundit_user",
+    "Api::V1::Admin::Trends::StatusesController#pundit_user",
+    "Api::V1::Admin::Trends::TagsController#pundit_user",
+    "Api::V1::CollectionItemsController#pundit_user",
+    "Api::V1::CollectionsController#pundit_user",
+    "Api::V1::InCollectionsController#pundit_user",
+    "Api::V1::Polls::VotesController#pundit_user",
+    "Api::V1::PollsController#pundit_user",
+    "Api::V1::ScheduledStatusesController#pundit_user",
+    "Api::V1::Statuses::BaseController#pundit_user",
+    "Api::V1::Statuses::ContextsController#pundit_user",
+    "Api::V1::StatusesController#pundit_user",
+    "Api::V1::SuggestionsController#pundit_user",
+    "Api::V2::SearchController#pundit_user",
+    "Api::V2::SuggestionsController#pundit_user",
+    "Api::Web::EmbedsController#pundit_user",
+    "Authorization#pundit_user",
+    "AuthorizeInteractionsController#pundit_user",
+    "CollectionItemsController#pundit_user",
+    "CollectionsController#pundit_user",
+    "Disputes::BaseController#pundit_user",
+    "FavouriteService#pundit_user",
+    "Form::BaseBatch#log_action",
+    "Form::BaseBatch#pundit_user",
+    "Form::StatusFilterBatchAction#log_action",
+    "Form::StatusFilterBatchAction#pundit_user",
+    "InvitesController#pundit_user",
+    "MediaController#pundit_user",
+    "MediaProxyController#pundit_user",
+    "ReblogService#pundit_user",
+    "ResolveURLService#pundit_user",
+    "Settings::ExportsController#pundit_user",
+    "StatusesController#pundit_user",
+    "Trends::PreviewCardBatch#pundit_user",
+    "Trends::PreviewCardProviderBatch#pundit_user",
+    "Trends::StatusBatch#pundit_user",
+    "Trends::TagBatch#pundit_user",
+    "VoteService#pundit_user",
+    "WrapstodonController#pundit_user"
+  ],
+  "precise": {
+    "Admin::BaseController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Admin::BaseController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Accounts::EndorsementsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Accounts::NotesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::AccountActionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::AccountsController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::AccountsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::CanonicalEmailBlocksController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::CanonicalEmailBlocksController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::DimensionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::DomainAllowsController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::DomainAllowsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::DomainBlocksController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::DomainBlocksController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::EmailDomainBlocksController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::EmailDomainBlocksController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::IpBlocksController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::IpBlocksController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::MeasuresController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::ReportsController#log_action": {
+      "args": [],
+      "id": "Admin::ActionLog",
+      "kind": "class"
+    },
+    "Api::V1::Admin::ReportsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::RetentionController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::TagsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::Trends::Links::PreviewCardProvidersController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::Trends::LinksController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::Trends::StatusesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Admin::Trends::TagsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::CollectionItemsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::CollectionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::InCollectionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Polls::VotesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::PollsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::ScheduledStatusesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Statuses::BaseController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::Statuses::ContextsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::StatusesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V1::SuggestionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V2::SearchController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::V2::SuggestionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Api::Web::EmbedsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "AuthorizeInteractionsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Disputes::BaseController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "InvitesController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "MediaController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "MediaProxyController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "Settings::ExportsController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    },
+    "WrapstodonController#pundit_user": {
+      "kind": "union",
+      "variants": [
+        {
+          "args": [],
+          "id": "Account",
+          "kind": "class"
+        },
+        {
+          "kind": "nil"
+        }
+      ]
+    }
+  },
+  "reference": "$WORKSPACE/phase2/observers/cache/objects/6c/6c20f92643893db9792190c5310f806bf1c621a80e2c13d820e8b35b0f78900a/attempts/20261015T162546-4f9826123c",
+  "source": "$EXPERIMENT/receipts/cache/objects/93/93427fb4404e6fb53e70d4f3011ccd63eafb8696c6a09708921dcd0c1b9c99ff/attempts/20261015T171742-c63d7a64af/contributor-values.jsonl",
+  "source_sha256": "c2fa35a0451f365b08b87da574e4b9a7a1610170e482223301f7c5e767624bb1"
+}

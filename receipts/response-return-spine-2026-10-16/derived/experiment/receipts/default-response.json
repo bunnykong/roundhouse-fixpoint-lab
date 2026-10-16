@@ -1,0 +1,28 @@
+{
+  "command": [
+    "$EXPERIMENT/bin/roundhouse",
+    "check",
+    "--continue",
+    "$EXPERIMENT/kit/repro/void-app"
+  ],
+  "results": {
+    "default": {
+      "exit": 0,
+      "response_flag": null,
+      "stderr_sha256": "8979e4ac8bb57faff3405e94699aab4a2f14e2a9606e35b35152a23b24d67831",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "off": {
+      "exit": 1,
+      "response_flag": "0",
+      "stderr_sha256": "7a827eba4099f5564842ff239aad6bfcf61320a2b42500a5c7e709dbca48407c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "on": {
+      "exit": 0,
+      "response_flag": "1",
+      "stderr_sha256": "8979e4ac8bb57faff3405e94699aab4a2f14e2a9606e35b35152a23b24d67831",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

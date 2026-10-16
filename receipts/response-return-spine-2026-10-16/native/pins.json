@@ -1,0 +1,26 @@
+{
+  "base": "369d963d1866d404dc6976ed2b77e6a934a131f6",
+  "condition": "response-return-spine-witnesses-20261016",
+  "control_flag": "RH_RESPONSE_RETURNS=0",
+  "donor_pins": {
+    "base": "ea3ec7441d95926ae7febbe028279cf2e6b8680e",
+    "binding_check": "$REVISED_REVIEW/CHECK.md",
+    "condition": "response-return-values-20261015-stabilization-off",
+    "excluded_test_targets": {
+      "data_factory_constants": "pre-existing E0308 at tests/data_factory_constants.rs:94 on ea3ec744 and 369d963d"
+    },
+    "external": {
+      "$INITIAL_REVIEW/probe_checker.py": "f757bcfe130f5a1752b5ff0e90e410111baa5d07c29481e298aff0d98de255bd",
+      "$REVISED_REVIEW/CHECK.md": "155852c2288b69ace4792b3b876ab61af5a672b309358fd5efcd1a63cc493364",
+      "phase2/observers/apps.json": "32c758a7a7c52fec4f4d9b224997303a4f50c061bffa19b693fbe43c6ac8ff5f",
+      "phase2/observers/obs.py": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c"
+    },
+    "spine_reference_binary_sha256": "ec633faffdbae21acb5aa28e66628daba2dbc4dfb679a72a4ffda9742839ae03",
+    "v1_binding_check": "$INITIAL_REVIEW/CHECK.md"
+  },
+  "donor_receipt_commit": "a1911d959a9ff22acb74e4a04ac4658c725f9eea",
+  "excluded_test_targets": {},
+  "spine_reference_binary_sha256": "fb93bd1b1883778a255588e20be4dfae4bb14d5745523d8abd2fa46064ee264d",
+  "test_repair": "tests/data_factory_constants.rs:94 Option<Cow<[Ty]>>.as_deref()",
+  "treatment_flag": "RH_RESPONSE_RETURNS=1"
+}

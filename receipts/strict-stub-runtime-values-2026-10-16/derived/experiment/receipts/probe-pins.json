@@ -1,0 +1,29 @@
+{
+  "base_commit": "2233e2e7e639b9f66ecda41fac34475b2d0f2559",
+  "binary_sha256": "5d48ed7a63c295a3255125bde6be77803ed666825e544d33895f4f07cf68f641",
+  "build": "cargo +1.98.1 build --locked --offline --release --bin roundhouse; four jobs; owned target; shared heavy lock",
+  "cargo": "cargo 1.98.1 (797e8a9bc 2026-08-05)",
+  "frozen_sources_verified": 543,
+  "instrumentation_adaptation": "research condition observer with research condition source lookup via App.sources and declaration identity; value transfer/writer/scheduler code unchanged.",
+  "original_binary_sha256": "26da34a6543d764704f9f072f550152b8b503dee91bd037cd1f00582ba3125ad",
+  "patch_sha256": "ad08ce635bd7174e4e79987c8d670fd95b15b80bbc3849db4f4c1578655b376f",
+  "reused_tools": {
+    "$EXPERIMENT/classify.py": "5bacaa0ce6901cd161c4a3813322c73932b92ebd0db6849558d6a1a2da01f7ce",
+    "$EXPERIMENT/instrument.py": "147d909aca368c0b044e4e72ce6cbfcba73e45f842d4f36ae2e92b95a8e55930",
+    "$EXPERIMENT/rows.py": "2d7d2bf3a69889f4c0e942da3accd761f06b1df5d79c231ceab9651364dfdffb",
+    "$EXPERIMENT/witnesses/ownership.rb": "65156016d8a56c6f0103e5dc8a4c3b3843dddf1694836bc375d4c917a7a7ebb9",
+    "$WORKSPACE/phase2/contributor-ownership/contributor-protocol/verdict.py": "38567cb9288f1710da0a8f00020bfa4179afc16bb31dab54ddf4d7b137a8db16",
+    "$WORKSPACE/phase2/observers/obs.py": "b19e3e305755074689b566969de1059bd53f8df9975528c2d9c1c0a6a282f48c"
+  },
+  "rust": "rustc 1.98.1 (48a229cea 2026-09-01)",
+  "source_changes": {
+    "src/analyze/fixpoint_check.rs": {
+      "frozen_sha256": "eec5c15c6e5b8469674dbb32d9f9ebb6f5059a2268c1bf0708c033ba6e559cab",
+      "probe_sha256": "714ed1345be0885b51b2dac581f79ab48bbd45a2f590c639f7899325c7af1131"
+    },
+    "src/analyze/fold.rs": {
+      "frozen_sha256": "2646497d3291130831cbe70e6e79bfe117addd277174139a76fb114061f59605",
+      "probe_sha256": "f192f8845c876be1606c1e6af1a70c0de7b91e94345c6b90832639971f8c85d3"
+    }
+  }
+}

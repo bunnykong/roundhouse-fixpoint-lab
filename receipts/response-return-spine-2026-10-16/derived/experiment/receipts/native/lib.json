@@ -1,0 +1,34 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "--exclusive",
+    "$WORKSPACE/workshop/suite.lock",
+    "cargo",
+    "+1.98.1",
+    "test",
+    "--locked",
+    "--offline",
+    "--lib",
+    "--",
+    "--test-threads=1"
+  ],
+  "elapsed_seconds": 767.1830627080053,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "exit": 0,
+  "log": "$EXPERIMENT/receipts/native/lib.log",
+  "log_sha256": "b450b7794610aca59d7c8ac4f72433de0e5626ca1001b5bdce6ec79ea0fce7ad",
+  "name": "lib",
+  "source_commit": "de7589e46891a4b21e4b9ace345108e372297f0d",
+  "started": "2026-10-16T01:53:38.271504+00:00"
+}

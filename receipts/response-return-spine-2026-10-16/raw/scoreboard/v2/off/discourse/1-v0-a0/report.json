@@ -1,0 +1,307 @@
+{
+  "bound": {
+    "calls": 848122,
+    "cuts": 0
+  },
+  "census": {
+    "bare_untyped": 43402,
+    "missing": 12572,
+    "typed": 485268,
+    "untyped_anywhere": 79312,
+    "untyped_by_provenance": {
+      "gradual": 15069,
+      "pending": 0,
+      "unresolved": 66998
+    }
+  },
+  "digest": {
+    "attributes": "c2746bd39d387d56",
+    "block_values": "c4bd56b9c866e691",
+    "constants": "0b6ec20293cb3012",
+    "controller_bindings": "7359da2fc4031ca2",
+    "controller_cache": "d861497e45d85af7",
+    "copies": "0a86e10709dbe41b",
+    "ir": "7c61ab957115effa",
+    "params": "7ea8c859a87c9a36",
+    "returns": "5260b1ba062fd8e3",
+    "side_table": "dd544861e28e24b1"
+  },
+  "entries": {
+    "attributes": 2122,
+    "block_values": 3227,
+    "constants": 2072,
+    "controller_bindings": 156,
+    "controller_cache": 153,
+    "copies": 325,
+    "ir": 497840,
+    "params": 24929,
+    "returns": 97119,
+    "side_table": 4512
+  },
+  "fold": {
+    "accumulations_skipped": 65275,
+    "expansion": {
+      "back_edges": 1270,
+      "budget_cuts": 98,
+      "tail_edges": 7550
+    },
+    "methods_in_reference_mode": 1135,
+    "side_table_nodes": 22336,
+    "slots": {
+      "narrow": 464,
+      "param": 1511,
+      "position": 2537,
+      "ret": 1083
+    }
+  },
+  "harvest_untie_cut": 49,
+  "loops": {
+    "absorb": {
+      "end": "settled",
+      "round": 2
+    },
+    "production": {
+      "end": "settled",
+      "round": 5
+    },
+    "views_and_tests": {
+      "end": "settled",
+      "round": 1
+    }
+  },
+  "precision": {
+    "bare_untyped": 43402,
+    "bottom_anywhere": 7892,
+    "fully_typed": 314757,
+    "missing": 12572,
+    "typed": 485268,
+    "untyped_anywhere": 79312,
+    "var_without_untyped": 91199
+  },
+  "s4": {
+    "mode": "apply",
+    "sites_applied": 12,
+    "sites_applied_by_consumer": {
+      "argument": 0,
+      "block": 12,
+      "local": 0,
+      "receiver": 0
+    },
+    "sites_entrance": 7,
+    "slots_changed_bound_only": 0,
+    "slots_changed_new_write": 2728,
+    "slots_changed_unexplained": 0,
+    "slots_changed_vs_entrances_unexplained": 0,
+    "walks": 294551,
+    "walks_changed_vs_entrances": 1352,
+    "walks_changed_vs_legacy": 1450
+  },
+  "schema": 1,
+  "structure": {
+    "end": {
+      "digest": "4bc49db0ed24059d",
+      "reference_mode": {
+        "digest": "b5f17789f013e9c8",
+        "n": 1135
+      },
+      "routing": {
+        "digest": "dadc4942f1071088",
+        "n": 31392
+      },
+      "universe": {
+        "digest": "22ee9a50870e9025",
+        "n": 576917
+      },
+      "writers": {
+        "digest": "e02ecf7265814632",
+        "n": 101528,
+        "slots": 57824
+      }
+    },
+    "schema": 2,
+    "scope": "observed-cumulative-equations",
+    "start": {
+      "digest": "2760501aecab1657",
+      "reference_mode": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "routing": {
+        "digest": "bd60acb658c79e45",
+        "n": 0
+      },
+      "universe": {
+        "digest": "16dbc220c1c7727c",
+        "n": 554055
+      },
+      "writers": {
+        "digest": "1ca63bff5bac41e3",
+        "n": 36796,
+        "slots": 35938
+      }
+    },
+    "unchanged": false
+  },
+  "worklist": {
+    "engine": {
+      "absorb_converged": true,
+      "back_to_seen": 58,
+      "budget_exhausted": 0,
+      "cap": 200,
+      "cap_drift": 0,
+      "cap_hits": 0,
+      "cap_osc": 0,
+      "class_entries": 3013,
+      "class_pass_secs": 5.152,
+      "const_marks": 42,
+      "ctrl_units": 1531,
+      "engine_secs": 132.488,
+      "evals_ctrl": 5135,
+      "evals_full": 39734,
+      "evals_hist": [
+        2815,
+        9604,
+        3396,
+        1629,
+        1600,
+        774,
+        302
+      ],
+      "evals_out_changed": 24503,
+      "evals_out_same": 17080,
+      "evals_reseed": 1849,
+      "frozen_units": 0,
+      "graph_first": {
+        "buckets": [
+          7811,
+          322,
+          118,
+          44,
+          3,
+          1
+        ],
+        "edges": 68025,
+        "edges_ivar": 8610,
+        "edges_param": 13322,
+        "edges_reg": 47807,
+        "in_nontrivial": 12963,
+        "largest": 9451,
+        "nodes": 20120,
+        "nontrivial": 1142,
+        "sccs": 8299,
+        "secs_edges": 0.103,
+        "secs_total": 0.209,
+        "self_loops": 1954,
+        "trivial": 7157,
+        "wto_depth": 1301,
+        "wto_heads": 6572
+      },
+      "graph_last": {
+        "buckets": [
+          7515,
+          291,
+          99,
+          38,
+          3,
+          1
+        ],
+        "edges": 74531,
+        "edges_ivar": 8610,
+        "edges_param": 14318,
+        "edges_reg": 53319,
+        "in_nontrivial": 13232,
+        "largest": 9923,
+        "nodes": 20120,
+        "nontrivial": 1059,
+        "sccs": 7947,
+        "secs_edges": 0.165,
+        "secs_total": 0.375,
+        "self_loops": 1956,
+        "trivial": 6888,
+        "wto_depth": 1484,
+        "wto_heads": 6749
+      },
+      "graph_secs": 1.4,
+      "harvest_reapplied": 59,
+      "index_secs": 2.612,
+      "ivar_marks": 3324,
+      "lib_units": 15779,
+      "marks": 41583,
+      "max_evals_unit": 109,
+      "model_method_units": 2448,
+      "model_scope_units": 362,
+      "moved_params": [
+        21751,
+        115,
+        8,
+        0,
+        0,
+        155,
+        0
+      ],
+      "moved_slots": [
+        24570,
+        16,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "param_checked": 233161,
+      "param_mismatch": 250,
+      "periods": [
+        38,
+        8,
+        6,
+        6,
+        0
+      ],
+      "prod_converged": true,
+      "restamps": 1700,
+      "rounds_absorb": 3,
+      "rounds_prod": 6,
+      "seeds": [
+        11832,
+        70,
+        3,
+        0,
+        0,
+        122,
+        0
+      ],
+      "units": 20120
+    },
+    "fold": {
+      "drain_evals": [
+        36635,
+        1411,
+        361,
+        50,
+        2501,
+        322,
+        124,
+        15,
+        11,
+        3,
+        0,
+        148,
+        2,
+        0
+      ],
+      "fold_deferred": 1741,
+      "fold_marks": 7247,
+      "fold_moved": 6563,
+      "lit_restamps": 96,
+      "new_rec": 1135,
+      "new_scc_ivars": 480,
+      "side_full_class": 4,
+      "sweeps": 7,
+      "t_harvest": 1.17,
+      "t_ivars": 0.07,
+      "t_rows": 119.49,
+      "t_sites": 123.16,
+      "t_typing": 7.92
+    }
+  }
+}

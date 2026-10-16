@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "discourse",
+    "--label",
+    "response-return-spine-research-on",
+    "--flags",
+    "$EXPERIMENT/profiles/research-on.json",
+    "--jobs",
+    "1",
+    "--timeout",
+    "2400",
+    "--settings",
+    "repeat-v0-a0"
+  ],
+  "elapsed_seconds": 235.14593591692392,
+  "exit": 0,
+  "name": "discourse-on-repeat-v0-a0",
+  "started": "2026-10-16T02:21:05.830915+00:00"
+}

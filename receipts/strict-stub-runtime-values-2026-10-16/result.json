@@ -1,0 +1,8 @@
+{
+  "condition": "strict-producer-reasons-20261015-ea3ec744",
+  "fact": 68,
+  "native_analyzers_during_publication": 0,
+  "portable_cruby_runs": 2,
+  "text": "On F56 condition `strict-producer-reasons-20261015-ea3ec744`, Chatwoot `9f920b54` has 13 changed rows with spliced ownership, identical across unset/1/2/repeat with verification and audit both on or both off. Four are unsound: `render` keyword hashes in the Google, Instagram, Microsoft and Notion OAuth controllers lose URL Strings passed by CRuby 4.0.7 using locked OAuth2 2.0.22. Nine IMAP changes have no runtime-set change; none widens. A strict stub stays Pending because harvest skips its bare unknown result. Parameter conservation drops Pending as the join identity; settlement cannot restore it. Independent review upholds this. F56's Campfire result stands; here Pending must be completed before quiescence to serve as an identity.",
+  "verdict": "soundness loss"
+}

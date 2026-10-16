@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/phase2/observers/obs.py",
+    "run",
+    "--bin",
+    "$EXPERIMENT/bin/roundhouse",
+    "--app",
+    "discourse",
+    "--label",
+    "response-return-spine-research-off",
+    "--flags",
+    "$EXPERIMENT/profiles/research-off.json",
+    "--jobs",
+    "1",
+    "--timeout",
+    "2400",
+    "--settings",
+    "unset-v0-a0"
+  ],
+  "elapsed_seconds": 208.93874241702724,
+  "exit": 0,
+  "name": "discourse-off-unset-v0-a0",
+  "started": "2026-10-16T02:03:29.414518+00:00"
+}

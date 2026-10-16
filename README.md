@@ -121,3 +121,8 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 [F65: literal current writes](receipts/literal-current-writes-2026-10-16/README.md).
 [F66: deferred unresolved](receipts/deferred-unresolved-2026-10-16/README.md).
 [F67: boundary row carry](receipts/boundary-row-carry-2026-10-16/README.md).
+
+## October 16 strict stubs and response composition
+
+[F68: strict stub runtime values](receipts/strict-stub-runtime-values-2026-10-16/README.md).
+[F69: response return spine](receipts/response-return-spine-2026-10-16/README.md).

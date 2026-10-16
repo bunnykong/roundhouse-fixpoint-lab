@@ -1,0 +1,35 @@
+{
+  "byte_matches": {
+    "all": true,
+    "campfire": true
+  },
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "bash",
+    "$EXPERIMENT/kit/replay.sh"
+  ],
+  "elapsed_seconds": 181.9610734160524,
+  "exit": 0,
+  "files": {
+    "all": {
+      "expected": "$EXPERIMENT/verdict/verdict.json",
+      "expected_sha256": "3f6537dd1f88bafa75f4ddcb8f867d8e193646a07b323ecf6b27d236fed7f9dc",
+      "replayed": "$EXPERIMENT/replayed/verdict.json",
+      "replayed_sha256": "3f6537dd1f88bafa75f4ddcb8f867d8e193646a07b323ecf6b27d236fed7f9dc"
+    },
+    "campfire": {
+      "expected": "$EXPERIMENT/verdict-campfire/verdict.json",
+      "expected_sha256": "52c157667ab6246ca2411eddf179b264f1262924ebe39295a9fc5202183bfb3f",
+      "replayed": "$EXPERIMENT/replayed-campfire/verdict.json",
+      "replayed_sha256": "52c157667ab6246ca2411eddf179b264f1262924ebe39295a9fc5202183bfb3f"
+    }
+  },
+  "log_sha256": "83db83569eff1b4430d0f1613473786b127fb0ae60366aa2236d013afe92c1a6",
+  "matches": {
+    "all": true,
+    "campfire": true
+  },
+  "started": "2026-10-16T03:29:32.791759+00:00"
+}

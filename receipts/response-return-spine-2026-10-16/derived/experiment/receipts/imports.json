@@ -1,0 +1,17 @@
+{
+  "base": "369d963d1866d404dc6976ed2b77e6a934a131f6",
+  "donor_receipt_commit": "a1911d959a9ff22acb74e4a04ac4658c725f9eea",
+  "files": {
+    "instrumentation.patch": {
+      "path": "$EXPERIMENT/kit/instrumentation.patch",
+      "sha256": "a1fcd20a6272b2f26b5c7ad2400c7a88a727f18f2cc1815476626e4aa77d30ee"
+    },
+    "spine-response-returns.patch": {
+      "path": "$EXPERIMENT/kit/spine-response-returns.patch",
+      "sha256": "c74522ad0a055df4843bff78e932dbc14e5ecae8c79ae9a57a4ef6a325b25668"
+    }
+  },
+  "observer": "instrumentation.patch except harvest_return.rs; no history tracing",
+  "response_fact": "F63",
+  "source_commit": "de7589e46891a4b21e4b9ace345108e372297f0d"
+}

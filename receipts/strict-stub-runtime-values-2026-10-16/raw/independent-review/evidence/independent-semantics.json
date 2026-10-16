@@ -1,0 +1,300 @@
+{
+  "condition": "c5-card5b-strict-producers-ea3ec744-v1-shared-host",
+  "observation_counts": {
+    "no runtime change": 72,
+    "unsound narrowing": 32
+  },
+  "row_observations": 104,
+  "sound_narrowings": 0,
+  "unique_counts": {
+    "no runtime change": 9,
+    "unsound narrowing": 4
+  },
+  "unique_rows": {
+    "CW001": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 20,
+      "witness_class": "Net::IMAP::TaggedResponse",
+      "witnesses": [
+        "authenticate!/mechanism=\"\"",
+        "authenticate!/mechanism=\"cram-md5\"",
+        "authenticate!/mechanism=\"login\"",
+        "authenticate!/mechanism=\"plain\"",
+        "authenticate!/mechanism=nil",
+        "open_imap_connection/helper-path"
+      ]
+    },
+    "CW002": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 22,
+      "witness_class": "Net::IMAP::TaggedResponse",
+      "witnesses": [
+        "authenticate!/mechanism=\"\"",
+        "authenticate!/mechanism=\"cram-md5\"",
+        "authenticate!/mechanism=\"login\"",
+        "authenticate!/mechanism=\"plain\"",
+        "authenticate!/mechanism=nil",
+        "open_imap_connection/helper-path"
+      ]
+    },
+    "CW003": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 24,
+      "witness_class": "Net::IMAP::TaggedResponse",
+      "witnesses": [
+        "authenticate!/mechanism=\"cram-md5\""
+      ]
+    },
+    "CW004": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 24,
+      "witness_class": "Net::IMAP",
+      "witnesses": [
+        "authenticate!/mechanism=\"cram-md5\""
+      ]
+    },
+    "CW005": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 26,
+      "witness_class": "Net::IMAP::TaggedResponse",
+      "witnesses": [
+        "authenticate!/mechanism=\"login\"",
+        "open_imap_connection/helper-path"
+      ]
+    },
+    "CW006": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 26,
+      "witness_class": "Net::IMAP",
+      "witnesses": [
+        "authenticate!/mechanism=\"login\"",
+        "open_imap_connection/helper-path"
+      ]
+    },
+    "CW007": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 28,
+      "witness_class": "Net::IMAP::TaggedResponse",
+      "witnesses": [
+        "authenticate!/mechanism=\"\"",
+        "authenticate!/mechanism=\"plain\"",
+        "authenticate!/mechanism=nil"
+      ]
+    },
+    "CW008": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": 28,
+      "witness_class": "Net::IMAP",
+      "witnesses": [
+        "authenticate!/mechanism=\"\"",
+        "authenticate!/mechanism=\"plain\"",
+        "authenticate!/mechanism=nil"
+      ]
+    },
+    "CW009": {
+      "C_admits": true,
+      "SK_admits": false,
+      "classification": "unsound narrowing",
+      "excluded_value_path": "render keywords[:json][:url]",
+      "provider": "google",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "witness_class": "String"
+    },
+    "CW010": {
+      "C_admits": true,
+      "SK_admits": false,
+      "classification": "unsound narrowing",
+      "excluded_value_path": "render keywords[:json][:url]",
+      "provider": "instagram",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "witness_class": "String"
+    },
+    "CW011": {
+      "C_admits": true,
+      "SK_admits": false,
+      "classification": "unsound narrowing",
+      "excluded_value_path": "render keywords[:json][:url]",
+      "provider": "microsoft",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "witness_class": "String"
+    },
+    "CW012": {
+      "C_admits": true,
+      "SK_admits": false,
+      "classification": "unsound narrowing",
+      "excluded_value_path": "render keywords[:json][:url]",
+      "provider": "notion",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "witness_class": "String"
+    },
+    "CW013": {
+      "C_admits": true,
+      "SK_admits": true,
+      "both_runtime_sets": "all Ruby values",
+      "classification": "no runtime change",
+      "settings": [
+        "unset-v0-a0",
+        "unset-v1-a1",
+        "repeat-v0-a0",
+        "repeat-v1-a1",
+        "1-v0-a0",
+        "1-v1-a1",
+        "2-v0-a0",
+        "2-v1-a1"
+      ],
+      "source_line": null,
+      "witness_class": "Net::IMAP",
+      "witnesses": [
+        "authenticate!/mechanism=\"\"",
+        "authenticate!/mechanism=\"cram-md5\"",
+        "authenticate!/mechanism=\"login\"",
+        "authenticate!/mechanism=\"plain\"",
+        "authenticate!/mechanism=nil",
+        "open_imap_connection/helper-path"
+      ]
+    }
+  },
+  "uses_original_relation_checker": false,
+  "widenings": 0,
+  "witness_source_hashes_match": true
+}

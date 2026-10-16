@@ -1,0 +1,32 @@
+{
+  "log": "de7589e4 Compose confirmed response returns into spine v3\n",
+  "head": "de7589e46891a4b21e4b9ace345108e372297f0d",
+  "parents": [
+    "369d963d1866d404dc6976ed2b77e6a934a131f6"
+  ],
+  "changed_files": [
+    "src/analyze/errgate.rs",
+    "src/analyze/fixpoint_check.rs",
+    "src/analyze/fold.rs",
+    "src/analyze/registry/controllers.rs",
+    "tests/data_factory_constants.rs"
+  ],
+  "donor_hashes_match": {
+    "instrumentation.patch": true,
+    "spine-response-returns.patch": true
+  },
+  "instrumentation_matches_donor": {
+    "src/analyze/errgate.rs": true,
+    "src/analyze/fixpoint_check.rs": false,
+    "src/analyze/fold.rs": false
+  },
+  "controller_matches_donor_after_default_change": true,
+  "test_delta": "--- a/tests/data_factory_constants.rs\n+++ b/tests/data_factory_constants.rs\n@@ -90,7 +90,7 @@ end\n         analyzer.inferred_param_types(\n             &ClassId(Symbol::from(\"FactoryExamples::State\")),\n             &Symbol::from(\"initialize\"),\n-        ),\n+        ).as_deref(),\n         Some(&[Ty::Str][..]),\n     );\n }",
+  "working_tree_status": "",
+  "instrumentation_matches_donor_ignoring_hunk_offsets": {
+    "src/analyze/errgate.rs": true,
+    "src/analyze/fixpoint_check.rs": true,
+    "src/analyze/fold.rs": true
+  },
+  "instrumentation_comparison_note": "Initial false values differ only in hunk line offsets, not content; original comparison retained."
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "fixpoint-spine-research-on",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 162,
+    "grid_agrees": true,
+    "label": "fixpoint-spine-research-on",
+    "passed": 654,
+    "receipt": "$EXPERIMENT/receipts/claims-v2-on.json"
+  },
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "fixpoint-spine-research-off",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 166,
+    "grid_agrees": true,
+    "label": "fixpoint-spine-research-off",
+    "passed": 650,
+    "receipt": "$EXPERIMENT/receipts/claims-v2-off.json"
+  },
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "response-return-spine-research-on",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 162,
+    "grid_agrees": true,
+    "label": "response-return-spine-research-on",
+    "passed": 654,
+    "receipt": "$EXPERIMENT/receipts/claims-v3-on.json"
+  },
+  {
+    "command": [
+      "python3",
+      "$WORKSPACE/phase2/observers/obs.py",
+      "claims",
+      "response-return-spine-research-off",
+      "--spec",
+      "$EXPERIMENT/receipts/claims-spec.json"
+    ],
+    "exit": 1,
+    "failed": 170,
+    "grid_agrees": true,
+    "label": "response-return-spine-research-off",
+    "passed": 646,
+    "receipt": "$EXPERIMENT/receipts/claims-v3-off.json"
+  }
+]

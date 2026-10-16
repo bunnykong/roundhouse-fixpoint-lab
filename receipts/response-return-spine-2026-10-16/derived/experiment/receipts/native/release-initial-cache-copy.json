@@ -1,0 +1,30 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked",
+    "--offline",
+    "--bin",
+    "roundhouse"
+  ],
+  "elapsed_seconds": 0.10564558301120996,
+  "environment": {
+    "CARGO_BUILD_JOBS": "4",
+    "CARGO_HOME": "$EXPERIMENT/cargo-home",
+    "CARGO_NET_OFFLINE": "true",
+    "CARGO_TARGET_DIR": "$EXPERIMENT/target",
+    "RBENV_VERSION": "3.4.4",
+    "RUST_MIN_STACK": "33554432"
+  },
+  "exit": 101,
+  "log": "$EXPERIMENT/receipts/native/release.log",
+  "log_sha256": "e97588e7bfc2249c2c64b60e75029b1bbb6c203cd2829b6d5372b7996a2b4497",
+  "name": "release",
+  "source_commit": "de7589e46891a4b21e4b9ace345108e372297f0d",
+  "started": "2026-10-16T01:53:38.147912+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "$WORKSPACE/workshop/flock.py",
+    "$WORKSPACE/workshop/heavy.lock",
+    "cargo",
+    "+1.98.1",
+    "clean",
+    "--target-dir",
+    "$EXPERIMENT/target"
+  ],
+  "elapsed_seconds": 39.50744266691618,
+  "exit": 0,
+  "log_sha256": "8f64720fd4b2a792945a1e9245f1e147ebfc8fe2e6958f6c075d8053c047700f",
+  "retained_binary_sha256": "41879e4ecbd341d5f9e773cb155b140328bf7cb8b4dd114255752c6f9758e0b3",
+  "started": "2026-10-16T02:52:57.596013+00:00",
+  "target": "$EXPERIMENT/target"
+}
