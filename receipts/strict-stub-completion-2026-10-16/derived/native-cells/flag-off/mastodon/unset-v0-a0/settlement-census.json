@@ -1,0 +1,84 @@
+{
+  "completions": {
+    "absent_spliced": 0,
+    "stub": 0,
+    "uninformative_none": 0
+  },
+  "eligible_slots": 191,
+  "examples": {
+    "ivar_attr": [
+      "ClassId(Symbol(\"AccountsController\")):filter[10]:signed_request_actor",
+      "ClassId(Symbol(\"AccountsController\")):filter[20]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::CollectionsController\")):filter[26]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::CollectionsController\")):filter[27]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::ContextsController\")):filter[26]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::FeatureAuthorizationsController\")):filter[26]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::FeaturedCollectionsController\")):filter[16]:signed_request_actor",
+      "ClassId(Symbol(\"ActivityPub::FollowersSynchronizationsController\")):filter[26]:signed_request_actor"
+    ],
+    "other.ir": [
+      "Span { file: FileId(0), start: 0, end: 0 }",
+      "Span { file: FileId(1041), start: 1278, end: 1300 }",
+      "Span { file: FileId(1043), start: 1154, end: 1176 }",
+      "Span { file: FileId(1043), start: 1205, end: 1227 }",
+      "Span { file: FileId(1043), start: 1234, end: 1256 }",
+      "Span { file: FileId(1043), start: 1234, end: 1263 }",
+      "Span { file: FileId(1043), start: 1298, end: 1320 }",
+      "Span { file: FileId(1043), start: 1298, end: 1327 }"
+    ],
+    "other.return": [
+      "AccountStatusesFilter#current_account",
+      "AccountsController#keypair_from_key_id",
+      "AccountsController#signed_request_account",
+      "AccountsController#signed_request_actor",
+      "ActivityPub::BaseController#keypair_from_key_id",
+      "ActivityPub::BaseController#signed_request_account",
+      "ActivityPub::BaseController#signed_request_actor",
+      "ActivityPub::FeaturedCollectionsController#keypair_from_key_id"
+    ],
+    "param_seed": [
+      "analyzer:(ClassId(Symbol(\"AccountStatusesFilter\")), Symbol(\"new\"), Instance)[1]",
+      "analyzer:(ClassId(Symbol(\"ActivityPub::BaseController\")), Symbol(\"defined?\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"ActivityPub::FollowersSynchronizationWorker\")), Symbol(\"perform_async\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"ActivityPub::PrepareFollowersSynchronizationService\")), Symbol(\"call\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"ActivityPub::PrepareFollowersSynchronizationService\")), Symbol(\"non_matching_uri_hosts?\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"ActivityPub::ProcessingWorker\")), Symbol(\"perform_async\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"Admin::ExportControllerConcern\")), Symbol(\"send_data\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"Api::V1::Accounts::StatusesController\")), Symbol(\"pagination_params\"), Instance)[0]"
+    ],
+    "stub.spliced_copy": [
+      "AccountsController#stoplight_wrapper",
+      "ActivityPub::BaseController#stoplight_wrapper",
+      "ActivityPub::FeatureAuthorizationsController#authorize_with",
+      "ActivityPub::FeaturedCollectionsController#authorize_with",
+      "ActivityPub::FeaturedCollectionsController#stoplight_wrapper",
+      "ActivityPub::InboxesController#canonicalize",
+      "ActivityPub::InboxesController#compact",
+      "ActivityPub::LikesController#authorize_with"
+    ]
+  },
+  "flag": 0,
+  "pending_leaves": {
+    "ivar_attr": 37,
+    "other": {
+      "ir": 528,
+      "local": 0,
+      "return": 31
+    },
+    "param_seed": 55,
+    "stub": {
+      "class_configuration": 0,
+      "initial_untyped": 0,
+      "spliced_copy": 70,
+      "test_module": 0
+    },
+    "total": 721
+  },
+  "schema": 1,
+  "stubs_minted": {
+    "class_configuration": 0,
+    "initial_untyped": 4,
+    "spliced_copy": 191,
+    "test_module": 0
+  }
+}

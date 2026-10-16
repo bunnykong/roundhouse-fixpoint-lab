@@ -1,0 +1,47 @@
+{
+  "files": [
+    {
+      "derivation": "Complete original checker; public paths/flags, portable local dependencies and report label spelling only.",
+      "file": "tools/probe/probe.py",
+      "original_sha256": "bc181bdd7d17b02a754e87203cf1c0ee610727084723f8668856cb78b5d578e0",
+      "public_sha256": "20fdb04173bb4227b2efe817a1fbf838519ec9b7eba07f9b37838e152b73c5b3"
+    },
+    {
+      "derivation": "All original tests/assertions retained; the retained-positive fixture is installed locally, with no skips.",
+      "file": "tools/probe/test_probe.py",
+      "original_sha256": "a644c958a677254c2520f7a9cb9eaa58a156f761992d90234ab0b03d3784ee8f",
+      "public_sha256": "9024815779e5a20c4d8936a861f84c3e57cf415bbbf2d2940a8d5b995d72a844"
+    },
+    {
+      "derivation": "AST-selected unchanged parent-identity function and portable row-loader binding; original full-module hash retained.",
+      "file": "tools/probe/rowdiff.py",
+      "original_sha256": "5573d1a92d2e1f23473751f12a0a0ceec33b96ba7e1540d8debe90ebf9be1fe6",
+      "public_sha256": "b4f703743299bc211ab84f88902590958d8f51a5f162e00587dae8c09988a256"
+    },
+    {
+      "derivation": "AST-selected unchanged serialized-row loader, recursive-reference resolver and signature; original full-module hash retained.",
+      "file": "tools/probe/row_values.py",
+      "original_sha256": "2d7d2bf3a69889f4c0e942da3accd761f06b1df5d79c231ceab9651364dfdffb",
+      "public_sha256": "09afd29cd84b8bfefc92c1102d328d4ee1386c973f73df8daa4c4c216f031359"
+    },
+    {
+      "derivation": "AST-selected unchanged six runtime-set predicates with primary Var reading; original full-module hash retained.",
+      "file": "tools/probe/runtime_sets.py",
+      "original_sha256": "38567cb9288f1710da0a8f00020bfa4179afc16bb31dab54ddf4d7b137a8db16",
+      "public_sha256": "25f4bcd7348da9cc0edc28cd9eeb4c324504740d606205764329b930ae6bf3ad"
+    },
+    {
+      "derivation": "Complete retained F68 positive rows, public spelling/path copy; no measurements edited.",
+      "file": "tools/probe/fixtures/strict-producer-runtime-rows.jsonl",
+      "original_sha256": "f1b75508e9494b9145c42a24d118c96c0afc973fd49ba43faa50404c04580867",
+      "public_sha256": "c6c4253ebaae5ff56028656f4d039d35dae9a1326d2afc1af7e0041ff7dc77a6"
+    },
+    {
+      "derivation": "Public README plus portable setup, label map and exact limitations.",
+      "file": "tools/probe/README.md",
+      "original_sha256": "7ac2eded6db251cc0c07419f313312145e618c9a98acf4a409eb1ca63e18f0e0",
+      "public_sha256": "34b6de700e177280aaf0ecffb84288ba3370952b068fa9e341aa8138f1eddd62"
+    }
+  ],
+  "policy": "Portable public spelling/path copies and declared AST selections. Assertions, missing-data rules and numeric criteria retained; no native analyzer execution during publication."
+}

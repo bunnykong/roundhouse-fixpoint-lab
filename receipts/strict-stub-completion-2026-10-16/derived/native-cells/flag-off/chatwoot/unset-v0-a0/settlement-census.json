@@ -1,0 +1,74 @@
+{
+  "completions": {
+    "absent_spliced": 0,
+    "stub": 0,
+    "uninformative_none": 0
+  },
+  "eligible_slots": 80,
+  "examples": {
+    "other.ir": [
+      "Span { file: FileId(742), start: 1076, end: 1117 }",
+      "Span { file: FileId(742), start: 1127, end: 2116 }",
+      "Span { file: FileId(742), start: 1187, end: 1244 }",
+      "Span { file: FileId(742), start: 1194, end: 1244 }",
+      "Span { file: FileId(742), start: 207, end: 325 }",
+      "Span { file: FileId(742), start: 2179, end: 2221 }",
+      "Span { file: FileId(742), start: 2179, end: 2348 }",
+      "Span { file: FileId(742), start: 2186, end: 2221 }"
+    ],
+    "other.return": [
+      "ActionView::Base#group_traffic_data",
+      "ActionView::Base#validate_email_channel",
+      "ActionView::Base#validate_imap",
+      "ActionView::Base#validate_smtp",
+      "Api::V1::Accounts::InboxesController#validate_and_update_email_channel",
+      "Api::V1::Accounts::InboxesController#validate_email_channel",
+      "Api::V1::Accounts::InboxesController#validate_imap",
+      "Api::V1::Accounts::InboxesController#validate_smtp"
+    ],
+    "param_seed": [
+      "analyzer:(ClassId(Symbol(\"Api::V1::Accounts::Twitter::AuthorizationsController\")), Symbol(\"oauth_authorize_endpoint\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"Instagram::CallbacksController\")), Symbol(\"exchange_for_long_lived_token\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"InstagramConcern\")), Symbol(\"exchange_for_long_lived_token\"), Instance)[0]",
+      "analyzer:(ClassId(Symbol(\"Rack::Utils\")), Symbol(\"parse_nested_query\"), Instance)[0]",
+      "app:(ClassId(Symbol(\"Api::V1::Accounts::Twitter::AuthorizationsController\")), Symbol(\"oauth_authorize_endpoint\"))[0]",
+      "app:(ClassId(Symbol(\"Instagram::CallbacksController\")), Symbol(\"exchange_for_long_lived_token\"))[0]",
+      "app:(ClassId(Symbol(\"InstagramConcern\")), Symbol(\"exchange_for_long_lived_token\"))[0]",
+      "app:(ClassId(Symbol(\"Rack::Utils\")), Symbol(\"parse_nested_query\"))[0]"
+    ],
+    "stub.spliced_copy": [
+      "Api::V1::Accounts::Contacts::LabelsController#create",
+      "Api::V1::Accounts::Contacts::LabelsController#index",
+      "Api::V1::Accounts::Conversations::LabelsController#create",
+      "Api::V1::Accounts::Conversations::LabelsController#index",
+      "Api::V1::Accounts::Google::AuthorizationsController#google_client",
+      "Api::V1::Accounts::InboxesController#build_imap_connection",
+      "Api::V1::Accounts::InboxesController#check_imap_connection",
+      "Api::V1::Accounts::InboxesController#check_smtp_connection"
+    ]
+  },
+  "flag": 0,
+  "pending_leaves": {
+    "ivar_attr": 0,
+    "other": {
+      "ir": 122,
+      "local": 0,
+      "return": 17
+    },
+    "param_seed": 8,
+    "stub": {
+      "class_configuration": 0,
+      "initial_untyped": 0,
+      "spliced_copy": 23,
+      "test_module": 0
+    },
+    "total": 170
+  },
+  "schema": 1,
+  "stubs_minted": {
+    "class_configuration": 0,
+    "initial_untyped": 0,
+    "spliced_copy": 80,
+    "test_module": 0
+  }
+}

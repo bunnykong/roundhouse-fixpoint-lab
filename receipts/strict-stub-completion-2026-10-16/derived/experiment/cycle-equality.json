@@ -1,0 +1,149 @@
+{
+  "app": "chatwoot",
+  "candidate": "strict-stub-completion-eb402b6d",
+  "condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "control": "response-return-spine-control",
+  "exact_graph_equality": true,
+  "reachable_graphs": {
+    "candidate": {
+      "Some(At { site: (365, 4397, 4470), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4486, 4559), step: Elem })"
+          }
+        ]
+      },
+      "Some(At { site: (365, 4486, 4559), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4397, 4470), step: Elem })"
+          }
+        ]
+      }
+    },
+    "control": {
+      "Some(At { site: (365, 4397, 4470), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4486, 4559), step: Elem })"
+          }
+        ]
+      },
+      "Some(At { site: (365, 4486, 4559), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4397, 4470), step: Elem })"
+          }
+        ]
+      }
+    }
+  },
+  "reachable_node_count": 2,
+  "reason": "Identical roots and all reachable symbolic definitions, including the entire two-node cycle.",
+  "relation": "EQ",
+  "roots": {
+    "candidate": {
+      "Some(At { site: (365, 4397, 4470), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4486, 4559), step: Elem })"
+          }
+        ]
+      },
+      "Some(At { site: (365, 4486, 4559), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4397, 4470), step: Elem })"
+          }
+        ]
+      }
+    },
+    "control": {
+      "Some(At { site: (365, 4397, 4470), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4486, 4559), step: Elem })"
+          }
+        ]
+      },
+      "Some(At { site: (365, 4486, 4559), step: Elem })": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Conversation",
+            "kind": "class"
+          },
+          {
+            "kind": "rec",
+            "slot": "Some(At { site: (365, 4397, 4470), step: Elem })"
+          }
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "key": "Some(At { site: (365, 4397, 4470), step: Elem })",
+      "reason": "unresolved value relation: 'unresolved reference'",
+      "table": "side_table"
+    },
+    {
+      "key": "Some(At { site: (365, 4486, 4559), step: Elem })",
+      "reason": "unresolved value relation: 'unresolved reference'",
+      "table": "side_table"
+    }
+  ],
+  "setting": "unset-v0-a0",
+  "source": "examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb",
+  "unresolved_targets": []
+}

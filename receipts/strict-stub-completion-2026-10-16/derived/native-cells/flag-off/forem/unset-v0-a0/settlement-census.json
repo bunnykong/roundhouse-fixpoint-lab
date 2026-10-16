@@ -1,0 +1,59 @@
+{
+  "completions": {
+    "absent_spliced": 0,
+    "stub": 0,
+    "uninformative_none": 0
+  },
+  "eligible_slots": 57,
+  "examples": {
+    "other.ir": [
+      "Span { file: FileId(678), start: 1280, end: 1294 }",
+      "Span { file: FileId(678), start: 1412, end: 1426 }",
+      "Span { file: FileId(678), start: 1430, end: 1445 }",
+      "Span { file: FileId(678), start: 1514, end: 1528 }",
+      "Span { file: FileId(835), start: 1195, end: 2048 }",
+      "Span { file: FileId(835), start: 1568, end: 1580 }",
+      "Span { file: FileId(835), start: 1855, end: 2048 }",
+      "Span { file: FileId(835), start: 1891, end: 1916 }"
+    ],
+    "other.return": [
+      "Admin::ListingCategoriesController#first_publish",
+      "Admin::ListingsController#create",
+      "Admin::ListingsController#first_publish"
+    ],
+    "stub.spliced_copy": [
+      "Admin::ListingCategoriesController#create_draft",
+      "Admin::ListingCategoriesController#create_listing",
+      "Admin::ListingsController#create_draft",
+      "Admin::ListingsController#create_listing",
+      "ArticlesController#admin_config_label",
+      "ArticlesController#any_enabled_auth_providers?",
+      "ArticlesController#beautified_url",
+      "ArticlesController#collection_link"
+    ]
+  },
+  "flag": 0,
+  "pending_leaves": {
+    "ivar_attr": 0,
+    "other": {
+      "ir": 24,
+      "local": 0,
+      "return": 3
+    },
+    "param_seed": 0,
+    "stub": {
+      "class_configuration": 0,
+      "initial_untyped": 0,
+      "spliced_copy": 28,
+      "test_module": 0
+    },
+    "total": 55
+  },
+  "schema": 1,
+  "stubs_minted": {
+    "class_configuration": 0,
+    "initial_untyped": 2,
+    "spliced_copy": 57,
+    "test_module": 0
+  }
+}

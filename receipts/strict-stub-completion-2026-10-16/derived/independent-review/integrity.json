@@ -1,0 +1,41 @@
+{
+  "binary_sha256_actual": "d3cf872c9282112857fb2c873f5a55168f090686070622aafcab78568a27b372",
+  "build": {
+    "base": "de7589e46891a4b21e4b9ace345108e372297f0d",
+    "binary_sha256": "d3cf872c9282112857fb2c873f5a55168f090686070622aafcab78568a27b372",
+    "branch": "strict-stub-completion",
+    "candidate": "strict-stub-completion-eb402b6d",
+    "diff_sha256": "2c53a512adf756e9ece79c1eb8a9c6842c2cfa99a2bec6516c0b34dc30913efb",
+    "library_command": "RBENV_VERSION=3.4.4 RUST_MIN_STACK=33554432 CARGO_BUILD_JOBS=4 CARGO_TARGET_DIR=$WORKSPACE/$EXPERIMENT/target-quick cargo test --lib --locked -- --test-threads=1",
+    "library_result": {
+      "elapsed_test_seconds": 354.63,
+      "failed": 0,
+      "ignored": 26,
+      "log": "cargo-test-lib-ready.log",
+      "passed": 1249
+    },
+    "release_command": "CARGO_BUILD_JOBS=4 CARGO_TARGET_DIR=$WORKSPACE/$EXPERIMENT/target-release-quick phase2/probe/probe.sh $WORKSPACE/$EXPERIMENT/repo strict-stub-completion --set RH_STRICT_STUB_COMPLETE=1",
+    "source_commit": "eb402b6d36900ab7efdad56741de66e212ccd392"
+  },
+  "changed_files": [
+    "src/analyze/class_configuration.rs",
+    "src/analyze/mod.rs",
+    "src/analyze/strict_stub_completion.rs",
+    "src/analyze/sccq.rs",
+    "src/analyze/test_module.rs"
+  ],
+  "commit_diff_equals_source_patch": true,
+  "commit_parent": "de7589e46891a4b21e4b9ace345108e372297f0d",
+  "library_log_sha256": "41dd304989cd21ef08e100c6a17433b626abb12049eca54f9af4753c1914d292",
+  "library_summary": [
+    "test result: ok. 1249 passed; 0 failed; 26 ignored; 0 measured; 0 filtered out; finished in 354.63s"
+  ],
+  "source_patch_sha256_actual": "2c53a512adf756e9ece79c1eb8a9c6842c2cfa99a2bec6516c0b34dc30913efb",
+  "strict_stub_completion_native_results": [
+    "test analyze::strict_stub_completion::tests::strict_stub_completion_census_kinds ... ok",
+    "test analyze::strict_stub_completion::tests::strict_stub_completion_completion_order_independent ... ok",
+    "test analyze::strict_stub_completion::tests::strict_stub_completion_early_unresolved_is_replaced_by_latest_informative_body ... ok",
+    "test analyze::strict_stub_completion::tests::strict_stub_completion_never_harvested_stub_is_counted ... ok"
+  ],
+  "working_tree_diff_from_commit": ""
+}

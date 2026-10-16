@@ -126,3 +126,8 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 
 [F68: strict stub runtime values](receipts/strict-stub-runtime-values-2026-10-16/README.md).
 [F69: response return spine](receipts/response-return-spine-2026-10-16/README.md).
+
+## October 16 strict stub completion
+
+[F70: strict stub completion](receipts/strict-stub-completion-2026-10-16/README.md).
+[Reusable quick-test checker](tools/probe/README.md).

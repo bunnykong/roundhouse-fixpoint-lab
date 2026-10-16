@@ -1,0 +1,17 @@
+{
+  "base": "de7589e46891a4b21e4b9ace345108e372297f0d",
+  "binary_sha256": "d3cf872c9282112857fb2c873f5a55168f090686070622aafcab78568a27b372",
+  "branch": "strict-stub-completion",
+  "candidate": "strict-stub-completion-eb402b6d",
+  "diff_sha256": "2c53a512adf756e9ece79c1eb8a9c6842c2cfa99a2bec6516c0b34dc30913efb",
+  "library_command": "RBENV_VERSION=3.4.4 RUST_MIN_STACK=33554432 CARGO_BUILD_JOBS=4 CARGO_TARGET_DIR=$WORKSPACE/$EXPERIMENT/target-quick cargo test --lib --locked -- --test-threads=1",
+  "library_result": {
+    "elapsed_test_seconds": 354.63,
+    "failed": 0,
+    "ignored": 26,
+    "log": "cargo-test-lib-ready.log",
+    "passed": 1249
+  },
+  "release_command": "CARGO_BUILD_JOBS=4 CARGO_TARGET_DIR=$WORKSPACE/$EXPERIMENT/target-release-quick phase2/probe/probe.sh $WORKSPACE/$EXPERIMENT/repo strict-stub-completion --set RH_STRICT_STUB_COMPLETE=1",
+  "source_commit": "eb402b6d36900ab7efdad56741de66e212ccd392"
+}
