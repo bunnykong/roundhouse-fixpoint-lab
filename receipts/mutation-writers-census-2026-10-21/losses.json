@@ -1,0 +1,1484 @@
+{
+  "condition": "mutation-writers-20261016-four-apps-v0a0",
+  "checker_condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "runtime": "CRuby 4.0.7",
+  "schedules": [
+    "unset",
+    "1",
+    "2",
+    "repeat"
+  ],
+  "family_counts": {
+    "routing or missing contribution": 13,
+    "container": 6,
+    "other": 2
+  },
+  "distinct_rows": 21,
+  "not_in_f72_losses": 17,
+  "rows": [
+    {
+      "census_id": "A010",
+      "f72_census_id": null,
+      "app": "campfire",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.allow_unauthenticated_access\",\"kind\":\"Send\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":412,\"file\":124,\"start\":359}}:occurrence:0:1/0",
+      "method": "Authentication.allow_unauthenticated_access",
+      "line": 15,
+      "expression": "options",
+      "source": "examples/apps/campfire/app/controllers/concerns/authentication.rb",
+      "source_sha256": "8608d2cfe51ef299b5ac2d1a17f838871bc161ea087082d629d92b9e74b89fc9",
+      "family": "routing or missing contribution",
+      "mechanism": "Callback keyword forwarding",
+      "witness": "{only: [:new, :create]}",
+      "boundary": "Authentication options from unchanged Sessions/Users declarations",
+      "candidate_excludes": "Hash[Bottom,Bottom]",
+      "control": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "bottom"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "bottom"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{only: [:new, :create]}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "A013",
+      "f72_census_id": null,
+      "app": "campfire",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2",
+      "method": "Authentication.require_unauthenticated_access",
+      "line": 24,
+      "expression": "options",
+      "source": "examples/apps/campfire/app/controllers/concerns/authentication.rb",
+      "source_sha256": "8608d2cfe51ef299b5ac2d1a17f838871bc161ea087082d629d92b9e74b89fc9",
+      "family": "routing or missing contribution",
+      "mechanism": "Callback keyword forwarding",
+      "witness": "{only: [:new, :create]}",
+      "boundary": "Authentication options from unchanged Sessions/Users declarations",
+      "candidate_excludes": "Hash[Bottom,Bottom]",
+      "control": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "bottom"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "bottom"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{only: [:new, :create]}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "A014",
+      "f72_census_id": null,
+      "app": "campfire",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2/0",
+      "method": "Authentication.require_unauthenticated_access",
+      "line": 24,
+      "expression": "options",
+      "source": "examples/apps/campfire/app/controllers/concerns/authentication.rb",
+      "source_sha256": "8608d2cfe51ef299b5ac2d1a17f838871bc161ea087082d629d92b9e74b89fc9",
+      "family": "routing or missing contribution",
+      "mechanism": "Callback keyword forwarding",
+      "witness": "{only: [:new, :create]}",
+      "boundary": "Authentication options from unchanged Sessions/Users declarations",
+      "candidate_excludes": "Hash[Bottom,Bottom]",
+      "control": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "bottom"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "bottom"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{only: [:new, :create]}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C575",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":1522,\"file\":365,\"start\":712}}:occurrence:0:0/4",
+      "method": "AutomationRules::ConditionsFilterService#perform",
+      "line": 37,
+      "expression": "records = perform_attribute_changed_filter(records) if @attribute_changed_query_filter.any?",
+      "source": "examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb",
+      "source_sha256": "8bbd2b044d19685d3bc047b376308dcf6f4e27dc973c39c402d75f6cef304a0f",
+      "family": "container",
+      "mechanism": "Attribute-change set accumulation",
+      "witness": "[Conversation(id:1)]",
+      "boundary": "one matching status transition, open to resolved",
+      "candidate_excludes": "Array[Bottom] (C575 also permits nil)",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "elem": {
+              "kind": "var",
+              "var": 0
+            },
+            "kind": "array"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "elem": {
+              "kind": "bottom"
+            },
+            "kind": "array"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "[#<Conversation id: 1, status: \"resolved\">]",
+          "ruby_class": "Array",
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C578",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform_attribute_changed_filter\",\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":3486,\"file\":365,\"start\":3285}}:occurrence:0:",
+      "method": "AutomationRules::ConditionsFilterService#perform_attribute_changed_filter",
+      "line": 82,
+      "expression": "@attribute_changed_records = []\n    current_attribute_changed_record = base_relation\n    filter_based_on_attribute_change(records, current_attribute_changed_record)\n\n    @attribute_changed_records.uniq",
+      "source": "examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb",
+      "source_sha256": "8bbd2b044d19685d3bc047b376308dcf6f4e27dc973c39c402d75f6cef304a0f",
+      "family": "container",
+      "mechanism": "Attribute-change set accumulation",
+      "witness": "[Conversation(id:1)]",
+      "boundary": "one matching status transition, open to resolved",
+      "candidate_excludes": "Array[Bottom] (C575 also permits nil)",
+      "control": {
+        "elem": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "array"
+      },
+      "candidate": {
+        "elem": {
+          "kind": "bottom"
+        },
+        "kind": "array"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "[#<Conversation id: 1, status: \"resolved\">]",
+          "ruby_class": "Array",
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C1376",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "ir",
+      "key": "{\"declaration\":\"V2::Reports::DrilldownRecordSerializer#inferred_messages_by_event_id\",\"kind\":\"OpAssign\",\"source\":\"examples/apps/chatwoot/app/builders/v2/reports/drilldown_record_serializer.rb\",\"span\":{\"end\":4527,\"file\":144,\"start\":4272}}:occurrence:0:0/2/0/2",
+      "method": "V2::Reports::DrilldownRecordSerializer#inferred_messages_by_event_id",
+      "line": 140,
+      "expression": "inferred_message_candidates.find do |message|\n        message_matches_event?(message, event)\n      end",
+      "source": "examples/apps/chatwoot/app/builders/v2/reports/drilldown_record_serializer.rb",
+      "source_sha256": "c8f26e88a80d3ba63970db0a22002ae4b5ea408c95933cf36ce04fa5d76461d4",
+      "family": "other",
+      "mechanism": "Missing find nil",
+      "witness": "nil",
+      "boundary": "one ReportingEvent and zero candidate Messages",
+      "candidate_excludes": "Message",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "union",
+            "variants": [
+              {
+                "args": [],
+                "id": "Message",
+                "kind": "class"
+              },
+              {
+                "kind": "var",
+                "var": 0
+              }
+            ]
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "args": [],
+        "id": "Message",
+        "kind": "class"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "nil",
+          "ruby_class": "NilClass",
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C1465",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"Whatsapp::ContactInfoResponseService#contact_payload\",\"kind\":\"BoolOp\",\"source\":\"examples/apps/chatwoot/app/services/whatsapp/contact_info_response_service.rb\",\"span\":{\"end\":946,\"file\":587,\"start\":852}}:occurrence:0:0/1",
+      "method": "Whatsapp::ContactInfoResponseService#contact_payload",
+      "line": 37,
+      "expression": "Array(message_payload[:contacts]).first&.with_indifferent_access",
+      "source": "examples/apps/chatwoot/app/services/whatsapp/contact_info_response_service.rb",
+      "source_sha256": "67efbc1edfcde59fc86f3082bc0a720b30a35887851bdb1c41d51a791a4e5f78",
+      "family": "other",
+      "mechanism": "Missing safe-navigation nil",
+      "witness": "nil",
+      "boundary": "message_payload={contacts:[]}; first is nil before the outer fallback",
+      "candidate_excludes": "HashWithIndifferentAccess[Any]",
+      "control": {
+        "kind": "var",
+        "var": 0
+      },
+      "candidate": {
+        "args": [
+          {
+            "kind": "untyped"
+          }
+        ],
+        "id": "ActiveSupport::HashWithIndifferentAccess",
+        "kind": "class"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "nil",
+          "ruby_class": "NilClass",
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C1855",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "params",
+      "key": "NotificationSetting#selected_email_flags=[0]",
+      "method": "NotificationSetting#selected_email_flags=[0]",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "routing or missing contribution",
+      "mechanism": "Request setter contribution",
+      "witness": "[\"email_conversation_assignment\"] / [\"push_conversation_assignment\"]",
+      "boundary": "one permitted request flag String for the respective setter",
+      "candidate_excludes": "Array[Symbol]",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "str"
+          },
+          {
+            "elem": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "sym"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "kind": "array"
+          },
+          {
+            "args": [],
+            "id": "ActionController::Parameters",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "ActionDispatch::Http::UploadedFile",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "elem": {
+          "kind": "sym"
+        },
+        "kind": "array"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "[\"email_conversation_assignment\"]",
+          "ruby_class": "Array",
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C1856",
+      "f72_census_id": "C2428",
+      "app": "chatwoot",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "params",
+      "key": "NotificationSetting#selected_push_flags=[0]",
+      "method": "NotificationSetting#selected_push_flags=[0]",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "routing or missing contribution",
+      "mechanism": "Request setter contribution",
+      "witness": "[\"email_conversation_assignment\"] / [\"push_conversation_assignment\"]",
+      "boundary": "one permitted request flag String for the respective setter",
+      "candidate_excludes": "Array[Symbol]",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "str"
+          },
+          {
+            "elem": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "sym"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "kind": "array"
+          },
+          {
+            "args": [],
+            "id": "ActionController::Parameters",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "ActionDispatch::Http::UploadedFile",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "elem": {
+          "kind": "sym"
+        },
+        "kind": "array"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "[\"push_conversation_assignment\"]",
+          "ruby_class": "Array",
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M130",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:binding:markers",
+      "method": "Api::V1::MarkersController#create:binding:markers",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "container",
+      "mechanism": "Marker key kind",
+      "witness": "{\"home\" => Marker}",
+      "boundary": "params={\"home\"=>{\"last_read_id\"=>\"1\"}} through Rails 8.1.3 strong parameters",
+      "candidate_excludes": "Hash[Symbol,Any]",
+      "control": {
+        "key": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Marker",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "untyped"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: 1>}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M131",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:body:0/0/1/0/1/1/0/1/0/0",
+      "method": "Api::V1::MarkersController#create:body",
+      "line": 23,
+      "expression": "@markers",
+      "source": "examples/apps/mastodon/app/controllers/api/v1/markers_controller.rb",
+      "source_sha256": "e65aef9a9877f49028a765a75f6a7731d0981ddacd3e0cf67995ce9864bec7df",
+      "family": "container",
+      "mechanism": "Marker key kind",
+      "witness": "{\"home\" => Marker}",
+      "boundary": "params={\"home\"=>{\"last_read_id\"=>\"1\"}} through Rails 8.1.3 strong parameters",
+      "candidate_excludes": "Hash[Symbol,Any]",
+      "control": {
+        "key": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Marker",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "untyped"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M650",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "ir",
+      "key": "{\"declaration\":\"Api::V1::MarkersController#create\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/controllers/api/v1/markers_controller.rb\",\"span\":{\"end\":940,\"file\":1201,\"start\":490}}:occurrence:0:0/0/1/0/1/1/0/1/0/0",
+      "method": "Api::V1::MarkersController#create",
+      "line": 23,
+      "expression": "@markers",
+      "source": "examples/apps/mastodon/app/controllers/api/v1/markers_controller.rb",
+      "source_sha256": "e65aef9a9877f49028a765a75f6a7731d0981ddacd3e0cf67995ce9864bec7df",
+      "family": "container",
+      "mechanism": "Marker key kind",
+      "witness": "{\"home\" => Marker}",
+      "boundary": "params={\"home\"=>{\"last_read_id\"=>\"1\"}} through Rails 8.1.3 strong parameters",
+      "candidate_excludes": "Hash[Symbol,Any]",
+      "control": {
+        "key": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Marker",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "untyped"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M945",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"FollowRequest.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:0/0/0/0/0/0/0",
+      "method": "FollowRequest.rate_limit",
+      "line": 19,
+      "expression": "options",
+      "source": "examples/apps/mastodon/app/models/concerns/rate_limitable.rb",
+      "source_sha256": "b7492b077c5b3b4f77499cf0bf8f41dd520933a26e04777842b9b41e3341cd31",
+      "family": "routing or missing contribution",
+      "mechanism": "Captured callback options",
+      "witness": "{by: :account, family: :follows}",
+      "boundary": "FollowRequest rate_limit declaration and an enabled real after_create callback",
+      "candidate_excludes": "Hash[Bottom,Bottom]",
+      "control": {
+        "key": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "bottom"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "bottom"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{by: :account, family: :follows}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "sym"
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1273",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"RateLimitable.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:1/0/0/1/0/0/0",
+      "method": "RateLimitable.rate_limit",
+      "line": 28,
+      "expression": "options[:by]",
+      "source": "examples/apps/mastodon/app/models/concerns/rate_limitable.rb",
+      "source_sha256": "b7492b077c5b3b4f77499cf0bf8f41dd520933a26e04777842b9b41e3341cd31",
+      "family": "routing or missing contribution",
+      "mechanism": "Rollback callback contribution",
+      "witness": ":account",
+      "boundary": "rollback after an enabled rate-limit callback records its account",
+      "candidate_excludes": "Bottom | nil",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "var",
+            "var": 0
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "bottom"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": ":account",
+          "ruby_class": "Symbol",
+          "type": {
+            "kind": "sym"
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1491",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"ThreadResolveWorker#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/workers/thread_resolve_worker.rb\",\"span\":{\"end\":780,\"file\":862,\"start\":158}}:occurrence:0:0/3/0/2",
+      "method": "ThreadResolveWorker#perform",
+      "line": 14,
+      "expression": "options.deep_symbolize_keys",
+      "source": "examples/apps/mastodon/app/workers/thread_resolve_worker.rb",
+      "source_sha256": "6ddc48376a9552f92c84eba0a371804a5147bddd2bcac39e9ece535a6a98bca5",
+      "family": "routing or missing contribution",
+      "mechanism": "Worker option forwarding",
+      "witness": "{request_id: \"request-1\"}",
+      "boundary": "unchanged perform_async payload then options.deep_symbolize_keys",
+      "candidate_excludes": "Hash[Symbol,Bottom]",
+      "control": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "var",
+          "var": 0
+        }
+      },
+      "candidate": {
+        "key": {
+          "kind": "sym"
+        },
+        "kind": "hash",
+        "value": {
+          "kind": "bottom"
+        }
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{request_id: \"request-1\"}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "str"
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1545",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"User#send_pending_devise_notifications\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/user.rb\",\"span\":{\"end\":12387,\"file\":235,\"start\":12045}}:occurrence:0:0/0",
+      "method": "User#send_pending_devise_notifications",
+      "line": 399,
+      "expression": "pending_devise_notifications",
+      "source": "examples/apps/mastodon/app/models/user.rb",
+      "source_sha256": "c3d5bf469f7f46d581d59888662ffa801ad03f07b431865eda96d950448bd2b6",
+      "family": "container",
+      "mechanism": "Pending notification queue",
+      "witness": "[[:confirmation_instructions, [\"token\"], {}]]",
+      "boundary": "send_devise_notification inside a real ActiveRecord transaction",
+      "candidate_excludes": "Array[Bottom]",
+      "control": {
+        "elem": {
+          "kind": "var",
+          "var": 0
+        },
+        "kind": "array"
+      },
+      "candidate": {
+        "elem": {
+          "kind": "bottom"
+        },
+        "kind": "array"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "[[:confirmation_instructions, [\"token\"], {}]]",
+          "ruby_class": "Array",
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "array",
+              "elem": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "sym"
+                  },
+                  {
+                    "kind": "array",
+                    "elem": {
+                      "kind": "str"
+                    }
+                  },
+                  {
+                    "kind": "hash",
+                    "key": {
+                      "kind": "bottom"
+                    },
+                    "value": {
+                      "kind": "bottom"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1786",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "params",
+      "key": "Account#<<[0]",
+      "method": "Account#<<[0]",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "routing or missing contribution",
+      "mechanism": "Association append routing",
+      "witness": "Account(id:1)",
+      "boundary": "one real List.accounts << Account through update_list!",
+      "candidate_excludes": "Mention",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Account",
+            "kind": "class"
+          },
+          {
+            "kind": "var",
+            "var": 0
+          },
+          {
+            "kind": "untyped"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "args": [],
+        "id": "Mention",
+        "kind": "class"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "#<Account id: 1, username: \"ada\", domain: nil>",
+          "ruby_class": "Account",
+          "type": {
+            "kind": "class",
+            "id": "Account",
+            "args": []
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1848",
+      "f72_census_id": "M2643",
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "params",
+      "key": "Collection#is_a?[0]",
+      "method": "Collection#is_a?[0]",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "routing or missing contribution",
+      "mechanism": "is_a? argument routing",
+      "witness": "Symbol (the class object)",
+      "boundary": "Collection/Status json value at CacheConcern options[:json].is_a?(Symbol)",
+      "candidate_excludes": "class union omitting Symbol",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Account",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Collection",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Status",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Symbol",
+            "kind": "class"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Account",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Collection",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Status",
+            "kind": "class"
+          }
+        ]
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "Symbol",
+          "ruby_class": "Class",
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M1904",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "set": "sample",
+      "stratum": "concrete_nil",
+      "table": "params",
+      "key": "Status#is_a?[0]",
+      "method": "Status#is_a?[0]",
+      "line": null,
+      "expression": null,
+      "source": null,
+      "source_sha256": null,
+      "family": "routing or missing contribution",
+      "mechanism": "is_a? argument routing",
+      "witness": "Symbol (the class object)",
+      "boundary": "Collection/Status json value at CacheConcern options[:json].is_a?(Symbol)",
+      "candidate_excludes": "class union omitting Symbol",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Account",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Collection",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Enumerable",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "ScheduledStatus",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Status",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Symbol",
+            "kind": "class"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Account",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Collection",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Enumerable",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "ScheduledStatus",
+            "kind": "class"
+          },
+          {
+            "args": [],
+            "id": "Status",
+            "kind": "class"
+          }
+        ]
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "Symbol",
+          "ruby_class": "Class",
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "C1748",
+      "f72_census_id": "C2311",
+      "app": "chatwoot",
+      "set": "F72 replay",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/views/super_admin/push_diagnostics/show.html.erb\",\"span\":{\"end\":10087,\"file\":1136,\"start\":3}}:occurrence:0:6/1/13/1/1/1/0/5/0/1/0/0",
+      "method": null,
+      "line": 156,
+      "expression": "r",
+      "source": "examples/apps/chatwoot/app/views/super_admin/push_diagnostics/show.html.erb",
+      "source_sha256": "3cbf625d62677bae5d2c96f6a677c4bd73e158ac7210962ec6ef580094a2d843",
+      "family": "routing or missing contribution",
+      "mechanism": "view input from alternate action",
+      "witness": "{id: 1, type: \"fcm\", device: \"—\", token_tail: \"…abcdef\", status: :skipped, message: \"No Firebase credentials and push relay disabled\"}",
+      "boundary": null,
+      "candidate_excludes": null,
+      "control": {
+        "kind": "var",
+        "var": 0
+      },
+      "candidate": {
+        "kind": "bottom"
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "{id: 1, type: \"fcm\", device: \"—\", token_tail: \"…abcdef\", status: :skipped, message: \"No Firebase credentials and push relay disabled\"}",
+          "ruby_class": "Hash",
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "kind": "sym"
+                }
+              ]
+            }
+          },
+          "position": "$"
+        }
+      ]
+    },
+    {
+      "census_id": "M385",
+      "f72_census_id": "M586",
+      "app": "mastodon",
+      "set": "F72 replay",
+      "stratum": "unknown",
+      "table": "ir",
+      "key": "{\"declaration\":\"ActivityPub::FetchFeaturedCollectionService#call\",\"kind\":\"If\",\"source\":null,\"span\":{\"end\":0,\"file\":0,\"start\":0}}:occurrence:0:2/2/0/0/0/0",
+      "method": "ActivityPub::FetchFeaturedCollectionService#call",
+      "line": 11,
+      "expression": "options[:collection]",
+      "source": "examples/apps/mastodon/app/services/activitypub/fetch_featured_collection_service.rb",
+      "source_sha256": "8f69b68f8bcf7d1de2d8d2f92e94d86757fbaf3a8b1c389e7b4ca3a527e4c89a",
+      "family": "routing or missing contribution",
+      "mechanism": "keyword writer omitted",
+      "witness": "\"https://remote.example.test/featured\"",
+      "boundary": null,
+      "candidate_excludes": null,
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "bool"
+              },
+              {
+                "kind": "var",
+                "var": 0
+              }
+            ]
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "kind": "bool"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate_same_on_four_schedules": true,
+      "verdicts": {
+        "unset": "LOSS",
+        "1": "LOSS",
+        "2": "LOSS",
+        "repeat": "LOSS"
+      },
+      "observations": [
+        {
+          "inspect": "\"https://remote.example.test/featured\"",
+          "ruby_class": "String",
+          "type": {
+            "kind": "str"
+          },
+          "position": "$"
+        }
+      ]
+    }
+  ]
+}

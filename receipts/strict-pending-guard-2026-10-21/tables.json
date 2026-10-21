@@ -1,0 +1,853 @@
+{
+  "checker_condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "research_base": {
+    "condition": "strict-pending-guard-20261021-four-apps-v0a0",
+    "schedules": [
+      "unset",
+      "1",
+      "2",
+      "repeat"
+    ],
+    "equal_tables": {
+      "campfire": {
+        "mutation_writers": 10,
+        "strict_guard": 10
+      },
+      "forem": {
+        "mutation_writers": 9,
+        "strict_guard": 9
+      },
+      "chatwoot": {
+        "mutation_writers": 9,
+        "strict_guard": 9
+      },
+      "mastodon": {
+        "mutation_writers": 5,
+        "strict_guard": 10
+      }
+    },
+    "varying_rows": {
+      "campfire": {
+        "mutation_writers": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        },
+        "strict_guard": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "forem": {
+        "mutation_writers": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 4,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        },
+        "strict_guard": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 4,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "chatwoot": {
+        "mutation_writers": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 2,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        },
+        "strict_guard": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 2,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "mastodon": {
+        "mutation_writers": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 7,
+          "copies": 0,
+          "ir": 67,
+          "params": 7,
+          "returns": 47,
+          "side_table": 10
+        },
+        "strict_guard": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      }
+    },
+    "value_changes": {
+      "campfire": {
+        "unset": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "1": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "2": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "repeat": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        }
+      },
+      "forem": {
+        "unset": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "1": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "2": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "repeat": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        }
+      },
+      "chatwoot": {
+        "unset": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "1": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "2": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        },
+        "repeat": {
+          "narrowed": 0,
+          "widened": 0,
+          "incomparable": 0,
+          "missing": 0
+        }
+      },
+      "mastodon": {
+        "unset": {
+          "narrowed": 0,
+          "widened": 24,
+          "incomparable": 0,
+          "missing": 13
+        },
+        "1": {
+          "narrowed": 0,
+          "widened": 24,
+          "incomparable": 0,
+          "missing": 13
+        },
+        "2": {
+          "narrowed": 0,
+          "widened": 24,
+          "incomparable": 0,
+          "missing": 9
+        },
+        "repeat": {
+          "narrowed": 0,
+          "widened": 24,
+          "incomparable": 0,
+          "missing": 13
+        }
+      }
+    },
+    "diagnostics": {
+      "campfire": {
+        "control": {
+          "unset": 485,
+          "1": 485,
+          "2": 485,
+          "repeat": 485
+        },
+        "candidate": {
+          "unset": 485,
+          "1": 485,
+          "2": 485,
+          "repeat": 485
+        }
+      },
+      "forem": {
+        "control": {
+          "unset": 8820,
+          "1": 8820,
+          "2": 8820,
+          "repeat": 8820
+        },
+        "candidate": {
+          "unset": 8820,
+          "1": 8820,
+          "2": 8820,
+          "repeat": 8820
+        }
+      },
+      "chatwoot": {
+        "control": {
+          "unset": 8150,
+          "1": 8150,
+          "2": 8150,
+          "repeat": 8150
+        },
+        "candidate": {
+          "unset": 8150,
+          "1": 8150,
+          "2": 8150,
+          "repeat": 8150
+        }
+      },
+      "mastodon": {
+        "control": {
+          "unset": 7183,
+          "1": 7183,
+          "2": 7194,
+          "repeat": 7183
+        },
+        "candidate": {
+          "unset": 7194,
+          "1": 7194,
+          "2": 7194,
+          "repeat": 7194
+        }
+      }
+    },
+    "hash_arm_in_page_return": {
+      "mutation_writers": {
+        "unset": true,
+        "1": true,
+        "2": false,
+        "repeat": true
+      },
+      "strict_guard": {
+        "unset": false,
+        "1": false,
+        "2": false,
+        "repeat": false
+      }
+    },
+    "cycle_component": [
+      "Some(Narrow { site: (638, 441, 453), filter: \"!blank_json\" })",
+      "Some(Narrow { site: (966, 11973, 12002), filter: \"is_hash_collection_or_uri\" })",
+      "Some(Param { class: ClassId(Symbol(\"ActivityPub::InboxesController\")), method: Symbol(\"fetch_collection_page\"), side: Instance, index: 0 })",
+      "Some(Param { class: ClassId(Symbol(\"JsonLdHelper\")), method: Symbol(\"collection_items\"), side: Instance, index: 0 })",
+      "Some(Param { class: ClassId(Symbol(\"JsonLdHelper\")), method: Symbol(\"fetch_collection_page\"), side: Instance, index: 0 })",
+      "Some(Ret { class: ClassId(Symbol(\"JsonLdHelper\")), method: Symbol(\"fetch_collection_page\"), class_side: false })"
+    ]
+  },
+  "independent_check": {
+    "fresh_v0a0_matches_original": true,
+    "recount_v0a0": {
+      "campfire": {
+        "equal_tables": 10,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "forem": {
+        "equal_tables": 9,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 4,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "chatwoot": {
+        "equal_tables": 9,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 2,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      },
+      "mastodon": {
+        "equal_tables": 10,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      }
+    },
+    "v1a1": {
+      "campfire": {
+        "equal_tables": 10,
+        "verification_moved": {
+          "unset": {},
+          "1": {},
+          "2": {},
+          "repeat": {}
+        },
+        "pending_at_settlement": {
+          "unset": 0,
+          "1": 0,
+          "2": 0,
+          "repeat": 0
+        },
+        "final_digests_match_v0a0": true
+      },
+      "mastodon": {
+        "equal_tables": 10,
+        "verification_moved": {
+          "unset": {
+            "production": {
+              "ir": 113,
+              "params": 19,
+              "returns": 9
+            },
+            "absorb": {
+              "ir": 17,
+              "params": 1,
+              "returns": 3
+            }
+          },
+          "1": {
+            "production": {
+              "ir": 84,
+              "params": 13,
+              "returns": 9
+            },
+            "absorb": {
+              "ir": 2,
+              "params": 1,
+              "returns": 1
+            }
+          },
+          "2": {
+            "production": {
+              "ir": 122,
+              "params": 16,
+              "returns": 13
+            },
+            "absorb": {
+              "ir": 17,
+              "returns": 3
+            }
+          },
+          "repeat": {
+            "production": {
+              "ir": 113,
+              "params": 19,
+              "returns": 9
+            },
+            "absorb": {
+              "ir": 17,
+              "params": 1,
+              "returns": 3
+            }
+          }
+        },
+        "pending_at_settlement": {
+          "unset": 0,
+          "1": 0,
+          "2": 0,
+          "repeat": 0
+        },
+        "final_digests_match_v0a0": true
+      }
+    },
+    "fresh_candidate_cells": 24,
+    "candidate_cache_hits": 0,
+    "changed_identity_relations": {
+      "unset-v0-a0": {
+        "EQ": 290,
+        "WIDEN": 24,
+        "ADDED": 9,
+        "REMOVED": 4
+      },
+      "1-v0-a0": {
+        "EQ": 290,
+        "WIDEN": 24,
+        "ADDED": 9,
+        "REMOVED": 4
+      },
+      "2-v0-a0": {
+        "EQ": 156,
+        "WIDEN": 24,
+        "ADDED": 9
+      },
+      "repeat-v0-a0": {
+        "EQ": 290,
+        "WIDEN": 24,
+        "ADDED": 9,
+        "REMOVED": 4
+      }
+    },
+    "supplemental_runtime_observations": 228
+  },
+  "main_port": {
+    "condition": "strict-pending-guard-main-port-20261021-v0a0",
+    "schedules_mastodon": [
+      "unset",
+      "1",
+      "2",
+      "repeat",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "schedules_other_apps": [
+      "unset",
+      "1",
+      "2",
+      "repeat"
+    ],
+    "upstream_main": "1c84d346361237ef9a99b6c01cead7c340532330",
+    "mastodon": {
+      "guard_off": {
+        "equal_tables": 5,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 16,
+          "copies": 0,
+          "ir": 67,
+          "params": 7,
+          "returns": 47,
+          "side_table": 10
+        }
+      },
+      "guard_on": {
+        "equal_tables": 10,
+        "varying_rows": {
+          "attributes": 0,
+          "block_values": 0,
+          "constants": 0,
+          "controller_bindings": 0,
+          "controller_cache": 0,
+          "copies": 0,
+          "ir": 0,
+          "params": 0,
+          "returns": 0,
+          "side_table": 0
+        }
+      }
+    },
+    "hash_arm_in_page_return": {
+      "1": {
+        "guard_off": true,
+        "guard_on": false
+      },
+      "10": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "2": {
+        "guard_off": true,
+        "guard_on": false
+      },
+      "3": {
+        "guard_off": true,
+        "guard_on": false
+      },
+      "4": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "5": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "6": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "7": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "8": {
+        "guard_off": false,
+        "guard_on": false
+      },
+      "9": {
+        "guard_off": true,
+        "guard_on": false
+      },
+      "repeat": {
+        "guard_off": true,
+        "guard_on": false
+      },
+      "unset": {
+        "guard_off": true,
+        "guard_on": false
+      }
+    },
+    "extra_seed_varying_tables": {
+      "10": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "3": [],
+      "4": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "5": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "6": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "7": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "8": [
+        "controller_cache",
+        "ir",
+        "params",
+        "returns",
+        "side_table"
+      ],
+      "9": []
+    },
+    "regression_apps": {
+      "campfire": {
+        "guard_off": {
+          "equal_tables": 10,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "guard_on": {
+          "equal_tables": 10,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 0,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "value_changes": {
+          "1-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 48530,
+            "widened": 0
+          },
+          "2-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 48530,
+            "widened": 0
+          },
+          "repeat-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 48530,
+            "widened": 0
+          },
+          "unset-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 48530,
+            "widened": 0
+          }
+        }
+      },
+      "forem": {
+        "guard_off": {
+          "equal_tables": 9,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 5,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "guard_on": {
+          "equal_tables": 9,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 5,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "value_changes": {
+          "1-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 245199,
+            "widened": 0
+          },
+          "2-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 245199,
+            "widened": 0
+          },
+          "repeat-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 245200,
+            "widened": 0
+          },
+          "unset-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 245200,
+            "widened": 0
+          }
+        }
+      },
+      "chatwoot": {
+        "guard_off": {
+          "equal_tables": 9,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 2,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "guard_on": {
+          "equal_tables": 9,
+          "varying_rows": {
+            "attributes": 0,
+            "block_values": 0,
+            "constants": 0,
+            "controller_bindings": 2,
+            "controller_cache": 0,
+            "copies": 0,
+            "ir": 0,
+            "params": 0,
+            "returns": 0,
+            "side_table": 0
+          }
+        },
+        "value_changes": {
+          "1-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 255638,
+            "widened": 0
+          },
+          "2-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 255640,
+            "widened": 0
+          },
+          "repeat-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 255638,
+            "widened": 0
+          },
+          "unset-v0-a0": {
+            "incomparable": 0,
+            "missing": 0,
+            "narrowed": 0,
+            "unchanged": 255638,
+            "widened": 0
+          }
+        }
+      }
+    },
+    "value_changes": {
+      "row_schedule_directions": {
+        "widened": 288
+      },
+      "unique_by_app": {
+        "mastodon": 24
+      },
+      "unique_rows": 24
+    },
+    "structural_identities": 12,
+    "structural_row_schedule_changes": 126,
+    "tests": {
+      "library_passes": 1448,
+      "integration_initial_passes": 5401,
+      "integration_retry_passes": 9,
+      "unique_default_passes": 6858,
+      "ignored": 466,
+      "initial_exit": 101,
+      "retry_exit": 0,
+      "doc_exit": 0
+    }
+  }
+}

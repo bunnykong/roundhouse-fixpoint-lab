@@ -139,3 +139,8 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 ## October 16 integrated current writers
 
 [F72: unsound equality gains and the mutation census](receipts/integrated-current-writers-2026-10-16/README.md).
+
+## October 21 results
+
+[F73: the mutation-site writers census](receipts/mutation-writers-census-2026-10-21/README.md) finds 21 rows that lose witnessed values on every schedule.
+[F74: the strict pending guard](receipts/strict-pending-guard-2026-10-21/README.md) makes Mastodon schedule-equal; it is not a soundness certificate.

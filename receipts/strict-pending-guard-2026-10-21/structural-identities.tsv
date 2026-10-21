@@ -1,0 +1,26 @@
+condition	presence	table	identity	schedules
+research base, four schedules	added	side_table	"Some(Narrow { site: (1300, 4344, 4356), filter: ""!nil_account"" })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Narrow { site: (1300, 4344, 4356), filter: ""nil_account"" })"	unset,1,2,repeat
+research base, four schedules	removed	side_table	"Some(Narrow { site: (654, 2879, 2901), filter: ""!is_hash_collection"" })"	unset,1,repeat
+research base, four schedules	added	side_table	"Some(Narrow { site: (709, 2298, 2316), filter: ""!is_account_uri"" })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Narrow { site: (709, 2298, 2316), filter: ""is_account_uri"" })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Narrow { site: (709, 856, 866), filter: ""!blank_uri"" })"	unset,1,2,repeat
+research base, four schedules	removed	side_table	"Some(Narrow { site: (966, 10478, 10500), filter: ""!is_hash_collection"" })"	unset,1,repeat
+research base, four schedules	removed	side_table	"Some(Narrow { site: (966, 10670, 10692), filter: ""!is_hash_collection"" })"	unset,1,repeat
+research base, four schedules	removed	side_table	"Some(Narrow { site: (966, 11973, 12002), filter: ""!is_hash_collection_or_uri"" })"	unset,1,repeat
+research base, four schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""call""), side: Instance, index: 0 })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""call""), side: Instance, index: 1 })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""process_options!""), side: Instance, index: 0 })"	unset,1,2,repeat
+research base, four schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""process_options!""), side: Instance, index: 1 })"	unset,1,2,repeat
+main port, twelve schedules	added	side_table	"Some(Narrow { site: (1300, 4344, 4356), filter: ""!nil_account"" })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Narrow { site: (1300, 4344, 4356), filter: ""nil_account"" })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	removed	side_table	"Some(Narrow { site: (654, 2879, 2901), filter: ""!is_hash_collection"" })"	unset,1,2,repeat,3,9
+main port, twelve schedules	added	side_table	"Some(Narrow { site: (709, 2298, 2316), filter: ""!is_account_uri"" })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Narrow { site: (709, 2298, 2316), filter: ""is_account_uri"" })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Narrow { site: (709, 856, 866), filter: ""!blank_uri"" })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	removed	side_table	"Some(Narrow { site: (966, 10478, 10500), filter: ""!is_hash_collection"" })"	unset,1,2,repeat,3,9
+main port, twelve schedules	removed	side_table	"Some(Narrow { site: (966, 11973, 12002), filter: ""!is_hash_collection_or_uri"" })"	unset,1,2,repeat,3,9
+main port, twelve schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""call""), side: Instance, index: 0 })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""call""), side: Instance, index: 1 })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""process_options!""), side: Instance, index: 0 })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
+main port, twelve schedules	added	side_table	"Some(Param { class: ClassId(Symbol(""ResolveAccountService"")), method: Symbol(""process_options!""), side: Instance, index: 1 })"	unset,1,2,repeat,3,4,5,6,7,8,9,10
