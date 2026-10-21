@@ -29,6 +29,8 @@ ivar writer or an ivar-writing name clash.
 - Candidate: `binding-projection-f2597823`, which is F73's candidate with `RH_STRICT_GUARD=1` and `RH_CB_PROJECT=1`.
   Commit `f2597823` over F74's `48155b34`. Binary SHA-256:
   `668efeb73c2e8a67b9321522a694de684b2b941c435168f19738800302944e8c`.
+  Source: [research/binding-projection-f2597823](https://github.com/bunnykong/roundhouse/tree/9ae77664fe2e36da1b4f8b96a90cc53839aa3c77). The branch holds a build-identical snapshot of measured commit `f2597823` with
+  the `research/` harness files removed, so its hash differs.
 - Control: `strict-pending-guard-48155b34`, F74's research-base candidate.
 - Checker: `quick-test-v1 / cached-observers-20261015-source-rebuild / F61`, V0A0 (verification and audit off).
   Schedules: unset, 1, 2 and an independent unset repeat; Mastodon also ran `RH_SHUFFLE` seeds 3 to 10.
@@ -101,7 +103,7 @@ The projected type admits all three.
   (64 ignored), 3 focused tests and the checker's 40 tests.
 - Binding values come from observer builds that add a read-only binding dump. Their cells reproduce the
   measured digests.
-- The candidate's source is not part of this receipt; [binding-projection.patch](binding-projection.patch) holds
+- The candidate source is on the branch named above; [binding-projection.patch](binding-projection.patch) holds
   the change from F74's candidate.
 
 ## Receipt label map

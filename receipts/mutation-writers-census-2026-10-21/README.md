@@ -10,8 +10,10 @@ On `mutation-writers-20261016-four-apps-v0a0`, the candidate that adds array and
 ## Condition
 
 - Candidate: F72's integrated rule plus array and hash mutation sites as writers, label `mutation-writers-66c06f52`.
-  Its source is not published. It is commit `66c06f52` over F72's recorded source `f9a7e620`
+  It is commit `66c06f52` over F72's recorded source `f9a7e620`
   (published as [integrated-current-writers](https://github.com/bunnykong/roundhouse/tree/991ec4b356a21cf53271737124533c617e01e847)).
+  Source: [research/mutation-writers-66c06f52](https://github.com/bunnykong/roundhouse/tree/18fcc75d611fc7fc7a5dfc00b4d0fd2fbea124a6). The branch holds a build-identical snapshot of measured commit `66c06f52` with the
+  `research/` harness files removed, so its hash differs.
   Binary SHA-256: `94a7b442594048b468271a5a170b1627f0d50ffb9159eec5e0390887adcd4e79`.
 - Control: spine v3, `response-return-spine-control`, unset values.
 - Checker: `quick-test-v1 / cached-observers-20261015-source-rebuild / F61`, V0A0 (verification and audit off).
@@ -115,7 +117,7 @@ are not a conformance bound.
   application boots. SQLite exercises real ActiveRecord behavior.
 - The census's full witness programs (228 observations) are not part of this receipt. The three programs here
   re-execute one row per family; the other rows' witnesses are recorded in losses.json.
-- The candidate source is not published, so the native cells cannot be rebuilt from public code.
+- This receipt does not rebuild the candidate; its source is on the branch named above.
 
 ## Receipt label map
 
@@ -124,7 +126,7 @@ are not a conformance bound.
 - `qt-whole3-f9a7e620` → `integrated-current-writers-f9a7e620` (F72's rule).
 - `quick-probe-v1 / observers-v1-20261015 / F61` → `quick-test-v1 / cached-observers-20261015-source-rebuild / F61`.
 - Source paths inside row keys are spelled `examples/apps/<app>/…`, relative to a checkout of the pinned app.
-  `candidate-source/` names a file of the unpublished candidate source.
+  `candidate-source/` names a file of the candidate source on that branch.
 - Census row IDs (A… Campfire, F… Forem, C… Chatwoot, M… Mastodon) belong to this census. F72 census IDs are
   given separately as `f72_census_id`; the same-looking ID can name different rows in the two censuses.
 

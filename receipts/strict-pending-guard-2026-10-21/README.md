@@ -51,6 +51,8 @@ completion pass. The six-slot cycle is still there; it now carries `Unresolved |
 Condition: `strict-pending-guard-20261021-four-apps-v0a0`, the candidate `mutation-writers-66c06f52` plus the
 guard, label `strict-pending-guard-48155b34`. Checker `quick-test-v1 / cached-observers-20261015-source-rebuild / F61`,
 V0A0, schedules unset, 1, 2 and an independent unset repeat. All 16 guard cells are valid native runs.
+Source: [research/strict-pending-guard-48155b34](https://github.com/bunnykong/roundhouse/tree/fcbd4a77a1d03c4a5e9be78e8fd86dbff810b5fb). The branch holds a build-identical snapshot of measured commit `48155b34` with the
+`research/` harness files removed, so its hash differs.
 
 | App | Equal tables without the guard | Equal tables with the guard |
 | --- | ---: | ---: |
@@ -104,7 +106,8 @@ above, the 24 widenings and the added and removed identities. The rerun adds the
 
 Condition: `strict-pending-guard-main-port-20261021-v0a0`. The base is upstream main `1c84d346` (October 21) with
 the candidate's flags ported as opt-in commits, together with the observer and scheduler ports (`93cc8346`,
-not published). The guard commit is `7bd46672`. Both Mastodon runs use one binary built with the guard, under the
+[research/main-port-mutation-writers-93cc8346](https://github.com/bunnykong/roundhouse/tree/93cc83466ad674b8dbe9070a2ce00784870a11a6)). The guard commit is `7bd46672` ([research/main-port-strict-pending-guard-7bd46672](https://github.com/bunnykong/roundhouse/tree/7bd46672796c5fa2cd1de6759f3c3a5483efc7f7)); both
+branches hold the measured commits. Both Mastodon runs use one binary built with the guard, under the
 same flag profile and `RH_SCHED=sccq`; only `RH_STRICT_GUARD=1` differs. Mastodon ran twelve schedules: unset, 1,
 2, repeat and `RH_SHUFFLE` seeds 3 to 10. For the other apps, the runs without the guard reuse the port's earlier
 cells.
@@ -156,7 +159,7 @@ so removing it excludes no Hash.
 - Forem and Chatwoot still vary in controller bindings.
 - The structural identities stay unclassified: 13 on the research base and 12 on main
   ([structural-identities.tsv](structural-identities.tsv)).
-- The candidate and port sources are not published. The patches apply to them, not to upstream main alone:
+- The patches apply to the candidate and port branches above, not to upstream main alone:
   `strict_producers::is_p` comes from the ported flags.
 
 ## Receipt label map
@@ -180,4 +183,4 @@ ruby receipts/strict-pending-guard-2026-10-21/page_hash_witness.rb
 
 `check.py` recomputes the counts above from [tables.json](tables.json), the TSV files and the two patches; it
 starts no analyzer. The witness needs CRuby 4.0.7 and the pinned Mastodon checkout under `corpus/apps`
-(`sh corpus/fetch.sh`) or `APPS`; it checks the file's SHA-256. Native reruns need the unpublished candidate source.
+(`sh corpus/fetch.sh`) or `APPS`; it checks the file's SHA-256. Native reruns build the branches named above.
