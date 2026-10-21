@@ -1,0 +1,631 @@
+app	change	detail	binding	before	after	row
+campfire	added	direct	boost			Messages::Boosts::ByBotsController#create
+campfire	added	super	boost			Messages::Boosts::ByBotsController#set_boost
+campfire	added	direct	boost			Messages::BoostsController#create
+campfire	added	direct	boost			Messages::BoostsController#set_boost
+campfire	added	super	message			Messages::ByBotsController#create
+campfire	added	direct	message			MessagesController#create
+campfire	added	direct	message			MessagesController#set_message
+campfire	added	direct	involvement			Rooms::InvolvementsController#show
+campfire	added	direct	new_messages			Rooms::RefreshesController#show
+campfire	added	direct	updated_messages			Rooms::RefreshesController#show
+campfire	added	direct	messages			RoomsController#find_messages
+campfire	added	direct	user			Users::AvatarsController#show
+campfire	json-form-only					Accounts::CustomStylesController#set_account
+campfire	json-form-only					AccountsController#set_account
+chatwoot	added	direct	resource			Api::BaseController#authenticate_access_token!
+chatwoot	added	direct	articles			Api::V1::Accounts::Articles::BulkActionsController#set_articles
+chatwoot	added	direct	article			Api::V1::Accounts::ArticlesController#create
+chatwoot	added	direct	article			Api::V1::Accounts::ArticlesController#fetch_article
+chatwoot	added	direct	articles			Api::V1::Accounts::ArticlesController#index
+chatwoot	added	direct	portal_articles			Api::V1::Accounts::ArticlesController#index
+chatwoot	added	direct	archived_articles_count			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	articles			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	articles_count			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	draft_articles_count			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	mine_articles_count			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	published_articles_count			Api::V1::Accounts::ArticlesController#set_article_count
+chatwoot	added	direct	inboxes			Api::V1::Accounts::AssignmentPolicies::InboxesController#index
+chatwoot	added	direct	page_details			Api::V1::Accounts::CallbacksController#facebook_pages
+chatwoot	added	direct	user_access_token			Api::V1::Accounts::CallbacksController#fb_object
+chatwoot	added	direct	category			Api::V1::Accounts::CategoriesController#create
+chatwoot	added	direct	category			Api::V1::Accounts::CategoriesController#fetch_category
+chatwoot	added	direct	categories			Api::V1::Accounts::CategoriesController#index
+chatwoot	added	direct	contact			Api::V1::Accounts::ContactInboxesController#filter
+chatwoot	added	direct	conversations			Api::V1::Accounts::Contacts::ConversationsController#index
+chatwoot	added	direct	labels			Api::V1::Accounts::Contacts::LabelsController#create
+chatwoot	added	direct	labels			Api::V1::Accounts::Contacts::LabelsController#index
+chatwoot	added	direct	model			Api::V1::Accounts::Contacts::LabelsController#model
+chatwoot	added	direct	note			Api::V1::Accounts::Contacts::NotesController#create
+chatwoot	added	direct	notes			Api::V1::Accounts::Contacts::NotesController#index
+chatwoot	added	direct	note			Api::V1::Accounts::Contacts::NotesController#note
+chatwoot	added	direct	contacts			Api::V1::Accounts::ContactsController#active
+chatwoot	added	direct	contacts_count			Api::V1::Accounts::ContactsController#active
+chatwoot	added	direct	all_contactable_inboxes			Api::V1::Accounts::ContactsController#contactable_inboxes
+chatwoot	added	direct	contactable_inboxes			Api::V1::Accounts::ContactsController#contactable_inboxes
+chatwoot	added	direct	contacts			Api::V1::Accounts::ContactsController#filter
+chatwoot	added	direct	contacts_count			Api::V1::Accounts::ContactsController#filter
+chatwoot	added	direct	contacts			Api::V1::Accounts::ContactsController#index
+chatwoot	added	direct	contacts_count			Api::V1::Accounts::ContactsController#index
+chatwoot	added	direct	resolved_contacts			Api::V1::Accounts::ContactsController#resolved_contacts
+chatwoot	added	direct	message			Api::V1::Accounts::Conversations::ContactInfoRequestsController#create
+chatwoot	added	direct	resource			Api::V1::Accounts::Conversations::DirectUploadsController#authenticate_access_token!
+chatwoot	added	direct	labels			Api::V1::Accounts::Conversations::LabelsController#create
+chatwoot	added	direct	labels			Api::V1::Accounts::Conversations::LabelsController#index
+chatwoot	added	direct	model			Api::V1::Accounts::Conversations::LabelsController#model
+chatwoot	added	direct	message			Api::V1::Accounts::Conversations::MessagesController#create
+chatwoot	added	direct	messages			Api::V1::Accounts::Conversations::MessagesController#index
+chatwoot	added	direct	message			Api::V1::Accounts::Conversations::MessagesController#message
+chatwoot	added	direct	current_participant_ids			Api::V1::Accounts::Conversations::ParticipantsController#current_participant_ids
+chatwoot	added	direct	participants			Api::V1::Accounts::Conversations::ParticipantsController#show
+chatwoot	added	direct	participants			Api::V1::Accounts::Conversations::ParticipantsController#update
+chatwoot	added	filter-transitive	current_participant_ids			Api::V1::Accounts::Conversations::ParticipantsController#validate_participant_ids
+chatwoot	added	direct	attachments			Api::V1::Accounts::ConversationsController#attachments
+chatwoot	added	direct	attachments_count			Api::V1::Accounts::ConversationsController#attachments
+chatwoot	added	direct	contact_inbox			Api::V1::Accounts::ConversationsController#contact_inbox
+chatwoot	added	direct	conversation			Api::V1::Accounts::ConversationsController#create
+chatwoot	added	direct	status			Api::V1::Accounts::ConversationsController#toggle_status
+chatwoot	added	direct	ratings_count			Api::V1::Accounts::CsatSurveyResponsesController#metrics
+chatwoot	added	direct	total_count			Api::V1::Accounts::CsatSurveyResponsesController#metrics
+chatwoot	added	direct	csat_survey_responses			Api::V1::Accounts::CsatSurveyResponsesController#set_csat_survey_responses
+chatwoot	added	direct	csat_survey_responses			Api::V1::Accounts::CsatSurveyResponsesController#set_current_page_surveys
+chatwoot	added	direct	dashboard_app			Api::V1::Accounts::DashboardAppsController#fetch_dashboard_app
+chatwoot	added	direct	data_import			Api::V1::Accounts::DataImportsController#create
+chatwoot	added	direct	data_imports			Api::V1::Accounts::DataImportsController#index
+chatwoot	added	direct	current_agents_ids			Api::V1::Accounts::InboxMembersController#current_agents_ids
+chatwoot	added	direct	assignment_policy			Api::V1::Accounts::Inboxes::AssignmentPoliciesController#create
+chatwoot	added	direct	inbox_assignment_policy			Api::V1::Accounts::Inboxes::AssignmentPoliciesController#create
+chatwoot	added	direct	assignment_policy			Api::V1::Accounts::Inboxes::AssignmentPoliciesController#show
+chatwoot	added	direct	agent_bot			Api::V1::Accounts::InboxesController#agent_bot
+chatwoot	added	direct	assignable_agents			Api::V1::Accounts::InboxesController#assignable_agents
+chatwoot	added	direct	campaigns			Api::V1::Accounts::InboxesController#campaigns
+chatwoot	added	direct	inboxes			Api::V1::Accounts::InboxesController#index
+chatwoot	added	direct	apps			Api::V1::Accounts::Integrations::AppsController#fetch_apps
+chatwoot	added	direct	shopify_client			Api::V1::Accounts::Integrations::ShopifyController#shopify_client
+chatwoot	added	direct	labels			Api::V1::Accounts::LabelsController#index
+chatwoot	added	direct	notification_setting			Api::V1::Accounts::NotificationSettingsController#load_notification_setting
+chatwoot	added	direct	count			Api::V1::Accounts::NotificationsController#index
+chatwoot	added	direct	notifications			Api::V1::Accounts::NotificationsController#index
+chatwoot	added	direct	unread_count			Api::V1::Accounts::NotificationsController#index
+chatwoot	added	direct	primary_actor			Api::V1::Accounts::NotificationsController#set_primary_actor
+chatwoot	added	direct	unread_count			Api::V1::Accounts::NotificationsController#unread_count
+chatwoot	added	direct	all_articles			Api::V1::Accounts::PortalsController#show
+chatwoot	added	direct	articles			Api::V1::Accounts::PortalsController#show
+chatwoot	added	direct	team_members			Api::V1::Accounts::TeamMembersController#create
+chatwoot	added	direct	current_members_ids			Api::V1::Accounts::TeamMembersController#current_members_ids
+chatwoot	added	direct	team_members			Api::V1::Accounts::TeamMembersController#index
+chatwoot	added	direct	team_members			Api::V1::Accounts::TeamMembersController#update
+chatwoot	added	direct	response			Api::V1::Accounts::Twitter::AuthorizationsController#create
+chatwoot	added	direct	parsed_body			Api::V1::Accounts::Twitter::AuthorizationsController#parsed_body
+chatwoot	added	direct	current_client_id			Api::V1::Profile::SessionsController#index
+chatwoot	added	direct	auth_token_params			Api::V1::Widget::BaseController#auth_token_params
+chatwoot	added	direct	conversation			Api::V1::Widget::BaseController#conversation
+chatwoot	added	direct	conversations			Api::V1::Widget::BaseController#conversations
+chatwoot	added	direct	contact			Api::V1::Widget::BaseController#set_contact
+chatwoot	added	direct	contact_inbox			Api::V1::Widget::BaseController#set_contact
+chatwoot	added	direct	campaigns			Api::V1::Widget::CampaignsController#index
+chatwoot	added	direct	contact			Api::V1::Widget::ConfigsController#build_contact
+chatwoot	added	direct	contact_inbox			Api::V1::Widget::ConfigsController#build_contact
+chatwoot	added	direct	contact			Api::V1::Widget::ConfigsController#set_contact
+chatwoot	added	direct	contact_inbox			Api::V1::Widget::ConfigsController#set_contact
+chatwoot	added	direct	token			Api::V1::Widget::ConfigsController#set_token
+chatwoot	added	direct	contact_inbox			Api::V1::Widget::ContactsController#set_user
+chatwoot	added	direct	widget_auth_token			Api::V1::Widget::ContactsController#set_user
+chatwoot	added	direct	conversation			Api::V1::Widget::ConversationsController#index
+chatwoot	added	filter-transitive	conversation			Api::V1::Widget::ConversationsController#render_not_found_if_empty
+chatwoot	added	filter-transitive	conversations			Api::V1::Widget::ConversationsController#render_not_found_if_empty
+chatwoot	added	direct	auth_token_params			Api::V1::Widget::DirectUploadsController#auth_token_params
+chatwoot	added	direct	contact			Api::V1::Widget::DirectUploadsController#set_contact
+chatwoot	added	direct	contact_inbox			Api::V1::Widget::DirectUploadsController#set_contact
+chatwoot	added	direct	inbox_members			Api::V1::Widget::InboxMembersController#index
+chatwoot	added	direct	conversation			Api::V1::Widget::Integrations::DyteController#set_message
+chatwoot	added	direct	message			Api::V1::Widget::Integrations::DyteController#set_message
+chatwoot	added	direct	message			Api::V1::Widget::MessagesController#create
+chatwoot	added	direct	messages			Api::V1::Widget::MessagesController#index
+chatwoot	added	filter-transitive	conversation			Api::V1::Widget::MessagesController#prevent_reply_to_resolved_conversation
+chatwoot	added	filter-transitive	conversations			Api::V1::Widget::MessagesController#prevent_reply_to_resolved_conversation
+chatwoot	added	direct	conversation			Api::V1::Widget::MessagesController#set_conversation
+chatwoot	added	filter-transitive	conversations			Api::V1::Widget::MessagesController#set_conversation
+chatwoot	added	direct	timezone			Api::V2::Accounts::ReportsController#conversation_traffic
+chatwoot	added	direct	base_articles			DashboardController#base_articles
+chatwoot	added	direct	popular_topics			DashboardController#load_home_data
+chatwoot	added	direct	visible_categories			DashboardController#load_home_data
+chatwoot	added	direct	recommended_articles			DashboardController#load_recommended_content
+chatwoot	added	direct	recommended_categories			DashboardController#load_recommended_content
+chatwoot	added	filter-transitive	base_articles			DashboardController#render_hc_if_custom_domain
+chatwoot	added	direct	locale			DashboardController#render_hc_if_custom_domain
+chatwoot	added	filter-transitive	popular_topics			DashboardController#render_hc_if_custom_domain
+chatwoot	added	filter-transitive	recommended_articles			DashboardController#render_hc_if_custom_domain
+chatwoot	added	filter-transitive	recommended_categories			DashboardController#render_hc_if_custom_domain
+chatwoot	added	filter-transitive	visible_categories			DashboardController#render_hc_if_custom_domain
+chatwoot	added	direct	token			DeviseOverrides::SessionsController#authenticate_resource_with_sso_token
+chatwoot	added	direct	token			DeviseOverrides::SessionsController#sign_in_mfa_user
+chatwoot	added	direct	long_lived_token_response			Instagram::CallbacksController#process_successful_authorization
+chatwoot	added	direct	response			Instagram::CallbacksController#process_successful_authorization
+chatwoot	added	direct	account_id			Linear::CallbacksController#account_id
+chatwoot	added	direct	parsed_body			Linear::CallbacksController#parsed_body
+chatwoot	added	direct	response			Linear::CallbacksController#show
+chatwoot	added	direct	account			OauthCallbackController#account
+chatwoot	added	direct	parsed_body			OauthCallbackController#parsed_body
+chatwoot	added	direct	response			OauthCallbackController#show
+chatwoot	added	direct	account_user			Platform::Api::V1::AccountUsersController#create
+chatwoot	added	direct	resources			Platform::Api::V1::AccountsController#index
+chatwoot	added	direct	resources			Platform::Api::V1::AgentBotsController#index
+chatwoot	added	direct	platform_app			PlatformController#set_platform_app
+chatwoot	added	direct	message			Public::Api::V1::CsatSurveyController#set_message
+chatwoot	added	direct	contact_inbox			Public::Api::V1::Inboxes::ContactsController#contact_inbox
+chatwoot	added	direct	contact_inbox			Public::Api::V1::Inboxes::ContactsController#create
+chatwoot	added	direct	conversation			Public::Api::V1::Inboxes::ConversationsController#create
+chatwoot	added	direct	conversations			Public::Api::V1::Inboxes::ConversationsController#index
+chatwoot	added	direct	conversation			Public::Api::V1::Inboxes::ConversationsController#set_conversation
+chatwoot	added	direct	message			Public::Api::V1::Inboxes::MessagesController#create
+chatwoot	added	direct	messages			Public::Api::V1::Inboxes::MessagesController#index
+chatwoot	added	direct	message			Public::Api::V1::Inboxes::MessagesController#set_message
+chatwoot	added	direct	contact_inbox			Public::Api::V1::InboxesController#set_contact_inbox
+chatwoot	added	direct	conversation			Public::Api::V1::InboxesController#set_conversation
+chatwoot	added	direct	articles			Public::Api::V1::Portals::ArticlesController#index
+chatwoot	added	direct	articles_count			Public::Api::V1::Portals::ArticlesController#index
+chatwoot	added	direct	articles			Public::Api::V1::Portals::ArticlesController#limit_results
+chatwoot	added	direct	articles			Public::Api::V1::Portals::ArticlesController#order_by_sort_param
+chatwoot	added	direct	articles			Public::Api::V1::Portals::ArticlesController#search_articles
+chatwoot	added	direct	article			Public::Api::V1::Portals::ArticlesController#set_article
+chatwoot	added	direct	category			Public::Api::V1::Portals::ArticlesController#set_category
+chatwoot	added	direct	og_image_url			Public::Api::V1::Portals::ArticlesController#show
+chatwoot	added	direct	parsed_content			Public::Api::V1::Portals::ArticlesController#show
+chatwoot	added	direct	article			Public::Api::V1::Portals::ArticlesController#tracking_pixel
+chatwoot	added	direct	portal_layout			Public::Api::V1::Portals::BaseController#set_portal_layout
+chatwoot	added	direct	categories			Public::Api::V1::Portals::CategoriesController#index
+chatwoot	added	direct	articles			Public::Api::V1::Portals::CategoriesController#load_category_articles
+chatwoot	added	direct	category_authors			Public::Api::V1::Portals::CategoriesController#load_category_articles
+chatwoot	added	direct	category			Public::Api::V1::Portals::CategoriesController#set_category
+chatwoot	added	direct	og_image_url			Public::Api::V1::Portals::CategoriesController#show
+chatwoot	added	direct	articles			Public::Api::V1::Portals::SearchController#index
+chatwoot	added	direct	articles			Public::Api::V1::Portals::SearchController#search_articles
+chatwoot	added	direct	base_articles			Public::Api::V1::PortalsController#base_articles
+chatwoot	added	filter-transitive	base_articles			Public::Api::V1::PortalsController#load_home_data
+chatwoot	added	direct	popular_topics			Public::Api::V1::PortalsController#load_home_data
+chatwoot	added	filter-transitive	recommended_articles			Public::Api::V1::PortalsController#load_home_data
+chatwoot	added	filter-transitive	recommended_categories			Public::Api::V1::PortalsController#load_home_data
+chatwoot	added	direct	visible_categories			Public::Api::V1::PortalsController#load_home_data
+chatwoot	added	direct	recommended_articles			Public::Api::V1::PortalsController#load_recommended_content
+chatwoot	added	direct	recommended_categories			Public::Api::V1::PortalsController#load_recommended_content
+chatwoot	added	direct	locale			Public::Api::V1::PortalsController#portal
+chatwoot	added	filter-transitive	locale			Public::Api::V1::PortalsController#redirect_to_portal_with_locale
+chatwoot	added	direct	og_image_url			Public::Api::V1::PortalsController#show
+chatwoot	added	direct	help_center_url			Public::Api::V1::PortalsController#sitemap
+chatwoot	added	direct	parsed_body			Shopify::CallbacksController#parsed_body
+chatwoot	added	direct	response			Shopify::CallbacksController#show
+chatwoot	added	direct	account_id			Shopify::CallbacksController#verify_account!
+chatwoot	added	direct	blob			SlackUploadsController#set_blob
+chatwoot	added	direct	config			SuperAdmin::AppConfigsController#set_config
+chatwoot	added	direct	installation_configs			SuperAdmin::AppConfigsController#show
+chatwoot	added	direct	order			SuperAdmin::ApplicationController#order
+chatwoot	added	direct	results			SuperAdmin::PushDiagnosticsController#run_test_and_render
+chatwoot	added	direct	subscriptions			SuperAdmin::PushDiagnosticsController#run_test_and_render
+chatwoot	added	direct	account_id			Tiktok::CallbacksController#account_id
+chatwoot	added	direct	parsed_body			Twitter::BaseController#parsed_body
+chatwoot	added	direct	parsed_body			Twitter::CallbacksController#parsed_body
+chatwoot	added	direct	response			Twitter::CallbacksController#show
+chatwoot	added	direct	meta_request_body			Webhooks::InstagramController#meta_request_body
+chatwoot	added	direct	request_payload			Webhooks::TiktokController#request_payload
+chatwoot	added	direct	meta_request_body			Webhooks::WhatsappController#meta_request_body
+chatwoot	added	direct	contact			WidgetsController#build_contact
+chatwoot	added	direct	contact_inbox			WidgetsController#build_contact
+chatwoot	added	direct	token			WidgetsController#build_contact
+chatwoot	added	direct	auth_token_params			WidgetsController#set_token
+chatwoot	json-form-only					Api::V1::Accounts::AgentsController#index
+chatwoot	json-form-only					Api::V1::Accounts::Conversations::MessagesController#update
+chatwoot	json-form-only					Api::V1::Accounts::ConversationsController#index
+chatwoot	json-form-only					Api::V1::Accounts::ConversationsController#search
+chatwoot	json-form-only					Api::V1::Accounts::DataImportsController#retry_import
+chatwoot	json-form-only					Api::V1::Accounts::DataImportsController#start
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::AppsController#fetch_app
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::ShopifyController#client_id
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::ShopifyController#client_secret
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::ShopifyController#setup_shopify_context
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::SlackController#list_all_channels
+chatwoot	json-form-only					Api::V1::Accounts::Integrations::SlackController#update
+chatwoot	json-form-only					Api::V1::Accounts::Tiktok::AuthorizationsController#client_secret
+chatwoot	json-form-only					Api::V1::AccountsController#create
+chatwoot	json-form-only					Api::V1::AccountsController#show
+chatwoot	json-form-only					Api::V1::Widget::ConfigsController#set_global_config
+chatwoot	json-form-only					Api::V1::Widget::ContactsController#identify_contact
+chatwoot	json-form-only					Api::V1::Widget::ConversationsController#process_update_contact
+chatwoot	json-form-only					Api::V2::Accounts::ReportsController#conversations_summary
+chatwoot	json-form-only					Api::V2::AccountsController#create
+chatwoot	json-form-only					DashboardController#set_dashboard_scripts
+chatwoot	json-form-only					DeviseOverrides::OmniauthCallbacksController#create_account_for_user
+chatwoot	json-form-only					Linear::CallbacksController#client_secret
+chatwoot	json-form-only					MicrosoftController#microsoft_identity
+chatwoot	json-form-only					Public::Api::V1::Portals::BaseController#set_global_config
+chatwoot	json-form-only					Shopify::CallbacksController#client_id
+chatwoot	json-form-only					Shopify::CallbacksController#client_secret
+chatwoot	json-form-only					Survey::ResponsesController#set_global_config
+chatwoot	json-form-only					Tiktok::CallbacksController#client_secret
+chatwoot	json-form-only					WidgetsController#set_global_config
+chatwoot	widened	loss	contacts	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Contact"")) }, Array { elem: Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Actions::ContactMergesController#contacts
+chatwoot	widened	loss	base_contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Actions::ContactMergesController#set_base_contact
+chatwoot	widened	loss	contacts	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Contact"")) }, Array { elem: Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Actions::ContactMergesController#set_base_contact
+chatwoot	widened	loss	contacts	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Contact"")) }, Array { elem: Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Actions::ContactMergesController#set_mergee_contact
+chatwoot	widened	loss	mergee_contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Actions::ContactMergesController#set_mergee_contact
+chatwoot	widened	loss	agent_bot	"Class { id: ClassId(Symbol(""AgentBot"")), args: Shared([]) }"	"Union { variants: Shared([Class { id: ClassId(Symbol(""AgentBot"")), args: Shared([]) }, Untyped { why: Unresolved }]) }"	Api::V1::Accounts::AgentBotsController#agent_bot
+chatwoot	widened	loss	agent_bot	"Class { id: ClassId(Symbol(""AgentBot"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AgentBotsController#create
+chatwoot	widened	loss	agents	"Union { variants: Shared([Relation { of: ClassId(Symbol(""User"")) }, Array { elem: Class { id: ClassId(Symbol(""User"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AgentsController#agents
+chatwoot	widened	loss	agent	"Class { id: ClassId(Symbol(""User"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AgentsController#fetch_agent
+chatwoot	widened	loss	agents	"Union { variants: Shared([Relation { of: ClassId(Symbol(""User"")) }, Array { elem: Class { id: ClassId(Symbol(""User"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AgentsController#fetch_agent
+chatwoot	widened	loss	portal	"Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Articles::BulkActionsController#portal
+chatwoot	widened	loss	portal	"Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ArticlesController#portal
+chatwoot	widened	loss	inboxes	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignableAgentsController#fetch_inboxes
+chatwoot	widened	loss	assignable_agents	"Array { elem: Union { variants: Shared([Class { id: ClassId(Symbol(""User"")), args: Shared([]) }, Untyped { why: Unresolved }]) } }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignableAgentsController#index
+chatwoot	widened	loss	assignment_policy	"Class { id: ClassId(Symbol(""AssignmentPolicy"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignmentPolicies::InboxesController#fetch_assignment_policy
+chatwoot	widened	loss	assignment_policy	"Class { id: ClassId(Symbol(""AssignmentPolicy"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignmentPoliciesController#create
+chatwoot	widened	loss	assignment_policy	"Class { id: ClassId(Symbol(""AssignmentPolicy"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignmentPoliciesController#fetch_assignment_policy
+chatwoot	widened	loss	assignment_policies	"Union { variants: Shared([Relation { of: ClassId(Symbol(""AssignmentPolicy"")) }, Array { elem: Class { id: ClassId(Symbol(""AssignmentPolicy"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AssignmentPoliciesController#index
+chatwoot	widened	loss	automation_rule	"Class { id: ClassId(Symbol(""AutomationRule"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AutomationRulesController#clone
+chatwoot	widened	loss	automation_rule	"Class { id: ClassId(Symbol(""AutomationRule"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AutomationRulesController#create
+chatwoot	widened	loss	automation_rule	"Union { variants: Shared([Class { id: ClassId(Symbol(""AutomationRule"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AutomationRulesController#fetch_automation_rule
+chatwoot	widened	loss	automation_rules	"Union { variants: Shared([Relation { of: ClassId(Symbol(""AutomationRule"")) }, Array { elem: Class { id: ClassId(Symbol(""AutomationRule"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::AutomationRulesController#index
+chatwoot	widened	loss	inbox	"Union { variants: Shared([Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CallbacksController#inbox
+chatwoot	widened	loss	facebook_inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CallbacksController#register_facebook_page
+chatwoot	widened	loss	campaign	"Union { variants: Shared([Class { id: ClassId(Symbol(""Campaign"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CampaignsController#campaign
+chatwoot	widened	loss	campaign	"Class { id: ClassId(Symbol(""Campaign"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CampaignsController#create
+chatwoot	widened	loss	campaigns	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Campaign"")) }, Array { elem: Class { id: ClassId(Symbol(""Campaign"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CampaignsController#index
+chatwoot	widened	loss	canned_response	"Class { id: ClassId(Symbol(""CannedResponse"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CannedResponsesController#create
+chatwoot	widened	loss	canned_response	"Class { id: ClassId(Symbol(""CannedResponse"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CannedResponsesController#fetch_canned_response
+chatwoot	widened	loss	portal	"Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CategoriesController#portal
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Channels::TwilioChannelsController#build_inbox
+chatwoot	widened	loss	twilio_channel	"Class { id: ClassId(Symbol(""Channel::TwilioSms"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Channels::TwilioChannelsController#build_inbox
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ContactInboxesController#ensure_inbox
+chatwoot	widened	loss	contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Contacts::BaseController#ensure_contact
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Contacts::ContactInboxesController#ensure_inbox
+chatwoot	widened	loss	contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ContactsController#create
+chatwoot	widened	loss	contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ContactsController#fetch_contact
+chatwoot	widened	loss	team	"Union { variants: Shared([Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }, Nil]) }"	Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }	Api::V1::Accounts::Conversations::AssignmentsController#set_team
+chatwoot	widened	loss	conversation	"Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Conversations::BaseController#conversation
+chatwoot	widened	loss	conversation	"Union { variants: Shared([Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Conversations::DirectUploadsController#conversation
+chatwoot	widened	loss	contact	"Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ConversationsController#contact
+chatwoot	widened	loss	conversation	"Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ConversationsController#conversation
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::ConversationsController#inbox
+chatwoot	widened	loss	csat_messages	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Message"")) }, Array { elem: Class { id: ClassId(Symbol(""Message"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CsatSurveyResponsesController#set_total_sent_messages_count
+chatwoot	widened	loss	total_sent_messages_count	Int	Untyped { why: Unresolved }	Api::V1::Accounts::CsatSurveyResponsesController#set_total_sent_messages_count
+chatwoot	widened	loss	custom_attribute_definition	"Class { id: ClassId(Symbol(""CustomAttributeDefinition"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomAttributeDefinitionsController#create
+chatwoot	widened	loss	custom_attribute_definition	"Class { id: ClassId(Symbol(""CustomAttributeDefinition"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomAttributeDefinitionsController#fetch_custom_attribute_definition
+chatwoot	widened	loss	custom_attribute_definitions	"Union { variants: Shared([Relation { of: ClassId(Symbol(""CustomAttributeDefinition"")) }, Array { elem: Class { id: ClassId(Symbol(""CustomAttributeDefinition"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomAttributeDefinitionsController#fetch_custom_attributes_definitions
+chatwoot	widened	loss	custom_filter	"Class { id: ClassId(Symbol(""CustomFilter"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomFiltersController#create
+chatwoot	widened	loss	custom_filter	"Class { id: ClassId(Symbol(""CustomFilter"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomFiltersController#fetch_custom_filter
+chatwoot	widened	loss	custom_filters	"Union { variants: Shared([Relation { of: ClassId(Symbol(""CustomFilter"")) }, Array { elem: Class { id: ClassId(Symbol(""CustomFilter"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::CustomFiltersController#fetch_custom_filters
+chatwoot	widened	loss	dashboard_app	"Class { id: ClassId(Symbol(""DashboardApp"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::DashboardAppsController#create
+chatwoot	widened	loss	dashboard_apps	"Union { variants: Shared([Relation { of: ClassId(Symbol(""DashboardApp"")) }, Array { elem: Class { id: ClassId(Symbol(""DashboardApp"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::DashboardAppsController#fetch_dashboard_apps
+chatwoot	widened	loss	data_import	"Class { id: ClassId(Symbol(""DataImport"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::DataImportsController#set_data_import
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::InboxCsatTemplatesController#fetch_inbox
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::InboxMembersController#fetch_inbox
+chatwoot	widened	loss	agents	"Union { variants: Shared([Relation { of: ClassId(Symbol(""User"")) }, Array { elem: Class { id: ClassId(Symbol(""User"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::InboxMembersController#fetch_updated_agents
+chatwoot	widened	loss	assignment_policy	"Class { id: ClassId(Symbol(""AssignmentPolicy"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Inboxes::AssignmentPoliciesController#fetch_assignment_policy
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Inboxes::AssignmentPoliciesController#fetch_inbox
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::InboxesController#create
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::InboxesController#fetch_inbox
+chatwoot	widened	loss	conversation	"Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::DyteController#fetch_conversation
+chatwoot	widened	loss	conversation	"Union { variants: Shared([Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::DyteController#fetch_message
+chatwoot	widened	loss	message	"Class { id: ClassId(Symbol(""Message"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::DyteController#fetch_message
+chatwoot	widened	loss	hook	"Class { id: ClassId(Symbol(""Integrations::Hook"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::HooksController#create
+chatwoot	widened	loss	hook	"Class { id: ClassId(Symbol(""Integrations::Hook"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::HooksController#fetch_hook
+chatwoot	widened	loss	conversation	"Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::LinearController#fetch_conversation
+chatwoot	widened	loss	contact	"Union { variants: Shared([Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::ShopifyController#contact
+chatwoot	widened	loss	contact	"Union { variants: Shared([Class { id: ClassId(Symbol(""Contact"")), args: Shared([]) }, Nil]) }"	Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }	Api::V1::Accounts::Integrations::ShopifyController#validate_contact
+chatwoot	widened	loss	hook	"Class { id: ClassId(Symbol(""Integrations::Hook"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Integrations::SlackController#create
+chatwoot	widened	loss	label	"Class { id: ClassId(Symbol(""Label"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::LabelsController#create
+chatwoot	widened	loss	label	"Class { id: ClassId(Symbol(""Label"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::LabelsController#fetch_label
+chatwoot	widened	loss	macro	"Class { id: ClassId(Symbol(""Macro"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::MacrosController#create
+chatwoot	widened	loss	macro	"Union { variants: Shared([Class { id: ClassId(Symbol(""Macro"")), args: Shared([]) }, Nil]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::MacrosController#fetch_macro
+chatwoot	widened	loss	macros	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Macro"")) }, Array { elem: Class { id: ClassId(Symbol(""Macro"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::MacrosController#index
+chatwoot	widened	loss	account	"Union { variants: Shared([Class { id: ClassId(Symbol(""Account"")), args: Shared([]) }, Nil]) }"	"Union { variants: Shared([Class { id: ClassId(Symbol(""Account"")), args: Shared([]) }, Untyped { why: Unresolved }, Nil]) }"	Api::V1::Accounts::OnboardingsController#update
+chatwoot	widened	loss	portal	"Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::PortalsController#create
+chatwoot	widened	loss	portal	"Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::PortalsController#fetch_portal
+chatwoot	widened	loss	portals	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Portal"")) }, Array { elem: Class { id: ClassId(Symbol(""Portal"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::PortalsController#index
+chatwoot	widened	loss	team	"Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::TeamMembersController#fetch_team
+chatwoot	widened	loss	team	"Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::TeamsController#create
+chatwoot	widened	loss	team	"Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::TeamsController#fetch_team
+chatwoot	widened	loss	teams	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Team"")) }, Array { elem: Class { id: ClassId(Symbol(""Team"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::TeamsController#index
+chatwoot	widened	loss	webhook	"Class { id: ClassId(Symbol(""Webhook"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::WebhooksController#create
+chatwoot	widened	loss	webhook	"Class { id: ClassId(Symbol(""Webhook"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::WebhooksController#fetch_webhook
+chatwoot	widened	loss	webhooks	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Webhook"")) }, Array { elem: Class { id: ClassId(Symbol(""Webhook"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::WebhooksController#index
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Whatsapp::AuthorizationsController#fetch_and_validate_inbox
+chatwoot	widened	loss	inbox	"Class { id: ClassId(Symbol(""Inbox"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::Accounts::Whatsapp::ManualSetupController#fetch_inbox
+chatwoot	widened	loss	conversations	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Conversation"")) }, Array { elem: Class { id: ClassId(Symbol(""Conversation"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Api::V2::Accounts::LiveReportsController#load_conversations
+chatwoot	widened	loss	team	"Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V2::Accounts::LiveReportsController#load_conversations
+chatwoot	widened	loss	team	"Class { id: ClassId(Symbol(""Team"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V2::Accounts::LiveReportsController#team
+chatwoot	widened	loss	report_data	Array { elem: Array { elem: Union { variants: Shared([Str, Untyped { why: Unresolved }]) } } }	Untyped { why: Unresolved }	Api::V2::Accounts::ReportsController#agents
+chatwoot	widened	loss	report_data	Array { elem: Array { elem: Union { variants: Shared([Str, Untyped { why: Unresolved }, Nil]) } } }	Untyped { why: Unresolved }	Api::V2::Accounts::ReportsController#inboxes
+chatwoot	widened	loss	report_data	Array { elem: Array { elem: Union { variants: Shared([Str, Untyped { why: Unresolved }]) } } }	Untyped { why: Unresolved }	Api::V2::Accounts::ReportsController#teams
+chatwoot	widened	loss	global_config	"Class { id: ClassId(Symbol(""ActiveSupport::HashWithIndifferentAccess"")), args: Shared([Union { variants: Shared([Bool, Array { elem: Union { variants: Shared([Str, Untyped { why: Unresolved }]) } }, Untyped { why: Unresolved }, Rec { slot: 748 }, Nil]) }]) }"	Untyped { why: Unresolved }	DashboardController#set_global_config
+forem	added	direct	badge_achievements			Admin::BadgeAchievementsController#index
+forem	added	direct	q			Admin::BadgeAchievementsController#index
+forem	added	direct	email			Admin::EmailMessagesController#show
+forem	added	direct	email_messages			Admin::FeedbackMessagesController#index
+forem	added	direct	feedback_messages			Admin::FeedbackMessagesController#index
+forem	added	direct	q			Admin::FeedbackMessagesController#index
+forem	added	direct	email_messages			Admin::FeedbackMessagesController#show
+forem	added	direct	moderator_actions			Admin::ModeratorActionsController#index
+forem	added	direct	q			Admin::ModeratorActionsController#index
+forem	added	direct	users			Admin::PermissionsController#index
+forem	added	direct	podcast_ownership			Admin::PodcastsController#add_owner
+forem	added	direct	privileged_reactions			Admin::PrivilegedReactionsController#index
+forem	added	direct	q			Admin::PrivilegedReactionsController#index
+forem	added	direct	tag			Admin::TagsController#edit
+forem	added	direct	tag_moderators			Admin::TagsController#edit
+forem	added	direct	q			Admin::TagsController#index
+forem	added	direct	tags			Admin::TagsController#index
+forem	added	direct	tag			Admin::TagsController#update
+forem	added	direct	owner			Api::V0::AnalyticsController#load_owner
+forem	added	direct	article			Api::V0::ArticlesController#create
+forem	added	direct	articles			Api::V0::ArticlesController#index
+forem	added	direct	articles			Api::V0::ArticlesController#me
+forem	added	direct	article			Api::V0::ArticlesController#show
+forem	added	direct	article			Api::V0::ArticlesController#show_by_slug
+forem	added	direct	comments			Api::V0::CommentsController#index
+forem	added	direct	comment			Api::V0::CommentsController#show
+forem	added	direct	comments			Api::V0::CommentsController#show
+forem	added	direct	follows			Api::V0::FollowsController#tags
+forem	added	direct	articles			Api::V0::OrganizationsController#articles
+forem	added	direct	listings			Api::V0::OrganizationsController#listings
+forem	added	direct	users			Api::V0::OrganizationsController#users
+forem	added	direct	podcast_episodes			Api::V0::PodcastEpisodesController#index
+forem	added	direct	articles_by_reaction_ids			Api::V0::ReadinglistController#index
+forem	added	direct	users_by_id			Api::V0::ReadinglistController#index
+forem	added	direct	tags			Api::V0::TagsController#index
+forem	added	direct	webhook			Api::V0::WebhooksController#create
+forem	added	direct	tag			ArticlesController#base_editor_assigments
+forem	added	direct	community_emoji			ArticlesController#community_emoji
+forem	added	direct	community_name			ArticlesController#community_name
+forem	added	direct	organizations			ArticlesController#edit
+forem	added	direct	user			ArticlesController#edit
+forem	added	direct	articles			ArticlesController#handle_tag_feed
+forem	added	direct	tag			ArticlesController#handle_tag_feed
+forem	added	direct	articles			ArticlesController#handle_user_or_organization_feed
+forem	added	direct	article			ArticlesController#manage
+forem	added	direct	discussion_lock			ArticlesController#manage
+forem	added	direct	org_members			ArticlesController#manage
+forem	added	direct	organizations			ArticlesController#manage
+forem	added	direct	user			ArticlesController#manage
+forem	added	direct	organization_id			ArticlesController#stats
+forem	added	direct	user			ArticlesController#update
+forem	added	direct	user			AsyncInfoController#base_data
+forem	added	direct	parent_comment			CommentsController#edit
+forem	added	direct	commentable			CommentsController#set_commentable
+forem	added	direct	article			CommentsController#update
+forem	added	direct	commentable			CommentsController#update
+forem	added	direct	commentable_type			CommentsController#update
+forem	added	direct	root_comment			CommentsController#update
+forem	added	direct	user			CommentsController#update
+forem	added	direct	customer			CreditsController#new
+forem	added	direct	followed_organizations			DashboardsController#following_organizations
+forem	added	direct	followed_podcasts			DashboardsController#following_podcasts
+forem	added	direct	followed_tags			DashboardsController#following_tags
+forem	added	direct	follows			DashboardsController#following_users
+forem	added	direct	source			DashboardsController#set_source
+forem	added	direct	articles			DashboardsController#show
+forem	added	direct	organization			DashboardsController#show
+forem	added	direct	organizations			DashboardsController#show
+forem	added	direct	page_views_count			DashboardsController#show
+forem	added	direct	reactions_count			DashboardsController#show
+forem	added	direct	subscriptions			DashboardsController#subscriptions
+forem	added	direct	followed_organizations			FollowingsController#organizations
+forem	added	direct	followed_podcasts			FollowingsController#podcasts
+forem	added	direct	followed_tags			FollowingsController#tags
+forem	added	direct	follows			FollowingsController#users
+forem	added	direct	community_emoji			GaEventsController#community_emoji
+forem	added	direct	community_name			GaEventsController#community_name
+forem	added	direct	repos			GithubReposController#index
+forem	added	direct	should_show_adjust_tags			ModerationsController#actions_panel
+forem	added	direct	current_user_tags			ModerationsController#index
+forem	added	direct	tag			ModerationsController#index
+forem	added	direct	allowed_to_adjust			ModerationsController#load_article
+forem	added	direct	tag_moderator_tags			ModerationsController#load_article
+forem	added	direct	notifications			NotificationsController#index
+forem	added	direct	user			OmniauthCallbacksController#callback_for
+forem	added	direct	org_organization_memberships			OrganizationsController#update
+forem	added	direct	campaign_articles_count			SidebarsController#get_latest_campaign_articles
+forem	added	direct	latest_campaign_articles			SidebarsController#get_latest_campaign_articles
+forem	added	direct	tags			SitemapsController#resource_sitemap
+forem	added	direct	listing			SocialPreviewsController#listing
+forem	added	direct	tag			SocialPreviewsController#tag
+forem	added	direct	stories			Stories::FeedsController#show
+forem	added	direct	moderators			Stories::TaggedArticlesController#index
+forem	added	direct	tag_model			Stories::TaggedArticlesController#index
+forem	added	direct	num_published_articles			Stories::TaggedArticlesController#set_number_of_articles
+forem	added	direct	stories			Stories::TaggedArticlesController#set_stories
+forem	added	direct	collection			StoriesController#assign_article_show_variables
+forem	added	direct	collection_articles			StoriesController#assign_article_show_variables
+forem	added	direct	discussion_lock			StoriesController#assign_article_show_variables
+forem	added	direct	organization			StoriesController#assign_article_show_variables
+forem	added	direct	pinned_article_id			StoriesController#assign_article_show_variables
+forem	added	direct	user			StoriesController#assign_article_show_variables
+forem	added	direct	featured_story			StoriesController#assign_feed_stories
+forem	added	direct	pinned_article			StoriesController#assign_feed_stories
+forem	added	direct	stories			StoriesController#assign_feed_stories
+forem	added	direct	github_repositories			StoriesController#assign_user_github_repositories
+forem	added	direct	pinned_stories			StoriesController#assign_user_stories
+forem	added	direct	featured_story			StoriesController#featured_story
+forem	added	direct	campaign_articles_count			StoriesController#get_latest_campaign_articles
+forem	added	direct	latest_campaign_articles			StoriesController#get_latest_campaign_articles
+forem	added	direct	user			StoriesController#handle_organization_index
+forem	added	direct	podcast_episodes			StoriesController#handle_podcast_index
+forem	added	direct	episode			StoriesController#handle_podcast_show
+forem	added	direct	profile			StoriesController#handle_user_index
+forem	added	direct	article			StoriesController#show
+forem	added	direct	allowed_to_adjust			TagAdjustmentsController#create
+forem	added	direct	tag_moderator_tags			TagAdjustmentsController#create
+forem	added	direct	tag			TagsController#edit
+forem	added	direct	tags			TagsController#index
+forem	added	direct	tags			TagsController#onboarding
+forem	added	direct	tag			TagsController#update
+forem	added	direct	customer			UsersController#handle_billing_tab
+forem	added	direct	org_organization_memberships			UsersController#handle_organization_tab
+forem	added	direct	organization			UsersController#handle_organization_tab
+forem	added	direct	organizations			UsersController#handle_organization_tab
+forem	added	direct	users			UsersController#index
+forem	added	direct	tab			UsersController#set_current_tab
+forem	added	direct	suggested_users			UsersController#set_suggested_users
+forem	added	direct	users_notification_setting			UsersController#set_users_setting_and_notification_setting
+forem	added	direct	users_setting			UsersController#set_users_setting_and_notification_setting
+forem	json-form-only					Admin::UsersController#show
+forem	json-form-only					ArticlesController#feed
+forem	json-form-only					PodcastEpisodesController#index
+forem	json-form-only					StoriesController#set_article_json_ld
+forem	json-form-only					StoriesController#set_user_json_ld
+forem	widened	loss	mods	"Relation { of: ClassId(Symbol(""User"")) }"	Untyped { why: Unresolved }	Admin::ModsController#index
+forem	widened	loss	users	"Relation { of: ClassId(Symbol(""User"")) }"	Untyped { why: Unresolved }	Admin::UsersController#index
+forem	widened	repair	article	Nil	Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }	Api::V0::ArticlesController#update
+forem	widened	repair	follows_limit	Bottom	Untyped { why: Unresolved }	Api::V0::FollowersController#limit_per_page
+forem	widened	repair	purchaser	Nil	Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }	CreditsController#create
+forem	widened	loss	user_unspent_credits_count	Int	Untyped { why: Unresolved }	CreditsController#index
+forem	widened	repair	follows_limit	Bottom	Untyped { why: Unresolved }	DashboardsController#limit_per_page
+forem	widened	repair	follows_limit	Bottom	Untyped { why: Unresolved }	FollowingsController#limit_per_page
+forem	widened	repair	comments	Array { elem: Bottom }	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Comment"")) }, Array { elem: Class { id: ClassId(Symbol(""Comment"")), args: Shared([]) } }]) }"	StoriesController#assign_user_comments
+mastodon	added	filter-transitive	signed_request_actor			AccountsController#redirect_unauthenticated_to_permalinks!
+mastodon	added	filter-transitive	signed_request_actor			AccountsController#require_account_signature!
+mastodon	added	direct	signed_request_actor			AccountsController#signed_request_actor
+mastodon	added	direct	signed_request_actor			ActivityPub::BaseController#signed_request_actor
+mastodon	added	filter-transitive	signed_request_actor			ActivityPub::CollectionsController#check_authorization
+mastodon	added	direct	unauthorized			ActivityPub::CollectionsController#check_authorization
+mastodon	added	direct	items			ActivityPub::CollectionsController#set_items
+mastodon	added	direct	size			ActivityPub::CollectionsController#set_size
+mastodon	added	direct	items			ActivityPub::ContextsController#set_items
+mastodon	added	direct	collection_item			ActivityPub::FeatureAuthorizationsController#set_collection_item
+mastodon	added	filter-transitive	signed_request_actor			ActivityPub::FeaturedCollectionsController#require_account_signature!
+mastodon	added	direct	collections			ActivityPub::FeaturedCollectionsController#set_collections
+mastodon	added	direct	signed_request_actor			ActivityPub::FeaturedCollectionsController#signed_request_actor
+mastodon	added	direct	items			ActivityPub::FollowersSynchronizationsController#set_items
+mastodon	added	filter-transitive	signed_request_actor			ActivityPub::FollowersSynchronizationsController#set_items
+mastodon	added	direct	body			ActivityPub::InboxesController#body
+mastodon	added	filter-transitive	body			ActivityPub::InboxesController#skip_unknown_actor_activity
+mastodon	added	direct	status			ActivityPub::LikesController#set_status
+mastodon	added	filter-transitive	signed_request_actor			ActivityPub::OutboxesController#set_statuses
+mastodon	added	direct	replies			ActivityPub::RepliesController#set_replies
+mastodon	added	direct	status			ActivityPub::RepliesController#set_status
+mastodon	added	direct	status			ActivityPub::SharesController#set_status
+mastodon	added	direct	account_action			Admin::AccountActionsController#create
+mastodon	added	direct	account_action			Admin::AccountActionsController#new
+mastodon	added	direct	deletion_request			Admin::AccountsController#show
+mastodon	added	direct	moderation_notes			Admin::AccountsController#show
+mastodon	added	direct	warnings			Admin::AccountsController#show
+mastodon	added	direct	user_count			Admin::Announcements::PreviewsController#show
+mastodon	added	direct	collection			Admin::CollectionsController#set_collection
+mastodon	added	direct	collections			Admin::CollectionsController#set_collections
+mastodon	added	direct	system_checks			Admin::DashboardController#index
+mastodon	added	direct	resolved_records			Admin::EmailDomainBlocksController#set_resolved_records
+mastodon	added	direct	accounts			Admin::EmailSubscriptionsController#index
+mastodon	added	direct	domain_blocks			Admin::ExportDomainBlocksController#import
+mastodon	added	direct	language			Admin::FollowRecommendationsController#set_language
+mastodon	added	direct	instance_moderation_notes			Admin::Instances::ModerationNotesController#create
+mastodon	added	direct	instance_moderation_note			Admin::InstancesController#show
+mastodon	added	direct	instance_moderation_notes			Admin::InstancesController#show
+mastodon	added	direct	action_logs			Admin::ReportsController#show
+mastodon	added	direct	collections			Admin::ReportsController#show
+mastodon	added	direct	report_note			Admin::ReportsController#show
+mastodon	added	direct	report_notes			Admin::ReportsController#show
+mastodon	added	direct	statuses			Admin::ReportsController#show
+mastodon	added	direct	status			Admin::StatusesController#set_status
+mastodon	added	direct	user_count			Admin::TermsOfService::PreviewsController#show
+mastodon	added	direct	account			Api::V1::Accounts::LookupController#set_account
+mastodon	added	direct	accounts			Api::V1::Accounts::SearchController#show
+mastodon	added	direct	statuses			Api::V1::Accounts::StatusesController#index
+mastodon	added	direct	accounts			Api::V1::Admin::AccountsController#set_accounts
+mastodon	added	direct	canonical_email_blocks			Api::V1::Admin::CanonicalEmailBlocksController#set_canonical_email_blocks
+mastodon	added	direct	domain_allows			Api::V1::Admin::DomainAllowsController#set_domain_allows
+mastodon	added	direct	domain_blocks			Api::V1::Admin::DomainBlocksController#set_domain_blocks
+mastodon	added	direct	email_domain_blocks			Api::V1::Admin::EmailDomainBlocksController#set_email_domain_blocks
+mastodon	added	direct	ip_blocks			Api::V1::Admin::IpBlocksController#set_ip_blocks
+mastodon	added	direct	reports			Api::V1::Admin::ReportsController#set_reports
+mastodon	added	direct	tags			Api::V1::Admin::TagsController#set_tags
+mastodon	added	direct	providers			Api::V1::Admin::Trends::Links::PreviewCardProvidersController#set_providers
+mastodon	added	direct	reaction			Api::V1::Announcements::ReactionsController#set_reaction
+mastodon	added	direct	presenter			Api::V1::AnnualReportsController#index
+mastodon	added	direct	presenter			Api::V1::AnnualReportsController#show
+mastodon	added	direct	app			Api::V1::AppsController#create
+mastodon	added	direct	results			Api::V1::BookmarksController#results
+mastodon	added	direct	collection_item			Api::V1::CollectionItemsController#set_collection_item
+mastodon	added	direct	collections			Api::V1::CollectionsController#set_collections
+mastodon	added	direct	domain			Api::V1::DomainBlocks::PreviewsController#set_domain
+mastodon	added	direct	domain_block_preview			Api::V1::DomainBlocks::PreviewsController#set_domain_block_preview
+mastodon	added	direct	seed			Api::V1::DonationCampaignsController#seed
+mastodon	added	direct	results			Api::V1::FavouritesController#results
+mastodon	added	direct	results			Api::V1::FollowedTagsController#set_results
+mastodon	added	direct	collections			Api::V1::InCollectionsController#set_collections
+mastodon	added	direct	languages			Api::V1::Instances::TranslationLanguagesController#set_languages
+mastodon	added	direct	requests			Api::V1::Notifications::RequestsController#index
+mastodon	added	direct	notifications			Api::V1::NotificationsController#index
+mastodon	added	direct	domains			Api::V1::Peers::SearchController#set_domains
+mastodon	added	direct	push_subscription			Api::V1::Push::SubscriptionsController#set_push_subscription
+mastodon	added	direct	statuses			Api::V1::ScheduledStatusesController#set_statuses
+mastodon	added	direct	conversation			Api::V1::Statuses::MutesController#set_conversation
+mastodon	added	direct	quote			Api::V1::Statuses::QuotesController#set_quote
+mastodon	added	direct	reblog			Api::V1::Statuses::ReblogsController#destroy
+mastodon	added	direct	translation			Api::V1::Statuses::TranslationsController#set_translation
+mastodon	added	direct	quoted_status			Api::V1::StatusesController#set_quoted_status
+mastodon	added	direct	status			Api::V1::StatusesController#show
+mastodon	added	direct	statuses			Api::V1::Timelines::LinkController#set_statuses
+mastodon	added	direct	statuses			Api::V1::Timelines::TagController#show
+mastodon	added	direct	statuses			Api::V1::Trends::StatusesController#set_statuses
+mastodon	added	direct	grouped_notifications			Api::V2::NotificationsController#index
+mastodon	added	direct	notifications			Api::V2::NotificationsController#index
+mastodon	added	direct	single_user_mode			ApplicationController#single_user_mode?
+mastodon	added	direct	confirmation_user			Auth::ConfirmationsController#set_confirmation_user!
+mastodon	added	direct	accept_token			Auth::RegistrationsController#require_rules_acceptance!
+mastodon	added	direct	invite_code			Auth::RegistrationsController#require_rules_acceptance!
+mastodon	added	direct	rule_translations			Auth::RegistrationsController#require_rules_acceptance!
+mastodon	added	direct	invite			Auth::RegistrationsController#set_invite
+mastodon	added	direct	sessions			Auth::RegistrationsController#set_sessions
+mastodon	added	direct	strikes			Auth::RegistrationsController#set_strikes
+mastodon	added	filter-transitive	webauthn_enabled			Auth::SessionsController#authenticate_with_two_factor
+mastodon	added	direct	webauthn_enabled			Auth::SessionsController#prompt_for_two_factor
+mastodon	added	direct	resource			AuthorizeInteractionsController#set_resource
+mastodon	added	filter-transitive	signed_request_actor			CollectionItemsController#require_account_signature!
+mastodon	added	direct	collection_item			CollectionItemsController#set_collection_item
+mastodon	added	direct	signed_request_actor			CollectionItemsController#signed_request_actor
+mastodon	added	filter-transitive	signed_request_actor			CollectionsController#redirect_unauthenticated_to_permalinks!
+mastodon	added	filter-transitive	signed_request_actor			CollectionsController#require_account_signature!
+mastodon	added	direct	collection			CollectionsController#set_collection
+mastodon	added	direct	signed_request_actor			CollectionsController#signed_request_actor
+mastodon	added	direct	appeal			Disputes::AppealsController#create
+mastodon	added	direct	appeal			Disputes::StrikesController#show
+mastodon	added	direct	status_filters			Filters::StatusesController#set_status_filters
+mastodon	added	filter-transitive	signed_request_actor			FollowerAccountsController#require_account_signature!
+mastodon	added	direct	signed_request_actor			FollowerAccountsController#signed_request_actor
+mastodon	added	filter-transitive	signed_request_actor			FollowingAccountsController#require_account_signature!
+mastodon	added	direct	signed_request_actor			FollowingAccountsController#signed_request_actor
+mastodon	added	direct	last_used_at_by_app			OAuth::AuthorizedApplicationsController#set_last_used_at_by_app
+mastodon	added	direct	redirect_path			Redirect::BaseController#show
+mastodon	added	direct	application			Settings::ApplicationsController#new
+mastodon	added	direct	access_token			Settings::ApplicationsController#regenerate
+mastodon	added	direct	access_token			Settings::ApplicationsController#update
+mastodon	added	direct	bulk_import			Settings::ImportsController#failures
+mastodon	added	direct	email_subscriptions_count			Settings::PrivacyController#set_email_subscriptions_count
+mastodon	added	direct	recovery_codes			Settings::TwoFactorAuthentication::ConfirmationsController#create
+mastodon	added	direct	provision_url			Settings::TwoFactorAuthentication::ConfirmationsController#prepare_two_factor_form
+mastodon	added	direct	recovery_codes			Settings::TwoFactorAuthentication::RecoveryCodesController#create
+mastodon	added	direct	verified_links			Settings::VerificationsController#set_verified_links
+mastodon	added	filter-transitive	signed_request_actor			StatusesController#redirect_unauthenticated_to_permalinks!
+mastodon	added	filter-transitive	signed_request_actor			StatusesController#require_account_signature!
+mastodon	added	direct	status			StatusesController#set_status
+mastodon	added	direct	signed_request_actor			StatusesController#signed_request_actor
+mastodon	added	filter-transitive	signed_request_actor			TagsController#require_account_signature!
+mastodon	added	direct	signed_request_actor			TagsController#signed_request_actor
+mastodon	added	direct	recipient			UnsubscriptionsController#set_recipient
+mastodon	json-form-only					AccountsController#show
+mastodon	json-form-only					Api::V1::BookmarksController#index
+mastodon	json-form-only					Api::V1::FavouritesController#index
+mastodon	json-form-only					Api::V1::StatusesController#index
+mastodon	json-form-only					Api::V1::Timelines::HomeController#show
+mastodon	json-form-only					Api::V1::Timelines::ListController#set_statuses
+mastodon	json-form-only					Api::V1::Timelines::PublicController#show
+mastodon	json-form-only					TagsController#set_statuses
+mastodon	widened	loss	accounts	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Account"")) }, Relation { of: ClassId(Symbol(""Follow"")) }, Relation { of: ClassId(Symbol(""TargetAccount"")) }, Array { elem: Union { variants: Shared([Class { id: ClassId(Symbol(""Account"")), args: Shared([]) }, Class { id: ClassId(Symbol(""TargetAccount"")), args: Shared([]) }]) } }]) }"	Untyped { why: Unresolved }	Admin::RelationshipsController#index
+mastodon	widened	loss	statuses	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Status"")) }, Array { elem: Class { id: ClassId(Symbol(""Status"")), args: Shared([]) } }]) }"	Untyped { why: Unresolved }	Admin::StatusesController#set_statuses
+mastodon	widened	repair	featured_tags	Array { elem: Bottom }	"Union { variants: Shared([Relation { of: ClassId(Symbol(""FeaturedTag"")) }, Array { elem: Class { id: ClassId(Symbol(""FeaturedTag"")), args: Shared([]) } }]) }"	Api::V1::Accounts::FeaturedTagsController#set_featured_tags
+mastodon	widened	repair	lists	Array { elem: Bottom }	"Union { variants: Shared([Relation { of: ClassId(Symbol(""List"")) }, Array { elem: Class { id: ClassId(Symbol(""List"")), args: Shared([]) } }]) }"	Api::V1::Accounts::ListsController#index
+mastodon	widened	loss	item	"Class { id: ClassId(Symbol(""CollectionItem"")), args: Shared([]) }"	Untyped { why: Unresolved }	Api::V1::CollectionItemsController#create
+mastodon	widened	loss	markers	"Hash { key: Untyped { why: Unresolved }, value: Class { id: ClassId(Symbol(""Marker"")), args: Shared([]) } }"	Untyped { why: Unresolved }	Api::V1::MarkersController#index
+mastodon	widened	repair	report	Nil	Union { variants: Shared([Untyped { why: Unresolved }, Nil]) }	Api::V1::ReportsController#create
+mastodon	widened	loss	status	"Union { variants: Shared([Class { id: ClassId(Symbol(""Antispam::DummyStatus"")), args: Shared([]) }, Nil]) }"	"Union { variants: Shared([Class { id: ClassId(Symbol(""Antispam::DummyStatus"")), args: Shared([]) }, Untyped { why: Unresolved }, Nil]) }"	Api::V1::StatusesController#create
+mastodon	widened	loss	accounts	"Union { variants: Shared([Relation { of: ClassId(Symbol(""Account"")) }, Relation { of: ClassId(Symbol(""Follow"")) }, Relation { of: ClassId(Symbol(""TargetAccount"")) }, Array { elem: Union { variants: Shared([Class { id: ClassId(Symbol(""Account"")), args: Shared([]) }, Class { id: ClassId(Symbol(""TargetAccount"")), args: Shared([]) }]) } }]) }"	Untyped { why: Unresolved }	RelationshipsController#set_accounts

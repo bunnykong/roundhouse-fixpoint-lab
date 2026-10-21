@@ -1,0 +1,62 @@
+kind	app	binding	owner	path	row
+missed binding	chatwoot	auth_token_params	WebsiteTokenHelper	filter-transitive	Api::V1::Widget::BaseController#set_contact
+missed binding	chatwoot	auth_token_params	Api::V1::Widget::ConfigsController	filter-transitive	Api::V1::Widget::ConfigsController#set_contact
+missed binding	chatwoot	auth_token_params	Api::V1::Widget::ConversationsController	filter-transitive	Api::V1::Widget::ConversationsController#render_not_found_if_empty
+missed binding	chatwoot	auth_token_params	WebsiteTokenHelper	filter-transitive	Api::V1::Widget::DirectUploadsController#set_contact
+missed binding	chatwoot	auth_token_params	Api::V1::Widget::MessagesController	filter-transitive	Api::V1::Widget::MessagesController#prevent_reply_to_resolved_conversation
+missed binding	chatwoot	auth_token_params	Api::V1::Widget::MessagesController	filter-transitive	Api::V1::Widget::MessagesController#set_conversation
+missed binding	chatwoot	auth_token_params	Api::V1::Widget::MessagesController	filter-transitive	Api::V1::Widget::MessagesController#set_message
+missed binding	chatwoot	conversations	Api::V1::Widget::MessagesController	filter-transitive	Api::V1::Widget::MessagesController#set_message
+missed binding	chatwoot	meta_request_body	MetaTokenVerifyConcern	filter-transitive	Webhooks::WhatsappController#verify_meta_signature!
+absent row	chatwoot	client_secret	Instagram::IntegrationHelper	direct	Api::V1::Accounts::Instagram::AuthorizationsController#client_secret
+absent row	chatwoot	client_secret	Instagram::IntegrationHelper	direct	Instagram::CallbacksController#client_secret
+absent row	chatwoot	meta_request_body	MetaTokenVerifyConcern	filter-transitive	Webhooks::InstagramController#verify_meta_signature!
+absent row	chatwoot	request_payload	Webhooks::TiktokController	filter-transitive	Webhooks::TiktokController#verify_signature!
+missed binding	mastodon	current_account	Api::V1::Announcements::ReactionsController	filter-transitive	Api::V1::Announcements::ReactionsController#set_reaction
+missed binding	mastodon	current_user	Api::V1::Announcements::ReactionsController	filter-transitive	Api::V1::Announcements::ReactionsController#set_reaction
+missed binding	mastodon	current_account	Api::V1::AnnualReportsController	filter-transitive	Api::V1::AnnualReportsController#set_annual_report
+missed binding	mastodon	current_user	Api::V1::AnnualReportsController	filter-transitive	Api::V1::AnnualReportsController#set_annual_report
+missed binding	mastodon	current_account	Api::V1::ConversationsController	filter-transitive	Api::V1::ConversationsController#set_conversation
+missed binding	mastodon	current_user	Api::V1::ConversationsController	filter-transitive	Api::V1::ConversationsController#set_conversation
+missed binding	mastodon	current_account	Api::V1::DomainBlocks::PreviewsController	filter-transitive	Api::V1::DomainBlocks::PreviewsController#set_domain_block_preview
+missed binding	mastodon	current_user	Api::V1::DomainBlocks::PreviewsController	filter-transitive	Api::V1::DomainBlocks::PreviewsController#set_domain_block_preview
+missed binding	mastodon	current_account	Api::V1::FiltersController	filter-transitive	Api::V1::FiltersController#set_filter
+missed binding	mastodon	current_user	Api::V1::FiltersController	filter-transitive	Api::V1::FiltersController#set_filter
+missed binding	mastodon	current_account	Api::V1::FiltersController	filter-transitive	Api::V1::FiltersController#set_filters
+missed binding	mastodon	current_user	Api::V1::FiltersController	filter-transitive	Api::V1::FiltersController#set_filters
+missed binding	mastodon	current_account	Api::V1::FollowedTagsController	filter-transitive	Api::V1::FollowedTagsController#set_results
+missed binding	mastodon	current_user	Api::V1::FollowedTagsController	filter-transitive	Api::V1::FollowedTagsController#set_results
+missed binding	mastodon	current_account	Api::V1::Lists::AccountsController	filter-transitive	Api::V1::Lists::AccountsController#set_list
+missed binding	mastodon	current_user	Api::V1::Lists::AccountsController	filter-transitive	Api::V1::Lists::AccountsController#set_list
+missed binding	mastodon	current_account	Api::V1::ListsController	filter-transitive	Api::V1::ListsController#set_list
+missed binding	mastodon	current_user	Api::V1::ListsController	filter-transitive	Api::V1::ListsController#set_list
+missed binding	mastodon	current_account	Api::V1::Notifications::PoliciesController	filter-transitive	Api::V1::Notifications::PoliciesController#set_policy
+missed binding	mastodon	current_user	Api::V1::Notifications::PoliciesController	filter-transitive	Api::V1::Notifications::PoliciesController#set_policy
+missed binding	mastodon	current_account	Api::V1::Notifications::RequestsController	filter-transitive	Api::V1::Notifications::RequestsController#set_request
+missed binding	mastodon	current_user	Api::V1::Notifications::RequestsController	filter-transitive	Api::V1::Notifications::RequestsController#set_request
+missed binding	mastodon	current_account	Api::V1::Notifications::RequestsController	filter-transitive	Api::V1::Notifications::RequestsController#set_requests
+missed binding	mastodon	current_user	Api::V1::Notifications::RequestsController	filter-transitive	Api::V1::Notifications::RequestsController#set_requests
+missed binding	mastodon	current_account	Api::V1::Timelines::ListController	filter-transitive	Api::V1::Timelines::ListController#set_list
+missed binding	mastodon	current_user	Api::V1::Timelines::ListController	filter-transitive	Api::V1::Timelines::ListController#set_list
+missed binding	mastodon	current_account	Api::V2::Filters::KeywordsController	filter-transitive	Api::V2::Filters::KeywordsController#set_keyword
+missed binding	mastodon	current_user	Api::V2::Filters::KeywordsController	filter-transitive	Api::V2::Filters::KeywordsController#set_keyword
+missed binding	mastodon	current_account	Api::V2::Filters::StatusesController	filter-transitive	Api::V2::Filters::StatusesController#set_status_filter
+missed binding	mastodon	current_user	Api::V2::Filters::StatusesController	filter-transitive	Api::V2::Filters::StatusesController#set_status_filter
+missed binding	mastodon	current_account	Api::V2::Notifications::PoliciesController	filter-transitive	Api::V2::Notifications::PoliciesController#set_policy
+missed binding	mastodon	current_user	Api::V2::Notifications::PoliciesController	filter-transitive	Api::V2::Notifications::PoliciesController#set_policy
+missed binding	mastodon	active_session	Api::Web::PushSubscriptionsController	filter-transitive	Api::Web::PushSubscriptionsController#set_push_subscription
+missed binding	mastodon	current_session	Api::Web::PushSubscriptionsController	filter-transitive	Api::Web::PushSubscriptionsController#set_push_subscription
+missed binding	mastodon	current_user	Api::Web::SettingsController	filter-transitive	Api::Web::SettingsController#set_setting
+missed binding	mastodon	current_account	SeveredRelationshipsController	filter-transitive	SeveredRelationshipsController#set_event
+unexplained around-block binding	mastodon	current_account			Api::V1::AccountsController#__rh_around_3Api_2V1_18AccountsController_1
+unexplained around-block binding	mastodon	current_user			Api::V1::AccountsController#__rh_around_3Api_2V1_18AccountsController_1
+unexplained around-block binding	mastodon	current_account			Api::V1::ReportsController#__rh_around_3Api_2V1_17ReportsController_1
+unexplained around-block binding	mastodon	current_user			Api::V1::ReportsController#__rh_around_3Api_2V1_17ReportsController_1
+unexplained around-block binding	mastodon	current_account			Api::V1::Statuses::ReblogsController#__rh_around_3Api_2V1_8Statuses_17ReblogsController_1
+unexplained around-block binding	mastodon	current_user			Api::V1::Statuses::ReblogsController#__rh_around_3Api_2V1_8Statuses_17ReblogsController_1
+unexplained around-block binding	mastodon	current_account			Api::V1::StatusesController#__rh_around_3Api_2V1_18StatusesController_1
+unexplained around-block binding	mastodon	current_user			Api::V1::StatusesController#__rh_around_3Api_2V1_18StatusesController_1
+unexplained around-block binding	mastodon	current_account			Api::V1::StatusesController#__rh_around_3Api_2V1_18StatusesController_2
+unexplained around-block binding	mastodon	current_user			Api::V1::StatusesController#__rh_around_3Api_2V1_18StatusesController_2
+unexplained around-block binding	mastodon	current_account			Api::V1::TagsController#__rh_around_3Api_2V1_14TagsController_1
+unexplained around-block binding	mastodon	current_user			Api::V1::TagsController#__rh_around_3Api_2V1_14TagsController_1
