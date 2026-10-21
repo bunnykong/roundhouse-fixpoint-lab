@@ -145,3 +145,4 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 [F73: the mutation-site writers census](receipts/mutation-writers-census-2026-10-21/README.md) finds 21 rows that lose witnessed values on every schedule.
 [F74: the strict pending guard](receipts/strict-pending-guard-2026-10-21/README.md) makes Mastodon schedule-equal; it is not a soundness certificate.
 [F75: the binding projection](receipts/binding-projection-2026-10-21/README.md) makes all four apps schedule-equal and corrects its own binding audit.
+[F76: the strict catalog](receipts/catalog-strict-2026-10-21/README.md) clears the 21 catalog strictness failures with no value change; other laws remain.
