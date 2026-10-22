@@ -156,3 +156,4 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 
 [F78: remaining repairs](receipts/remaining-repairs-2026-10-22/README.md) repair 6 more of F73's losing rows; 12 of the 21 now have reader-visible repairs, 2 remain, and render bindings add 4 Forem losses.
 [F78: census by reader](receipts/census-by-reader-2026-10-22/README.md) finds 14.6% of F73's narrowed rows unread; on reader-visible rows the bound is 48.0%.
+[F79: the census proof checker](receipts/census-proof-checker-2026-10-22/README.md) proves 1,922 of F73's 4,652 narrowed rows from source and none of the known losses; it finds two hand proofs circular, which [corrects F73](receipts/mutation-writers-census-2026-10-21/README.md#correction-october-22).

@@ -8,6 +8,10 @@ F73's bound on the rows a reader sees. It backs the census part of
 bound. At most 1,907 of 3,974 reader-visible rows (48.0%) lose values at 95% confidence, against F73's 2,202 of
 4,652 (47.3%), and at least 15 do. The bound is wide for lack of proofs, not because of unread rows.
 
+**Correction, October 22:** the [census proof checker](../census-proof-checker-2026-10-22/README.md) finds the hand
+proofs of M1708 and M1745, both read by an emitter, circular. Counted as unproved, the reader-visible bound is 2,009
+of 3,974 (50.6%); see [F73's correction](../mutation-writers-census-2026-10-21/README.md#correction-october-22).
+
 ## Condition
 
 - Rows: [F73's census](../mutation-writers-census-2026-10-21/README.md) of `mutation-writers-66c06f52` against

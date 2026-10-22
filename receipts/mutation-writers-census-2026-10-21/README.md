@@ -2,10 +2,28 @@
 
 Unscored research reference. Verdict: unsound on witnessed values.
 This census is an independent runtime check of the candidate. It has had no second review.
+On October 22 a proof checker found two of its hand proofs circular; see the correction below.
 
 ## Fact F73
 
 On `mutation-writers-20261016-four-apps-v0a0`, the candidate that adds array and hash mutation sites as writers to F72's rule is unsound on witnessed values. In 21 distinct rows its type excludes a value that CRuby 4.0.7 produces, on all four schedules (unset/1/2/repeat); 17 of them were not among F72's witnessed losses. It admits the witness values of 52 of F72's 56 losing rows; 4 still fail. By family: routing or missing contribution, 13 rows (Campfire's `allow_unauthenticated_access only: %i[ new create ]` binds `options` to `{only: [:new, :create]}`, typed `Hash[Bottom, Bottom]`); container contents, 6 (Mastodon queues `[[:confirmation_instructions, ["token"], {}]]` inside a transaction, typed `Array[Bottom]`); other, 2 (a WhatsApp contact message without contacts makes `Array(message_payload[:contacts]).first&.with_indifferent_access` nil, typed `HashWithIndifferentAccess` without nil); reference return, 0. The census is sampled, not exhaustive: all 69 concrete/nil narrowings and 40 unknown-only narrowings per app, 229 of the candidate's 4,652 narrowings against spine v3. Counting the 34 rows that only a passing witness supports as possible losses, at most 2,202 of the 4,652 (47.3%) lose values, at 95% confidence; at least 21 do. Equality gains under this candidate are therefore not sound gains. V1A1 and Discourse were not run.
+
+## Correction, October 22
+
+The [census proof checker](../census-proof-checker-2026-10-22/README.md) finds two of the 176 source-supported
+rows circular. M1708 and M1745 are per-call-site copies of `vary_by`'s `**kwargs`
+(`app/controllers/concerns/cache_concern.rb:7`), where the analyzer substituted `**{}`. Their argument, a decoded
+empty IR constructor, rests on the analyzer's own IR. In source the same slot also receives Symbol-keyed hashes,
+`unless: :disallow_unauthenticated_api_access?` (`app/controllers/api/v1/custom_emojis_controller.rb:4`) and
+`if: -> {...}` (`app/controllers/api/v1/instances/domain_blocks_controller.rb:7`), which their types,
+`Hash[Str, Str]` and `Hash[Str, Str | nil]`, exclude. Only the analyzer knows which call site each occurrence is,
+so the rows may still be sound, but they are unproved.
+
+Both pass their witnesses on all four schedules, so they count as witness-only: 174 source-supported rows and 36
+witness-only rows. The conservative bound becomes 2,301 of 4,652 (49.5%) instead of 2,202 (47.3%), and 2,009 of
+3,974 (50.6%) on the rows a reader sees. The checker's [validate.py](../census-proof-checker-2026-10-22/validate.py)
+recomputes both. The tables, [source-arguments.tsv](source-arguments.tsv) and [bounds.py](bounds.py) here keep
+the original statuses.
 
 ## Condition
 

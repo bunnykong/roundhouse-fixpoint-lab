@@ -1,0 +1,297 @@
+{
+  "proved": 1922,
+  "agreement": {
+    "fresh constructor": [
+      66,
+      12
+    ],
+    "fixed key schema": [
+      20,
+      8
+    ],
+    "dominating guard": [
+      2,
+      12
+    ],
+    "closed caller set": [
+      0,
+      13
+    ],
+    "exhaustive returns": [
+      0,
+      41
+    ],
+    "other": [
+      0,
+      2
+    ]
+  },
+  "disagreement_causes": {
+    "": 0,
+    "IR-only evidence": 11,
+    "callee proved, call not resolved": 4,
+    "interprocedural or library call": 27,
+    "stricter trust base": 3,
+    "caller enumeration": 40,
+    "instance variable": 3
+  },
+  "f73_losses_proved": [],
+  "f73_witness_only_proved": [],
+  "f72_control": {
+    "f72-verdicts.jsonl": {
+      "losses": 62,
+      "losses_proved": [],
+      "sound": 75,
+      "sound_proved": 60
+    },
+    "f72-ablated.jsonl": {
+      "losses": 62,
+      "losses_proved": [
+        "C761",
+        "C1176",
+        "C1431",
+        "C1432",
+        "F127",
+        "F218",
+        "F219",
+        "F287",
+        "M1299"
+      ],
+      "sound": 75,
+      "sound_proved": 62
+    }
+  },
+  "per_stratum": {
+    "campfire/unknown": [
+      27,
+      94
+    ],
+    "chatwoot/concrete_nil": [
+      0,
+      30
+    ],
+    "chatwoot/unknown": [
+      923,
+      1994
+    ],
+    "forem/concrete_nil": [
+      0,
+      2
+    ],
+    "forem/unknown": [
+      202,
+      545
+    ],
+    "mastodon/concrete_nil": [
+      20,
+      37
+    ],
+    "mastodon/unknown": [
+      750,
+      1950
+    ]
+  },
+  "bound": {
+    "upper": 2112,
+    "population": 4652,
+    "strata": [
+      {
+        "app": "campfire",
+        "stratum": "unknown",
+        "N": 94,
+        "closed": 27,
+        "N_rest": 67,
+        "n_rest": 27,
+        "k": 3,
+        "u": 9,
+        "upper": 41,
+        "censused": false
+      },
+      {
+        "app": "forem",
+        "stratum": "concrete_nil",
+        "N": 2,
+        "closed": 0,
+        "N_rest": 2,
+        "n_rest": 2,
+        "k": 0,
+        "u": 0,
+        "upper": 0,
+        "censused": true
+      },
+      {
+        "app": "forem",
+        "stratum": "unknown",
+        "N": 545,
+        "closed": 202,
+        "N_rest": 343,
+        "n_rest": 23,
+        "k": 0,
+        "u": 7,
+        "upper": 188,
+        "censused": false
+      },
+      {
+        "app": "chatwoot",
+        "stratum": "concrete_nil",
+        "N": 30,
+        "closed": 0,
+        "N_rest": 30,
+        "n_rest": 30,
+        "k": 3,
+        "u": 0,
+        "upper": 3,
+        "censused": true
+      },
+      {
+        "app": "chatwoot",
+        "stratum": "unknown",
+        "N": 1994,
+        "closed": 923,
+        "N_rest": 1071,
+        "n_rest": 23,
+        "k": 3,
+        "u": 9,
+        "upper": 806,
+        "censused": false
+      },
+      {
+        "app": "mastodon",
+        "stratum": "concrete_nil",
+        "N": 37,
+        "closed": 20,
+        "N_rest": 17,
+        "n_rest": 17,
+        "k": 6,
+        "u": 0,
+        "upper": 6,
+        "censused": true
+      },
+      {
+        "app": "mastodon",
+        "stratum": "unknown",
+        "N": 1950,
+        "closed": 750,
+        "N_rest": 1200,
+        "n_rest": 19,
+        "k": 4,
+        "u": 9,
+        "upper": 1068,
+        "censused": false
+      }
+    ]
+  },
+  "bound_reader_visible": {
+    "upper": 1824,
+    "population": 3974,
+    "strata": [
+      {
+        "app": "campfire",
+        "stratum": "unknown",
+        "N": 81,
+        "closed": 23,
+        "N_rest": 58,
+        "n_rest": 23,
+        "k": 3,
+        "u": 5,
+        "upper": 31,
+        "censused": false
+      },
+      {
+        "app": "forem",
+        "stratum": "concrete_nil",
+        "N": 1,
+        "closed": 0,
+        "N_rest": 1,
+        "n_rest": 1,
+        "k": 0,
+        "u": 0,
+        "upper": 0,
+        "censused": true
+      },
+      {
+        "app": "forem",
+        "stratum": "unknown",
+        "N": 488,
+        "closed": 182,
+        "N_rest": 306,
+        "n_rest": 20,
+        "k": 0,
+        "u": 5,
+        "upper": 157,
+        "censused": false
+      },
+      {
+        "app": "chatwoot",
+        "stratum": "concrete_nil",
+        "N": 28,
+        "closed": 0,
+        "N_rest": 28,
+        "n_rest": 28,
+        "k": 1,
+        "u": 0,
+        "upper": 1,
+        "censused": true
+      },
+      {
+        "app": "chatwoot",
+        "stratum": "unknown",
+        "N": 1656,
+        "closed": 744,
+        "N_rest": 912,
+        "n_rest": 21,
+        "k": 3,
+        "u": 7,
+        "upper": 661,
+        "censused": false
+      },
+      {
+        "app": "mastodon",
+        "stratum": "concrete_nil",
+        "N": 32,
+        "closed": 20,
+        "N_rest": 12,
+        "n_rest": 12,
+        "k": 2,
+        "u": 0,
+        "upper": 2,
+        "censused": true
+      },
+      {
+        "app": "mastodon",
+        "stratum": "unknown",
+        "N": 1688,
+        "closed": 578,
+        "N_rest": 1110,
+        "n_rest": 17,
+        "k": 4,
+        "u": 7,
+        "upper": 972,
+        "censused": false
+      }
+    ]
+  },
+  "detection_bound": {
+    "upper": 1055
+  },
+  "circular_proofs_unproved": {
+    "rows": [
+      "M1708",
+      "M1745"
+    ],
+    "f73": 2301,
+    "f73_reader_visible": 2009,
+    "closed": 2183,
+    "closed_reader_visible": 1899
+  },
+  "projection": {
+    "conservative": {
+      "extra_rows": null,
+      "floor": 1523
+    },
+    "resolved": {
+      "extra_rows": 1571,
+      "floor": 409
+    }
+  }
+}
