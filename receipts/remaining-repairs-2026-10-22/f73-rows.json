@@ -1,0 +1,2348 @@
+{
+  "note": "Types are identical on the four schedules (unset, 1, 2, repeat) in each condition, and the F77 types equal those of F77 rerun at the same moment. Witness types are the census records from CRuby 4.0.7. The single-flag columns are unset cells with one of the four flags on, on Chatwoot and Mastodon. census_rule is the reader class of the census-by-reader receipt: a, read by an analyzed body; b, read only by an emitter; c, read by nothing.",
+  "rows": [
+    {
+      "census_id": "A010",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.allow_unauthenticated_access\",\"kind\":\"Send\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":412,\"file\":124,\"start\":359}}:occurrence:0:1/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "sym"
+              },
+              {
+                "elem": {
+                  "kind": "sym"
+                },
+                "kind": "array"
+              }
+            ]
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "sym"
+              },
+              {
+                "elem": {
+                  "kind": "sym"
+                },
+                "kind": "array"
+              }
+            ]
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body Authentication.allow_unauthenticated_access",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "A013",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body Authentication.require_unauthenticated_access",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "A014",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body Authentication.require_unauthenticated_access",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "C1376",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"V2::Reports::DrilldownRecordSerializer#inferred_messages_by_event_id\",\"kind\":\"OpAssign\",\"source\":\"examples/apps/chatwoot/app/builders/v2/reports/drilldown_record_serializer.rb\",\"span\":{\"end\":4527,\"file\":144,\"start\":4272}}:occurrence:0:0/2/0/2",
+      "family": "other",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "0/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "sound_rest": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "sidekiq_rows": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "render_bindings": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "ivar_call_joins": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "memo_aliases": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$",
+          "value": "nil"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body V2::Reports::DrilldownRecordSerializer#inferred_messages_by_event_id",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "remains"
+    },
+    {
+      "census_id": "C1465",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"Whatsapp::ContactInfoResponseService#contact_payload\",\"kind\":\"BoolOp\",\"source\":\"examples/apps/chatwoot/app/services/whatsapp/contact_info_response_service.rb\",\"span\":{\"end\":946,\"file\":587,\"start\":852}}:occurrence:0:0/1",
+      "family": "other",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "0/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "sound_rest": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "sidekiq_rows": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "render_bindings": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "ivar_call_joins": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "memo_aliases": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$",
+          "value": "nil"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body Whatsapp::ContactInfoResponseService#contact_payload",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "remains"
+    },
+    {
+      "census_id": "C1748",
+      "f72_census_id": "C2311",
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/views/super_admin/push_diagnostics/show.html.erb\",\"span\":{\"end\":10087,\"file\":1136,\"start\":3}}:occurrence:0:6/1/13/1/1/1/0/5/0/1/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "render bindings",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "bottom"
+        },
+        "sound_rest": {
+          "kind": "untyped"
+        },
+        "sidekiq_rows": {
+          "kind": "bottom"
+        },
+        "render_bindings": {
+          "kind": "untyped"
+        },
+        "ivar_call_joins": {
+          "kind": "bottom"
+        },
+        "memo_aliases": {
+          "kind": "bottom"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "kind": "sym"
+                }
+              ]
+            }
+          },
+          "position": "$",
+          "value": "{id: 1, type: \"fcm\", device: \"—\", token_tail: \"…abcdef\", status: :skipped, message: \"No Firebase credentials and push relay disabled\"}"
+        }
+      ],
+      "reader": {
+        "census_rule": "b",
+        "census_rule_note": "ir: node of an emit-bound root without a declaration (Seq, app/views/super_admin/push_diagnostics/show.html.erb)",
+        "reader_of_value": "the view's `r[...]` sends, already Unresolved under F77"
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "C1855",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "params",
+      "key": "NotificationSetting#selected_email_flags=[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "[\"email_conversation_assignment\"]"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "params: no analyzer body for NotificationSetting#selected_email_flags=, no includer fold, no emitter reader",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "C1856",
+      "f72_census_id": "C2428",
+      "app": "chatwoot",
+      "table": "params",
+      "key": "NotificationSetting#selected_push_flags=[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "[\"push_conversation_assignment\"]"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "params: no analyzer body for NotificationSetting#selected_push_flags=, no includer fold, no emitter reader",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "C575",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":1522,\"file\":365,\"start\":712}}:occurrence:0:0/4",
+      "family": "container",
+      "repaired_by": "ivar call joins",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "untyped"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "untyped"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "[#<Conversation id: 1, status: \"resolved\">]"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body AutomationRules::ConditionsFilterService#perform",
+        "reader_of_value": "none: a statement whose value is discarded; the later read of `records` (line 39) is `Relation[Conversation]` in both conditions and still rejects the witness"
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "C578",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform_attribute_changed_filter\",\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":3486,\"file\":365,\"start\":3285}}:occurrence:0:",
+      "family": "container",
+      "repaired_by": "ivar call joins",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "sound_rest": {
+          "kind": "untyped"
+        },
+        "sidekiq_rows": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "render_bindings": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "ivar_call_joins": {
+          "kind": "untyped"
+        },
+        "memo_aliases": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "[#<Conversation id: 1, status: \"resolved\">]"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body AutomationRules::ConditionsFilterService#perform_attribute_changed_filter",
+        "reader_of_value": "`perform`'s call (`conditions_filter_service.rb:37`), which then feeds only C575"
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M1273",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"RateLimitable.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:1/0/0/1/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "sym"
+          },
+          "position": "$",
+          "value": ":account"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body RateLimitable.rate_limit",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M130",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:binding:markers",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sidekiq_rows": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "render_bindings": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "ivar_call_joins": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "memo_aliases": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: 1>}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "controller_cache: binding of @markers, which analyzed bodies read",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M131",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:body:0/0/1/0/1/1/0/1/0/0",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sidekiq_rows": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "render_bindings": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "ivar_call_joins": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "memo_aliases": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "controller_cache: cached body node (Ivar under Send), not an ivar-write value",
+        "reader_of_value": "none: a node of the cached action body, the cache copy of M650, which only the ivar harvest reads, and it reads ivar-write values only"
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "M1491",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"ThreadResolveWorker#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/workers/thread_resolve_worker.rb\",\"span\":{\"end\":780,\"file\":862,\"start\":158}}:occurrence:0:0/3/0/2",
+      "family": "routing or missing contribution",
+      "repaired_by": "Sidekiq rows",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sidekiq_rows": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "render_bindings": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "ivar_call_joins": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "memo_aliases": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "{request_id: \"request-1\"}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body ThreadResolveWorker#perform",
+        "reader_of_value": "`**` into `FetchRemoteStatusService#call`, whose `request_id` row was already Unresolved"
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M1545",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"User#send_pending_devise_notifications\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/user.rb\",\"span\":{\"end\":12387,\"file\":235,\"start\":12045}}:occurrence:0:0/0",
+      "family": "container",
+      "repaired_by": "memo aliases",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "0/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "sound_rest": {
+          "elem": {
+            "kind": "untyped"
+          },
+          "kind": "array"
+        },
+        "sidekiq_rows": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "render_bindings": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "ivar_call_joins": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "memo_aliases": {
+          "elem": {
+            "kind": "untyped"
+          },
+          "kind": "array"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "array",
+              "elem": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "sym"
+                  },
+                  {
+                    "kind": "array",
+                    "elem": {
+                      "kind": "str"
+                    }
+                  },
+                  {
+                    "kind": "hash",
+                    "key": {
+                      "kind": "bottom"
+                    },
+                    "value": {
+                      "kind": "bottom"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "position": "$",
+          "value": "[[:confirmation_instructions, [\"token\"], {}]]"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body User#send_pending_devise_notifications",
+        "reader_of_value": "`.each`, whose block parameter goes from Bottom to Unresolved"
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M1786",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "params",
+      "key": "Account#<<[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Account",
+            "args": []
+          },
+          "position": "$",
+          "value": "#<Account id: 1, username: \"ada\", domain: nil>"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "params: no analyzer body for Account#<<, no includer fold, no emitter reader",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "M1848",
+      "f72_census_id": "M2643",
+      "app": "mastodon",
+      "table": "params",
+      "key": "Collection#is_a?[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$",
+          "value": "Symbol"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "params: no analyzer body for Collection#is_a?, no includer fold, no emitter reader",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "M1904",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "params",
+      "key": "Status#is_a?[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$",
+          "value": "Symbol"
+        }
+      ],
+      "reader": {
+        "census_rule": "c",
+        "census_rule_note": "params: no analyzer body for Status#is_a?, no includer fold, no emitter reader",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "no"
+    },
+    {
+      "census_id": "M385",
+      "f72_census_id": "M586",
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"ActivityPub::FetchFeaturedCollectionService#call\",\"kind\":\"If\",\"source\":null,\"span\":{\"end\":0,\"file\":0,\"start\":0}}:occurrence:0:2/2/0/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "Sidekiq rows",
+      "admits_on_four_schedules": {
+        "f77": "0/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "0/1",
+        "ivar_call_joins": "0/1",
+        "memo_aliases": "0/1"
+      },
+      "types": {
+        "f77": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sound_rest": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "sidekiq_rows": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "str"
+            },
+            {
+              "kind": "untyped"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "render_bindings": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "ivar_call_joins": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "memo_aliases": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "str"
+          },
+          "position": "$",
+          "value": "\"https://remote.example.test/featured\""
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body ActivityPub::FetchFeaturedCollectionService#call",
+        "reader_of_value": "`.presence` into `JsonLdHelper#fetch_collection_page`, whose argument gains `Str`"
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M650",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"Api::V1::MarkersController#create\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/controllers/api/v1/markers_controller.rb\",\"span\":{\"end\":940,\"file\":1201,\"start\":490}}:occurrence:0:0/0/1/0/1/1/0/1/0/0",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "sidekiq_rows": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "render_bindings": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "ivar_call_joins": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "memo_aliases": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body Api::V1::MarkersController#create",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    },
+    {
+      "census_id": "M945",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"FollowRequest.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:0/0/0/0/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f77": "4/4",
+        "sound_rest": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "sidekiq_rows": "1/1",
+        "render_bindings": "1/1",
+        "ivar_call_joins": "1/1",
+        "memo_aliases": "1/1"
+      },
+      "types": {
+        "f77": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "sound_rest": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "sidekiq_rows": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "render_bindings": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "ivar_call_joins": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "memo_aliases": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "sym"
+            }
+          },
+          "position": "$",
+          "value": "{by: :account, family: :follows}"
+        }
+      ],
+      "reader": {
+        "census_rule": "a",
+        "census_rule_note": "ir: node of the declared body FollowRequest.rate_limit",
+        "reader_of_value": null
+      },
+      "reader_visible_repair": "yes"
+    }
+  ]
+}

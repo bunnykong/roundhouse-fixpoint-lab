@@ -151,3 +151,8 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 ## October 22 correction
 
 [F77's correction](receipts/loss-repairs-2026-10-21/README.md#correction-october-22): class-body sites and String parameter keys make 8 substantive repairs; the per-class-route repairs and widenings sit in rows nothing reads.
+
+## October 22 results
+
+[F78: remaining repairs](receipts/remaining-repairs-2026-10-22/README.md) repair 6 more of F73's losing rows; 12 of the 21 now have reader-visible repairs, 2 remain, and render bindings add 4 Forem losses.
+[F78: census by reader](receipts/census-by-reader-2026-10-22/README.md) finds 14.6% of F73's narrowed rows unread; on reader-visible rows the bound is 48.0%.

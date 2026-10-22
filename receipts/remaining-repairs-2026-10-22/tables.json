@@ -1,0 +1,465 @@
+{
+  "conditions": {
+    "sound-rest-20261022-four-apps-v0a0": "F77 candidate + RH_SIDEKIQ_ROWS=1 + RH_RENDER_BINDINGS=1 + RH_IVAR_CALL_JOIN=1 + RH_MEMO_IVAR_ALIAS=1 (3b96ce25)"
+  },
+  "control": "params-string-keys-953680ad (F77), rerun at the same moment",
+  "checker_condition": "quick-test-v1 / cached-observers-20261015-source-rebuild / F61",
+  "schedules": [
+    "unset",
+    "1",
+    "2",
+    "repeat"
+  ],
+  "binary_sha256": {
+    "sound-rest-3b96ce25": "2545e353cc3d32984d5cb2fd9af417ca2a8dab0a97b1939eac2e656763b39bc2"
+  },
+  "against_f77": {
+    "campfire": {
+      "f77": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 485
+      },
+      "candidate": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 485
+      },
+      "unset": {
+        "incomparable": 0,
+        "missing": 0,
+        "narrowed": 0,
+        "unchanged": 47625,
+        "widened": 0
+      },
+      "unclassified_split": {},
+      "diagnostic_delta": {},
+      "narrowed_by_flag": {},
+      "widened_by_flag": {}
+    },
+    "forem": {
+      "f77": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 8820
+      },
+      "candidate": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 8915
+      },
+      "unset": {
+        "incomparable": 6,
+        "missing": 653,
+        "narrowed": 160,
+        "unchanged": 237222,
+        "widened": 1010
+      },
+      "unclassified_split": {
+        "changed fingerprint has no serialized type": 10,
+        "row absent from control": 634,
+        "row absent from candidate": 9
+      },
+      "diagnostic_delta": {
+        "warning/missing_preload": -1,
+        "warning/gradual_untyped": 96
+      },
+      "narrowed_by_flag": {
+        "Sidekiq rows": 127,
+        "memo aliases": 5,
+        "Sidekiq rows and ivar call joins": 2,
+        "render bindings": 26
+      },
+      "widened_by_flag": {
+        "ivar call joins": 912,
+        "Sidekiq rows": 5,
+        "memo aliases": 11,
+        "two flags": 6,
+        "render bindings": 76
+      }
+    },
+    "chatwoot": {
+      "f77": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 8150
+      },
+      "candidate": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 8170
+      },
+      "unset": {
+        "incomparable": 2,
+        "missing": 20,
+        "narrowed": 1,
+        "unchanged": 254724,
+        "widened": 166
+      },
+      "unclassified_split": {
+        "changed fingerprint has no serialized type": 3,
+        "row absent from candidate": 9,
+        "row absent from control": 8
+      },
+      "diagnostic_delta": {
+        "error/unsupported": 2,
+        "warning/gradual_untyped": 18
+      },
+      "narrowed_by_flag": {
+        "memo aliases": 1
+      },
+      "widened_by_flag": {
+        "ivar call joins": 139,
+        "memo aliases": 17,
+        "render bindings": 10
+      }
+    },
+    "mastodon": {
+      "f77": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 7176
+      },
+      "candidate": {
+        "equal_tables": 10,
+        "varying_rows": 0,
+        "diagnostics": 7168
+      },
+      "unset": {
+        "incomparable": 1,
+        "missing": 570,
+        "narrowed": 117,
+        "unchanged": 337986,
+        "widened": 701
+      },
+      "unclassified_split": {
+        "changed fingerprint has no serialized type": 3,
+        "row absent from control": 497,
+        "row absent from candidate": 70
+      },
+      "diagnostic_delta": {
+        "error/unsupported": -1,
+        "warning/gradual_untyped": -7
+      },
+      "narrowed_by_flag": {
+        "Sidekiq rows": 92,
+        "memo aliases": 1,
+        "render bindings": 24
+      },
+      "widened_by_flag": {
+        "ivar call joins": 477,
+        "Sidekiq rows": 171,
+        "memo aliases": 33,
+        "Sidekiq rows and ivar call joins": 5,
+        "render bindings": 15
+      }
+    }
+  },
+  "incomparable": [
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "PodcastEpisode",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Class",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:17/0/1/0/0"
+    },
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "PodcastEpisode",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "candidate": {
+        "kind": "union",
+        "variants": [
+          {
+            "args": [],
+            "id": "Class",
+            "kind": "class"
+          },
+          {
+            "kind": "nil"
+          }
+        ]
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:17/0/1/0/0/0"
+    },
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "args": [],
+        "id": "PodcastEpisode",
+        "kind": "class"
+      },
+      "candidate": {
+        "args": [],
+        "id": "Class",
+        "kind": "class"
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:17/0/1/0/0/0/1"
+    },
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "args": [],
+        "id": "PodcastEpisode",
+        "kind": "class"
+      },
+      "candidate": {
+        "args": [],
+        "id": "Class",
+        "kind": "class"
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:17/0/1/0/1/0"
+    },
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "args": [],
+        "id": "PodcastEpisode",
+        "kind": "class"
+      },
+      "candidate": {
+        "args": [],
+        "id": "Class",
+        "kind": "class"
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:5/1/0/1/0/1/0/19/2/9/0/0/0/0"
+    },
+    {
+      "app": "forem",
+      "table": "ir",
+      "flag": "render bindings",
+      "control": {
+        "args": [],
+        "id": "PodcastEpisode",
+        "kind": "class"
+      },
+      "candidate": {
+        "args": [],
+        "id": "Class",
+        "kind": "class"
+      },
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/forem/app/views/comments/index.html.erb\",\"span\":{\"end\":8637,\"file\":1095,\"start\":4}}:occurrence:0:9/0/1/0/0"
+    },
+    {
+      "app": "chatwoot",
+      "table": "ir",
+      "flag": "memo aliases",
+      "control": {
+        "kind": "record",
+        "row": {
+          "fields": {
+            "account": {
+              "kind": "union",
+              "variants": [
+                {
+                  "args": [],
+                  "id": "Account",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "soft_deleted_users": {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            }
+          },
+          "rest": null
+        }
+      },
+      "candidate": {
+        "kind": "record",
+        "row": {
+          "fields": {
+            "account": {
+              "kind": "union",
+              "variants": [
+                {
+                  "args": [],
+                  "id": "Account",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "soft_deleted_users": {
+              "elem": {
+                "key": {
+                  "kind": "sym"
+                },
+                "kind": "hash",
+                "value": {
+                  "kind": "union",
+                  "variants": [
+                    {
+                      "kind": "str"
+                    },
+                    {
+                      "kind": "untyped"
+                    }
+                  ]
+                }
+              },
+              "kind": "array"
+            }
+          },
+          "rest": null
+        }
+      },
+      "key": "{\"declaration\":\"AdministratorNotifications::AccountComplianceMailer#build_meta\",\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/mailers/administrator_notifications/account_compliance_mailer.rb\",\"span\":{\"end\":1047,\"file\":308,\"start\":357}}:occurrence:0:0/0/0/0"
+    },
+    {
+      "app": "chatwoot",
+      "table": "returns",
+      "flag": "memo aliases",
+      "control": {
+        "kind": "record",
+        "row": {
+          "fields": {
+            "account": {
+              "kind": "union",
+              "variants": [
+                {
+                  "args": [],
+                  "id": "Account",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "soft_deleted_users": {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            }
+          },
+          "rest": null
+        }
+      },
+      "candidate": {
+        "kind": "record",
+        "row": {
+          "fields": {
+            "account": {
+              "kind": "union",
+              "variants": [
+                {
+                  "args": [],
+                  "id": "Account",
+                  "kind": "class"
+                },
+                {
+                  "kind": "untyped"
+                }
+              ]
+            },
+            "soft_deleted_users": {
+              "elem": {
+                "key": {
+                  "kind": "sym"
+                },
+                "kind": "hash",
+                "value": {
+                  "kind": "union",
+                  "variants": [
+                    {
+                      "kind": "str"
+                    },
+                    {
+                      "kind": "untyped"
+                    }
+                  ]
+                }
+              },
+              "kind": "array"
+            }
+          },
+          "rest": null
+        }
+      },
+      "key": "AdministratorNotifications::AccountComplianceMailer#params"
+    },
+    {
+      "app": "mastodon",
+      "table": "ir",
+      "flag": "ivar call joins",
+      "control": {
+        "kind": "nil"
+      },
+      "candidate": {
+        "args": [],
+        "id": "StandardError",
+        "kind": "class"
+      },
+      "key": "{\"declaration\":\"MoveWorker#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/workers/move_worker.rb\",\"span\":{\"end\":709,\"file\":822,\"start\":77}}:occurrence:0:0/7/2/0"
+    }
+  ],
+  "flags_off_parity": [
+    {
+      "cell": "campfire/unset",
+      "equal_to_f77_on_nine_fields": true
+    },
+    {
+      "cell": "forem/unset",
+      "equal_to_f77_on_nine_fields": true
+    }
+  ],
+  "incomparable_notes": {
+    "forem": "Six .class results change nominal class-object encoding to generic Class; excluded from narrowing/widening claims.",
+    "chatwoot": "Two record comparisons with soft_deleted_users expanding from Array[Bottom] to Array[Hash] are not ordered by the retained record checker.",
+    "mastodon": "One guarded MoveWorker deferred-error read changes nil to StandardError; the runtime error arm is guarded."
+  }
+}

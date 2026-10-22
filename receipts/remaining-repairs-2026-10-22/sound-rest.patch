@@ -1,0 +1,958 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index d6ab65b6d..9ea7da4bc 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -576,7 +576,7 @@ impl<'a> BodyTyper<'a> {
+     /// annotation rides with the IR so emitters can render a runtime
+     /// raise-equivalent without re-classifying.
+     pub fn analyze_expr(&self, expr: &mut Expr, ctx: &Ctx) -> Ty {
+-        let mutation_visit = super::mutation_writers::enter(expr,ctx);
++        let mutation_visit = super::mutation_writers::enter(expr,ctx,self.classes().raw());
+         loop {
+             let _writer_visit = super::writers::enter(expr.span, ctx);
+             let ty = self.compute(expr, ctx);
+@@ -1870,7 +1870,9 @@ impl<'a> BodyTyper<'a> {
+                     _ => None,
+                 };
+                 if let Some((construct, detail)) = unsupported_deep_merge
+-                    && matches!(recv_ty, Some(Ty::Hash { .. }))
++                    && (matches!(recv_ty, Some(Ty::Hash { .. }))
++                        || super::sound_rest::ivar_calls_on()
++                            && recv_ty.as_ref().is_some_and(super::sound_rest::has_hash_arm))
+                 {
+                     expr.diagnostic = Some(crate::diagnostic::DiagnosticKind::Unsupported {
+                         target: None,
+@@ -2527,6 +2529,9 @@ impl<'a> BodyTyper<'a> {
+                         forget_class_object_writes(e, &mut local_ctx);
+                     }
+                     last = self.analyze_expr(e, &local_ctx);
++                    if super::sound_rest::ivar_calls_on() && super::sound_rest::has_call(e) {
++                        super::sound_rest::refresh_ivars(&mut local_ctx, ctx);
++                    }
+                     // A self binding gives `self` its declared type from
+                     // the next statement to the end of this body, blocks
+                     // inside included. It changes only how `self` types:
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index 1c33212cd..17efce3bc 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -62,6 +62,7 @@ mod mutation_writers;
+ mod route_static;
+ mod canon_var;
+ mod cb_project;
++mod sound_rest;
+ mod completion_rerun;
+ mod fixpoint_bound;
+ mod fixpoint_check;
+@@ -1356,6 +1357,7 @@ impl Analyzer {
+         param_views::reset(&app.sources);
+         writers::reset(app);
+         mutation_writers::reset();
++        mutation_writers::declare_getters(app);
+         slots::reset();
+         self.strict_stub_originals.clear();
+         self.s3d.reset_completions();
+@@ -3983,6 +3985,7 @@ impl Analyzer {
+                     for (k, v) in &ivars {
+                         let noise = |t: &Ty| t.is_unknown();
+                         let merged = match entry.remove(k) {
++                            Some(prev) if sound_rest::render_on() => writers::join(prev, v.clone()),
+                             Some(prev) if noise(&prev) => v.clone(),
+                             Some(prev) if noise(v) => prev,
+                             Some(prev) if prev == *v => prev,
+@@ -6428,18 +6431,29 @@ impl Analyzer {
+     /// Share main's receiver-side selection with the worklist's recorded sites.
+     fn resolve_param_site(
+         &self,
+-        (class_id, method, arg_tys, kw_tys, recv): SendSite,
++        (class_id, method, mut arg_tys, kw_tys, recv): SendSite,
+         params_by_method: &HashMap<ParamKey, ParamShape>,
+         defined: &BTreeSet<ParamKey>,
+     ) -> Option<(ParamKey, Vec<Ty>)> {
+         if writers::unknown_class(&class_id) { return None; }
+-        let key = self.resolve_param_key(class_id, method, recv, defined)?;
++        let splat = recv == SiteRecv::SidekiqSplat;
++        let key = self.resolve_param_key(class_id, method,
++            if splat { SiteRecv::Instance } else { recv }, defined)?;
+         if writers::tracing() && (key.1.as_str() == "preview" || key.0.0.as_str() == "Comment" && key.1.as_str() == "includes") {
+             eprintln!("WRITER row key={key:?} sources={:?} args={arg_tys:?} kw={kw_tys:?}",kw_tys.sources);
+         }
+         let sources = kw_tys.sources.clone();
+         let positional = !kw_tys.group;
+-        let arg_tys = Self::place_keyword_args(params_by_method.get(&key), arg_tys, kw_tys);
++        let arg_tys = if splat {
++            // A dynamic bulk row may fill every positional formal. The
++            // ordinary binder only expands splats for rest-only macros.
++            let elem = arg_tys.drain(..).map(|t| body::splat_elements(t)
++                .unwrap_or_else(Ty::unresolved)).fold(Ty::Bottom, writers::join);
++            params_by_method.get(&key).map(|shape| shape.slots.iter().map(|(_, kind)| {
++                if matches!(kind, ParamKind::Rest) { Ty::Array { elem: std::sync::Arc::new(elem.clone()) } }
++                else { elem.clone() }
++            }).collect()).unwrap_or_else(|| vec![Ty::unresolved()])
++        } else { Self::place_keyword_args(params_by_method.get(&key), arg_tys, kw_tys) };
+         producer_evidence::parameter_destination(&key, &sources, positional, &arg_tys);
+         Some((key, arg_tys))
+     }
+@@ -6490,6 +6504,7 @@ impl Analyzer {
+         recv: SiteRecv,
+         defined: &BTreeSet<ParamKey>,
+     ) -> Option<ParamKey> {
++        let recv = if recv == SiteRecv::SidekiqSplat { SiteRecv::Instance } else { recv };
+         let want = if recv == SiteRecv::Instance { MethodReceiver::Instance } else { MethodReceiver::Class };
+         let on_side = self.inherited_param_owner(defined, class_id.clone(), &method, Some(want));
+         let class_id = if defined.contains(&(on_side.clone(), method.clone(), want)) {
+@@ -8605,6 +8620,8 @@ enum SiteRecv {
+     Class,
+     // Not `Class`: `x.class` also reaches class methods a gem defines, which no `def` here owns.
+     DotClass,
++    /// A synthetic JSON job row with dynamic argument positions.
++    SidekiqSplat,
+ }
+ 
+ /// One typed send's observations, shared by the source walk and writer capture.
+@@ -8784,6 +8801,7 @@ fn collect_direct_send_sites(
+                         && recv.as_ref().is_some_and(|r| matches!(&*r.node, ExprNode::Const { .. }));
+ 
+                     for class_id in recv_classes {
++                        sound_rest::sidekiq_sites(expr, &class_id, site_recv, &kw_tys, classes, out);
+                         if record_initialize
+                             && !factories.contains(&class_id)
+                         {
+diff --git a/src/analyze/mutation_writers.rs b/src/analyze/mutation_writers.rs
+index 853ab6c31..0bbf5b532 100644
+--- a/src/analyze/mutation_writers.rs
++++ b/src/analyze/mutation_writers.rs
+@@ -123,13 +123,13 @@ impl Graph {
+         let (a, b) = (self.root(a), self.root(b));
+         self.parent[a.max(b)] = a.min(b);
+     }
+-    fn build(&mut self, e: &Expr) {
++    fn build(&mut self, e: &Expr, getters: &HashMap<Symbol, Symbol>) {
+         self.loops |= matches!(
+             &*e.node,
+             ExprNode::While { .. } | ExprNode::Send { block: Some(_), .. }
+         );
+         let id = self.expr(e);
+-        e.node.for_each_child(&mut |child| self.build(child));
++        e.node.for_each_child(&mut |child| self.build(child, getters));
+         let mut link = Vec::new();
+         match &*e.node {
+             ExprNode::Var { name, .. } => link.push(self.name(false, name)),
+@@ -168,6 +168,17 @@ impl Graph {
+                 link.push(self.expr(else_branch));
+             }
+             ExprNode::Cast { value, .. } => link.push(self.expr(value)),
++            ExprNode::OpAssign { target: LValue::Ivar { name }, value, .. }
++                if super::sound_rest::memo_alias_on() && super::sound_rest::getter(e).is_some() => {
++                link.push(self.name(true, name));
++                link.push(self.expr(value));
++            }
++            ExprNode::Send { recv, method, args, block, .. }
++                if super::sound_rest::memo_alias_on() && args.is_empty() && block.is_none()
++                    && recv.as_ref().is_none_or(|r| matches!(&*r.node, ExprNode::SelfRef))
++                    && getters.contains_key(method) => {
++                link.push(self.name(true, &getters[method]));
++            }
+             ExprNode::Send {
+                 recv: Some(recv),
+                 method,
+@@ -204,6 +215,9 @@ struct State {
+     source_heap: HashMap<String, Vec<(String, usize)>>,
+     source_effects: HashMap<String, Vec<(ParamKey, usize, usize)>>,
+     declarations: HashMap<String, Vec<(Symbol, ParamKey, usize)>>,
++    getters: HashMap<ParamKey, Option<Symbol>>,
++    getter_names: BTreeSet<Symbol>,
++    getter_scopes: HashMap<(Vec<crate::ident::ClassId>, bool), HashMap<Symbol, Symbol>>,
+     effects: HashMap<(ParamKey, usize), BTreeMap<(String, usize), Ty>>,
+     effects_by_method: HashMap<Symbol, Vec<(ParamKey, usize)>>,
+     roots: u64,
+@@ -225,7 +239,7 @@ pub(super) fn reset() {
+ pub(super) struct Visit {
+     root: bool,
+ }
+-pub(super) fn enter(e: &Expr, ctx: &Ctx) -> Visit {
++pub(super) fn enter(e: &Expr, ctx: &Ctx, classes: &HashMap<crate::ident::ClassId, ClassInfo>) -> Visit {
+     if !on() {
+         return Visit { root: false };
+     }
+@@ -234,8 +248,6 @@ pub(super) fn enter(e: &Expr, ctx: &Ctx) -> Visit {
+         if s.frame.is_some() {
+             return false;
+         }
+-        let mut graph = Graph::default();
+-        graph.build(e);
+         let mut scope = ctx
+             .lexical_self
+             .as_ref()
+@@ -244,6 +256,41 @@ pub(super) fn enter(e: &Expr, ctx: &Ctx) -> Visit {
+             .unwrap_or_default();
+         scope.sort();
+         scope.dedup();
++        let mut graph = Graph::default();
++        let mut getters = HashMap::new();
++        if super::sound_rest::memo_alias_on() {
++            let key = (scope.clone(), ctx.class_side);
++            if let Some(known) = s.getter_scopes.get(&key) {
++                getters = known.clone();
++            } else {
++            let side = if ctx.class_side { crate::dialect::MethodReceiver::Class } else { crate::dialect::MethodReceiver::Instance };
++            for name in &s.getter_names {
++                let mut found = BTreeSet::new();
++                let mut valid = true;
++                for owner in &scope {
++                    let mut todo = vec![owner.clone()];
++                    let mut seen = BTreeSet::new();
++                    while let Some(id) = todo.pop() {
++                        if !seen.insert(id.clone()) { continue; }
++                        if let Some(alias) = s.getters.get(&(id.clone(), name.clone(), side)) {
++                            if let Some(ivar) = alias { found.insert(ivar.clone()); } else { valid = false; }
++                            break;
++                        }
++                        if let Some(info) = classes.get(&id) {
++                            // Stack order follows method lookup: includes before parent.
++                            todo.extend(info.parent.iter().cloned());
++                            todo.extend(info.includes.iter().cloned());
++                        }
++                    }
++                }
++                if valid && found.len() == 1 { getters.insert(name.clone(), found.pop_first().unwrap()); }
++            }
++            // These aliases depend only on frozen syntax and method lookup,
++            // so every body of the same receiver scope can share the lookup.
++            s.getter_scopes.insert(key, getters.clone());
++            }
++        }
++        graph.build(e, &getters);
+         let source = format!(
+             "{}:{scope:?}:{}:{}:{:?}:{}",
+             ctx.writer_source
+@@ -647,6 +694,22 @@ pub(super) fn declare(source: &str, key: ParamKey, names: Vec<Symbol>) {
+         });
+     }
+ }
++/// Freeze getter identities before any schedule-dependent body typing.
++pub(super) fn declare_getters(app: &crate::App) {
++    if !on() || !super::sound_rest::memo_alias_on() { return; }
++    ST.with(|s| {
++        let mut s = s.borrow_mut();
++        let mut record = |owner: &crate::ident::ClassId, method: &crate::dialect::MethodDef| {
++            let alias = method.params.is_empty().then(|| super::sound_rest::getter(&method.body)).flatten();
++            s.getters.insert((owner.clone(), method.name.clone(), method.receiver), alias);
++        };
++        for model in &app.models { for method in model.methods() { record(&model.name, method); } }
++        for class in app.library_classes.iter().chain(app.rails_application.iter()) {
++            for method in &class.methods { record(&class.name, method); }
++        }
++        s.getter_names = s.getters.iter().filter_map(|(k, v)| v.as_ref().map(|_| k.1.clone())).collect();
++    });
++}
+ fn parameter_join(base: Ty, contribution: &Ty) -> Ty {
+     if super::strict_producers::is_p(&base) {
+         return base;
+diff --git a/src/analyze/render.rs b/src/analyze/render.rs
+index d293d342b..c67de7918 100644
+--- a/src/analyze/render.rs
++++ b/src/analyze/render.rs
+@@ -216,27 +216,43 @@ pub(super) fn content_partial_view_name(literal: &str, prefix: &str) -> Symbol {
+ /// (they already carry their directory).
+ pub(super) fn collect_action_render_views(expr: &Expr, prefix: &str, out: &mut Vec<Symbol>) {
+     if let ExprNode::Send { recv, method, args, .. } = &*expr.node {
+-        if recv.is_none() && matches!(method.as_str(), "render" | "render_to_string") {
++        if (recv.is_none() || super::sound_rest::render_on()
++            && recv.as_ref().is_some_and(|r| matches!(&*r.node, ExprNode::SelfRef)))
++            && matches!(method.as_str(), "render" | "render_to_string") {
+             for arg in args {
++                if super::sound_rest::render_on() {
++                    let name = match &*arg.node {
++                        ExprNode::Lit { value: Literal::Sym { value } } => Some(value.as_str()),
++                        ExprNode::Lit { value: Literal::Str { value } } => Some(value.as_str()),
++                        _ => None,
++                    };
++                    if let Some(name) = name {
++                        out.push(Symbol::from(if name.contains('/') { name.to_owned() } else { format!("{prefix}/{name}") }));
++                    }
++                }
+                 if let ExprNode::Hash { entries, .. } = &*arg.node {
+                     for (k, v) in entries {
+                         let key = match &*k.node {
+                             ExprNode::Lit { value: Literal::Sym { value } } => value.as_str(),
+                             _ => continue,
+                         };
+-                        let ExprNode::Lit { value: Literal::Str { value } } = &*v.node else {
+-                            continue;
++                        let value = match &*v.node {
++                            ExprNode::Lit { value: Literal::Str { value } } => value.as_str(),
++                            ExprNode::Lit { value: Literal::Sym { value } } if super::sound_rest::render_on() => value.as_str(),
++                            _ => continue,
+                         };
+                         match key {
+                             "action" => {
+                                 let name = if value.contains('/') {
+-                                    value.clone()
++                                    value.to_owned()
+                                 } else {
+                                     format!("{}/{}", prefix, value)
+                                 };
+                                 out.push(Symbol::from(name));
+                             }
+-                            "template" => out.push(Symbol::from(value.clone())),
++                            "template" => out.push(Symbol::from(if super::sound_rest::render_on() && !value.contains('/') {
++                                format!("{prefix}/{value}")
++                            } else { value.to_owned() })),
+                             _ => {}
+                         }
+                     }
+diff --git a/src/analyze/sound_rest.rs b/src/analyze/sound_rest.rs
+new file mode 100644
+index 000000000..6535d670d
+--- /dev/null
++++ b/src/analyze/sound_rest.rs
+@@ -0,0 +1,648 @@
++//! Independent conformance repairs for previously witnessed value losses.
++use super::*;
++use std::sync::{Arc, LazyLock};
++
++macro_rules! flag {
++    ($name:ident, $env:literal) => {
++        pub(super) fn $name() -> bool {
++            static ON: LazyLock<bool> = LazyLock::new(|| std::env::var($env).as_deref() == Ok("1"));
++            *ON
++        }
++    };
++}
++flag!(sidekiq_on, "RH_SIDEKIQ_ROWS");
++flag!(render_on, "RH_RENDER_BINDINGS");
++flag!(ivar_calls_on, "RH_IVAR_CALL_JOIN");
++flag!(memo_alias_on, "RH_MEMO_IVAR_ALIAS");
++
++/// Sidekiq's JSON boundary converts both symbol keys and symbol values.
++/// Unsupported objects stay unknown; finite unfolding prevents recursive inputs
++/// from expanding the bridge itself without bound.
++fn json_value(t: &Ty, classes: &HashMap<ClassId, ClassInfo>, depth: usize) -> Ty {
++    json_value_bounded(t, classes, depth, &mut 512)
++}
++fn json_value_bounded(
++    t: &Ty,
++    classes: &HashMap<ClassId, ClassInfo>,
++    depth: usize,
++    budget: &mut usize,
++) -> Ty {
++    if depth == 0 || *budget == 0 {
++        return Ty::unresolved();
++    }
++    *budget -= 1;
++    let mut next = |v: &Ty| json_value_bounded(v, classes, depth - 1, budget);
++    match t {
++        Ty::Bottom | Ty::Nil | Ty::Bool | Ty::Int | Ty::Float | Ty::Str | Ty::Untyped { .. } => {
++            t.clone()
++        }
++        Ty::Sym => Ty::Str,
++        Ty::Array { elem } => Ty::Array {
++            elem: Arc::new(next(elem)),
++        },
++        Ty::Hash { key, value } => Ty::Hash {
++            key: Arc::new(if matches!(&**key, Ty::Bottom) {
++                Ty::Bottom
++            } else {
++                Ty::Str
++            }),
++            value: Arc::new(next(value)),
++        },
++        Ty::Tuple { elems } => Ty::Tuple {
++            elems: elems.iter().map(next).collect(),
++        },
++        Ty::Record { row } => Ty::Hash {
++            key: Arc::new(if row.fields.is_empty() && row.rest.is_none() {
++                Ty::Bottom
++            } else {
++                Ty::Str
++            }),
++            value: Arc::new(row.fields.values().map(next).fold(
++                if row.rest.is_some() {
++                    Ty::unresolved()
++                } else {
++                    Ty::Bottom
++                },
++                writers::join,
++            )),
++        },
++        Ty::Union { variants } => variants.iter().map(next).fold(Ty::Bottom, writers::join),
++        Ty::Rec { slot } => {
++            fold::value_of(*slot, classes).map_or_else(Ty::unresolved, |v| next(&v))
++        }
++        _ => Ty::unresolved(),
++    }
++}
++
++fn worker(owner: &ClassId, classes: &HashMap<ClassId, ClassInfo>) -> bool {
++    let mut todo = vec![owner.clone()];
++    let mut seen = BTreeSet::new();
++    while let Some(id) = todo.pop() {
++        if !seen.insert(id.clone()) {
++            continue;
++        }
++        if matches!(id.0.as_str(), "Sidekiq::Worker" | "Sidekiq::Job") {
++            return true;
++        }
++        if let Some(info) = classes.get(&id) {
++            todo.extend(info.includes.iter().cloned());
++            todo.extend(info.parent.iter().cloned());
++        }
++    }
++    false
++}
++
++/// Append synthetic instance-side calls alongside the enqueue site's own row.
++/// This shared collector is used by both the ordinary walk and current writers.
++pub(super) fn sidekiq_sites(
++    expr: &Expr,
++    owner: &ClassId,
++    side: SiteRecv,
++    keywords: &SiteKeywords,
++    classes: &HashMap<ClassId, ClassInfo>,
++    out: &mut Vec<SendSite>,
++) {
++    if !sidekiq_on() || side == SiteRecv::Instance {
++        return;
++    }
++    let ExprNode::Send {
++        method,
++        args,
++        block,
++        ..
++    } = &*expr.node
++    else {
++        return;
++    };
++    if !matches!(
++        method.as_str(),
++        "perform_async" | "perform_in" | "perform_at" | "push_bulk"
++    ) || !worker(owner, classes)
++    {
++        return;
++    }
++    let offset = match method.as_str() {
++        "perform_async" => 0,
++        "perform_in" | "perform_at" => 1,
++        "push_bulk" => {
++            if let Some(block) = block {
++                // Mastodon's bulk helper maps each input through this block;
++                // its returned argument row, rather than the input element,
++                // is the job's JSON payload.
++                fn tail(e: &Expr) -> &Expr {
++                    match &*e.node {
++                        ExprNode::Seq { exprs } if !exprs.is_empty() => tail(exprs.last().unwrap()),
++                        ExprNode::Return { value } => tail(value),
++                        _ => e,
++                    }
++                }
++                let result = match &*block.node {
++                    ExprNode::Lambda { body, .. } => tail(body),
++                    _ => block,
++                };
++                if let ExprNode::Array { elements, .. } = &*result.node {
++                    enqueue(owner, elements, keywords, classes, false, out);
++                } else {
++                    let mut row = result.clone();
++                    row.ty = Some(match result.ty.as_ref() {
++                        Some(Ty::Fn { ret, .. }) => (**ret).clone(),
++                        Some(ty) => ty.clone(),
++                        None => Ty::unresolved(),
++                    });
++                    enqueue(owner, &[row], keywords, classes, true, out);
++                }
++                return;
++            }
++            let Some(batch) = args.first() else { return };
++            if let ExprNode::Array { elements, .. } = &*batch.node {
++                for row in elements {
++                    if let ExprNode::Array { elements, .. } = &*row.node {
++                        enqueue(owner, elements, keywords, classes, false, out);
++                    } else {
++                        enqueue(
++                            owner,
++                            std::slice::from_ref(row),
++                            keywords,
++                            classes,
++                            true,
++                            out,
++                        );
++                    }
++                }
++            } else {
++                // A nonliteral batch still contributes every possible row's
++                // element type; the ordinary splat binder supplies its arity.
++                let ty = parameter_conservation::argument(batch);
++                let ty = fold::head(&ty, fold::site_of(&batch.span), classes).unwrap_or(ty);
++                let mut row = batch.clone();
++                row.ty = Some(match ty {
++                    Ty::Array { elem } => (*elem).clone(),
++                    _ => Ty::unresolved(),
++                });
++                enqueue(owner, &[row], keywords, classes, true, out);
++            }
++            return;
++        }
++        _ => return,
++    };
++    if let Some(args) = args.get(offset..) {
++        enqueue(owner, args, keywords, classes, false, out);
++    }
++}
++
++fn enqueue(
++    owner: &ClassId,
++    args: &[Expr],
++    keywords: &SiteKeywords,
++    classes: &HashMap<ClassId, ClassInfo>,
++    splat: bool,
++    out: &mut Vec<SendSite>,
++) {
++    let mut kw = keywords.clone();
++    kw.group = false;
++    kw.keys.clear();
++    kw.splat = None;
++    kw.anonymous_forward = false;
++    kw.opaque_keywords = false;
++    kw.class_body_site = false;
++    // Even a braceless keyword group is positional job data after JSON.
++    kw.positional_splats = if splat {
++        vec![0]
++    } else {
++        args.iter()
++            .enumerate()
++            .filter_map(|(i, e)| matches!(&*e.node, ExprNode::Splat { .. }).then_some(i))
++            .collect()
++    };
++    kw.opaque_arity = !kw.positional_splats.is_empty();
++    let row = args
++        .iter()
++        .map(|a| json_value(&parameter_conservation::argument(a), classes, 16))
++        .collect();
++    out.push((
++        owner.clone(),
++        Symbol::from("perform"),
++        row,
++        kw,
++        if splat {
++            SiteRecv::SidekiqSplat
++        } else {
++            SiteRecv::Instance
++        },
++    ));
++}
++
++pub(super) fn has_call(e: &Expr) -> bool {
++    if matches!(&*e.node, ExprNode::Send { .. } | ExprNode::Super { .. }) {
++        return true;
++    }
++    // Defining a closure does not execute its body.
++    if matches!(&*e.node, ExprNode::Lambda { .. }) {
++        return false;
++    }
++    let mut found = false;
++    e.node.for_each_child(&mut |child| found |= has_call(child));
++    found
++}
++
++pub(super) fn refresh_ivars(local: &mut Ctx, entry: &Ctx) {
++    for (name, ty) in &entry.ivar_bindings {
++        local
++            .ivar_bindings
++            .entry(name.clone())
++            .and_modify(|v| *v = writers::join(v.clone(), ty.clone()))
++            .or_insert_with(|| ty.clone());
++    }
++}
++
++/// A widened receiver still has the unsupported operations of its known arms.
++pub(super) fn has_hash_arm(ty: &Ty) -> bool {
++    match ty {
++        Ty::Hash { .. } => true,
++        Ty::Union { variants } => variants.iter().any(has_hash_arm),
++        _ => false,
++    }
++}
++
++/// Only declarations with a syntactically proven ivar result are aliases.
++pub(super) fn getter(body: &Expr) -> Option<Symbol> {
++    match &*body.node {
++        ExprNode::Seq { exprs } if exprs.len() == 1 => getter(&exprs[0]),
++        ExprNode::Return { value } => getter(value),
++        ExprNode::Ivar { name } => Some(name.clone()),
++        ExprNode::OpAssign {
++            target: LValue::Ivar { name },
++            op: crate::expr::OpAssignOp::OrOr,
++            value,
++        } if matches!(
++            &*value.node,
++            ExprNode::Lit { .. } | ExprNode::Array { .. } | ExprNode::Hash { .. }
++        ) =>
++        {
++            Some(name.clone())
++        }
++        _ => None,
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++    fn e(node: ExprNode) -> Expr {
++        Expr::new(crate::span::Span::synthetic(), node)
++    }
++    fn array(elem: Ty) -> Ty {
++        Ty::Array {
++            elem: Arc::new(elem),
++        }
++    }
++    fn literal(value: crate::expr::Literal) -> Expr {
++        e(ExprNode::Lit { value })
++    }
++    fn send(recv: Option<Expr>, method: &str, args: Vec<Expr>) -> Expr {
++        e(ExprNode::Send {
++            recv,
++            method: Symbol::from(method),
++            args,
++            block: None,
++            parenthesized: true,
++        })
++    }
++    #[test]
++    fn json_round_trip_changes_nested_keys_and_symbols() {
++        let ty = Ty::Hash {
++            key: Arc::new(Ty::Sym),
++            value: Arc::new(Ty::Array {
++                elem: Arc::new(Ty::Sym),
++            }),
++        };
++        assert_eq!(
++            json_value(&ty, &HashMap::new(), 16),
++            Ty::Hash {
++                key: Arc::new(Ty::Str),
++                value: Arc::new(Ty::Array {
++                    elem: Arc::new(Ty::Str)
++                })
++            }
++        );
++    }
++    #[test]
++    fn call_refresh_preserves_the_local_and_slot_values() {
++        let name = Symbol::from("items");
++        let mut local = Ctx::default();
++        let mut entry = Ctx::default();
++        local.ivar_bindings.insert(
++            name.clone(),
++            Ty::Array {
++                elem: Arc::new(Ty::Bottom),
++            },
++        );
++        entry.ivar_bindings.insert(
++            name.clone(),
++            Ty::Array {
++                elem: Arc::new(Ty::Str),
++            },
++        );
++        refresh_ivars(&mut local, &entry);
++        assert_eq!(
++            local.ivar_bindings[&name],
++            Ty::Array {
++                elem: Arc::new(Ty::Str)
++            }
++        );
++    }
++    #[test]
++    #[ignore = "RH_SIDEKIQ_ROWS=1"]
++    fn enqueue_rows_preserve_positions_and_cross_the_json_boundary() {
++        assert!(sidekiq_on());
++        let owner = ClassId(Symbol::from("ExampleWorker"));
++        let mut info = ClassInfo::default();
++        info.includes.push(ClassId(Symbol::from("Sidekiq::Job")));
++        let classes = HashMap::from([(owner.clone(), info)]);
++        let kw = SiteKeywords {
++            group: false,
++            keys: vec![],
++            splat: None,
++            sources: vec![],
++            anonymous_forward: false,
++            opaque_arity: false,
++            positional_splats: vec![],
++            class_body_site: false,
++            opaque_keywords: false,
++            span: crate::span::Span::synthetic(),
++        };
++        let mut data = literal(crate::expr::Literal::Sym {
++            value: Symbol::from("payload"),
++        });
++        data.ty = Some(Ty::Hash {
++            key: Arc::new(Ty::Sym),
++            value: Arc::new(array(Ty::Sym)),
++        });
++        for method in ["perform_async", "perform_in", "perform_at"] {
++            let args = if method == "perform_async" {
++                vec![data.clone()]
++            } else {
++                vec![e(ExprNode::SelfRef), data.clone()]
++            };
++            let call = send(None, method, args);
++            let mut sites = vec![];
++            sidekiq_sites(&call, &owner, SiteRecv::Class, &kw, &classes, &mut sites);
++            assert_eq!(sites.len(), 1);
++            assert_eq!(sites[0].1.as_str(), "perform");
++            assert_eq!(
++                sites[0].2,
++                vec![Ty::Hash {
++                    key: Arc::new(Ty::Str),
++                    value: Arc::new(array(Ty::Str))
++                }]
++            );
++            assert!(!sites[0].3.group);
++            assert_eq!(sites[0].4, SiteRecv::Instance);
++        }
++        let batch = e(ExprNode::Array {
++            elements: vec![e(ExprNode::Array {
++                elements: vec![data],
++                style: Default::default(),
++            })],
++            style: Default::default(),
++        });
++        let mut sites = vec![];
++        sidekiq_sites(
++            &send(None, "push_bulk", vec![batch]),
++            &owner,
++            SiteRecv::Class,
++            &kw,
++            &classes,
++            &mut sites,
++        );
++        assert_eq!(sites.len(), 1);
++        assert_eq!(sites[0].2.len(), 1);
++        let mut mapped_value = e(ExprNode::SelfRef);
++        mapped_value.ty = Some(Ty::Int);
++        let mut mapped = send(None, "push_bulk", vec![e(ExprNode::SelfRef)]);
++        let ExprNode::Send { block, .. } = &mut *mapped.node else {
++            unreachable!()
++        };
++        *block = Some(e(ExprNode::Lambda {
++            params: vec![],
++            rest_param: None,
++            extra_params: vec![],
++            block_param: None,
++            block_style: Default::default(),
++            body: e(ExprNode::Array {
++                elements: vec![mapped_value.clone(), mapped_value],
++                style: Default::default(),
++            }),
++        }));
++        let mut sites = vec![];
++        sidekiq_sites(&mapped, &owner, SiteRecv::Class, &kw, &classes, &mut sites);
++        assert_eq!(
++            sites[0].2,
++            vec![Ty::Int, Ty::Int],
++            "bulk payload comes from the mapping block"
++        );
++    }
++    #[test]
++    #[ignore = "RH_SIDEKIQ_ROWS=1; inference profile"]
++    fn sidekiq_current_writers_reach_the_instance_perform_declaration() {
++        assert!(sidekiq_on());
++        crate::ingest::survey::activate();
++        let mut app = crate::ingest::app::ingest_app_from_tree(HashMap::from([
++            (
++                std::path::PathBuf::from("app/workers/example_worker.rb"),
++                br#"
++class ExampleWorker
++  include Sidekiq::Job
++  def perform(id, options = {})
++    options
++  end
++end
++"#
++                .to_vec(),
++            ),
++            (
++                std::path::PathBuf::from("app/lib/sender.rb"),
++                br#"
++class Sender
++  def send_job
++    ExampleWorker.perform_async(7, {tag: :notice})
++  end
++end
++"#
++                .to_vec(),
++            ),
++        ]))
++        .unwrap();
++        let mut analyzer = Analyzer::new(&app);
++        analyzer.analyze(&mut app);
++        let row = &analyzer.inferred_params[&(
++            ClassId(Symbol::from("ExampleWorker")),
++            Symbol::from("perform"),
++            MethodReceiver::Instance,
++        )];
++        assert_eq!(row[0], Ty::Int);
++        assert_eq!(
++            row[1],
++            Ty::Hash {
++                key: Arc::new(Ty::Str),
++                value: Arc::new(Ty::Str)
++            }
++        );
++    }
++    #[test]
++    #[ignore = "RH_RENDER_BINDINGS=1"]
++    fn render_collects_symbol_and_keyword_template_targets() {
++        assert!(render_on());
++        let sym = |s: &str| {
++            literal(crate::expr::Literal::Sym {
++                value: Symbol::from(s),
++            })
++        };
++        let body = e(ExprNode::Seq {
++            exprs: vec![
++                send(None, "render", vec![sym("show")]),
++                send(
++                    None,
++                    "render",
++                    vec![e(ExprNode::Hash {
++                        entries: vec![(sym("action"), sym("edit"))],
++                        kwargs: true,
++                    })],
++                ),
++                send(
++                    None,
++                    "render",
++                    vec![e(ExprNode::Hash {
++                        entries: vec![(
++                            sym("template"),
++                            literal(crate::expr::Literal::Str {
++                                value: "shared/show".into(),
++                            }),
++                        )],
++                        kwargs: true,
++                    })],
++                ),
++            ],
++        });
++        let mut targets = vec![];
++        collect_action_render_views(&body, "examples", &mut targets);
++        assert_eq!(
++            targets,
++            vec![
++                Symbol::from("examples/show"),
++                Symbol::from("examples/edit"),
++                Symbol::from("shared/show")
++            ]
++        );
++    }
++    #[test]
++    #[ignore = "RH_IVAR_CALL_JOIN=1"]
++    fn intervening_call_reopens_ivar_slot_but_assignment_stays_local() {
++        assert!(ivar_calls_on());
++        assert!(mutation_writers::on());
++        mutation_writers::reset();
++        let name = Symbol::from("values");
++        let assign = || {
++            e(ExprNode::Assign {
++                target: LValue::Ivar { name: name.clone() },
++                value: e(ExprNode::Array {
++                    elements: vec![],
++                    style: Default::default(),
++                }),
++            })
++        };
++        let read = || e(ExprNode::Ivar { name: name.clone() });
++        let mut ctx = Ctx::default();
++        ctx.ivar_bindings.insert(name.clone(), array(Ty::Str));
++        let classes = HashMap::new();
++        let typer = BodyTyper::new(&classes);
++        let mut body = e(ExprNode::Seq {
++            exprs: vec![assign(), send(None, "fill", vec![]), read()],
++        });
++        let result = typer.analyze_expr(&mut body, &ctx);
++        assert!(matches!(result, Ty::Array { elem } if *elem == Ty::Str));
++        let mut immediate = e(ExprNode::Seq {
++            exprs: vec![assign(), read()],
++        });
++        let result = typer.analyze_expr(&mut immediate, &ctx);
++        assert!(matches!(result, Ty::Array { elem } if *elem != Ty::Str));
++    }
++    #[test]
++    #[ignore = "RH_IVAR_CALL_JOIN=1"]
++    fn joining_a_hash_receiver_does_not_hide_unsupported_deep_merge() {
++        assert!(ivar_calls_on());
++        mutation_writers::reset();
++        let mut ctx = Ctx::default();
++        ctx.local_bindings.insert(
++            Symbol::from("cache"),
++            writers::join(
++                Ty::Hash {
++                    key: Arc::new(Ty::Sym),
++                    value: Arc::new(Ty::Int),
++                },
++                Ty::unresolved(),
++            ),
++        );
++        let mut call = send(
++            Some(e(ExprNode::Var {
++                id: crate::ident::VarId(0),
++                name: Symbol::from("cache"),
++            })),
++            "deep_merge!",
++            vec![e(ExprNode::Hash {
++                entries: vec![],
++                kwargs: false,
++            })],
++        );
++        BodyTyper::new(&HashMap::new()).analyze_expr(&mut call, &ctx);
++        assert!(
++            matches!(call.diagnostic, Some(crate::diagnostic::DiagnosticKind::Unsupported { construct, .. })
++            if construct.as_str() == "Hash#deep_merge!")
++        );
++    }
++    #[test]
++    #[ignore = "RH_MEMO_IVAR_ALIAS=1 RH_MUT_WRITERS=1; inference profile"]
++    fn memo_getter_carries_mutations_between_distinct_method_bodies() {
++        assert!(memo_alias_on());
++        crate::ingest::survey::activate();
++        let mut app = crate::ingest::app::ingest_app_from_tree(HashMap::from([(
++            std::path::PathBuf::from("app/lib/queue.rb"),
++            br#"
++class Queue
++  def append
++    values << [:notice, ["token"], {}]
++  end
++  def values
++    @values ||= []
++  end
++  def read
++    values
++  end
++end
++"#
++            .to_vec(),
++        )]))
++        .unwrap();
++        let mut analyzer = Analyzer::new(&app);
++        analyzer.analyze(&mut app);
++        let read = app
++            .library_classes
++            .iter()
++            .find(|c| c.name.0.as_str() == "Queue")
++            .unwrap()
++            .methods
++            .iter()
++            .find(|m| m.name.as_str() == "read")
++            .unwrap();
++        let ty = read.body.ty.as_ref().unwrap();
++        fn populated(t: &Ty) -> bool {
++            match t {
++                Ty::Array { elem } => !matches!(&**elem, Ty::Bottom),
++                Ty::Union { variants } => variants.iter().any(populated),
++                Ty::Untyped { .. } => true,
++                _ => false,
++            }
++        }
++        assert!(populated(ty), "getter discarded the appended queue: {ty:?}");
++    }
++}
