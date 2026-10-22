@@ -1,0 +1,1456 @@
+{
+  "note": "Types are identical on the four schedules (unset, 1, 2, repeat) in each condition. Witness types are the census records from CRuby 4.0.7; the single-flag columns are unset cells with one flag on.",
+  "rows": [
+    {
+      "census_id": "A010",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.allow_unauthenticated_access\",\"kind\":\"Send\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":412,\"file\":124,\"start\":359}}:occurrence:0:1/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "bottom"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "sym"
+              },
+              {
+                "elem": {
+                  "kind": "sym"
+                },
+                "kind": "array"
+              }
+            ]
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "sym"
+              },
+              {
+                "elem": {
+                  "kind": "sym"
+                },
+                "kind": "array"
+              }
+            ]
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ]
+    },
+    {
+      "census_id": "A013",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "bottom"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ]
+    },
+    {
+      "census_id": "A014",
+      "f72_census_id": null,
+      "app": "campfire",
+      "table": "ir",
+      "key": "{\"declaration\":\"Authentication.require_unauthenticated_access\",\"kind\":\"Seq\",\"source\":\"examples/apps/campfire/app/controllers/concerns/authentication.rb\",\"span\":{\"end\":712,\"file\":124,\"start\":570}}:occurrence:0:1/2/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "bottom"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "elem": {
+              "kind": "sym"
+            },
+            "kind": "array"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "array",
+              "elem": {
+                "kind": "sym"
+              }
+            }
+          },
+          "position": "$",
+          "value": "{only: [:new, :create]}"
+        }
+      ]
+    },
+    {
+      "census_id": "C1376",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"V2::Reports::DrilldownRecordSerializer#inferred_messages_by_event_id\",\"kind\":\"OpAssign\",\"source\":\"examples/apps/chatwoot/app/builders/v2/reports/drilldown_record_serializer.rb\",\"span\":{\"end\":4527,\"file\":144,\"start\":4272}}:occurrence:0:0/2/0/2",
+      "family": "other",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "route_per_class_and_class_body_sites": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        },
+        "plus_string_parameter_keys": {
+          "args": [],
+          "id": "Message",
+          "kind": "class"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$",
+          "value": "nil"
+        }
+      ]
+    },
+    {
+      "census_id": "C1465",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"Whatsapp::ContactInfoResponseService#contact_payload\",\"kind\":\"BoolOp\",\"source\":\"examples/apps/chatwoot/app/services/whatsapp/contact_info_response_service.rb\",\"span\":{\"end\":946,\"file\":587,\"start\":852}}:occurrence:0:0/1",
+      "family": "other",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "route_per_class_and_class_body_sites": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        },
+        "plus_string_parameter_keys": {
+          "args": [
+            {
+              "kind": "untyped"
+            }
+          ],
+          "id": "ActiveSupport::HashWithIndifferentAccess",
+          "kind": "class"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "nil"
+          },
+          "position": "$",
+          "value": "nil"
+        }
+      ]
+    },
+    {
+      "census_id": "C1748",
+      "f72_census_id": "C2311",
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":null,\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/views/super_admin/push_diagnostics/show.html.erb\",\"span\":{\"end\":10087,\"file\":1136,\"start\":3}}:occurrence:0:6/1/13/1/1/1/0/5/0/1/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "kind": "bottom"
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "bottom"
+        },
+        "plus_string_parameter_keys": {
+          "kind": "bottom"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "union",
+              "variants": [
+                {
+                  "kind": "int"
+                },
+                {
+                  "kind": "str"
+                },
+                {
+                  "kind": "sym"
+                }
+              ]
+            }
+          },
+          "position": "$",
+          "value": "{id: 1, type: \"fcm\", device: \"—\", token_tail: \"…abcdef\", status: :skipped, message: \"No Firebase credentials and push relay disabled\"}"
+        }
+      ]
+    },
+    {
+      "census_id": "C1855",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "params",
+      "key": "NotificationSetting#selected_email_flags=[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "1/1",
+        "r1only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "elem": {
+            "kind": "sym"
+          },
+          "kind": "array"
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "[\"email_conversation_assignment\"]"
+        }
+      ]
+    },
+    {
+      "census_id": "C1856",
+      "f72_census_id": "C2428",
+      "app": "chatwoot",
+      "table": "params",
+      "key": "NotificationSetting#selected_push_flags=[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "1/1",
+        "r1only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "elem": {
+            "kind": "sym"
+          },
+          "kind": "array"
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "sym"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "[\"push_conversation_assignment\"]"
+        }
+      ]
+    },
+    {
+      "census_id": "C575",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":1522,\"file\":365,\"start\":712}}:occurrence:0:0/4",
+      "family": "container",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "elem": {
+                "kind": "bottom"
+              },
+              "kind": "array"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "[#<Conversation id: 1, status: \"resolved\">]"
+        }
+      ]
+    },
+    {
+      "census_id": "C578",
+      "f72_census_id": null,
+      "app": "chatwoot",
+      "table": "ir",
+      "key": "{\"declaration\":\"AutomationRules::ConditionsFilterService#perform_attribute_changed_filter\",\"kind\":\"Seq\",\"source\":\"examples/apps/chatwoot/app/services/automation_rules/conditions_filter_service.rb\",\"span\":{\"end\":3486,\"file\":365,\"start\":3285}}:occurrence:0:",
+      "family": "container",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "route_per_class_and_class_body_sites": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "plus_string_parameter_keys": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "class",
+              "id": "Conversation",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "[#<Conversation id: 1, status: \"resolved\">]"
+        }
+      ]
+    },
+    {
+      "census_id": "M1273",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"RateLimitable.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:1/0/0/1/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "1/1",
+        "k3only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bottom"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "sym"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "sym"
+          },
+          "position": "$",
+          "value": ":account"
+        }
+      ]
+    },
+    {
+      "census_id": "M130",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:binding:markers",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "0/1",
+        "k3only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: 1>}"
+        }
+      ]
+    },
+    {
+      "census_id": "M131",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "controller_cache",
+      "key": "Api::V1::MarkersController#create:body:0/0/1/0/1/1/0/1/0/0",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "0/1",
+        "k3only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}"
+        }
+      ]
+    },
+    {
+      "census_id": "M1491",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"ThreadResolveWorker#perform\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/workers/thread_resolve_worker.rb\",\"span\":{\"end\":780,\"file\":862,\"start\":158}}:occurrence:0:0/3/0/2",
+      "family": "routing or missing contribution",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "str"
+            }
+          },
+          "position": "$",
+          "value": "{request_id: \"request-1\"}"
+        }
+      ]
+    },
+    {
+      "census_id": "M1545",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"User#send_pending_devise_notifications\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/user.rb\",\"span\":{\"end\":12387,\"file\":235,\"start\":12045}}:occurrence:0:0/0",
+      "family": "container",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "route_per_class_and_class_body_sites": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        },
+        "plus_string_parameter_keys": {
+          "elem": {
+            "kind": "bottom"
+          },
+          "kind": "array"
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "array",
+            "elem": {
+              "kind": "array",
+              "elem": {
+                "kind": "union",
+                "variants": [
+                  {
+                    "kind": "sym"
+                  },
+                  {
+                    "kind": "array",
+                    "elem": {
+                      "kind": "str"
+                    }
+                  },
+                  {
+                    "kind": "hash",
+                    "key": {
+                      "kind": "bottom"
+                    },
+                    "value": {
+                      "kind": "bottom"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "position": "$",
+          "value": "[[:confirmation_instructions, [\"token\"], {}]]"
+        }
+      ]
+    },
+    {
+      "census_id": "M1786",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "params",
+      "key": "Account#<<[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "1/1",
+        "r1only": "0/1",
+        "k3only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "args": [],
+          "id": "Mention",
+          "kind": "class"
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Mention",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Account",
+            "args": []
+          },
+          "position": "$",
+          "value": "#<Account id: 1, username: \"ada\", domain: nil>"
+        }
+      ]
+    },
+    {
+      "census_id": "M1848",
+      "f72_census_id": "M2643",
+      "app": "mastodon",
+      "table": "params",
+      "key": "Collection#is_a?[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "1/1",
+        "r1only": "0/1",
+        "k3only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            }
+          ]
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$",
+          "value": "Symbol"
+        }
+      ]
+    },
+    {
+      "census_id": "M1904",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "params",
+      "key": "Status#is_a?[0]",
+      "family": "routing or missing contribution",
+      "repaired_by": "per-class routes",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "1/1",
+        "r1only": "0/1",
+        "k3only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            }
+          ]
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "args": [],
+              "id": "Account",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Collection",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Enumerable",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "ScheduledStatus",
+              "kind": "class"
+            },
+            {
+              "args": [],
+              "id": "Status",
+              "kind": "class"
+            },
+            {
+              "kind": "untyped"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "class",
+            "id": "Symbol",
+            "args": []
+          },
+          "position": "$",
+          "value": "Symbol"
+        }
+      ]
+    },
+    {
+      "census_id": "M385",
+      "f72_census_id": "M586",
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"ActivityPub::FetchFeaturedCollectionService#call\",\"kind\":\"If\",\"source\":null,\"span\":{\"end\":0,\"file\":0,\"start\":0}}:occurrence:0:2/2/0/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": null,
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "0/4"
+      },
+      "single_flag_unset_cells": {},
+      "types": {
+        "f75": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "route_per_class_and_class_body_sites": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        },
+        "plus_string_parameter_keys": {
+          "kind": "union",
+          "variants": [
+            {
+              "kind": "bool"
+            },
+            {
+              "kind": "nil"
+            }
+          ]
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "str"
+          },
+          "position": "$",
+          "value": "\"https://remote.example.test/featured\""
+        }
+      ]
+    },
+    {
+      "census_id": "M650",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"Api::V1::MarkersController#create\",\"kind\":\"BeginRescue\",\"source\":\"examples/apps/mastodon/app/controllers/api/v1/markers_controller.rb\",\"span\":{\"end\":940,\"file\":1201,\"start\":490}}:occurrence:0:0/0/1/0/1/1/0/1/0/0",
+      "family": "container",
+      "repaired_by": "String parameter keys",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "0/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "0/1",
+        "k3only": "1/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "union",
+            "variants": [
+              {
+                "kind": "str"
+              },
+              {
+                "kind": "sym"
+              }
+            ]
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "untyped"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "str"
+            },
+            "value": {
+              "kind": "class",
+              "id": "Marker",
+              "args": []
+            }
+          },
+          "position": "$",
+          "value": "{\"home\" => #<Marker id: 1, user_id: 1, timeline: \"home\", last_read_id: nil>}"
+        }
+      ]
+    },
+    {
+      "census_id": "M945",
+      "f72_census_id": null,
+      "app": "mastodon",
+      "table": "ir",
+      "key": "{\"declaration\":\"FollowRequest.rate_limit\",\"kind\":\"Seq\",\"source\":\"examples/apps/mastodon/app/models/concerns/rate_limitable.rb\",\"span\":{\"end\":684,\"file\":90,\"start\":362}}:occurrence:0:0/0/0/0/0/0/0",
+      "family": "routing or missing contribution",
+      "repaired_by": "class-body sites",
+      "admits_on_four_schedules": {
+        "f75": "0/4",
+        "route_per_class_and_class_body_sites": "4/4",
+        "plus_string_parameter_keys": "4/4"
+      },
+      "single_flag_unset_cells": {
+        "r3only": "0/1",
+        "r1only": "1/1",
+        "k3only": "0/1"
+      },
+      "types": {
+        "f75": {
+          "key": {
+            "kind": "bottom"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "bottom"
+          }
+        },
+        "route_per_class_and_class_body_sites": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        },
+        "plus_string_parameter_keys": {
+          "key": {
+            "kind": "sym"
+          },
+          "kind": "hash",
+          "value": {
+            "kind": "sym"
+          }
+        }
+      },
+      "witnesses": [
+        {
+          "type": {
+            "kind": "hash",
+            "key": {
+              "kind": "sym"
+            },
+            "value": {
+              "kind": "sym"
+            }
+          },
+          "position": "$",
+          "value": "{by: :account, family: :follows}"
+        }
+      ]
+    }
+  ]
+}

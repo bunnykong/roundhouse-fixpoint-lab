@@ -146,3 +146,4 @@ Campfire reason rows agree; partition failures and larger-app value equalities r
 [F74: the strict pending guard](receipts/strict-pending-guard-2026-10-21/README.md) makes Mastodon schedule-equal; it is not a soundness certificate.
 [F75: the binding projection](receipts/binding-projection-2026-10-21/README.md) makes all four apps schedule-equal and corrects its own binding audit.
 [F76: the strict catalog](receipts/catalog-strict-2026-10-21/README.md) clears the 21 catalog strictness failures with no value change; other laws remain.
+[F77: loss repairs](receipts/loss-repairs-2026-10-21/README.md) repair 13 of F73's 21 losing rows; 8 remain.

@@ -1,0 +1,731 @@
+diff --git a/src/analyze/body/mod.rs b/src/analyze/body/mod.rs
+index 474c02cc3..d6ab65b6d 100644
+--- a/src/analyze/body/mod.rs
++++ b/src/analyze/body/mod.rs
+@@ -3228,7 +3228,7 @@ fn written_class_id(path: &[Symbol]) -> ClassId {
+ /// tuple's elements, a hash's pairs, nothing for `nil`. Ruby `to_a`s any
+ /// other value; one with no modeled element is kept as the one element
+ /// `[*object]` gives for an object that is not a collection.
+-fn splat_elements(ty: Ty) -> Option<Ty> {
++pub(super) fn splat_elements(ty: Ty) -> Option<Ty> {
+     match ty {
+         Ty::Nil => None,
+         Ty::Tuple { elems } => elems.into_iter().reduce(union_of),
+diff --git a/src/analyze/mod.rs b/src/analyze/mod.rs
+index dc1487d7c..1c33212cd 100644
+--- a/src/analyze/mod.rs
++++ b/src/analyze/mod.rs
+@@ -2614,6 +2614,20 @@ impl Analyzer {
+         global_constants: &body::ConstScope,
+         dirty: Option<&std::collections::HashSet<ClassId>>,
+     ) {
++        if class_body_sites_on() {
++            // Ingest has already replaced successful macros with filters or
++            // class-ivar initializers. Their original sends still own the
++            // arguments reaching the macro declaration's parameter rows.
++            for (owner, expr) in &mut app.expanded_class_body_calls {
++                let ctx = Ctx {
++                    self_ty: Some(Ty::Class { id: owner.clone(), args: vec![].into() }),
++                    constants: global_constants.clone(),
++                    class_side: true,
++                    ..Ctx::default()
++                };
++                self.body_typer().analyze_expr(expr, &ctx);
++            }
++        }
+         // Type the actual initializer trees, not only registry clones.
+         // Their lexical class references become load-time dependencies
+         // when a source file's nested declarations emit into separate files.
+@@ -6195,7 +6209,13 @@ impl Analyzer {
+             // `Room::PushMessageJob` is enqueued with.
+             for item in model.body.iter() {
+                 let ModelBodyItem::Unknown { expr, .. } = item else { continue };
+-                if let Some(body) = block_callback_body(expr) {
++                if class_body_sites_on() {
++                    let from = sites.len();
++                    self.collect_send_sites(expr, Some(&model.name), true, helpers, &mut sites);
++                    for site in &mut sites[from..] { site.3.class_body_site = true; }
++                    self.record_callers(&model.name, &sites[from..]);
++                    bodies.push((None, from, sites.len()));
++                } else if let Some(body) = block_callback_body(expr) {
+                     let from = sites.len();
+                     self.collect_send_sites(body, Some(&model.name), false, helpers, &mut sites);
+                     self.record_callers(&model.name, &sites[from..]);
+@@ -6239,14 +6259,31 @@ impl Analyzer {
+             // A class-body macro call (`preload_site_configs %w[a], only:
+             // :show`) is the call site that types the class method.
+             for item in &controller.body {
+-                if let crate::dialect::ControllerBodyItem::ClassIvarInit { expr, .. } = item {
++                let expr = match item {
++                    crate::dialect::ControllerBodyItem::ClassIvarInit { expr, .. } => expr,
++                    crate::dialect::ControllerBodyItem::Unknown { expr, .. } if class_body_sites_on() => expr,
++                    _ => continue,
++                };
++                {
+                     let from = sites.len();
+                     self.collect_send_sites(expr, Some(&controller.name), true, helpers, &mut sites);
++                    if class_body_sites_on() && matches!(item, crate::dialect::ControllerBodyItem::Unknown { .. }) {
++                        for site in &mut sites[from..] { site.3.class_body_site = true; }
++                    }
+                     self.record_callers(&controller.name, &sites[from..]);
+                     bodies.push((None, from, sites.len()));
+                 }
+             }
+         }
++        if class_body_sites_on() {
++            for (owner, expr) in &app.expanded_class_body_calls {
++                let from = sites.len();
++                self.collect_send_sites(expr, Some(owner), true, helpers, &mut sites);
++                for site in &mut sites[from..] { site.3.class_body_site = true; }
++                self.record_callers(owner, &sites[from..]);
++                bodies.push((None, from, sites.len()));
++            }
++        }
+         let static_from = sites.len();
+         // WithViews: param sites only — no `record_callers` (no ClassId).
+         if matches!(scope, UnifyScope::WithViews) {
+@@ -6258,6 +6295,7 @@ impl Analyzer {
+             }
+         }
+ 
++        writers::replace_walked_targets(&sites);
+         if self.sccq.is_some() {
+             // Controllers, views and seeds are walked bodies the engine does
+             // not own: one slice each, in walk order.
+@@ -6408,27 +6446,35 @@ impl Analyzer {
+ 
+     /// Unknown receivers remain live writers. Route their current arguments to
+     /// every compatible named destination, rather than treating unknown as no call.
+-    fn writer_param_targets(&self, defined: &BTreeSet<ParamKey>) -> HashMap<Symbol,BTreeSet<ParamKey>> {
+-        if route_static::on() { return HashMap::new(); }
+-        let mut out: HashMap<Symbol,BTreeSet<ParamKey>>=HashMap::new();
+-        for key in defined { out.entry(key.1.clone()).or_default().insert(key.clone()); }
++    fn writer_param_targets(&self, defined: &BTreeSet<ParamKey>) -> HashMap<Symbol,route_static::PerClassRows> {
++        let mut out: HashMap<Symbol,route_static::PerClassRows>=HashMap::new();
++        if route_static::per_class_on() {
++            for (class,method,recv,arity) in writers::target_arities() {
++                if let Some(key)=self.resolve_param_key(class,method,recv,defined) {
++                    out.entry(key.1.clone()).or_default().insert((key,arity));
++                }
++            }
++            return out;
++        }
++        if route_static::on() { return out; }
++        for key in defined { out.entry(key.1.clone()).or_default().insert((key.clone(),None)); }
+         for (class,method,recv) in writers::targets() {
+             if let Some(key)=self.resolve_param_key(class,method,recv,defined) {
+-                out.entry(key.1.clone()).or_default().insert(key);
++                out.entry(key.1.clone()).or_default().insert((key,None));
+             }
+         }
+         out
+     }
+     fn resolve_writer_site(&self, site: SendSite, shapes: &HashMap<ParamKey,ParamShape>,
+-        defined: &BTreeSet<ParamKey>, targets: &HashMap<Symbol,BTreeSet<ParamKey>>) -> Vec<(ParamKey,Vec<Ty>)> {
++        defined: &BTreeSet<ParamKey>, targets: &HashMap<Symbol,route_static::PerClassRows>) -> Vec<(ParamKey,Vec<Ty>)> {
+         // A zero-argument call writes no parameter slot. The ordinary walk
+         // still owns the native empty-vector presence records.
+         if site.2.is_empty() { return Vec::new(); }
+         if !writers::unknown_class(&site.0) { return self.resolve_param_site(site,shapes,defined).into_iter().collect(); }
+         let (_,method,args,kwargs,_)=site;
+-        if route_static::top_on() { return self.static_routes.resolve_top(&method, args.len(), &kwargs); }
++        if route_static::top_on() { return self.static_routes.resolve_top_with_rows(&method, args.len(), &kwargs, targets.get(&method)); }
+         if route_static::on() { return self.static_routes.resolve(&method, args, kwargs); }
+-        targets.get(&method).into_iter().flatten().map(|key| {
++        targets.get(&method).into_iter().flatten().map(|(key,_)| {
+             let row=Self::place_keyword_args(shapes.get(key),args.clone(),kwargs.clone());
+             if writers::tracing() && matches!(method.as_str(),"preview"|"includes") {
+                 eprintln!("WRITER unknown-route key={key:?} span={:?} args={row:?}",kwargs.span);
+@@ -6451,10 +6497,44 @@ impl Analyzer {
+         } else {
+             self.inherited_param_owner(defined, class_id, &method, None)
+         };
++        // A controller macro need not have a copied MethodDef on its
++        // includer. Keep its class side so the concern fold writes the
++        // declaration row that the original body actually reads.
++        if class_body_sites_on() && recv == SiteRecv::Class
++            && self.included_class_param_definition(&class_id, &method, defined)
++        {
++            return Some((class_id, method, MethodReceiver::Class));
++        }
+         let side = Self::param_side(defined, &class_id, &method, recv)?;
+         Some((class_id, method, side))
+     }
+ 
++    fn included_class_param_definition(
++        &self, owner: &ClassId, method: &Symbol, defined: &BTreeSet<ParamKey>,
++    ) -> bool {
++        let mut current = Some(owner.clone());
++        let mut seen = BTreeSet::new();
++        while let Some(class) = current {
++            if !seen.insert(class.clone()) { break; }
++            if defined.contains(&(class.clone(), method.clone(), MethodReceiver::Class)) {
++                return true;
++            }
++            let Some(info) = self.classes.get(&class) else { break; };
++            let mut modules = info.includes.clone();
++            while let Some(module) = modules.pop() {
++                if !seen.insert(module.clone()) { continue; }
++                if defined.contains(&(module.clone(), method.clone(), MethodReceiver::Class)) {
++                    return true;
++                }
++                if let Some(info) = self.classes.get(&module) {
++                    modules.extend(info.includes.iter().cloned());
++                }
++            }
++            current = info.parent.as_ref().map(|parent| self.lexical_parent(&class, parent));
++        }
++        false
++    }
++
+     /// Every `(class, method)` the app defines, by name.
+     fn defined_methods(app: &App) -> BTreeSet<ParamKey> {
+         let mut defined: BTreeSet<ParamKey> = BTreeSet::new();
+@@ -6786,6 +6866,19 @@ impl Analyzer {
+         mut arg_tys: Vec<Ty>,
+         kw: SiteKeywords,
+     ) -> Vec<Ty> {
++        // A rest-only declaration reads one Array, not raw argument zero.
++        // Class-body macros often combine a positional splat and a final
++        // keyword Hash; both belong to that Array in Ruby. Preserve array
++        // arguments as elements unless the source actually splats them.
++        if class_body_sites_on() && kw.class_body_site && shape.is_some_and(|shape|
++            matches!(shape.slots.as_slice(), [(_, ParamKind::Rest)]))
++        {
++            let elem = arg_tys.into_iter().enumerate().filter_map(|(i, ty)| {
++                if kw.positional_splats.contains(&i) { body::splat_elements(ty) }
++                else { Some(ty) }
++            }).fold(Ty::Bottom, parameter_conservation::join);
++            return vec![Ty::Array { elem: std::sync::Arc::new(elem) }];
++        }
+         if let Some(shape) = shape.filter(|s| s.keywords_by_kind || kw.anonymous_forward) {
+             if kw.group {
+                 let opaque = (canon_var::source_on() && (kw.opaque_keywords || kw.anonymous_forward))
+@@ -6958,6 +7051,24 @@ impl Analyzer {
+     ) {
+         match &*expr.node {
+             ExprNode::Send { recv, method, args, block, .. } => {
++                if class_body_sites_on() && class_body {
++                    if let Some(body) = block_callback_body(expr) {
++                        collect_direct_send_sites(expr, self_class, true, helpers, &self.classes,
++                            &self.data_factories_without_custom_initialize, out);
++                        if let Some(recv) = recv {
++                            self.collect_send_sites(recv, self_class, true, helpers, out);
++                        }
++                        for argument in args.iter().chain(block.iter()) {
++                            let callback = matches!(&*argument.node, ExprNode::Lambda { body: nested, .. }
++                                if std::ptr::eq(nested, body));
++                            if !callback {
++                                self.collect_send_sites(argument, self_class, true, helpers, out);
++                            }
++                        }
++                        self.collect_send_sites(body, self_class, false, helpers, out);
++                        return;
++                    }
++                }
+                 let observed_from = out.len();
+                 collect_direct_send_sites(expr, self_class, class_body, helpers, &self.classes,
+                     &self.data_factories_without_custom_initialize, out);
+@@ -7925,9 +8036,14 @@ fn build_sourced_filter_chain(
+     (chain, block_bindings)
+ }
+ 
+-/// The body of a block-form model lifecycle hook — `after_save do … end`
+-/// or `after_create_commit -> { … }` — on the shape
+-/// `model_to_library::block_callback_shape` accepts and lowers to a method.
++/// P1/E4: class-definition sends are parameter writers too.
++pub(crate) fn class_body_sites_on() -> bool {
++    static ON: std::sync::LazyLock<bool> = std::sync::LazyLock::new(||
++        std::env::var("RH_CLASS_BODY_SITES").as_deref() == Ok("1"));
++    *ON
++}
++
++/// The body of a model lifecycle hook lowered to an instance method.
+ fn block_callback_body(expr: &Expr) -> Option<&Expr> {
+     let (callback, _, _) = crate::lower::model_to_library::block_callback_shape(expr)?;
+     match &*callback.node {
+@@ -8650,7 +8766,9 @@ fn collect_direct_send_sites(
+                             !matches!(&*k.node, ExprNode::Lit { value: Literal::Sym { .. } })),
+                         _ => false,
+                     };
+-                    let kw_tys = SiteKeywords { group, keys, splat, anonymous_forward, opaque_arity, opaque_keywords, sources, span: expr.span };
++                    let positional_splats = args.iter().enumerate().filter_map(|(i, a)|
++                        matches!(&*a.node, ExprNode::Splat { .. }).then_some(i)).collect();
++                    let kw_tys = SiteKeywords { group, keys, splat, anonymous_forward, opaque_arity, positional_splats, class_body_site: false, opaque_keywords, sources, span: expr.span };
+                     // `Klass.new(a, b)` hands its arguments to
+                     // `initialize` — that is all `Class#new` does with
+                     // them — so the site is evidence for the
+@@ -8690,6 +8808,10 @@ type SendSite = (ClassId, Symbol, Vec<Ty>, SiteKeywords, SiteRecv);
+ struct SiteKeywords {
+     /// Syntactic splats/forwarding cannot restrict the destination by args.len().
+     opaque_arity: bool,
++    /// Which raw argument rows contribute their elements to a rest Array.
++    positional_splats: Vec<usize>,
++    /// This site belongs to a class-definition slice added by P1/E4 coverage.
++    class_body_site: bool,
+     /// Syntax permits keyword names absent from `keys`, independent of types.
+     opaque_keywords: bool,
+     span: crate::span::Span,
+diff --git a/src/analyze/qt_whole3_tests.rs b/src/analyze/qt_whole3_tests.rs
+index 7d9f258c1..23e318af0 100644
+--- a/src/analyze/qt_whole3_tests.rs
++++ b/src/analyze/qt_whole3_tests.rs
+@@ -51,7 +51,7 @@ fn omitted_keywords_are_absence_and_opaque_keywords_keep_real_unknown() {
+         (Symbol::from("rest"),ParamKind::KeywordRest)],keywords_by_kind:true };
+     let kw = |opaque| SiteKeywords {group:true,keys:vec![(Symbol::from("title"),Ty::Str),
+         (Symbol::from("extra"),Ty::Bool)],splat:None,anonymous_forward:false,opaque_arity:false,
+-        opaque_keywords:opaque,sources:Vec::new(),span:crate::span::Span::synthetic()};
++        opaque_keywords:opaque,positional_splats:vec![],class_body_site:false,sources:Vec::new(),span:crate::span::Span::synthetic()};
+     let placed = Analyzer::place_keyword_args(Some(&shape),vec![Ty::unresolved()],kw(false));
+     assert_eq!(placed[0],Ty::Bottom, "an omitted url is no incoming value");
+     assert_eq!(parameter_conservation::join(Ty::Str,placed[0].clone()),Ty::Str);
+@@ -89,7 +89,76 @@ fn hwia_structural_builtin_is_a_frozen_unknown_receiver_destination() {
+     assert!(route_static::hwia_on());
+     let routes = route_static::Index::build(&app,&analyzer).resolve_top(&Symbol::from("[]"),1,
+         &SiteKeywords {group:false, keys:Vec::new(),splat:None,anonymous_forward:false,
+-            opaque_arity:false,opaque_keywords:false,sources:Vec::new(),span:crate::span::Span::synthetic()});
++            opaque_arity:false,positional_splats:vec![],class_body_site:false,opaque_keywords:false,sources:Vec::new(),span:crate::span::Span::synthetic()});
+     assert!(routes.iter().any(|(key,row)| key == &(id.clone(),Symbol::from("[]"),MethodReceiver::Instance)
+         && row == &vec![Ty::unresolved()]), "{routes:?}");
+ }
++
++#[test]
++#[ignore = "whole-rule research flags + RH_CLASS_BODY_SITES=1"]
++fn class_body_sites_reach_concern_declaration_rows() {
++    assert!(class_body_sites_on());
++    crate::ingest::survey::activate();
++    let tree = HashMap::from([
++        ("app/controllers/concerns/authentication.rb", "module Authentication\n extend ActiveSupport::Concern\n class_methods do\n def allow_unauthenticated_access(**options)\n skip_before_action :require_authentication, **options\n end\n end\nend\n"),
++        ("app/controllers/application_controller.rb", "class ApplicationController < ActionController::Base\n include Authentication\n allow_unauthenticated_access only: [:new]\nend\n"),
++        ("app/controllers/sessions_controller.rb", "class SessionsController < ApplicationController\n allow_unauthenticated_access only: [:new, :create]\nend\n"),
++        ("app/models/concerns/rate_limitable.rb", "module RateLimitable\n extend ActiveSupport::Concern\n class_methods do\n def rate_limit(options = {})\n options[:by]\n end\n end\nend\n"),
++        ("app/models/follow_request.rb", "class FollowRequest < ActiveRecord::Base\n include RateLimitable\n rate_limit by: :account, family: :follows\nend\n"),
++    ]).into_iter().map(|(p, s)| (std::path::PathBuf::from(p), s.as_bytes().to_vec())).collect();
++    let mut app = crate::ingest::app::ingest_app_from_tree(tree).unwrap();
++    assert!(!app.expanded_class_body_calls.is_empty(), "the fixture must cover a consumed macro call");
++    let mut analyzer = Analyzer::new(&app);
++    analyzer.analyze(&mut app);
++    let row = |owner, method| {
++        let declaration = app.library_classes.iter().find(|c| c.name.0.as_str() == owner).unwrap();
++        let declaration = declaration.methods.iter().find(|m| m.name.as_str() == method).unwrap();
++        analyzer.inferred_params.get(&(
++            ClassId(Symbol::from(owner)), Symbol::from(method), declaration.receiver)).cloned()
++    };
++    let auth = row("Authentication", "allow_unauthenticated_access").expect("declaration row");
++    assert_eq!(auth[0], Ty::Hash { key: Arc::new(Ty::Sym),
++        value: Arc::new(Ty::Array { elem: Arc::new(Ty::Sym) }) });
++    let rate = row("RateLimitable", "rate_limit").expect("declaration row");
++    assert_eq!(rate[0], Ty::Hash { key: Arc::new(Ty::Sym), value: Arc::new(Ty::Sym) });
++    let declaration = app.library_classes.iter().find(|c| c.name.0.as_str() == "RateLimitable").unwrap();
++    let method = declaration.methods.iter().find(|m| m.name.as_str() == "rate_limit").unwrap();
++    let answer = method.body.ty.as_ref().expect("typed declaration body");
++    assert!(!matches!(answer, Ty::Bottom | Ty::Nil), "the declaration must read its class-body caller: {answer:?}");
++}
++
++#[test]
++#[ignore = "whole-rule research flags + RH_CLASS_BODY_SITES=1 RH_ROUTE_PER_CLASS=1"]
++fn per_class_routes_include_rows_owned_only_by_the_class_body_walk() {
++    assert!(class_body_sites_on() && route_static::per_class_on());
++    crate::ingest::survey::activate();
++    let mut app = crate::ingest::app::ingest_app_from_tree(HashMap::from([
++        (std::path::PathBuf::from("app/models/native_model.rb"),
++            b"class NativeModel < ActiveRecord::Base\n dynamic_writer 'seed'\n def use(receiver)\n receiver.dynamic_writer(:incoming)\n end\nend\n".to_vec()),
++    ])).unwrap();
++    let mut analyzer = Analyzer::new(&app);
++    analyzer.analyze(&mut app);
++    let target = (ClassId(Symbol::from("NativeModel")), Symbol::from("dynamic_writer"), MethodReceiver::Instance);
++    let row = analyzer.inferred_params.get(&target).expect("ordinary class-body row");
++    assert!(matches!(&row[0], Ty::Untyped { .. }) || matches!(&row[0], Ty::Union { variants }
++        if variants.iter().any(|ty| matches!(ty, Ty::Untyped { .. }))),
++        "top routing must reach a row even when no captured method root declared its native destination: {row:?}");
++}
++
++#[test]
++#[ignore = "whole-rule research flags + RH_CLASS_BODY_SITES=1"]
++fn class_body_rest_binding_keeps_splat_and_trailing_hash() {
++    assert!(class_body_sites_on());
++    crate::ingest::survey::activate();
++    let mut app = crate::ingest::app::ingest_app_from_tree(HashMap::from([
++        (std::path::PathBuf::from("app/models/native_model.rb"),
++            b"class NativeModel < ActiveRecord::Base\n def self.capture(*values)\n values\n end\n capture(*[:a], nested: [[:b]])\nend\n".to_vec()),
++    ])).unwrap();
++    let mut analyzer = Analyzer::new(&app);
++    analyzer.analyze(&mut app);
++    let target = (ClassId(Symbol::from("NativeModel")), Symbol::from("capture"), MethodReceiver::Class);
++    let row = analyzer.inferred_params.get(&target).expect("class-body rest row");
++    let nested = Ty::Hash { key: Arc::new(Ty::Sym),
++        value: Arc::new(Ty::Array { elem: Arc::new(Ty::Array { elem: Arc::new(Ty::Sym) }) }) };
++    assert_eq!(row, &vec![Ty::Array { elem: Arc::new(parameter_conservation::join(Ty::Sym, nested)) }]);
++}
+diff --git a/src/analyze/route_static.rs b/src/analyze/route_static.rs
+index 01ce6fa85..dece67439 100644
+--- a/src/analyze/route_static.rs
++++ b/src/analyze/route_static.rs
+@@ -35,6 +35,14 @@ pub(super) fn hwia_on() -> bool {
+     *ON
+ }
+ 
++pub(super) fn per_class_on() -> bool {
++    static ON: LazyLock<bool> =
++        LazyLock::new(|| std::env::var("RH_ROUTE_PER_CLASS").as_deref() == Ok("1"));
++    *ON && top_on()
++}
++
++pub(super) type PerClassRows = BTreeSet<(ParamKey, Option<usize>)>;
++
+ /// A pending computation is not evidence of a dynamic receiver. The second
+ /// phase replays every consumer before genuine unknowns can publish top.
+ pub(super) fn strict_receiver(t: Option<&Ty>, classes: &HashMap<ClassId, super::ClassInfo>) -> bool {
+@@ -488,7 +496,8 @@ impl Index {
+         aliases
+     }
+ 
+-    fn candidates(&self, name: &Symbol, n: usize, opaque: bool) -> BTreeSet<ParamKey> {
++    fn candidates(&self, name: &Symbol, n: usize, opaque: bool,
++        per_class: Option<&PerClassRows>) -> BTreeSet<ParamKey> {
+         let mut out = BTreeSet::new();
+         if opaque {
+             out.extend(self.named.get(name).into_iter().flatten().cloned());
+@@ -517,6 +526,14 @@ impl Index {
+                 .iter()
+                 .map(|(owner, side)| (owner.clone(), name.clone(), *side)),
+         );
++        // Native calls can create rows with no declaration in the frozen
++        // catalog (generated setters, association operators, universal sends).
++        // Keep their per-class identity and observed arity, not their values.
++        if per_class_on() {
++            out.extend(per_class.into_iter().flatten()
++                .filter(|(_, arity)| opaque || arity.is_none_or(|arity| arity == n))
++                .map(|(key, _)| key.clone()));
++        }
+         out
+     }
+ 
+@@ -527,7 +544,7 @@ impl Index {
+         kwargs: SiteKeywords,
+     ) -> Vec<(ParamKey, Vec<Ty>)> {
+         let mut out: Vec<_> = self
+-            .candidates(name, args.len(), kwargs.opaque_arity)
++            .candidates(name, args.len(), kwargs.opaque_arity, None)
+             .into_iter()
+             .map(|key| {
+                 let row = Analyzer::place_keyword_args(
+@@ -559,14 +576,25 @@ impl Index {
+     /// Unknown calls contribute top at each formal they can bind. No argument
+     /// type is copied, nested, or joined into a destination. The existing source
+     /// writer cells own these rows, so replacement retracts an absent call.
++    #[cfg(test)]
+     pub(super) fn resolve_top(
+         &self,
+         name: &Symbol,
+         nargs: usize,
+         kwargs: &SiteKeywords,
++    ) -> Vec<(ParamKey, Vec<Ty>)> {
++        self.resolve_top_with_rows(name, nargs, kwargs, None)
++    }
++
++    pub(super) fn resolve_top_with_rows(
++        &self,
++        name: &Symbol,
++        nargs: usize,
++        kwargs: &SiteKeywords,
++        per_class: Option<&PerClassRows>,
+     ) -> Vec<(ParamKey, Vec<Ty>)> {
+         let mut out: Vec<_> = self
+-            .candidates(name, nargs, kwargs.opaque_arity)
++            .candidates(name, nargs, kwargs.opaque_arity, per_class)
+             .into_iter()
+             .map(|key| {
+                 let row = self.top_row(&key, nargs, kwargs);
+@@ -671,6 +699,8 @@ mod tests {
+     fn keywords() -> SiteKeywords {
+         SiteKeywords {
+             opaque_arity: false,
++            positional_splats: vec![],
++            class_body_site: false,
+             opaque_keywords: false,
+             span: crate::span::Span::synthetic(),
+             sources: vec![],
+@@ -998,6 +1028,26 @@ mod tests {
+         );
+         assert_eq!(super::super::writers::revision(), 0);
+     }
++    #[test]
++    #[ignore = "RH_ROUTE_PER_CLASS=1 RH_ROUTE_TOP=1 RH_WRITERS=1"]
++    fn per_class_routes_cover_generated_rows_with_matching_arity() {
++        assert!(per_class_on());
++        let index = Index::default();
++        for name in ["selected_flags=", "<<", "is_a?"] {
++            let target = key("Generated", name);
++            let rows = [(target.clone(), Some(1))].into();
++            let name = Symbol::from(name);
++            assert_eq!(index.resolve_top_with_rows(&name, 1, &keywords(), Some(&rows)),
++                vec![(target.clone(), vec![Ty::unresolved()])]);
++            assert!(index.resolve_top_with_rows(&name, 2, &keywords(), Some(&rows)).is_empty());
++            let mut opaque = keywords();
++            opaque.opaque_arity = true;
++            assert_eq!(index.resolve_top_with_rows(&name, 2, &opaque, Some(&rows))[0].0, target);
++            assert!(index.resolve_top_with_rows(&name, 1, &keywords(), None).is_empty(),
++                "a withdrawn unknown site cannot retain its old routing claim");
++        }
++    }
++
+     #[test]
+     fn static_routes_keep_overloads_variadics_and_opaque_catalogs() {
+         let mut i = Index::default();
+@@ -1007,15 +1057,15 @@ mod tests {
+         i.insert(key("Catalog", "call"), None);
+         let name = Symbol::from("call");
+         assert_eq!(
+-            i.candidates(&name, 1, false),
++            i.candidates(&name, 1, false, None),
+             [key("One", "call"), key("Catalog", "call")].into()
+         );
+         assert_eq!(
+-            i.candidates(&name, 3, false),
++            i.candidates(&name, 3, false, None),
+             [key("Rest", "call"), key("Catalog", "call")].into()
+         );
+-        assert_eq!(i.candidates(&name, 1, true).len(), 4);
+-        assert!(i.candidates(&Symbol::from("other"), 1, false).is_empty());
++        assert_eq!(i.candidates(&name, 1, true, None).len(), 4);
++        assert!(i.candidates(&Symbol::from("other"), 1, false, None).is_empty());
+     }
+     #[test]
+     fn static_routes_missing_holders_cover_every_name_and_arity() {
+@@ -1023,7 +1073,7 @@ mod tests {
+         i.insert(key("Dynamic", "method_missing"), Some((1, None)));
+         i.insert(key("Responder", "respond_to_missing?"), Some((2, Some(2))));
+         assert_eq!(
+-            i.candidates(&Symbol::from("arbitrary"), 99, false),
++            i.candidates(&Symbol::from("arbitrary"), 99, false, None),
+             [key("Dynamic", "arbitrary"), key("Responder", "arbitrary")].into()
+         );
+     }
+@@ -1076,10 +1126,10 @@ mod tests {
+             .instance_methods
+             .insert(target.1.clone(), Ty::Int);
+         assert_eq!(
+-            index.candidates(&target.1, 1, false),
++            index.candidates(&target.1, 1, false, None),
+             [target.clone()].into()
+         );
+-        assert!(index.candidates(&target.1, 2, false).is_empty());
++        assert!(index.candidates(&target.1, 2, false, None).is_empty());
+     }
+     #[test]
+     fn static_routes_catalog_dispatch_sides_share_the_native_parameter_fallback() {
+@@ -1103,10 +1153,10 @@ mod tests {
+             )
+             .unwrap();
+         assert_eq!(native.2, MethodReceiver::Instance);
+-        assert!(index.candidates(&name, 1, false).contains(&native));
++        assert!(index.candidates(&name, 1, false, None).contains(&native));
+         assert!(
+             !index
+-                .candidates(&name, 1, false)
++                .candidates(&name, 1, false, None)
+                 .contains(&(owner, name, MethodReceiver::Class))
+         );
+     }
+@@ -1151,7 +1201,7 @@ mod tests {
+         index.module_aliases(&analyzer, &BTreeSet::from([declared]), &contracts);
+         assert!(
+             index
+-                .candidates(&Symbol::from("update_labels"), 1, false)
++                .candidates(&Symbol::from("update_labels"), 1, false, None)
+                 .contains(&(
+                     child,
+                     Symbol::from("update_labels"),
+@@ -1173,15 +1223,15 @@ mod tests {
+         analyzer.classes = HashMap::from([(base, ClassInfo::default()), (owner.clone(), class)]);
+         let index = Index::build(&app, &analyzer);
+         let setter = Symbol::from("multiple=");
+-        assert!(index.candidates(&setter, 1, false).contains(&(
++        assert!(index.candidates(&setter, 1, false, None).contains(&(
+             owner,
+             setter.clone(),
+             MethodReceiver::Instance
+         )));
+-        assert!(index.candidates(&setter, 0, false).is_empty());
++        assert!(index.candidates(&setter, 0, false, None).is_empty());
+         assert!(
+             index
+-                .candidates(&Symbol::from("not"), 1, false)
++                .candidates(&Symbol::from("not"), 1, false, None)
+                 .contains(&key("ActiveRecord::Base", "not"))
+         );
+     }
+@@ -1192,6 +1242,8 @@ mod tests {
+         index.insert(target.clone(), Some((1, None)));
+         let kwargs = SiteKeywords {
+             opaque_arity: false,
++            positional_splats: vec![],
++            class_body_site: false,
+             opaque_keywords: false,
+             span: crate::span::Span::synthetic(),
+             sources: vec![],
+diff --git a/src/analyze/sccq.rs b/src/analyze/sccq.rs
+index 9d1ca4011..6ecc5b620 100644
+--- a/src/analyze/sccq.rs
++++ b/src/analyze/sccq.rs
+@@ -670,7 +670,7 @@ pub(super) struct Engine {
+     pub writer_sites: BTreeMap<String, Vec<(ParamKey, Vec<Ty>)>>,
+     pub writer_index: HashMap<ParamKey, super::writers::RowCells>,
+     pub writer_revision: u64,
+-    pub writer_targets: HashMap<Symbol,BTreeSet<ParamKey>>,
++    pub writer_targets: HashMap<Symbol,super::route_static::PerClassRows>,
+     pub unit_ord: Vec<u32>,
+     pub fold_from: HashMap<ParamKey, Vec<ParamKey>>,
+     pub fold_into: HashMap<ParamKey, Vec<ParamKey>>,
+diff --git a/src/analyze/writers.rs b/src/analyze/writers.rs
+index 5b0a4fad7..d1fa522a9 100644
+--- a/src/analyze/writers.rs
++++ b/src/analyze/writers.rs
+@@ -43,6 +43,8 @@ struct State {
+     // Destination knowledge is conservative and monotone; counts describe live callers.
+     // A withdrawn known caller removes its value, not an unknown caller's possible destination.
+     targets: BTreeMap<(ClassId, Symbol, super::SiteRecv), usize>,
++    target_arities: BTreeMap<(ClassId, Symbol, super::SiteRecv, Option<usize>), usize>,
++    walked_target_arities: BTreeSet<(ClassId, Symbol, super::SiteRecv, Option<usize>)>,
+     unknown_methods: BTreeMap<Symbol, usize>,
+     revision: u64,
+ }
+@@ -266,6 +268,30 @@ impl Drop for Visit {
+                 }
+                 let old = s.calls.get(&source).map(|c| known(c)).unwrap_or_default();
+                 let new = known(&calls);
++                if super::route_static::per_class_on() {
++                    let arities = |calls: &[SendSite]| -> BTreeSet<_> {
++                        calls.iter().filter(|call| !unknown_class(&call.0)).map(|call| {
++                            let arity = (!call.3.opaque_arity).then_some(call.2.len());
++                            (call.0.clone(), call.1.clone(), call.4, arity)
++                        }).collect()
++                    };
++                    let old_arities = s.calls.get(&source).map(|calls| arities(calls)).unwrap_or_default();
++                    let new_arities = arities(&calls);
++                    for key in old_arities.difference(&new_arities) {
++                        let n = s.target_arities.get_mut(key).unwrap();
++                        *n -= 1;
++                        if *n == 0 {
++                            s.target_arities.remove(key);
++                            s.revision += 1;
++                        }
++                    }
++                    for key in new_arities.difference(&old_arities) {
++                        let n = s.target_arities.entry(key.clone()).or_default();
++                        let fresh = *n == 0;
++                        *n += 1;
++                        if fresh { s.revision += 1; }
++                    }
++                }
+                 for key in old.difference(&new) {
+                     let n = s.targets.get_mut(key).unwrap();
+                     *n -= 1;
+@@ -408,8 +434,30 @@ pub(super) fn unknown_class(class: &ClassId) -> bool {
+ pub(super) fn targets() -> Vec<(ClassId, Symbol, super::SiteRecv)> {
+     ST.with(|s| s.borrow().targets.keys().cloned().collect())
+ }
++pub(super) fn target_arities() -> Vec<(ClassId, Symbol, super::SiteRecv, Option<usize>)> {
++    ST.with(|s| {
++        let s = s.borrow();
++        s.target_arities.keys().cloned().chain(s.walked_target_arities.iter().cloned())
++            .collect::<BTreeSet<_>>().into_iter().collect()
++    })
++}
++/// The ordinary walk also owns sites outside captured method roots, notably
++/// class-body calls. They can create per-class rows without a catalog entry.
++pub(super) fn replace_walked_targets(sites: &[SendSite]) {
++    if !super::route_static::per_class_on() { return; }
++    let current = sites.iter().filter(|site| !unknown_class(&site.0)).map(|site| {
++        (site.0.clone(), site.1.clone(), site.4, (!site.3.opaque_arity).then_some(site.2.len()))
++    }).collect();
++    ST.with(|s| {
++        let mut s = s.borrow_mut();
++        if s.walked_target_arities != current {
++            s.walked_target_arities = current;
++            s.revision += 1;
++        }
++    });
++}
+ pub(super) fn revision() -> u64 {
+-    if super::route_static::on() { return 0; }
++    if super::route_static::on() && !super::route_static::per_class_on() { return 0; }
+     ST.with(|s| s.borrow().revision)
+ }
+ pub(super) fn unknown_receiver(t: &Ty, classes: &HashMap<ClassId, ClassInfo>) -> bool {
+diff --git a/src/app.rs b/src/app.rs
+index 63d16e3ff..7f27aa97c 100644
+--- a/src/app.rs
++++ b/src/app.rs
+@@ -74,6 +74,10 @@ pub struct App {
+     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+     pub library_classes: Vec<LibraryClass>,
+     pub controllers: Vec<Controller>,
++    /// Original calls consumed by controller macro expansion. Inference still
++    /// needs their arguments as parameter writers; emitters use the expansion.
++    #[serde(skip)]
++    pub expanded_class_body_calls: Vec<(ClassId, Expr)>,
+     pub routes: RouteTable,
+     pub views: Vec<View>,
+     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+@@ -828,6 +832,7 @@ impl App {
+             models: Vec::new(),
+             library_classes: Vec::new(),
+             controllers: Vec::new(),
++            expanded_class_body_calls: Vec::new(),
+             routes: RouteTable::default(),
+             views: Vec::new(),
+             test_modules: Vec::new(),
+diff --git a/src/ingest/app.rs b/src/ingest/app.rs
+index 754607cec..7ac16ea0c 100644
+--- a/src/ingest/app.rs
++++ b/src/ingest/app.rs
+@@ -3700,6 +3700,7 @@ fn expand_class_body_macros(app: &mut App) -> IngestResult<()> {
+         })
+         .collect();
+ 
++    let mut consumed_calls = Vec::new();
+     for controller in &mut app.controllers {
+         let includes = &surfaces.controllers[&controller.name].direct_includes;
+         if includes.is_empty() {
+@@ -3772,6 +3773,9 @@ fn expand_class_body_macros(app: &mut App) -> IngestResult<()> {
+             });
+             if method_stores_keyword_rest(&macro_def) && !another_unreadable {
+                 if let Some(init) = stored_options_init(expr, &macro_def) {
++                    if crate::analyze::class_body_sites_on() {
++                        consumed_calls.push((controller.name.clone(), expr.clone()));
++                    }
+                     survey::record(&IngestError::Unsupported {
+                         file: controller.name.0.as_str().to_string(),
+                         message: format!(
+@@ -3831,6 +3835,9 @@ fn expand_class_body_macros(app: &mut App) -> IngestResult<()> {
+                 &mut around_block_seq,
+             ) {
+                 Ok(items) => {
++                    if crate::analyze::class_body_sites_on() {
++                        consumed_calls.push((controller.name.clone(), expr.clone()));
++                    }
+                     let mut comments = leading_comments.clone();
+                     let mut blank = *leading_blank_line;
+                     for macro_item in items {
+@@ -3941,6 +3948,7 @@ fn expand_class_body_macros(app: &mut App) -> IngestResult<()> {
+         }
+         controller.body = expanded;
+     }
++    app.expanded_class_body_calls.extend(consumed_calls);
+     Ok(())
+ }
+ 
+diff --git a/tests/roundtrip.rs b/tests/roundtrip.rs
+index 8fd3165d4..80a48fdb5 100644
+--- a/tests/roundtrip.rs
++++ b/tests/roundtrip.rs
+@@ -149,6 +149,7 @@ fn tiny_blog_round_trips() {
+         sql_functions: Vec::new(),
+         rbs_includes: Default::default(),
+         controllers: vec![posts_controller],
++        expanded_class_body_calls: Vec::new(),
+         routes,
+         views: vec![],
+         test_modules: vec![],
