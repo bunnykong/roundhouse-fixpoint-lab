@@ -1,10 +1,41 @@
 # Loss repairs
 
 Unscored research reference. An independent check upholds the result with corrections; the fact includes them.
+A second check, on October 22, corrects what the per-class-route repairs mean; see the correction below.
 
 ## Fact F77
 
-On `route-per-class-20261021-four-apps-v0a0`, two flags on top of F75's candidate repair 10 of F73's 21 losing rows: per-class routes (`RH_ROUTE_PER_CLASS=1`) let a call on an unknown receiver reach every per-class row with its name and arity, and class-body sites (`RH_CLASS_BODY_SITES=1`) collect sends in model and controller class bodies as call sites. String parameter keys (`RH_PARAMS_STRING_KEYS=1`, on top) repair 3 more. These 13 distinct rows (F72's C2428 and M2643 are F73's C1856 and M1848) now admit their CRuby witnesses on all four schedules; 8 of the 21 remain. All four apps keep 10/10 equal tables with zero varying rows. Against F75, narrowed/widened rows are Campfire 9/148, Forem 1/375, Chatwoot 0/644 and Mastodon 65/867. Every narrowing only drops Unresolved and excludes no value the apps' callers pass; per-class routes alone account for 1,962 of the 2,034 widenings, the expected per-class route arms. The F61 comparison is incomplete: 2,308 parameter rows changed identity (2,007 added, 301 removed), and none loses a value. Two of the 74 admitted narrowing witnesses pass only because a Proc is encoded as `fn -> Str`, and the one skipped read comes from class-body sites wrongly binding `deprecate_api`'s `only:`/`if:` keywords to `sunset`, a wrong binding that loses no value. Analysis takes 12–14% longer on Chatwoot and Mastodon, 21–22% on Forem and 0.5–0.9 s on Campfire. An independent check upholds this with these corrections; V1A1 and Discourse were not run.
+On `route-per-class-20261021-four-apps-v0a0`, two flags on top of F75's candidate repair 10 of F73's 21 losing rows: per-class routes (`RH_ROUTE_PER_CLASS=1`) let a call on an unknown receiver reach every per-class row with its name and arity, and class-body sites (`RH_CLASS_BODY_SITES=1`) collect sends in model and controller class bodies as call sites. String parameter keys (`RH_PARAMS_STRING_KEYS=1`, on top) repair 3 more. These 13 distinct rows (F72's C2428 and M2643 are F73's C1856 and M1848) now admit their CRuby witnesses on all four schedules; 8 of the 21 remain. All four apps keep 10/10 equal tables with zero varying rows. Against F75, narrowed/widened rows are Campfire 9/148, Forem 1/375, Chatwoot 0/644 and Mastodon 65/867. Every narrowing only drops Unresolved and excludes no value the apps' callers pass; per-class routes alone account for 1,962 of the 2,034 widenings, the expected per-class route arms. The F61 comparison is incomplete: 2,308 parameter rows changed identity (2,007 added, 301 removed), and none loses a value. Two of the 74 admitted narrowing witnesses pass only because a Proc is encoded as `fn -> Str`, and the one skipped read comes from class-body sites wrongly binding `deprecate_api`'s `only:`/`if:` keywords to `sunset`, a wrong binding that loses no value. Analysis takes 12–14% longer on Chatwoot and Mastodon, 21–22% on Forem and 0.5–0.9 s on Campfire. An independent check upholds this with these corrections; V1A1 and Discourse were not run. **Correction, October 22:** class-body sites (5 rows) and String parameter keys (3 rows) are the substantive repairs, 8 of F73's 21 losses. Per-class routes' 5 repairs and 1,962 widenings all sit in parameter rows of methods with no analyzer body, and run alone the flag changes no other table, so no analyzer body or emitter reads them: their benefit and their cost are table-only. Without rows that no body reads, 53 of the 2,034 widenings remain. F73's census counted rows that nothing reads.
+
+## Correction, October 22
+
+A second zero-CPU check of the cached dumps classifies every widened row by whether anything reads it
+([reader-classes.tsv.xz](reader-classes.tsv.xz)). It confirms the numbers above and changes what the per-class-route
+repairs mean.
+
+- All 1,962 per-class-route widenings are `params` rows of methods with no analyzer body. 1,763 are framework
+  methods (`new` 545, `render` 371, `initialize` 162), 190 are other app-declared methods without an analyzer body
+  (119 `pattr_initialize` constructors and 26 scopes among them), 7 are generated setters and 2 are association
+  methods. For 16 of them a `def` exists by Ruby's lookup, in a module the analyzer never types.
+- Run alone, per-class routes change no row in any other table: no IR, return, side-table or controller-cache row.
+- The five per-class-route repairs sit in those unread rows. The added Unresolved arm lets the census check pass,
+  but the informative arms are unchanged and still exclude the witness, and no analyzer body or emitter reads
+  these rows.
+
+  | Row | Row key | F75 type, then per-class routes | CRuby witness |
+  | --- | --- | --- | --- |
+  | C1855 | `NotificationSetting#selected_email_flags=[0]` | `Array[Sym]`, plus Unresolved | `["email_conversation_assignment"]` |
+  | C1856 | `NotificationSetting#selected_push_flags=[0]` | `Array[Sym]`, plus Unresolved | `["push_conversation_assignment"]` |
+  | M1786 | `Account#<<[0]` | `Mention`, plus Unresolved | an `Account` |
+  | M1848 | `Collection#is_a?[0]` | `Account`, `Collection` or `Status`, plus Unresolved | `Symbol` |
+  | M1904 | `Status#is_a?[0]` | five classes, plus Unresolved | `Symbol` |
+
+- Dropping rows that no analyzer body reads leaves 53 of the 2,034 widenings: class-body sites' 52 IR rows and
+  `RateLimitable#rate_limiter[1]`.
+
+So class-body sites (5 rows) and String parameter keys (3 rows) are the substantive repairs: 8 of F73's 21 losses.
+Per-class routes' benefit and cost are both table-only. F73's census counted rows that nothing reads; a census
+should classify rows by whether any analyzer body or emitter reads them.
 
 ## What changed
 
@@ -133,5 +164,5 @@ python3 -B receipts/loss-repairs-2026-10-21/check.py
 ```
 
 It recomputes every row admission from [f73-rows.json](f73-rows.json) with the F73 receipt's checker, and every
-count above from the TSV files; it starts no analyzer. The F73 receipt's witness programs regenerate the witness
+count above from the TSV files, including the October 22 correction's; it starts no analyzer. The F73 receipt's witness programs regenerate the witness
 values for A010, A013, A014, M1545 and C1465.

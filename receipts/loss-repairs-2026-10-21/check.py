@@ -115,6 +115,28 @@ def main():
                                          round(100 * max(ratio['chatwoot'] + ratio['mastodon']) - 100)), (12, 14))
     check('Campfire seconds', (round(min(extra['campfire']), 1), round(max(extra['campfire']), 1)), (0.5, 0.9))
 
+    # The October 22 correction: who reads the widened rows.
+    readers = tsv(lzma.decompress((HERE / 'reader-classes.tsv.xz').read_bytes()).decode())
+    routes = [r for r in readers if r['cause'] == 'per-class routes']
+    check('reader rows', len(readers), 2034)
+    check('per-class-route rows', (len(routes), {r['table'] for r in routes}, {r['analyzer_body'] for r in routes}),
+          (1962, {'params'}, {'no'}))
+    check('per-class-route kinds', dict(collections.Counter(r['kind'] for r in routes)),
+          {'framework method': 1763, 'app-declared, no analyzer body': 190, 'generated setter': 7, 'association method': 2})
+    check('framework methods', {m: n for m, n in collections.Counter(r['method'] for r in routes
+                                                                      if r['kind'] == 'framework method').items()
+                                if m in ('new', 'render', 'initialize')}, {'new': 545, 'render': 371, 'initialize': 162})
+    check('rows something reads', len([r for r in readers if r['analyzer_body'] != 'no']), 53)
+    by_id = {r['census_id']: r for r in rows}
+    for cid in ('C1855', 'C1856', 'M1786', 'M1848', 'M1904'):
+        r = by_id[cid]
+        routed = r['types']['route_per_class_and_class_body_sites']
+        informative = strip_u(routed)
+        check(f'{cid} gains only Unresolved', routed != r['types']['f75'] and informative is not None and
+              sets.covers(informative, r['types']['f75']) and sets.covers(r['types']['f75'], informative), True)
+        check(f'{cid} informative arms still exclude the witness',
+              any(not admitted(informative, w) for w in r['witnesses']), True)
+
     if failures:
         print('\n'.join(failures))
         return 1
@@ -122,6 +144,8 @@ def main():
     print('against F75: 10/10 equal tables, no varying rows; 75 narrowings drop only Unresolved; 2,034 widenings, '
           '1,962 from per-class routes')
     print('time: +21-22% Forem, +12-14% Chatwoot and Mastodon, +0.5-0.9 s Campfire')
+    print('correction: 1,962 per-class-route rows have no analyzer body; 53 widened rows are read; the five '
+          'per-class-route repairs pass only through Unresolved')
     return 0
 
 
