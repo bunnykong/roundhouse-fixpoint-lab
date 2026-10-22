@@ -1,0 +1,36 @@
+== 2-ivar-index-write as-written
+Ruby 4.0.7
+Bag.new.t -> nil
+b = Bag.new; b.reset; b.put; b.t -> {s: "v", n: 2}
+Bag.new.tap(&:reset).put -> 2
+== 2-ivar-index-write swapped
+Ruby 4.0.7
+Bag.new.t -> nil
+b = Bag.new; b.reset; b.put; b.t -> {s: "v", n: 2}
+Bag.new.tap(&:reset).put -> 2
+== 5-model-files as-written
+Ruby 4.0.7
+XController.new.show -> NoMethodError: undefined method 'zzz' for nil
+== 5-model-files swapped
+Ruby 4.0.7
+XController.new.show -> NoMethodError: undefined method 'zzz' for nil
+== 6-split-model as-written
+Ruby 4.0.7
+XController.new.show -> NoMethodError: undefined method 'zzz' for nil
+== 6-split-model swapped
+Ruby 4.0.7
+XController.new.show -> NoMethodError: undefined method 'zzz' for nil
+== 7-helper-method as-written
+Ruby 3.3.2, ActionPack 8.1.4
+AController#show -> (view) NoMethodError: undefined method `zzz' for an instance of Integer
+BController#show -> (view) NoMethodError: undefined method `zzz' for an instance of String
+== 7-helper-method swapped
+Ruby 3.3.2, ActionPack 8.1.4
+AController#show -> (view) NoMethodError: undefined method `zzz' for an instance of String
+BController#show -> (view) NoMethodError: undefined method `zzz' for an instance of Integer
+== 9-filter-ivars as-written
+Ruby 3.3.2, ActionPack 8.1.4
+PController#show -> (view) NoMethodError: undefined method `zzz' for an instance of String
+== 9-filter-ivars swapped
+Ruby 3.3.2, ActionPack 8.1.4
+PController#show -> (view) NoMethodError: undefined method `zzz' for an instance of Integer
